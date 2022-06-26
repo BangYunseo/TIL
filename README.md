@@ -1,2 +1,2 @@
 # TIL
-## · PYTHON
+## PYTHON
