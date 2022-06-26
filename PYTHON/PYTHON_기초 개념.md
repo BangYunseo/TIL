@@ -17,3 +17,7 @@ Python 타입
 |프로즌 셋|frozenset|아니오|frozenset(['Elsa', 'Otto'])|
 |딕셔너리|dict|예|{'game' : 'bingo', 'dog' : 'dingo', 'drummer' : 'Ringo'}|
 
+
+
+Python 변수
+===========
