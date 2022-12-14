@@ -8,6 +8,6 @@ Python 기초
 ------------------------
 · [기초 개념](https://github.com/LoveYaeMiko/TIL/blob/main/PYTHON/%EA%B8%B0%EB%B3%B8%20%EC%9A%A9%EC%96%B4%20%EC%A0%95%EB%A6%AC.md)   
 · [함수](https://github.com/LoveYaeMiko/TIL/blob/main/PYTHON/%ED%95%A8%EC%88%98.md)   
-·
+
 C언어 기초
 =========== 
