@@ -6,5 +6,5 @@ TIL(Today I Learned)
 ## MJU(명지대학교)
 
 
-### Python
-### C
+### · Python
+### · C
