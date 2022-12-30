@@ -6,4 +6,4 @@ TIL(Today I Learned)
  MJU(명지대학교)
 ---------------
 
-> [freshman](https://github.com/LoveYaeMiko/TIL/tree/main/MJU/freshman)
+> 1. [freshman](https://github.com/LoveYaeMiko/TIL/tree/main/MJU/freshman)
