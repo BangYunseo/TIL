@@ -9,7 +9,7 @@ TIL(Today I Learned)
 
 > 1. [freshman](https://github.com/LoveYaeMiko/TIL/tree/main/MJU/freshman)
 
- 최근 공부하는 언어 바로가기 : C#
+ 최근 공부하는 언어 바로가기
 ---------------
 > 1. [C#](https://blog.hexabrain.net/88)
 > 2. 
