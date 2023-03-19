@@ -123,6 +123,41 @@
       
       - 오버플로우(overflow)는 변수가 나타낼 수 있는 범위를 넘는 숫자를 저장하려고 할 때 발생한다.
       - 오버플로우는 규칙성이 있다. 
-     ![overflow](https://user-images.githubusercontent.com/104207412/226170933-c40924d9-2f39-4ddd-9e7f-fd7a851c033e.PNG)
 
+![overflow](./overflow.png)
 
+#### 7. 기호 상수
+
+      - 기호 상수(Symbolic Constant): 기호를 이용하여 상수를 표현한 것이다.
+      
+            1. 가독성이 높아진다.
+            2. 값을 쉽게 변경할 수 있다.
+            
+      ex) area = 3.141592 * radius * radius;
+          -> area = PI * radius * radius;
+      ex) income = salary - 0.15 * salary;
+          -> income = salary - TAX_RATE * salary;
+
+      - 기호 상수 사용하는 법
+            1. #define 이용하기
+            2. const 이용하기
+            
+```C
+      // 기호 상수 예제 - 연봉과 세금 계산하기         
+      #include <stdio.h>
+      #defube TAX_RATE 0.2    // 기호 상수를 이용해서 TAX_RATE를 0.2로 선언한다.
+      
+      int main(void)
+      {
+        const int MONTHS = 12;      // 기호 상수를 이용해서 MONTHS를 12로 선언한다.
+        int m_salary, y_salary;     // m_salary와 y_salary를 변수로 선언한다.
+        
+        printf("월급을 입력하세요 :");      
+        scanf("%d",&m_salary);            // 입력받은 월급을 m_salary에 저장한다. 
+        y_salary = MONTHS * m_salary;     // y_salary에 월급과 달 수를 곱한 값을 저장한다.
+        printf("연봉은 %d 입니다.", y_salary);  // 연봉을 출력한다.
+        printf("세금은 %lf 입니다.", y_salary * TAX_RATE);  // 세금을 출력한다.
+
+        return 0;
+      }      
+```
