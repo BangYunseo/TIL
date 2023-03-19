@@ -13,19 +13,6 @@
 #### 3. 변수와 상수
 
       * 변수(Variable) : 저장된 값의 변경이 가능한 공간   
- ```C
-      // 변수 선언하기 예제  
-      #include <stdio.h>
-      
-      int main(void)
-      {
-        int Number1;    // 'Number1'이라는 정수형 변수 선언하기
-        char Character1;      // 'Character1' 이라는 문자형 변수 선언하기
-        double Number2;       // 'Number2' 라는 실수형 변수 선언하기
-        
-        return 0;
-      }      
-```
       * 상수(Constant) : 저장된 값의 변경이 불가능한 공간    
       * ex) 3.14, 100, 'A', "Hello, World!" 
       
@@ -79,7 +66,63 @@
 #### 4-1. 정수형
       
       - 정수형은 short, int, long, long long이 있다.
+|자료형|비트|범위|
+|:---|:---:|:---|
+|short|16비트|-32768 ~ 32767|
+|int|32비트|-2147483648 ~ 2147483647|
+|long|32비트|-2147483648 ~ 2147483647|
+|long long|64비트|-9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807|
+
+```C
+      // 변수 선언하기 예제  
+      #include <stdio.h>
       
+      int main(void)
+      {
+        int Number1;          // 'Number1'이라는 정수형 int 변수 선언하기
+        short Number2;        // 'Number2' 라는 정수형 short 변수 선언하기
+        long Number3;         // 'Number3' 라는 정수형 long 변수 선언하기
+        double Number4;       // 'Number4' 라는 실수형 double 변수 선언하기
+        char Character1;      // 'Character1' 이라는 문자형 char 변수 선언하기
+
+        return 0;
+      }      
+```
       
-    
+#### 5. signed와 unsigned
+
+      - unsigned
+            1. 음수가 아닌 값만을 나타낸다.
+            2. unsigned int
+      - signed
+            1. 부호를 가지는 값을 나타낸다.
+            2. 흔히 생략한다.
+      ex) (signed) int는 -2147483648 ~ 2147483647의 범위를 가지지만 unsigned int는 0 ~ 4294967295의 범위를 가진다.
+
+#### 5-1. unsigned 수식자
+      
+```C
+      // unsigned 수식자 예제  
+      #include <stdio.h>
+      
+      int main(void)
+      {
+        unsigned int speed;         // 부호 없는 int형
+        unsigned distance;          // unsigned int distance와 같다.
+        unsigned short players;     // 부호 없는 short형
+        unsigned long seconds;      // 부호 없는 long형
+        
+        unsigned int sales = 2800000000 // 약 28억
+        printf("%u\n", sales);          // %d를 사용하면 음수로 출력되니 주의하기
+        
+        return 0;
+      }      
+```
+
+#### 6. 오버플로우
+      
+      - 오버플로우(overflow)는 변수가 나타낼 수 있는 범위를 넘는 숫자를 저장하려고 할 때 발생한다.
+      - 오버플로우는 규칙성이 있다. 
+     ![overflow](https://user-images.githubusercontent.com/104207412/226170933-c40924d9-2f39-4ddd-9e7f-fd7a851c033e.PNG)
+
 
