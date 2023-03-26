@@ -21,7 +21,7 @@
 |sizeof 연산자|sizeof|자료형이나 변수의 크기를 바이트 단위로 반환|
 |형변환|(type)|변수나 상수의 자료형을 변환|
 |포인터 연산자|* & []|주소 계산, 포인터가 가리키는 곳의 내용 추출|
-|구조체 연산자|. ->|구조체의 멤버 참조
+|구조체 연산자|. ->|구조체의 멤버 참조|
 
 #### 3. 피연산자 수에 따른 연산자 분류
 
@@ -41,91 +41,79 @@
               x * x와 같이 단순히 변수를 두 번 곱한다.
      
 
-#### 4. 나눗셈 연산자
+#### 4. 나머지 연산자
 
-      - 정수형끼리의 나눗셈에서는 결과가 정수형으로 생성되고 
-        부동소수점형끼리는 부동소수점 값을 생성한다.  
-      - 정수형끼리의 나눗셈에서 소수점 이하는 버려진다.
-      
-      1. 정수형 : short, int, long, long long     
-      2. 부동 소수점형(실수형) : float, double, long double     
-      3. 문자형 : char        
-```C
-      // 자료형의 크기
-      #include <stdio.h>
-      
-      int main(void)
-      {
-        int x;    // 정수형 변수 x를 선언한다.
-        
-        printf("변수 x의 크기 : %d\n", sizeof(x));   // 변수 x의 크기 : 4
-        printf("char형의 크기 : %d\n", sizeof(char));     // char형의 크기 : 1
-        printf("int형의 크기 : %d\n", sizeof(int));     // int형의 크기 : 4
-        printf("short형의 크기 : %d\n", sizeof(short));     // short형의 크기 : 2
-        printf("long형의 크기 : %d\n", sizeof(long));     // long형의 크기 : 4
-        printf("float형의 크기 : %d\n", sizeof(float));     // float형의 크기 : 4
-        printf("double형의 크기 : %d\n", sizeof(double));     // double형의 크기 : 8
-        
-        
-        return 0;
-      }      
-```
-      
-#### 4-1. 정수형
-      
-      - 정수형은 short, int, long, long long이 있다.
-|자료형|비트|범위|
-|:---|:---:|:---|
-|short|16비트|-32768 ~ 32767|
-|int|32비트|-2147483648 ~ 2147483647|
-|long|32비트|-2147483648 ~ 2147483647|
-|long long|64비트|-9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807|
+      - 나머지 연산자(modulus operator)는 첫 번째 피연산자를 두 번째 피연산자로 나누었을 경우의 나머지를 계산한다.
+            1. 10 % 2는 0이다.
+            2. 5 % 7은 2이다.
+            3. 30 % 9는 3이다.   
+            
+      - 나머지 연산자를 이용한 짝수와 홀수 구분
+            > x % 2가 0이면 짝수
+      - 나머지 연산자를 이용한 5의 배수 판단
+            > x % 5가 0이면 5의 배수
 
 ```C
-      // 변수 선언하기 예제  
-      #include <stdio.h>
-      
-      int main(void)
-      {
-        int Number1;          // 'Number1'이라는 정수형 int 변수 선언하기
-        short Number2;        // 'Number2' 라는 정수형 short 변수 선언하기
-        long Number3;         // 'Number3' 라는 정수형 long 변수 선언하기
-        double Number4;       // 'Number4' 라는 실수형 double 변수 선언하기
-        char Character1;      // 'Character1' 이라는 문자형 char 변수 선언하기
+// 나머지 연산자 프로그램
+#include <stdio.h>
+#define SEC_PER_MINUTE 60     // 1분은 60초
 
-        return 0;
-      }      
+int main(void)
+{
+      int input, minute, second;    
+      // 입력받을 초를 저장할 변수를 input, 분을 저장할 변수 minute, 초를 저장할 변수 second를 생성한다.
+      
+      printf("초를 입력하시오 : ");  // 초를 입력받는다.
+      scanf("%d", &input);          // 입력받은 초를 변수 input에 저장한다.
+      
+      minute = input / SEC_PER_MINUTE;    // 몇 분은 입력받은 초에서 60으로 나눈 몫이다.
+      second = input % SEC_PER_MINUTE;    // 몇 초는 입력받은 초에서 60으로 나눈 나머지이다.
+      
+      printf("%d초는 %d분 %d초 입니다.\n", input, minute, second);
+      return 0;
+}
+
 ```
-      
-#### 5. signed와 unsigned
 
-      - unsigned
-            1. 음수가 아닌 값만을 나타낸다.
-            2. unsigned int
-      - signed
-            1. 부호를 가지는 값을 나타낸다.
-            2. 흔히 생략한다.
-      ex) (signed) int는 -2147483648 ~ 2147483647의 범위를 가지지만 unsigned int는 0 ~ 4294967295의 범위를 가진다.
+#### 5. 부호 연산자
 
-#### 5-1. unsigned 수식자
-      
+      - 변수나 상수의 부호를 변경
+
 ```C
-      // unsigned 수식자 예제  
-      #include <stdio.h>
+#include <stdio.h>
+
+int main(void)
+{
+      int x, y;         // 변수 x와 y를 생성한다.
       
-      int main(void)
-      {
-        unsigned int speed;         // 부호 없는 int형
-        unsigned distance;          // unsigned int distance와 같다.
-        unsigned short players;     // 부호 없는 short형
-        unsigned long seconds;      // 부호 없는 long형
-        
-        unsigned int sales = 2800000000 // 약 28억
-        printf("%u\n", sales);          // %d를 사용하면 음수로 출력되니 주의하기
-        
-        return 0;
-      }      
-```
+      x = -10;          // x에 -10을 저장한다.
+      y = -x;           // y에 -x를 저장한다. -(-10) = 10
+      
+      printf("y의 값을 출력한다 : %d", y);       // y에는 10의 값이 저장되어 있으므로 10이 출력된다.
+      
+      return 0;
+}
+
+``` 
+  
+#### 6. 증감 연산자
+
+      - 증감 연산자 : ++, --
+      - 변수 하나의 값을 증가시키거나 감소시키는 연산자   
+
+- (참고) ++x와 x++의 차이
+![++xandxx++](https://github.com/BangYunseo/TIL/blob/main/C/%2B%2Bxandx%2B%2B.PNG)
+
+      
+#### 6-1. 증감 연산자 정리
+
+|증감 연산자|의미|
+|:---:|:---|
+|++x|수식의 값은 증가된 x 값이다.|
+|x++|수식의 값은 증가되지 않은 원래의 x 값이다.|
+|--x|수식의 값은 감소된 x 값이다.|
+|x--|수식의 값은 감소되지 않은 원래의 x 값이다.|
+
 
 #### 6. 오버플로우
       
@@ -135,38 +123,72 @@
 ![overflow](https://user-images.githubusercontent.com/104207412/226173524-a9e30b78-cf72-4b71-8fd4-8365cb85ecc1.PNG)
 
 
-#### 7. 기호 상수
+#### 7. 복합 대입 연산자
 
-      - 기호 상수(Symbolic Constant): 기호를 이용하여 상수를 표현한 것이다.
-      
-            1. 가독성이 높아진다.
-            2. 값을 쉽게 변경할 수 있다.
+      - 복합대입 연산자란 += 처럼 대입 연산자 =와 산술 연산자를 합쳐 놓은 연산자
+      - 소스를 간결하게 만들 수 있음   
+            ex) x += y 는 x = x + y와 같은 의미이다.
             
-      ex) area = 3.141592 * radius * radius;
-          -> area = PI * radius * radius;
-      ex) income = salary - 0.15 * salary;
-          -> income = salary - TAX_RATE * salary;
+|복합 대입 연산자|의미|
+|:---:|:---:|
+|x += y|x = x + y|
+|x -= y|x = x - y|
+|x *= y|x = x * y|
+|x /= y|x = x / y|
+|x %= y|x = x % y|
+|x &= y|x = x & y|
+|x l= y|x = x l y|
+|x ^= y|x = x ^ y|
+|x >>= y|x = x >> y|
+|x <<= y|x = x << y|
 
-      - 기호 상수 사용하는 법
-            1. #define 이용하기
-            2. const 이용하기
+오류 주의
+      - 다음과 같은 수식은 오류이다
+            ++x = 10;   // 등호의 왼쪽은 항상 변수여야 한다.
+            x + 1 = 20; // 등호의 왼쪽은 변수만 존재해야 한다.
+            x =* y;     // =*이 아니라 *=를 사용해야 한다.
             
+#### 8. 관계 연산자
+
+      - 두 개의 피연산자를 비교하는 연산자
+      - 결과값은 참(1) 아니면 거짓(0)
+
+
+|연산자|의미|
+|:---:|:---:|
+|x == y|x와 y가 같은가?|
+|x != y|x와 y가 다른가?|
+|x > y|x가 y보다 큰가?|
+|x < y|x가 y보다 작은가?|
+|x >= y|x가 y보다 크거나 같은가?|
+|x <= y|x가 y보다 작거나 같은가?|
+
 ```C
-      // 기호 상수 예제 - 연봉과 세금 계산하기         
-      #include <stdio.h>
-      #defube TAX_RATE 0.2    // 기호 상수를 이용해서 TAX_RATE를 0.2로 선언한다.
-      
-      int main(void)
-      {
-        const int MONTHS = 12;      // 기호 상수를 이용해서 MONTHS를 12로 선언한다.
-        int m_salary, y_salary;     // m_salary와 y_salary를 변수로 선언한다.
-        
-        printf("월급을 입력하세요 :");      
-        scanf("%d",&m_salary);            // 입력받은 월급을 m_salary에 저장한다. 
-        y_salary = MONTHS * m_salary;     // y_salary에 월급과 달 수를 곱한 값을 저장한다.
-        printf("연봉은 %d 입니다.", y_salary);  // 연봉을 출력한다.
-        printf("세금은 %lf 입니다.", y_salary * TAX_RATE);  // 세금을 출력한다.
+#include <stdio.h>
 
-        return 0;
-      }      
+int main(void)
+{
+      int x, y;   // 변수 x와 y를 생성한다.
+      
+      1 == 1;           // 참(1)
+      1 != 2;           // 참(1)
+      2 > 1;            // 참(1)
+      x >= y;           // x가 y보다 크거나 같으면 참(1) 그렇지 않으면 거짓(0)
+      
+      return 0;
+}
+
 ```
+
+(주의할 점)     
+
+      1. (x = y)   
+            - y의 값을 x에 대입한다. 이 수식의 값은 x의 값이다.   
+            
+      2. (x == y)    
+            - x와 y가 같으면 1, 다르면 0이 수식의 값이 된다.     
+            - (x == y)를 (x = y)로 잘못 쓰지 않도록 주의하자.      
+      3.  수학에서처럼 2 < x < 5와 같이 작성하면 잘못된 결과가 나온다.   
+            ex) 올바른 방법 : (2 < x) && (x < 5)   
+       
+     
