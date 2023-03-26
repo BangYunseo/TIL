@@ -102,7 +102,7 @@ int main(void)
       - 변수 하나의 값을 증가시키거나 감소시키는 연산자   
 
 - (참고) ++x와 x++의 차이
-![++xandxx++](https://github.com/BangYunseo/TIL/blob/main/C/Image/%2B%2Bxandx%2B%2B.PNG)
+![++xandxx++](https://github.com/BangYunseo/TIL/blob/main/C/%2B%2Bxandx%2B%2B.PNG)
 
       
 #### 6-1. 증감 연산자 정리
@@ -207,24 +207,24 @@ int main(void)
 
       - 어떤 회사에서 신입 사원을 채용하는데 나이가 30살 이하이고 토익 성적이 700점 이상이라는 조건을 걸었다고 가정하자.     
       
-![and](https://github.com/BangYunseo/TIL/blob/main/C/Image/and.PNG)
+![AND](https://github.com/BangYunseo/TIL/blob/main/C/and.PNG)
       
 #### 9-2. OR 연산자   
       
       - 신입 사원을 채용하는 조건이 변경되어서 나이가 30살 이하이거나 토익 성적이 700점 이상이면 된다고 하자.      
       
-![OR](https://github.com/BangYunseo/TIL/blob/main/C/Image/or.PNG)
+![OR](https://github.com/BangYunseo/TIL/blob/main/C/or.PNG)
 
 #### 9-3. NOT 연산자   
 
       - 피연산자의 값이 참이면 연산의 결과값을 거짓으로 만들고, 피연산자의 값이 거짓이면 연산의 결과값을 참으로 만든다.    
       
-![NOT](https://github.com/BangYunseo/TIL/blob/main/C/Image/not.PNG)
+![NOT](https://github.com/BangYunseo/TIL/blob/main/C/not.PNG)
       
       - result = !1;                // result에는 0이 대입된다.
       - result = !(2 == 3);         // result에는 1이 대입된다.
       
-#### 10. 참과 거짓의 표현 방법      
+#### 9-3-1. 참과 거짓의 표현 방법      
 
       - 관계 수식이나 논리 수식이 만약 참이면 1이 생성되고 거짓이면 0이 생성된다.
       - 피연산자의 참, 거짓을 가릴 때에는 0이 아니면 참이고 0이면 거짓으로 판단한다.
@@ -235,3 +235,52 @@ int main(void)
             !0;    // 식의 값은 1
             !3;    // 식의 값은 0
             !-3;   // 식의 값은 0
+
+#### 9-4. 논리 연산자의 예
+
+      -"x는 1, 2, 3 중의 하나인가?"   
+            > (x == 1) || (x == 2) || (x == 3)   
+      -"x가 60 이상 100 미만이다."   
+            > (x >= 60) && (x < 100)   
+      -"x가 0도 아니고 1도 아니다."
+            > (x != 0) && (x != 1)        // x는 0도 아니고 1도 아니다.
+            
+#### 10. 조건 연산자 : 3개의 피연산자를 가지는 삼항 연산자     
+            
+![iff](https://github.com/BangYunseo/TIL/blob/main/C/Image/iff.PNG)  
+
+```C
+absolute_value = (x > 0) ? x: -x;    // 절댓값 계산
+max_value = (x > y) ? x: y;          // 최댓값 계산
+min_value = (x < y) ? x: y;          // 최솟값 계산
+(age > 20) ? printf("성인\n"): printf("청소년\n");   // 20살 이상이라면 성인을 출력하고 20살 미만이라면 청소년을 출력한다.
+```
+
+#### 11. 비트 연산자   
+
+* 논리 연산자와 비트 연산자는 다르다.
+
+|연산자|연산자의 의미|예|
+|:---:|:---:|:---|
+|&|비트 AND|두 개의 피연산자의 해당 비트가 모두 1이면 1, 아니면 0|
+|l|비트 OR|두 개의 피연산자의 해당 비트 중 하나만 1이면 1, 아니면 0|
+|^|비트 XOR|두 개의 피연산자의 해당 비트의 값이 같으면 0, 아니면 1|
+|<<|왼쪽으로 이동|지정된 개수만큼 모든 비트를 왼쪽으로 이동한다.|
+|>>|오른쪽으로 이동|지정된 개수만큼 모든 비트를 오른쪽으로 이동한다.|
+|~|비트 NOT|0은 1로 만들고 1은 0으로 만든다.|
+
+#### 11-1. 비트 AND 연산자   
+
+![Andd](https://github.com/BangYunseo/TIL/blob/main/C/Image/Andd.PNG)  
+
+#### 11-2. 비트 OR 연산자   
+
+![Orr](https://github.com/BangYunseo/TIL/blob/main/C/Image/Orr.PNG)  
+
+#### 11-3. 비트 XOR 연산자   
+
+![XOR](https://github.com/BangYunseo/TIL/blob/main/C/Image/XOR.PNG)  
+
+#### 11-4. 비트 NOT 연산자  
+
+![Nott](https://github.com/BangYunseo/TIL/blob/main/C/Image/Nott.PNG)  
