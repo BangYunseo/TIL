@@ -102,7 +102,7 @@ int main(void)
       - 변수 하나의 값을 증가시키거나 감소시키는 연산자   
 
 - (참고) ++x와 x++의 차이
-![++xandxx++](https://github.com/BangYunseo/TIL/blob/main/C/%2B%2Bxandx%2B%2B.PNG)
+![++xandxx++](https://github.com/BangYunseo/TIL/blob/main/C/Image/%2B%2Bxandx%2B%2B.PNG)
 
       
 #### 6-1. 증감 연산자 정리
@@ -207,19 +207,19 @@ int main(void)
 
       - 어떤 회사에서 신입 사원을 채용하는데 나이가 30살 이하이고 토익 성적이 700점 이상이라는 조건을 걸었다고 가정하자.     
       
-![AND](https://github.com/BangYunseo/TIL/blob/main/C/and.PNG)
+![and](https://github.com/BangYunseo/TIL/blob/main/C/Image/and.PNG)
       
 #### 9-2. OR 연산자   
       
       - 신입 사원을 채용하는 조건이 변경되어서 나이가 30살 이하이거나 토익 성적이 700점 이상이면 된다고 하자.      
       
-![OR](https://github.com/BangYunseo/TIL/blob/main/C/or.PNG)
+![OR](https://github.com/BangYunseo/TIL/blob/main/C/Image/or.PNG)
 
 #### 9-3. NOT 연산자   
 
       - 피연산자의 값이 참이면 연산의 결과값을 거짓으로 만들고, 피연산자의 값이 거짓이면 연산의 결과값을 참으로 만든다.    
       
-![NOT](https://github.com/BangYunseo/TIL/blob/main/C/not.PNG)
+![NOT](https://github.com/BangYunseo/TIL/blob/main/C/Image/not.PNG)
       
       - result = !1;                // result에는 0이 대입된다.
       - result = !(2 == 3);         // result에는 1이 대입된다.
