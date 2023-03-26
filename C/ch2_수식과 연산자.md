@@ -207,19 +207,19 @@ int main(void)
 
       - 어떤 회사에서 신입 사원을 채용하는데 나이가 30살 이하이고 토익 성적이 700점 이상이라는 조건을 걸었다고 가정하자.     
       
-![AND](https://github.com/BangYunseo/TIL/blob/main/C/Image/and.PNG)
+![AND](https://github.com/BangYunseo/TIL/blob/main/C/and.PNG)
       
 #### 9-2. OR 연산자   
       
       - 신입 사원을 채용하는 조건이 변경되어서 나이가 30살 이하이거나 토익 성적이 700점 이상이면 된다고 하자.      
       
-![OR](https://github.com/BangYunseo/TIL/blob/main/C/Image/or.PNG)
+![OR](https://github.com/BangYunseo/TIL/blob/main/C/or.PNG)
 
 #### 9-3. NOT 연산자   
 
       - 피연산자의 값이 참이면 연산의 결과값을 거짓으로 만들고, 피연산자의 값이 거짓이면 연산의 결과값을 참으로 만든다.    
       
-![NOT](https://github.com/BangYunseo/TIL/blob/main/C/Image/not.PNG)
+![NOT](https://github.com/BangYunseo/TIL/blob/main/C/not.PNG)
       
       - result = !1;                // result에는 0이 대입된다.
       - result = !(2 == 3);         // result에는 1이 대입된다.
@@ -284,3 +284,77 @@ min_value = (x < y) ? x: y;          // 최솟값 계산
 #### 11-4. 비트 NOT 연산자  
 
 ![Nott](https://github.com/BangYunseo/TIL/blob/main/C/Image/Nott.PNG)  
+
+#### 11-5. 비트 이동 연산자   
+
+* 크기를 비교하는 관계 연산자와 다르다
+
+|연산자|기호|설명|
+|:---:|:---:|:---|
+|왼쪽 비트 이동|<<|x << y x의 비트들을 y 칸만큼 왼쪽으로 이동|
+|오른쪽 비트 이동|>>|x >> y x의 비트들을 y 칸만큼 오른쪽으로 이동|
+
+#### 11-6. << 연산자 
+
+      - 비트를 왼쪽으로 이동
+      - 값은 2배가 된다.   
+      
+![left](https://github.com/BangYunseo/TIL/blob/main/C/Image/left.PNG)
+      
+#### 11-7. >> 연산자  
+
+      - 비트를 오른쪽으로 이동
+      - 값은 1/2배가 된다.   
+      
+![right](https://github.com/BangYunseo/TIL/blob/main/C/Image/right.PNG)
+
+#### 12. Lab 3. 10진수를 2진수로 출력하기
+
+      - 아래의 예제는 10진수를 2진수로 변환하여 출력하는 예제이다. 
+	- 변수 mask에 1의 값을 저장하고, 왼쪽으로 7비트를 이동시키면 
+	mask = 00000001에서 mask = 10000000이 된다. 예시로 입력하는 10진수는 32인데
+	2진수는 오른쪽부터 2의 0승, 2의 1승, ···, 2의 7승의 비트를 가진다. 
+	그렇기 때문에 32를 2진수로 나타내면 00100000 이다. 
+	아래의 과정은 왼쪽으로 7비트 이동시켰던 값을 오른쪽으로 1비트씩 이동시키면서 
+	예시로 입력한 num10에 저장된 수인 32의 2진수 00100000와 0의 위치가 같으면 0을 출력,
+	만약에 0이 아니라 1이 있으면 1을 출력한다. &는 and의 의미를 담고 있는 기호이며,
+	(num10 % mask) == 0이 맞다면 왼쪽의 printf("0")을, 아니라면 printf("1")을 출력하면
+	된다. (github ch2 참고)
+	*/
+
+```C
+// 10진수를 2진수로 출력하기(비트연산자)
+#include <stdio.h>
+
+int main(void)
+{
+	unsigned int num10;		// 10진수를 입력받을 변수 num10을 생성한다. 음수가 아닌 값만 저장하기 때문에 unsigned를 붙인다.
+	printf("10 진수 : ");	// 10진수를 입력받는다.
+	scanf_s("%u", &num10);	// 입력받은 10진수의 값을 2진수로 저장한 값을 num10 변수에 저장한다.
+
+	unsigned int mask = 1 << 7;	// 왼쪽으로 7비트 이동한다. mask = 10000000
+
+	printf("2 진수 : ");		// 2진수를 입력한다.
+
+	((num10 & mask) == 0) ? printf("0") : printf("1");	// num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
+	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
+	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
+	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
+	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
+	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
+	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
+	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
+	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
+	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
+	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
+	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
+	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
+	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
+	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
+
+	printf("\n");			// 줄 끝내기
+
+	return 0;
+}
+```      
+      
