@@ -140,161 +140,73 @@ if (score >= 80)
       
 ![switch](https://github.com/BangYunseo/TIL/blob/main/C/Image/switch.PNG)
 
-#### 9-2. OR 연산자   
-      
-      - 신입 사원을 채용하는 조건이 변경되어서 나이가 30살 이하이거나 토익 성적이 700점 이상이면 된다고 하자.      
-      
-![OR](https://github.com/BangYunseo/TIL/blob/main/C/Image/or.PNG)
+#### 10-1. switch 문 예제 
 
-#### 9-3. NOT 연산자   
-
-      - 피연산자의 값이 참이면 연산의 결과값을 거짓으로 만들고, 피연산자의 값이 거짓이면 연산의 결과값을 참으로 만든다.    
-      
-![NOT](https://github.com/BangYunseo/TIL/blob/main/C/Image/not.PNG)
-      
-      - result = !1;                // result에는 0이 대입된다.
-      - result = !(2 == 3);         // result에는 1이 대입된다.
-      
-#### 9-3-1. 참과 거짓의 표현 방법      
-
-      - 관계 수식이나 논리 수식이 만약 참이면 1이 생성되고 거짓이면 0이 생성된다.
-      - 피연산자의 참, 거짓을 가릴 때에는 0이 아니면 참이고 0이면 거짓으로 판단한다.
-      - 음수
-            1. C에서는 0이 아니면 참으로 간주
-            2. 음수도 참으로 간주     
-      - NOT 연산자를 적용하는 경우      
-            !0;    // 식의 값은 1
-            !3;    // 식의 값은 0
-            !-3;   // 식의 값은 0
-
-#### 9-4. 논리 연산자의 예
-
-      -"x는 1, 2, 3 중의 하나인가?"   
-            > (x == 1) || (x == 2) || (x == 3)   
-      -"x가 60 이상 100 미만이다."   
-            > (x >= 60) && (x < 100)   
-      -"x가 0도 아니고 1도 아니다."
-            > (x != 0) && (x != 1)        // x는 0도 아니고 1도 아니다.
-            
-#### 10. 조건 연산자 : 3개의 피연산자를 가지는 삼항 연산자     
-            
-![iff](https://github.com/BangYunseo/TIL/blob/main/C/Image/iff.PNG)  
-
-```C
-absolute_value = (x > 0) ? x: -x;    // 절댓값 계산
-max_value = (x > y) ? x: y;          // 최댓값 계산
-min_value = (x < y) ? x: y;          // 최솟값 계산
-(age > 20) ? printf("성인\n"): printf("청소년\n");   // 20살 이상이라면 성인을 출력하고 20살 미만이라면 청소년을 출력한다.
+ ```C
+int main(void) 
+{ 
+	int number; 
+	printf("정수를 입력하시오:"); 
+	scanf("%d", &number); 
+	
+	switch(number) 
+	{
+		case 0: 
+			printf("없음\n"); 
+			break ;
+		case 1: 
+			printf("하나\n"); 
+			break ;
+		case 2: 
+			printf("둘\n"); 
+			break ;
+		default: 
+			printf("많음\n"); 
+			break;
+	} 
+} 
 ```
 
-#### 11. 비트 연산자   
+#### 10-2. break가 생략되는 경우   
 
-* 논리 연산자와 비트 연산자는 다르다.
+![delbreak1](https://github.com/BangYunseo/TIL/blob/main/C/Image/delbreak1.PNG)
+ 
+#### 10-3. break가 의도적으로 생략되는 경우      
 
-|연산자|연산자의 의미|예|
-|:---:|:---:|:---|
-|&|비트 AND|두 개의 피연산자의 해당 비트가 모두 1이면 1, 아니면 0|
-|l|비트 OR|두 개의 피연산자의 해당 비트 중 하나만 1이면 1, 아니면 0|
-|^|비트 XOR|두 개의 피연산자의 해당 비트의 값이 같으면 0, 아니면 1|
-|<<|왼쪽으로 이동|지정된 개수만큼 모든 비트를 왼쪽으로 이동한다.|
-|>>|오른쪽으로 이동|지정된 개수만큼 모든 비트를 오른쪽으로 이동한다.|
-|~|비트 NOT|0은 1로 만들고 1은 0으로 만든다.|
+![delbreak2](https://github.com/BangYunseo/TIL/blob/main/C/Image/delbreak2.PNG)
 
-#### 11-1. 비트 AND 연산자   
+#### 10-4. default 문
 
-![Andd](https://github.com/BangYunseo/TIL/blob/main/C/Image/Andd.PNG)  
+![default](https://github.com/BangYunseo/TIL/blob/main/C/Image/default.PNG)
 
-#### 11-2. 비트 OR 연산자   
+#### 11. switch 문과 if-else 문     
+            
+![switch_if-else](https://github.com/BangYunseo/TIL/blob/main/C/Image/switch_if-else.PNG)  
 
-![Orr](https://github.com/BangYunseo/TIL/blob/main/C/Image/Orr.PNG)  
 
-#### 11-3. 비트 XOR 연산자   
+#### 12. switch 문에서 주의할 점   
 
-![XOR](https://github.com/BangYunseo/TIL/blob/main/C/Image/XOR.PNG)  
-
-#### 11-4. 비트 NOT 연산자  
-
-![Nott](https://github.com/BangYunseo/TIL/blob/main/C/Image/Nott.PNG)  
-
-#### 11-5. 비트 이동 연산자   
-
-* 크기를 비교하는 관계 연산자와 다르다
-
-|연산자|기호|설명|
-|:---:|:---:|:---|
-|왼쪽 비트 이동|<<|x << y x의 비트들을 y 칸만큼 왼쪽으로 이동|
-|오른쪽 비트 이동|>>|x >> y x의 비트들을 y 칸만큼 오른쪽으로 이동|
-
-#### 11-6. << 연산자 
-
-      - 비트를 왼쪽으로 이동
-      - 값은 2배가 된다.   
-      
-![left](https://github.com/BangYunseo/TIL/blob/main/C/Image/left.PNG)
-      
-#### 11-7. >> 연산자  
-
-      - 비트를 오른쪽으로 이동
-      - 값은 1/2배가 된다.   
-      
-![right](https://github.com/BangYunseo/TIL/blob/main/C/Image/right.PNG)
-
-#### 12. Lab 3. 10진수를 2진수로 출력하기   
-
-	- 아래의 예제는 10진수를 2진수로 변환하여 출력하는 예제이다.    
+	- 제어식의 값은 반드시 정수형으로 계산한다.
+	- 수식의 값이 정수형으로 나오지 않는다면 switch 문을 사용할 수 없다.
+	- case 절에 실수, 변수, 수식, 문자열을 사용하면 컴파일 오류
+	- 다만 문자는 아스키코드로 표현되고, 아스키코드는 정수이므로 사용 가능하다.
+	- 단, 문자열은 사용할 수 없다.
 	
-	- 변수 mask에 1의 값을 저장하고, 왼쪽으로 7비트를 이동시키면 mask = 00000001 에서 mask = 10000000 이 된다.    
-	
-	- 입력하는 10진수를 2진수로 고치면 8비트의 2진수 형태가 되는데, 2진수는 오른쪽부터 2의 0승, 2의 1승, ···, 2의 7승의 비트를 가진다.   
-	
-	- 아래의 과정은 왼쪽으로 7비트 이동시켰던 값을 오른쪽으로 1비트씩 이동시키면서 예시로 입력한 num10에 저장된 수와 0의 위치가 같으면 0을 출력, 만약에 0이 아니라 1이 있으면 1을 출력한다.     
-	
-	- &는 and의 의미를 담고 있는 기호이며, (num10 % mask) == 0이 맞다면 왼쪽의 printf("0")을, 아니라면 printf("1")을 출력하면 된다.     
-
 ```C
-// 10진수를 2진수로 출력하기(비트연산자)
-#include <stdio.h>
-
-int main(void)
+switch(number) 
 {
-	unsigned int num10;		// 10진수를 입력받을 변수 num10을 생성한다. 음수가 아닌 값만 저장하기 때문에 unsigned를 붙인다.
-	printf("10 진수 : ");	// 10진수를 입력받는다.
-	scanf_s("%u", &num10);	// 입력받은 10진수의 값을 2진수로 저장한 값을 num10 변수에 저장한다.
+	case x: 					// 변수는 사용할 수 없다.
+		printf("없음\n"); 
+		break ;
+	case (x+2):					// 변수가 들어간 수식은 사용할 수 없다.		 
+		printf("하나\n"); 
+		break ;
+	case 0.001:					// 실수는 사용할 수 없다. 
+		printf("둘\n"); 
+		break ;
+	case "001":					// 문자열은 사용할 수 없다. 
+		printf("많음\n"); 
+		break; 
+} 
+```
 
-	unsigned int mask = 1 << 7;	// 왼쪽으로 7비트 이동한다. mask = 10000000
-
-	printf("2 진수 : ");		// 2진수를 입력한다.
-
-	((num10 & mask) == 0) ? printf("0") : printf("1");	// num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-
-	printf("\n");			// 줄 끝내기
-
-	return 0;
-}
-```      
-
-#### 13. 정수 연산 시의 자동적인 형변환
-
-	- 정수 연산 시 char 형이나 short 형의 경우, 자동적으로 int 형으로 변환하여 계산한다.   
-	
-![TypeChange](https://github.com/BangYunseo/TIL/blob/main/C/Image/TypeChange.PNG)
-	
-	
-	
-	
-	
-	
