@@ -7,82 +7,51 @@
       
 #### 2. 제어구조
 
-![selection](https://github.com/BangYunseo/TIL/blob/main/C/%2B%2Bxandx%2B%2B.PNG)
+![selection](https://github.com/BangYunseo/TIL/blob/main/C/Image/selection.PNG))
 
-#### 3. 피연산자 수에 따른 연산자 분류
+#### 3. if 문
 
-      * 단항 연산자 : 피연산자의 수가 1개
-            ++x;
-            --y;   
-            
-      * 이항 연산자 : 피연산자의 수가 2개
-            x + y;
-            x - y;   
-            
-      * 삼항 연산자 : 연산자의 수가 3개
-            x ? y : z;   
-            
-      (참고) 거듭 제곱 연산자는?
-            - C언어에는 거듭 제곱을 나타내는 연산자가 없다.
-              x * x와 같이 단순히 변수를 두 번 곱한다.
-     
+![IF](https://github.com/BangYunseo/TIL/blob/main/C/Image/selection.PNG))    
 
-#### 4. 나머지 연산자
-
-      - 나머지 연산자(modulus operator)는 첫 번째 피연산자를 두 번째 피연산자로 나누었을 경우의 나머지를 계산한다.
-            1. 10 % 2는 0이다.
-            2. 5 % 7은 2이다.
-            3. 30 % 9는 3이다.   
-            
-      - 나머지 연산자를 이용한 짝수와 홀수 구분
-            > x % 2가 0이면 짝수
-      - 나머지 연산자를 이용한 5의 배수 판단
-            > x % 5가 0이면 5의 배수
+#### 3-1. if 문 예제
 
 ```C
-// 나머지 연산자 프로그램
-#include <stdio.h>
-#define SEC_PER_MINUTE 60     // 1분은 60초
-
-int main(void)
-{
-      int input, minute, second;    
-      // 입력받을 초를 저장할 변수를 input, 분을 저장할 변수 minute, 초를 저장할 변수 second를 생성한다.
-      
-      printf("초를 입력하시오 : ");  // 초를 입력받는다.
-      scanf("%d", &input);          // 입력받은 초를 변수 input에 저장한다.
-      
-      minute = input / SEC_PER_MINUTE;    // 몇 분은 입력받은 초에서 60으로 나눈 몫이다.
-      second = input % SEC_PER_MINUTE;    // 몇 초는 입력받은 초에서 60으로 나눈 나머지이다.
-      
-      printf("%d초는 %d분 %d초 입니다.\n", input, minute, second);
-      return 0;
-}
-
+// 양수 판단 예제
+if (number > 0)					// 변수 number이 0보다 크다면
+	printf("양수입니다.\n");		    // "양수입니다." 를 출력한다.
 ```
 
-#### 5. 부호 연산자
+```C
+// 온도 체크 예제
+if (temperature < 0)				// 변수 temperature이 0보다 낮다면
+	printf("현재 온도는 영하입니다.\n");	// "현재 온도는 영하입니다." 를 출력한다.
 
-      - 변수나 상수의 부호를 변경
+// if 문이 끝나면 if 문 다음 명령어를 실행한다.
+
+printf("현재 온도는 %lf도 입니다.\n", temperature); // 항상 실행하며 현재 온도는 실수형 숫자로 표기한다.
+```
+
+#### 3-2. 오류 주의
+
+![error_if](https://github.com/BangYunseo/TIL/blob/main/C/Image/selection.PNG))    
+
+#### 4. 복합문 (compound statement)
+
+      1. 중괄호를 사용하여 문장들을 그룹핑하는 것
+      2. 블록(block)이라고도 한다.
+      3. 단일문 대신 들어갈 수 있다.
 
 ```C
-#include <stdio.h>
-
-int main(void)
+if (score >= 60)
 {
-      int x, y;         // 변수 x와 y를 생성한다.
-      
-      x = -10;          // x에 -10을 저장한다.
-      y = -x;           // y에 -x를 저장한다. -(-10) = 10
-      
-      printf("y의 값을 출력한다 : %d", y);       // y에는 10의 값이 저장되어 있으므로 10이 출력된다.
-      
-      return 0;
+      printf("합격입니다.\n");
+      printf("장학금도 받을 수 있습니다.\n");
+      // 조건식이 참이라면, if 문 안의 명령어는 모두 실행된다.
 }
 
 ``` 
   
-#### 6. 증감 연산자
+#### 5. 증감 연산자
 
       - 증감 연산자 : ++, --
       - 변수 하나의 값을 증가시키거나 감소시키는 연산자   
