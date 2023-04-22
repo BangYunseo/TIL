@@ -14,51 +14,57 @@
 ![while](https://github.com/BangYunseo/TIL/blob/main/C/Image/while.PNG)   
 ![while1](https://github.com/BangYunseo/TIL/blob/main/C/Image/while1.PNG) 
 
-#### 3-1. if 문 예제
+#### 3-1. while 문의 실행 과정
+
+![whilee](https://github.com/BangYunseo/TIL/blob/main/C/Image/whilee.PNG)   
+	- 만일 i를 증가시키는 증가식이 없었다면, 무한 루프(infinite loop) 문제가 발생한다.
+	- 반복문을 사용할 때는 반드시 반복이 종료되는지 확인해야 한다.
+
+#### 4. if 문과 while 문의 비교
+
+![if-while](https://github.com/BangYunseo/TIL/blob/main/C/Image/if-while.PNG)   
+
+#### 5. while 문에서 주의할 점
+
+![important_while](https://github.com/BangYunseo/TIL/blob/main/C/Image/important_while.PNG)   
+![important_while2](https://github.com/BangYunseo/TIL/blob/main/C/Image/important_while2.PNG)  
+
+#### 6. 참과 거짓
 
 ```C
-// 양수 판단 예제
-if (number > 0)					// 변수 number이 0보다 크다면
-	printf("양수입니다.\n");		    // "양수입니다." 를 출력한다.
-```
-
-```C
-// 온도 체크 예제
-if (temperature < 0)				// 변수 temperature이 0보다 낮다면
-	printf("현재 온도는 영하입니다.\n");	// "현재 온도는 영하입니다." 를 출력한다.
-
-// if 문이 끝나면 if 문 다음 명령어를 실행한다.
-
-printf("현재 온도는 %lf도 입니다.\n", temperature); // 항상 실행하며 현재 온도는 실수형 숫자로 표기한다.
-```
-
-#### 3-2. 오류 주의
-
-![error_if](https://github.com/BangYunseo/TIL/blob/main/C/Image/error_if.PNG)   
-
-#### 3-3. 실수 비교
-
-![compare_int](https://github.com/BangYunseo/TIL/blob/main/C/Image/compare_int.PNG)   
-
-#### 4. 복합문 (compound statement)
-
-      1. 중괄호를 사용하여 문장들을 그룹핑하는 것
-      2. 블록(block)이라고도 한다.
-      3. 단일문 대신 들어갈 수 있다.
-
-```C
-if (score >= 60)
+int i = 3;
+while (i)					// while (i != 0)과 같음
 {
-      printf("합격입니다.\n");
-      printf("장학금도 받을 수 있습니다.\n");
-      // 조건식이 참이라면, if 문 안의 명령어는 모두 실행된다.
+	printf("%d는 참입니다.\n", i);
+	i--;
 }
+printf("%d는 거짓입니다.\n", i);
 
+/*
+출력 형태
+3은 참입니다.
+2는 참입니다.
+1은 참입니다.
+0은 거짓입니다.
+*/
 ``` 
-  
-#### 5. if-else 문
 
-![if-else](https://github.com/BangYunseo/TIL/blob/main/C/Image/ifelse.PNG)
+#### 7. 센티널 (보초값)
+
+	- 반복루프를 사용하여 사용자가 입력하는 정수의 합을 계산한다고 가정하자.
+		1. 만일 입력될 데이터의 갯수가 미리 정해져 있지 않다면?
+		2. 만약 데이터가 너무 많아서 갯수를 알기 어렵다면?
+	
+	- 데이터의 끝에 끝을 알려주는 특수한 데이터를 놓을 수 있다.
+	- 프로그램에서는 이 특수한 데이터가 나타나면 데이터의 입력을 중단하라고 한다.
+		1. 일반적인 데이터 값에서 절대 등장할 수 없는 값으로 선택
+		2. 예시) 성적을 입력받아 성적의 평균을 내는 경우, 음수나 100보다 큰 값을 그 특수 데이터로 선택
+	
+	- 센티널 : 입력되는 데이터의 끝을 알리는 특수한 값
+		1. 일반적인 데이터 값에서는 절대 등장할 수 없는 값으로 정해 줄 수 있음
+		2. 예시) 성적을 입력받아 성적의 평균을 구하는 경우, 음수나 100보다 큰 값이 센티널이 될 수 있음
+		
+![sentinel](https://github.com/BangYunseo/TIL/blob/main/C/Image/sentinel.PNG)
 
 #### 5-1. if-else 문 예제
 
