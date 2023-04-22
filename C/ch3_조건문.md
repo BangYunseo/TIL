@@ -37,7 +37,7 @@ printf("현재 온도는 %lf도 입니다.\n", temperature); // 항상 실행하
 
 #### 3-3. 실수 비교
 
-![compare_int](https://github.com/BangYunseo/TIL/blob/main/C/Image/error_if.PNG)   
+![compare_int](https://github.com/BangYunseo/TIL/blob/main/C/Image/compare_int.PNG)   
 
 #### 4. 복합문 (compound statement)
 
@@ -55,119 +55,91 @@ if (score >= 60)
 
 ``` 
   
-#### 5. 증감 연산자
+#### 5. if-else 문
 
-      - 증감 연산자 : ++, --
-      - 변수 하나의 값을 증가시키거나 감소시키는 연산자   
+![if-else](https://github.com/BangYunseo/TIL/blob/main/C/Image/ifelse.PNG)
 
-- (참고) ++x와 x++의 차이
-![++xandxx++](https://github.com/BangYunseo/TIL/blob/main/C/%2B%2Bxandx%2B%2B.PNG)
-
-      
-#### 6-1. 증감 연산자 정리
-
-|증감 연산자|의미|
-|:---:|:---|
-|++x|수식의 값은 증가된 x 값이다.|
-|x++|수식의 값은 증가되지 않은 원래의 x 값이다.|
-|--x|수식의 값은 감소된 x 값이다.|
-|x--|수식의 값은 감소되지 않은 원래의 x 값이다.|
-
-
-
-#### 7. 복합 대입 연산자
-
-      - 복합대입 연산자란 += 처럼 대입 연산자 =와 산술 연산자를 합쳐 놓은 연산자
-      - 소스를 간결하게 만들 수 있음   
-            ex) x += y 는 x = x + y와 같은 의미이다.
-            
-|복합 대입 연산자|의미|
-|:---:|:---:|
-|x += y|x = x + y|
-|x -= y|x = x - y|
-|x *= y|x = x * y|
-|x /= y|x = x / y|
-|x %= y|x = x % y|
-|x &= y|x = x & y|
-|x l= y|x = x l y|
-|x ^= y|x = x ^ y|
-|x >>= y|x = x >> y|
-|x <<= y|x = x << y|
-
-오류 주의
-      - 다음과 같은 수식은 오류이다
-            ++x = 10;   // 등호의 왼쪽은 항상 변수여야 한다.
-            x + 1 = 20; // 등호의 왼쪽은 변수만 존재해야 한다.
-            x =* y;     // =*이 아니라 *=를 사용해야 한다.
-            
-#### 8. 관계 연산자
-
-      - 두 개의 피연산자를 비교하는 연산자
-      - 결과값은 참(1) 아니면 거짓(0)
-
-
-|연산자|의미|
-|:---:|:---:|
-|x == y|x와 y가 같은가?|
-|x != y|x와 y가 다른가?|
-|x > y|x가 y보다 큰가?|
-|x < y|x가 y보다 작은가?|
-|x >= y|x가 y보다 크거나 같은가?|
-|x <= y|x가 y보다 작거나 같은가?|
+#### 5-1. if-else 문 예제
 
 ```C
-#include <stdio.h>
-
-int main(void)
+// 예제 1
+if (score >= 60)				// score >= 60 이면 실행
+      	printf("합격입니다.\n");
+else						// score < 60 이면 실행
+	printf("불합격입니다.\n");
+	
+// 위 조건문은 조건연산자 "(score >= 60)? printf("합격입니다.\n"): printf("불합격입니다\n.");" 로 나타낼 수 있다
+// score >= 60일 때, 참이면 첫 명령어를, 거짓이면 다음 명령어를 실행한다.
+``` 
+```C
+// 예제 2 
+if (score >= 60)				// score >= 60 이면 실행
 {
-      int x, y;   // 변수 x와 y를 생성한다.
-      
-      1 == 1;           // 참(1)
-      1 != 2;           // 참(1)
-      2 > 1;            // 참(1)
-      x >= y;           // x가 y보다 크거나 같으면 참(1) 그렇지 않으면 거짓(0)
-      
-      return 0;
+      	printf("합격입니다.\n");
+	printf("장학금을 받을 수 있습니다.\n");
 }
-
+else						// score < 60 이면 실행
+{
+	printf("불합격입니다.\n");
+	printf("다시 도전하세요.\n");
+}
 ```
 
-(주의할 점)     
+#### 6. 조건연산자
 
-      1. (x = y)   
-            - y의 값을 x에 대입한다. 이 수식의 값은 x의 값이다.   
+      - 간단한 if - else 문은 조건연산자를 사용하여 표현할 수도 있다.
+```C
+(score >= 60)? printf("합격입니다.\n"): printf("불합격입니다\n.");
+```
+ ```C
+bonus = ((years > 30) ? 500 : 300);
+```
             
-      2. (x == y)    
-            - x와 y가 같으면 1, 다르면 0이 수식의 값이 된다.     
-            - (x == y)를 (x = y)로 잘못 쓰지 않도록 주의하자.      
-      3.  수학에서처럼 2 < x < 5와 같이 작성하면 잘못된 결과가 나온다.   
-            ex) 올바른 방법 : (2 < x) && (x < 5)   
-       
-#### 8-1. 실수를 비교하는 경우
+#### 7. 복잡한 조건식
 
-      - (1e32 + 0.01) > 1e32     
-            -> 양쪽의 값이 같은 것으로 간주되어서 거짓     
-      - (fabs(x-y)) < 0.0001     
-            -> 올바른 수식      
+```C
+// 학점 결정 코드
+if (score >= 80 && score < 90)
+	grade = 'B';
+```
+```C
+// 공백 문자들의 개수를 세는 코드
+if (ch == '' || ch == '\n' || ch == '\t')
+	White_space++;
+```
+  
+#### 8. 중첩 if
 
+     - if 문에 다시 if 문이 포함되는 것을 말한다.    
+![if-if](https://github.com/BangYunseo/TIL/blob/main/C/Image/ifif.PNG)
 
-#### 9. 논리 연산자
+#### 8-1. 중첩 if 문 예제
 
-      - 여러 개의 조건을 조합하여 참과 거짓을 따지는 연산자
-      - 결과값은 참(1) 아니면 거짓(0)
+```C
+// if 문 안의 문장 자리에 if문이 들어간 경우
+if (score >= 80)
+	if (score >= 90)
+		printf("당신의 학점은 A입니다.\n");
+```
+```C
+// if 문 안의 문장 자리에 if-else문이 들어간 경우
+if (score >= 80)
+	if (score >= 90)
+		printf("당신의 학점은 A입니다.\n");
+	else
+		printf("당신의 학점은 B입니다.\n");
+```
+
+#### 9. 연속적인 if
+
+![if-if-if](https://github.com/BangYunseo/TIL/blob/main/C/Image/ififif.PNG)
+ 
+#### 10. switch 문 
+
+      - 제어식의 값에 따라서 여러 경로 중에서 하나를 선택할 수 있는 제어 구조 
       
-|연산자|의미|
-|:---:|:---|
-|x && y|AND 연산, x와 y가 모두 참이면 참, 그렇지 않으면 거짓|
-|x ll y|OR 연산, x나 y 중에서 하나만 참이면 참, 모두 거짓이면 거짓|
-|!x|NOT 연산, x가 참이면 거짓, x가 거짓이면 참|
+![switch](https://github.com/BangYunseo/TIL/blob/main/C/Image/switch.PNG)
 
-#### 9-1. AND 연산자   
-
-      - 어떤 회사에서 신입 사원을 채용하는데 나이가 30살 이하이고 토익 성적이 700점 이상이라는 조건을 걸었다고 가정하자.     
-      
-![AND](https://github.com/BangYunseo/TIL/blob/main/C/Image/and.PNG)
-      
 #### 9-2. OR 연산자   
       
       - 신입 사원을 채용하는 조건이 변경되어서 나이가 30살 이하이거나 토익 성적이 700점 이상이면 된다고 하자.      
