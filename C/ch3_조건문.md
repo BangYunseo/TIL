@@ -35,6 +35,10 @@ printf("현재 온도는 %lf도 입니다.\n", temperature); // 항상 실행하
 
 ![error_if](https://github.com/BangYunseo/TIL/blob/main/C/Image/error_if.PNG)   
 
+#### 3-3. 실수 비교
+
+![compare_int](https://github.com/BangYunseo/TIL/blob/main/C/Image/error_if.PNG)   
+
 #### 4. 복합문 (compound statement)
 
       1. 중괄호를 사용하여 문장들을 그룹핑하는 것
