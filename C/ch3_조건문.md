@@ -7,11 +7,11 @@
       
 #### 2. 제어구조
 
-![selection](https://github.com/BangYunseo/TIL/blob/main/C/Image/selection.PNG))
+![selection](https://github.com/BangYunseo/TIL/blob/main/C/Image/selection.PNG)
 
 #### 3. if 문
 
-![IF](https://github.com/BangYunseo/TIL/blob/main/C/Image/selection.PNG))    
+![IF](https://github.com/BangYunseo/TIL/blob/main/C/Image/IF.PNG)   
 
 #### 3-1. if 문 예제
 
@@ -33,7 +33,7 @@ printf("현재 온도는 %lf도 입니다.\n", temperature); // 항상 실행하
 
 #### 3-2. 오류 주의
 
-![error_if](https://github.com/BangYunseo/TIL/blob/main/C/Image/selection.PNG))    
+![error_if](https://github.com/BangYunseo/TIL/blob/main/C/Image/error_if.PNG)   
 
 #### 4. 복합문 (compound statement)
 
