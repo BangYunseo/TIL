@@ -1,17 +1,18 @@
 ##  Chapter 4. 반복문       
 
-#### 1. 조건문
-      
-      1. 프로그램의 선택 구조
-      2. 제어문에 속하며, 제어문은 조건문과 반복문을 가지고 있다.
-      
-#### 2. 제어구조
+#### 1. 반복 구조
 
-![selection](https://github.com/BangYunseo/TIL/blob/main/C/Image/selection.PNG)
+	- 어떤 조건이 만족될 때까지 루프를 도는 구조
 
-#### 3. if 문
+#### 2. 반복문의 종류
 
-![IF](https://github.com/BangYunseo/TIL/blob/main/C/Image/IF.PNG)   
+	- 반복문은 크게 while 루프와 for 루프로 나누어진다.
+
+#### 3. while 문
+
+	- 주어진 조건이 만족되는 동안 문장들을 반복 실행한다.
+![while](https://github.com/BangYunseo/TIL/blob/main/C/Image/while.PNG)   
+![while1](https://github.com/BangYunseo/TIL/blob/main/C/Image/while1.PNG) 
 
 #### 3-1. if 문 예제
 
