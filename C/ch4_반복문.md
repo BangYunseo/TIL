@@ -111,91 +111,175 @@ int main(void)
 
 #### 8. do - while 문
      
+![do-while](https://github.com/BangYunseo/TIL/blob/main/C/Image/do-while.PNG)
      
-     
-#### 7. 복잡한 조건식
+#### 8-1. do - while 문 예제
 
 ```C
-// 학점 결정 코드
-if (score >= 80 && score < 90)
-	grade = 'B';
-```
-```C
-// 공백 문자들의 개수를 세는 코드
-if (ch == '' || ch == '\n' || ch == '\t')
-	White_space++;
+// 숫자 추측 예제
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	srand((unsigned)time(NULL));				// 난수 발생기 시드 설정
+	int answer = rand() % 100;				// 정답을 1~100까지의 난수로 설정한다.
+	int guess;						// 추측할 숫자를 저장할 변수를 생성한다.
+	int tryy = 0;						// 시도 횟수를 저장할 변수를 생성한다.
+
+	do {
+		printf("정답을 추측하시오 : ");			// 추측할 숫자를 입력받는다.
+		scanf_s("%d", &guess);				// 입력받은 숫자를 변수 guess에 저장한다.
+		tryy++;
+		// 시도횟수가 1회 늘어날 때마다 0으로 초기화시킨 시도횟수 변수를 1씩 증가시킨다.
+		if (guess < answer)		// 추측한 숫자가 정답보다 작다면 LOW를 출력한다.
+			printf("LOW\n");
+		if (guess > answer)		// 추측한 숫자가 정답보다 크다면 HIGH를 출력한다.
+			printf("HIGH\n");
+	} while (guess != answer);		// 추측한 숫자가 정답과 일치하면 반복을 그만둔다.
+	printf(" 축하합니다. 시도횟수 = %d", tryy);
+	// 정답이 일치하면 시도횟수를 출력한다.
+
+	return 0;
+}
 ```
   
-#### 8. 중첩 if
+#### 9. 난수(rand)
 
-     - if 문에 다시 if 문이 포함되는 것을 말한다.    
-![if-if](https://github.com/BangYunseo/TIL/blob/main/C/Image/ifif.PNG)
-
-#### 8-1. 중첩 if 문 예제
-
-```C
-// if 문 안의 문장 자리에 if문이 들어간 경우
-if (score >= 80)
-	if (score >= 90)
-		printf("당신의 학점은 A입니다.\n");
-```
-```C
-// if 문 안의 문장 자리에 if-else문이 들어간 경우
-if (score >= 80)
-	if (score >= 90)
-		printf("당신의 학점은 A입니다.\n");
-	else
-		printf("당신의 학점은 B입니다.\n");
-```
-
-#### 9. 연속적인 if
-
-![if-if-if](https://github.com/BangYunseo/TIL/blob/main/C/Image/ififif.PNG)
- 
-#### 10. switch 문 
-
-      - 제어식의 값에 따라서 여러 경로 중에서 하나를 선택할 수 있는 제어 구조 
-      
-![switch](https://github.com/BangYunseo/TIL/blob/main/C/Image/switch.PNG)
-
-#### 10-1. switch 문 예제 
-
- ```C
-int main(void) 
-{ 
-	int number; 
-	printf("정수를 입력하시오:"); 
-	scanf("%d", &number); 
+	- 예측할 수 없는 하나의 난수를 생성한다.
+	  난수의 범위는 0 ~ RAND_MAX 까지이며, RAND_MAX는 0x7fff이므로, 난수의 범위는 0 ~ 32767 이다.
+	 
+1. 기본 사용법
 	
-	switch(number) 
-	{
-		case 0: 
-			printf("없음\n"); 
-			break ;
-		case 1: 
-			printf("하나\n"); 
-			break ;
-		case 2: 
-			printf("둘\n"); 
-			break ;
-		default: 
-			printf("많음\n"); 
-			break;
-	} 
-} 
+	- i = rand()%n
+	 1. 여기서 n은 횟수를 의미한다.
+	 2. 0 ~ n - 1 범위의 난수를 i에 대입한다.
+	 3. 예를 들어, n = 6이라고 하면 0, 1, 2, 3, 4, 5 중 하나가 i에 대입되는 셈이다.
+
+2. 기본 응용법
+	
+	- i = rand()%n + m
+	 1. 여기서 m은 시작값을 의미한다.
+	 2. 1번 기본 사용법을 응용한 것으로, 0 + m ~ (n - 1) + m 범위의 난수를 i에 대입한다.
+	 3. 예를 들어, n = 6, m = 4 라고 하면 4, 5, 6, 7, 8, 9 중 하나가 i에 대입되는 셈이다.
+	 4. 다른 예로, n = 5, m = -2 라고 하면 -2, -1, 0, 1, 2 중 하나가 i에 대입되는 셈이다.
+
+2-1. 기본 응용법(2)
+	
+	- i = rand()%n * m
+	 1. 0 ~ (n - 1) 범위의 수들에 m을 곱한 수를 i에 대입한다.
+	 2. 예를 들어, n = 4, m = 2 라고 하면 0, 2, 4, 6 중 하나가 i에 대입되는 셈이다.
+	 3. m의 값을 2로 주면 2의 배수, 3을 주면 3의 배수가 대입된다.
+	 
+2-2. 기본 응용법(3)
+	
+	- i = (rand()%n + m) * k
+	 1. 0 + m ~ (n + m) - 1 범위의 수들에 k을 곱한 수를 i에 대입한다.
+	 2. 예를 들어, n = 3, m = 2, k = 4 라고 하면 8, 12, 16 중 하나가 i에 대입되는 셈이다.
+	 3. 어떤 수의 배수를 사용할 때 용이하다.
+	 
+2-3. 기본 응용법(4)
+	
+	- i = rand()%n * m + k
+	 1. 0 ~ n - 1 범위의 수들에 m을 곱하고 k를 더한 수를 i에 대입한다.
+	 2. 예를 들어, n = 3, m = 2, k = 5 라고 하면 5, 7, 9 중 하나가 i에 대입되는 셈이다.
+	 3. 다른 예로, n의 값을 0 이상으로 주고, m = 2, k = 0 으로 주면 짝수가 생성된다.
+	 4. 3번의 예시와 비슷한 경우로, n의 값을 0 이상으로 주고 m = 2, k = 1으로 주면 홀수가 생성된다.
+     
+#### 10. for 루프문
+
+	- 정해진 횟수만큼 반복하는 구조
+![for](https://github.com/BangYunseo/TIL/blob/main/C/Image/for.PNG)
+![for2](https://github.com/BangYunseo/TIL/blob/main/C/Image/for2.PNG)
+
+#### 11. 초기식, 조건식, 증감식
+
+	- 초기식
+		1. 초기식은 반복 루프를 시작하기 전에 한 번만 실행된다.
+		2. 주로 변수 값을 초기화하는 용도로 사용된다.
+		
+	- 조건식
+		1. 반복의 조건을 검사하는 수식이다.
+		2. 이 수식의 값이 거짓이 되면 반복이 중단된다.
+		
+	- 증감식
+		1. 한 번의 루프 실행이 끝나면 증감식이 실행된다.
+		
+![structure_for](https://github.com/BangYunseo/TIL/blob/main/C/Image/structure_for.PNG)
+
+#### 12. printf의 또 다른 형식 
+
+      - %f가 아니라 %.2f
+      	1. .2가 의미하는 것은 무조건 소수점 이하 둘째 자리까지만 표시하라는 의미
+      	2. 따라서, 왼쪽의 경우 3.141592 중 3.14 까지만 출력되고 나머지는 짤림
+      	3. %.100f 로 할 경우에도,3.141592········· 을 표시해서 무조건 100개를 출력
+      
+      - %d가 아닌 %5d
+      	1. 여기서 .5가 아님을 주의
+      	2. 숫자의 자리 수를 되도록 5 자리를 맞추어야 하므로 앞에 공백을 남기고 그 뒤에 123을 표시
+      	3. 123456을 표시할 때, %5d 조건을 준다면 이 때는 123456을 다 표시
+      	4. 앞선 .?f는 ?의 수만큼 소수점 자리수를 맞추지만, 이 경우는 반드시 지켜야되는 것은 아니다.
+      
+      - 위에서 썼던 두 가지 형식을 모두 한꺼번에 적용
+      	1. 전체 자리 수는 6자리로 맞추고 반드시 소수점 이하 셋째 자리까지만 표시
+      
+![another_printf](https://github.com/BangYunseo/TIL/blob/main/C/Image/another_printf.PNG)
+![another_printf2](https://github.com/BangYunseo/TIL/blob/main/C/Image/another_printf2.PNG)
+
+#### 13. while 루프와 for 루프와의 관계 
+
+ ![while-for](https://github.com/BangYunseo/TIL/blob/main/C/Image/while-for.PNG)
+
+#### 14. 반복문 선택 방법
+
+![howtoselet_loop](https://github.com/BangYunseo/TIL/blob/main/C/Image/howtoselet_loop.PNG)
+ 
+#### 15. 다양한 증감수식의 형태  
+
+```C
+// 뺄셈 사용
+for (int i = 10; i > 0; i--)
+	printf("Hello World!"\n);
+```
+```C
+// 2씩 증가
+for (int i = 0; i < 10; i += 2)
+	printf("Hello World!"\n);
+```
+```C
+// 2씩 곱셈
+for (int i = 1; i < 10; i *= 2)
+	printf("Hello World!"\n);
+```
+```C
+// anything
+for (int i = 0; i < 100; i = (i * i) + 2)
+	printf("Hello World!"\n);
+```
+```C
+// 무한 반복 루프
+for ( ;; )
+	printf("Hello World!"\n);
+```
+```C
+// 한 부분이 없을 수도 있다
+for ( ;i < 100; i++)
+	printf("Hello World!"\n);
+```
+```C
+// anything2
+for (printf("반복시작"), i = 0;i < 100; i++)
+	printf("Hello World!"\n);
+```
+```C
+// 복잡한 수식도 조건식이 될 수 있다.
+for (i = 0;i < 100 && sum < 2000; i++)
+	printf("Hello World!"\n);
 ```
 
-#### 10-2. break가 생략되는 경우   
+#### 16. 중첩 반복문
 
-![delbreak1](https://github.com/BangYunseo/TIL/blob/main/C/Image/delbreak1.PNG)
- 
-#### 10-3. break가 의도적으로 생략되는 경우      
-
-![delbreak2](https://github.com/BangYunseo/TIL/blob/main/C/Image/delbreak2.PNG)
-
-#### 10-4. default 문
-
-![default](https://github.com/BangYunseo/TIL/blob/main/C/Image/default.PNG)
+![nested_loop](https://github.com/BangYunseo/TIL/blob/main/C/Image/nested_loop.PNG)
 
 #### 11. switch 문과 if-else 문     
             
