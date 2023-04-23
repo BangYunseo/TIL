@@ -281,34 +281,112 @@ for (i = 0;i < 100 && sum < 2000; i++)
 
 ![nested_loop](https://github.com/BangYunseo/TIL/blob/main/C/Image/nested_loop.PNG)
 
-#### 11. switch 문과 if-else 문     
-            
-![switch_if-else](https://github.com/BangYunseo/TIL/blob/main/C/Image/switch_if-else.PNG)  
+#### 16-1. 중첩 반복문 예제     
+         
+ ```C
+// 중첩 for 문을 이용하여 * 기호를 사각형 모양으로 출력
+#include <stdio.h>
 
-
-#### 12. switch 문에서 주의할 점   
-
-	- 제어식의 값은 반드시 정수형으로 계산한다.
-	- 수식의 값이 정수형으로 나오지 않는다면 switch 문을 사용할 수 없다.
-	- case 절에 실수, 변수, 수식, 문자열을 사용하면 컴파일 오류
-	- 다만 문자는 아스키코드로 표현되고, 아스키코드는 정수이므로 사용 가능하다.
-	- 단, 문자열은 사용할 수 없다.
-	
-```C
-switch(number) 
+int main(void)
 {
-	case x: 					// 변수는 사용할 수 없다.
-		printf("없음\n"); 
-		break ;
-	case (x+2):					// 변수가 들어간 수식은 사용할 수 없다.		 
-		printf("하나\n"); 
-		break ;
-	case 0.001:					// 실수는 사용할 수 없다. 
-		printf("둘\n"); 
-		break ;
-	case "001":					// 문자열은 사용할 수 없다. 
-		printf("많음\n"); 
-		break; 
-} 
+	int x, y;
+	
+	fot (y = 0; y < 5; y++)
+	{
+		for (x = 0; x < 10; x++)
+			printf("*");
+	}
+	
+	return 0;
+}
+```
+```C
+// 직각삼각형 모양으로 * 출력하기
+int main(void)
+{
+	int x, y;
+	
+	fot (y = 1; y <= 5; y++)
+	{
+		for (x = 0; x < y; x++)
+			printf("*");
+		printf("\n");
+	}
+	return 0;
+}
+```
+	 
+#### 17. 무한 루프   
+
+	- 조건 제어 루프에서 가끔은 프로그램이 무한히 반복하는 일이 발생한다.
+	- 이것은 무한 루프(Infinite loop)로 알려져 있다.
+	- 무한 반복이 발생하면 프로그램은 빠져나올 수 없기 때문에 문제가 된다.
+	- 다만 가끔은 의도적으로 무한 루프를 사용하는 경우도 있다.
+		ex)신호등 제어 프로그램
+	
+![infinite_loop](https://github.com/BangYunseo/TIL/blob/main/C/Image/infinite_loop.PNG)
+
+#### 17-1. 무한 루프가 유용한 경우
+
+	- 반복을 빠져나가는 조건이 까다로운 경우에 많이 사용된다.
+	ex) 사용자가 입력한 수가 3의 배수이거나 음수인 경우에 while 루프를 빠져나가야 한다고 하자.
+
+![infinite_loop2](https://github.com/BangYunseo/TIL/blob/main/C/Image/infinite_loop2.PNG)
+
+#### 18. break 문
+
+	- 반복 루프를 빠져 나오는 데 사용한다.
+```C
+// 재테크를 시작한 사람이 1년에 30%의 수익을 얻는다면 몇 년 만에 원금의 10배가 되는지 알아보는 예제
+#include <stdio.h>
+#define SEED_MONEY 1000000
+
+int main(void)
+{
+	int year = 0, money = SEED_MONEY;
+	while(1)
+	{
+		year++;
+		money += money*0.3;
+		if (money > 10 * SEED_MONEY)
+			break;				// break문 사용
+	}
+	printf("%d", year);
+	return 0;
+}
 ```
 
+#### 19. goto 문
+	
+	- 중첩 루프 안에서 어떤 문제가 발생했을 경우, goto를 이용하면 단번에 외부로 빠져나올 수 있다.
+	- break를 사용하면 하나의 루프만을 벗어날 수 있다.
+	
+![goto](https://github.com/BangYunseo/TIL/blob/main/C/Image/goto.PNG)
+
+#### 19-1. goto 문 예제
+
+![goto2](https://github.com/BangYunseo/TIL/blob/main/C/Image/goto2.PNG)
+
+#### 20. continue 문
+
+	- 0부터 10까지의 정수 중에서 3의 배수만 제외하고 출력하는 예제를 살펴보자
+
+![continue](https://github.com/BangYunseo/TIL/blob/main/C/Image/continue.PNG)
+
+#### 20-1. continue 문 예제
+
+```C
+#include <stdio.h>
+
+int main(void)
+{
+	int i;
+	for (i = 0; i < 10; i++)
+	{
+		if (i % 3 == 0)
+			continue;
+		printf("%d", i);
+	}
+	return 0;
+}
+```
