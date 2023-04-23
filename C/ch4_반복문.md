@@ -66,42 +66,53 @@ printf("%d는 거짓입니다.\n", i);
 		
 ![sentinel](https://github.com/BangYunseo/TIL/blob/main/C/Image/sentinel.PNG)
 
-#### 5-1. if-else 문 예제
+#### 7-1. 센티널 예제
 
 ```C
-// 예제 1
-if (score >= 60)				// score >= 60 이면 실행
-      	printf("합격입니다.\n");
-else						// score < 60 이면 실행
-	printf("불합격입니다.\n");
+// while 문을 이용하여 성적의 평균 구하기
+#include <stdio.h>
+
+int main(void)
+{
+	int grade, n;				// 성적을 저장할 변수 grade와 입력된 성적의 숫자를 셀 변수 n을 생성
+	float sum, average;			// 성적의 합계를 저장할 변수 sum과 성적의 평균을 계산할 변수 average를 생성
 	
-// 위 조건문은 조건연산자 "(score >= 60)? printf("합격입니다.\n"): printf("불합격입니다\n.");" 로 나타낼 수 있다
-// score >= 60일 때, 참이면 첫 명령어를, 거짓이면 다음 명령어를 실행한다.
-``` 
-```C
-// 예제 2 
-if (score >= 60)				// score >= 60 이면 실행
-{
-      	printf("합격입니다.\n");
-	printf("장학금을 받을 수 있습니다.\n");
-}
-else						// score < 60 이면 실행
-{
-	printf("불합격입니다.\n");
-	printf("다시 도전하세요.\n");
+	// 필요한 변수들 초기화
+	n = 0;					// 입력된 성적의 숫자를 저장할 변수 n을 0으로 초기화
+	sum = 0;				// 합계를 저장할 변수 sum을 0으로 초기화
+	grade = 0;				// 입력받은 성적을 저장할 변수 grade를 0으로 초기화
+	
+	// 위의 변수들 중 n과 sum은 합을 통해 계산하기 때문에 0으로 초기화한다.
+	
+	printf("종료 시 음수 입력\n");		// 센티넬 값
+	
+	while (grade >= 0)			
+	// grade가 음수가 아니라면, 성적을 계속 입력받음. grade가 음수일 때, 그 값은 센티넬 값임
+	{
+		printf("성적을 입력하세요 : ");			// 성적을 입력받음
+		scanf("%d", &grade);			     	// 입력받은 성적을 변수 grade에 저장	
+		
+		sum = sum + grade;				// 합계를 저장할 변수 sum에 입력받은 grade와 sum을 더한다.
+		n++;						// 입력된 성적의 개수를 저장할 변수 n의 값을 1 더한다.
+	}
+	
+	sum = sum - grade;
+	n--;
+	/* grade의 최신 저장값은 마지막에 입력된 수다. 또한, n에 음수를 입력하면 그 횟수도 n에 저장된다. 
+	물론 n에 음수를 입력하면 while문의 반복이 끝나지만, 센티널 값도 합계와 개수에 포함되는 것이다.
+	 반복 루프가 끝나면 센티널 값을 합계와 개수에서 제거해야 한다.
+	 
+	 average = sum / n;
+	 printf("성적의 평균은 %f 입니다.\n", average);
+	 
+	 return 0;
 }
 ```
 
-#### 6. 조건연산자
-
-      - 간단한 if - else 문은 조건연산자를 사용하여 표현할 수도 있다.
-```C
-(score >= 60)? printf("합격입니다.\n"): printf("불합격입니다\n.");
-```
- ```C
-bonus = ((years > 30) ? 500 : 300);
-```
-            
+#### 8. do - while 문
+     
+     
+     
 #### 7. 복잡한 조건식
 
 ```C
