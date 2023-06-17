@@ -7,17 +7,21 @@
 
 #### 2. 함수가 필요한 이유
 
-	- 비슷한 코드를 여러 번 사용하지 않고, 간편하게 사용하기 위해서 필요하다.   
+	1. 코드의 중복을 피할 수 있기 때문이다.     
+ 	2. 한 번 작성된 함수를 여러 번 재사용할 수 있기 때문이다.     
+  	3. 함수를 사용하면 전체 프로그램을 모듈로 나눌 수 있어 개발 과정이 쉬워지고 보다 체계적이게 되면서 유지 보수가 쉬워지기 때문이다.     
 
 #### 3. 함수의 특징
 
-	- 1.
+	1. 함수는 특정한 작업을 수행하기 위한 명령어들의 모음이다.    
+ 	2. 함수는 서로 구별되는 이름을 가지고 있다.    
+  	3. 함수는 특정한 작업을 수행한다.     
+   	4. 함수는 입력을 받을 수 있고 결과를 반환할 수 있다.   
+![functionN1](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionN1.PNG)
 
-#### 3-1. while 문의 실행 과정
+#### 4. 함수의 종류
 
-![whilee](https://github.com/BangYunseo/TIL/blob/main/C/Image/whilee.PNG)   
-	- 만일 i를 증가시키는 증가식이 없었다면, 무한 루프(infinite loop) 문제가 발생한다.
-	- 반복문을 사용할 때는 반드시 반복이 종료되는지 확인해야 한다.
+![FunctionType](https://github.com/BangYunseo/TIL/blob/main/C/Image/FunctionType.PNG)   
 
 #### 4. if 문과 while 문의 비교
 
