@@ -21,11 +21,11 @@
 
 #### 4. 함수의 종류
 
-![FunctionType](https://github.com/BangYunseo/TIL/blob/main/C/Image/FuntionType.PNG))   
+![FunctionType](https://github.com/BangYunseo/TIL/blob/main/C/Image/FuntionType.PNG)   
 
 #### 5. 함수의 정의
 
-![defineFunction](https://github.com/BangYunseo/TIL/blob/main/C/Image/defineFunction.PNG))   
+![defineFunction](https://github.com/BangYunseo/TIL/blob/main/C/Image/defineFunction.PNG)   
 
 #### 5-1. +함수의 정의
 
@@ -34,29 +34,26 @@
 - 함수 이름   
 		1) 함수 이름은 식별자에 대한 규칙만 따른다면 어떤 이름이라도 가능하다.       
      		2) 함수의 기능을 암시하는 (동사+명사)를 사용하면 좋다.    
+
+![functionName](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionName.PNG)
+
 - 함수의 길이     
-  		1) C에서는 함수의 길이에 아무런 제한을 두지 않는다.     
-      		2) 이것은 하나의 함수 안에 많은 문장들을 넣을 수 있음을 의미한다.
+  		1) C에서는 함수의 길이에 아무런 제한을 두지 않는다.   
+      		2) 이것은 하나의 함수 안에 많은 문장들을 넣을 수 있음을 의미한다.   
+		3) 그러나 함수의 길이가 지나치게 길면 좋지 않다.   
+  		4) 기본적으로 하나의 함수는 하나의 작업만을 수행한다.   
+  		5) 만약 함수의 길이가 지나치게 길다면 하나 이상의 작업을 하고 있다고 봐야한다.   
+  		6) 함수를 분할하는 것은 좋은 방법이다.   
+  		7) 보편적으로 30행을 넘지 않도록 하는 것이 좋다.
+  
+#### 6. 함수 호출
 
-#### 6. 참과 거짓
-
-```C
-int i = 3;
-while (i)					// while (i != 0)과 같음
-{
-	printf("%d는 참입니다.\n", i);
-	i--;
-}
-printf("%d는 거짓입니다.\n", i);
-
-/*
-출력 형태
-3은 참입니다.
-2는 참입니다.
-1은 참입니다.
-0은 거짓입니다.
-*/
-``` 
+	- 함수 호출(function call)
+ 		1) 함수 호출이란 menu()와 같이 함수의 이름을 써주는 것이다.
+   		2) 함수 안의 문장들은 호출되기 전까지는 전혀 실행되지 않는다.
+     		3) 함수를 호출하게 되면 현재 실행하고 있는 코드는 잠시 중단된다.
+       		4) 호출된 함수로 이동해서 함수 몸체 안의 문장들이 순차적으로 실행된다.
+	 	5) 호출된 함수의 실행이 끝나면 호출한 위치로 되돌아가서 잠시 중단됐던 코드를 실행한다.
 
 #### 7. 센티널 (보초값)
 
