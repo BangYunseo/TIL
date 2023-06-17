@@ -63,10 +63,6 @@
 // print_start() 함수 2번 호출하기
 #include <stdio.h>
 void print_stars();	//함수의 원형 출력
-{
-	for (int i = 0; i < 30; i++)	// i가 30이 될 때까지 반복
-		printf("*");		// 별 찍기
-}
 
 int main(void)
 {
