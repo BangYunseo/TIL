@@ -21,7 +21,7 @@
 
 #### 4. 함수의 종류
 
-![FunctionType](https://github.com/BangYunseo/TIL/blob/main/C/Image/FunctionType.PNG)   
+![FunctionType](https://github.com/BangYunseo/TIL/blob/main/C/Image/FuntionType.PNG))   
 
 #### 4. if 문과 while 문의 비교
 
