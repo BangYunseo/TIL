@@ -1,18 +1,17 @@
 ##  Chapter 5. 함수       
 
-#### 1. 반복 구조
+#### 1. 함수(function)의 개념
 
-	- 어떤 조건이 만족될 때까지 루프를 도는 구조
+	- 입력을 받아 특정한 작업을 통해 결과를 반환하는 코드     
+![functionN](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionN.PNG)
 
-#### 2. 반복문의 종류
+#### 2. 함수가 필요한 이유
 
-	- 반복문은 크게 while 루프와 for 루프로 나누어진다.
+	- 비슷한 코드를 여러 번 사용하지 않고, 간편하게 사용하기 위해서 필요하다.   
 
-#### 3. while 문
+#### 3. 함수의 특징
 
-	- 주어진 조건이 만족되는 동안 문장들을 반복 실행한다.
-![while](https://github.com/BangYunseo/TIL/blob/main/C/Image/while.PNG)   
-![while1](https://github.com/BangYunseo/TIL/blob/main/C/Image/while1.PNG) 
+	- 1.
 
 #### 3-1. while 문의 실행 과정
 
