@@ -132,40 +132,36 @@ int max(int x, int y)
 }
 ```
 
-#### 11. 초기식, 조건식, 증감식
+#### 11. 정수를 입력 받는 get_integer() 함수 예제
 
-	- 초기식
-		1. 초기식은 반복 루프를 시작하기 전에 한 번만 실행된다.
-		2. 주로 변수 값을 초기화하는 용도로 사용된다.
+	- 함수 사용 예시		
+![getinteger](https://github.com/BangYunseo/TIL/blob/main/C/Image/getinteger.PNG)
 
-	- 조건식
-		1. 반복의 조건을 검사하는 수식이다.
-		2. 이 수식의 값이 거짓이 되면 반복이 중단된다.
+```C
+#include <stdio.h>
 
-	- 증감식
-		1. 한 번의 루프 실행이 끝나면 증감식이 실행된다.
-		
-![structure_for](https://github.com/BangYunseo/TIL/blob/main/C/Image/structure_for.PNG)
+int get_integer();	// 함수의 원형 출력
 
-#### 12. printf의 또 다른 형식 
+int main(void)
+{
+	int get_integer();	// get_integer()함수 출력
+	return 0;
+}
+int get_integer()
+{
+	int value;		// 입력받을 정수를 저장할 변수 생성
+ 	printf("정수를 입력하시오 : ");
+  	scanf_s("%d", &value);	// 정수 입력
+   	return value;		// 입력받은 정수 반환
+}
+```
+#### 12. 온도 변환기 예제 
 
-      - %f가 아니라 %.2f
-      		1. .2가 의미하는 것은 무조건 소수점 이하 둘째 자리까지만 표시하라는 의미
-      		2. 따라서, 왼쪽의 경우 3.141592 중 3.14 까지만 출력되고 나머지는 짤림
-      		3. %.100f 로 할 경우에도,3.141592········· 을 표시해서 무조건 100개를 출력
-      
-      - %d가 아닌 %5d
-      		1. 여기서 .5가 아님을 주의
-      		2. 숫자의 자리 수를 되도록 5 자리를 맞추어야 하므로 앞에 공백을 남기고 그 뒤에 123을 표시
-      		3. 123456을 표시할 때, %5d 조건을 준다면 이 때는 123456을 다 표시
-      		4. 앞선 .?f는 ?의 수만큼 소수점 자리수를 맞추지만, 이 경우는 반드시 지켜야되는 것은 아니다.
-      
-      - 위에서 썼던 두 가지 형식을 모두 한꺼번에 적용
-      	1. 전체 자리 수는 6자리로 맞추고 반드시 소수점 이하 셋째 자리까지만 표시
-      
-![another_printf](https://github.com/BangYunseo/TIL/blob/main/C/Image/another_printf.PNG)
-![another_printf2](https://github.com/BangYunseo/TIL/blob/main/C/Image/another_printf2.PNG)
+여기부터
+```C
 
+
+```
 #### 13. while 루프와 for 루프와의 관계 
 
  ![while-for](https://github.com/BangYunseo/TIL/blob/main/C/Image/while-for.PNG)
