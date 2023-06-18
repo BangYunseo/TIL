@@ -74,7 +74,6 @@ int main(void)
 	printf("\n);  
 	return 0;
 }
-
 void print_stars()	// 입력할 함수	
 {
 	for (int i = 0; i < 30; i++)	// i가 30이 될 때까지 반복
