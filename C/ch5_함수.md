@@ -84,91 +84,53 @@ void print_stars()	// 입력할 함수
 
 #### 7. 매개 변수와 반환값
 
-여기부터 하기
+![functionAA](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionAA.PNG)
+![functionAB](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionAB.PNG)
 
-
-
-
-![returnfunction](https://github.com/BangYunseo/TIL/blob/main/C/Image/do-while.PNG)
      
-#### 8-1. do - while 문 예제
+#### 8. 인수와 매개 변수
+
+	- 인수(argument) : 호출 프로그램에 의하여 함수에 실제로 전달되는 값     
+ 	- 매개 변수(parameter) : 인수를 전달받는 변수     
+  
+![functionBB](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionBB.PNG)   
+
+	- 만약 매개 변수가 없는 경우에는 매개 변수 위치에 void를 써주거나 아무 것도 적지 않는다.     
+ 	- 함수가 호출될 때마다 인수는 달라질 수 있다.     
+  	- 매개 변수의 개수는 정확히 일치해야 한다.     
+   	- 매개 변수의 개수와 인수의 개수가 일치하지 않으면 오류가 발생한다.     
+  
+#### 9. 반환값(return value)
+
+	- 반환값은 함수가 호출한 곳으로 반환하는 작업의 결과값이다.     
+ 	- 값을 반환하려면 return 문장 다음에 수식을 써준다.     
+  	- 인수는 여러 개가 있을 수 있으나 반환값은 하나만 가능하다.     
+	
+#### 10. max 함수 예제
 
 ```C
-// 숫자 추측 예제
 #include <stdio.h>
-#include <stdlib.h>
+int max(int x, int y);			// 함수의 원형 출력
 
 int main(void)
 {
-	srand((unsigned)time(NULL));				// 난수 발생기 시드 설정
-	int answer = rand() % 100;				// 정답을 1~100까지의 난수로 설정한다.
-	int guess;						// 추측할 숫자를 저장할 변수를 생성한다.
-	int tryy = 0;						// 시도 횟수를 저장할 변수를 생성한다.
+	int x, y, larger;		// 정수 2개를 저장할 변수 x와 y, 큰 값을 저장할 변수 larger을 생성
 
-	do {
-		printf("정답을 추측하시오 : ");			// 추측할 숫자를 입력받는다.
-		scanf_s("%d", &guess);				// 입력받은 숫자를 변수 guess에 저장한다.
-		tryy++;
-		// 시도횟수가 1회 늘어날 때마다 0으로 초기화시킨 시도횟수 변수를 1씩 증가시킨다.
-		if (guess < answer)		// 추측한 숫자가 정답보다 작다면 LOW를 출력한다.
-			printf("LOW\n");
-		if (guess > answer)		// 추측한 숫자가 정답보다 크다면 HIGH를 출력한다.
-			printf("HIGH\n");
-	} while (guess != answer);		// 추측한 숫자가 정답과 일치하면 반복을 그만둔다.
-	printf(" 축하합니다. 시도횟수 = %d", tryy);
-	// 정답이 일치하면 시도횟수를 출력한다.
+	printf("정수 2개를 입력하세요 : );	 
+	scanf_s("%d %d", &x, &y);			// 정수 2개를 입력
 
+	larger = max(x, y);				// 변수 larger에 함수값 저장
+	printf("더 큰 값은 %d 입니다.\n", larger);	// 더 큰 값을 출력
 	return 0;
 }
+int max(int x, int y)
+{
+	if (x > y)		// 만약 x가 y보다 크다면
+		return x;	// x를 출력
+	else 			// 만약 y가 x보다 크다면
+		return y;	// y를 출력
+}
 ```
-  
-#### 9. 난수(rand)
-
-	- 예측할 수 없는 하나의 난수를 생성한다.
-	  난수의 범위는 0 ~ RAND_MAX 까지이며, RAND_MAX는 0x7fff이므로, 난수의 범위는 0 ~ 32767 이다.
-	 
-1. 기본 사용법
-	
-	- i = rand()%n
-		1. 여기서 n은 횟수를 의미한다.
-		2. 0 ~ n - 1 범위의 난수를 i에 대입한다.
-		3. 예를 들어, n = 6이라고 하면 0, 1, 2, 3, 4, 5 중 하나가 i에 대입되는 셈이다.
-
-2. 기본 응용법
-	
-	- i = rand()%n + m
-		1. 여기서 m은 시작값을 의미한다.
-		2. 1번 기본 사용법을 응용한 것으로, 0 + m ~ (n - 1) + m 범위의 난수를 i에 대입한다.
-		3. 예를 들어, n = 6, m = 4 라고 하면 4, 5, 6, 7, 8, 9 중 하나가 i에 대입되는 셈이다.
-		4. 다른 예로, n = 5, m = -2 라고 하면 -2, -1, 0, 1, 2 중 하나가 i에 대입되는 셈이다.
-
-2-1. 기본 응용법(2)
-	
-	- i = rand()%n * m
-		1. 0 ~ (n - 1) 범위의 수들에 m을 곱한 수를 i에 대입한다.
-		2. 예를 들어, n = 4, m = 2 라고 하면 0, 2, 4, 6 중 하나가 i에 대입되는 셈이다.
-		3. m의 값을 2로 주면 2의 배수, 3을 주면 3의 배수가 대입된다.
-	 
-2-2. 기본 응용법(3)
-	
-	- i = (rand()%n + m) * k
-		1. 0 + m ~ (n + m) - 1 범위의 수들에 k을 곱한 수를 i에 대입한다.
-		2. 예를 들어, n = 3, m = 2, k = 4 라고 하면 8, 12, 16 중 하나가 i에 대입되는 셈이다.
-		3. 어떤 수의 배수를 사용할 때 용이하다.
-	 
-2-3. 기본 응용법(4)
-	
-	- i = rand()%n * m + k
-		1. 0 ~ n - 1 범위의 수들에 m을 곱하고 k를 더한 수를 i에 대입한다.
-		2. 예를 들어, n = 3, m = 2, k = 5 라고 하면 5, 7, 9 중 하나가 i에 대입되는 셈이다.
-		3. 다른 예로, n의 값을 0 이상으로 주고, m = 2, k = 0 으로 주면 짝수가 생성된다.
-		4. 3번의 예시와 비슷한 경우로, n의 값을 0 이상으로 주고 m = 2, k = 1으로 주면 홀수가 생성된다.
-     
-#### 10. for 루프문
-
-	- 정해진 횟수만큼 반복하는 구조
-![for](https://github.com/BangYunseo/TIL/blob/main/C/Image/for.PNG)
-![for2](https://github.com/BangYunseo/TIL/blob/main/C/Image/for2.PNG)
 
 #### 11. 초기식, 조건식, 증감식
 
