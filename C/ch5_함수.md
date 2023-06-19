@@ -159,12 +159,64 @@ int get_integer()
 
 여기부터
 ```C
+#include <stdio.h>
 
+void printMenu();		// 시작 메뉴 실행하는 함수의 원형 출력
+double C2F(double C_temp);	// 섭씨 온도를 화씨 온도로 출력하는 함수의 원형 출력
+double F2C(double F_temp);	// 화씨 온도를 섭씨 온도로 출력하는 함수의 원형 출력
+
+int main(void)
+{
+	char choice;		// 선택할 메뉴를 입력받을 변수 생성
+ 	double temp;		// 온도를 입력받을 변수 생성
+
+  	while(1)		// 실행하는 사람이 q를 입력할 때까지 무한 반복
+	{
+ 		printMenu();		// printMenu 함수 실행
+  		printf("메뉴에서 선택하세요 : ");	
+   		choice = getchar();	// getchar 함수를 통해 choice 변수의 값을 입력받음
+
+    		if (choice == 'q')	// choice에 q가 입력된다면
+			break;		// 반복문 탈출
+  		else if (choice == 'c')	// choice에 c가 입력된다면
+		{
+ 			printf("섭씨온도 : ");	
+    			scanf_s("%d", &temp);	// 입력받은 섭씨온도를
+       			printf("화씨온도 : %lf\n", C2F(temp));	// 화씨온도로 바꿔서 출력
+		}
+  		else if (choice == 'f') // choice에 f가 입력된다면
+		{
+  			printf("화씨온도 : ");
+     			scanf_s("d", &temp);	// 입력받은 화씨온도를
+			printf("섭씨온도 : %lf\n", F2C(temp)); 	// 섭씨온도로 바꿔서 출력
+		}
+  		getchar();
+	}
+ 	return 0;
+}
+void printMenu()		// 시작 메뉴 출력하는 함수
+{
+	printf("===========================\n");
+ 	printf("'c' 섭씨온도에서 화씨온도로 변환\n");
+  	printf("'f' 화씨온도에서 섭씨온도로 변환\n");
+   	printf("'q' 종료\n");
+    	printf("===========================\n");
+}
+double C2F(double C_temp)		// 섭씨온도를 화씨온도로 변환한 함수
+{
+	return 9.0 / 5.0 * c_temp + 32;
+}
+double F2C(double F_temp)		// 화씨온도를 섭씨온도로 변환한 함수
+{
+	return (F_temp - 32.0) * 5.0 / 9.0;
+}
+ 	
 
 ```
-#### 13. while 루프와 for 루프와의 관계 
+#### 13. getchar()함수 
 
- ![while-for](https://github.com/BangYunseo/TIL/blob/main/C/Image/while-for.PNG)
+	- getchar()가 실행되면 문자열 또는 문자를 입력받는다.
+ 	- 
 
 #### 14. 반복문 선택 방법
 
