@@ -157,7 +157,6 @@ int get_integer()
 ```
 #### 12. 온도 변환기 예제 
 
-여기부터
 ```C
 #include <stdio.h>
 
@@ -215,55 +214,61 @@ double F2C(double F_temp)		// 화씨온도를 섭씨온도로 변환한 함수
 ```
 #### 13. getchar()함수 
 
+	- 문자를 입력받아야 하므로 변수를 설정하고 scanf()에 서식지정자로 %c를 설정한다.
+ 	- scanf()에서 %c는 문자 한 개만 입력받을 수 있다.
+  	- 따라서 문자를 여러 개 입력하더라도 한 개만 저장되고 나머지는 모두 무시된다.
+   	- 입력되는 문자는 첫 번째 문자 뿐이다.
+
+```C
+// scanf() 사용 예제
+#include <stdio.h>
+
+int main(void)
+{
+	char c1;
+
+  	printf("문자를 입력하세요 : ");
+   	scanf_s("%c", &c1);
+
+     	printf("%c\n", cl);
+      	return 0;
+}
+```
 	- getchar()가 실행되면 문자열 또는 문자를 입력받는다.
- 	- 
+ 	- 문자열이나 문자가 바로 저장되는 것이 아니라, 입력 버퍼에 저장된다.
+  	- getchar()의 반환값으로 입력 버퍼에서 문자 한 개를 꺼내서 저장한다.
+	- 앞선 scanf()와 마찬가지로 문자 여러 개를 입력받아도 첫 번째 문자만 반환한다.
+```C
+// getchar() 사용 예제
+#include <stdio.h>
 
-#### 14. 반복문 선택 방법
+int main(void)
+{
+	char c1 = getchar();
 
-![howtoselect_loop](https://github.com/BangYunseo/TIL/blob/main/C/Image/howtoselect_loop.PNG)
+     	printf("%c\n", cl);
+      	return 0;
+}
+```
+
+#### 13-1. +getchar()함수 
+
+	- getchar() 함수는 메뉴에서 사용자가 입력한 문자를 읽어들이는데 사용한다.    
+ 	- 특정한 값을 입력한 후, 엔터키를 눌러야 입력된 값을 프로그램이 처리한다.     
+  	- 이 때, 엔터키를 누르면 버퍼에 개행문자(\n)이 저장된다.      
+	- 다음 getchar()함수가 호출될 때 먼저 개행문자가 호출되면서 입력을 받지 못하는 문제가 발생할 수 있다.  
+
+ ![GetcharScanf](https://github.com/BangYunseo/TIL/blob/main/C/Image/GetcharScanf.PNG)
+ ![getchar1](https://github.com/BangYunseo/TIL/blob/main/C/Image/getchar1.PNG)
+ ![getchar2](https://github.com/BangYunseo/TIL/blob/main/C/Image/getchar2.PNG)
  
-#### 15. 다양한 증감수식의 형태  
+#### 14. 함수의 원형(function prototyping)
 
-```C
-// 뺄셈 사용
-for (int i = 10; i > 0; i--)
-	printf("Hello World!"\n);
-```
-```C
-// 2씩 증가
-for (int i = 0; i < 10; i += 2)
-	printf("Hello World!"\n);
-```
-```C
-// 2씩 곱셈
-for (int i = 1; i < 10; i *= 2)
-	printf("Hello World!"\n);
-```
-```C
-// anything
-for (int i = 0; i < 100; i = (i * i) + 2)
-	printf("Hello World!"\n);
-```
-```C
-// 무한 반복 루프
-for ( ;; )
-	printf("Hello World!"\n);
-```
-```C
-// 한 부분이 없을 수도 있다
-for ( ;i < 100; i++)
-	printf("Hello World!"\n);
-```
-```C
-// anything2
-for (printf("반복시작"), i = 0;i < 100; i++)
-	printf("Hello World!"\n);
-```
-```C
-// 복잡한 수식도 조건식이 될 수 있다.
-for (i = 0;i < 100 && sum < 2000; i++)
-	printf("Hello World!"\n);
-```
+	- 함수의 원형은 컴파일러에게 함수에 대하여 미리 알리는 것을 말한다.     
+ 	- 함수의 원형은 함수의 이름, 매개변수, 반환형을 함수가 정의되기 전에 미리 알려주는 것이다.     
+  	- 함수의 원형은 함수 헤더에 세미콜론(;)을 추가한 것과 동일하다.     
+   	- 다만 함수 원형에서는 매개 변수의 이름은 적지 않아도 된다.     
+    	- 매개 변수의 자료형만 적어도 된다.     
 
 #### 16. 중첩 반복문
 
