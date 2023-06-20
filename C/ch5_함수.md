@@ -268,48 +268,54 @@ int main(void)
  	- 함수의 원형은 함수의 이름, 매개변수, 반환형을 함수가 정의되기 전에 미리 알려주는 것이다.     
   	- 함수의 원형은 함수 헤더에 세미콜론(;)을 추가한 것과 동일하다.     
    	- 다만 함수 원형에서는 매개 변수의 이름은 적지 않아도 된다.     
-    	- 매개 변수의 자료형만 적어도 된다.     
+	- 매개 변수의 자료형만 적어도 된다.     
+ 	- 일반적으로 함수의 원형을 사용하는 것이 좋다.
+  
+ ![functionnn](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionnn.PNG)
 
-#### 16. 중첩 반복문
-
-![nested_loop](https://github.com/BangYunseo/TIL/blob/main/C/Image/nested_loop.PNG)
-
-#### 16-1. 중첩 반복문 예제     
-         
+#### 15. 수학적인 계산 함수 생성 예제
+   
  ```C
-// 중첩 for 문을 이용하여 * 기호를 사각형 모양으로 출력
+// 조합 구하기(ex // C(2, 3))
 #include <stdio.h>
 
+int get_integer(void);			// 숫자를 입력받는 함수의 원형
+int combination(int n, int r);		// 조합을 계산하는 함수의 원형
+int factorial(int n);			// 팩토리얼을 계산하는 함수의 원형
 int main(void)
 {
-	int x, y;
+	int x, y;		// 숫자를 저장할 변수 생성
 	
-	fot (y = 0; y < 5; y++)
-	{
-		for (x = 0; x < 10; x++)
-			printf("*");
-	}
-	
+	x = get_integer();	// 변수 하나에 숫자를 저장하는 함수 실행	
+	y = get_integer();	// 변수 하나에 숫자를 저장하는 함수 실행
+
+	printf("C(%d, %d) = %d \n", x, y, combination(a, b));	
+	// C(x, y) = 조합값 의 형태로 출력
 	return 0;
 }
-```
-```C
-// 직각삼각형 모양으로 * 출력하기
-int main(void)
+int combination(int n, int r)	// 조합 계산 함수
 {
-	int x, y;
-	
-	fot (y = 1; y <= 5; y++)
-	{
-		for (x = 0; x < y; x++)
-			printf("*");
-		printf("\n");
-	}
-	return 0;
+	return (factorial(n)/factorial(r) * factorial(n - r)));	// 조합 반환
+}
+int get_integer(void)	// 정수 입력 함수
+{
+	int n;	// 변수 생성
+
+  	printf("정수를 입력하시오 : ");
+   	scanf_s("%d", &n);
+    	return n;
+}
+int factorial(int n)
+{
+	int i;
+ 	long result = 1;	// 결과값을 1로 초기화, 곱셈이기 때문에 0이 아닌 1로 초기화하는 것
+    	for(i = 1; i <= n; i++)
+     		result *= i;		// 결과값이 n이 되기 전까지 i 곱셈, 1부터 n까지 곱하는 것
+       return result;
 }
 ```
 	 
-#### 17. 무한 루프   
+#### 16. 소수 찾는 예제   
 
 	- 조건 제어 루프에서 가끔은 프로그램이 무한히 반복하는 일이 발생한다.
 	- 이것은 무한 루프(Infinite loop)로 알려져 있다.
