@@ -381,14 +381,22 @@ int is_prime(int n)
 #include <stdlib.h>
 #include <time.h>
 #define MAX 45		// MAX를 45로 정의한다.
+#define SIZE 6		// SIZE를 6으로 정의한다. (배열의 크기)
 
 int main(void)
 {
-	int rotto[SIZE]
+	int rotto[SIZE];	// 로또번호를 저장할 배열 생성
+	int i, j;		// for문에 사용할 변수들을 생성
 	srand((unsigned)time(NULL));	// 난수 발생
-	for (i = 0; i < 6; i++)		// 6개의 숫자를 생성
+	
+	for (i = 0; i < SIZE; i++)		// 6개의 숫자를 생성
 	{	
-		printf("%d ", 1 + rand() % MAX);
+		rotto[i] = (rand() % MAX) + 1;	// 배열에 로또번호를 저장
+		for (j = 0; j < i; j++)
+		{
+			if (rotto[i] == rotto[j])
+				i--;
+		}
 	}
 	return 0;
 }
