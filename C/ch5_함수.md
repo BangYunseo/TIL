@@ -356,68 +356,39 @@ int is_prime(int n)
 #### 17. 라이브러리 함수(library function)
 
 	- 컴파일러에서 제공하는 함수
- 		1) 표준 입출력
-  		2) 수학 연산
-		3) 문자열 처리
-  		4) 시간 처리
-		5) 오류 처리
-		6) 데이터 검색과 정렬
+ 		1) 표준 입출력   
+  		2) 수학 연산   
+		3) 문자열 처리   
+  		4) 시간 처리   
+		5) 오류 처리   
+		6) 데이터 검색과 정렬   
 
-![infinite_loop2](https://github.com/BangYunseo/TIL/blob/main/C/Image/infinite_loop2.PNG)
+#### 18. 난수 함수(rand())
 
-#### 18. break 문
+	- 난수(random number)는 규칙성 없이 임의로 생성되는 수
+	- 난수는 암호학이나 시뮬레이션, 게임 등에서 필수적이다.
+	
+ 	- rand() 
+ 		- 난수를 생성하는 함수
+   		- 0부터 RAND_MAX까지의 난수 생성
 
-	- 반복 루프를 빠져 나오는 데 사용한다.
+#### 18-1. 로또 번호 생성기
+
+	- 로또 번호는 1부터 45까지의 숫자 6개로 이루어진다.	
+	- 배열과 선택정렬을 이용해서 로또 번호를 깔끔하게 출력해보자.
 ```C
-// 재테크를 시작한 사람이 1년에 30%의 수익을 얻는다면 몇 년 만에 원금의 10배가 되는지 알아보는 예제
 #include <stdio.h>
-#define SEED_MONEY 1000000
+#include <stdlib.h>
+#include <time.h>
+#define MAX 45		// MAX를 45로 정의한다.
 
 int main(void)
 {
-	int year = 0, money = SEED_MONEY;
-	while(1)
-	{
-		year++;
-		money += money*0.3;
-		if (money > 10 * SEED_MONEY)
-			break;				// break문 사용
-	}
-	printf("%d", year);
-	return 0;
-}
-```
-
-#### 19. goto 문
-	
-	- 중첩 루프 안에서 어떤 문제가 발생했을 경우, goto를 이용하면 단번에 외부로 빠져나올 수 있다.
-	- break를 사용하면 하나의 루프만을 벗어날 수 있다.
-	
-![goto](https://github.com/BangYunseo/TIL/blob/main/C/Image/goto.PNG)
-
-#### 19-1. goto 문 예제
-
-![goto2](https://github.com/BangYunseo/TIL/blob/main/C/Image/goto2.PNG)
-
-#### 20. continue 문
-
-	- 0부터 10까지의 정수 중에서 3의 배수만 제외하고 출력하는 예제를 살펴보자
-
-![continue](https://github.com/BangYunseo/TIL/blob/main/C/Image/continue.PNG)
-
-#### 20-1. continue 문 예제
-
-```C
-#include <stdio.h>
-
-int main(void)
-{
-	int i;
-	for (i = 0; i < 10; i++)
-	{
-		if (i % 3 == 0)
-			continue;
-		printf("%d", i);
+	int rotto[SIZE]
+	srand((unsigned)time(NULL));	// 난수 발생
+	for (i = 0; i < 6; i++)		// 6개의 숫자를 생성
+	{	
+		printf("%d ", 1 + rand() % MAX);
 	}
 	return 0;
 }
