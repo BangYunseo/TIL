@@ -317,18 +317,51 @@ int factorial(int n)
 	 
 #### 16. 소수 찾는 예제   
 
-	- 조건 제어 루프에서 가끔은 프로그램이 무한히 반복하는 일이 발생한다.
-	- 이것은 무한 루프(Infinite loop)로 알려져 있다.
-	- 무한 반복이 발생하면 프로그램은 빠져나올 수 없기 때문에 문제가 된다.
-	- 다만 가끔은 의도적으로 무한 루프를 사용하는 경우도 있다.
-		ex)신호등 제어 프로그램
-	
-![infinite_loop](https://github.com/BangYunseo/TIL/blob/main/C/Image/infinite_loop.PNG)
+```C
+// 주어진 숫자가 소수인지 결정하는 프로그램
+#include <stdio.h>
 
-#### 17-1. 무한 루프가 유용한 경우
+int get_integer(void);	// 숫자를 입력받는 함수의 원형 출력
+int is_prime(int n);	// 숫자가 소수인지 판단하는 함수의 원형 출력
+int main(void)
+{
+	int n;		// 변수 생성
+	n = get_integer();	// 함수를 통해서 변수 n에 수를 저장
+	if (is_prime(n) == 1)	// 만약 소수인지 판단하는 함수에서의 결과값이 1이라면(1일 때 소수)
+		printf("%d은(는) 소수!\n", n);
+	else			// 소수가 아닐 경우
+		printf("%d은(는) 소수가 아님!\n", n);
+	return 0;
+}
+int get_integer(void)	// 정수 입력 함수
+{
+	int n;	// 변수 생성
 
-	- 반복을 빠져나가는 조건이 까다로운 경우에 많이 사용된다.
-	ex) 사용자가 입력한 수가 3의 배수이거나 음수인 경우에 while 루프를 빠져나가야 한다고 하자.
+  	printf("정수를 입력하시오 : ");
+   	scanf_s("%d", &n);
+    	return n;
+}
+int is_prime(int n)
+{
+	int i;	// 변수 생성
+
+	for (i = 2; i < n; i++)
+	{
+		if (n % i == 0)		// n을 i로 나눈 나머지가 0이라면
+			return 0;		// 소수가 아님을 반환
+		return 1;		// if문에 해당되지 않는다면 소수임
+	}
+}
+```
+#### 17. 라이브러리 함수(library function)
+
+	- 컴파일러에서 제공하는 함수
+ 		1) 표준 입출력
+  		2) 수학 연산
+		3) 문자열 처리
+  		4) 시간 처리
+		5) 오류 처리
+		6) 데이터 검색과 정렬
 
 ![infinite_loop2](https://github.com/BangYunseo/TIL/blob/main/C/Image/infinite_loop2.PNG)
 
