@@ -124,7 +124,7 @@
       - 오버플로우(overflow)는 변수가 나타낼 수 있는 범위를 넘는 숫자를 저장하려고 할 때 발생한다.
       - 오버플로우는 규칙성이 있다. 
 
-![overflow](https://github.com/BangYunseo/TIL/blob/main/C/Image/overflow.PNG)
+![overflow](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch1/overflow.PNG)
 
 
 #### 7. 기호 상수
