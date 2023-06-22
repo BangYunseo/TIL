@@ -102,8 +102,8 @@ int main(void)
       - 변수 하나의 값을 증가시키거나 감소시키는 연산자   
 
 - (참고) ++x와 x++의 차이
-![++xandxx++](https://github.com/BangYunseo/TIL/blob/main/C/%2B%2Bxandx%2B%2B.PNG)
-
+![++xandxx++](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/%2B%2Bxandx%2B%2B.PNG)
+	
       
 #### 6-1. 증감 연산자 정리
 
@@ -207,19 +207,19 @@ int main(void)
 
       - 어떤 회사에서 신입 사원을 채용하는데 나이가 30살 이하이고 토익 성적이 700점 이상이라는 조건을 걸었다고 가정하자.     
       
-![AND](https://github.com/BangYunseo/TIL/blob/main/C/Image/and.PNG)
+![AND](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/and.PNG)
       
 #### 9-2. OR 연산자   
       
       - 신입 사원을 채용하는 조건이 변경되어서 나이가 30살 이하이거나 토익 성적이 700점 이상이면 된다고 하자.      
       
-![OR](https://github.com/BangYunseo/TIL/blob/main/C/Image/or.PNG)
+![OR](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/or.PNG)
 
 #### 9-3. NOT 연산자   
 
       - 피연산자의 값이 참이면 연산의 결과값을 거짓으로 만들고, 피연산자의 값이 거짓이면 연산의 결과값을 참으로 만든다.    
       
-![NOT](https://github.com/BangYunseo/TIL/blob/main/C/Image/not.PNG)
+![NOT](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/not.PNG)
       
       - result = !1;                // result에는 0이 대입된다.
       - result = !(2 == 3);         // result에는 1이 대입된다.
@@ -247,7 +247,7 @@ int main(void)
             
 #### 10. 조건 연산자 : 3개의 피연산자를 가지는 삼항 연산자     
             
-![iff](https://github.com/BangYunseo/TIL/blob/main/C/Image/iff.PNG)  
+![iff](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/iff.PNG)  
 
 ```C
 absolute_value = (x > 0) ? x: -x;    // 절댓값 계산
@@ -271,19 +271,19 @@ min_value = (x < y) ? x: y;          // 최솟값 계산
 
 #### 11-1. 비트 AND 연산자   
 
-![Andd](https://github.com/BangYunseo/TIL/blob/main/C/Image/Andd.PNG)  
+![Andd](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/Andd.PNG)  
 
 #### 11-2. 비트 OR 연산자   
 
-![Orr](https://github.com/BangYunseo/TIL/blob/main/C/Image/Orr.PNG)  
+![Orr](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/Orr.PNG)  
 
 #### 11-3. 비트 XOR 연산자   
 
-![XOR](https://github.com/BangYunseo/TIL/blob/main/C/Image/XOR.PNG)  
+![XOR](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/XOR.PNG)  
 
 #### 11-4. 비트 NOT 연산자  
 
-![Nott](https://github.com/BangYunseo/TIL/blob/main/C/Image/Nott.PNG)  
+![Nott](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/Nott.PNG)  
 
 #### 11-5. 비트 이동 연산자   
 
@@ -299,14 +299,14 @@ min_value = (x < y) ? x: y;          // 최솟값 계산
       - 비트를 왼쪽으로 이동
       - 값은 2배가 된다.   
       
-![left](https://github.com/BangYunseo/TIL/blob/main/C/Image/left.PNG)
+![left](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/left.PNG)
       
 #### 11-7. >> 연산자  
 
       - 비트를 오른쪽으로 이동
       - 값은 1/2배가 된다.   
       
-![right](https://github.com/BangYunseo/TIL/blob/main/C/Image/right.PNG)
+![right](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/right.PNG)
 
 #### 12. Lab 3. 10진수를 2진수로 출력하기   
 
@@ -360,7 +360,7 @@ int main(void)
 
 	- 정수 연산 시 char 형이나 short 형의 경우, 자동적으로 int 형으로 변환하여 계산한다.   
 	
-![TypeChange](https://github.com/BangYunseo/TIL/blob/main/C/Image/TypeChange.PNG)
+![TypeChange](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/TypeChange.PNG)
 	
 	
 	
