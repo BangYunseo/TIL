@@ -383,14 +383,16 @@ int is_prime(int n)
 #define MAX 45		// MAX를 45로 정의한다.
 #define SIZE 6		// SIZE를 6으로 정의한다. (배열의 크기)
 
+void array1(int list[]);		// 선택정렬 함수의 원형 출력
+
 int main(void)
 {
 	int rotto[SIZE];	// 로또번호를 저장할 배열 생성
 	int i, j;		// for문에 사용할 변수들을 생성
 	srand((unsigned)time(NULL));	// 난수 발생
-	
+
 	for (i = 0; i < SIZE; i++)		// 6개의 숫자를 생성
-	{	
+	{
 		rotto[i] = (rand() % MAX) + 1;	// 배열에 로또번호를 저장
 		for (j = 0; j < i; j++)
 		{
@@ -398,6 +400,98 @@ int main(void)
 				i--;
 		}
 	}
+	array1(rotto);	
+	// 선택정렬을 실행한다. 함수의 원형이 배열값을 입력받으므로 rotto만 입력해도 됨
+
+	for (i = 0; i < SIZE; i++)
+	{
+		printf("%d ", rotto[i]);	// 차례대로 로또번호를 출력함
+	}
 	return 0;
 }
+void array1(int list[])
+{
+	int i, j, min, temp;	
+	// for문에 사용할 변수 i와 j, 작은 값을 저장할 변수 min과 교환에 사용할 변수 temp 생성
+	for (i = 0; i < SIZE - 1; i++)	// 마지막에는 자동으로 큰 값이 배치됨
+	{
+		min = i;	// 가장 작은 값에 for문의 변수 i를 저장
+		for (j = i + 1; j < SIZE; j++)	
+		// j의 값에 i에 1을 더한 수를 저장하고 SIZE 만큼 반복
+		// i의 값에 1을 더한 인덱스의 값
+		// 만약 i가 0일 때, list[0]을 가리킴
+		// 그렇다면 j는 list[1]을 가리키게 됨
+		{
+			if (list[j] < list[min])	// 만약 list[1] < list[0] 이라면
+				min = j;				// 가장 작은 값은 j가 됨
+		}
+		temp = list[i];			// 임시변수에 list[i]를 저장
+		list[i] = list[min];	// list[i]에 list[min]을 저장
+		list[min] = temp;		// list[min]에 temp값(list[i])을 저장
+	}
+}
+```
+
+#### 19. 표준 라이브러리 함수(수학 함수)
+
+	- 수학 함수들에 대한 원형은 헤더파일 math.h에 있다.
+	- 수학 함수는 일반적으로 double형의 매개 변수와 반환값을 가진다.
+
+
+![mathh](https://github.com/BangYunseo/TIL/blob/main/C/Image/mathh.PNG)
+
+#### 20. floor()함수와 ceil()함수
+
+![floorceil](https://github.com/BangYunseo/TIL/blob/main/C/Image/floorceil.PNG)
+	- floor()은 바닥, ceil()은 천장을 나타내는 함수이다.
+	- 만약 1.6가 입력됐을 때, floor()함수를 이용하면 1.0이 출력된다.
+	- 앞과 마찬가지로 1.6가 입력됐을 때, ceil()함수를 이용하면 2.0이 출력된다.
+
+```C
+#include <stdio.h>
+
+int main(void)
+{
+	double result, value = 1.6;	// result와 value의 값을 1.6으로 초기화
+	result = floor(value);
+	printf("%lf", result);		// result의 값은 1.0이다.
+
+ 	result = ceil(value);
+	printf("%lf", result);		// result의 값은 2.0이다.
+	return 0;
+}
+```
+
+#### 21. 기타 함수
+
+![anyfunction](https://github.com/BangYunseo/TIL/blob/main/C/Image/anyfunction.PNG)
+
+#### 22. 시간 맞추기 게임 예제
+
+```C
+#include <stdio.h>
+#include <time.h>
+
+int main(void)
+{
+	unsigned long start, end;	// 부호없는 수로 초기화한다.
+	start = time(NULL);			
+	// start에 현재 시각을 반환하는 time(NULL)을 저장한다.
+
+	printf("종료하고 싶다면 아무 키나 누르세요. \n");	
+	while (1)	// 무한 반복
+	{
+		if (getchar())		// 만약 아무 문자를 입력받는다면,
+			break;			// 프로그램을 종료한다.
+	}
+	printf("종료되었습니다.\n"); 
+	end = time(NULL);		
+	// end에 현재 시각을 반환하는 time(NULL)을 저장한다.
+
+	printf("경과된 시간은 %d초입니다. \n", end - start);	
+	// 두 시간의 차이를 출력한다.
+
+	return 0;
+}
+
 ```
