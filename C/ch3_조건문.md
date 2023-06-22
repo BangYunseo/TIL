@@ -7,11 +7,11 @@
       
 #### 2. 제어구조
 
-![selection](https://github.com/BangYunseo/TIL/blob/main/C/Image/selection.PNG)
+![selection](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/selection.PNG)
 
 #### 3. if 문
 
-![IF](https://github.com/BangYunseo/TIL/blob/main/C/Image/IF.PNG)   
+![IF](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/IF.PNG)   
 
 #### 3-1. if 문 예제
 
@@ -33,11 +33,11 @@ printf("현재 온도는 %lf도 입니다.\n", temperature); // 항상 실행하
 
 #### 3-2. 오류 주의
 
-![error_if](https://github.com/BangYunseo/TIL/blob/main/C/Image/error_if.PNG)   
+![error_if](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/error_if.PNG)   
 
 #### 3-3. 실수 비교
 
-![compare_int](https://github.com/BangYunseo/TIL/blob/main/C/Image/compare_int.PNG)   
+![compare_int](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/compare_int.PNG)   
 
 #### 4. 복합문 (compound statement)
 
@@ -57,7 +57,7 @@ if (score >= 60)
   
 #### 5. if-else 문
 
-![if-else](https://github.com/BangYunseo/TIL/blob/main/C/Image/ifelse.PNG)
+![if-else](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/ifelse.PNG)
 
 #### 5-1. if-else 문 예제
 
@@ -111,7 +111,7 @@ if (ch == '' || ch == '\n' || ch == '\t')
 #### 8. 중첩 if
 
      - if 문에 다시 if 문이 포함되는 것을 말한다.    
-![if-if](https://github.com/BangYunseo/TIL/blob/main/C/Image/ifif.PNG)
+![if-if](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/ifif.PNG)
 
 #### 8-1. 중첩 if 문 예제
 
@@ -132,13 +132,13 @@ if (score >= 80)
 
 #### 9. 연속적인 if
 
-![if-if-if](https://github.com/BangYunseo/TIL/blob/main/C/Image/ififif.PNG)
+![if-if-if](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/ififif.PNG)
  
 #### 10. switch 문 
 
       - 제어식의 값에 따라서 여러 경로 중에서 하나를 선택할 수 있는 제어 구조 
       
-![switch](https://github.com/BangYunseo/TIL/blob/main/C/Image/switch.PNG)
+![switch](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/switch.PNG)
 
 #### 10-1. switch 문 예제 
 
@@ -169,19 +169,19 @@ int main(void)
 
 #### 10-2. break가 생략되는 경우   
 
-![delbreak1](https://github.com/BangYunseo/TIL/blob/main/C/Image/delbreak1.PNG)
+![delbreak1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/delbreak1.PNG)
  
 #### 10-3. break가 의도적으로 생략되는 경우      
 
-![delbreak2](https://github.com/BangYunseo/TIL/blob/main/C/Image/delbreak2.PNG)
+![delbreak2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/delbreak2.PNG)
 
 #### 10-4. default 문
 
-![default](https://github.com/BangYunseo/TIL/blob/main/C/Image/default.PNG)
+![default](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/default.PNG)
 
 #### 11. switch 문과 if-else 문     
             
-![switch_if-else](https://github.com/BangYunseo/TIL/blob/main/C/Image/switch_if-else.PNG)  
+![switch_if-else](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/switch_if-else.PNG)  
 
 
 #### 12. switch 문에서 주의할 점   
