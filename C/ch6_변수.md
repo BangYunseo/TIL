@@ -173,261 +173,84 @@ void sub()	// 별 출력 예제
 
 ![allocation](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/allocation.PNG)
 
+	- 생존 기간을 결정하는 요인
+		: 변수가 선언된 위치
+		: 저장 유형 지정자
+	- 저장 유형 지정자
+		: auto
+		: register
+		: static
+		: extern  
 
+#### 10. 저장 유형 지정자 auto
 
-#### 13. getchar()함수 
+	- 변수를 선언한 위치에서 자동으로 만들어지고 블록을 벗어나게 되며 자동으로 소멸되는 저장 유형을 지정
+	- 지역 변수는 auto가 생략되어도 자동 변수가 된다.
 
-	- 문자를 입력받아야 하므로 변수를 설정하고 scanf()에 서식지정자로 %c를 설정한다.
- 	- scanf()에서 %c는 문자 한 개만 입력받을 수 있다.
-  	- 따라서 문자를 여러 개 입력하더라도 한 개만 저장되고 나머지는 모두 무시된다.
-   	- 입력되는 문자는 첫 번째 문자 뿐이다.
+![auto](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/auto.PNG)
 
-```C
-// scanf() 사용 예제
-#include <stdio.h>
+#### 11. 저장 유형 지정자 static 
 
-int main(void)
-{
-	char c1;
+	- 지역변수처럼 블록에서만 사용되지만, 블록을 벗어나도 자동으로 제거되지 않는 변수
+ 	- 이런 변수를 정적 변수라고 부른다.
 
-  	printf("문자를 입력하세요 : ");
-   	scanf_s("%c", &c1);
+![static](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/static.PNG)
 
-     	printf("%c\n", cl);
-      	return 0;
-}
-```
-	- getchar()가 실행되면 문자열 또는 문자를 입력받는다.
- 	- 문자열이나 문자가 바로 저장되는 것이 아니라, 입력 버퍼에 저장된다.
-  	- getchar()의 반환값으로 입력 버퍼에서 문자 한 개를 꺼내서 저장한다.
-	- 앞선 scanf()와 마찬가지로 문자 여러 개를 입력받아도 첫 번째 문자만 반환한다.
-```C
-// getchar() 사용 예제
-#include <stdio.h>
+#### 12. 저장 유형 지정자 register
 
-int main(void)
-{
-	char c1 = getchar();
-
-     	printf("%c\n", cl);
-      	return 0;
-}
-```
-
-#### 13-1. +getchar()함수 
-
-	- getchar() 함수는 메뉴에서 사용자가 입력한 문자를 읽어들이는데 사용한다.    
- 	- 특정한 값을 입력한 후, 엔터키를 눌러야 입력된 값을 프로그램이 처리한다.     
-  	- 이 때, 엔터키를 누르면 버퍼에 개행문자(\n)이 저장된다.      
-	- 다음 getchar()함수가 호출될 때 먼저 개행문자가 호출되면서 입력을 받지 못하는 문제가 발생할 수 있다.  
-
- ![GetcharScanf](https://github.com/BangYunseo/TIL/blob/main/C/Image/GetcharScanf.PNG)
- ![getchar1](https://github.com/BangYunseo/TIL/blob/main/C/Image/getchar1.PNG)
- ![getchar2](https://github.com/BangYunseo/TIL/blob/main/C/Image/getchar2.PNG)
- 
-#### 14. 함수의 원형(function prototyping)
-
-	- 함수의 원형은 컴파일러에게 함수에 대하여 미리 알리는 것을 말한다.     
- 	- 함수의 원형은 함수의 이름, 매개변수, 반환형을 함수가 정의되기 전에 미리 알려주는 것이다.     
-  	- 함수의 원형은 함수 헤더에 세미콜론(;)을 추가한 것과 동일하다.     
-   	- 다만 함수 원형에서는 매개 변수의 이름은 적지 않아도 된다.     
-	- 매개 변수의 자료형만 적어도 된다.     
- 	- 일반적으로 함수의 원형을 사용하는 것이 좋다.
+	- 레지스터(register)에 변수를 저장 
   
- ![functionnn](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionnn.PNG)
+![register](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/register.PNG)
 
-#### 15. 수학적인 계산 함수 생성 예제
-   
- ```C
-// 조합 구하기(ex // C(2, 3))
-#include <stdio.h>
+#### 13. volatile
 
-int get_integer(void);			// 숫자를 입력받는 함수의 원형
-int combination(int n, int r);		// 조합을 계산하는 함수의 원형
-int factorial(int n);			// 팩토리얼을 계산하는 함수의 원형
-int main(void)
-{
-	int x, y;		// 숫자를 저장할 변수 생성
-	
-	x = get_integer();	// 변수 하나에 숫자를 저장하는 함수 실행	
-	y = get_integer();	// 변수 하나에 숫자를 저장하는 함수 실행
-
-	printf("C(%d, %d) = %d \n", x, y, combination(a, b));	
-	// C(x, y) = 조합값 의 형태로 출력
-	return 0;
-}
-int combination(int n, int r)	// 조합 계산 함수
-{
-	return (factorial(n)/factorial(r) * factorial(n - r)));	// 조합 반환
-}
-int get_integer(void)	// 정수 입력 함수
-{
-	int n;	// 변수 생성
-
-  	printf("정수를 입력하시오 : ");
-   	scanf_s("%d", &n);
-    	return n;
-}
-int factorial(int n)
-{
-	int i;
- 	long result = 1;	// 결과값을 1로 초기화, 곱셈이기 때문에 0이 아닌 1로 초기화하는 것
-    	for(i = 1; i <= n; i++)
-     		result *= i;		// 결과값이 n이 되기 전까지 i 곱셈, 1부터 n까지 곱하는 것
-       return result;
-}
-```
+	- volatile 지정자는 하드웨어가 수시로 변수의 값을 변경하는 경우에 사용된다.
+ ![volatile](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/volatile.PNG)
 	 
-#### 16. 소수 찾는 예제   
+#### 14. 은행 계좌 구현하기 예제  
 
 ```C
-// 주어진 숫자가 소수인지 결정하는 프로그램
-#include <stdio.h>
-
-int get_integer(void);	// 숫자를 입력받는 함수의 원형 출력
-int is_prime(int n);	// 숫자가 소수인지 판단하는 함수의 원형 출력
-int main(void)
-{
-	int n;		// 변수 생성
-	n = get_integer();	// 함수를 통해서 변수 n에 수를 저장
-	if (is_prime(n) == 1)	// 만약 소수인지 판단하는 함수에서의 결과값이 1이라면(1일 때 소수)
-		printf("%d은(는) 소수!\n", n);
-	else			// 소수가 아닐 경우
-		printf("%d은(는) 소수가 아님!\n", n);
-	return 0;
-}
-int get_integer(void)	// 정수 입력 함수
-{
-	int n;	// 변수 생성
-
-  	printf("정수를 입력하시오 : ");
-   	scanf_s("%d", &n);
-    	return n;
-}
-int is_prime(int n)
-{
-	int i;	// 변수 생성
-
-	for (i = 2; i < n; i++)
-	{
-		if (n % i == 0)		// n을 i로 나눈 나머지가 0이라면
-			return 0;		// 소수가 아님을 반환
-		return 1;		// if문에 해당되지 않는다면 소수임
-	}
-}
+// 은행 계좌 구현해보기
 ```
-#### 17. 라이브러리 함수(library function)
+#### 15. 연결(linkage)
 
-	- 컴파일러에서 제공하는 함수
- 		1) 표준 입출력   
-  		2) 수학 연산   
-		3) 문자열 처리   
-  		4) 시간 처리   
-		5) 오류 처리   
-		6) 데이터 검색과 정렬   
+	- 다른 범위에 속하는 변수들을 서로 연결하는 것
+		1) 외부 연결
+		2) 내부 연결
+		3) 무연결
+	- 전역 변수만이 연결을 가질 수 있다.  
+ 
+ ![linkage](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/linkage.PNG)
 
-#### 18. 난수 함수(rand())
+#### 15-1. 연결 예제
 
-	- 난수(random number)는 규칙성 없이 임의로 생성되는 수
-	- 난수는 암호학이나 시뮬레이션, 게임 등에서 필수적이다.
-	
- 	- rand() 
- 		- 난수를 생성하는 함수
-   		- 0부터 RAND_MAX까지의 난수 생성
+	- 전역 변수는 외부 연결이 가능하다.	
+ ![linkageex](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/linkageex.PNG)
+ 
+#### 16. 외부 연결
 
-#### 18-1. 로또 번호 생성기
+	- 전역 변수를 extern을 이용해서 서로 연결한다.
 
-	- 로또 번호는 1부터 45까지의 숫자 6개로 이루어진다.	
-	- 배열과 선택정렬을 이용해서 로또 번호를 깔끔하게 출력해보자.
-```C
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#define MAX 45		// MAX를 45로 정의한다.
-#define SIZE 6		// SIZE를 6으로 정의한다. (배열의 크기)
+ ![linkage2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/linkage2.PNG)
 
-void array1(int list[]);		// 선택정렬 함수의 원형 출력
+#### 17. 함수 앞의 static
 
-int main(void)
-{
-	int rotto[SIZE];	// 로또번호를 저장할 배열 생성
-	int i, j;		// for문에 사용할 변수들을 생성
-	srand((unsigned)time(NULL));	// 난수 발생
+	- 변수나 함수 이름은 모두 식별자이므로 같은 조건으로 취급된다.
 
-	for (i = 0; i < SIZE; i++)		// 6개의 숫자를 생성
-	{
-		rotto[i] = (rand() % MAX) + 1;	// 배열에 로또번호를 저장
-		for (j = 0; j < i; j++)
-		{
-			if (rotto[i] == rotto[j])
-				i--;
-		}
-	}
-	array1(rotto);	
-	// 선택정렬을 실행한다. 함수의 원형이 배열값을 입력받으므로 rotto만 입력해도 됨
+![static2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/static2.PNG)
 
-	for (i = 0; i < SIZE; i++)
-	{
-		printf("%d ", rotto[i]);	// 차례대로 로또번호를 출력함
-	}
-	return 0;
-}
-void array1(int list[])
-{
-	int i, j, min, temp;	
-	// for문에 사용할 변수 i와 j, 작은 값을 저장할 변수 min과 교환에 사용할 변수 temp 생성
-	for (i = 0; i < SIZE - 1; i++)	// 마지막에는 자동으로 큰 값이 배치됨
-	{
-		min = i;	// 가장 작은 값에 for문의 변수 i를 저장
-		for (j = i + 1; j < SIZE; j++)	
-		// j의 값에 i에 1을 더한 수를 저장하고 SIZE 만큼 반복
-		// i의 값에 1을 더한 인덱스의 값
-		// 만약 i가 0일 때, list[0]을 가리킴
-		// 그렇다면 j는 list[1]을 가리키게 됨
-		{
-			if (list[j] < list[min])	// 만약 list[1] < list[0] 이라면
-				min = j;				// 가장 작은 값은 j가 됨
-		}
-		temp = list[i];			// 임시변수에 list[i]를 저장
-		list[i] = list[min];	// list[i]에 list[min]을 저장
-		list[min] = temp;		// list[min]에 temp값(list[i])을 저장
-	}
-}
-```
+#### 18. 블록에서 extern을 이용한 전역 변수 참조
 
-#### 19. 표준 라이브러리 함수(수학 함수)
+	- extern은 블록에서 전역 변수에 접근할 때도 사용된다.
+![extern](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/extern.PNG)
 
-	- 수학 함수들에 대한 원형은 헤더파일 math.h에 있다.
-	- 수학 함수는 일반적으로 double형의 매개 변수와 반환값을 가진다.
+#### 19. 저장 유형
 
+	- 일반적으로 자동 저장 유형을 사용 권장
+	- 변수의 값이 함수 호출이 끝나도 그 값을 유지해야 한다면 정적 지역
+	- 많은 함수에서 공유되는 변수라면 외부 참조 변수
+|---|---|---|---|---|
 
-![mathh](https://github.com/BangYunseo/TIL/blob/main/C/Image/mathh.PNG)
-
-#### 20. floor()함수와 ceil()함수
-
-![floorceil](https://github.com/BangYunseo/TIL/blob/main/C/Image/floorceil.PNG)
-	- floor()은 바닥, ceil()은 천장을 나타내는 함수이다.
-	- 만약 1.6가 입력됐을 때, floor()함수를 이용하면 1.0이 출력된다.
-	- 앞과 마찬가지로 1.6가 입력됐을 때, ceil()함수를 이용하면 2.0이 출력된다.
-
-```C
-#include <stdio.h>
-
-int main(void)
-{
-	double result, value = 1.6;	// result와 value의 값을 1.6으로 초기화
-	result = floor(value);
-	printf("%lf", result);		// result의 값은 1.0이다.
-
- 	result = ceil(value);
-	printf("%lf", result);		// result의 값은 2.0이다.
-	return 0;
-}
-```
-
-#### 21. 기타 함수
-
-![anyfunction](https://github.com/BangYunseo/TIL/blob/main/C/Image/anyfunction.PNG)
 
 #### 22. 시간 맞추기 게임 예제
 
