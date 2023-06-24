@@ -1,217 +1,180 @@
-##  Chapter 6. 함수       
+##  Chapter 6. 변수       
 
-#### 1. 함수(function)의 개념
+#### 1. 변수의 속성
 
-	- 입력을 받아 특정한 작업을 통해 결과를 반환하는 코드     
-![functionN](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionN.PNG)
+	- 변수의 속성 : 이름, 타입, 크기, 값 + 범위, 생존 시간, 연결  
+		1) 범위(scope) : 변수가 사용 가능한 범위, 가시성  
+		2) 생존 시간(lifetime) : 메모리에 존재하는 시간
+		3) 연결(linkage) : 다른 영역에 있는 변수와의 연결 상태
+ 
+![vtype](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/vtype.PNG)
 
-#### 2. 함수가 필요한 이유
+#### 2. 변수의 범위
 
-	1. 코드의 중복을 피할 수 있기 때문이다.     
- 	2. 한 번 작성된 함수를 여러 번 재사용할 수 있기 때문이다.     
-  	3. 함수를 사용하면 전체 프로그램을 모듈로 나눌 수 있어 개발 과정이 쉬워지고 보다 체계적이게 되면서 유지 보수가 쉬워지기 때문이다.  
-	4. 복잡한 문제를 단순한 부분으로 분해할 수 있다.   
+	- 변수는 크게 지역 변수와 전역 변수로 나눠진다.
+	 
+![vtype2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/vtype2.PNG)
 
-#### 3. 함수의 특징
+#### 2-1. 지역 변수와 전역 변수
 
-	1. 함수는 특정한 작업을 수행하기 위한 명령어들의 모음이다.    
- 	2. 함수는 서로 구별되는 이름을 가지고 있다.    
-  	3. 함수는 특정한 작업을 수행한다.     
-   	4. 함수는 입력을 받을 수 있고 결과를 반환할 수 있다.   
-![functionN1](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionN1.PNG)
+![localglobal](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/localglobal.PNG)
 
-#### 4. 함수의 종류
+#### 3. 지역 변수
 
-![FunctionType](https://github.com/BangYunseo/TIL/blob/main/C/Image/FuntionType.PNG)   
+	- 지역 변수(local variable)은 블록 안에 선언되는 변수이다.
+	- 또한 지역 변수는 블록 안의 어떤 위치에서도 선언할 수 있다. 	
 
-#### 5. 함수의 정의
+![local1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/local1.PNG)   
+![local2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/local2.PNG)  
 
-![defineFunction](https://github.com/BangYunseo/TIL/blob/main/C/Image/defineFunction.PNG)   
+#### 3-1. 지역 변수의 생존 기간
+	- 지역 변수는 변수가 선언된 블록이 시작할 때 시스템 스택(stack)인 메모리 공간에 만들어진다.
+	- 지역 변수는 자동으로 초기화되지 않는다.
+	- 블록이 종료되면 지역 변수에 할당된 메모리 공간은 반환된다.
+	- 메모리 공간이 반환되면 지역 변수도 사라진다. 
+ 
+![local3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/local3.PNG)  
 
-#### 5-1. +함수의 정의
-
-	- 반환형   
-		1. 반환형은 함수가 처리를 종류한 후에 호출한 곳으로 반환하는 데이터의 유형을 말한다.   
-	- 함수 이름   
-		1. 함수 이름은 식별자에 대한 규칙만 따른다면 어떤 이름이라도 가능하다.   
-		2. 함수의 기능을 암시하는 (동사+명사)를 사용하면 좋다.   
-
-![functionName](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionName.PNG)
-
-	- 함수의 길이     
-  		1. C에서는 함수의 길이에 아무런 제한을 두지 않는다.   
-		2. 이것은 하나의 함수 안에 많은 문장들을 넣을 수 있음을 의미한다.   
-		3. 그러나 함수의 길이가 지나치게 길면 좋지 않다.   
-  		4. 기본적으로 하나의 함수는 하나의 작업만을 수행한다.   
-  		5. 만약 함수의 길이가 지나치게 길다면 하나 이상의 작업을 하고 있다고 봐야한다.   
-  		6. 함수를 분할하는 것은 좋은 방법이다.   
-  		7. 보편적으로 30행을 넘지 않도록 하는 것이 좋다.
-  
-#### 6. 함수 호출
-
-	- 함수 호출(function call)
- 		1. 함수 호출이란 menu()와 같이 함수의 이름을 써주는 것이다.   
-		2. 함수 안의 문장들은 호출되기 전까지는 전혀 실행되지 않는다.   
-		3. 함수를 호출하게 되면 현재 실행하고 있는 코드는 잠시 중단된다.   
-		4. 호출된 함수로 이동해서 함수 몸체 안의 문장들이 순차적으로 실행된다.   
-		5. 호출된 함수의 실행이 끝나면 호출한 위치로 되돌아가서 잠시 중단됐던 코드를 실행한다.   
-
-  ![functionCall](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionCall.PNG)
-
-#### 6-1. 함수 호출 예제
-
-```C
-// print_start() 함수 2번 호출하기
-#include <stdio.h>
-void print_stars();	//함수의 원형 출력
-
-int main(void)
-{
-	print_stars();  
-	// print_stars() 함수 호출
-	printf("\nHello World!\n");  
-	print_stars();  
-	// print_stars() 함수 호출
-	printf("\n);  
-	return 0;
-}
-void print_stars()	// 입력할 함수	
-{
-	for (int i = 0; i < 30; i++)	// i가 30이 될 때까지 반복
-		printf("*");		// 별 찍기
-}
-```
-
-#### 7. 매개 변수와 반환값
-
-![functionAA](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionAA.PNG)
-![functionAB](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionAB.PNG)
-
-     
-#### 8. 인수와 매개 변수
-
-	- 인수(argument) : 호출 프로그램에 의하여 함수에 실제로 전달되는 값     
- 	- 매개 변수(parameter) : 인수를 전달받는 변수     
-  
-![functionBB](https://github.com/BangYunseo/TIL/blob/main/C/Image/functionBB.PNG)   
-
-	- 만약 매개 변수가 없는 경우에는 매개 변수 위치에 void를 써주거나 아무 것도 적지 않는다.     
- 	- 함수가 호출될 때마다 인수는 달라질 수 있다.     
-  	- 매개 변수의 개수는 정확히 일치해야 한다.     
-   	- 매개 변수의 개수와 인수의 개수가 일치하지 않으면 오류가 발생한다.     
-  
-#### 9. 반환값(return value)
-
-	- 반환값은 함수가 호출한 곳으로 반환하는 작업의 결과값이다.     
- 	- 값을 반환하려면 return 문장 다음에 수식을 써준다.     
-  	- 인수는 여러 개가 있을 수 있으나 반환값은 하나만 가능하다.     
-	
-#### 10. max 함수 예제
-
-```C
-#include <stdio.h>
-int max(int x, int y);			// 함수의 원형 출력
-
-int main(void)
-{
-	int x, y, larger;		// 정수 2개를 저장할 변수 x와 y, 큰 값을 저장할 변수 larger을 생성
-
-	printf("정수 2개를 입력하세요 : );	 
-	scanf_s("%d %d", &x, &y);			// 정수 2개를 입력
-
-	larger = max(x, y);				// 변수 larger에 함수값 저장
-	printf("더 큰 값은 %d 입니다.\n", larger);	// 더 큰 값을 출력
-	return 0;
-}
-int max(int x, int y)
-{
-	if (x > y)		// 만약 x가 y보다 크다면
-		return x;	// x를 출력
-	else 			// 만약 y가 x보다 크다면
-		return y;	// y를 출력
-}
-```
-
-#### 11. 정수를 입력 받는 get_integer() 함수 예제
-
-	- 함수 사용 예시		
-![getinteger](https://github.com/BangYunseo/TIL/blob/main/C/Image/getinteger.PNG)
+#### 3-2. 지역 변수의 예제
 
 ```C
 #include <stdio.h>
 
-int get_integer();	// 함수의 원형 출력
-
 int main(void)
 {
-	int get_integer();	// get_integer()함수 출력
-	return 0;
-}
-int get_integer()
-{
-	int value;		// 입력받을 정수를 저장할 변수 생성
- 	printf("정수를 입력하시오 : ");
-  	scanf_s("%d", &value);	// 정수 입력
-   	return value;		// 입력받은 정수 반환
-}
-```
-#### 12. 온도 변환기 예제 
+	int i;	// 메인함수의 지역 변수
+	// 초기화되지 않은 지역 변수는 쓰레기 값을 가진다. 
 
-```C
-#include <stdio.h>
-
-void printMenu();		// 시작 메뉴 실행하는 함수의 원형 출력
-double C2F(double C_temp);	// 섭씨 온도를 화씨 온도로 출력하는 함수의 원형 출력
-double F2C(double F_temp);	// 화씨 온도를 섭씨 온도로 출력하는 함수의 원형 출력
-
-int main(void)
-{
-	char choice;		// 선택할 메뉴를 입력받을 변수 생성
- 	double temp;		// 온도를 입력받을 변수 생성
-
-  	while(1)		// 실행하는 사람이 q를 입력할 때까지 무한 반복
-	{
- 		printMenu();		// printMenu 함수 실행
-  		printf("메뉴에서 선택하세요 : ");	
-   		choice = getchar();	// getchar 함수를 통해 choice 변수의 값을 입력받음
-
-    		if (choice == 'q')	// choice에 q가 입력된다면
-			break;		// 반복문 탈출
-  		else if (choice == 'c')	// choice에 c가 입력된다면
-		{
- 			printf("섭씨온도 : ");	
-    			scanf_s("%d", &temp);	// 입력받은 섭씨온도를
-       			printf("화씨온도 : %lf\n", C2F(temp));	// 화씨온도로 바꿔서 출력
-		}
-  		else if (choice == 'f') // choice에 f가 입력된다면
-		{
-  			printf("화씨온도 : ");
-     			scanf_s("d", &temp);	// 입력받은 화씨온도를
-			printf("섭씨온도 : %lf\n", F2C(temp)); 	// 섭씨온도로 바꿔서 출력
-		}
-  		getchar();
+  	for(i = 0; i < 5; i++)
+   	{
+    		int temp = 1;		// 블록이 시작할 때마다 생성되어 초기화되는 지역 변수
+      		printf("temp = %d\n", temp);	// temp값 출력
+		temp++;
 	}
  	return 0;
 }
-void printMenu()		// 시작 메뉴 출력하는 함수
-{
-	printf("===========================\n");
- 	printf("'c' 섭씨온도에서 화씨온도로 변환\n");
-  	printf("'f' 화씨온도에서 섭씨온도로 변환\n");
-   	printf("'q' 종료\n");
-    	printf("===========================\n");
-}
-double C2F(double C_temp)		// 섭씨온도를 화씨온도로 변환한 함수
-{
-	return 9.0 / 5.0 * c_temp + 32;
-}
-double F2C(double F_temp)		// 화씨온도를 섭씨온도로 변환한 함수
-{
-	return (F_temp - 32.0) * 5.0 / 9.0;
-}
- 	
-
 ```
+  
+#### 4. 함수와 매개 변수
+
+	- 함수의 헤더 부분에 정의되어 있는 매개 변수도 일종의 지역 변수이다.   
+	- 즉, 지역 변수가 지니는 모든 특징을 가지고 있다.
+	- 지역 변수와 다른 점은 함수 호출 시의 인수 값을 초기화되어 있다는 점이다.
+ 
+![local4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/local4.PNG)  
+
+#### 4-1. 함수와 매개 변수의 예제
+
+```C
+#include <stdio.h>
+int inc(int counter);	// 함수 inc의 원형 출력
+
+int main(void)
+{
+	int i;	// 지역변수 i 생성
+
+ 	i = 10;	// i를 10으로 초기화
+  	printf("함수 호출 전 i = %d\n", i);
+   	inc(i);	// 값에 의한 호출(call by value)	
+    	// main()안의 i의 값은 함수 호출로 변경되지 않는다.
+	
+	// inc()에서 매개 변수 counter를 변화시킨다.
+	// 하지만 main() 안의 i와 inc()의 counter는 완전히 별도의 지역 변수이다.
+	// -> 함수 호출 시에는 변수 i의 값이 변수 counter로 복사될 뿐이다.
+	// 즉, inc() 함수는 로컬 변수 counter만 증가시키고 main() 함수의 i 값을 수정하지는 않는다.
+	// -> 함수를 호출할 때 인수의 값이 매개 변수로 복사된다는 의미
+	// = 값에 의한 호출을 의미한다. (call by value)
+	
+     	printf("함수 호출 후 i = %d\n", i);
+      	return 0;
+}
+void inc(int counter)	// 매개 변수도 일종의 지역 변수이기 때문에 함수가 시작되면 생성되고 종료되면 소멸함
+{
+	counter++;
+	// 매개 변수를 증가하더라도 인수 i에 영향을 주지 않는다.
+	// 변수 i와 변수 counter는 별도의 지역 변수이기 때문이다.
+}
+```
+
+#### 5. 전역 변수
+
+	- 전역 변수(global variable)는 함수 외부에서 선언되는 변수이다.
+ 	- 전역 변수의 범위는 소스 파일 전체이다.
+
+![global1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/global1.PNG)  
+
+#### 5-1. 전역 변수의 초기값과 생존 기간
+
+```C
+#include <stdio.h>
+int A;		// 전역 변수의 초기값은 0이다.
+int B;		// 전역 변수의 초기값은 0이다.
+int add();	// add() 함수의 원형 출력
+
+int main(void)
+{
+	int answer;		// answer 변수 생성	
+ 	A = 5;			// 전역 변수 A를 5로 초기화
+	  B = 7;		// 전역 변수 B를 7로 초기화
+   	answer = add();		// 변수에 함숫값을 대입
+    	printf("%d + %d = %d\n", A, B, answer);		// 전역 변수 A와 B의 합 출력
+     	return 0;
+}
+int add()
+{
+	return A + B;		// 전역 변수의 합을 반환하는 함수
+}
+```
+
+#### 6. 전역 변수의 초기값
+
+	- 전역 변수의 생존 기간 : 프로그램의 시작과 동시에 생성되어 프로그램이 종료되기 전까지 메모리에 존재
+![global2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/global2.PNG)  
+ 
+#### 7. 전역 변수의 사용
+
+```C
+// 스파게티 코드 예시
+#include <stdio.h>
+void sub();		// 함수의 원형 출력
+
+int main(void)
+{
+	for(x = 0; x < 10; x++)		// 10번 반복
+		printf("\n");
+		sub();		// 함수 출력
+}
+void sub()	// 별 출력 예제
+{
+	for(x = 0; x < 10; x++)
+		printf("*");	
+}
+```
+	- 위 코드의 출력은 아래와 같이 된다.
+![global3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/global3.PNG)   
+
+	- 전역 변수는 그 변수를 어디에서 변경하고 있는지 파악하지 못하는 경우가 많다.
+	- 그래서 스파게티 코드가 많이 일어난다.
+
+	- 거의 모든 함수에서 사용하는 공통적인 데이터는 전역 변수로 한다.
+	- 일부 함수들만 사용하는 데이터는 전역 변수로 하지 않고 함수의 인수로 전달한다. 
+
+#### 8. 같은 이름의 전역 변수와 지역 변수
+	
+![localglobal2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/localglobal2.PNG)
+
+#### 9. 생존 기간
+
+	- 정적 할당(static allocation)
+		: 프로그램 실행 시간 동안 계속 유지
+	- 자동 할당(automatuc allocation)
+		: 블록에 들어갈 때 생성
+		: 블록에서 나올 때 소멸  
+
+![allocation](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/allocation.PNG)
+
+
+
 #### 13. getchar()함수 
 
 	- 문자를 입력받아야 하므로 변수를 설정하고 scanf()에 서식지정자로 %c를 설정한다.
