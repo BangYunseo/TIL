@@ -249,42 +249,33 @@ void sub()	// 별 출력 예제
 	- 일반적으로 자동 저장 유형을 사용 권장
 	- 변수의 값이 함수 호출이 끝나도 그 값을 유지해야 한다면 정적 지역
 	- 많은 함수에서 공유되는 변수라면 외부 참조 변수
-|---|---|---|---|---|
+ 
+|저장 유형|키워드|정의되는 위치|범위|생존 시간|
+|:---:|:---:|:---:|:---:|:---:|
+|자동|auto|함수 내부|지역|임시|
+|레지스터|register|함수 내부|지역|임시|
+|정적 지역|static|함수 내부|지역|영구|
+|전역|없음|함수 외부|모든 소스 파일|영구|
+|정적 전역|static|함수 외부|하나의 소스 파일|영구|
+|외부 참조|extern|함수 외부|모든 소스 파일|영구|
 
-
-#### 22. 시간 맞추기 게임 예제
+#### 20. 난수 발생기 예제
 
 ```C
-#include <stdio.h>
-#include <time.h>
-
-int main(void)
-{
-	unsigned long start, end;	// 부호없는 수로 초기화한다.
-	start = time(NULL);			
-	// start에 현재 시각을 반환하는 time(NULL)을 저장한다.
-
-	printf("종료하고 싶다면 아무 키나 누르세요. \n");	
-	while (1)	// 무한 반복
-	{
-		if (getchar())		// 만약 아무 문자를 입력받는다면,
-			break;			// 프로그램을 종료한다.
-	}
-	printf("종료되었습니다.\n"); 
-	end = time(NULL);		
-	// end에 현재 시각을 반환하는 time(NULL)을 저장한다.
-
-	printf("경과된 시간은 %d초입니다. \n", end - start);	
-	// 두 시간의 차이를 출력한다.
-
-	return 0;
-}
-
+// 난수 발생기 구현해보기
 ```
 
-#### 23. 모듈화
+#### 21. 순환(recursion)
 
-	- 모듈 내에서는 최대의 상호 작용이 있어야 하고 모듈 사이에는 최소의 상호 작용만 존재해야 한다.
-	- 만약 모듈과 모듈 사이의 연결이 복잡하다면 모듈화가 잘못된 것이다.
+	- 함수는 자기 자신을 호출할 수도 있다.
+	- 이것을 순환이라 부른다.
 
-![modularization](https://github.com/BangYunseo/TIL/blob/main/C/Image/modularization.PNG)
+![recursion](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/recursion.PNG)
+
+#### 22. 순환 함수의 구조
+
+	- 순환 알고리즘은 자기 자신을 순환적으로 호출하는 부분과 순환 호출을 멈추는 부분으로 구성되어 있다.
+ 
+![recursion2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/recursion2.PNG)
+
+ 
