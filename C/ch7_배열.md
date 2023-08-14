@@ -2,38 +2,36 @@
 
 #### 1. 배열
 
-	- 변수의 속성 : 이름, 타입, 크기, 값 + 범위, 생존 시간, 연결  
-		1) 범위(scope) : 변수가 사용 가능한 범위, 가시성  
-		2) 생존 시간(lifetime) : 메모리에 존재하는 시간
-		3) 연결(linkage) : 다른 영역에 있는 변수와의 연결 상태
- 
-![vtype](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/vtype.PNG)
-
-#### 2. 변수의 범위
-
-	- 변수는 크게 지역 변수와 전역 변수로 나눠진다.
+	- 배열을 사용하면 한 번에 여러 개의 변수를 생성할 수 있다.   
+```C
+int s[10];	// 옆과 같은 명령어를 사용하면 10개의 빈칸을 가진 배열을 생성한다.
+```
 	 
-![vtype2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/vtype2.PNG)
+![array1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/array1.PNG)
 
-#### 2-1. 지역 변수와 전역 변수
+#### 2. 배열의 필요성
 
-![localglobal](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/localglobal.PNG)
+	- 많은 변수를 한 번에 저장할 수 있다.
+	 
+![array2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/array2.PNG)
 
-#### 3. 지역 변수
+#### 3. 배열의 특징
 
-	- 지역 변수(local variable)은 블록 안에 선언되는 변수이다.
-	- 또한 지역 변수는 블록 안의 어떤 위치에서도 선언할 수 있다. 	
+	- 배열은 메모리의 연속적인 공간에 저장한다.   
+		ex) [2. 배열의 필요성]에서 배열 요소 s[0]과 s[1]은 실제 메모리 상에서 붙어있다.     
+	- 배열은 서로 관련된 데이터를 차례로 접근해서 처리할 수 있다.
+ 		> 데이터들이 서로 다른 이름을 사용하고 있다면 이들의 이름을 모두 기억해야 한다.   
+   		> 하지만 하나의 이름을 공유하고 번호만 다르다면 쉽게 기억할 수 있고 편하게 사용가능하다.   
 
-![local1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/local1.PNG)   
-![local2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/local2.PNG)  
+#### 3. 배열 선언
 
-#### 3-1. 지역 변수의 생존 기간
-	- 지역 변수는 변수가 선언된 블록이 시작할 때 시스템 스택(stack)인 메모리 공간에 만들어진다.
-	- 지역 변수는 자동으로 초기화되지 않는다.
-	- 블록이 종료되면 지역 변수에 할당된 메모리 공간은 반환된다.
-	- 메모리 공간이 반환되면 지역 변수도 사라진다. 
- 
-![local3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/local3.PNG)  
+![definearray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/definearray.PNG)   
+
+#### 4. 배열 원소와 인덱스
+	- 인덱스(index) : 배열 원소의 번호   
+	- 주의할 점이 있다면, 인덱스는 1부터 시작되는 것이 아니라 0부터 시작된다는 점이다.   
+
+![array3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/array3.PNG)  
 
 #### 3-2. 지역 변수의 예제
 
