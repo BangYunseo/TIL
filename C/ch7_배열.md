@@ -299,35 +299,223 @@ int main(void)
 #### 17. lab #1. 주사위 던지기 예제
 
 ```C
+// Lab1 : 주사위 던지기
+#include <stdio.h>
+#include <stdlib.h>
+#define DICE_NUM 6		// DICE 면의 수를 6으로 정의한다.
+
+int main(void)
+{
+	int freq[DICE_NUM] = { 0 };	// 주사위의 면의 수만큼 배열 freq를 생성한다.
+	int i;						// for문에 사용할 변수 i를 생성한다.
+
+	for (i = 0; i < 10000; i++)		// 주사위를 10000번 던진다.
+	{
+		++freq[rand() % 6];		// 배열의 무작위 면이 나오는 횟수를 더한다.
+	}
+
+	printf("=========================\n");
+	printf("숫자\t빈도\n");						// 숫자와 빈도를 출력한다.
+	printf("=========================\n");
+
+	for (i = 0; i < DICE_NUM; i++)		// 주사위 면의 숫자만큼 출력을 반복한다.
+	{
+		printf("%d\t%d\n", i + 1, freq[i]);
+		// 주사위 면 1의 값이 나온 횟수부터 차례대로 입력한다.
+		// 여기서 i는 0부터 시작하므로 i + 1을 해서 1 ~ 6까지의 수를 입력한다.
+	}
+	return 0;
+}
 ```
 
 #### 18. lab #2. 극장 예약 시스템 예제
 
 ```C
+// Lab2 : 극장 예약 시스템
+#include <stdio.h>
+#define SEATS 10
+
+int main(void)
+{
+	char answer1;	// 좌석 예약 여부를 입력받을 변수 answer1을 생성한다.
+	int answer2, i;	// 어느 좌석을 선택할지 입력받을 변수 answer2와 for문에 이용할 변수 i를 생성한다.
+	int movie_seat[10] = { 0 };	// 좌석 10개를 저장할 배열을 생성하고 0으로 초기화한다.
+
+	while (1)		// 무한반복문
+	{
+		printf("좌석을 예약하시겠습니까? (y 또는 n) ");	// 좌석을 예약할 것인지 출력한다.
+		scanf_s(" %c", &answer1, 4);	// 대답을 입력받고 변수 answer1에 저장한다.
+
+		if (answer1 == 'y')	// 만약 대답이 y라면 좌석을 예약한다.
+		{
+			printf("-----------------------\n");
+			printf("1 2 3 4 5 6 7 8 9 10\n");			// 좌석 수를 출력한다.
+			printf("-----------------------\n");
+			for (i = 0; i < SEATS; i++)		// 좌석의 수만큼 반복한다.
+			{
+				printf("%d ", movie_seat[i]);
+				// 앞에서 배열을 초기화했으므로 0 또는 1이 출력된다.
+				// 1이 출력되면 예약된 좌석, 0이 출력되면 예약하지 않은 좌석이다.
+			}
+			printf("\n");	// 줄바꿈
+
+			printf("몇 번째 좌석을 예약하시겠습니까? ");		// 어느 좌석을 예약할 것인지 출력한다.
+			scanf_s("%d", &answer2);		// 입력받은 좌석의 번호를 변수 answer2에 저장한다.
+
+			if (answer2 <= 0 || answer2 > SEATS)	// 만약 answer2의 값이 1 ~ 10 사이의 값이 아니라면
+			{
+				printf("1부터 10 사이의 숫자를 입력하세요.\n");	// 변수를 다시 입력받는다.
+				continue;	// 다시 반복문을 실행
+			}
+			if (movie_seat[answer2 - 1] == 0)	// 만약 변수 answer2 - 1의 배열값이 0이라면
+			{
+				movie_seat[answer2 - 1] = 1;	// 그 자리에 1을 저장한다.
+				printf("예약되었습니다.\n");	// 예약됐다고 출력한다.
+			}
+			else       // 만약 변수 answer2 - 1 의 배열값이 1이라면
+			{
+				printf("이미 예약된 자리입니다.\n");	// 이미 예약된 자리라고 출력한다.
+			}
+		}
+		if (answer1 == 'n')		// 만약 대답이 n이라면 그대로 반복문을 종료한다.
+			return 0;
+	}
+	return 0;
+}
+
 ```
 
 #### 19. lab #3. 최솟값 탐색 예제
 
 ```C
+// Lab3 : 최솟값 찾기
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define SIZE 10		// 배열의 크기를 10으로 설정한다.
+
+int main(void)
+{
+	srand((unsigned)time(NULL));	// 난수를 발생시킨다.
+
+	int prices[SIZE] = { 0 };	// 값을 저장할 배열을 SIZE 크기만큼 생성하고, 0으로 초기화한다.
+	int i, minimum;		// 배열에 사용할 변수 i와 최솟값을 저장하면서 갱신할 변수를 생성한다.
+
+	printf("---------------------------\n");
+	printf("1 2 3 4 5 6 7 8 9 10\n");				// 10개의 숫자를 출력할 메뉴 출력
+	printf("---------------------------\n");
+
+	for (i = 0; i < SIZE; i++)	// 배열의 크기만큼 반복한다.
+	{
+		prices[i] = (rand() % 100) + 1;		// 배열의 각 값에 1 ~ 100까지의 수를 저장한다.
+		printf("%d ", prices[i]);			// 각 배열을 출력한다.
+	}
+	printf("\n");		// 줄바꿈
+
+	minimum = prices[0];	// 일단 최솟값을 첫 번째 값으로 설정한다. for문 안에 들어갈 필요 X
+	for (i = 0; i < SIZE; i++)	// 배열의 크기만큼 반복한다.
+	{
+		if (prices[i] < minimum)	// 만약 prices[i]의 값이 현재 최솟값보다 작다면
+			minimum = prices[i];	// 현재 최솟값을 prices[i]로 변경한다.
+	}
+
+	printf("최소값은 %d 입니다.\n", minimum);	// 최솟값을 출력한다.
+
+	return 0;
+}
 ```
 
 #### 20. 배열과 함수
 
-(위의 예제들은 작성했던 C파일과 주석을 확인하고 작성 / ppt 52페이지부터 작성)
-
 	- 배열의 경우에는 사본이 아닌 원본이 전달된다.    
 
-#### 21. 순환(recursion)
+![originalarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/originalarray.PNG) 
 
-	- 함수는 자기 자신을 호출할 수도 있다.
-	- 이것을 순환이라 부른다.
+	- 함수 : 매개변수와 인수     
+ 		1) 매개변수 : 함수 바깥에서 전달된 값이 저장되는 변수   
+		2) 인수 : 함수를 호출할 때 전달하는 값이나 변수   
+```C
+#include <stdio.h>
 
-![recursion](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/recursion.PNG)
+int plus(int a, int b);	// 함수의 원형 출력
 
-#### 22. 순환 함수의 구조
+int main(void){
+	int point1;	// 과목 점수 1
+	int point2;	// 과목 점수 2
 
-	- 순환 알고리즘은 자기 자신을 순환적으로 호출하는 부분과 순환 호출을 멈추는 부분으로 구성되어 있다.
+	scanf("%d %d", &point1, &point2);
+
+	if (plus(point1, point2) >= 150)
+	// plus는 함수, point1과 point2는 인수
+		printf("합격\n");
+	else
+		printf("불합격\n");
+	return 0;
+}
+int plus(int a, int b){
+	// 함수 plus에 위치한 int a, int b는 매개변수
+	int result;
+
+	result = a + b;
+
+	return result;	// 과목 점수의 합을 반환
+}
+```
+
+#### 20. 배열이 함수의 인수인 경우
+```C
+// 예시 코드
+#include <stdio.h>
+#define SIZE 7
+
+void modify_array(int a[], int size);		// 함수의 원형 출력
+void print_array(int a[], int size);		// 함수의 원형 출력
+
+int main(void){
+	int list[SIZE] = {1, 2, 3, 4, 5, 6, 7};	// 배열 초기화
+
+	print_array(list, SIZE);	// 배열 출력 함수 실행
+	modify_array(list, SIZE);	// 배열의 값들을 1씩 더하는 함수 실행
+	print_array(list, SIZE);	// 배열 출력 함수 실행
+	// 1씩 값이 더해진 배열이 출력됨
+
+	return 0;
+}
+void modify_array(int a[], int size){ 	// 1씩 더하는 함수
+	int i;
+	for (i = 0; i < size; i++)
+		++a[i];
+}
+void print_array(int a[], int size){	// 배열을 출력하는 함수
+	int i;
+	for (i = 0; i < size; i++)
+		printf("%3d ", a[i]);
+	printf("\n");
+}
+//   예시 출력
+// 1 2 3 4 5 6 7
+// 2 3 4 5 6 7 8
+```
+#### 21. 원본 배열의 변경 금지하기
+```C
+void print_array(const int a[], int size)
+{		// const를 사용하면 함수 안에서 a[]의 값을 변경할 수 없게 된다.
+	...
+	a[0] = 100;
+	// 위를 실행하면 컴파일 오류가 발생한다.
+}
+```
+
+#### 22. 정렬
+
+	- 정렬은 물건을 크기 순으로 오름차순이나 내림차순으로 나열하는 것을 의미한다.    
+ 	- 컴퓨터 프로그래밍을 배울 때 가장 기본적이며 중요한 알고리즘 중 하나이다. 
+  	- 정렬은 자료 탐색에 있어서 필수적이다.
  
-![recursion2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/recursion2.PNG)
+ #### 23. 선택 정렬
 
- 
+ 	- 선택 정렬 (selection sort) : 정렬이 안된 숫자들 중에서 최솟값을 선택하여 배열의 첫 번째 요소와 교환하는 행동   
+  		- 오른쪽 배열에서 가장 작은 숫자를 선택하여 왼쪽 배열로 이동하는 작업을 되풀이 한다.      
+    		- 선택 정렬은 오른쪽 배열이 공백상태가 될 때까지 이 과정을 되풀이하는 정렬기법이다.     
+      
+(61p 표부터 정리)
