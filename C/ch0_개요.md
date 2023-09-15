@@ -7,5 +7,5 @@
 [ch4. 반복문](https://github.com/BangYunseo/TIL/blob/main/C/ch4_%EB%B0%98%EB%B3%B5%EB%AC%B8.md)     
 [ch5. 함수](https://github.com/BangYunseo/TIL/blob/main/C/ch5_%ED%95%A8%EC%88%98.md)      
 [ch6. 변수](https://github.com/BangYunseo/TIL/blob/main/C/ch6_%EB%B3%80%EC%88%98.md)  
-[ch7. 배열]()
+[ch7. 배열](https://github.com/BangYunseo/TIL/blob/main/C/ch7_%EB%B0%B0%EC%97%B4.md)
 
