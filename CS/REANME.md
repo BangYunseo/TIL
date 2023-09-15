@@ -1,6 +1,4 @@
-# Welcome to Computer Science!
-
-계속 추가할 예정
+# Computer Science List
 
 ## 1. Computer Architecture
 ## 2. Data Structure
