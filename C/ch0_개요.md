@@ -6,5 +6,6 @@
 [ch3. 조건문](https://github.com/BangYunseo/TIL/blob/main/C/ch3_%EC%A1%B0%EA%B1%B4%EB%AC%B8.md)      
 [ch4. 반복문](https://github.com/BangYunseo/TIL/blob/main/C/ch4_%EB%B0%98%EB%B3%B5%EB%AC%B8.md)     
 [ch5. 함수](https://github.com/BangYunseo/TIL/blob/main/C/ch5_%ED%95%A8%EC%88%98.md)      
-[ch6. 변수] ()      
+[ch6. 변수]()  
+[ch7. 배열]()
 
