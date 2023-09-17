@@ -14,4 +14,4 @@
 
 ### [ch7_배열](https://github.com/BangYunseo/TIL/blob/main/C/ch7_%EB%B0%B0%EC%97%B4.md)          
 
-
+### [ch_8포인터](https://github.com/BangYunseo/TIL/blob/main/C/ch8_%ED%8F%AC%EC%9D%B8%ED%84%B0.md)
