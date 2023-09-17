@@ -602,13 +602,187 @@ int main(void)
 
 int main(void)
 {
+	int key, i;
+	int list[SIZE] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
+	printf("탐색할 값을 입력해라 : ");
+	scanf("%d", &key);
 
-
-
-
+	for(i = 0; i < SIZE; i++)
+	// list[i]와 key.를 비교하고, 만약 list[i] == key일 경우 인덱스를 출력
+	{
+		if(list[i] == key)
+			printf("탐색 성공 인덱스 = %d\n", i);
+	}
+	printf("탐색 종료\n");
 	return 0;
 }
 
 
 ```
+
+#### 25. 이진 탐색
+
+	- 이진 탐색(binary search) : 정렬된 배열의 중앙에 위치한 원소와 비교 되풀이
+		- 단, 탐색하려는 배열이 미리 정렬되어 있어야 한다. 
+
+![binarysearch](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/binarysearch.PNG) 
+
+
+
+#### 25-1. 이진 탐색 예시
+
+```C
+// 찾아야 하는 값인 key값의 인덱스를 출력하는 예제
+#include <stdio.h>
+#define SIZE 16
+int binary_search(int list[], int n, int key);
+
+int main(void)
+{
+	int key;
+	int grade[SIZE] = {2, 6, 11, 13, 18, 20, 22, 27, 29, 30, 34, 38, 41, 42, 45, 47};
+	printf("탐색할 값을 입력해라 : ");
+	scanf("%d", &key);
+	printf("탐색 결과 = %d\n", binary_search(grade, SIZE, key));
+
+	return 0;
+}
+int binary_search(int list[], int n, int key)
+// 배열을 이진 탐색하는 함수
+{
+	int low, high, mid;
+	low = 0;
+	high = n - 1;
+	// 배열의 인덱스 값의 최대를 high, 최소를 low로 설정
+
+	while(low <= high)	// 이진 탐색이 가능할 때까지
+	{	
+		printf("[%d %d]\n", low, high);
+		// 각각 low값과 high 값 출력
+		mid = (low + high) / 2;
+		// 중간 위치 계산
+		if(key == list[mid])
+			return mid
+		// key값이 중간 값과 일치한다면 중간 값 반환
+		else if(key > list[middle])
+			low = mid + 1;
+		// key값이 중간 값보다 크다면, 중간 값이었던 수보다 1을 더한 수를 최솟값으로 설정
+		else
+			high = mid - 1;
+		// key값이 중간 값보다 작다면, 중간 값이었던 수보다 1을 뺀 수를 최댓값으로 설정
+	}
+	return -1;	// 이진 탐색이 안되는 배열인 경우 -1 반환
+} 
+
+```
+
+#### 26. 2차원 배열
+
+	- 데이터 자체가 2차원인 경우 사용하는 배열
+ 	- ex) 디지털 이미지, 보드 게임 등
+
+
+![2tharray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharray.PNG) 
+
+
+```C
+int s[10];		// 1차원
+int s[3][10];		// 2차원
+int s[5][3][10];	// 3차원
+```
+
+- 2차원 배열의 인덱스
+
+![2tharrayindex](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayindex.PNG)   
+
+
+#### 26-1. 2차원 배열 예제
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define ROWS 3
+#define COLS 5
+
+int main(void)
+{
+	int s[ROWS][COLS];
+	int i, j;
+	srand((unsigned)time(NULL));
+	// 난수 생성기
+
+	for (i = 0; i < ROWS; i++)
+	// 배열의 행과 열에 랜덤 난수를 설정
+	{
+		for(j = 0;j < COLS; j++)
+			s[i][j] = rand() % 100;
+	}
+	for (i = 0; i < ROWS; i++)
+	// 배열의 행과 열에 설정된 랜덤 난수를 출력
+	{
+		for(j = 0;j < COLS; j++)
+			printf("%02d", s[i][j]);
+		printf("\n");
+	}
+	return 0;
+}
+```
+```C
+// 출력 결과 예시
+61 10 53 60 54
+90 45 73 00 90
+80 82 93 45 67
+```
+
+#### 26-2. 2차원 배열 초기화
+
+- 행과 열이 모두 주어진 2차원 배열 초기화
+![2tharrayreset](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayreset.PNG)
+
+- 행이 주어지지 않고 열만 주어진 2차원 배열 초기화
+![2tharrayreset2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayreset2.PNG)
+
+- 행이 주어지지 않고 열만 주어진 2차원 배열 초기화 - 2
+![2tharrayreset3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayreset3.PNG)
+
+
+
+#### 27. 행렬 예제
+
+- 다차원 배열을 이용한 행렬의 표현 예제
+```C
+#include <stdio.h>
+#define ROWS 3
+#define COLS 3
+
+int main(void)
+{
+	int A[ROWS][COLS] = { {2, 3, 0},
+                              {8, 9, 1},
+                              {7, 0, 5} };
+	int B[ROWS][COLS] = { {1, 0, 0},
+                              {1, 0, 0},
+                              {1, 0, 0} };
+	int C[ROWS][COLS];
+	int r, c;
+	for(r = 0; r < ROWS; r++)
+	// 두 개의 행렬을 더한 값을 행렬 C에 저장
+	{
+		for(c = 0; c < COLS; c++)
+			C[r][c] = A[r][c] + B[r][c];
+	}
+	for(r = 0; r < ROWS; r++)
+	// 행렬 C에 저장된 값을 출력
+	{
+		for(c = 0; c < COLS; c++)
+			printf("%d", C[r][c]);
+		printf("\n");
+	}
+	return 0;
+}
+```
+
+#### 27-1. 다차원 배열 주의사항
+
+![ntharray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/ntharray.PNG)
