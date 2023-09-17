@@ -738,12 +738,15 @@ int main(void)
 #### 26-2. 2차원 배열 초기화
 
 - 행과 열이 모두 주어진 2차원 배열 초기화
+
 ![2tharrayreset](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayreset.PNG)
 
 - 행이 주어지지 않고 열만 주어진 2차원 배열 초기화
+
 ![2tharrayreset2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayreset2.PNG)
 
 - 행이 주어지지 않고 열만 주어진 2차원 배열 초기화 - 2
+
 ![2tharrayreset3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayreset3.PNG)
 
 
