@@ -462,7 +462,7 @@ int plus(int a, int b){
 }
 ```
 
-#### 20. 배열이 함수의 인수인 경우
+#### 20-1. 배열이 함수의 인수인 경우
 ```C
 // 예시 코드
 #include <stdio.h>
@@ -514,9 +514,9 @@ void print_array(const int a[], int size)
  
  #### 23. 선택 정렬
 
- 	- 선택 정렬 (selection sort) : 정렬이 안된 숫자들 중에서 최솟값을 선택하여 배열의 첫 번째 요소와 교환하는 행동   
-  		- 오른쪽 배열에서 가장 작은 숫자를 선택하여 왼쪽 배열로 이동하는 작업을 되풀이 한다.      
-    		- 선택 정렬은 오른쪽 배열이 공백상태가 될 때까지 이 과정을 되풀이하는 정렬기법이다.     
+ 	- 선택 정렬(selection sort) : 정렬이 안된 숫자들 중 최솟값을 선택하여 배열의 첫 번째 요소와 교환하는 행동  
+		- 오른쪽 배열에서 가장 작은 숫자를 선택하여 왼쪽 배열로 이동하는 작업을 되풀이 한다.      
+		- 선택 정렬은 오른쪽 배열이 공백상태가 될 때까지 이 과정을 되풀이하는 정렬기법이다.      
       
 
 |왼쪽 배열|오른쪽 배열|설명|
@@ -529,4 +529,86 @@ void print_array(const int a[], int size)
 |(1, 2, 3, 5, 7)|(8)|5 선택|
 |(1, 2, 3, 5, 7, 8)|()|6 선택|
 
-#### 
+![sorting1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/sorting1.PNG) 
+
+ #### 23-1. 선택 정렬 예제
+```C
+#include <stdio.h>
+#define SIZE 10
+
+int main(void)
+{
+	int list[SIZE] = {3, 2, 9, 7, 1, 4, 8, 0, 6, 5};
+	int i, j, temp, least;
+
+	for(i = 0; i < SIZE - 1; i++)
+	// SIZE - 1을 하는 이유 : 배열의 index는 0 ~ 9까지이다.
+	// 여기서 배열의 마지막 숫자는 가장 큰 숫자가 남을 것이기 때문에 정렬하지 않아도 된다.
+	{
+		least = i;	// 최솟값을 i 번째 원소로 설정
+		for(j = i + 1; j < SIZE; j++)
+		// i + 1 번째 원소부터 최솟값을 찾는 이유 : 이미 최솟값을 i 번째 원소로 설정해놨기 때문이다.
+		{
+			if(list[j] < list[least])
+				least = j;
+			// 현재 최솟값으로 저장되어 있는 i(least)보다 더 작은 정수를 발견하면 ?
+			// 그 정수가 들어있는 index를 least에 저장한다.
+		}
+		// list[i]와 list[least]를 서로 복사한 후 교환하는 과정
+		temp = list[i];		
+		list[i] = list[least];
+		list[least] = temp;
+		// i 번째 원소와 least 위치의 원소를 교환하기 위해서는 여분의 변수인 temp가 필요
+		// Why? : 값을 저장하지 않으면 복사하는 과정에서 하나의 값이 없어지기 때문이다.
+	}
+	for(i = 0; i < SIZE; i++)
+		printf("%d", list[i]);
+	printf("\n");
+	return 0;
+}
+```
+![sortingRE](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/sortingRE.PNG) 
+
+
+ #### 23-2. 선택 정렬 변수의 값을 교환할 때
+
+ 	- 옳지 않은 방법
+		(1) score[i] = score[least];
+		(2) score[least] = score[i];
+		> 위와 같은 방법으로 진행하면 score[i]의 기존 값이 파괴되는 것을 볼 수 있다. 
+	- 올바른 방법
+		(1) temp = list[i];
+		(2) list[i] = list[least];
+ 		(3) list[least] = temp;
+
+![rightway](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/rightway.PNG) 
+
+
+
+#### 24. 순차 탐색
+	- 순차 탐색은 배열의 원소를 순서대로 하나씩 꺼내서 탐색키와 비교하고 원하는 값을 찾아가는 방법
+		> 순차 탐색은 일치하는 항목을 찾을 때까지 비교를 계속 진행함
+		> 순차 탐색은 첫 번째 요소에서 성공할 수도 있고 마지막 요소까지 가야 찾을 수도 있음
+		> 평균적으로는 절반 정도의 배열요소와 비교
+
+![waysearch](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/waysearch.PNG) 
+
+
+#### 24-1. 순차 탐색 예시
+
+```C
+#include <stdio.h>
+#define SIZE 10
+
+int main(void)
+{
+
+
+
+
+
+	return 0;
+}
+
+
+```
