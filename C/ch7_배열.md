@@ -429,7 +429,7 @@ int main(void)
 
 	- 배열의 경우에는 사본이 아닌 원본이 전달된다.    
 
-![originalarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/originalarray.PNG) 
+![orignalarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/orignalarray.PNG) 
 
 	- 함수 : 매개변수와 인수     
  		1) 매개변수 : 함수 바깥에서 전달된 값이 저장되는 변수   
