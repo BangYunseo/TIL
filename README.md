@@ -10,5 +10,3 @@ TIL(Today I Learned)
 > 1. [C#](https://www.inflearn.com/course/c-sharp-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%EB%B0%B0%EC%9A%B0%EA%B8%B0)
 > 2. [Unity](https://www.inflearn.com/course/%EC%9C%A0%EB%8B%88%ED%8B%B0-%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C-%ED%8C%8C%ED%8A%B81-2/dashboard)
 
-#### 토이프로젝트 참고 링크
-[GO](https://blockdmask.tistory.com/category/%3C%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%3E/%5BC%EC%96%B8%EC%96%B4%20%EA%B2%8C%EC%9E%84%5D)
