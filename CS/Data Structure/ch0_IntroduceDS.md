@@ -19,6 +19,6 @@
           (3) 의미의 단위(매듭)를 설정하는 방법
 #### (1) 자료구조
          => 리스트, 스택, 큐, 힙, 검색 트리, 해시 테이블, 그래프
-[datastructure](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch0/datastructure.PNG)         
+![datastructure](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch0/datastructure.PNG)         
 #### (2) 생각하는 방법
          => 재귀, 추상화, 정렬, 그래프
