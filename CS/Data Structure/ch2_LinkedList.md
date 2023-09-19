@@ -2,7 +2,7 @@
 
 ### 1. 연결 리스트
 
-![array](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch2/array.PNG)
+![linkedlist](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch2/linkedlist.PNG)
 
 #### (1) 배열이란 ? 연속된 메모리 공간에 순차적으로 저장된 데이터 모음
     - 저장되는 데이터의 크기가 동적으로 변하고 리스트 중간에 있는 데이터를 삽입하거나 삭제해야 할 때 사용됨 
@@ -31,3 +31,4 @@
     - 많은 양의 데이터를 저장하는 데 적합하지 않음
 
 
+[보충 참고 자료](https://yoongrammer.tistory.com/44?category=956616)
