@@ -70,111 +70,78 @@ f의 주소 : 1245000  */
 
 	- 여러 개의 포인터 변수를 한 줄에 선언할 때는 주의해야 한다.
  	- 아래는 잘못된 선언 예제이다.
-![array4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/array4.PNG)  
 
-#### 7. 배열 요소 접근
-
-![array5](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/array5.PNG)   
-
- 
-```C
-	score[5] = 80;
-	score[1] = score[0];
-	score[i] = 100;		// i는 정수 변수
-	score[i + 2] = 100;	// 수식이 인덱스가 된다.
-	score[index[3]] = 100;	// index[]는 정수 배열
+ ```C
+int *p1, p2, p3;		// p2와 p3는 정수형 변수로 선언됨
 ```
 
-#### 8. 배열 기초 예제
+	- 아래는 올바른 선언 예제이다.
+  ```C
+int *p1, *p2, *p3;		// p2와 p3는 올바른 포인터 변수로 선언됨
+```
+
+#### 5. 포인터의 선언
+
+	- 포인터 변수 선언에서 자료형과 포인터 변수 이름 사이에 연산자 *(asterisk)를 삽입한다.
+ 	- ptrint, ptrshort, ptrchar, ptrdouble은 모두 포인터 변수이다.
+  		- 간단히 포인터라고도 부른다.
+ 
+![pointerV](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerV.PNG)
+
+
+#### 6. 포인터와 변수의 연결
+
+```C
+int i;		// 정수형 변수 i 선언
+int *p;		// 포인터 변수 p 선언
+p = &i;		// 변수 i의 주소가 포인터 변수 p로 대입됨			
+```
+
+![pointerV2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerV2.PNG)
+
+#### 7. 다양한 포인터 선언
+
+```C
+char c = 'A';				// 문자형 변수 c
+float f = 36.5;				// 실수형 변수 f
+double d = 3.141592;			// 실수형 변수 d
+
+char *pc = &c;				// 문자를 가리키는 포인터 pc
+float *pf = &f;				// 실수를 가리키는 포인터 pf
+double *pd = &d;			// 실수를 가리키는 포인터 pd
+```
+
+![pointerV3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerV3.PNG)
+
+#### 7-1. 예제 1. 포인터 선언하기
 
 ```C
 #include <stdio.h>
 
 int main(void)
 {
-	int i;			// 인덱스 값
-	int scores[5]; 		// 배열을 인덱스 값 5를 갖도록 생성
+	int i = 10;
+	double f = 12.3;
+	int *pi = NULL;		// NULL로 초기화를 하면 어느 메모리도 지정하지 않음
 
-	scores[0] = 10;
-	scores[1] = 20;
-	scores[2] = 30;
-	scores[3] = 40;
-	scores[4] = 50;
+	double *pf = NULL;
+	pi = &i;		// 포인터 변수 pi는 정수형 변수 i의 주소값을 저장 
+	pf = &f;		// 포인터 변수 pf는 실수형 변수 f의 주소값을 저장 
 
-	// 배열의 값 지정
-
-	for(i = 0; i < 5; i++)
-		printf("scores[%d] = %d\n", i, score[i]);
-
-	// for문을 통해 배열 출력
-
+	printf("%p %p \n", pi, &i);
+	printf("%p %p \n", pf, &f);
 	return 0;
 }
+/* 출력 예제
+0000002AFF8FFB24 0000002AFF8FFB24 
+0000002AFF8FFB48 0000002AFF8FFB48  */
 ```
 
-#### 9. 배열과 반복문
-
-	- 배열의 가장 큰 장점은 반복문을 사용해서 배열의 원소를 간편하게 처리할 수 있다는 점이다.
-![arrayfor](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/arrayfor.PNG)  
- 
-#### 10. 예제 1. 배열 난수로 채우기
-
-```C
-#include <stdio.h>
-#include <stdlib.h>	// 랜덤함수 헤더
-#define SIZE 5		// 배열 크기 5로 고정
-
-int main(void)
-{
-	int i;	// 인덱스의 값 변수로 지정
-	int scores[SIZE];	// 배열 생성 (크기는 정의한 SIZE 만큼)
-
-	for(i = 0;i < SIZE; i++)	// 배열에 랜덤 난수 저장
-		scores[i] = rand() % 100;
-	for(i = 0;i < SIZE; i++)	// 배열에 저장한 랜덤 난수 출력
-		printf("scores[%d] = %d\n", i, scores[i]);
-
-	return 0;
-}
-```
-
-#### 11. 예제 2. 성적 평균 계산하기
-
-```C
-#include <stdio.h>
-#define STUDENTS 5
-
-int main(void)
-{
-	int scores[STUDENTS];		// 배열 생성
-	int sum = 0;			// 합을 저장할 변수 0으로 초기화
-	int i, average;
-
-	for (i = 0; i < STUDENTS; i++)		// 학생 수 만큼 성적을 입력하는 반복문
-	{
-		printf("성적을 입력하세요 :");
-		scanf("%d", &scores[i]);	// 성적을 배열에 저장
-	}
-	for (i = 0; i < STUDENTS; i++)		// 입력한 성적을 모두 더하는 반복문
-		sum += scores[i];
-
-	average = sum / STUDENTS;		// 합 / 학생수 = 평균
-	printf("성적 평균 = %d\n", average);	// 평균 출력
-}
-```
-
-#### 12. 잘못된 인덱스 문제
+#### 7-2. 참고사항
+(ppt 17페이지 부터)
 
 	- 인덱스가 배열의 크기를 벗어나게 되면 프로그램에 치명적인 오류를 발생시킨다.    
  	- 배열이 인덱스 범위를 벗어나지 않도록 주의해야 한다.
-  ```C
-int score[5];	// score[5]는 인덱스가 0 ~ 4인 배열을 생성한다는 의미이다.
-...
-score[5] = 60;  // 인덱스는 0 ~ 4까지 있기 때문에 score[5]는 존재하지 않는 배열 공간이다.
-```
-
-![arrayindex](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/arrayindex.PNG) 
-
 
 #### 13. 배열의 초기화
 
