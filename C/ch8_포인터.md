@@ -20,9 +20,9 @@
 	- char형 변수 : 1 바이트, int형 변수 : 4 바이트, ...
 ```C
 int main(void){
-int i = 10;
-char c = 69;
-float f = 12.3;
+	int i = 10;
+	char c = 69;
+	float f = 12.3;
 }
 ```
 ![memory](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/memory.PNG)
@@ -49,18 +49,27 @@ float f = 12.3;
   
 #### 4. 변수의 주소
 
-	- 배열의 크기를 나타낼 때는 항상 상수를 사용해야 한다.       
-	- 변수를 배열의 크기로 사용하면 컴파일 오류가 난다.    
-	- 또한 배열의 크기를 음수나 0, 실수로 하면 컴파일 오류가 발생한다.
- 
 ```C
-	int scores[];		// 배열의 크기를 지정해야 함
-	int scores[];		// 배열의 크기가 변수일 수 없음
-	int scores[];		// 배열의 크기가 음수일 수 없음
-	int scores[];		// 배열의 크기가 실수일 수 없음
-```
-#### 6. 기호 상수 사용
+int main(void){
+	int i = 10;
+	char c = 69;
+	float f = 12.3;
 
+	printf("i의 주소 : %u\n", &i);	// 변수 i의 주소 출력
+	printf("c의 주소 : %u\n", &c);	// 변수 i의 주소 출력
+	printf("f의 주소 : %u\n", &f);	// 변수 i의 주소 출력
+
+	return 0;
+}
+/* 출력 예시
+i의 주소 : 1245024
+c의 주소 : 1245015
+f의 주소 : 1245000  */
+```
+#### 4-1. 변수의 주소 출력 주의사항
+
+	- 여러 개의 포인터 변수를 한 줄에 선언할 때는 주의해야 한다.
+ 	- 아래는 잘못된 선언 예제이다.
 ![array4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/array4.PNG)  
 
 #### 7. 배열 요소 접근
