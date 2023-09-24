@@ -1,41 +1,41 @@
 ##  Chapter 1. 객체 지향 언어 C++       
 
-#### 1. 객체 지향 언어
-      
-      1. 변수는 메인 메모리에 만들어진다.
-      2. 변수 이름을 사용해서 메모리 공간을 사용한다.     
-      
-#### 2. 변수는 왜 필요한가?   
+#### 1. 객체(Object)
+      - 데이터의 분산을 막기 위해 데이터와 기능을 하나로 묶은 그룹
+ 
+#### 2. 객체 지향 언어(Object-oriented Language)  
 
-      1. 변수는 사용자에게 받는 데이터를 저장하는 장소이다.
-      2. 변수가 없다면 사용자로부터 받은 데이터를 저장할 수 없다.
-
-#### 3. 변수와 상수
-
-      * 변수(Variable) : 저장된 값의 변경이 가능한 공간   
-      * 상수(Constant) : 저장된 값의 변경이 불가능한 공간    
-      * ex) 3.14, 100, 'A', "Hello, World!" 
+      - 컴퓨터 프로그래밍의 한 가지 기법으로 객체를 만들고 객체를 사용하는 프로그래밍 언어
+      - 프로그램을 데이터와 처리 방법으로 나누는 것이 아님
+      - 프로그램을 다수의 "객체"로 만들고, 이들을 상호작용해서 만들어지는 방식
       
-```C
-      // 원의 면적을 계산하는 예제
-      #include <stdio.h>
-      #define PI 3.141592     // PI를 3.141592로 정의한다.
+#### 3. 객체 지향 특성 - 캡슐화
+
+##### (1) 캡슐화(Encapsulation)     
+      - 데이터를 캡슐로 싸서 외부의 접근으로부터 보호     
+      - C++에서 클래스(class 키워드)로 캡슐을 표현      
+
+![class](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch1/class.PNG)
+
+##### (2) 클래스와 객체     
+      - 클래스 : 객체를 만드는 틀     
+      - 객체 : 클래스라는 틀에서 생겨난 실체      
+      - 객체(object), 실체(instance)는 같은 뜻     
       
-      int main(void)
-      {
-        double radius;   // 원의 반지름을 저장할 변수를 선언한다.
-        double area;    // 원의 면적을 저장할 변수를 선언한다.
-        
-        printf("원의 반지름을 입력해라 :");    // 원의 반지름을 입력하라고 출력한다.
-        scanf("%lf", &radius);      // 원의 반지름을 변수 radius에 저장한다. 
-        
-        area = PI * radius * radius;      // 원의 면적 area를 계산한다.
-        printf("원의 면적 : %lf\n", area);    // 원의 면적을 출력한다.
-        
-        return 0;
-      }      
+![instance](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch1/instance.PNG)
+
+```C++
+// 원을 추상화한 클래스 Circle
+class Circle{
+private :
+      int radius;      // 반지름 값
+public :
+      Circle(int r){ radius = r; }
+      double getArea(){ return 3.14 * radius * radius }
+};    
 ```
-#### 4. 자료형
+
+#### 4. 객체 지향 특성 - 상속성
 
       - 자료형은 크게 3가지로 나누어진다.     
       
