@@ -37,59 +37,16 @@ public :
 
 #### 4. 객체 지향 특성 - 상속성
 
-      - 자료형은 크게 3가지로 나누어진다.     
-      
-      1. 정수형 : short, int, long, long long     
-      2. 부동 소수점형(실수형) : float, double, long double     
-      3. 문자형 : char        
-```C
-      // 자료형의 크기
-      #include <stdio.h>
-      
-      int main(void)
-      {
-        int x;    // 정수형 변수 x를 선언한다.
-        
-        printf("변수 x의 크기 : %d\n", sizeof(x));   // 변수 x의 크기 : 4
-        printf("char형의 크기 : %d\n", sizeof(char));     // char형의 크기 : 1
-        printf("int형의 크기 : %d\n", sizeof(int));     // int형의 크기 : 4
-        printf("short형의 크기 : %d\n", sizeof(short));     // short형의 크기 : 2
-        printf("long형의 크기 : %d\n", sizeof(long));     // long형의 크기 : 4
-        printf("float형의 크기 : %d\n", sizeof(float));     // float형의 크기 : 4
-        printf("double형의 크기 : %d\n", sizeof(double));     // double형의 크기 : 8
-        
-        
-        return 0;
-      }      
-```
-      
-#### 4-1. 정수형
-      
-      - 정수형은 short, int, long, long long이 있다.
-|자료형|비트|범위|
-|:---|:---:|:---|
-|short|16비트|-32768 ~ 32767|
-|int|32비트|-2147483648 ~ 2147483647|
-|long|32비트|-2147483648 ~ 2147483647|
-|long long|64비트|-9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807|
+##### (1) 객체 지향 상속(Inheritance)     
+      - 자식이 부모의 유전자를 물려 받는 것과 유사
 
-```C
-      // 변수 선언하기 예제  
-      #include <stdio.h>
+##### (2) C++ 상속  
+      - 객체가 자식 클래스의 멤버와 부모 클래스에 선언된 모양 그대로 멤버들을 가지고 탄생
       
-      int main(void)
-      {
-        int Number1;          // 'Number1'이라는 정수형 int 변수 선언하기
-        short Number2;        // 'Number2' 라는 정수형 short 변수 선언하기
-        long Number3;         // 'Number3' 라는 정수형 long 변수 선언하기
-        double Number4;       // 'Number4' 라는 실수형 double 변수 선언하기
-        char Character1;      // 'Character1' 이라는 문자형 char 변수 선언하기
-
-        return 0;
-      }      
-```
+![Inheritance](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch1/Inheritance.PNG)
       
-#### 5. signed와 unsigned
+ 
+#### 5. 객체 지향 특성 - 다형성
 
       - unsigned
             1. 음수가 아닌 값만을 나타낸다.
