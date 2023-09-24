@@ -1,4 +1,4 @@
-# LIST
+# Learning LIST
 
 ### [ch1_변수와 자료형](https://github.com/BangYunseo/TIL/blob/main/C/ch1_%EB%B3%80%EC%88%98%EC%99%80%20%EC%9E%90%EB%A3%8C%ED%98%95.md)     
 
