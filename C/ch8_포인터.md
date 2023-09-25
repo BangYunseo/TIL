@@ -137,101 +137,150 @@ int main(void)
 0000002AFF8FFB48 0000002AFF8FFB48  */
 ```
 
-#### 7-2. 참고사항
+#### 7-2. 포인터 참고사항
 (ppt 17페이지 부터)
 
-	- 인덱스가 배열의 크기를 벗어나게 되면 프로그램에 치명적인 오류를 발생시킨다.    
- 	- 배열이 인덱스 범위를 벗어나지 않도록 주의해야 한다.
-
-#### 13. 배열의 초기화
-
-	- 배열의 초기값들을 콤마로 분리하여 중괄호로 감싼 후에 배열을 선언한다.     
-![arrayfirst1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/arrayfirst1.PNG) 
-
- 	- 초기값의 개수가 배열보다 적은 경우는 앞의 요소들만 초기화되고 나머지는 0으로 초기화된다.
-![arrayfirst2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/arrayfirst2.PNG) 
-
-	- 초기화 후에 배열의 크기를 비워두면 컴파일러가 자동으로 초기값의 개수만큼 크기를 지정한다.
-![arrayfirst3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/arrayfirst3.PNG) 
-
-
-
-#### 13-1. 초기값이 주어지지 않았다면 ? 
-
-	- 만약 초기값이 주어지지 않은 지역 변수로 선언된 배열이라면, 일반적인 지역 변수와 마찬가지로 아무 의미 없는 쓰레기 값들이 들어간다.     
-
-![arrayfirst4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/arrayfirst4.PNG) 
-
-#### 13-2. 배열의 초기값 주의사항
-
-	- 배열의 모든 요소를 10으로 초기화하려고 할 때,
-
+	- NULL은 stdio.h 헤더 파일에 정의된 포인터 상수로 0번을 의미한다.
+ 	- 0번은 일반적으로는 사용할 수 없다.
+  	- CPU가 인터럽트를 위해 사용한다.
+   	- 따라서 포인터 변수의 값이 0이라면 아무것도 가리키고 있지 않다.
 ```C
-	int scores[10] = {10};
-	// 위와 같이 초기화를 하면 첫 번째 요소만 10이 되고 나머지는 전부 0이 된다.
+#define NULL ((void *)0)
+```
+![NULL](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/NULL.PNG)
 
-	int scores[10] = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
-	// 올바른 초기화 방법
+#### 8. 간접 참조 연산자
+
+	- 간접 참조 연산자 * : 포인터가 가리키는 값을 가져오는 연산자
+```C
+int i = 10;
+int *p;			// 포인터 변수 선언(자료형과 *p)
+p = &i;			// p에는 i의 주소값인 4 저장
+printf("%d", *p)	// 간접 참조(p변수의 주소에 가서 값을 알아오기)
+// 실행 결과
+// 10 
+```
+![ppointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/ppointer.PNG)
+
+
+#### 8-1. 간접 참조 연산자의 해석 
+
+	- 간접 참조 연산자 : 지정된 위치에서 포인터의 타입에 따라 값을 읽어들인다.
+```C
+int *p = 8;			// 위치 8에서 정수를 읽는다.
+char *pc = 8;			// 위치 8에서 문자를 읽는다.
+double *pd = 8;			// 위치 8에서 실수를 읽는다.
 ```
 
-#### 13-3. 배열의 초기값 주의사항 2
+![ppointer2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/ppointer2.PNG)
 
-	- 배열에서 초기화할 때를 제외하면 중괄호로 값을 묶어서 대입할 수 없다.     
- 	- 아래와 같이 사용하면 컴파일 오류가 발생한다.   
-  	- 배열에 값을 저장하려면 반드시 각 배열 요소에 값을 대입해야 한다.      
+#### 9. & 연산자와 * 연산자
 
-```C
-	#define SIZE 3
+	- & 연산자 : 주소 연산자로, 변수의 주소를 반환한다.
+ 	- * 연산자 : 내용 연산자로, 포인터가 가리키는 곳의 내용을 반환한다.
 
-	inr main(void)
-	{
-		int scores[SIZE];
-		scores = {6, 7, 8}; // 배열에 값을 묶어서 대입하면 컴파일 오류가 발생함
-	}
-```
+![ppointer3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/ppointer3.PNG)
 
-
-#### 14. 배열 원소의 개수 계산  
-
-
-![howmanyarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/howmanyarray.PNG) 
+#### 10. 예제 2. 간접 참조 연산자 확인하기
 
 ```C
-int scores[] = {1, 2, 3, 4, 5, 6};
-int i, size;
+#include <stdio.h>
 
-size = sizeof(scores) / sizeof(scores[0]);
-// sizeof(scores)는 배열 scores 전체의 개수를 계산하고, sizeof(scores[0])은 배열 한 개를 계산함
-// 즉 size = 6 / 1 = 6
+int main(void){
+	int i = 3000;
+	int *p = NULL;
 
-for (i = 0; i < size; i++)
-	printf("%d", scores[i]);
+	p = &i;
+
+	printf("i = %d\n", i);			// 변수의 값 출력
+	printf("&i = %u\n\n", &i);		// 변수의 주소 출력
+
+	printf("p = %u\n", p);			// 포인터의 값 출력
+	printf("*p = %d\n", *p);		// 포인터를 통한 간접 참조 값 출력
+
+	// 변수 p에는 i의 주소값이 담겨져 있기 때문에 p를 출력하면 i의 주소값인 1245024가 출력됨
+	// 포인터 p는 i의 주소값의 주소값, 즉 i값이 담겨져 있기 때문에 *p를 출력하면 i의 값인 3000이 출력됨
+	return 0;
+}
+// 실행 결과
+// i = 3000
+// &i = 1245024
+//
+// p = 1245024
+// *p = 3000
 ```
 
-#### 14-1. 배열 원소의 개수 계산 2
+![pipointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pipointer.PNG)
 
-![howmanyarray2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/howmanyarray2.PNG) 
-
-#### 15. 배열의 복사
+#### 11. 예제 3. * 연산자 확인하기  
 
 ```C
-// 아래와 같은 명령어는 error를 발생시키는 명령어이다.
-int scores[SIZE];
-int scores[SIZE];
-score = score;
+#include <stdio.h>
 
+int main(void){
+	int x = 10, y = 20;
+	int *p;
+
+	p = &x;
+	printf("p = %d\n", p);			// x의 주소값 출력
+	printf("*p = %d\n\n", *p);		// x의 값 출력
+
+	p = &y;
+	printf("p = %d\n", p);			// y의 주소값 출력
+	printf("*p = %d\n", *p);		// y의 값 출력
+
+	// 변수 x와 y는 똑같은 경우의 수인데, 변수 p에 각각 x와 y의 주소값이 담겨있으므로 출력하면 주소값들이 출력됨
+	// 주소값의 주소값은 그 변수의 값임. 따라서 변수 p의 주소값은 각각 x와 y의 값이 담겨있으므로 출력하면 변수의 값들이 출력됨
+
+	return 0;
+}
+// 실행 결과
+// p = 1245052
+// *p = 10
+// p = 1245048
+// *p = 20
 ```
+![starpointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/starpointer.PNG)
+
+#### 12. 예제 4. 주소 연산자와 내용 연산자
 
 ```C
-// 아래의 명령어가 올바른 배열의 복사 방법이다.
-int scores[SIZE];
-int scores[SIZE];
-int i;
+#include <stdio.h>
 
-for(i = 0; i < SIZE; i++)
-	score[i] = score[i];
-// 배열의 원소는 반복문을 통해 하나씩 복사해야 한다.
+int main(void){
+	int i = 10;
+	int *p;
+
+	p = &i;				// 주소 연산자
+	printf("i = %d\n", i);			
+
+	*p = 20;			// 내용 연산자
+	// 포인터를 통해서 변수의 값을 변경(p가 가리키는 위치에 20을 대입)	
+	printf("i = %d\n", i);			
+
+	// 변수 p는 i의 주소값을 담고 있음. 따라서 처음 printf 코드가 진행되어도 i의 원래 값에는 변화가 없는 것.
+	// *p는 내용 연산자. 따라서 p의 내용값, 즉 *p를 20으로 변화시키면 i의 값이 바뀜. 그래서 20으로 바뀐 i의 값이 출력됨
+	
+	return 0;
+}
+// 실행 결과
+// i = 10
+// i = 20
 ```
+
+![adpointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/adpointer.PNG)
+
+#### 13. 포인터 사용 시 주의점
+	- 초기화가 안된 포인터를 사용하면 안된다.
+
+ 
+ (강의자료 24page 부터)
+ 
+```C
+
+```
+
+![adpointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/adpointer.PNG)
 
 #### 16. 배열의 비교
 
