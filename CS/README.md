@@ -1,4 +1,4 @@
-# Computer Science List
+# Computer Science
 
 ## 1. Computer Architecture
 ## 2. [Data Structure](https://github.com/BangYunseo/TIL/tree/main/CS/Data%20Structure)
