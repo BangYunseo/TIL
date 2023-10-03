@@ -270,299 +270,163 @@ int main(void){
 
 ![adpointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/adpointer.PNG)
 
-#### 13. 포인터 사용 시 주의점
+#### 13. 포인터 사용 시 주의점 1
 	- 초기화가 안된 포인터를 사용하면 안된다.
-
- 
- (강의자료 24page 부터)
- 
 ```C
-
-```
-
-![adpointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/adpointer.PNG)
-
-#### 16. 배열의 비교
-
-```C
-// 아래와 같은 명령어는 error를 발생시키는 명령어이다.
-#include <stdio.h>
-#define SIZE 5
-
-int main(void)
-{
-	int i;
-	int a[SIZE] = {1, 2, 3, 4, 5};
-	int b[SIZE] = {1, 2, 3, 4, 5};
-	
-	if (a == b)
-	// 배열을 비교하는 것이 아님
-		printf("error");
-	else
-		printf("error);
-	
+int main(void){
+	int *p;		// 초기화가 되어있지 않은 포인터 p
+	*p = 100;
 	return 0;
 }
 ```
 
-```C
-// 아래의 명령어가 올바른 배열의 복사 방법이다.
-#include <stdio.h>
-#define SIZE 5
+![warningpointer1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/warningpointer1.PNG)
 
-int main(void)
-{
-	int i;
-	int a[SIZE] = {1, 2, 3, 4, 5};
-	int b[SIZE] = {1, 2, 3, 4, 5};
-	
-	for (i = 0; i < SIZE; i++)
-	{
-		if(a[i] != b[i])
-			printf("a[%d]와 b[%d]는 같지 않다.\n", i);
-		printf("a[%d]와 b[%d]는 같다.\n", i);
-	}
-	return 0;
-}
-// 배열의 원소는 반복문을 통해 하나씩 복사해야 한다.
+#### 13-1. 포인터 사용 시 주의점 2
+
+	- 포인터가 아무것도 가리키고 있지 않은 경우에는 NULL로 초기화한다.
+ 	- NULL 포인터를 가지고 간접 참조하면 하드웨어로 감지한다.
+```C
+int *p = NULL;
 ```
 
-#### 17. lab #1. 주사위 던지기 예제
+![warningpointer2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/warningpointer2.PNG)
 
-```C
-// Lab1 : 주사위 던지기
-#include <stdio.h>
-#include <stdlib.h>
-#define DICE_NUM 6		// DICE 면의 수를 6으로 정의한다.
+#### 13-2. 포인터 사용 시 주의점 3
 
-int main(void)
-{
-	int freq[DICE_NUM] = { 0 };	// 주사위의 면의 수만큼 배열 freq를 생성한다.
-	int i;						// for문에 사용할 변수 i를 생성한다.
-
-	for (i = 0; i < 10000; i++)		// 주사위를 10000번 던진다.
-	{
-		++freq[rand() % 6];		// 배열의 무작위 면이 나오는 횟수를 더한다.
-	}
-
-	printf("=========================\n");
-	printf("숫자\t빈도\n");						// 숫자와 빈도를 출력한다.
-	printf("=========================\n");
-
-	for (i = 0; i < DICE_NUM; i++)		// 주사위 면의 숫자만큼 출력을 반복한다.
-	{
-		printf("%d\t%d\n", i + 1, freq[i]);
-		// 주사위 면 1의 값이 나온 횟수부터 차례대로 입력한다.
-		// 여기서 i는 0부터 시작하므로 i + 1을 해서 1 ~ 6까지의 수를 입력한다.
-	}
-	return 0;
-}
-```
-
-#### 18. lab #2. 극장 예약 시스템 예제
-
-```C
-// Lab2 : 극장 예약 시스템
-#include <stdio.h>
-#define SEATS 10
-
-int main(void)
-{
-	char answer1;	// 좌석 예약 여부를 입력받을 변수 answer1을 생성한다.
-	int answer2, i;	// 어느 좌석을 선택할지 입력받을 변수 answer2와 for문에 이용할 변수 i를 생성한다.
-	int movie_seat[10] = { 0 };	// 좌석 10개를 저장할 배열을 생성하고 0으로 초기화한다.
-
-	while (1)		// 무한반복문
-	{
-		printf("좌석을 예약하시겠습니까? (y 또는 n) ");	// 좌석을 예약할 것인지 출력한다.
-		scanf_s(" %c", &answer1, 4);	// 대답을 입력받고 변수 answer1에 저장한다.
-
-		if (answer1 == 'y')	// 만약 대답이 y라면 좌석을 예약한다.
-		{
-			printf("-----------------------\n");
-			printf("1 2 3 4 5 6 7 8 9 10\n");			// 좌석 수를 출력한다.
-			printf("-----------------------\n");
-			for (i = 0; i < SEATS; i++)		// 좌석의 수만큼 반복한다.
-			{
-				printf("%d ", movie_seat[i]);
-				// 앞에서 배열을 초기화했으므로 0 또는 1이 출력된다.
-				// 1이 출력되면 예약된 좌석, 0이 출력되면 예약하지 않은 좌석이다.
-			}
-			printf("\n");	// 줄바꿈
-
-			printf("몇 번째 좌석을 예약하시겠습니까? ");		// 어느 좌석을 예약할 것인지 출력한다.
-			scanf_s("%d", &answer2);		// 입력받은 좌석의 번호를 변수 answer2에 저장한다.
-
-			if (answer2 <= 0 || answer2 > SEATS)	// 만약 answer2의 값이 1 ~ 10 사이의 값이 아니라면
-			{
-				printf("1부터 10 사이의 숫자를 입력하세요.\n");	// 변수를 다시 입력받는다.
-				continue;	// 다시 반복문을 실행
-			}
-			if (movie_seat[answer2 - 1] == 0)	// 만약 변수 answer2 - 1의 배열값이 0이라면
-			{
-				movie_seat[answer2 - 1] = 1;	// 그 자리에 1을 저장한다.
-				printf("예약되었습니다.\n");	// 예약됐다고 출력한다.
-			}
-			else       // 만약 변수 answer2 - 1 의 배열값이 1이라면
-			{
-				printf("이미 예약된 자리입니다.\n");	// 이미 예약된 자리라고 출력한다.
-			}
-		}
-		if (answer1 == 'n')		// 만약 대답이 n이라면 그대로 반복문을 종료한다.
-			return 0;
-	}
-	return 0;
-}
-
-```
-
-#### 19. lab #3. 최솟값 탐색 예제
-
-```C
-// Lab3 : 최솟값 찾기
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#define SIZE 10		// 배열의 크기를 10으로 설정한다.
-
-int main(void)
-{
-	srand((unsigned)time(NULL));	// 난수를 발생시킨다.
-
-	int prices[SIZE] = { 0 };	// 값을 저장할 배열을 SIZE 크기만큼 생성하고, 0으로 초기화한다.
-	int i, minimum;		// 배열에 사용할 변수 i와 최솟값을 저장하면서 갱신할 변수를 생성한다.
-
-	printf("---------------------------\n");
-	printf("1 2 3 4 5 6 7 8 9 10\n");				// 10개의 숫자를 출력할 메뉴 출력
-	printf("---------------------------\n");
-
-	for (i = 0; i < SIZE; i++)	// 배열의 크기만큼 반복한다.
-	{
-		prices[i] = (rand() % 100) + 1;		// 배열의 각 값에 1 ~ 100까지의 수를 저장한다.
-		printf("%d ", prices[i]);			// 각 배열을 출력한다.
-	}
-	printf("\n");		// 줄바꿈
-
-	minimum = prices[0];	// 일단 최솟값을 첫 번째 값으로 설정한다. for문 안에 들어갈 필요 X
-	for (i = 0; i < SIZE; i++)	// 배열의 크기만큼 반복한다.
-	{
-		if (prices[i] < minimum)	// 만약 prices[i]의 값이 현재 최솟값보다 작다면
-			minimum = prices[i];	// 현재 최솟값을 prices[i]로 변경한다.
-	}
-
-	printf("최소값은 %d 입니다.\n", minimum);	// 최솟값을 출력한다.
-
-	return 0;
-}
-```
-
-#### 20. 배열과 함수
-
-	- 배열의 경우에는 사본이 아닌 원본이 전달된다.    
-
-![orignalarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/orignalarray.PNG) 
-
-	- 함수 : 매개변수와 인수     
- 		1) 매개변수 : 함수 바깥에서 전달된 값이 저장되는 변수   
-		2) 인수 : 함수를 호출할 때 전달하는 값이나 변수   
+	- 포인터의 타입과 변수의 타입은 일치해야 한다.
 ```C
 #include <stdio.h>
-
-int plus(int a, int b);	// 함수의 원형 출력
 
 int main(void){
-	int point1;	// 과목 점수 1
-	int point2;	// 과목 점수 2
+	int i;
+	double *pd;
 
-	scanf("%d %d", &point1, &point2);
-
-	if (plus(point1, point2) >= 150)
-	// plus는 함수, point1과 point2는 인수
-		printf("합격\n");
-	else
-		printf("불합격\n");
+	pd = &i;	// ERROR : double형 pointer에 int형 변수의 주소를 대입
+	*pd = 36.5;
+		
 	return 0;
 }
-int plus(int a, int b){
-	// 함수 plus에 위치한 int a, int b는 매개변수
-	int result;
-
-	result = a + b;
-
-	return result;	// 과목 점수의 합을 반환
-}
 ```
+![warningpointer3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/warningpointer3.PNG)
 
-#### 20-1. 배열이 함수의 인수인 경우
+#### 14. 포인터의 사용 이유
+
+![whypointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/whypointer.PNG)
+
+	- 문자(char)는 'a' 처럼 글자가 하나만 있는 상태이다.
+ 	- 문자열(char *)은 "Hello"처럼 글자 여러 개가 계속 이어진 상태이다.
+  	-> 즉, 문자는 1byte 크기의 char에 저장할 수 있지만 문자열은 크기가 1byte를 넘어가기 때문에 char에 저장할 수 없다.
+   	-> 따라서 문자열은 변수에 직접 저장하지 않고 포인터를 이용해서 저장한다.
+
+#### 15. 포인터 주소 연산
+
+	- 가능한 연산 : 증가, 감소, 덧셈, 뺄셈
+ 	- 증가 연산의 경우 증가되는 값은 포인터가 가리키는 객체의 크기
+  
+|포인터 타입|++연산 후 증가되는 값|
+|:----:|:----:|
+|char|1|
+|short|2|
+|int|4|
+|float|4|
+|double|8|
+
+#### 15-1. 포인터 연산
+
+![pointerop](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop.PNG)
+![pointerop2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop2.PNG)
+
+
+#### 15-2. 포인터 주소 연산
+
+![pointerop3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop3.PNG)
+
+#### 15-3. 포인터 증감 연산
+
+![pointerop4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop4.PNG)
+
+#### 16. 예제 5. 포인터의 증가 연산
 ```C
-// 예시 코드
 #include <stdio.h>
-#define SIZE 7
-
-void modify_array(int a[], int size);		// 함수의 원형 출력
-void print_array(int a[], int size);		// 함수의 원형 출력
 
 int main(void){
-	int list[SIZE] = {1, 2, 3, 4, 5, 6, 7};	// 배열 초기화
+	char *pc;
+	int *pi;
+	double *pd;
 
-	print_array(list, SIZE);	// 배열 출력 함수 실행
-	modify_array(list, SIZE);	// 배열의 값들을 1씩 더하는 함수 실행
-	print_array(list, SIZE);	// 배열 출력 함수 실행
-	// 1씩 값이 더해진 배열이 출력됨
+	pc = (char *)10000;			// pc의 절대 주소에 10000을 대입
+	pi = (int *)10000;			// pi의 절대 주소에 10000을 대입
+	pd = (double *)10000;			// pd의 절대 주소에 10000을 대입
+
+	printf("pc = %u, pc+1 = %u, pc+2 = %u\n", pc, pc+1, pc+2);
+	printf("pi = %u, pi+1 = %u, pi+2 = %u\n", pi, pi+1, pi+2);
+	printf("pd = %u, pd+1 = %u, pd+2 = %u\n", pd, pd+1, pd+2);
 
 	return 0;
 }
-void modify_array(int a[], int size){ 	// 1씩 더하는 함수
-	int i;
-	for (i = 0; i < size; i++)
-		++a[i];
-}
-void print_array(int a[], int size){	// 배열을 출력하는 함수
-	int i;
-	for (i = 0; i < size; i++)
-		printf("%3d ", a[i]);
-	printf("\n");
-}
-//   예시 출력
-// 1 2 3 4 5 6 7
-// 2 3 4 5 6 7 8
+// 실행 결과
+// pc = 10000, pc+1 = 100001, pc+2 = 10002
+// pi = 10000, pi+1 = 100004, pi+2 = 10008
+// pd = 10000, pd+1 = 100008, pd+2 = 10016
 ```
-#### 21. 원본 배열의 변경 금지하기
+
+#### 17. 간접 참조 연산자와 증감 연산자
+- *p++;
+	- p가 가리키는 위치에서 값을 가져온 후에 p를 증가한다.
+- (*p)++;
+	- p가 가리키는 위치의 값을 증가한다.
+
+
+|수식|의미|
+|:--|:--|
+|v = *p++|p가 가리키는 값을 v에 대입한 후에 p를 증가한다.|
+|v = (*p)++|p가 가리키는 값을 v에 대입한 후에 가리키는 값을 중기힌다.|
+|v = *++p|p를 증가시킨 후에 p가 가리키는 값을 v에 대입한다.|
+|v = ++*p|p가 가리키는 값을 가져온 후에 그 값을 증가하여 v에 대입한다.|
+
+
+#### 17-1. 간접 참조 연산자와 증감 연산자의 예제
 ```C
-void print_array(const int a[], int size)
-{		// const를 사용하면 함수 안에서 a[]의 값을 변경할 수 없게 된다.
-	...
-	a[0] = 100;
-	// 위를 실행하면 컴파일 오류가 발생한다.
+// 포인터의 증감 연산
+#include <stdio.h>
+int main(void){
+	int i = 10;
+	int *pi = &i;
+
+	printf("i = %d,  pi = %p\n", i, pi);
+
+	(*pi)++; 			// (10)++ -> pi가 가리키는 값을 증가한다.
+	printf("i = %d,  pi = %p\n", i, pi);
+
+	*pi++;				// pi가 가리키는 위치에서 값을 가져온 후 (11)에 pi를 증가한다. 
+	printf("i = %d,  pi = %p\n", i, pi);
+
+	return 0;
 }
+// 출력 예시
+// i = 10, pi = 000000FFEBCFF974
+// i = 11, pi = 000000FFEBCFF974
+// i = 11, pi = 000000FFEBCFF978
 ```
 
-#### 22. 정렬
+#### 18. 포인터의 형변환
 
-	- 정렬은 물건을 크기 순으로 오름차순이나 내림차순으로 나열하는 것을 의미한다.    
- 	- 컴퓨터 프로그래밍을 배울 때 가장 기본적이며 중요한 알고리즘 중 하나이다. 
-  	- 정렬은 자료 탐색에 있어서 필수적이다.
+	- C언어에서는 꼭 필요한 경우에 명시적으로 포인터의 타입을 변경할 수 있다.
+```C
+double *pd = &f;
+int *pi;
+
+pi = (int*)pd;		// double형 포인터를 int형 포인터로 변환
+```
  
- #### 23. 선택 정렬
+#### 19. swap() 함수 #1 -  값에 의한 호출
+(ppt 39 page 부터)
 
- 	- 선택 정렬(selection sort) : 정렬이 안된 숫자들 중 최솟값을 선택하여 배열의 첫 번째 요소와 교환하는 행동  
-		- 오른쪽 배열에서 가장 작은 숫자를 선택하여 왼쪽 배열로 이동하는 작업을 되풀이 한다.      
-		- 선택 정렬은 오른쪽 배열이 공백상태가 될 때까지 이 과정을 되풀이하는 정렬기법이다.      
-      
+```C
+```
 
-|왼쪽 배열|오른쪽 배열|설명|
-|:---|:---|:---:|
-|()|(5, 3, 8, 1, 2, 7)|초기상태|
-|(1)|(5, 3, 8, 2, 7)|1 선택|
-|(1, 2)|(5, 3, 8, 7)|2 선택|
-|(1, 2, 3)|(5, 8, 7)|3 선택|
-|(1, 2, 3, 5)|(8, 7)|4 선택|
-|(1, 2, 3, 5, 7)|(8)|5 선택|
-|(1, 2, 3, 5, 7, 8)|()|6 선택|
-
-![sorting1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/sorting1.PNG) 
-
- #### 23-1. 선택 정렬 예제
+#### 23-1. 선택 정렬 예제
 ```C
 #include <stdio.h>
 #define SIZE 10
