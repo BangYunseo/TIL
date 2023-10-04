@@ -421,117 +421,103 @@ pi = (int*)pd;		// double형 포인터를 int형 포인터로 변환
 ```
  
 #### 19. swap() 함수 #1 -  값에 의한 호출
-(ppt 39 page 부터)
-
-```C
-```
-
-#### 23-1. 선택 정렬 예제
 ```C
 #include <stdio.h>
-#define SIZE 10
+void swap(int x, int y);
 
-int main(void)
-{
-	int list[SIZE] = {3, 2, 9, 7, 1, 4, 8, 0, 6, 5};
-	int i, j, temp, least;
+int main(void){
+	int a = 100, b = 200;
+	printf("a = %d\tb=%d\n", a, b);
 
-	for(i = 0; i < SIZE - 1; i++)
-	// SIZE - 1을 하는 이유 : 배열의 index는 0 ~ 9까지이다.
-	// 여기서 배열의 마지막 숫자는 가장 큰 숫자가 남을 것이기 때문에 정렬하지 않아도 된다.
-	{
-		least = i;	// 최솟값을 i 번째 원소로 설정
-		for(j = i + 1; j < SIZE; j++)
-		// i + 1 번째 원소부터 최솟값을 찾는 이유 : 이미 최솟값을 i 번째 원소로 설정해놨기 때문이다.
-		{
-			if(list[j] < list[least])
-				least = j;
-			// 현재 최솟값으로 저장되어 있는 i(least)보다 더 작은 정수를 발견하면 ?
-			// 그 정수가 들어있는 index를 least에 저장한다.
-		}
-		// list[i]와 list[least]를 서로 복사한 후 교환하는 과정
-		temp = list[i];		
-		list[i] = list[least];
-		list[least] = temp;
-		// i 번째 원소와 least 위치의 원소를 교환하기 위해서는 여분의 변수인 temp가 필요
-		// Why? : 값을 저장하지 않으면 복사하는 과정에서 하나의 값이 없어지기 때문이다.
-	}
-	for(i = 0; i < SIZE; i++)
-		printf("%d", list[i]);
-	printf("\n");
+	swap(a, b);
+
+	printf("a = %d\tb=%d\n", a, b);
+	// x, y 값은 변화했지만 a, b 값은 변화하지 않았음
 	return 0;
 }
+void swap(int x, int y) {
+	int tmp;
+	printf(“x=%d\ty=%d\n”,x, y);
+
+	tmp = x;
+	x = y;
+	y = tmp;
+
+	printf(“x=%d\ty=%d\n”,x, y);
+}
+// 출력 예제
+// a=100	b=200
+// x=100	y=200
+// x=200	y=100
+// a=100	b=200
 ```
-![sortingRE](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/sortingRE.PNG) 
 
+#### 19-1. 값에 의한 호출 : Why error?
 
- #### 23-2. 선택 정렬 변수의 값을 교환할 때
+![whyerror](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/whyerror.PNG) 
 
- 	- 옳지 않은 방법
-		(1) score[i] = score[least];
-		(2) score[least] = score[i];
-		> 위와 같은 방법으로 진행하면 score[i]의 기존 값이 파괴되는 것을 볼 수 있다. 
-	- 올바른 방법
-		(1) temp = list[i];
-		(2) list[i] = list[least];
- 		(3) list[least] = temp;
-
-![rightway](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/rightway.PNG) 
-
-
-
-#### 24. 순차 탐색
-	- 순차 탐색은 배열의 원소를 순서대로 하나씩 꺼내서 탐색키와 비교하고 원하는 값을 찾아가는 방법
-		> 순차 탐색은 일치하는 항목을 찾을 때까지 비교를 계속 진행함
-		> 순차 탐색은 첫 번째 요소에서 성공할 수도 있고 마지막 요소까지 가야 찾을 수도 있음
-		> 평균적으로는 절반 정도의 배열요소와 비교
-
-![waysearch](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/waysearch.PNG) 
-
-
-#### 24-1. 순차 탐색 예시
+#### 20. swap() 함수 #2 -  참조에 의한 호출
 
 ```C
 #include <stdio.h>
-#define SIZE 10
+void swap(int *px, int *py);
 
-int main(void)
-{
-	int key, i;
-	int list[SIZE] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+int main(void){
+	int a = 100, b = 200;
+	printf("a = %d\tb=%d\n", a, b);
 
-	printf("탐색할 값을 입력해라 : ");
-	scanf("%d", &key);
+	swap(&a, &b);
 
-	for(i = 0; i < SIZE; i++)
-	// list[i]와 key.를 비교하고, 만약 list[i] == key일 경우 인덱스를 출력
-	{
-		if(list[i] == key)
-			printf("탐색 성공 인덱스 = %d\n", i);
-	}
-	printf("탐색 종료\n");
+	printf("a = %d\tb=%d\n", a, b);
 	return 0;
 }
+void swap(int *px, int *py) {
+	int tmp;
 
+	tmp = *px;
+	*px = *py;
+	*py = tmp;
 
+}
+// 출력 예제
+// a=100	b=200
+// a=200	b=100
 ```
 
-#### 25. 이진 탐색
+![callpointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/callpointer.PNG) 
 
-	- 이진 탐색(binary search) : 정렬된 배열의 중앙에 위치한 원소와 비교 되풀이
-		- 단, 탐색하려는 배열이 미리 정렬되어 있어야 한다. 
+#### 21. scanf() 함수
 
-![binarysearch](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/binarysearch.PNG) 
+- 변수에 값을 저장하기 위해 변수의 주소를 입력받는다.
 
+![scanf](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/scanf.PNG) 
 
+#### 22. 참고 : 함수와 포인터
+##### - 함수가 포인터를 통해 값을 변경할 수 없게 하려면?
 
-#### 25-1. 이진 탐색 예시
+	- 함수의 매개 변수를 선언할 때 앞에 const를 붙인다.
+ 	- const를 앞에 붙이면 포인터가 가리키는 내용이 변경 불가능한 상수라는 뜻이다.
 
 ```C
-// 찾아야 하는 값인 key값의 인덱스를 출력하는 예제
+void sub(const int *p){
+	*p = 0;		// Error occur
+}
+```
+#### 23. 포인터와 배열
+
+	- 배열과 포인터는 밀접한 관계이다.
+ 	- 배열의 이름이 포인터이다.
+  	- 포인터는 배열처럼 사용 가능하다.
+
+![pointerarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerarray.PNG) 
+
+#### 23-1. 포인터와 배열의 관계
+
+(ppt 45 page부터 다시 작성)
+
+```C
+// 포인터와 배열의 관계
 #include <stdio.h>
-#define SIZE 16
-int binary_search(int list[], int n, int key);
 
 int main(void)
 {
@@ -544,34 +530,8 @@ int main(void)
 	return 0;
 }
 int binary_search(int list[], int n, int key)
-// 배열을 이진 탐색하는 함수
-{
-	int low, high, mid;
-	low = 0;
-	high = n - 1;
-	// 배열의 인덱스 값의 최대를 high, 최소를 low로 설정
-
-	while(low <= high)	// 이진 탐색이 가능할 때까지
-	{	
-		printf("[%d %d]\n", low, high);
-		// 각각 low값과 high 값 출력
-		mid = (low + high) / 2;
-		// 중간 위치 계산
-		if(key == list[mid])
-			return mid
-		// key값이 중간 값과 일치한다면 중간 값 반환
-		else if(key > list[middle])
-			low = mid + 1;
-		// key값이 중간 값보다 크다면, 중간 값이었던 수보다 1을 더한 수를 최솟값으로 설정
-		else
-			high = mid - 1;
-		// key값이 중간 값보다 작다면, 중간 값이었던 수보다 1을 뺀 수를 최댓값으로 설정
-	}
-	return -1;	// 이진 탐색이 안되는 배열인 경우 -1 반환
-} 
 
 ```
-
 #### 26. 2차원 배열
 
 	- 데이터 자체가 2차원인 경우 사용하는 배열
