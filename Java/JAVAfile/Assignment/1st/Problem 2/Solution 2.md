@@ -29,7 +29,7 @@ public class StudyJava1_2 {
 
             String IDcode = "Kim";
             String PWcode = "12345";
-	    // IDcode와 PWcode를 설정해놓는다.
+	    // 정확한 IDcode와 PWcode를 설정한다.
 
             int count = 0;
 	    // ID와 PW를 입력받을 횟수를 0으로 초기화한다.
@@ -62,6 +62,7 @@ public class StudyJava1_2 {
 				while (count < 3) {
 				// 비밀번호 입력 횟수를 3으로 제한한다.
 				// 만약 while문이 없을 경우, 비밀번호를 무한대로 입력받는 오류가 발생한다.
+				// Why? 비밀번호가 지속적으로 일치하지 않을 경우, if (count == 3)까지 작동하지 못하기 때문이다.
 
 					System.out.print("로그인 비밀번호 >> "); 
 					String PW = scanner.nextLine();
