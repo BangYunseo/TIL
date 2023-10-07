@@ -1,4 +1,4 @@
-# chapter 1. Introduce Data Structure
+# chapter 0. Introduce Data Structure
 
 ### 1. 자료 구조
 - 데이터를 저장, 조직, 관리하는 방법   
