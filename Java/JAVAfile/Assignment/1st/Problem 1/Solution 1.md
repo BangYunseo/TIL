@@ -1,4 +1,5 @@
-#### 문제 1. for 문을 이용해서 다음과 같이 출력이 되는 코드를 작성한다. 문자 배열을 아래와 같이 선언하여 사용한다.
+## Problem 1. 
+- for 문을 이용해서 다음과 같이 출력이 되는 코드를 작성합니다. 문자 배열을 아래와 같이 선언합니다.
   
 ```JAVA 
 (1) char[] myCh = {'+', '-', '*', '/'}
@@ -7,7 +8,8 @@
 ----
 ******
 ////////
-
+```
+```JAVA
 package StudyJava1;
 	public class StudyJava1_1 {
 		public static void main(String[] args) {
