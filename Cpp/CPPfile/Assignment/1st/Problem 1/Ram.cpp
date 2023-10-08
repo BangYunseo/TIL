@@ -1,4 +1,3 @@
-/*
 #include <iostream>
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -12,7 +11,7 @@ Ram::Ram() {
 		mem[i] = 0;
 }
 Ram::~Ram() {
-	cout << "�޸� ���ŵ�" << endl;
+	cout << "¸Þ¸ð¸® Á¦°ÅµÊ" << endl;
 }
 char Ram::read(int address) {
 	return mem[address];
@@ -20,4 +19,3 @@ char Ram::read(int address) {
 void Ram::write(int address, char value) {
 	mem[address] = value;
 }
-*/
