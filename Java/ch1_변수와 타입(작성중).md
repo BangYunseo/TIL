@@ -1,15 +1,62 @@
 ##  Chapter 1. 변수와 타입
 
-#### 1. 객체(Object)
-      - 데이터의 분산을 막기 위해 데이터와 기능을 하나로 묶은 그룹
- 
-#### 2. 객체 지향 언어(Object-oriented Language)  
-
-      - 컴퓨터 프로그래밍의 한 가지 기법으로 객체를 만들고 객체를 사용하는 프로그래밍 언어
-      - 프로그램을 데이터와 처리 방법으로 나누는 것이 아님
-      - 프로그램을 다수의 "객체"로 만들고, 이들을 상호작용해서 만들어지는 방식
+### 0. 시작하기 전에
+      - (1) 핵심 키워드 : 변수, 변수 선언, 변수 사용, 변수 사용 범위
       
-#### 3. 객체 지향 특성 - 캡슐화
+      - (2) 핵심 포인트 
+            - 컴퓨터 메모리(RAM)는 값을 저장할 수 있는 수많은 번지(주소)들로 구성되어 있다.     
+            - 메모리의 어디에, 어떤 방식으로 저장할 지 정해놓아야 한다.     
+            - 프로그래밍 언어는 이 문제를 해결하기 위해 변수라는 개념을 사용한다.
+            - 변수의 역할 및 사용 방법에 대해 알아본다.
+            
+      - (3) 변수(Variable)
+            - 값을 저장할 수 있는 메모리의 특정 번지에 붙여진 이름
+            - 변수를 통해 해당 메모리 번지에 하나의 값을 저장하고 읽음
+            - 변수는 정수, 실수 등 다양한 타입의 값을 저장
+            
+![variable](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/variable.PNG)
+ 
+#### 1. 변수 선언  
+- 변수 사용을 위해서 변수 선언이 필요
+  
+      - 변수에 어떤 타입의 데이터를 저장할 것인지, 변수의 이름이 무엇인지 결정
+            
+![variable1](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/variable1.PNG)
+
+      - 같은 타입의 변수는 콤마를 이용해 한꺼번에 선언
+
+![variable2](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/variable2.PNG)
+
+- 변수 이름
+
+      - 자바 언어에서 정한 명명 규칙에 따라 작성
+
+![variablename](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/variablename.PNG)
+
+- 예약어
+
+      - 자바 언어에서 의미를 가지고 사용되는 단어
+      - 변수 이름으로 사용할 경우 컴파일 에러
+
+![variablename1](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/variablename1.PNG)
+
+#### 2. 값 저장
+
+- 값을 저장할 경우 대입 연산자 (=) 사용
+
+      - 변수를 선언
+      - 대입 연산자를 사용해서 오른쪽의 값을 왼쪽 변수에 저장
+
+![variablesave](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/variablesave.PNG)
+
+- 변수 초기화     
+
+      - 변수에 최초로 값이 저장될 때 메모리에 변수가 생성됨
+      - 생성되는 변수는 초기화
+      - 생성되는 변수의 값은 초기값
+
+![variablereset](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/variablereset.PNG)
+
 
 ##### (1) 캡슐화(Encapsulation)     
       - 데이터를 캡슐로 싸서 외부의 접근으로부터 보호     
