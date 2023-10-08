@@ -57,42 +57,42 @@
 
 ![variablereset](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/variablereset.PNG)
 
+      - 초기화를 하지 않은 변수는 메모리에서 값을 읽을 수 없음
 
-##### (1) 캡슐화(Encapsulation)     
-      - 데이터를 캡슐로 싸서 외부의 접근으로부터 보호     
-      - C++에서 클래스(class 키워드)로 캡슐을 표현      
+![variableresetno](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/variableresetno.PNG)
 
-![class](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch1/class.PNG)
+#### 3. 변수 사용 
+- 변수 사용 : 변수의 값을 이용해서 출력문이나 연산식을 수행
 
-##### (2) 클래스와 객체     
-      - 클래스 : 객체를 만드는 틀     
-      - 객체 : 클래스라는 틀에서 생겨난 실체      
-      - 객체(object), 실체(instance)는 같은 뜻     
+![usevariable](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/usevariable.PNG)
+
+- 변수 값 복사 : 변수의 값을 다른 변수에 저장
+
+![copyvariable](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/copyvariable.PNG)
+
+#### 4. 변수 사용 범위
+- 지역 변수(Local Variable)     
+
+      - 메소드 블록 내에서 선언된 변수는 지역 변수
+      - 지역 변수는 메소드 블록 내에서만 사용되고 실행이 끝나면 자동으로 삭제
+  
+![localvariable](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/localvariable.PNG)
+
+      - 지역 변수는 해당 중괄호 블록 내에서만 사용 가능
+
+![localvariable1](https://github.com/BangYunseo/TIL/tree/main/Java/Image/ch1/localvariable1.PNG)
+
+      - 지역 변수를 선언할 때 변수가 어떤 범위에서 사용될 것인지 고려하여 선언 위치를 결정
+      - 메소드 블록 전체에서 사용하려는 경우 메소드 블록 첫머리에 선언
+      - 특정 블록 내부에서만 사용하려는 경우 해당 블록 내에 선언
       
-![instance](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch1/instance.PNG)
+#### Special 1. 키워드로 정리하기
 
-```C++
-// 원을 추상화한 클래스 Circle
-class Circle{
-private :
-      int radius;      // 반지름 값
-public :
-      Circle(int r){ radius = r; }
-      double getArea(){ return 3.14 * radius * radius }
-};    
-```
+- 변수 : 값을 저장할 수 있는 메모리 번지에 붙인 이름으로 변수를 통해 프로그램은 메모리 번지에 값을 저장하고 읽음
+- 변수 선언 : 변수에 어떤 타입의 데이터를 저장할지 그리고 변수 이름이 무엇인지를 결정하는 것
+- 변수 사용 : 변수의 값을 읽거나 변경하는 것으로 변수는 출력문이나 연산식 내부에서 사용되어 변수에 저장된 값을 출력하거나 연산에 사용
+- 변수 사용 범위 : 변수는 자신이 선언된 위치에서 자신이 속한 블록 내부 까지만 사용이 가능하고 밖에서는 사용 불가
 
-#### 4. 객체 지향 특성 - 상속성
-
-##### (1) 객체 지향 상속(Inheritance)     
-      - 자식이 부모의 유전자를 물려 받는 것과 유사
-
-##### (2) C++ 상속  
-      - 객체가 자식 클래스의 멤버와 부모 클래스에 선언된 모양 그대로 멤버들을 가지고 탄생
-      
-![Inheritance](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch1/Inheritance.PNG)
-      
- 
 #### 5. 객체 지향 특성 - 다형성
 
 ( 자료 1장 13페이지부터)
