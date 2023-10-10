@@ -11,23 +11,89 @@
 ////////
 ```
 ```JAVA
-package StudyJava1;
-	public class StudyJava1_1 {
-		public static void main(String[] args) {
-			char[] myCh = {'+', '-', '*', '/'};
-                        // myCh라는 배열을 생성하고 배열을 {'+', '-', '*', '/'} 으로 초기화한다.
-			for (int i = 0; i < myCh.length; i++) {
-                        // 배열의 길이만큼 for문을 반복한다.
-                        // 여기서 배열의 길이는 숫자가 아니라 myCh.length로 유동적으로 확인한다.
-				for (int j = 1; j <= (i * 2) + 2; j++){
-					System.out.print(myCh[i]);
-                                         // 1번째 줄은 2, 2번째 줄은 4, 3번째 줄은 6, 4번째 줄은 8의 순으로 출력된다.
-                                         // 따라서 (i * 2) + 2까지 출력을 반복한다.
-                                         // println으로 쓰지 않도록 주의한다.
-				}
-				System.out.println();
-                                // for문이 끝날 때마다 한 줄씩 넘긴다.
+package MoneyManager;
+
+import java.util.Scanner;
+
+public class MoneyBook {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		String[] nameList = new String[10];
+		int[] valueList = new int[10];
+		int left = 100000;
+		
+		boolean run = true;
+		while(run) {
+			System.out.print("가계부 | 1 = 수입 | 2 = 지출 | 3 = 삭제 | 4 = 출력 | 5 = 종료 >> ");
+			int ans = scanner.nextInt();
+			String item;
+			int amount;
+			if (ans == 1 | ans == 2) {
+				System.out.print("내역 >> ");
+				item = scanner.next();
+				System.out.print("금액 >> ");
+				amount = scanner.nextInt();
+				if (ans == 2)
+					amount = -amount;
+				addBook(nameList, valueList, item, amount);
+				left += amount;
+			}
+		//	else if (ans == 2) {
+		//		System.out.print("내역 >> ");
+		//		item = scanner.next();
+		//		System.out.print("금액 >> ");
+		//		amount = scanner.nextInt();
+		//		addBook(nameList, valueList, item, -amount);
+		//		left -= amount;
+		//	}
+			else if (ans == 3) {
+				System.out.print("내역 >> ");
+				item = scanner.next();
+				left -= removeBook(nameList, valueList, item);
+			}
+			else if (ans == 4) {
+				showBook(nameList, valueList, left);
+			}
+			else if (ans == 5) {
+				System.out.println("프로그램을 종료합니다.");
+				run = false;
+				break;
+			}
+			else {
+				System.out.println("잘못된 명령입니다.");
 			}
 		}
+		scanner.close();
+	}
+	public static void addBook(String[] nameList, int[] valueList, String item, int amount) {
+		for (int i = 0; i < nameList.length; i++) {
+			if (nameList[i] == null) {
+				nameList[i] = item;
+				valueList[i] = amount;
+				break;
+			}
+		}
+	}
+	public static int removeBook(String[] nameList, int[] valueList, String item) {
+		int value = 0;
+		for(int i = 0; i < nameList.length; i++) {
+			if (nameList[i].equals(item)) {
+				nameList[i] = null;
+				value = valueList[i];
+				valueList[i] = 0;
+				System.out.println(item + " 삭제됨");
+				break;
+			}
+		}
+		return value;
+	}
+	public static void showBook(String[] nameList, int[] valueList, int left) {
+		for (int i = 0; i < nameList.length; i++) {
+			if (nameList[i] != null)
+				System.out.printf("%s : %d원\n", nameList[i], valueList[i]);
+		}
+		System.out.println("잔액 : " + left + "원");
+	}
 }
+
 ```
