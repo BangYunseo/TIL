@@ -3,7 +3,7 @@
 - 문제 의도 : linkedListBasicDemo.py를 구현하기 위한 모듈을 생성합니다.
 
 ```Python
-// linkedListBasic
+# linkedListBasic
 from DS.list.listNode import listNode
 
 class linkedListBasic:
@@ -117,7 +117,7 @@ def printList(self):
     print()
 ```
 ```Python
-// linkedListBasicDemo.py
+# linkedListBasicDemo.py
 from linkedListBasic import *
 
 list = LinkedListBasic()
