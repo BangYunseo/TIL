@@ -131,3 +131,10 @@ print("count(3) : ", list.count(3))
 print("get(2) : ", list.get(2))
 list.printList() 
 ```
+```Python
+# listNode.py
+class listNode:
+    def __init__(self, newItem, nextNode: 'ListNode'):
+        self.item = newItem
+        self.next = nextNode
+```
