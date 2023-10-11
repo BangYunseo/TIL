@@ -3,6 +3,7 @@
 - 문제 의도 : linkedListBasicDemo.py를 구현하기 위한 모듈을 생성합니다.
 
 ```Python
+// linkedListBasic
 from DS.list.listNode import listNode
 
 class linkedListBasic:
@@ -114,4 +115,19 @@ def printList(self):
         print(curr.item, end = ' ')
         curr = curr.next
     print()
+```
+```Python
+// linkedListBasicDemo.py
+from linkedListBasic import *
+
+list = LinkedListBasic()
+list.append(30); List.insert(0, 20)
+a = LinkedListBasic()
+a.append(4); a.append(3); a.append(3); a.append(2); a.append(1)
+list.extend(a)
+list.reverse()
+list.pop(0)
+print("count(3) : ", list.count(3))
+print("get(2) : ", list.get(2))
+list.printList() 
 ```
