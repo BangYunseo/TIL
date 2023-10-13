@@ -1,6 +1,8 @@
 from DS.list.listNode import listNode
-
+# 모듈 import
+      
 class linkedListBasic:
+# 새로운 class 생성
     def __init__(self):
         self.__head = ListNode('dummy', None)
         self.__numItems = 0
