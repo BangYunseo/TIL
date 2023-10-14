@@ -15,12 +15,12 @@ int main(void) {
 	Circle donut;
 	donut.radius = 1;
 	double area = donut.getArea();
-	cout << "µµ³ÓÀÇ ¸éÀûÀº " << area << endl;
+	cout << "ë„ë„›ì˜ ë©´ì ì€ " << area << endl;
 
 	Circle pizza;
 	pizza.radius = 30;
 	area = pizza.getArea();
-	cout << "ÇÇÀÚÀÇ ¸éÀûÀº " << area << endl;
+	cout << "í”¼ìžì˜ ë©´ì ì€ " << area << endl;
 
 	return 0;
 }
