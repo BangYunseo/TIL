@@ -8,11 +8,11 @@ public:
 	int radius;
 	Circle() {
 		radius = 1;
-		cout << "¹İÁö¸§ " << radius << "ÀÎ ¿ø »ı¼º" << endl;
+		cout << "ë°˜ì§€ë¦„ " << radius << "ì¸ ì› ìƒì„±" << endl;
 	}
 	Circle(int r) { 
 		radius = r;
-		cout << "¹İÁö¸§ " << radius << "ÀÎ ¿ø »ı¼º" << endl;
+		cout << "ë°˜ì§€ë¦„ " << radius << "ì¸ ì› ìƒì„±" << endl;
 	}
 	double getArea(){
 		return radius * radius * 3.14;
@@ -21,10 +21,10 @@ public:
 int main(void) {
 	Circle donut;
 	double area = donut.getArea();
-	cout << "µµ³ÓÀÇ ¸éÀûÀº " << area << endl;
+	cout << "ë„ë„›ì˜ ë©´ì ì€ " << area << endl;
 
 	Circle pizza(30);
 	area = pizza.getArea();
-	cout << "ÇÇÀÚÀÇ ¸éÀûÀº " << area << endl;
+	cout << "í”¼ìì˜ ë©´ì ì€ " << area << endl;
 	return 0;
 }
