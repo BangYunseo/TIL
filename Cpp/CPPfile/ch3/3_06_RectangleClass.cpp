@@ -23,10 +23,10 @@ int main(void) {
 	Rectangle rect3(3);
 
 	if (rect1.isSquare())
-		cout << "rect1Àº Á¤»ç°¢ÇüÀÌ´Ù." << endl;
+		cout << "rect1ì€ ì •ì‚¬ê°í˜•ì´ë‹¤." << endl;
 	if (rect2.isSquare())
-		cout << "rect2Àº Á¤»ç°¢ÇüÀÌ´Ù." << endl;
+		cout << "rect2ì€ ì •ì‚¬ê°í˜•ì´ë‹¤." << endl;
 	if (rect3.isSquare())
-		cout << "rect3Àº Á¤»ç°¢ÇüÀÌ´Ù." << endl;
+		cout << "rect3ì€ ì •ì‚¬ê°í˜•ì´ë‹¤." << endl;
 	return 0;
 }
