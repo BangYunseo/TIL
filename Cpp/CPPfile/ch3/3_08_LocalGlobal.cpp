@@ -8,14 +8,14 @@ public:
 	int radius;
 	Circle() { 
 		radius = 1; 
-		cout << "¹İÁö¸§ " << radius << "ÀÎ ¿ø »ı¼º" << endl;
+		cout << "ë°˜ì§€ë¦„ " << radius << "ì¸ ì› ìƒì„±" << endl;
 	}
 	Circle(int r) { 
 		radius = r; 
-		cout << "¹İÁö¸§ " << radius << "ÀÎ ¿ø »ı¼º" << endl;
+		cout << "ë°˜ì§€ë¦„ " << radius << "ì¸ ì› ìƒì„±" << endl;
 	}
 	~Circle() {
-		cout << "¹İÁö¸§ " << radius << "ÀÎ ¿ø ¼Ò¸ê" << endl;
+		cout << "ë°˜ì§€ë¦„ " << radius << "ì¸ ì› ì†Œë©¸" << endl;
 	}
 	double getArea() {
 		return radius * radius * 3.14;
