@@ -1,4 +1,4 @@
-// ¾î´À ¹øÈ£¿¡¼­ ¿À·ù°¡ ¹ß»ýÇÏ´ÂÁö °í¸£´Â ¹®Á¦
+// ì–´ëŠ ë²ˆí˜¸ì—ì„œ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ëŠ”ì§€ ê³ ë¥´ëŠ” ë¬¸ì œ
 #include <iostream>
 #define _CRT_NO_SECURE_WARNINGS
 
