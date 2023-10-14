@@ -25,23 +25,23 @@ int main(void) {
 	Circle donut;
 	donut.radius = 1;
 	double area = donut.getArea();
-	cout << "µµ³ÓÀÇ ¸éÀûÀº " << area << endl;
+	cout << "ë„ë„›ì˜ ë©´ì ì€ " << area << endl;
 
 	Circle pizza;
 	pizza.radius = 30;
 	area = pizza.getArea();
-	cout << "ÇÇÀÚÀÇ ¸éÀûÀº " << area << endl;
+	cout << "í”¼ìžì˜ ë©´ì ì€ " << area << endl;
 
 	Rectangle rect;
 	rect.width = 3;
 	rect.height = 5;
-	cout << "»ç°¢ÇüÀÇ ¸éÀûÀº " << rect.getArea() << endl;
+	cout << "ì‚¬ê°í˜•ì˜ ë©´ì ì€ " << rect.getArea() << endl;
 
 	Triangle tri;
 	tri.width = 7;
 	tri.height = 5;
 	cout.precision(2);
-	cout << "»ï°¢ÇüÀÇ ¸éÀûÀº " << fixed << tri.getArea() << endl;
+	cout << "ì‚¼ê°í˜•ì˜ ë©´ì ì€ " << fixed << tri.getArea() << endl;
 
 	// https://velog.io/@nada_dbstkddl/C-%EC%86%8C%EC%88%98%EC%9E%90%EB%A6%AC%EC%88%98-%EB%8B%A4%EB%A3%A8%EA%B8%B0-precision-fixed
 	return 0;
