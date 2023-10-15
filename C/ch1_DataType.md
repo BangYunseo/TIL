@@ -160,7 +160,7 @@ int main(void){
 * area = 3.141592 * radius * radius;
   * > area = PI * radius * radius;
 * income = salary - 0.15 * salary;
-  * -> income = salary - TAX_RATE * salary;
+  * > income = salary - TAX_RATE * salary;
 
 * 기호 상수 사용하는 법
   * #define 이용하기
