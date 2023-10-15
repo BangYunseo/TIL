@@ -162,9 +162,9 @@ int main(void){
 * income = salary - 0.15 * salary;
   * > income = salary - TAX_RATE * salary;
 
-* 기호 상수 사용하는 법
-  * #define 이용하기
-  * const 이용하기
+* 기호 상수 사용법
+  * #define 사용
+  * const 사용
 
 #### 기호 상수 예제 코드 - 연봉과 세금 계산          
 ```C        
