@@ -1,7 +1,7 @@
 #  Chapter 1. 변수와 자료형 
 > '쉽게 풀어쓴 C언어 Express - 천인국' 4장 학습 내용
 >
-> [소스코드]()
+> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch1)
 > 
 > 1절. 변수
 > 
