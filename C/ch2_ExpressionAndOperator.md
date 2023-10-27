@@ -305,41 +305,7 @@ min_value = (x < y) ? x: y;          // 최솟값 계산
 * 아래의 과정은 왼쪽으로 7비트 이동시켰던 값을 오른쪽으로 1비트씩 이동시키면서 예시로 입력한 num10에 저장된 수와 0의 위치가 같으면 0을 출력, 만약에 0이 아니라 1이 있으면 1을 출력한다.     
 * &는 and의 의미를 담고 있는 기호이며, (num10 % mask) == 0이 맞다면 왼쪽의 printf("0")을, 아니라면 printf("1")을 출력하면 된다.     
 
-```C
-// 10진수를 2진수로 출력하기(비트연산자)
-#include <stdio.h>
-
-int main(void)
-{
-	unsigned int num10;		// 10진수를 입력받을 변수 num10을 생성한다. 음수가 아닌 값만 저장하기 때문에 unsigned를 붙인다.
-	printf("10 진수 : ");	// 10진수를 입력받는다.
-	scanf_s("%u", &num10);	// 입력받은 10진수의 값을 2진수로 저장한 값을 num10 변수에 저장한다.
-
-	unsigned int mask = 1 << 7;	// 왼쪽으로 7비트 이동한다. mask = 10000000
-
-	printf("2 진수 : ");		// 2진수를 입력한다.
-
-	((num10 & mask) == 0) ? printf("0") : printf("1");	// num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-	mask = mask >> 1;		// 오른쪽으로 1비트 이동한다.
-	((num10 & mask) == 0) ? printf("0") : printf("1"); // num10과 mask의 2진수 값이 일치하면 0을, 일치하지 않다면 1을 출력한다.
-
-	printf("\n");			// 줄 끝내기
-
-	return 0;
-}
-```      
+[코드 바로가기](https://github.com/BangYunseo/Express-C/blob/main/ch2_%EC%88%98%EC%8B%9D%EA%B3%BC%EC%97%B0%EC%82%B0%EC%9E%90/DecimalBinary.c)
 
 #### 정수 연산 시의 자동적인 형변환
 * 정수 연산 시 char 형이나 short 형의 경우, 자동적으로 int 형으로 변환하여 계산한다.   
