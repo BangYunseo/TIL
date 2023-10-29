@@ -1,7 +1,7 @@
 #  Chapter 2. 수식과 연산자       
 > '쉽게 풀어쓴 C언어 Express - 천인국' 5장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch2)
+> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch2_%EC%88%98%EC%8B%9D%EA%B3%BC%EC%97%B0%EC%82%B0%EC%9E%90)
 > 
 > 1절. 수식
 > 
