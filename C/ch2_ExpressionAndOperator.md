@@ -237,7 +237,8 @@ int main(void)
    * (x != 0) && (x != 1)
       * x는 0도 아니고 1도 아니다.
             
-#### 조건 연산자 : 3개의 피연산자를 가지는 삼항 연산자     
+#### 조건 연산자
+* 3개의 피연산자를 가지는 삼항 연산자     
             
 ![iff](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch2/iff.PNG)  
 
