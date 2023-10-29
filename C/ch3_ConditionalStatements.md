@@ -1,6 +1,14 @@
 #  Chapter 3. 조건문       
-
-#### 1. 조건문
+> '쉽게 풀어쓴 C언어 Express - 천인국' 6장 학습 내용
+>
+> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch3)
+> 
+> 1절. if문
+> 
+> 2절. switch문
+> 
+## 1절. if문(if ... else ...)
+#### 조건문
       
       1. 프로그램의 선택 구조
       2. 제어문에 속하며, 제어문은 조건문과 반복문을 가지고 있다.
