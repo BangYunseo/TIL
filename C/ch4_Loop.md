@@ -1,7 +1,7 @@
 #  Chapter 4. 반복문 
 > '쉽게 풀어쓴 C언어 Express - 천인국' 7장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch4)
+> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch4_%EB%B0%98%EB%B3%B5%EB%AC%B8)
 > 
 > 1절. 반복문
 > 
