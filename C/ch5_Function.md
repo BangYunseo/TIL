@@ -2,7 +2,7 @@
 
 > '쉽게 풀어쓴 C언어 Express - 천인국' 8장 ~ 9장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch5_%EB%B0%98%EB%B3%B5%EB%AC%B8)
+> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch5_%ED%95%A8%EC%88%98)
 > 
 > 1절. 함수 정의
 > 
