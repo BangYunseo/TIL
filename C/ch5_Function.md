@@ -1,5 +1,31 @@
 #  Chapter 5. 함수       
 
+> '쉽게 풀어쓴 C언어 Express - 천인국' 7장 학습 내용
+>
+> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch4_%EB%B0%98%EB%B3%B5%EB%AC%B8)
+> 
+> 1절. 반복문
+> 
+> 2절. while문
+>
+> 3절. 센티널
+>
+> 4절. do-while문
+>
+> 5절. 난수
+>
+> 6절. for문
+>
+> 7절. 증감식
+>
+> 8절. 중첩 반복문
+>
+> 9절. 무한루프
+>
+> 10절. break문 & goto문 & continue문
+>
+> 11절. printf
+> 
 #### 1. 함수(function)의 개념
 
 	- 입력을 받아 특정한 작업을 통해 결과를 반환하는 코드     
