@@ -12,6 +12,7 @@
 ### 4. When?
   - 2023.09 ~ 2023.12 학습 내용
   - 마지막 수정일 : 2023.09.25
+
 ## 5. Learning List(수정 예정)
 * [변수와 자료형](https://github.com/BangYunseo/TIL/blob/main/C/ch1_DataType.md)
 * [수식과 연산자](https://github.com/BangYunseo/TIL/blob/main/C/ch2_ExpressionAndOperator.md)
