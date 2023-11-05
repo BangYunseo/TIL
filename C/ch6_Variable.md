@@ -2,7 +2,7 @@
 
 > '쉽게 풀어쓴 C언어 Express - 천인국' 9장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch6)
+> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch6_%EB%B3%80%EC%88%98)
 > 
 > 1절. 변수
 > 
