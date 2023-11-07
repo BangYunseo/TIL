@@ -1,25 +1,16 @@
 # chapter 0. Introduce Data Structure
 
 ### 1. 자료 구조
+
 - 데이터를 저장, 조직, 관리하는 방법   
 
 - 컴퓨터 프로그래밍 언어에서 효율적인 데이터의 형태
 
 - 생각하는 방법을 훈련하는 도구
 
-- 프로그래밍과 문제 해결도  
-      
-         (1) 데이터와 구조 모듈에 대한 이해 필요     
-         (2) 프로그래밍 언어, 정수, 문자열, ...     
-         (3) 리스트, 스택, 큐, 우선순위 큐, 검색 트리, 해시 테이블, 그래프, ...     
+- 프로그래밍과 문제 해결도   
 
-#### - 자료구조는 생각하는 방법 훈련이 중요
-       
-          (1) 자료구조를 이용해서 문제를 해결하는 과정
-          (2) 문제 해결 과정에서 논리의 골격이 구성되는 방법
-          (3) 의미의 단위(매듭)를 설정하는 방법
-#### (1) 자료구조
+![datastructure](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch0/datastructure.PNG) 
+
+#### 자료구조
          => 리스트, 스택, 큐, 힙, 검색 트리, 해시 테이블, 그래프
-![datastructure](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch0/datastructure.PNG)         
-#### (2) 생각하는 방법
-         => 재귀, 추상화, 정렬, 그래프
