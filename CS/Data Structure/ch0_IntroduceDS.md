@@ -10,7 +10,7 @@
 
 - 프로그래밍과 문제 해결도   
 
-![datastructure](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch0/datastructure.PNG) 
-
 #### 자료구조
          => 리스트, 스택, 큐, 힙, 검색 트리, 해시 테이블, 그래프
+         
+![datastructure](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch0/datastructure.PNG) 
