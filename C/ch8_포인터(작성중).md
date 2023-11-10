@@ -1,8 +1,8 @@
-##  Chapter 8. 포인터       
+#  Chapter 8. 포인터       
 
-#### 1. 포인터(Pointer)
-
-	- 주소를 가지고 있는 변수   
+## 1절. 포인터
+#### 포인터(Pointer)
+* 주소를 가지고 있는 변수   
 	 
 ![pointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointer.PNG)
 
