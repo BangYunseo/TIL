@@ -1,23 +1,34 @@
 #  Chapter 8. 포인터       
+> '쉽게 풀어쓴 C언어 Express - 천인국' 11장 학습 내용
+>
+> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch8)
+> 
+> 1절. 포인터 기초
+> 
+> 2절. 주소
+>
+> 3절. 
+>
+> 4절. 
+>
 
-## 1절. 포인터
+
+## 1절. 포인터 기초
 #### 포인터(Pointer)
+
 * 주소를 가지고 있는 변수   
-	 
 ![pointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointer.PNG)
 
-#### 1-1. 변수의 저장
-
-	- 변수는 메모리에 저장된다.
- 	- 메모리는 바이트 단위로 엑세스된다.
-  	  -> 첫 번째 바이트의 주소는 0, 두 번째 바이트는 1, ...
+#### 변수의 저장
+* 변수는 메모리에 저장된다.
+* 메모리는 바이트 단위로 엑세스된다.
+  * 첫 번째 바이트의 주소는 0, 두 번째 바이트는 1, ...
 	 
 ![pointer2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointer2.PNG)
 
-#### 1-2. 변수의 메모리
-
-	- 변수의 크기에 따라서 차지하는 메모리 공간이 달라진다.
-	- char형 변수 : 1 바이트, int형 변수 : 4 바이트, ...
+#### 변수의 메모리
+* 변수의 크기에 따라서 차지하는 메모리 공간이 달라진다.
+* char형 변수 : 1 바이트, int형 변수 : 4 바이트, ...
 ```C
 int main(void){
 	int i = 10;
@@ -27,22 +38,23 @@ int main(void){
 ```
 ![memory](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/memory.PNG)
 
-#### 2. 변수의 주소
+#### 변수의 주소
 
- 	- 변수의 주소를 계산하는 연산자 : &
-  	- 변수 i의 주소 : &i
+* 변수의 주소를 계산하는 연산자 : &
+* 변수 i의 주소 : &i
+
 ![Vadress](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/Vadress.PNG)
 
-#### 2-1. 주소의 개념
+## 2절. 주소
+#### 주소의 개념
 
 ![adress](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/adress.PNG)
 
-#### 3. 주소 연산자 &
-
-	- 함수 scanf()를 사용하면서 인자를 '&변수이름'으로 사용
- 	- &(ampersand)가 피연산자인 변수의 메모리 주소를 반환하는 주소 연산자
-  		- 함수 scanf()에서 입력값을 저장하는 변수의 주소값이 인자의 자료형
-    		- 함수 scanf()에서 일반 변수 앞에는 주소 연산자 &를 사용
+#### 주소 연산자 &
+* 함수 scanf()를 사용하면서 인자를 '&변수이름'으로 사용
+* &(ampersand)가 피연산자인 변수의 메모리 주소를 반환하는 주소 연산자
+  * 함수 scanf()에서 입력값을 저장하는 변수의 주소값이 인자의 자료형
+  * 함수 scanf()에서 일반 변수 앞에는 주소 연산자 &를 사용
 
 ![adressOP](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/adressOP.PNG)
 
