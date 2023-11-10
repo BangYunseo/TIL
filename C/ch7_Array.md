@@ -1,7 +1,7 @@
 #  Chapter 7. 배열       
 > '쉽게 풀어쓴 C언어 Express - 천인국' 10장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch7)
+> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch7_%EB%B0%B0%EC%97%B4)
 > 
 > 1절. 배열 기초
 > 
