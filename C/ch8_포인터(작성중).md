@@ -59,7 +59,7 @@ int main(void){
 ![adressOP](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/adressOP.PNG)
 
   
-#### 4. 변수의 주소
+#### 변수의 주소
 
 ```C
 int main(void){
@@ -78,30 +78,28 @@ i의 주소 : 1245024
 c의 주소 : 1245015
 f의 주소 : 1245000  */
 ```
-#### 4-1. 변수의 주소 출력 주의사항
-
-	- 여러 개의 포인터 변수를 한 줄에 선언할 때는 주의해야 한다.
- 	- 아래는 잘못된 선언 예제이다.
+#### 변수의 주소 출력 주의사항
+* 여러 개의 포인터 변수를 한 줄에 선언할 때는 주의해야 한다.
+* 아래는 잘못된 선언 예제이다.
 
  ```C
-int *p1, p2, p3;		// p2와 p3는 정수형 변수로 선언됨
+int *p1, p2, p3;		// p2와 p3는 정수형 변수로 선언
 ```
 
-	- 아래는 올바른 선언 예제이다.
-  ```C
-int *p1, *p2, *p3;		// p2와 p3는 올바른 포인터 변수로 선언됨
+* 아래는 올바른 선언 예제이다.
+```C
+int *p1, *p2, *p3;		// p2와 p3는 올바른 포인터 변수로 선언
 ```
 
-#### 5. 포인터의 선언
-
-	- 포인터 변수 선언에서 자료형과 포인터 변수 이름 사이에 연산자 *(asterisk)를 삽입한다.
- 	- ptrint, ptrshort, ptrchar, ptrdouble은 모두 포인터 변수이다.
-  		- 간단히 포인터라고도 부른다.
+#### 포인터의 선언
+* 포인터 변수 선언에서 자료형과 포인터 변수 이름 사이에 연산자 *(asterisk)를 삽입한다.
+* ptrint, ptrshort, ptrchar, ptrdouble은 모두 포인터 변수이다.
+* 간단히 포인터라고도 부른다.
  
 ![pointerV](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerV.PNG)
 
 
-#### 6. 포인터와 변수의 연결
+#### 포인터와 변수의 연결
 
 ```C
 int i;		// 정수형 변수 i 선언
@@ -111,7 +109,7 @@ p = &i;		// 변수 i의 주소가 포인터 변수 p로 대입됨
 
 ![pointerV2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerV2.PNG)
 
-#### 7. 다양한 포인터 선언
+#### 다양한 포인터 선언
 
 ```C
 char c = 'A';				// 문자형 변수 c
@@ -125,7 +123,7 @@ double *pd = &d;			// 실수를 가리키는 포인터 pd
 
 ![pointerV3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerV3.PNG)
 
-#### 7-1. 예제 1. 포인터 선언하기
+#### 포인터 선언 예제
 
 ```C
 #include <stdio.h>
@@ -149,7 +147,7 @@ int main(void)
 0000002AFF8FFB48 0000002AFF8FFB48  */
 ```
 
-#### 7-2. 포인터 참고사항
+#### 포인터 참고사항
 
 	- NULL은 stdio.h 헤더 파일에 정의된 포인터 상수로 0번을 의미한다.
  	- 0번은 일반적으로는 사용할 수 없다.
