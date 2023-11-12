@@ -1,7 +1,7 @@
 #  Chapter 8. 포인터       
 > '쉽게 풀어쓴 C언어 Express - 천인국' 11장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch8)
+> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch8_%ED%8F%AC%EC%9D%B8%ED%84%B0)
 > 
 > 1절. 포인터 기초
 > 
