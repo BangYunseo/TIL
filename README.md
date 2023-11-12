@@ -8,7 +8,7 @@
 # 학습 내역
 * C#
 * [C](https://github.com/BangYunseo/TIL/tree/main/C)
-* CS
+* Computer Science
   * [Data Structure]()
 * C++
 * Java
