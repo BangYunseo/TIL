@@ -7,12 +7,21 @@
 > 
 > 2절. 주소
 >
-> 3절. 
+> 3절. 포인터
 >
-> 4절. 
+> 4절. 연산자
 >
-
-
+> 5절. swap()
+>
+> 6절. scanf()
+>
+> 7절.
+>
+> 8절.
+>
+> 9절.
+>
+> 10절.
 ## 1절. 포인터 기초
 #### 포인터(Pointer)
 
@@ -38,12 +47,6 @@ int main(void){
 ```
 ![memory](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/memory.PNG)
 
-#### 변수의 주소
-
-* 변수의 주소를 계산하는 연산자 : &
-* 변수 i의 주소 : &i
-
-![Vadress](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/Vadress.PNG)
 
 ## 2절. 주소
 #### 주소의 개념
@@ -59,6 +62,12 @@ int main(void){
 ![adressOP](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/adressOP.PNG)
 
   
+#### 변수의 주소
+* 변수의 주소를 계산하는 연산자 : &
+* 변수 i의 주소 : &i
+
+![Vadress](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/Vadress.PNG)
+ 
 #### 변수의 주소
 
 ```C
@@ -78,6 +87,7 @@ i의 주소 : 1245024
 c의 주소 : 1245015
 f의 주소 : 1245000  */
 ```
+
 #### 변수의 주소 출력 주의사항
 * 여러 개의 포인터 변수를 한 줄에 선언할 때는 주의해야 한다.
 * 아래는 잘못된 선언 예제이다.
@@ -91,6 +101,7 @@ int *p1, p2, p3;		// p2와 p3는 정수형 변수로 선언
 int *p1, *p2, *p3;		// p2와 p3는 올바른 포인터 변수로 선언
 ```
 
+## 3절. 포인터
 #### 포인터의 선언
 * 포인터 변수 선언에서 자료형과 포인터 변수 이름 사이에 연산자 *(asterisk)를 삽입한다.
 * ptrint, ptrshort, ptrchar, ptrdouble은 모두 포인터 변수이다.
@@ -148,33 +159,160 @@ int main(void)
 ```
 
 #### 포인터 참고사항
-
-	- NULL은 stdio.h 헤더 파일에 정의된 포인터 상수로 0번을 의미한다.
- 	- 0번은 일반적으로는 사용할 수 없다.
-  	- CPU가 인터럽트를 위해 사용한다.
-   	- 따라서 포인터 변수의 값이 0이라면 아무것도 가리키고 있지 않다.
+* NULL은 stdio.h 헤더 파일에 정의된 포인터 상수로 0번을 의미한다.
+* 0번은 일반적으로는 사용할 수 없다.
+* CPU가 인터럽트를 위해 사용한다.
+* 따라서 포인터 변수의 값이 0이라면 아무것도 가리키고 있지 않다.
 ```C
 #define NULL ((void *)0)
 ```
 ![NULL](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/NULL.PNG)
 
-#### 8. 간접 참조 연산자
 
-	- 간접 참조 연산자 * : 포인터가 가리키는 값을 가져오는 연산자
+#### 포인터 사용 시 주의점 1
+* 초기화가 안된 포인터를 사용하면 안된다.
+```C
+int main(void){
+	int *p;		// 초기화가 되어있지 않은 포인터 p
+	*p = 100;
+	return 0;
+}
+```
+
+![warningpointer1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/warningpointer1.PNG)
+
+#### 포인터 사용 시 주의점 2
+* 포인터가 아무것도 가리키고 있지 않은 경우에는 NULL로 초기화한다.
+* NULL 포인터를 가지고 간접 참조하면 하드웨어로 감지한다.
+```C
+int *p = NULL;
+```
+
+![warningpointer2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/warningpointer2.PNG)
+
+#### 포인터 사용 시 주의점 3
+* 포인터의 타입과 변수의 타입은 일치해야 한다.
+```C
+#include <stdio.h>
+
+int main(void){
+	int i;
+	double *pd;
+
+	pd = &i;	// ERROR : double형 pointer에 int형 변수의 주소를 대입
+	*pd = 36.5;
+		
+	return 0;
+}
+```
+![warningpointer3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/warningpointer3.PNG)
+
+#### 포인터의 사용 이유
+
+![whypointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/whypointer.PNG)
+
+* 문자(char)는 'a' 처럼 글자가 하나만 있는 상태이다.
+* 문자열(char *)은 "Hello"처럼 글자 여러 개가 계속 이어진 상태이다.
+  * 즉, 문자는 1byte 크기의 char에 저장할 수 있지만 문자열은 크기가 1byte를 넘어가기 때문에 char에 저장할 수 없다.
+  * 따라서 문자열은 변수에 직접 저장하지 않고 포인터를 이용해서 저장한다.
+
+#### 포인터 주소 연산
+* 가능한 연산 : 증가, 감소, 덧셈, 뺄셈
+* 증가 연산의 경우 증가되는 값은 포인터가 가리키는 객체의 크기
+  
+|포인터 타입|++연산 후 증가되는 값|
+|:----:|:----:|
+|char|1|
+|short|2|
+|int|4|
+|float|4|
+|double|8|
+
+#### 포인터 연산
+
+![pointerop](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop.PNG)
+![pointerop2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop2.PNG)
+
+
+#### 포인터 주소 연산
+
+![pointerop3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop3.PNG)
+
+#### 포인터 증감 연산
+
+![pointerop4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop4.PNG)
+
+#### 포인터의 증가 연산 예제
+```C
+#include <stdio.h>
+
+int main(void){
+	char *pc;
+	int *pi;
+	double *pd;
+
+	pc = (char *)10000;			// pc의 절대 주소에 10000을 대입
+	pi = (int *)10000;			// pi의 절대 주소에 10000을 대입
+	pd = (double *)10000;			// pd의 절대 주소에 10000을 대입
+
+	printf("pc = %u, pc+1 = %u, pc+2 = %u\n", pc, pc+1, pc+2);
+	printf("pi = %u, pi+1 = %u, pi+2 = %u\n", pi, pi+1, pi+2);
+	printf("pd = %u, pd+1 = %u, pd+2 = %u\n", pd, pd+1, pd+2);
+
+	return 0;
+}
+
+// 실행 결과
+// pc = 10000, pc+1 = 100001, pc+2 = 10002
+// pi = 10000, pi+1 = 100004, pi+2 = 10008
+// pd = 10000, pd+1 = 100008, pd+2 = 10016
+```
+
+#### 포인터의 형변환
+* C언어에서는 꼭 필요한 경우에 명시적으로 포인터의 타입을 변경할 수 있다.
+```C
+double *pd = &f;
+int *pi;
+
+pi = (int*)pd;		// double형 포인터를 int형 포인터로 변환
+```
+
+#### 포인터와 함수
+* 함수가 포인터를 통해 값을 변경할 수 없게 하려면?
+  * 함수의 매개 변수를 선언할 때 앞에 const를 붙인다.
+  * const를 앞에 붙이면 포인터가 가리키는 내용이 변경 불가능한 상수라는 뜻이다.
+
+```C
+void sub(const int *p){
+	*p = 0;		// Error occur
+}
+```
+#### 포인터와 배열
+* 배열과 포인터는 밀접한 관계이다.
+* 배열의 이름이 포인터이다.
+* 포인터는 배열처럼 사용 가능하다.
+
+![pointerarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerarray.PNG) 
+
+
+## 4절. 연산자
+#### 간접 참조 연산자
+* 간접 참조 연산자 * : 포인터가 가리키는 값을 가져오는 연산자
+
 ```C
 int i = 10;
 int *p;			// 포인터 변수 선언(자료형과 *p)
 p = &i;			// p에는 i의 주소값인 4 저장
 printf("%d", *p)	// 간접 참조(p변수의 주소에 가서 값을 알아오기)
+
 // 실행 결과
 // 10 
 ```
 ![ppointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/ppointer.PNG)
 
 
-#### 8-1. 간접 참조 연산자의 해석 
-
-	- 간접 참조 연산자 : 지정된 위치에서 포인터의 타입에 따라 값을 읽어들인다.
+#### 간접 참조 연산자의 해석 
+* 간접 참조 연산자 : 지정된 위치에서 포인터의 타입에 따라 값을 읽음
 ```C
 int *p = 8;			// 위치 8에서 정수를 읽는다.
 char *pc = 8;			// 위치 8에서 문자를 읽는다.
@@ -183,14 +321,13 @@ double *pd = 8;			// 위치 8에서 실수를 읽는다.
 
 ![ppointer2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/ppointer2.PNG)
 
-#### 9. & 연산자와 * 연산자
-
-	- & 연산자 : 주소 연산자로, 변수의 주소를 반환한다.
- 	- * 연산자 : 내용 연산자로, 포인터가 가리키는 곳의 내용을 반환한다.
+#### & 연산자와 * 연산자
+* & 연산자 : 주소 연산자로, 변수의 주소를 반환한다.
+* * 연산자 : 내용 연산자로, 포인터가 가리키는 곳의 내용을 반환한다.
 
 ![ppointer3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/ppointer3.PNG)
 
-#### 10. 예제 2. 간접 참조 연산자 확인하기
+#### 간접 참조 연산자 확인 예제
 
 ```C
 #include <stdio.h>
@@ -211,6 +348,7 @@ int main(void){
 	// 포인터 p는 i의 주소값의 주소값, 즉 i값이 담겨져 있기 때문에 *p를 출력하면 i의 값인 3000이 출력됨
 	return 0;
 }
+
 // 실행 결과
 // i = 3000
 // &i = 1245024
@@ -221,7 +359,7 @@ int main(void){
 
 ![pipointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pipointer.PNG)
 
-#### 11. 예제 3. * 연산자 확인하기  
+#### * 연산자 확인 예제 
 
 ```C
 #include <stdio.h>
@@ -243,6 +381,7 @@ int main(void){
 
 	return 0;
 }
+
 // 실행 결과
 // p = 1245052
 // *p = 10
@@ -251,7 +390,7 @@ int main(void){
 ```
 ![starpointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/starpointer.PNG)
 
-#### 12. 예제 4. 주소 연산자와 내용 연산자
+#### 주소 연산자와 내용 연산자
 
 ```C
 #include <stdio.h>
@@ -272,6 +411,7 @@ int main(void){
 	
 	return 0;
 }
+
 // 실행 결과
 // i = 10
 // i = 20
@@ -279,112 +419,11 @@ int main(void){
 
 ![adpointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/adpointer.PNG)
 
-#### 13. 포인터 사용 시 주의점 1
-	- 초기화가 안된 포인터를 사용하면 안된다.
-```C
-int main(void){
-	int *p;		// 초기화가 되어있지 않은 포인터 p
-	*p = 100;
-	return 0;
-}
-```
-
-![warningpointer1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/warningpointer1.PNG)
-
-#### 13-1. 포인터 사용 시 주의점 2
-
-	- 포인터가 아무것도 가리키고 있지 않은 경우에는 NULL로 초기화한다.
- 	- NULL 포인터를 가지고 간접 참조하면 하드웨어로 감지한다.
-```C
-int *p = NULL;
-```
-
-![warningpointer2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/warningpointer2.PNG)
-
-#### 13-2. 포인터 사용 시 주의점 3
-
-	- 포인터의 타입과 변수의 타입은 일치해야 한다.
-```C
-#include <stdio.h>
-
-int main(void){
-	int i;
-	double *pd;
-
-	pd = &i;	// ERROR : double형 pointer에 int형 변수의 주소를 대입
-	*pd = 36.5;
-		
-	return 0;
-}
-```
-![warningpointer3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/warningpointer3.PNG)
-
-#### 14. 포인터의 사용 이유
-
-![whypointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/whypointer.PNG)
-
-	- 문자(char)는 'a' 처럼 글자가 하나만 있는 상태이다.
- 	- 문자열(char *)은 "Hello"처럼 글자 여러 개가 계속 이어진 상태이다.
-  	-> 즉, 문자는 1byte 크기의 char에 저장할 수 있지만 문자열은 크기가 1byte를 넘어가기 때문에 char에 저장할 수 없다.
-   	-> 따라서 문자열은 변수에 직접 저장하지 않고 포인터를 이용해서 저장한다.
-
-#### 15. 포인터 주소 연산
-
-	- 가능한 연산 : 증가, 감소, 덧셈, 뺄셈
- 	- 증가 연산의 경우 증가되는 값은 포인터가 가리키는 객체의 크기
-  
-|포인터 타입|++연산 후 증가되는 값|
-|:----:|:----:|
-|char|1|
-|short|2|
-|int|4|
-|float|4|
-|double|8|
-
-#### 15-1. 포인터 연산
-
-![pointerop](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop.PNG)
-![pointerop2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop2.PNG)
-
-
-#### 15-2. 포인터 주소 연산
-
-![pointerop3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop3.PNG)
-
-#### 15-3. 포인터 증감 연산
-
-![pointerop4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop4.PNG)
-
-#### 16. 예제 5. 포인터의 증가 연산
-```C
-#include <stdio.h>
-
-int main(void){
-	char *pc;
-	int *pi;
-	double *pd;
-
-	pc = (char *)10000;			// pc의 절대 주소에 10000을 대입
-	pi = (int *)10000;			// pi의 절대 주소에 10000을 대입
-	pd = (double *)10000;			// pd의 절대 주소에 10000을 대입
-
-	printf("pc = %u, pc+1 = %u, pc+2 = %u\n", pc, pc+1, pc+2);
-	printf("pi = %u, pi+1 = %u, pi+2 = %u\n", pi, pi+1, pi+2);
-	printf("pd = %u, pd+1 = %u, pd+2 = %u\n", pd, pd+1, pd+2);
-
-	return 0;
-}
-// 실행 결과
-// pc = 10000, pc+1 = 100001, pc+2 = 10002
-// pi = 10000, pi+1 = 100004, pi+2 = 10008
-// pd = 10000, pd+1 = 100008, pd+2 = 10016
-```
-
-#### 17. 간접 참조 연산자와 증감 연산자
-- *p++;
-	- p가 가리키는 위치에서 값을 가져온 후에 p를 증가한다.
-- (*p)++;
-	- p가 가리키는 위치의 값을 증가한다.
+#### 간접 참조 연산자와 증감 연산자
+* *p++;
+  * p가 가리키는 위치에서 값을 가져온 후에 p를 증가한다.
+* (*p)++;
+  * p가 가리키는 위치의 값을 증가한다.
 
 
 |수식|의미|
@@ -395,7 +434,7 @@ int main(void){
 |v = ++*p|p가 가리키는 값을 가져온 후에 그 값을 증가하여 v에 대입한다.|
 
 
-#### 17-1. 간접 참조 연산자와 증감 연산자의 예제
+#### 간접 참조 연산자와 증감 연산자의 예제
 ```C
 // 포인터의 증감 연산
 #include <stdio.h>
@@ -419,17 +458,8 @@ int main(void){
 // i = 11, pi = 000000FFEBCFF978
 ```
 
-#### 18. 포인터의 형변환
-
-	- C언어에서는 꼭 필요한 경우에 명시적으로 포인터의 타입을 변경할 수 있다.
-```C
-double *pd = &f;
-int *pi;
-
-pi = (int*)pd;		// double형 포인터를 int형 포인터로 변환
-```
- 
-#### 19. swap() 함수 #1 -  값에 의한 호출
+## 5절. swap()
+#### swap() 함수 1 -  값에 의한 호출
 ```C
 #include <stdio.h>
 void swap(int x, int y);
@@ -461,11 +491,11 @@ void swap(int x, int y) {
 // a=100	b=200
 ```
 
-#### 19-1. 값에 의한 호출 : Why error?
+#### 값에 의한 호출 : Why error?
 
 ![whyerror](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/whyerror.PNG) 
 
-#### 20. swap() 함수 #2 -  참조에 의한 호출
+#### swap() 함수 2 -  참조에 의한 호출
 
 ```C
 #include <stdio.h>
@@ -495,30 +525,11 @@ void swap(int *px, int *py) {
 
 ![callpointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/callpointer.PNG) 
 
-#### 21. scanf() 함수
-
-- 변수에 값을 저장하기 위해 변수의 주소를 입력받는다.
+## 6절. scanf()
+#### scanf() 함수
+* 변수에 값을 저장하기 위해 변수의 주소를 입력받는다.
 
 ![scanf](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/scanf.PNG) 
-
-#### 22. 참고 : 함수와 포인터
-##### - 함수가 포인터를 통해 값을 변경할 수 없게 하려면?
-
-	- 함수의 매개 변수를 선언할 때 앞에 const를 붙인다.
- 	- const를 앞에 붙이면 포인터가 가리키는 내용이 변경 불가능한 상수라는 뜻이다.
-
-```C
-void sub(const int *p){
-	*p = 0;		// Error occur
-}
-```
-#### 23. 포인터와 배열
-
-	- 배열과 포인터는 밀접한 관계이다.
- 	- 배열의 이름이 포인터이다.
-  	- 포인터는 배열처럼 사용 가능하다.
-
-![pointerarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerarray.PNG) 
 
 #### 23-1. 포인터와 배열의 관계
 
