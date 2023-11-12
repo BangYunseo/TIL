@@ -9,7 +9,7 @@
 * C#
 * [C](https://github.com/BangYunseo/TIL/tree/main/C)
 * Computer Science
-  * [Data Structure]()
+  * [Data Structure](https://github.com/BangYunseo/TIL/tree/main/CS/Data%20Structure)
 * C++
 * Java
 * Python
