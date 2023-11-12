@@ -15,13 +15,9 @@
 >
 > 6절. scanf()
 >
-> 7절.
+> 7절. 매개 변수
 >
-> 8절.
->
-> 9절.
->
-> 10절.
+
 ## 1절. 포인터 기초
 #### 포인터(Pointer)
 
@@ -294,6 +290,100 @@ void sub(const int *p){
 
 ![pointerarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerarray.PNG) 
 
+* 인덱스 표기법을 포인터에 사용할 수 있다.
+  * 인덱스 표기 = 배열에서 사용
+  * a + i == &a[i]
+  * *(a + i) == a[i]
+
+![pointerarray2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerarray2.PNG) 
+
+#### 포인터를 배열처럼 사용하는 예제
+```C
+#include <stdio.h>
+
+int main(void)
+{
+	int a[] = {10, 20, 30, 40, 50};
+	int *p;
+
+	p = a;
+	printf("&a[0] = %d\ta[1] = %d\ta[2] = %d\n", a[0], a[1], a[2]);
+	printf("&p[0] = %d\tp[1] = %d\tp[2] = %d\n\n", p[0], p[1], p[2]);
+
+	p[0] = 60;
+	p[1] = 70;
+	p[2] = 80;
+
+	printf("&a[0] = %d\ta[1] = %d\ta[2] = %d\n", a[0], a[1], a[2]);
+	printf("&p[0] = %d\tp[1] = %d\tp[2] = %d\n\n", p[0], p[1], p[2]);
+	return 0;
+}
+// 출력 예시
+// a[0] = 10	a[1] = 20	a[2] = 30
+// p[0] = 10	p[1] = 20	p[2] = 30
+// 
+// a[0] = 60	a[1] = 70	a[2] = 80
+// p[0] = 60	p[1] = 70	p[2] = 80
+```
+
+* 사진으로 보기
+
+![pointertoarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointertoarray.PNG) 
+
+#### 포인터를 배열의 이름으로 사용
+
+![pointertoname](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointertoname.PNG) 
+
+#### 포인터와 배열의 관계 예제
+```C
+// 포인터와 배열의 관계
+#include <stdio.h>
+
+int main(void)
+{
+	int a[] = {10, 20, 30, 40, 50};
+
+	printf("&a[0] = %u\n", &a[0]);
+	printf("&a[1] = %u\n", &a[1]);
+	printf("&a[2] = %u\n", &a[2]);
+
+	printf("a = %u\n", a);
+	// 배열 이름을 부호 없는 정수값으로 출력
+	// 첫 번째 요소(index = 0)의 주소값과 동일
+	return 0;
+}
+// 출력 예시
+// &a[0] = 1245008
+// &a[1] = 1245012
+// &a[2] = 1245016
+// a = 1245008
+```
+
+#### 포인터와 배열의 관계 예제 2
+```C
+// 포인터와 배열의 관계 2
+#include <stdio.h>
+
+int main(void)
+{
+	int a[] = {10, 20, 30, 40, 50};
+
+	printf("a = %u\n", a);
+
+	printf("a + 1 = %u\n", a + 1);
+
+	printf("*a = %d\n", *a);
+
+	printf("*(a + 1) = %d\n", *(a + 1));
+
+	return 0;
+}
+// 출력 예시
+// a = 1245008
+// a + 1 = 1245012
+// *a = 10
+// *(a + 1) = 20
+```
 
 ## 4절. 연산자
 #### 간접 참조 연산자
@@ -531,136 +621,61 @@ void swap(int *px, int *py) {
 
 ![scanf](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/scanf.PNG) 
 
-#### 23-1. 포인터와 배열의 관계
+## 7절. 매개 변수
+#### 배열 매개 변수
+* 일반 매개 변수와 배열 매개 변수
+![argument](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/argument.PNG)
 
-(ppt 45 page부터 다시 작성)
+* why?
+  * 배열을 함수로 복사하려면 많은 시간이 소모되므로 배열은 주소만을 전달
+* 배열 매개 변수는 포인터로 생각할 수 있다.
+![arrayarg](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/arrayarg.PNG)
 
+* 배열 a의 주소를 가리키고 있기 때문에 배열의 이름은 포인터이다.
+* 함수를 호출할 때 배열을 전달하면 자동으로 배열의 주소가 전달된다.
+  * 배열의 이름은 배열을 가리키는 포인터와 동일하다.
+* sub() 함수를 호출할 때 배열의 이름 a를 전달한다.
+* sub() 함수의 매개 변수 b는 배열을 가리키는 포인터처럼 동작한다.
+  * b를 통하여 배열 원소에 접근하면 배열 a의 원소들이 접근된다.
+
+#### 포인터를 통한 배열과 매개 변수의 관계 예제
 ```C
-// 포인터와 배열의 관계
 #include <stdio.h>
 
-int main(void)
-{
-	int key;
-	int grade[SIZE] = {2, 6, 11, 13, 18, 20, 22, 27, 29, 30, 34, 38, 41, 42, 45, 47};
-	printf("탐색할 값을 입력해라 : ");
-	scanf("%d", &key);
-	printf("탐색 결과 = %d\n", binary_search(grade, SIZE, key));
+void sub(int b[], int n);
+
+int main(void){
+	int a[3] = {1, 2, 3};
+
+	printf("%d %d %d\n", a[0], a[1], a[2]);
+	sub(a, 3);
+	// 배열 a를 sub() 함수로 전달
+	// 배열의 이름 == 배열의 주소
+	// 따라서 배열의 주소가 전달
+
+	printf("%d %d %d\n", a[0], a[1], a[2]);
 
 	return 0;
 }
-int binary_search(int list[], int n, int key)
-
-```
-#### 26. 2차원 배열
-
-	- 데이터 자체가 2차원인 경우 사용하는 배열
- 	- ex) 디지털 이미지, 보드 게임 등
-
-
-![2tharray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharray.PNG) 
-
-
-```C
-int s[10];		// 1차원
-int s[3][10];		// 2차원
-int s[5][3][10];	// 3차원
-```
-
-- 2차원 배열의 인덱스
-
-![2tharrayindex](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayindex.PNG)   
-
-
-#### 26-1. 2차원 배열 예제
-```C
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#define ROWS 3
-#define COLS 5
-
-int main(void)
-{
-	int s[ROWS][COLS];
-	int i, j;
-	srand((unsigned)time(NULL));
-	// 난수 생성기
-
-	for (i = 0; i < ROWS; i++)
-	// 배열의 행과 열에 랜덤 난수를 설정
-	{
-		for(j = 0;j < COLS; j++)
-			s[i][j] = rand() % 100;
-	}
-	for (i = 0; i < ROWS; i++)
-	// 배열의 행과 열에 설정된 랜덤 난수를 출력
-	{
-		for(j = 0;j < COLS; j++)
-			printf("%02d", s[i][j]);
-		printf("\n");
-	}
-	return 0;
+void sub(int b[], int n){
+	// 매개 변수 b는 전달된 배열을 가리키는 포인터
+	b[0] = 4;
+	b[1] = 5;
+	b[2] = 6;
+	// b[]를 통해 원본 배열 a[]가 변경
 }
-```
-```C
-// 출력 결과 예시
-61 10 53 60 54
-90 45 73 00 90
-80 82 93 45 67
+	
 ```
 
-#### 26-2. 2차원 배열 초기화
+#### 동일한 포인터 매개 변수 방법
 
-- 행과 열이 모두 주어진 2차원 배열 초기화
+![sametwoway](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/sametwoway.PNG)
 
-![2tharrayreset](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayreset.PNG)
+#### 포인터를 사용한 방법의 장점
+* 포인터가 인덱스 표기법보다 빠르다.
+  * Why?
+    * 인덱스를 주소로 변환할 필요가 없기 때문이다.
 
-- 행이 주어지지 않고 열만 주어진 2차원 배열 초기화
+![advantage](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/advantage.PNG)
 
-![2tharrayreset2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayreset2.PNG)
-
-- 행이 주어지지 않고 열만 주어진 2차원 배열 초기화 - 2
-
-![2tharrayreset3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayreset3.PNG)
-
-
-
-#### 27. 행렬 예제
-
-- 다차원 배열을 이용한 행렬의 표현 예제
-```C
-#include <stdio.h>
-#define ROWS 3
-#define COLS 3
-
-int main(void)
-{
-	int A[ROWS][COLS] = { {2, 3, 0},
-                              {8, 9, 1},
-                              {7, 0, 5} };
-	int B[ROWS][COLS] = { {1, 0, 0},
-                              {1, 0, 0},
-                              {1, 0, 0} };
-	int C[ROWS][COLS];
-	int r, c;
-	for(r = 0; r < ROWS; r++)
-	// 두 개의 행렬을 더한 값을 행렬 C에 저장
-	{
-		for(c = 0; c < COLS; c++)
-			C[r][c] = A[r][c] + B[r][c];
-	}
-	for(r = 0; r < ROWS; r++)
-	// 행렬 C에 저장된 값을 출력
-	{
-		for(c = 0; c < COLS; c++)
-			printf("%d", C[r][c]);
-		printf("\n");
-	}
-	return 0;
-}
-```
-
-#### 27-1. 다차원 배열 주의사항
-
-![ntharray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/ntharray.PNG)
+* 컴파일러 최적화를 하면 성능은 비슷해진다.
