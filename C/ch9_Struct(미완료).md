@@ -1,5 +1,22 @@
-##  Chapter 9. 구조체       
-
+#  Chapter 9. 구조체       
+> '쉽게 풀어쓴 C언어 Express - 천인국' 11장 학습 내용
+>
+> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch8_%ED%8F%AC%EC%9D%B8%ED%84%B0)
+> 
+> 1절. 포인터 기초
+> 
+> 2절. 주소
+>
+> 3절. 포인터
+>
+> 4절. 연산자
+>
+> 5절. swap()
+>
+> 6절. scanf()
+>
+> 7절. 매개 변수
+>
 #### 1. 포인터(Pointer)
 
 	- 주소를 가지고 있는 변수   
