@@ -45,7 +45,7 @@
   * 구조체를 만들 구조체 틀(template)을 정의한다.
 ![structtemplate](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structtemplate.PNG)
 
-## 2절. 선언(여기부터 다시 작성)
+## 2절. 선언(여기부터 다시 작성 - 8페이지)
 #### 구조체 선언
 
 ![arraystruct](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/arraystruct.PNG)
