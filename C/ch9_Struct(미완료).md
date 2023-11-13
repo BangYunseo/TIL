@@ -2,7 +2,7 @@
 
 > '쉽게 풀어쓴 C언어 Express - 천인국' 13장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch9)
+> [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch9_%EA%B5%AC%EC%A1%B0%EC%B2%B4)
 > 
 > 1절. 구조체 기초
 > 
