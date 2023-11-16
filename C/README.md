@@ -19,9 +19,9 @@
 * [조건문](https://github.com/BangYunseo/TIL/blob/main/C/ch3_ConditionalStatements.md)
 * [반복문](https://github.com/BangYunseo/TIL/blob/main/C/ch4_Loop.md)
 * [함수](https://github.com/BangYunseo/TIL/blob/main/C/ch5_Function.md)
-* [변수]()
-* [배열]()
-* [포인터]()
+* [변수](https://github.com/BangYunseo/TIL/blob/main/C/ch6_Variable.md)
+* [배열](https://github.com/BangYunseo/TIL/blob/main/C/ch7_Array.md)
+* [포인터](https://github.com/BangYunseo/TIL/blob/main/C/ch8_Pointer.md)
 * [구조체]()
 
 ## 6. SourceCode List
