@@ -1,4 +1,4 @@
-#  Chapter 1. C++       
+#  Chapter 1. C++소개   
 > 
 >
 >
