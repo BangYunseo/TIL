@@ -1,19 +1,17 @@
 # C++
 
-### 1. Why? 
-  - C++ 기초 정리 및 공부       
-
-### 2. What? 
+## Why? 
+  - C++ 기초 정리 및 공부
+  - 
+## What? 
   - C++
-
-### 3. How?
   - 참고 서적 : 명품 C++ Programming
 
-### 4. When?
+## When?
   - 2023.09 ~ 2023.12 학습 내용
   - 마지막 수정일 : 2023.09.25
 
-## 5. Learning List(수정 예정)
+## Learning List(수정 예정)
 * [변수와 자료형](https://github.com/BangYunseo/TIL/blob/main/C/ch1_DataType.md)
 * [수식과 연산자](https://github.com/BangYunseo/TIL/blob/main/C/ch2_ExpressionAndOperator.md)
 * [조건문](https://github.com/BangYunseo/TIL/blob/main/C/ch3_ConditionalStatements.md)
@@ -24,7 +22,7 @@
 * [포인터]()
 * [구조체]()
 
-## 6. SourceCode List(수정 예정)
+## SourceCode List(수정 예정)
 * [ch1](https://github.com/BangYunseo/Express-C/tree/main/ch1_%EB%B3%80%EC%88%98%EC%99%80%20%EC%9E%90%EB%A3%8C%ED%98%95)
 * [ch2](https://github.com/BangYunseo/Express-C/tree/main/ch2_%EC%88%98%EC%8B%9D%EA%B3%BC%EC%97%B0%EC%82%B0%EC%9E%90)
 * [ch3](https://github.com/BangYunseo/Express-C/tree/main/ch3_%EC%A1%B0%EA%B1%B4%EB%AC%B8)
