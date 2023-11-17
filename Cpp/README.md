@@ -12,8 +12,8 @@
   - 마지막 수정일 : 2023.09.25
 
 ## Learning List(수정 예정)
-* [C++기초](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch1_IntroduceC%2B%2B.md)
-* [수식과 연산자](https://github.com/BangYunseo/TIL/blob/main/C/ch2_ExpressionAndOperator.md)
+* [C++소개](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch1_IntroduceC%2B%2B.md)
+* [C++기초](https://github.com/BangYunseo/TIL/blob/main/C/ch2_ExpressionAndOperator.md)
 * [조건문](https://github.com/BangYunseo/TIL/blob/main/C/ch3_ConditionalStatements.md)
 * [반복문](https://github.com/BangYunseo/TIL/blob/main/C/ch4_Loop.md)
 * [함수](https://github.com/BangYunseo/TIL/blob/main/C/ch5_Function.md)
