@@ -12,7 +12,7 @@
 
 ## Learning List
 * [C++소개](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch1_IntroduceC%2B%2B.md)
-* [C++기초]()
+* [C++기초](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch2_BasicC%2B%2B.md)
 * [클래스]()
 * [객체]()
 * [객체포인터와객체배열]()
