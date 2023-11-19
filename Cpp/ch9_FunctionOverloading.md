@@ -51,6 +51,12 @@
 
 ![comfortableoverloading](https://github.com/BangYunseo/TIL/tree/main/Cpp/Image/ch9/comfortableoverloading.PNG)
 
+* 예제 1. big() 함수 중복 연습    
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch9_FunctionOverloading/BigFunctionOverloading.cpp)
+
+* 예제 2. sum() 함수 중복 연습     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch9_FunctionOverloading/SumFunctionOverloading.cpp)
+
 ## 2절. 생성자와 소멸자
 #### 생성자 함수 중복
 * 생성자 함수를 중복해서 사용 가능
