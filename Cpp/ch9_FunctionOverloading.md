@@ -9,13 +9,7 @@
 >
 > 3절. 디폴트 매개 변수
 >
-> 4절.
->
-> 5절. 
->
-> 6절. 
->
-> 7절.
+> 4절. 함수 중복 특성
 >
 
 ## 1절. 함수 중복
@@ -144,10 +138,50 @@ void calc(int a, int b = 5, int c = 0, int d = 0);
 
 ![parameterrule2](https://github.com/BangYunseo/TIL/tree/main/Cpp/Image/ch9/parameterrule2.PNG)
 
+* 예제 3. 디폴트 매개 변수를 가진 함수 선언 및 호출 연습  
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch9_FunctionOverloading/DefaultParameterEx1.cpp)
+
+* 예제 4. 디폴트 매개 변수를 가진 함수 생성 연습   
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch9_FunctionOverloading/DefaultParameterEx2.cpp)
 
 
+## 4절. 함수 중복 특성
+#### 함수 중복 간소화
+* 디폴트 매개 변수의 장점
+  * 함수 중복 간소화
 
+![smalloverloading](https://github.com/BangYunseo/TIL/tree/main/Cpp/Image/ch9/smalloverloading.PNG)
 
+* 중복 함수들과 다르게 디폴트 매개 변수를 가진 함수를 함께 사용 불가
 
+![sameoverloading](https://github.com/BangYunseo/TIL/tree/main/Cpp/Image/ch9/sameoverloading.PNG)
 
+* 예제 5. 디폴트 매개 변수를 이용한 중복 함수 간소화 연습  
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch9_FunctionOverloading/DefaultParameterEx3.cpp)
 
+* 예제 6. 생성자 함수 중복 간소화 연습  
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch9_FunctionOverloading/ConstructorOverloading.cpp)
+
+#### 함수 중복의 모호성
+* 함수 중복이 모호하여 컴파일러가 어떤 함수를 호출하는지 판단하지 못하는 경우
+  * 형 변환으로 인한 모호성
+  * 참조 매개 변수로 인한 모호성
+  * 디폴트 매개 변수로 인한 모호성
+
+#### 형 변환으로 인한 모호성
+* 매개 변수의 형 변환으로 인한 중복 함수 호출의 모호성
+
+![typetrans](https://github.com/BangYunseo/TIL/tree/main/Cpp/Image/ch9/typetrans.PNG)
+
+* 예제 7. 형 변환으로 인해 함수 중복이 모호한 경우 연습  
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch9_FunctionOverloading/TypeConversion.cpp)
+
+#### 참조 매개 변수로 인한 모호성
+
+* 예제 8. 형 변환으로 인해 함수 중복이 모호한 경우 연습  
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch9_FunctionOverloading/ReferenceParameter.cpp)
+
+#### 디폴트 매개 변수로 인한 모호성
+
+* 예제 9. 형 변환으로 인해 함수 중복이 모호한 경우 연습  
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch9_FunctionOverloading/DefaultParameterEx4.cpp)
