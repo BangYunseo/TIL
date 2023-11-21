@@ -11,7 +11,7 @@
 
 ### 4. When?
   - 2023.09 ~ 2023.12 학습 내용
-  - 마지막 수정일 : 2023.10.08
+  - 마지막 수정일 : 2023.11.21
 
 ## 5. Learning List(수정 예정)
 * [변수와 자료형](https://github.com/BangYunseo/TIL/blob/main/C/ch1_DataType.md)
@@ -34,3 +34,14 @@
 * [ch7](https://github.com/BangYunseo/Express-C/tree/main/ch7_%EB%B0%B0%EC%97%B4)
 * [ch8](https://github.com/BangYunseo/Express-C/tree/main/ch8_%ED%8F%AC%EC%9D%B8%ED%84%B0)
 * [ch9](https://github.com/BangYunseo/Express-C/tree/main/ch9_%EA%B5%AC%EC%A1%B0%EC%B2%B4)
+* [ch10]()
+* [ch11]()
+* [ch12]()
+* [ch13]()
+* [ch14]()
+* [ch15]()
+* [ch16]()
+* [ch17]()
+* [ch18]()
+* [ch19]()
+* [ch20]()
