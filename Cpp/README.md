@@ -25,7 +25,7 @@
 * [연산자중복]()
 
 ## SourceCode List
-* [ch1]()
+* ch1 - X
 * [ch2]()
 * [ch3]()
 * [ch4]()
