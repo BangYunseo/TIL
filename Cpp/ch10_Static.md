@@ -3,7 +3,7 @@
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch10_)
 > 
-> 1절. 함수 중복
+> 1절. Static과 Non-static
 > 
 > 2절. 생성자와 소멸자
 >
@@ -11,3 +11,7 @@
 >
 > 4절. 함수 중복 특성
 >
+## 1절. Static과 Non-Static
+#### Static 멤버와 Non-Static 멤버
+
+![staticor]()
