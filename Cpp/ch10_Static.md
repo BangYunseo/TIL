@@ -7,9 +7,9 @@
 > 
 > 2절. Static
 >
-> 3절. 디폴트 매개 변수
+> 3절. 
 >
-> 4절. 함수 중복 특성
+> 4절. 
 >
 ## 1절. Static과 Non-Static
 #### static 멤버와 non-static 멤버
