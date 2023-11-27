@@ -8,7 +8,7 @@
 
 ## When?
 * 2023.09 ~ 2023.12 학습 내용
-* 마지막 수정일 : 2023.11.26
+* 마지막 수정일 : 2023.11.27
 
 ## Learning List
 * [C++소개](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch1_IntroduceC%2B%2B.md)
