@@ -20,7 +20,7 @@
 * [함수와참조]()
 * [복사생성자]()
 * [함수중복](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch9_FunctionOverloading.md)
-* [static멤버]()
+* [static]()
 * [프렌드사용]()
 * [연산자중복]()
 
