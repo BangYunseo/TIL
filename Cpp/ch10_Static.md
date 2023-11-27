@@ -93,4 +93,4 @@ p->addShared(200);          // objpointer->staticMember 방식
 ```
 
 예제 1. Static 멤버 사용 예제
-
+[Source Code Checking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_Static/UsingStaticMember.cpp)
