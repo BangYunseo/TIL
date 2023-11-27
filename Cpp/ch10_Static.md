@@ -123,5 +123,58 @@ Person::addMoney(200);      // 컴파일 오류 : non-static 멤버는 클래스
   * 객체 사이에 공유 변수를 만들고자 할 때
     * static 멤버를 선언하여 모든 객체들이 공유
 
-#### 
+#### 특정한 목적을 가진 static 멤버
+* 그림으로 먼저 보기
+![Mathclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/Mathclass.PNG)
 
+* 예제 3. static 멤버를 가진 Math 클래스 예제
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_Static/MathClass.cpp)
+
+* 그림으로 먼저 보기
+![Circleclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/Circleclass.PNG)
+
+* 예제 4. 공유의 목적으로 static 멤버를 사용하는 예제
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_Static/CircleClass.cpp)
+
+#### static 멤버 함수는 static 멤버만 접근 가능
+* static 멤버 함수가 접근할 수 있는 것
+  * static 멤버 함수
+  * static 멤버 변수
+  * 함수 내의 지역 변수
+* static 멤버 함수는 non-static 멤버에 접근 불가
+  * 객체가 생성되지 않은 시점에서 static 멤버 함수가 호출될 수 있기 때문 
+
+#### static 멤버 함수의 오류
+* static 멤버 함수 getMoney()가 non-static 멤버 변수 money를 접근하는 오류
+![getArea](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/getArea.PNG)
+
+#### non-static 멤버 함수는 static에 접근 가능
+```C++
+class Person{
+public:
+ double money;             // 개인 돈
+ static int sharedMoney;   // 공유 돈
+
+// ...
+
+ int total() { return money + sharedMoney; }
+// non-static 함수는 non-static이나 static 멤버에 모두 접근 가능
+};
+```
+#### static 멤버 함수의 this
+* static 멤버 함수는 객체가 생기기 전부터 호출 가능
+  * static 멤버 함수에서 this 사용 불가
+```C++
+class Person{
+public:
+ double money;             // 개인 돈
+ static int sharedMoney;   // 공유 돈
+
+// ...
+
+ static void addShared(int n) { this->sharedMoney += n; }
+ // static 함수에서는 this 사용 불가
+ // this를 사용하므로 컴파일 오류 발생
+ // sharedMoney += n; 으로 설정하면 정상 컴파일
+};
+``` 
