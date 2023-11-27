@@ -91,7 +91,7 @@ p->addShared(200);          // objpointer->staticMember 방식
 * 그림으로 먼저 보기
 ![staticmember](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/staticmember.PNG)
 
-* 예제 1. Static 멤버 사용 예제
+* 예제 1. Static 멤버 사용 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_Static/UsingStaticMember.cpp)
 
 * han와 lee의 money는 각각 100, 350으로 값이 다르지만 han와 lee의 sharedMoney는 공통 400으로 같음
@@ -112,7 +112,7 @@ Person::addMoney(200);      // 컴파일 오류 : non-static 멤버는 클래스
 * 그림으로 먼저 보기
 ![staticmember3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/staticmember3.PNG)
 
-* 예제 2. Static 멤버 클래스 접근 예제
+* 예제 2. Static 멤버 클래스 접근 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_Static/AcessingStaticMember.cpp)
 
 #### static 활용
@@ -127,13 +127,13 @@ Person::addMoney(200);      // 컴파일 오류 : non-static 멤버는 클래스
 * 그림으로 먼저 보기
 ![Mathclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/Mathclass.PNG)
 
-* 예제 3. static 멤버를 가진 Math 클래스 예제
+* 예제 3. static 멤버를 가진 Math 클래스 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_Static/MathClass.cpp)
 
 * 그림으로 먼저 보기
 ![Circleclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/Circleclass.PNG)
 
-* 예제 4. 공유의 목적으로 static 멤버를 사용하는 예제
+* 예제 4. 공유의 목적으로 static 멤버를 사용하는 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_Static/CircleClass.cpp)
 
 #### static 멤버 함수는 static 멤버만 접근 가능
