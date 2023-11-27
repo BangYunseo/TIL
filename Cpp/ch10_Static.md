@@ -7,10 +7,7 @@
 > 
 > 2절. Static
 >
-> 3절. 
->
-> 4절. 
->
+
 ## 1절. Static과 Non-Static
 #### static 멤버와 non-static 멤버
 
@@ -91,6 +88,40 @@ Person *p;
 p = &lee;
 p->addShared(200);          // objpointer->staticMember 방식
 ```
+* 그림으로 먼저 보기
+![staticmember](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/staticmember.PNG)
 
-예제 1. Static 멤버 사용 예제
-[Source Code Checking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_Static/UsingStaticMember.cpp)
+* 예제 1. Static 멤버 사용 예제
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_Static/UsingStaticMember.cpp)
+
+* han와 lee의 money는 각각 100, 350으로 값이 다르지만 han와 lee의 sharedMoney는 공통 400으로 같음
+
+#### static 멤버 사용 : 클래스명과 범위 지정 연산자 (::)로 접근
+* 클래스 이름과 범위 지정 연산자 (::)로 접근 가능
+  * static 멤버는 클래스마다 오직 한 개만 생성되기 때문
+```C++
+classname::staticmember
+```
+![staticmember2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/staticmember2.PNG)
+
+ * non-static 멤버는 클래스 이름을 접근 불가
+```C++
+Person::money = 100;        // 컴파일 오류 : non-static 멤버는 클래스 명으로 접근 불가
+Person::addMoney(200);      // 컴파일 오류 : non-static 멤버는 클래스 명으로 접근 불가
+```
+* 그림으로 먼저 보기
+![staticmember3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/staticmember3.PNG)
+
+* 예제 2. Static 멤버 클래스 접근 예제
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_Static/AcessingStaticMember.cpp)
+
+#### static 활용
+* static의 주요 활용
+  * 전역 변수나 전역 함수를 클래스에 캡슐화
+    * 전역 변수나 전역 함수를 가능한 사용하지 않도록
+    * 전역 변수나 전역 함수를 static으로 선언하여 클래스 멤버로 선언
+  * 객체 사이에 공유 변수를 만들고자 할 때
+    * static 멤버를 선언하여 모든 객체들이 공유
+
+#### 
+
