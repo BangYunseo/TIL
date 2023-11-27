@@ -178,10 +178,10 @@ void calc(int a, int b = 5, int c = 0, int d = 0);
 
 #### 참조 매개 변수로 인한 모호성
 
-* 예제 8. 형 변환으로 인해 함수 중복이 모호한 경우 연습  
+* 예제 8. 참조 매개 변수로 인해 함수 중복이 모호한 경우 연습  
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch9_FunctionOverloading/ReferenceParameter.cpp)
 
 #### 디폴트 매개 변수로 인한 모호성
 
-* 예제 9. 형 변환으로 인해 함수 중복이 모호한 경우 연습  
+* 예제 9. 디폴트 매개 변수로 인해 함수 중복이 모호한 경우 연습  
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch9_FunctionOverloading/DefaultParameterEx4.cpp)
