@@ -10,7 +10,7 @@
 * [C](https://github.com/BangYunseo/TIL/tree/main/C)
 * Computer Science
   * [Data Structure](https://github.com/BangYunseo/TIL/tree/main/CS/Data%20Structure)
-* C++
+* [C++](https://github.com/BangYunseo/TIL/tree/main/Cpp)
 * Java
 * Python
 * Unity
