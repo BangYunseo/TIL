@@ -1,7 +1,7 @@
 #  Chapter 10. Static      
 > '명품 C++Programming - 황기태' 6장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch10_)
+> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch10_Static)
 > 
 > 1절. Static과 Non-Static
 > 
