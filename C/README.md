@@ -12,15 +12,15 @@
 * 마지막 수정일 : 2023.11.04 (ch5 및 코드파일 수정 완료)
 
 ## Learning List
-* [변수와 자료형](https://github.com/BangYunseo/TIL/blob/main/C/ch1_DataType.md)
-* [수식과 연산자](https://github.com/BangYunseo/TIL/blob/main/C/ch2_ExpressionAndOperator.md)
-* [조건문](https://github.com/BangYunseo/TIL/blob/main/C/ch3_ConditionalStatements.md)
-* [반복문](https://github.com/BangYunseo/TIL/blob/main/C/ch4_Loop.md)
-* [함수](https://github.com/BangYunseo/TIL/blob/main/C/ch5_Function.md)
-* [변수](https://github.com/BangYunseo/TIL/blob/main/C/ch6_Variable.md)
-* [배열](https://github.com/BangYunseo/TIL/blob/main/C/ch7_Array.md)
-* [포인터](https://github.com/BangYunseo/TIL/blob/main/C/ch8_Pointer.md)
-* [구조체]()
+* ch1 [변수와 자료형](https://github.com/BangYunseo/TIL/blob/main/C/ch1_DataType.md)
+* ch2 [수식과 연산자](https://github.com/BangYunseo/TIL/blob/main/C/ch2_ExpressionAndOperator.md)
+* ch3 [조건문](https://github.com/BangYunseo/TIL/blob/main/C/ch3_ConditionalStatements.md)
+* ch4 [반복문](https://github.com/BangYunseo/TIL/blob/main/C/ch4_Loop.md)
+* ch5 [함수](https://github.com/BangYunseo/TIL/blob/main/C/ch5_Function.md)
+* ch6 [변수](https://github.com/BangYunseo/TIL/blob/main/C/ch6_Variable.md)
+* ch7 [배열](https://github.com/BangYunseo/TIL/blob/main/C/ch7_Array.md)
+* ch8 [포인터](https://github.com/BangYunseo/TIL/blob/main/C/ch8_Pointer.md)
+* ch9 [구조체]()
 
 ## SourceCode List
 * [ch1](https://github.com/BangYunseo/Express-C/tree/main/ch1_%EB%B3%80%EC%88%98%EC%99%80%20%EC%9E%90%EB%A3%8C%ED%98%95)
