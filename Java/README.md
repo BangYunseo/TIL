@@ -14,7 +14,7 @@
   - 마지막 수정일 : 2023.11.21
 
 ## 5. Learning List(수정중)
-* ch01 [변수]()
+* ch01 [변수](https://github.com/BangYunseo/TIL/blob/main/Java/ch01_Variable.md)
 * ch02 []()
 * ch03 []()
 * ch04 []()
