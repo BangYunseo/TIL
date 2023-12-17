@@ -57,3 +57,33 @@ int main(){
   std::cout << "Hello!" << endl;
 }
 ```
+* cout 객체
+  * 스크린 출력 장치에 연결된 표준 C++ 출력 스트림 객체
+  * <iostream> 헤더 파일에 선언
+  * std 이름 공간에 선언 : std::cout 으로 사용
+* << 연산자
+  * 스트림 삽입 연산자(stream insertion operator)
+    * C++ 기본 산술 시프트 연산자(<<)가 스트림 삽입 연산자로 재정의
+    * ostream 클래스에 구현
+    * 오른쪽 피연산자를 왼쪽 스트림 객체에 삽입
+    * cout 객체에 연결된 화면에 출력
+  * 여러 개의 << 연산자로 여러 값 출력
+
+
+#### << 연산자 활용
+* 문자열 및 기본 타입의 데이터 출력
+  * bool, char, short, int, long, float, double 타입 값 출력
+```C++
+ int n = 3;
+ char c = '#';
+ std::cout << c << 5.5 << '-' << n << "hello" << true;
+// 출력 예시
+// #5.5-3hello1
+```
+
+[데이터타입참고용 표넣기](https://offbyone.tistory.com/115)
+  * 함수 호출 가능
+```C++
+ std::cout << "n + 5 = " << n + 5;
+ std::cout << f();
+```
