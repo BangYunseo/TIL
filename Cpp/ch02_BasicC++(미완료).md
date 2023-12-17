@@ -80,8 +80,20 @@ int main(){
 // 출력 예시
 // #5.5-3hello1
 ```
-
-[데이터타입참고용 표넣기](https://offbyone.tistory.com/115)
+[데이터타입참고용 표넣기(미완)](https://offbyone.tistory.com/115)
+|형식이름|바이트|기타 이름|값의 범위|
+|:---:|:---:|:---:|:---:|
+|int|4|signed|-2,147,483,648 ~ 2,147,483,647|
+|unsigned int|4|unsigned|0 ~ 4,294,967,295|
+|__int8|1|char|-128 ~ 127|
+|unsigned __int8|1|unsigned char|0 ~ 255|
+|__int16|2|short, short int, signed short int|-32,768 ~ 32,767|
+|unsigned __int16|2|unsigned short, unsigned short int|0 ~ 65,535|
+|__int16|2|short, short int, signed short int|-32,768 ~ 32,767|
+|unsigned __int16|2|unsigned short, unsigned short int|0 ~ 65,535|
+|__int16|2|short, short int, signed short int|-32,768 ~ 32,767|
+|unsigned __int16|2|unsigned short, unsigned short int|0 ~ 65,535|
+  * 데이터 타입은 모든 언어들이 거의 비슷하니 알아두면 좋음
   * 함수 호출 가능
 ```C++
  std::cout << "n + 5 = " << n + 5;
