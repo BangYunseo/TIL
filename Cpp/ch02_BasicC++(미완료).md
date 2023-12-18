@@ -94,6 +94,9 @@ int main(){
  std::cout << "Hello" << std::endl;
 ```
 
+* 예제 1. cout과 << 연산자 활용 예제
+[SourceCodeChecking]()
+
 #### namespace
 * 이름 공간 생성 및 사용
 ```C++
@@ -147,6 +150,10 @@ cout << width << '\n' << height << '\n';
 // 23(width 값)
 // 36(height 값)
 ```
+
+* 예제 2. 너비와 높이 입력받기 확장 예제 
+[SourceCodeChecking]()
+
 * cin의 특징
   * 입력 버퍼를 내장
   * <Enter>키가 입력될 때까지 입력된 키를 입력 버퍼에 저장
@@ -246,6 +253,12 @@ cin >> name;
 
 ![grace]()
 
+* 예제 3. 문자열 입력받고 출력하는 예제 
+[SourceCodeChecking]()
+
+* 예제 4. 암호를 입력받고 프로그램을 종료하는 예제 
+[SourceCodeChecking]()
+
 #### cin.getline()으로 공백이 낀 문자열 입력
 * 공백이 있는 문자열 입력받는 방법
 * cin.getline(char buf[], int size, char delimitChar)
@@ -261,6 +274,8 @@ cin.getline(address, 100, '\n');
 
 ![cingetline]()
 
+* 예제 5. cin.getline()을 이용한 문자열 입력 예제 
+[SourceCodeChecking]()
 
 #### C++에서 문자열을 다루는 string 클래스
 * string 클래스
@@ -272,3 +287,6 @@ cin.getline(address, 100, '\n');
   * <string> 헤더 파일에 선언
     * #include <string>
   * C-스트링보다 다루기 쉬움
+
+* 예제 6. string 클래스를 이용한 문자열 입력 예제 
+[SourceCodeChecking]()
