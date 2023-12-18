@@ -94,7 +94,7 @@ int main(){
  std::cout << "Hello" << std::endl;
 ```
 
-* 예제 1. cout과 << 연산자 활용 예제
+* 예제 1. cout과 << 연산자 활용 예제   
 [SourceCodeChecking]()
 
 #### namespace
@@ -151,7 +151,7 @@ cout << width << '\n' << height << '\n';
 // 36(height 값)
 ```
 
-* 예제 2. 너비와 높이 입력받기 확장 예제 
+* 예제 2. 너비와 높이 입력받기 확장 예제    
 [SourceCodeChecking]()
 
 * cin의 특징
@@ -253,10 +253,10 @@ cin >> name;
 
 ![grace](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch2/grace.PNG)
 
-* 예제 3. 문자열 입력받고 출력하는 예제 
+* 예제 3. 문자열 입력받고 출력하는 예제      
 [SourceCodeChecking]()
 
-* 예제 4. 암호를 입력받고 프로그램을 종료하는 예제 
+* 예제 4. 암호를 입력받고 프로그램을 종료하는 예제      
 [SourceCodeChecking]()
 
 #### cin.getline()으로 공백이 낀 문자열 입력
@@ -274,7 +274,7 @@ cin.getline(address, 100, '\n');
 
 ![cingetline](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch2/cingetline.PNG)
 
-* 예제 5. cin.getline()을 이용한 문자열 입력 예제 
+* 예제 5. cin.getline()을 이용한 문자열 입력 예제      
 [SourceCodeChecking]()
 
 #### C++에서 문자열을 다루는 string 클래스
@@ -288,5 +288,5 @@ cin.getline(address, 100, '\n');
     * #include <string>
   * C-스트링보다 다루기 쉬움
 
-* 예제 6. string 클래스를 이용한 문자열 입력 예제 
+* 예제 6. string 클래스를 이용한 문자열 입력 예제      
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/UsingStringClass.cpp)
