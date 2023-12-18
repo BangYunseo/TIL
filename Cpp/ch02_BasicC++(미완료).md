@@ -1,7 +1,7 @@
 #  Chapter 2. C++ 기초   
 > '명품 C++Programming - 황기태' 2장 학습 내용
 >
-> [소스코드]()
+> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch02_BasicC%2B%2B)
 > 
 > 1절. C++의 기본 요소
 > 
