@@ -5,9 +5,9 @@
 > 
 > 1절. C++의 기본 요소
 > 
-> 2절. 
+> 2절. 입력
 >
-> 3절. 추가 설명
+> 3절. 문자열
 
 ## 1절. C++의 기본 요소
 #### 주석문과 main 함수
@@ -59,7 +59,9 @@ int main(){
 ```
 * cout 객체
   * 스크린 출력 장치에 연결된 표준 C++ 출력 스트림 객체
+  * C++에서는 C언어에서 사용했던 printf()와 scanf()를 사용하지 않음
   * <iostream> 헤더 파일에 선언
+  * C언어에서 사용했던 <stdio.h>는 사용하지 않음
   * std 이름 공간에 선언 : std::cout 으로 사용
 * << 연산자
   * 스트림 삽입 연산자(stream insertion operator)
@@ -80,22 +82,137 @@ int main(){
 // 출력 예시
 // #5.5-3hello1
 ```
-[데이터타입참고용 표넣기(미완)](https://offbyone.tistory.com/115)
-|형식이름|바이트|기타 이름|값의 범위|
-|:---:|:---:|:---:|:---:|
-|int|4|signed|-2,147,483,648 ~ 2,147,483,647|
-|unsigned int|4|unsigned|0 ~ 4,294,967,295|
-|__int8|1|char|-128 ~ 127|
-|unsigned __int8|1|unsigned char|0 ~ 255|
-|__int16|2|short, short int, signed short int|-32,768 ~ 32,767|
-|unsigned __int16|2|unsigned short, unsigned short int|0 ~ 65,535|
-|__int16|2|short, short int, signed short int|-32,768 ~ 32,767|
-|unsigned __int16|2|unsigned short, unsigned short int|0 ~ 65,535|
-|__int16|2|short, short int, signed short int|-32,768 ~ 32,767|
-|unsigned __int16|2|unsigned short, unsigned short int|0 ~ 65,535|
-  * 데이터 타입은 모든 언어들이 거의 비슷하니 알아두면 좋음
   * 함수 호출 가능
 ```C++
  std::cout << "n + 5 = " << n + 5;
  std::cout << f();
+```
+* 다음 줄로 넘어가기
+  * '\n'이나 'endl' 조작자 사용
+```C++
+ std::cout << "Hello" << '\n';
+ std::cout << "Hello" << std::endl;
+```
+
+#### namespace
+* 이름 공간 생성 및 사용
+```C++
+ namespace ABC { // ABC라는 이름 공간 생성
+// 이 곳에 선언된 모든 이름은 ABC 이름 공간에 생성된 이름
+}
+```
+   * 이름 공간 사용
+     * 이름 공간 :: 이름     
+
+![functionf]()
+
+#### std
+* std:: 란?
+  * C++ 표준에서 정의한 이름 공간(namespace) 중 하나
+    * <iostream> 헤더 파일에 선언된 모든 이름 : std 이름 공간 안에 있음
+    * cout, cin, endl 등
+  * std 이름 공간에 선언된 이름을 접근하기 위해 std:: 접두어 사용
+    * std::cout, std::cin, std::endl
+* std:: 생략
+  * using 지시어 사용
+```C++
+using namespace std;
+// std 이름 공간에 선언된 모든 이름의 std::사용 생략
+cout << "안녕하세요!" << endl;
+// 위의 cout과 endl에 std가 생략된 모습을 볼 수 있음
+```
+* <iostream>이 std 이름 공간 내에 선언
+  * 보통 아래와 같이 모두 선언함
+```C++
+#include <iostream>
+using namespace std;
+```
+
+## 2절. 입력
+#### cin과 >> 연산자
+* cin
+  * 표준 입력 장치인 키보드를 연결하는 C++ 입력 스트림 객체
+* '>> 연산자'
+  * 스트림 추출 연산자(stream extraction operator)
+    * C++ 산술 시프트 연산자(>>)가 <iostream> 헤더 파일에 스트림 추출 연산자로 재정의됨
+    * 입력 스트ㅡ림에서 값을 읽어 변수에 저장
+  * 연속된 >> 연산자를 사용하여 여러 값 입력 가능
+```C++
+cout << "너비와 높이 입력 >> ";
+cin >> width >> height;
+cout << width << '\n' << height << '\n';
+
+// 출력 예시
+// 너비와 높이 입력 >>23 36
+// 23(width 값)
+// 36(height 값)
+```
+* cin의 특징
+  * 입력 버퍼를 내장
+  * <Enter>키가 입력될 때까지 입력된 키를 입력 버퍼에 저장
+    * 도중에 <Backspace> 키를 입력하면 입력된 키 삭제
+* '>> 연산자'
+  * <Enter> 키가 입력되면 cin의 입력 버퍼에서 키 값을 읽어 변수에 전달
+
+* cin으로부터 키 입력받는 과정
+
+![inputcin]()
+
+#### 실행문 중간에 변수 선언
+* C++의 변수 선언
+  * 변수 선언은 아무 곳이나 가능
+```C++
+int width;
+cout << "너비 입력 >> ";
+cin >> width;
+// 키보드로부터 너비를 입력받음
+
+cout << "높이 입력 >> ";
+int height;
+cin >> height;
+// 키보드로부터 높이를 입력받음
+
+int area = width * height;
+cout << "면적은 " << area << endl;
+// 면적을 출력한 후 한 줄 띄어씀
+```
+* C++ 변수 선언 방식의 장점
+  * 변수를 사용하기 직전 선언함으로써 변수 이믈에 대한 타이핑 오류 줄임
+* C++ 변수 선언 방식의 단점
+  * 선언된 변수를 일괄적으로 보기 힘듦
+  * 코드 사이에 있는 변수를 찾아야 됨
+
+
+#### 타이핑 오류 가능성 해소
+* 선언부에 모든 변수를 선언하는 경우, 타이핑 오류 가능
+```C++
+int time, timer;
+
+timer = 5;
+// time에 5를 저장하려다가 timer로 잘못 입력한 경우
+// 컴파일 오류는 발생하지 않음
+// 잘못된 실행 결과 발생
+
+timer = 3;
+```
+* 변수 사용 전에 변수를 선언하면, 타이핑 오류 사전 발견
+```C++
+int time;
+
+timer = 5;
+// time에 5를 저장하려다가 timer로 잘못 입력한 경우
+// 컴파일 오류 발생
+
+int timer;
+timer = 3;
+```
+
+## 3절. 문자열
+#### C++ 문자열
+* C++의 문자열 표현 방식 : 2가지
+  * C-스트링 방식 - '\0'로 끝나는 문자 배열
+```C++
+char name1[6] = {'', '', '', '', '', ''};
+// name1은 문자열 "Grace"
+
 ```
