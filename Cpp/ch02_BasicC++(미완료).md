@@ -212,7 +212,63 @@ timer = 3;
 * C++의 문자열 표현 방식 : 2가지
   * C-스트링 방식 - '\0'로 끝나는 문자 배열
 ```C++
-char name1[6] = {'', '', '', '', '', ''};
+char name1[6] = {'G', 'r', 'a', 'c', 'e', '\0'};
 // name1은 문자열 "Grace"
-
+char name2[5] = {'G', 'r', 'a', 'c', 'e'};
+// name2는 문자열이 아닌 단순 문자 배열
 ```
+![stringchar]()
+
+  * string 클래스 이용
+    * <string> 헤더 파일에 선언
+    * 다양한 멤버 함수 제공, 문자열 비교, 복사, 수정 등
+
+#### C-스트링 방식으로 문자열 다루기
+* C언어에서 사용한 함수 사용 가능
+  * strcmp(), strlen(), strcpy() 등
+* <cstring>이나 <string.h> 헤더 파일 #include 필요
+```C++
+#include <cstring> or #include <string.h>
+
+int n = strlen("Hello!!");
+```
+* <cstring> 헤더 파일을 사용하는 것이 더 나음
+  * C++ 표준 방식
+ 
+#### cin을 이용한 문자열 입력
+```C++
+char name[6];
+// 5개의 문자를 저장하는 char 배열
+cin >> name;
+// 키보드로부터 문자열을 읽어 name 배열에 저장
+// 키 입력 : Grace
+```
+
+![grace]()
+
+#### cin.getline()으로 공백이 낀 문자열 입력
+* 공백이 있는 문자열 입력받는 방법
+* cin.getline(char buf[], int size, char delimitChar)
+  * buf에 최대 size-1개의 문자 입력 후 끝에 '\0' 붙임
+  * delimitChar를 만나면 입력 중단 후 끝에 '\0' 붙임
+    * delimitChar의 디폴트 값은 '\n'(<Enter> 키)
+```C++
+char address[100];
+cin.getline(address, 100, '\n');
+// 최대 99개의 문자를 읽어 address 배열에 저장
+// 도중에 <Enter> 키를 만나면 입력 중단
+```
+
+![cingetline]()
+
+
+#### C++에서 문자열을 다루는 string 클래스
+* string 클래스
+  * C++에서 가장 추천하며 C++의 표준 클래스
+  * 문자열의 크기에 따른 제약 없음
+    * string 클래스가 스스로 문자열의 크기에 맞게 내부 버퍼 조절
+  * 문자열 복사, 비교, 수정 등 다양한 함수와 연산자 제공
+  * 객체 지향적
+  * <string> 헤더 파일에 선언
+    * #include <string>
+  * C-스트링보다 다루기 쉬움
