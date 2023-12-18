@@ -289,4 +289,4 @@ cin.getline(address, 100, '\n');
   * C-스트링보다 다루기 쉬움
 
 * 예제 6. string 클래스를 이용한 문자열 입력 예제 
-[SourceCodeChecking]()
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/UsingStringClass.cpp)
