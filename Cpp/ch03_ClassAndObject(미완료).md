@@ -57,109 +57,29 @@
 * 그림으로 클래스 작성 확인하기 
 ![MakeClass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/MakeClass.PNG)
 
-* 예제 1. Circle 클래스 예제  
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_BasicC%2B%2B/InputWidthHeight.cpp)
+* 예제 1. Circle 클래스 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/CircleClass.cpp)
 
-* cin의 특징
-  * 입력 버퍼를 내장
-  * <Enter>키가 입력될 때까지 입력된 키를 입력 버퍼에 저장
-    * 도중에 <Backspace> 키를 입력하면 입력된 키 삭제
-* '>> 연산자'
-  * <Enter> 키가 입력되면 cin의 입력 버퍼에서 키 값을 읽어 변수에 전달
-
-* cin으로부터 키 입력받는 과정
-
-![inputcin](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch2/inputcin.PNG)
-
-#### 실행문 중간에 변수 선언
-* C++의 변수 선언
-  * 변수 선언은 아무 곳이나 가능
+#### 객체 생성 및 활용
+* 객체 이름 및 객체 생성
 ```C++
-int width;
-cout << "너비 입력 >> ";
-cin >> width;
-// 키보드로부터 너비를 입력받음
-
-cout << "높이 입력 >> ";
-int height;
-cin >> height;
-// 키보드로부터 높이를 입력받음
-
-int area = width * height;
-cout << "면적은 " << area << endl;
-// 면적을 출력한 후 한 줄 띄어씀
+Circle donut;
+// 이름이 donut인 Circle 타입의 객체 생성
 ```
-* C++ 변수 선언 방식의 장점
-  * 변수를 사용하기 직전 선언함으로써 변수 이믈에 대한 타이핑 오류 줄임
-* C++ 변수 선언 방식의 단점
-  * 선언된 변수를 일괄적으로 보기 힘듦
-  * 코드 사이에 있는 변수를 찾아야 됨
-
-
-#### 타이핑 오류 가능성 해소
-* 선언부에 모든 변수를 선언하는 경우, 타이핑 오류 가능
+* 객체의 멤버 변수 접근
 ```C++
-int time, timer;
-
-timer = 5;
-// time에 5를 저장하려다가 timer로 잘못 입력한 경우
-// 컴파일 오류는 발생하지 않음
-// 잘못된 실행 결과 발생
-
-timer = 3;
+donut.radius = 3;
+// donut 객체의 radius 멤버 값을 3으로 설정
 ```
-* 변수 사용 전에 변수를 선언하면, 타이핑 오류 사전 발견
+* 객체의 멤버 함수 접근
 ```C++
-int time;
-
-timer = 5;
-// time에 5를 저장하려다가 timer로 잘못 입력한 경우
-// 컴파일 오류 발생
-
-int timer;
-timer = 3;
+double area = donut.getArea()
+// donut 객체의 면적 설정
 ```
 
-## 3절. 문자열
-#### C++ 문자열
-* C++의 문자열 표현 방식 : 2가지
-  * C-스트링 방식 - '\0'로 끝나는 문자 배열
-```C++
-char name1[6] = {'G', 'r', 'a', 'c', 'e', '\0'};
-// name1은 문자열 "Grace"
-char name2[5] = {'G', 'r', 'a', 'c', 'e'};
-// name2는 문자열이 아닌 단순 문자 배열
-```
-![stringchar](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch2/stringchar.PNG)
+![ObjectMaker](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/[ObjectMaker.PNG)
 
-  * string 클래스 이용
-    * <string> 헤더 파일에 선언
-    * 다양한 멤버 함수 제공, 문자열 비교, 복사, 수정 등
-
-#### C-스트링 방식으로 문자열 다루기
-* C언어에서 사용한 함수 사용 가능
-  * strcmp(), strlen(), strcpy() 등
-* <cstring>이나 <string.h> 헤더 파일 #include 필요
-```C++
-#include <cstring> or #include <string.h>
-
-int n = strlen("Hello!!");
-```
-* <cstring> 헤더 파일을 사용하는 것이 더 나음
-  * C++ 표준 방식
- 
-#### cin을 이용한 문자열 입력
-```C++
-char name[6];
-// 5개의 문자를 저장하는 char 배열
-cin >> name;
-// 키보드로부터 문자열을 읽어 name 배열에 저장
-// 키 입력 : Grace
-```
-
-![grace](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch2/grace.PNG)
-
-* 예제 3. 문자열 입력받고 출력하는 예제      
+* 예제 2. Rectangle 클래스 예제     (여기부터 작성 15p)
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/InputChar.cpp)
 
 * 예제 4. 암호를 입력받고 프로그램을 종료하는 예제      
