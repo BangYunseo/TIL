@@ -54,7 +54,7 @@
     * public : 다른 모든 클래스나 객체에서 멤버의 접근이 가능함
 * 클래스 구현부(Class Implementation)
   * 클래스에 정의된 모든 멤버 함수 구현
-* 그림으로 클래스 작성 확인하기 
+* 그림으로 클래스 작성 확인하기        
 ![MakeClass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/MakeClass.PNG)
 
 * 예제 1. Circle 클래스 예제           
