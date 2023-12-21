@@ -1,5 +1,5 @@
 ## Today I Learned
-### ※ Makrdown 언어를 제외한 프로그래밍 언어 파일을 넣지 말도록 ※
+### ※ Makrdown 언어를 제외한 프로그래밍 언어 파일을 넣지 않도록 주의 ※
 
 
 * [Markdown 작성법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
