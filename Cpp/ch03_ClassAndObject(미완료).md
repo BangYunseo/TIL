@@ -1,7 +1,7 @@
 #  Chapter 3. 클래스와 객체   
 > '명품 C++Programming - 황기태' 3장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch02_BasicC%2B%2B)
+> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch03_ClassAndObject)
 > 
 > 1절. 클래스와 객체
 > 
