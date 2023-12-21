@@ -7,7 +7,7 @@
 > 
 > 2절. 클래스
 >
-> 3절. 문자열
+> 3절. 생성자
 
 ## 1절. 클래스와 객체
 #### 캡슐화
@@ -57,8 +57,39 @@
 * 그림으로 클래스 작성 확인하기        
 ![MakeClass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/MakeClass.PNG)
 
-* 예제 1. Circle 클래스 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/CircleClass.cpp)
+* 예제 2. Rectangle 클래스 예제       
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/RectangleClass.cpp)
+
+## 3절. 생성자
+#### 생성자(constructor)
+* 객체가 생성되는 시점에서 자동으로 호출되는 멤버 함수
+* 클래스 이름과 동일한 멤버 함수
+![constructor](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/constructor.PNG)
+
+#### 생성자 함수의 특징
+* 생성자의 목적
+  * 객체가 생성될 때 객체가 필요한 초기화를 위해 만듦
+    * ex) 멤버 변수 값 초기화, 메모리 할당, 파일 열기, 네트워크 연결 등
+* 생성자 이름
+  * 반드시 클래스 이름과 동일
+* 생성자는 리턴 타입을 선언하지 않음
+  * 리턴 타입 없음
+  * void 타입 안됨
+* 객체 생성 시 오직 한 번만 호출
+  * 자동으로 호출되므로 임의로 호출 불가능
+  * 각 객체마다 생성자 실행
+* 생성자는 중복 가능
+  * 생성자는 한 클래스 내에 여러 개 가능
+  * 중복된 생성자 중 하나만 실행
+* 생성자가 선언되어 있지 않으면 기본 생성자는 자동으로 생성
+  * 기본 생성자 : 매개 변수 없는 생성자
+  * 컴파일러에 의해 자동 생성
+
+* 예제 3. 2개의 생성자를 가진 Circle 클래스 예제              
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/CircleClass2con.cpp)
+
+* 그림으로 이해하기
+![make2con](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/make2con.PNG)
 
 #### 객체 생성 및 활용
 * 객체 이름 및 객체 생성
@@ -80,7 +111,7 @@ double area = donut.getArea()
 ![ObjectMaker](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/[ObjectMaker.PNG)
 
 * 예제 2. Rectangle 클래스 예제     (여기부터 작성 15p)
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/InputChar.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/RectangleClass.cpp)
 
 * 예제 4. 암호를 입력받고 프로그램을 종료하는 예제      
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/InputPassword.cpp)
