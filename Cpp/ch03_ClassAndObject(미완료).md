@@ -57,6 +57,8 @@
 * 그림으로 클래스 작성 확인하기        
 ![MakeClass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/MakeClass.PNG)
 
+![ObjectMaker](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/ObjectMaker.PNG)
+
 * 예제 2. Rectangle 클래스 예제       
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/RectangleClass.cpp)
 
@@ -91,29 +93,15 @@
 * 그림으로 이해하기
 ![make2con](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/make2con.PNG)
 
-#### 객체 생성 및 활용
-* 객체 이름 및 객체 생성
-```C++
-Circle donut;
-// 이름이 donut인 Circle 타입의 객체 생성
-```
-* 객체의 멤버 변수 접근
-```C++
-donut.radius = 3;
-// donut 객체의 radius 멤버 값을 3으로 설정
-```
-* 객체의 멤버 함수 접근
-```C++
-double area = donut.getArea()
-// donut 객체의 면적 설정
-```
+#### 생성자가 다른 생성자 호출(위임 생성자)
+* 여러 생성자에 중복 작성된 코드의 간소화
+  * 타겟 생성자와 이를 호출하는 위임 생성자로 나누어 작성
+    * 타겟 생성자 : 객체 초기화를 전담하는 생성자
+    * 위임 생성자 : 타겟 생성자를 호출하는 생성자로 객체 초기화를 타겟 생성자에 위임
 
-![ObjectMaker](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/[ObjectMaker.PNG)
+![con22](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/con22.PNG)
 
-* 예제 2. Rectangle 클래스 예제     (여기부터 작성 15p)
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/RectangleClass.cpp)
-
-* 예제 4. 암호를 입력받고 프로그램을 종료하는 예제      
+* 예제 4. 위임 생성자 예제    (여기서부터 작성 23p)     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/InputPassword.cpp)
 
 #### cin.getline()으로 공백이 낀 문자열 입력
