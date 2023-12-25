@@ -168,7 +168,40 @@ class Circle{
 * 생성자가 하나라도 선언된 클래스의 경우
   * 컴파일러는 기본 생성자를 자동 생성하지 않음
 
+![con4](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/con4.PNG)
+
+* 예제 6. Rectangle Class의 정사각형 판단 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/IsRectangleClass.cpp)
 
 
-* 예제 6. string 클래스를 이용한 문자열 입력 예제      
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/UsingStringClass.cpp)
+## 4절. 소멸자
+#### 소멸자
+* 객체가 소멸되는 시점에서 자동으로 호출되는 함수
+  * 오직 한 번만 자동 호출
+  * 임의로 호출 불가능
+  * 객체 메모리 소멸 직전 호출       
+
+![des](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/des.PNG)
+
+
+#### 소멸자 특징
+* 소멸자의 목적
+  * 객체가 사라질 때 마무리 작업
+  * 실행 도중 동적 할당 받은 메모리 해제
+  * 파일 저장 및 닫기
+  * 네트워크 닫기
+* 소멸자 함수의 이름은 클래스 이름 앞에 '~'
+  * ex) Circle::~Circle() {...}
+* 소멸자는 return이 없으며 어떤 값도 반환할 수 없음
+  * 반환하는 코드 작성 불가
+* 중복 불가능
+  * 소멸자는 한 클래스 내에 오직 한 개만 작성 가능
+  * 소멸자는 매개 변수 없는 함수
+* 소멸자가 선언되어 있지 않으면 기본 소멸자가 자동 생성
+  * 컴파일러에 의해 기본 소멸자 코드 생성
+  * 컴파일러가 생성한 기본 소멸자에는 어떠한 코드도 담겨있지 않음
+ 
+* 예제 7. Circle Class의 소멸자 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/Destructor.cpp)
+
+#### 생성자와 소멸자의 실행 순서
