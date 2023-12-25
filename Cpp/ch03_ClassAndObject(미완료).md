@@ -264,3 +264,21 @@ public
 ```
 
 #### 중복 접근 지정과 디폴트 접근 지정
+* 접근 지정의 중복       
+![AM](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/AM.PNG)
+* 디폴트 접근 지정 private             
+![AM2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/AM2.PNG)
+* 멤버 변수의 private 지정                
+![AM3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/AM3.PNG)
+
+* 컴파일 오류 판정해보기                 
+![QuestionAM1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/QAM1.PNG)              
+![QuestionAM2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/QAM2.PNG)
+
+* 정답
+  * (9) 생성자 PrivateAccessError()는 private의 접근 지정자로 선언되어 있으므로 main()에서 호출이 불가능
+  * (11) a는 PrivateAccessError 클래스의 private 멤버이므로 main()에서 접근 불가능
+  * (13) f()는 PrivateAccessError 클래스의 private 멤버이므로 main()에서 호출 불가능
+* 생성자도 private로 선언할 수 있음
+* 생성자를 private로 선언하는 경우 한 클래스에서 오직 하나의 객체만 생성할 수 있도록 하기 위한 것
+* [singleton 패턴 이해하기](https://boycoding.tistory.com/109)
