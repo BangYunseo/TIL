@@ -11,7 +11,9 @@
 >
 > 4절. 소멸자
 >
-> 5절. 
+> 5절. 접근 지정자
+>
+> 6절. 
 
 ## 1절. 클래스와 객체
 #### 캡슐화
@@ -205,3 +207,60 @@ class Circle{
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/Destructor.cpp)
 
 #### 생성자와 소멸자의 실행 순서
+* 객체가 선언된 위치에 따른 분류
+  * 지역 객체
+    * 함수 내에 선언된 객체
+    * 함수가 종료되면 소멸
+  * 전역 객체
+    * 함수의 바깥에 선언된 객체
+    * 프로그램이 종료할 때 소멸
+* 객체 생성 순서
+  * 지역 객체
+    * 함수가 호출되는 순간에 순서대로 생성
+  * 전역 객체
+    * 프로그램에 선언된 순서로 생성
+* 객체 소멸 순서
+  * 함수가 종료되면 지역 객체가 생성된 순서의 역순으로 소멸
+  * 프로그램이 종료되면 전역 객체가 생성된 순서의 역순으로 소멸
+* new를 이용하여 동적으로 생성된 객체의 경우
+  * new를 실행하는 순간 객체 생성
+  * delete 연산자를 실행할 때 객체 소멸     
+
+
+
+* 예제 7. 지역 객체와 전역 객체의 생성 및 소멸 순서 예제                
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/ObjectConDes.cpp)
+
+
+#### 예제 7 설명
+![ex7](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/ex7.PNG)
+
+## 5절. 접근 지정자
+#### 접근 지정자
+* 캡슐화의 목적
+  * 객체 보호 및 보안
+  * C++에서 객체의 캡슐화 전략
+    * 객체의 상태를 나타내는 데이터 멤버(멤버 변수)에 대한 보호
+    * 중요한 멤버는 다른 클래스나 객체에서 접근할 수 없도록 보호
+    * 외부와의 인터페이스를 위해서 일부 멤버는 외부에 접근 허용
+* 멤버에 대한 접근 지정자 3개
+  * private
+    * 동일한 클래스의 멤버 함수에만 제한
+  * protected
+    * 클래스 자신과 상속받은 자식 클래스에만 허용
+  * public
+    * 모든 다른 클래스에 허용
+
+
+```CPP
+class Sample{
+private:
+// private 멤버 선언
+protected:
+// protected 멤버 선언
+public
+// public 멤버 선언
+};
+```
+
+#### 중복 접근 지정과 디폴트 접근 지정
