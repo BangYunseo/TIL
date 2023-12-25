@@ -8,6 +8,10 @@
 > 2절. 클래스
 >
 > 3절. 생성자
+>
+> 4절. 소멸자
+>
+> 5절. 
 
 ## 1절. 클래스와 객체
 #### 캡슐화
@@ -113,17 +117,17 @@ public:
  Point(int a, int b);
 };
 ```
-*  1) 생성자 코드에서 멤버 변수 초기화     
+##### 1) 생성자 코드에서 멤버 변수 초기화     
 ```CPP
 Point::Point(){ x = 0; y = 0; }
 Point::Point(int a, int b) { x = a; y = b; }
 ```
-*  2) 생성자 서두에 초깃값으로 초기화
+##### 2) 생성자 서두에 초깃값으로 초기화
 ```CPP
 Point::Point() : x(0), y(0) { }
 Point::Point(int a, int b) : x(a), y(b) { }
 ```
-*  3) 클래스 선언부에서 직접 초기화
+##### 3) 클래스 선언부에서 직접 초기화
 ```CPP
 class Point{
  int x = 0; y = 0;
@@ -132,19 +136,39 @@ public:
 };
 ```
 
-* 예제 5. cin.getline()을 이용한 문자열 입력 예제      
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/CinGetLine().cpp)
+* 예제 5. 멤버 변수의 초기화와 위임 생성자 예제         
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/ResetClass.cpp)
 
-#### C++에서 문자열을 다루는 string 클래스
-* string 클래스
-  * C++에서 가장 추천하며 C++의 표준 클래스
-  * 문자열의 크기에 따른 제약 없음
-    * string 클래스가 스스로 문자열의 크기에 맞게 내부 버퍼 조절
-  * 문자열 복사, 비교, 수정 등 다양한 함수와 연산자 제공
-  * 객체 지향적
-  * <string> 헤더 파일에 선언
-    * #include <string>
-  * C-스트링보다 다루기 쉬움
+#### 기본 생성자
+##### 1) 생성자는 꼭 필요한가?
+* C++ 컴파일러는 객체가 생성될 때, 생성자를 반드시 호출하기 때문에 필요함
+##### 2) 클래스에 생성자가 없는 경우에는 어떻게 되는가?
+* 컴파일러에 의해 기본 생성자가 자동으로 생성됨
+* 기본 생성자란 ?
+  * 매개 변수가 없는 생성자
+  * 디폴트 생성자라고도 함
+```CPP
+class Circle{
+ ...
+ Circle();
+ // 기본 생성자
+ ...
+};
+```
+
+
+#### 기본 생성자가 자동으로 생성되는 경우
+* 생성자가 하나도 작성되어 있지 않다면 기본 생성자가 자동으로 생성
+  * 컴파일러가 기본 생성자를 자동 생성함
+
+![con3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/con3.PNG)     
+
+
+#### 기본 생성자가 자동으로 생성되지 않는 경우
+* 생성자가 하나라도 선언된 클래스의 경우
+  * 컴파일러는 기본 생성자를 자동 생성하지 않음
+
+
 
 * 예제 6. string 클래스를 이용한 문자열 입력 예제      
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/UsingStringClass.cpp)
