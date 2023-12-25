@@ -98,26 +98,39 @@
   * 타겟 생성자와 이를 호출하는 위임 생성자로 나누어 작성
     * 타겟 생성자 : 객체 초기화를 전담하는 생성자
     * 위임 생성자 : 타겟 생성자를 호출하는 생성자로 객체 초기화를 타겟 생성자에 위임
-
+         
 ![con22](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/con22.PNG)
 
-* 예제 4. 위임 생성자 예제    (여기서부터 작성 23p)     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/InputPassword.cpp)
+* 예제 4. 위임 생성자 예제      
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/CircleClass3con.cpp)
 
-#### cin.getline()으로 공백이 낀 문자열 입력
-* 공백이 있는 문자열 입력받는 방법
-* cin.getline(char buf[], int size, char delimitChar)
-  * buf에 최대 size-1개의 문자 입력 후 끝에 '\0' 붙임
-  * delimitChar를 만나면 입력 중단 후 끝에 '\0' 붙임
-    * delimitChar의 디폴트 값은 '\n'(<Enter> 키)
-```C++
-char address[100];
-cin.getline(address, 100, '\n');
-// 최대 99개의 문자를 읽어 address 배열에 저장
-// 도중에 <Enter> 키를 만나면 입력 중단
+#### 다양한 생성자의 멤버 변수 초기화 방법
+```CPP
+class Point{
+ int x, y;
+public:
+ Point();
+ Point(int a, int b);
+};
 ```
-
-![cingetline](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch2/cingetline.PNG)
+*  1) 생성자 코드에서 멤버 변수 초기화     
+```CPP
+Point::Point(){ x = 0; y = 0; }
+Point::Point(int a, int b) { x = a; y = b; }
+```
+*  2) 생성자 서두에 초깃값으로 초기화
+```CPP
+Point::Point() : x(0), y(0) { }
+Point::Point(int a, int b) : x(a), y(b) { }
+```
+*  3) 클래스 선언부에서 직접 초기화
+```CPP
+class Point{
+ int x = 0; y = 0;
+public:
+...
+};
+```
 
 * 예제 5. cin.getline()을 이용한 문자열 입력 예제      
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/CinGetLine().cpp)
