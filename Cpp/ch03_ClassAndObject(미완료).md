@@ -16,6 +16,8 @@
 > 6절. 인라인 함수
 >
 > 7절. 구조체
+>
+> 8절. 헤더
 
 ## 1절. 클래스와 객체
 #### 캡슐화
@@ -386,17 +388,42 @@ struct stObj;
 ```
 
 #### 구조체와 클래스의 디폴트 접근 지정 비교
+* 구조체는 public, 클래스는 private
+![pubpri](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/pubpri.PNG)   
+
+* 예제 8. 구조체 Circle Class 예제                
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/StructCircleClass.cpp)
 
 
+## 8절. 헤더
+#### 올바른 C++ 클래스 작성법
+* 클래스를 헤더 파일과 cpp 파일로 분리
+  * 클래스마다 분리 저장
+  * 클래스 선언부
+    * 헤더 파일(.h)에 저장
+  * 클래스 구현부
+    * cpp 파일에 저장
+    * 클래스가 선언된 헤더 파일 include
+  * main() 등 전역 함수나 변수는 다른 cpp 파일에 분산 저장
+    * 필요하면 클래스가 선언된 헤더 파일 include 
+* 목적
+  * 클래스 재사용
+* 헤더 파일 분리 사례     
 
+![seph](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/seph.PNG)
 
+#### 헤더 파일의 중복 include 문제
+* 중복 include를 할 때 생기는 문제     
 
+![errorseph](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/errorseph.PNG)
 
+* 헤더 파일의 중복 include로 인해 생기는 문제를 조건 컴파일로 해결     
 
+![errorseph1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/errorseph1.PNG)
+![errorseph2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/errorseph2.PNG)
 
-
-
-
+* 예제 9. 헤더 파일 분리 예제                
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/tree/main/ch03_ClassAndObject/ExCalculator)
 
 
 
