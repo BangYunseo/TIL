@@ -9,32 +9,51 @@
 
 ## 1절. 객체
 #### 객체 포인터(여기부터 다시)
-* 객체의 캡슐화(encapsulation)
-  * 객체의 본질적인 특성
-  * 객체를 캡슐로 싸서 그 내부를 보호하고 볼 수 없도록 만듦
-    * 캡슐에 든 약은 어떤 색인지 어떤 성분인지 보이지 않고, 외부로부터 안전
-  * 캡슐화의 목적
-    * 객체 내 데이터에 대한 보안, 보호, 외부 접근 제한
-  * 캡슐화의 사례(TV 객체)
+* 객체에 대한 포인터
+  * C언어의 포인터와 동일
+  * 객체의 주소값을 가지는 변수
+* 포인터로 멤버를 접근할 때
+  * 객체 포인터 -> 멤버
+ 
+```CPP
+Circle donut;
+double area = donut.getArea();
 
-![TVclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/TVclass.PNG)
+Circle *p;
+// (1) 객체에 대한 포인터 선언
 
-#### C++에서의 클래스와 객체
-* 클래스
-  * 객체를 만들어내기 위해 정의된 설계도, 틀
-  * 클래스 != 객체
-  * 클래스는 실체가 아님
-  * 멤버 변수와 멤버 함수 선언
-* 객체
-  * 객체는 생성될 때 클래스의 모양을 가짐
-  * 멤버 변수와 멤버 함수로 구성
-  * 메모리에 생성
-  * 실체(instance)라고도 부름
-  * 하나의 클래스 틀에서 찍어낸 여러 개의 객체 생성 가능
-  * 객체들은 상호 별도의 공간에 생성
-* 클래스와 객체의 관계
+p = &donut;
+// (2) 포인터에 객체 주소 저장
 
-![ClassObject](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/ClassObject.PNG)
+d = p->getArea();
+// (3) 멤버 함수 호출
+```  
+![Pointer](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/Pointer.PNG)
+
+* 예제 1. 객체 포인터 선언 및 활용 예제       
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ObjectPointer.cpp)
+
+#### 객체 배열 생성 및 소멸
+* 객체 배열 선언 가능
+  * 기본 타입 배열 선언과 형식 동일
+    * int n[3];      // 정수형 배열 선언
+    * Circle c[3];   // Circle 클래스 타입 배열 선언
+* 객체 배열 선언
+  * (1) 객체 배열을 위한 공간 할당
+  * (2) 배열의 각 원소 객체마다 생성자 실행
+    * c[0]의 생성자, c[1]의 생성자, c[2]의 생성자 실행
+    * 매개 변수 없는 생성자 호출
+  * 매개 변수 있는 생성자를 호출할 수 없음
+    * Circle circleArray[3] (5);      // 오류 발생
+* 배열 소멸
+  * 배열의 각 객체마다 소멸자 호출
+  * 생성의 반대 순으로 소멸
+    * c[2]의 소멸자, c[1]의 소멸자. c[0]의 소멸자 실행
+
+
+* 예제 2. Circle 클래스 배열 선언 예제  (이거부터 작성)     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/RectangleClass.cpp)
+
 
 ## 2절. 클래스
 #### 클래스 작성의 기본
