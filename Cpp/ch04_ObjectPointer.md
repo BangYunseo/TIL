@@ -8,7 +8,7 @@
 > 2절. 동적 할당
 
 ## 1절. 객체
-#### 객체 포인터(여기부터 다시)
+#### 객체 포인터
 * 객체에 대한 포인터
   * C언어의 포인터와 동일
   * 객체의 주소값을 가지는 변수
@@ -51,74 +51,43 @@ d = p->getArea();
     * c[2]의 소멸자, c[1]의 소멸자. c[0]의 소멸자 실행
 
 
-* 예제 2. Circle 클래스 배열 선언 예제  (이거부터 작성)     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/RectangleClass.cpp)
+* 예제 2. Circle 클래스 배열 선언 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/CircleClassArray.cpp)
+
+* 예제 2의 설명      
+![ex4_2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/ex4_2.PNG)
 
 
-## 2절. 클래스
-#### 클래스 작성의 기본
-* 클래스 작성
-  * 멤버 변수, 멤버 함수로 구성
-  * 클래스 선언부, 클래스 구현부로 구성
-* 클래스 선언부(Class Declaration)
-  * class 키워드를 이용하여 클래스 선언
-  * 멤버 변수와 멤버 함수 선언
-    * 멤버 변수는 클래스 선언 내에서 초기화 불가
-    * 멤버 함수는 원형(prototype) 형태로 선언
-  * 멤버에 대한 접근 지정
-    * private, public, protected 중 하나
-    * default는 private
-    * public : 다른 모든 클래스나 객체에서 멤버의 접근이 가능함
-* 클래스 구현부(Class Implementation)
-  * 클래스에 정의된 모든 멤버 함수 구현
-* 그림으로 클래스 작성 확인하기        
-![MakeClass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/MakeClass.PNG)
+#### 객체 배열 생성 시 기본 생성자 호출      
 
-![ObjectMaker](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/ObjectMaker.PNG)
+![obcon](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/obcon.PNG)
 
-* 예제 2. Rectangle 클래스 예제       
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/RectangleClass.cpp)
 
-## 3절. 생성자
-#### 생성자(constructor)
-* 객체가 생성되는 시점에서 자동으로 호출되는 멤버 함수
-* 클래스 이름과 동일한 멤버 함수
-![constructor](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/constructor.PNG)
+#### 객체 배열 초기화
+* 객체 배열 초기화 방법
+  * 배열의 각 원소 객체 당 생성사 지정하는 방법
+```CPP
+Circle circleArray[3] = { Circle(10), Circle(20), Circle() };
+```
+    * circleArray[0] 객체가 생성될 때, 생성자 Circle(10) 호출
+    * circleArray[1] 객체가 생성될 때, 생성자 Circle(20) 호출
+    * circleArray[2] 객체가 생성될 때, 생성자 Circle() 호출
 
-#### 생성자 함수의 특징
-* 생성자의 목적
-  * 객체가 생성될 때 객체가 필요한 초기화를 위해 만듦
-    * ex) 멤버 변수 값 초기화, 메모리 할당, 파일 열기, 네트워크 연결 등
-* 생성자 이름
-  * 반드시 클래스 이름과 동일
-* 생성자는 리턴 타입을 선언하지 않음
-  * 리턴 타입 없음
-  * void 타입 안됨
-* 객체 생성 시 오직 한 번만 호출
-  * 자동으로 호출되므로 임의로 호출 불가능
-  * 각 객체마다 생성자 실행
-* 생성자는 중복 가능
-  * 생성자는 한 클래스 내에 여러 개 가능
-  * 중복된 생성자 중 하나만 실행
-* 생성자가 선언되어 있지 않으면 기본 생성자는 자동으로 생성
-  * 기본 생성자 : 매개 변수 없는 생성자
-  * 컴파일러에 의해 자동 생성
+* 예제 3. 객체 배열 초기화 예제            
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ResetCircleClassArray.cpp)
 
-* 예제 3. 2개의 생성자를 가진 Circle 클래스 예제              
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/CircleClass2con.cpp)
 
-* 그림으로 이해하기
-![make2con](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/make2con.PNG)
+#### 2차원 배열
+* 2차원 배열 선언     
+![arr2_1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/arr2_1.PNG)
 
-#### 생성자가 다른 생성자 호출(위임 생성자)
-* 여러 생성자에 중복 작성된 코드의 간소화
-  * 타겟 생성자와 이를 호출하는 위임 생성자로 나누어 작성
-    * 타겟 생성자 : 객체 초기화를 전담하는 생성자
-    * 위임 생성자 : 타겟 생성자를 호출하는 생성자로 객체 초기화를 타겟 생성자에 위임
-         
-![con22](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/con22.PNG)
+* 2차원 배열 선언과 초기화      
+![arr2_2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/arr2_2.PNG)
 
-* 예제 4. 위임 생성자 예제      
+* 2차원 배열을 초기화하는 다른 방식     
+![arr2_3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/arr2_3.PNG)     
+
+* 예제 4. Circle 클래스 2차원 배열 선언 예제      (여기서부터 작성)
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/CircleClass3con.cpp)
 
 #### 다양한 생성자의 멤버 변수 초기화 방법
