@@ -11,11 +11,8 @@
 >
 > 4절. this
 >
-> 5절.
->
-> 6절.
->
-> 7절.
+> 5절. string
+
 
 ## 1절. 객체
 #### 객체 포인터
@@ -278,163 +275,219 @@ delete [] pointervalue;
 #### 객체 배열의 사용 및 배열의 반환과 소멸자
 * 동적으로 생성된 배열도 보통 배열처럼 사용
 ```CPP
-ClassName *pointervalue = new ClassName[ArrayLength];
-delete [] pointervalue;
-// 포인터 변수가 가리키는 객체 배열 반환
+Circle *pArray = new Circle[3];
+// 3개의 Circle 객체 배열 동적 생성
+
+pArray[0].setRadius(10);
+pArray[1].setRadius(20);
+pArray[2].setRadius(30);
+// 각각 배열 객체의 setRadius() 멤버 함수를 통해 초기화
+
+for(int i = 0; i < 3; i++)
+ cout << pArray[i].getArea() << endl;
+// 배열의 i 번째 객체 getArea() 멤버 함수를 차례로 호출
 ```
 
 * 포인터로 배열 접근
 ```CPP
-ClassName *pointervalue = new ClassName[ArrayLength];
-delete [] pointervalue;
-// 포인터 변수가 가리키는 객체 배열 반환
+pArray->setRadius(10);
+// pArray는 pArray 배열의 첫 번째 주소값으로, pArray[0]과 같음
+
+(pArray + 1)->setRadius(20);
+(pArray + 2)->setRadius(30);
+// 각각 배열 객체의 setRadius() 멤버 함수를 통해 초기화
+
+for(int i = 0; i < 3; i++)
+ cout << (pArray + i)->getArea() << endl;
+// 배열의 i 번째 객체 getArea() 멤버 함수를 차례로 호출
 ```
 
 * 배열 소멸
 ```CPP
-ClassName *pointervalue = new ClassName[ArrayLength];
-delete [] pointervalue;
-// 포인터 변수가 가리키는 객체 배열 반환
+delete [] pArray;
+// 객체의 소멸자 실행
+// 각 원소 객체의 소멸자를 별도로 실행하며 생성의 반대 순서로 소멸됨
+
+// 출력 예시
+// pArray[2] 객체의 소멸자 실행       (1)
+// pArray[1] 객체의 소멸자 실행       (2)
+// pArray[0] 객체의 소멸자 실행       (3)
 ```
 
 
-#### 생성자와 소멸자의 실행 순서
-* 객체가 선언된 위치에 따른 분류
-  * 지역 객체
-    * 함수 내에 선언된 객체
-    * 함수가 종료되면 소멸
-  * 전역 객체
-    * 함수의 바깥에 선언된 객체
-    * 프로그램이 종료할 때 소멸
-* 객체 생성 순서
-  * 지역 객체
-    * 함수가 호출되는 순간에 순서대로 생성
-  * 전역 객체
-    * 프로그램에 선언된 순서로 생성
-* 객체 소멸 순서
-  * 함수가 종료되면 지역 객체가 생성된 순서의 역순으로 소멸
-  * 프로그램이 종료되면 전역 객체가 생성된 순서의 역순으로 소멸
-* new를 이용하여 동적으로 생성된 객체의 경우
-  * new를 실행하는 순간 객체 생성
-  * delete 연산자를 실행할 때 객체 소멸     
+* 예제 9. Circle 배열의 동적 생성 및 반환 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/DynamicCirclePlus2.cpp)
 
 
 
-* 예제 7. 지역 객체와 전역 객체의 생성 및 소멸 순서 예제                
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/ObjectConDes.cpp)
+* 예제 10. 예제 9 응용 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/DynamicCirclePlus2%2B.cpp)
 
 
-#### 예제 7 설명
-![ex7](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/ex7.PNG)
 
-## 5절. 접근 지정자
-#### 접근 지정자
-* 캡슐화의 목적
-  * 객체 보호 및 보안
-  * C++에서 객체의 캡슐화 전략
-    * 객체의 상태를 나타내는 데이터 멤버(멤버 변수)에 대한 보호
-    * 중요한 멤버는 다른 클래스나 객체에서 접근할 수 없도록 보호
-    * 외부와의 인터페이스를 위해서 일부 멤버는 외부에 접근 허용
-* 멤버에 대한 접근 지정자 3개
-  * private
-    * 동일한 클래스의 멤버 함수에만 제한
-  * protected
-    * 클래스 자신과 상속받은 자식 클래스에만 허용
-  * public
-    * 모든 다른 클래스에 허용
+#### 메모리 할당과 메모리 누수
 
+![memory](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/memory.PNG)     
+ 
 
+## 4절. this
+#### this 포인터
+* this
+  * 포인터의 한 종류
+  * 객체 자신 포인터
+  * 클래스의 멤버 함수 내에서만 사용
+  * 개발자가 선언하는 변수가 아님
+  * 컴파일러가 선언하는 변수
+    * 멤버 함수의 컴파일러에 의해 묵시적으로 삽입 선언되는 매개 변수
 ```CPP
-class Sample{
-private:
-// private 멤버 선언
-protected:
-// protected 멤버 선언
-public
-// public 멤버 선언
+class Circle{
+ int radius;
+public:
+ Circle() { this->radius = 1; }
+ Circle(int radius) { this->radius = radius; }
+ void setRadius(int radius) { this->radius = radius; }
+ ...
 };
 ```
 
-#### 중복 접근 지정과 디폴트 접근 지정
-* 접근 지정의 중복       
-![AM](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/AM.PNG)
-* 디폴트 접근 지정 private             
-![AM2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/AM2.PNG)
-* 멤버 변수의 private 지정                
-![AM3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/AM3.PNG)
+#### this와 객체
 
-* 컴파일 오류 판정해보기                 
-![QuestionAM1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/QAM1.PNG)              
-![QuestionAM2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/QAM2.PNG)
+![this](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/this.PNG)     
+ 
 
-* 정답
-  * (9) 생성자 PrivateAccessError()는 private의 접근 지정자로 선언되어 있으므로 main()에서 호출이 불가능
-  * (11) a는 PrivateAccessError 클래스의 private 멤버이므로 main()에서 접근 불가능
-  * (13) f()는 PrivateAccessError 클래스의 private 멤버이므로 main()에서 호출 불가능
-* 생성자도 private로 선언할 수 있음
-* 생성자를 private로 선언하는 경우 한 클래스에서 오직 하나의 객체만 생성할 수 있도록 하기 위한 것
-* [singleton 패턴 이해하기](https://boycoding.tistory.com/109)
+#### this가 필요한 경우
+* 매개 변수의 이름과 멤버 변수의 이름이 같은 경우
+![this2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/this2.PNG)     
 
-#### 함수 호출에 따른 시간 오버헤드
-![function1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/function1.PNG)
-* 작은 크기의 함수를 호출하면 함수 실행 시간에 비해 호출을 위해 소요되는 부가적인 시간 오버헤드가 상대적으로 큼     
+* 멤버 함수가 객체 자신의 주소를 리턴할 때
+  * 연산자 중복 시에 필요
+![this3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/this3.PNG)     
 
-* 오버헤드의 심각한 사례
+
+
+
+
+#### this의 제약 사항
+* 멤버 함수가 아닌 함수에서 this 사용 불가
+  * 객체와의 관련성이 없기 때문
+* static 멤버 함수에서 this 사용 불가
+  * 객체가 생기기 전에 static 함수 호출이 있을 수 있기 때문
+
+
+#### this 포인터의 실체
+* 컴파일러에서 처리
+![thiscom](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/this3com.PNG)     
+
+
+
+
+
+
+## 5절. string
+#### string 클래스를 이용한 문자열
+* C++ 문자열
+  * C-스트링
+  * C++ string 클래스의 객체
+* string 클래스
+  * C++ 표준 라이브러리
+  * <string> 헤더 파일에 선언
 ```CPP
-#include <iostream>
+#include <string>
 
 using namespace std;
-
-int odd(int x) {return (x % 2);}
-int main(){
- int sum = 0;
- // 1에서 10000까지 홀수의 합을 계산하는 for문
- for(int i = 0; i <= 10000; i++)
-  if(odd(i)) sum += i;
- cout << sum;
-}
-
-// 출력 예시
-// 25000000
+...
 ```
- * 위의 사례에서 odd() 함수의 코드 x%2를 계산하는 시간보다 odd() 함수 호출에 따른 오버헤드가 더 큼
- * 심지어 루프를 돌게 되면 오버헤드가 가중됨
+  * 가변 크기의 문자열
+```CPP
+string str = "I love ";
+// str은 'I', ' ', 'l', 'o', 'v', 'e', ' '의 7개 문자로 구성
+// 공백도 포함하는 모습 확인 가능
 
+str.append("C++.");
+// str은 "I love C++."의 문자열이 됨
+// 11개의 문자
+...
+```
+  
+  * 다양한 문자열 연산을 실행하는 연산자와 멤버 함수 포함
+    * 문자열 복사, 문자열 비교, 문자열 길이 등
+  * 문자열, 스트링, 문자열 객체, string 객체 등으로 혼용
 
-## 6절. 인라인 함수
-#### 인라인 함수
-* 인라인 함수 ?
-  * inline 키워드로 선언된 함수
-* 인라인 함수에 대한 처리
-  * 인라인 함수를 호출하는 곳에 인라인 함수 코드를 확장 삽입
-    * 매크로와 유사
-    * 코드 확장 후 인라인 함수는 사라짐
-  * 인라인 함수 호출
-    * 함수 호출에 따른 오버헤드 존재하지 않음
-    * 프로그램의 실행 속도 개선
-  * 컴파일러에 의해 이루어짐
-* 인라인 함수의 목적
-  * C++ 프로그램의 실행 속도 향상
-    * 자주 호출되는 짧은 코드의 함수 호출에 대한 시간 소모 감소
-    * C++에 짧은 코드의 멤버 함수가 많기 때문
-   
-#### 인라인 함수의 사례     
-
-![inline1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/inline1.PNG)      
-
-* 인라인 제약 사항
-  * inline은 컴파일러에게 주는 요구 메시지
-  * 컴파일러가 판단하여 inline 요구를 수용할 지 결정
-  * recursion, 긴 함수, static, 반복문, goto 문 등을 가진 함수는 수용 X
  
-#### 인라인 함수 장단점 및 자동 인라인
-* 장점
-  * 프로그램의 실행 시간이 빨라짐
- 
-* 단점
-  * 인라인 함수 코드의 삽입으로 컴파일된 전체 코드 크기 증가
-    * 통계적으로 최대 30% 증가
-    * 짧은 코드의 함수를 인라인으로 선언하는 것을 권장
+#### string 객체 생성 및 입출력(여기서부터 다시 작성)
+* 문자열 생성
+```CPP
+#include <string>
+
+using namespace std;
+...
+```
+  * 가변 크기의 문자열
+```CPP
+string str = "I love ";
+// str은 'I', ' ', 'l', 'o', 'v', 'e', ' '의 7개 문자로 구성
+// 공백도 포함하는 모습 확인 가능
+
+str.append("C++.");
+// str은 "I love C++."의 문자열이 됨
+// 11개의 문자
+...
+```
+* 문자열 출력
+```CPP
+#include <string>
+
+using namespace std;
+...
+```
+  * 가변 크기의 문자열
+```CPP
+string str = "I love ";
+// str은 'I', ' ', 'l', 'o', 'v', 'e', ' '의 7개 문자로 구성
+// 공백도 포함하는 모습 확인 가능
+
+str.append("C++.");
+// str은 "I love C++."의 문자열이 됨
+// 11개의 문자
+...
+```
+* 문자열 입력
+```CPP
+#include <string>
+
+using namespace std;
+...
+```
+  * 가변 크기의 문자열
+```CPP
+string str = "I love ";
+// str은 'I', ' ', 'l', 'o', 'v', 'e', ' '의 7개 문자로 구성
+// 공백도 포함하는 모습 확인 가능
+
+str.append("C++.");
+// str은 "I love C++."의 문자열이 됨
+// 11개의 문자
+...
+```
+* 문자열 숫자 변환
+```CPP
+#include <string>
+
+using namespace std;
+...
+```
+  * 가변 크기의 문자열
+```CPP
+string str = "I love ";
+// str은 'I', ' ', 'l', 'o', 'v', 'e', ' '의 7개 문자로 구성
+// 공백도 포함하는 모습 확인 가능
+
+str.append("C++.");
+// str은 "I love C++."의 문자열이 됨
+// 11개의 문자
+...
+```
+
    
 #### 자동 인라인 함수
 
