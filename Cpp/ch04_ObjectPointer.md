@@ -6,6 +6,16 @@
 > 1절. 객체
 > 
 > 2절. 동적 할당
+>
+> 3절. 배열의 동적 할당
+>
+> 4절.
+>
+> 5절.
+>
+> 6절.
+>
+> 7절.
 
 ## 1절. 객체
 #### 객체 포인터
@@ -69,9 +79,9 @@ d = p->getArea();
 ```CPP
 Circle circleArray[3] = { Circle(10), Circle(20), Circle() };
 ```
-    * circleArray[0] 객체가 생성될 때, 생성자 Circle(10) 호출
-    * circleArray[1] 객체가 생성될 때, 생성자 Circle(20) 호출
-    * circleArray[2] 객체가 생성될 때, 생성자 Circle() 호출
+  * circleArray[0] 객체가 생성될 때, 생성자 Circle(10) 호출
+  * circleArray[1] 객체가 생성될 때, 생성자 Circle(20) 호출
+  * circleArray[2] 객체가 생성될 때, 생성자 Circle() 호출
 
 * 예제 3. 객체 배열 초기화 예제            
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ResetCircleClassArray.cpp)
@@ -79,65 +89,124 @@ Circle circleArray[3] = { Circle(10), Circle(20), Circle() };
 
 #### 2차원 배열
 * 2차원 배열 선언     
-![arr2_1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/arr2_1.PNG)
+![arr2_1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/arr2_1.PNG)
 
 * 2차원 배열 선언과 초기화      
-![arr2_2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/arr2_2.PNG)
+![arr2_2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/arr2_2.PNG)
 
 * 2차원 배열을 초기화하는 다른 방식     
-![arr2_3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/arr2_3.PNG)     
+![arr2_3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/arr2_3.PNG)     
 
-* 예제 4. Circle 클래스 2차원 배열 선언 예제      (여기서부터 작성)
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/CircleClass3con.cpp)
+* 예제 4. Circle 클래스 2차원 배열 선언 예제      
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/Circle2DimentionArray.cpp)
 
-#### 다양한 생성자의 멤버 변수 초기화 방법
+## 2절. 동적 할당
+#### 동적 메모리 할당 및 변환
+* 정적 할당
+  * 변수 선언을 통해 필요한 메모리만 할당
+    * 많은 양의 메모리는 배열 선언을 통해 할당
+* 동적 할당
+  * 필요한 양이 예측되지 않는 경우
+  * 프로그램 작성 시 할당받을 수 없음
+  * 실행 중 운영체제로부터 할당
+    * 힙(heap)으로부터 할당
+      * 힙은 운영체제가 소유하고 관리하는 메모리
+      * 모든 프로세스가 공유할 수 있는 메모리
+        * [힙에 관해 더 궁금하면 ?](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/ch6_Heap.md)
+* C 언어의 동적 메모리 할당
+  * malloc() / free() 라이브러리 함수 사용
+* C++의 동적 메모리 할당 및 반환
+  * new 연산자
+    * 기본 타입 메모리 할당, 배열 할당, 객체 할당, 객체 배열 할당
+    * 객체의 동적 생성
+      * 힙 메모리로부터 객체를 위한 메모리 할당 요청
+    * 객체 할당 시 생성자 호출
+  * delete 연산자
+    * new로 할당받은 메모리 반환
+    * 객체의 동적 소멸
+      * 소멸자 호출 뒤 객체를 힙에 반환
+     
+          
+#### new와 delete 연산자     
+* C++의 기본 연산자
+* new 연산자의 사용 형식
 ```CPP
-class Point{
- int x, y;
-public:
- Point();
- Point(int a, int b);
-};
+DataType *pointervalue = new DataType;
 ```
-##### 1) 생성자 코드에서 멤버 변수 초기화     
+* delete 연산자의 사용 형식
 ```CPP
-Point::Point(){ x = 0; y = 0; }
-Point::Point(int a, int b) { x = a; y = b; }
+delete pointervalue;
 ```
-##### 2) 생성자 서두에 초깃값으로 초기화
+* new와 delete 연산자의 사용 예시
 ```CPP
-Point::Point() : x(0), y(0) { }
-Point::Point(int a, int b) : x(a), y(b) { }
-```
-##### 3) 클래스 선언부에서 직접 초기화
-```CPP
-class Point{
- int x = 0; y = 0;
-public:
-...
-};
+int *pInt = new int;
+// int 타입의 메모리 동적 할당
+
+char *pChar = new char;
+// char 타입의 메모리 동적 할당
+
+Circle *pCircle = new Circle;
+// Circle 타입의 메모리 동적 할당
+
+
+
+delete pInt;
+// 할당 받은 정수 공간 반환
+
+delete pInt;
+// 할당 받은 문자 공간 반환
+
+delete pInt;
+// 할당 받은 객체 공간 반환
 ```
 
-* 예제 5. 멤버 변수의 초기화와 위임 생성자 예제         
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/ResetClass.cpp)
 
-#### 기본 생성자
-##### 1) 생성자는 꼭 필요한가?
-* C++ 컴파일러는 객체가 생성될 때, 생성자를 반드시 호출하기 때문에 필요함
-##### 2) 클래스에 생성자가 없는 경우에는 어떻게 되는가?
-* 컴파일러에 의해 기본 생성자가 자동으로 생성됨
-* 기본 생성자란 ?
-  * 매개 변수가 없는 생성자
-  * 디폴트 생성자라고도 함
+#### 기본 탕비의 메모리 동적 할당 및 반환
+
+![pointermemory](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/pointermemory.PNG)     
+
+* 예제 5. 정수형 공간의 동적 할당 및 반환 예제      
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/DynamicMemory.cpp)
+
+#### delete 연산자 주의 사항
+* 적절치 못한 포인터로 delete 하면 실행시간 오류 발생
+  * 동적으로 할당받지 않는 메모리 반환 (Error)
 ```CPP
-class Circle{
- ...
- Circle();
- // 기본 생성자
- ...
-};
+int n;
+int *p = &n;
+delete p;
+// 실행 시간 오류 발생
+
+// why ? >> 포인터 p가 가리키는 메모리는 동적으로 할당 받은 것이 아님
+// 복사 생성자를 사용한 것(5장 참조)
 ```
 
+ * 동일한 메모리 두 번 반환 (Error)
+```CPP
+int *p = new int;
+delete p;       // 정상적인 메모리 반환
+delete p;       // 실행 시간 오류 발생
+// why ? >> 이미 반환한 메모리는 중복 반환 불가능
+```
+
+
+## 3절. 배열의 동적 할당
+#### 배열의 동적 할당 및 반환
+* new와 delete 연산자의 사용 형식
+```CPP
+DataType *pointervalue = new DataType[ArrayLen];
+// 동적 배열 할당
+
+delete [] pointervalue;
+// 배열 반환
+```
+
+* 그림으로 이해하기
+![arrpointermemory](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/arrpointermemory.PNG)     
+
+
+* 예제 6. 정수형 배열의 동적 할당 및 반환 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ArrayDynamicMemory.cpp)
 
 #### 기본 생성자가 자동으로 생성되는 경우
 * 생성자가 하나도 작성되어 있지 않다면 기본 생성자가 자동으로 생성
