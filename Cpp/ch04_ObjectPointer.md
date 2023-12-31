@@ -379,10 +379,6 @@ public:
 ![thiscom](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/this3com.PNG)     
 
 
-
-
-
-
 ## 5절. string
 #### string 클래스를 이용한 문자열
 * C++ 문자열
@@ -414,160 +410,69 @@ str.append("C++.");
   * 문자열, 스트링, 문자열 객체, string 객체 등으로 혼용
 
  
-#### string 객체 생성 및 입출력(여기서부터 다시 작성)
+#### string 객체 생성 및 입출력
 * 문자열 생성
 ```CPP
-#include <string>
+string str;
+// 빈 문자열을 가진 스트링 객체
 
-using namespace std;
-...
+string address("서울특별시 성북구 삼선동 389");
+// 문자열 리터럴로 초기화
+
+string copyAddress(address);
+// 위의 스트링 객체 address를 복사한 copyAddress 생성
+
+
+// C-스트링(char[] 배열)으로부터 스트링 객체 생성
+char text[] = {'L', 'O', 'V', 'E', ' ', 'C', '+', '+', '\0'};
+string title(text);
+// "LOVE C++"의 문자열을 가진 title 생성
 ```
-  * 가변 크기의 문자열
+* 문자열 출력 : cout과 << 연산자 사용
 ```CPP
-string str = "I love ";
-// str은 'I', ' ', 'l', 'o', 'v', 'e', ' '의 7개 문자로 구성
-// 공백도 포함하는 모습 확인 가능
+cout << address << endl;
+// "서울특별시 성북구 삼선동 389"가 출력
 
-str.append("C++.");
-// str은 "I love C++."의 문자열이 됨
-// 11개의 문자
-...
+cout << title << endl;
+// "LOVE C++" 출력
 ```
-* 문자열 출력
+* 문자열 입력 : cin과 >> 연산자 사용
 ```CPP
-#include <string>
-
-using namespace std;
-...
+string name;
+cin >> name;
+// 공백이 입력되면 하나의 문자열로 입력된 것으로 간주
 ```
-  * 가변 크기의 문자열
+* 문자열 숫자 변환 : stoi() 함수 이용 (2011 C++ 표준부터)
 ```CPP
-string str = "I love ";
-// str은 'I', ' ', 'l', 'o', 'v', 'e', ' '의 7개 문자로 구성
-// 공백도 포함하는 모습 확인 가능
-
-str.append("C++.");
-// str은 "I love C++."의 문자열이 됨
-// 11개의 문자
-...
+string s = "123";
+int n = stoi(s);
+// n은 정수 123
 ```
-* 문자열 입력
-```CPP
-#include <string>
-
-using namespace std;
-...
-```
-  * 가변 크기의 문자열
-```CPP
-string str = "I love ";
-// str은 'I', ' ', 'l', 'o', 'v', 'e', ' '의 7개 문자로 구성
-// 공백도 포함하는 모습 확인 가능
-
-str.append("C++.");
-// str은 "I love C++."의 문자열이 됨
-// 11개의 문자
-...
-```
-* 문자열 숫자 변환
-```CPP
-#include <string>
-
-using namespace std;
-...
-```
-  * 가변 크기의 문자열
-```CPP
-string str = "I love ";
-// str은 'I', ' ', 'l', 'o', 'v', 'e', ' '의 7개 문자로 구성
-// 공백도 포함하는 모습 확인 가능
-
-str.append("C++.");
-// str은 "I love C++."의 문자열이 됨
-// 11개의 문자
-...
-```
-
    
-#### 자동 인라인 함수
+#### string 객체의 동적 생성
+* new / delete를 이용하여 문자열을 동적 생성 및 반환 가능
 
-![inline2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/inline2.PNG)      
-
-* 클래스 선언부에 구현된 멤버 함수
-  * inline으로 선언할 필요 없음
-  * 컴파일러에 의해 자동으로 인라인 처리
-  * 생성자 포함 모든 함수를 자동 인라인 함수로 사용 가능
-
-## 7절. 구조체
-#### C++의 구조체
-* 구조체
-  * 상속, 멤버, 접근 지정 등 모든 것이 클래스와 동일
-  * 클래스와 유일하게 다른 점
-    * 구조체의 디폴트 접근 지정 : public
-    * 클래스의 디폴트 접근 지정 : private
-* C++에서 구조체를 수용한 이유?
-  * C 언어와의 호환성을 위해
-    * C의 구조체 100% 호환하며 수용
-    * C 소스를 그대로 가져다 쓰기 위해
-* 구조체 객체 생성
-  * struct 키워드 생략
 ```CPP
-struct StructName{
-private:
-// private 멤버 선언
-protected:
-// protected 멤버 선언
-public:
-// public 멤버 선언
-};
-```
-```CPP
-structName stObj;
-// C++ 구조체 객체 생성
-struct stObj;
-// C 구조체 객체 생성
+string *p = new string("C++");
+// 스트링 객체 동적 생성
+
+cout << *p << endl;
+// "C++" 출력
+
+p->append(" Great!");
+// p가 가리키는 스트링 : C++ Great!
+
+cout << *p << endl;
+// "C++ Great!" 출력
+
+delete p;
+// 스트링 객체 반환
 ```
 
-#### 구조체와 클래스의 디폴트 접근 지정 비교
-* 구조체는 public, 클래스는 private
-![pubpri](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/pubpri.PNG)   
-
-* 예제 8. 구조체 Circle Class 예제                
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/StructCircleClass.cpp)
+* 예제 11. string Class 문자열 생성 및 출력 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/StringClass.cpp)
 
 
-## 8절. 헤더
-#### 올바른 C++ 클래스 작성법
-* 클래스를 헤더 파일과 cpp 파일로 분리
-  * 클래스마다 분리 저장
-  * 클래스 선언부
-    * 헤더 파일(.h)에 저장
-  * 클래스 구현부
-    * cpp 파일에 저장
-    * 클래스가 선언된 헤더 파일 include
-  * main() 등 전역 함수나 변수는 다른 cpp 파일에 분산 저장
-    * 필요하면 클래스가 선언된 헤더 파일 include 
-* 목적
-  * 클래스 재사용
-* 헤더 파일 분리 사례     
-
-![seph](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/seph.PNG)
-
-#### 헤더 파일의 중복 include 문제
-* 중복 include를 할 때 생기는 문제     
-
-![errorseph](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/errorseph.PNG)
-
-* 헤더 파일의 중복 include로 인해 생기는 문제를 조건 컴파일로 해결     
-
-![errorseph1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/errorseph1.PNG)
-![errorseph2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch3/errorseph2.PNG)
-
-* 예제 9. 헤더 파일 분리 예제                
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/tree/main/ch03_ClassAndObject/ExCalculator)
-
-
-
-
-
+* 예제 12. string 배열 선언 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ArrayString.cpp)
 
