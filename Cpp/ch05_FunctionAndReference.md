@@ -2,70 +2,38 @@
 > '명품 C++Programming - 황기태' 5장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch05_FunctionAndReference)
+>
+> 0절. 함수
 > 
-> 1절. 
+> 1절. 호출
 > 
-> 2절.
+> 2절. 값에 의한 호출
 >
-> 3절.
+> 3절. 주소에 의한 호출
 >
-> 4절.
+> 4절. 객체
 >
-> 5절.
+> 5절. 참조
 
 
-## 1절. 객체
-#### 객체 포인터
-* 객체에 대한 포인터
-  * C언어의 포인터와 동일
-  * 객체의 주소값을 가지는 변수
-* 포인터로 멤버를 접근할 때
-  * 객체 포인터 -> 멤버
- 
-```CPP
-Circle donut;
-double area = donut.getArea();
+## 0절. 함수
+#### 함수의 인자 전달 방식 리뷰
+* 인자 전달 방식
+  * 값에 의한 호출 : call by value
+    * 함수가 호출되면 매개 변수가 스택에 생성
+    * 호출하는 코드에서 값을 넘겨줌
+    * 호출하는 코드에서 넘어온 값이 매개 변수에 복사
+  * 주소에 의한 호출 : call by address
+    * 함수의 매개 변수는 포인터 타입
+      * 함수가 호출되면 포인터 타입의 매개 변수가 스택에 생성
+    * 호출하는 코드에서는 명시적으로 주소를 넘겨줌
+      * 기본 타입 변수나 객체의 경우, 주소 전달
+      * 배열의 경우, 배열의 이름
+    * 호출하는 코드에서 넘어온 주소값이 매개 변수에 저장
+   
 
-Circle *p;
-// (1) 객체에 대한 포인터 선언
-
-p = &donut;
-// (2) 포인터에 객체 주소 저장
-
-d = p->getArea();
-// (3) 멤버 함수 호출
-```  
-![Pointer](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/Pointer.PNG)
-
-* 예제 1. 객체 포인터 선언 및 활용 예제       
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ObjectPointer.cpp)
-
-#### 객체 배열 생성 및 소멸
-* 객체 배열 선언 가능
-  * 기본 타입 배열 선언과 형식 동일
-    * int n[3];      // 정수형 배열 선언
-    * Circle c[3];   // Circle 클래스 타입 배열 선언
-* 객체 배열 선언
-  * (1) 객체 배열을 위한 공간 할당
-  * (2) 배열의 각 원소 객체마다 생성자 실행
-    * c[0]의 생성자, c[1]의 생성자, c[2]의 생성자 실행
-    * 매개 변수 없는 생성자 호출
-  * 매개 변수 있는 생성자를 호출할 수 없음
-    * Circle circleArray[3] (5);      // 오류 발생
-* 배열 소멸
-  * 배열의 각 객체마다 소멸자 호출
-  * 생성의 반대 순으로 소멸
-    * c[2]의 소멸자, c[1]의 소멸자. c[0]의 소멸자 실행
-
-
-* 예제 2. Circle 클래스 배열 선언 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/CircleClassArray.cpp)
-
-* 예제 2의 설명      
-![ex4_2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/ex4_2.PNG)
-
-
-#### 객체 배열 생성 시 기본 생성자 호출      
+## 1절. 호출
+#### 값에 의한 호출과 주소에 의한 호출
 
 ![obcon](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/obcon.PNG)
 
