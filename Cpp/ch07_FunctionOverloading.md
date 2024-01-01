@@ -1,4 +1,4 @@
-#  Chapter 9. 함수 중복       
+#  Chapter 7. 함수 중복       
 > '명품 C++Programming - 황기태' 6장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch09_FunctionOverloading)
