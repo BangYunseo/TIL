@@ -376,7 +376,7 @@ public:
 
 #### this 포인터의 실체
 * 컴파일러에서 처리
-![thiscom](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch04/this3com.PNG)     
+![thiscom](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch04/thiscom.PNG)     
 
 
 ## 5절. string
