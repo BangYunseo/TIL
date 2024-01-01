@@ -8,7 +8,7 @@
 
 ## When?
 * 2023.09 ~ 2023.12 학습 내용
-* 마지막 수정일 : 2023.11.27
+* 마지막 수정일 : 2024.01.01
 
 ## Learning List
 * ch01 [C++소개](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch01_IntroduceC%2B%2B.md)
@@ -16,13 +16,13 @@
 * ch03 [클래스와 객체](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch03_ClassAndObject.md)
 * ch04 [객체 포인터](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch04_ObjectPointer.md)
 * ch05 [함수와 참조](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch05_FunctionAndReference.md)
-* ch06 []()
-* ch07 []()
-* ch08 []()
-* ch09 [함수 중복](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch09_FunctionOverloading.md)
-* ch10 [static](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch10_Static.md)
-* ch11 [프렌드사용]()
-* ch12 [연산자중복]()
+* ch06 [복사생성자](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch06_CopyConstructor.md)
+* ch07 [함수 중복](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch07_FunctionOverloading.md)
+* ch08 [static](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch08_Static.md)
+* ch09 []()
+* ch10 []()
+* ch11 []()
+* ch12 []()
 * ch13 []()
 * ch14 []()
 * ch15 []()
@@ -37,11 +37,11 @@
 * [ch03](https://github.com/BangYunseo/Basic_CPP/tree/main/ch03_ClassAndObject)
 * [ch04](https://github.com/BangYunseo/Basic_CPP/tree/main/ch04_ObjectPointer)
 * [ch05](https://github.com/BangYunseo/Basic_CPP/tree/main/ch05_FunctionAndReference)
-* [ch06]()
-* [ch07]()
-* [ch08]()
-* [ch09](https://github.com/BangYunseo/Basic_CPP/tree/main/ch09_FunctionOverloading)
-* [ch10](https://github.com/BangYunseo/Basic_CPP/tree/main/ch10_Static)
+* [ch06](https://github.com/BangYunseo/Basic_CPP/tree/main/ch06_CopyConstructor)
+* [ch07](https://github.com/BangYunseo/Basic_CPP/tree/main/ch07_FunctionOverloading)
+* [ch08](https://github.com/BangYunseo/Basic_CPP/tree/main/ch08_Static)
+* [ch09]()
+* [ch10]()
 * [ch11]()
 * [ch12]()
 * [ch13]()
