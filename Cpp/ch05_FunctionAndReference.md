@@ -39,6 +39,7 @@
 
 #### 코드로 비교
 * 값에 의한 호출
+
 ![callvalue](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch05/callvalue.PNG)
 
 ```CPP
@@ -61,6 +62,7 @@ int main(){
 ```
 
 * 주소에 의한 호출
+
 ![calladdress](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch05/calladdress.PNG)
 
 ```CPP
@@ -178,6 +180,7 @@ Circle &refc = circle;
 ```
 
 #### 참조 변수 선언 및 사용 사례(여기부터 작성)
+
 ![increaseaddress](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch05/increaseaddress.PNG)
 
 
