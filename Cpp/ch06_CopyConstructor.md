@@ -3,59 +3,23 @@
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch06_CopyConstructor)
 > 
-> 1절. 
+> 1절. 복사
 > 
-> 2절.
+> 2절. 복사 생성자
 >
-> 3절.
->
-> 4절.
->
-> 5절.
+> 3절. 디폴트 복사 생성자
 
 
-## 1절. 객체
-#### 객체 포인터
-* 객체에 대한 포인터
-  * C언어의 포인터와 동일
-  * 객체의 주소값을 가지는 변수
-* 포인터로 멤버를 접근할 때
-  * 객체 포인터 -> 멤버
+
+## 1절. 복사
+#### 얕은 복사와 깊은 복사
  
-```CPP
-Circle donut;
-double area = donut.getArea();
+![copy](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/copy.PNG)
 
-Circle *p;
-// (1) 객체에 대한 포인터 선언
 
-p = &donut;
-// (2) 포인터에 객체 주소 저장
-
-d = p->getArea();
-// (3) 멤버 함수 호출
-```  
-![Pointer](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/Pointer.PNG)
-
-* 예제 1. 객체 포인터 선언 및 활용 예제       
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ObjectPointer.cpp)
-
-#### 객체 배열 생성 및 소멸
-* 객체 배열 선언 가능
-  * 기본 타입 배열 선언과 형식 동일
-    * int n[3];      // 정수형 배열 선언
-    * Circle c[3];   // Circle 클래스 타입 배열 선언
-* 객체 배열 선언
-  * (1) 객체 배열을 위한 공간 할당
-  * (2) 배열의 각 원소 객체마다 생성자 실행
-    * c[0]의 생성자, c[1]의 생성자, c[2]의 생성자 실행
-    * 매개 변수 없는 생성자 호출
-  * 매개 변수 있는 생성자를 호출할 수 없음
-    * Circle circleArray[3] (5);      // 오류 발생
-* 배열 소멸
-  * 배열의 각 객체마다 소멸자 호출
-  * 생성의 반대 순으로 소멸
-    * c[2]의 소멸자, c[1]의 소멸자. c[0]의 소멸자 실행
+#### C++에서 얕은 복사와 깊은 복사(여기부터 작성)
+* 얕은 복사(shallow copy)
+* 깊은 복사(deep copy)
 
 
 * 예제 2. Circle 클래스 배열 선언 예제           
