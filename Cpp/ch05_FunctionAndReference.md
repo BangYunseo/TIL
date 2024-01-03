@@ -179,7 +179,7 @@ Circle &refc = circle;
 // refn은 circle에 대한 별명
 ```
 
-#### 참조 변수 선언 및 사용 사례(여기부터 작성)
+#### 참조 변수 선언 및 사용 사례
 
 ![callref](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch05/callref.PNG)
 
@@ -192,208 +192,69 @@ Circle &refc = circle;
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch05_FunctionAndReference/ObjectRef.cpp)
 
 
-#### 객체 배열의 사용 및 배열의 반환과 소멸자
-* 동적으로 생성된 배열도 보통 배열처럼 사용
-```CPP
-Circle *pArray = new Circle[3];
-// 3개의 Circle 객체 배열 동적 생성
-
-pArray[0].setRadius(10);
-pArray[1].setRadius(20);
-pArray[2].setRadius(30);
-// 각각 배열 객체의 setRadius() 멤버 함수를 통해 초기화
-
-for(int i = 0; i < 3; i++)
- cout << pArray[i].getArea() << endl;
-// 배열의 i 번째 객체 getArea() 멤버 함수를 차례로 호출
-```
-
-* 포인터로 배열 접근
-```CPP
-pArray->setRadius(10);
-// pArray는 pArray 배열의 첫 번째 주소값으로, pArray[0]과 같음
-
-(pArray + 1)->setRadius(20);
-(pArray + 2)->setRadius(30);
-// 각각 배열 객체의 setRadius() 멤버 함수를 통해 초기화
-
-for(int i = 0; i < 3; i++)
- cout << (pArray + i)->getArea() << endl;
-// 배열의 i 번째 객체 getArea() 멤버 함수를 차례로 호출
-```
-
-* 배열 소멸
-```CPP
-delete [] pArray;
-// 객체의 소멸자 실행
-// 각 원소 객체의 소멸자를 별도로 실행하며 생성의 반대 순서로 소멸됨
-
-// 출력 예시
-// pArray[2] 객체의 소멸자 실행       (1)
-// pArray[1] 객체의 소멸자 실행       (2)
-// pArray[0] 객체의 소멸자 실행       (3)
-```
+#### 참조에 의한 호출
+* 참조를 가장 많이 활용하는 사례
+* call by reference라고 부름
+* 함수 형식
+  * 함수의 매개 변수를 참조 타입으로 선언
+    * 참조 매개 변수(reference parameter)라고 부름
+      * 참조 매개 변수는 실인자 변수를 참조
+    * 참조 매개 변수의 이름만 생기고 공간이 생기지 않음
+    * 참조 매개 변수는 실인자 변수 공간 공유
+    * 참조 매개 변수에 대한 조작은 실인자 변수 조작 효과
 
 
-* 예제 9. Circle 배열의 동적 생성 및 반환 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/DynamicCirclePlus2.cpp)
+#### 참조에 의한 호출 사례
+
+![exref](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch05/exref.PNG)
 
 
+#### 참조 매개변수가 필요한 사례
+* average() 함수의 작동 사례
+  * 계산에 오류가 있으면 0 리턴
+  * 계산에 오류가 없으면 평균 리턴
+    * 만약 average()가 리턴한 값이 0이라면?
+      * 평균이 0인지 오류가 발생한 것인지 판단 불가
 
-* 예제 10. 예제 9 응용 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/DynamicCirclePlus2%2B.cpp)
+![average](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch05/average.PNG)
 
 
+* 예제 5. 참조 매개 변수의 평균 리턴 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch05_FunctionAndReference/Average.cpp)
 
-#### 메모리 할당과 메모리 누수
 
-![memory](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/memory.PNG)     
- 
+* 예제 6. Circle 객체에 참조 전달 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch05_FunctionAndReference/CircleRef.cpp)
 
-## 4절. this
-#### this 포인터
-* this
-  * 포인터의 한 종류
-  * 객체 자신 포인터
-  * 클래스의 멤버 함수 내에서만 사용
-  * 개발자가 선언하는 변수가 아님
-  * 컴파일러가 선언하는 변수
-    * 멤버 함수의 컴파일러에 의해 묵시적으로 삽입 선언되는 매개 변수
-```CPP
-class Circle{
- int radius;
-public:
- Circle() { this->radius = 1; }
- Circle(int radius) { this->radius = radius; }
- void setRadius(int radius) { this->radius = radius; }
- ...
-};
-```
 
-#### this와 객체
+* 예제 7. 참조 매개 변수를 가진 함수 만들기 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch05_FunctionAndReference/RefMethodPrac.cpp)
 
-![this](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/this.PNG)     
- 
 
-#### this가 필요한 경우
-* 매개 변수의 이름과 멤버 변수의 이름이 같은 경우
-![this2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/this2.PNG)     
-
-* 멤버 함수가 객체 자신의 주소를 리턴할 때
-  * 연산자 중복 시에 필요
-![this3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/this3.PNG)     
+#### 참조 리턴
+* C언어의 함수 리턴
+  * 함수는 반드시 값만 리턴
+    * 기본 타입 값 : int, char, double 등
+    * 포인터 값
+* C++의 함수 리턴
+  * 함수는 값 외에 참조 리턴 가능
+  * 참조 리턴
+    * 변수 등과 같이 현존하는 공간에 대한 참조 리턴
+      * 변수의 값을 리턴하는 것이 아님
 
 
 
 
+#### 값을 리턴하는 함수 vs 참조를 리턴하는 함수
 
-#### this의 제약 사항
-* 멤버 함수가 아닌 함수에서 this 사용 불가
-  * 객체와의 관련성이 없기 때문
-* static 멤버 함수에서 this 사용 불가
-  * 객체가 생기기 전에 static 함수 호출이 있을 수 있기 때문
+![returnvalref](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch05/returnvalref.PNG)
 
 
-#### this 포인터의 실체
-* 컴파일러에서 처리
-![thiscom](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/this3com.PNG)     
+* 예제 8. 간단한 참조 리턴 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch05_FunctionAndReference/ReturnRef.cpp)
 
 
-## 5절. string
-#### string 클래스를 이용한 문자열
-* C++ 문자열
-  * C-스트링
-  * C++ string 클래스의 객체
-* string 클래스
-  * C++ 표준 라이브러리
-  * <string> 헤더 파일에 선언
-```CPP
-#include <string>
+![returnref](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch05/returnref.PNG)
 
-using namespace std;
-...
-```
-  * 가변 크기의 문자열
-```CPP
-string str = "I love ";
-// str은 'I', ' ', 'l', 'o', 'v', 'e', ' '의 7개 문자로 구성
-// 공백도 포함하는 모습 확인 가능
-
-str.append("C++.");
-// str은 "I love C++."의 문자열이 됨
-// 11개의 문자
-...
-```
-  
-  * 다양한 문자열 연산을 실행하는 연산자와 멤버 함수 포함
-    * 문자열 복사, 문자열 비교, 문자열 길이 등
-  * 문자열, 스트링, 문자열 객체, string 객체 등으로 혼용
-
- 
-#### string 객체 생성 및 입출력
-* 문자열 생성
-```CPP
-string str;
-// 빈 문자열을 가진 스트링 객체
-
-string address("서울특별시 성북구 삼선동 389");
-// 문자열 리터럴로 초기화
-
-string copyAddress(address);
-// 위의 스트링 객체 address를 복사한 copyAddress 생성
-
-
-// C-스트링(char[] 배열)으로부터 스트링 객체 생성
-char text[] = {'L', 'O', 'V', 'E', ' ', 'C', '+', '+', '\0'};
-string title(text);
-// "LOVE C++"의 문자열을 가진 title 생성
-```
-* 문자열 출력 : cout과 << 연산자 사용
-```CPP
-cout << address << endl;
-// "서울특별시 성북구 삼선동 389"가 출력
-
-cout << title << endl;
-// "LOVE C++" 출력
-```
-* 문자열 입력 : cin과 >> 연산자 사용
-```CPP
-string name;
-cin >> name;
-// 공백이 입력되면 하나의 문자열로 입력된 것으로 간주
-```
-* 문자열 숫자 변환 : stoi() 함수 이용 (2011 C++ 표준부터)
-```CPP
-string s = "123";
-int n = stoi(s);
-// n은 정수 123
-```
-   
-#### string 객체의 동적 생성
-* new / delete를 이용하여 문자열을 동적 생성 및 반환 가능
-
-```CPP
-string *p = new string("C++");
-// 스트링 객체 동적 생성
-
-cout << *p << endl;
-// "C++" 출력
-
-p->append(" Great!");
-// p가 가리키는 스트링 : C++ Great!
-
-cout << *p << endl;
-// "C++ Great!" 출력
-
-delete p;
-// 스트링 객체 반환
-```
-
-* 예제 11. string Class 문자열 생성 및 출력 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/StringClass.cpp)
-
-
-* 예제 12. string 배열 선언 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ArrayString.cpp)
 
 
