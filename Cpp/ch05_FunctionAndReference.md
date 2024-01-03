@@ -181,11 +181,15 @@ Circle &refc = circle;
 
 #### 참조 변수 선언 및 사용 사례(여기부터 작성)
 
-![increaseaddress](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch05/increaseaddress.PNG)
+![callref](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch05/callref.PNG)
 
 
 * 예제 3. 기본 타입 변수에 대한 참조 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch05_FunctionAndReference/ReturnObject.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch05_FunctionAndReference/BasicTypeValueRef.cpp)
+
+
+* 예제 4. 객체에 대한 참조 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch05_FunctionAndReference/ObjectRef.cpp)
 
 
 #### 객체 배열의 사용 및 배열의 반환과 소멸자
