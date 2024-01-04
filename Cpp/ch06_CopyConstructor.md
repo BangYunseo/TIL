@@ -19,74 +19,69 @@
 
 #### C++에서 얕은 복사와 깊은 복사(여기부터 작성)
 * 얕은 복사(shallow copy)
+  * 객체 복사 시, 객체의 멤버를 1대 1로 복사
+  * 객체의 멤버 변수에 동적 메모리가 할당된 경우
+    * 사본은 원본 객체가 할당받은 메모리를 공유하는 문제 발생
 * 깊은 복사(deep copy)
+  * 객체 복사 시, 객체의 멤버를 1대 1로 복사
+  * 객체의 멤버 변수에 동적 메모리가 할당된 경우
+    * 사본은 원본이 가진 메모리 크기 만큼 별도로 동적 할당
+    * 원본의 동적 메모리에 있는 내용을 사본에 복사
+  * 완전한 형태의 복사
+    * 사본과 원본은 메모리를 공유하는 문제 없음
 
 
-* 예제 2. Circle 클래스 배열 선언 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/CircleClassArray.cpp)
-
-* 예제 2의 설명      
-![ex4_2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/ex4_2.PNG)
-
-
-#### 객체 배열 생성 시 기본 생성자 호출      
-
-![obcon](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/obcon.PNG)
-
-
-#### 객체 배열 초기화
-* 객체 배열 초기화 방법
-  * 배열의 각 원소 객체 당 생성사 지정하는 방법
+#### C++에서 객체의 복사
 ```CPP
-Circle circleArray[3] = { Circle(10), Circle(20), Circle() };
+// 예제로 사용한 클래스
+class Person{
+ int id;
+ char *name;
+................
+};
 ```
-  * circleArray[0] 객체가 생성될 때, 생성자 Circle(10) 호출
-  * circleArray[1] 객체가 생성될 때, 생성자 Circle(20) 호출
-  * circleArray[2] 객체가 생성될 때, 생성자 Circle() 호출
 
-* 예제 3. 객체 배열 초기화 예제            
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ResetCircleClassArray.cpp)
+![person](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/person.PNG)
 
 
-#### 2차원 배열
-* 2차원 배열 선언     
-![arr2_1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/arr2_1.PNG)
+## 2절. 복사 생성자
+#### 복사 생성자
+* 복사 생성자(copy constructor)란?
+  * 객체의 복사 생성 시 호출되는 특별한 생성자
+* 특징
+  * 한 클래스에 오직 한 개만 선언 가능
+  * 복사 생성자는 보통 생성자와 클래스 내에 중복 선언 가
+  * 모양
+    * 클래스에 대한 참조 매개 변수를 가지는 독특한 생성자
+* 복사 생성자 선언
+```CPP
+class Circle{
+.....................
+ Circle(Circle& c);
+ // 복사 생성자 선언
+.....................
+};
 
-* 2차원 배열 선언과 초기화      
-![arr2_2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/arr2_2.PNG)
+Circle::Circle(Circle& c){
+// 복사 생성자 구현
+}
+```  
 
-* 2차원 배열을 초기화하는 다른 방식     
-![arr2_3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch4/arr2_3.PNG)     
+#### 복사 생성 과정
 
-* 예제 4. Circle 클래스 2차원 배열 선언 예제      
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/Circle2DimentionArray.cpp)
+![copycon](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/copycon.PNG)
 
-## 2절. 동적 할당
-#### 동적 메모리 할당 및 변환
-* 정적 할당
-  * 변수 선언을 통해 필요한 메모리만 할당
-    * 많은 양의 메모리는 배열 선언을 통해 할당
-* 동적 할당
-  * 필요한 양이 예측되지 않는 경우
-  * 프로그램 작성 시 할당받을 수 없음
-  * 실행 중 운영체제로부터 할당
-    * 힙(heap)으로부터 할당
-      * 힙은 운영체제가 소유하고 관리하는 메모리
-      * 모든 프로세스가 공유할 수 있는 메모리
-        * [힙에 관해 더 궁금하면 ?](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/ch6_Heap.md)
-* C 언어의 동적 메모리 할당
-  * malloc() / free() 라이브러리 함수 사용
-* C++의 동적 메모리 할당 및 반환
-  * new 연산자
-    * 기본 타입 메모리 할당, 배열 할당, 객체 할당, 객체 배열 할당
-    * 객체의 동적 생성
-      * 힙 메모리로부터 객체를 위한 메모리 할당 요청
-    * 객체 할당 시 생성자 호출
-  * delete 연산자
-    * new로 할당받은 메모리 반환
-    * 객체의 동적 소멸
-      * 소멸자 호출 뒤 객체를 힙에 반환
-     
+
+* 예제 1. Circle의 복사 생성자와 객체 복사 예제      
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch06_CopyConstructor/CopyObject.cpp)
+
+
+## 3절. 디폴트 복사 생성자
+#### 디폴트 복사 생성자
+* 복사 생성자가 선언되어 있지 않는 클래스
+  * 컴파일러는 자동으로 디폴트 복사 생성자 삽입
+
+(여기서부터 작성)
           
 #### new와 delete 연산자     
 * C++의 기본 연산자
