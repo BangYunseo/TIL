@@ -99,8 +99,8 @@ Circle::Circle(Circle& c){
 ![howex3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/howex3.PNG)
 
 
-* 예제 3. 깊은 복사 생성자를 가진 Person Class 예제     (여기서부터 작성 완료하면 끝)      
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ArrayString.cpp)
+* 예제 3. 깊은 복사 생성자를 가진 Person Class 예제          
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch06_CopyConstructor/DeepPersonClass.cpp)
 
 
 #### 예제 3의 실행과정
