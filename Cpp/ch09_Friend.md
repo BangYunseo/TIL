@@ -5,9 +5,9 @@
 > 
 > 1절. Friend
 > 
-> 2절. Static
+> 2절. 
 
-## 1절. Static과 Non-Static
+## 1절. Friend
 #### static 멤버와 non-static 멤버
 
 ![Staticor](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/Staticor.PNG)
