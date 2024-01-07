@@ -1,7 +1,7 @@
 #  Chapter 8. Static      
 > '명품 C++Programming - 황기태' 7장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch08_Static)
+> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch09_Friend)
 > 
 > 1절. Friend
 > 
