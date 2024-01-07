@@ -112,5 +112,5 @@ Circle::Circle(Circle& c){
 
 
 * 예제 4. 깊은 복사 생성자를 가진 Person Class 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ArrayString.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch06_CopyConstructor/CallCopyConstructor.cpp)
 
