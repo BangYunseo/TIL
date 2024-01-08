@@ -1,4 +1,4 @@
-#  Chapter 8. Static      
+#  Chapter 9. Friend      
 > '명품 C++Programming - 황기태' 7장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch09_Friend)
@@ -8,25 +8,23 @@
 > 2절. 
 
 ## 1절. Friend
-#### static 멤버와 non-static 멤버
+#### C++ 프렌드
+* 프렌드 함수
+  * 클래스의 멤버 함수가 아닌 외부 함수
+    * 전역 함수
+    * 다른 클래스의 멤버 함수
+  * friend 키워드로 클래스 내에 선언된 함수
+    * 클래스의 모든 멤버를 접근할 수 있는 권한 부여
+    * 프렌드 함수라고 부름
+  * 프렌드 선언의 필요성
+    * 클래스의 멤버로 선언하기에는 무리가 있고, 클래스의 모든 멤버를 자유롭게 접근할 수 있는 일부 외부 함수 작성 시에 필요
 
-![Staticor](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/Staticor.PNG)
+#### 프렌드 함수가 되는 3가지 유형
+* 전역 함수
+* 다른 클래스의 멤버 함수
+* 다른 클래스 전체
 
-#### static 멤버와 non-static 멤버의 특성
-* static
-  * 변수와 함수에 대한 기억 부류의 한 종류
-    * 생명 주기 - 프로그램이 시작될 때 생성, 프로그램 종료 시 소멸
-    * 사용 범위 - 선언된 범위, 접근 지정에 따름
-* 클래스의 멤버
-  * static 멤버
-    * 프로그램이 시작할 때 생성
-    * 클래스 당 하나만 생성, 클래스 멤버라고 불림
-    * 클래스의 모든 객체들이 공유하는 멤버
-  * non-static 멤버
-    * 객체가 생성될 때 함께 생성
-    * 객체마다 객체 내에 생성
-    * 인스턴스 멤버라고 불림
-
+![becomefriend](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch09/becomefriend.PNG)
 
 #### Static 멤버와 Non-static 멤버의 관계
 
