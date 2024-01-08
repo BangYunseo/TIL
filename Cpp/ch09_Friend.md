@@ -59,12 +59,12 @@ class Rect{// Rect 클래스 선언
 ```
 
 
-(여기부터 작성하기) 
+
 * 예제 1. 프렌드 함수 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch08_Static/UsingStaticMember.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch09_Friend/MakingFriend.cpp)
 
 
-
+(여기부터 작성하기) 
 * 예제 2. 다른 클래스의 멤버 함수를 프렌드로 선언 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch08_Static/UsingStaticMember.cpp)
 
