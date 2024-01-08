@@ -36,21 +36,21 @@
 ![becomefriend](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch09/becomefriend.PNG)
 
 #### 프렌드 선언 3 종류
-* 1. 외부 함수 equals()를 Rect 클래스에 프렌드로 선언
+* 외부 함수 equals()를 Rect 클래스에 프렌드로 선언
 ```CPP
 class Rect{// Rect 클래스 선언
  ...
  friend bool equals(Rect r, Rect s);
 };
 ```
-* 2. RectManager 클래스의 equals() 멤버 함수를 Rect 클래스에 프렌드로 선언
+* RectManager 클래스의 equals() 멤버 함수를 Rect 클래스에 프렌드로 선언
 ```CPP
 class Rect{// Rect 클래스 선언
  ...
  friend bool RectManager::equals(Rect r, Rect s);
 };
 ```
-* 3. RectManager 클래스의 모든 멤버 함수를 Rect 클래스에 프렌드로 선언
+* RectManager 클래스의 모든 멤버 함수를 Rect 클래스에 프렌드로 선언
 ```CPP
 class Rect{// Rect 클래스 선언
  ...
