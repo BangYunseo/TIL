@@ -1,32 +1,55 @@
-#  Chapter 8. Static      
+#  Chapter 10. 연산자 중복      
 > '명품 C++Programming - 황기태' 7장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch10_OperatorOverloadingFunction)
 > 
 > 1절. 연산자 중복
 > 
-> 2절. 
+> 2절. 이항 연산자 중복
+>
+> 3절. 단항 연산자 중복
 
 ## 1절. 연산자 중복
-#### static 멤버와 non-static 멤버
+#### C++의 연산자 중복
+* C++ 언어에서 연산자 중복 가능
+  * C++ 언어에 본래부터 있던 연산자에 새로운 의미 정의
+  * 높은 프로그램 가독성
+  * 간결한 의미 전달
+  * 다형성
 
-![Staticor](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/Staticor.PNG)
+#### 연산자 중복의 사례
+* 정수 덧셈
+```CPP
+int a = 2, b = 3, c;
+c = a + b;
 
-#### static 멤버와 non-static 멤버의 특성
-* static
-  * 변수와 함수에 대한 기억 부류의 한 종류
-    * 생명 주기 - 프로그램이 시작될 때 생성, 프로그램 종료 시 소멸
-    * 사용 범위 - 선언된 범위, 접근 지정에 따름
-* 클래스의 멤버
-  * static 멤버
-    * 프로그램이 시작할 때 생성
-    * 클래스 당 하나만 생성, 클래스 멤버라고 불림
-    * 클래스의 모든 객체들이 공유하는 멤버
-  * non-static 멤버
-    * 객체가 생성될 때 함께 생성
-    * 객체마다 객체 내에 생성
-    * 인스턴스 멤버라고 불림
+// 결과 5
+// 정수가 피연산자일 때 2와 3의 덧셈
+```
+* 문자열 혼합
+```CPP
+int a = 2, b = 3, c;
+c = a + b;
 
+// 결과 5
+// 정수가 피연산자일 때 2와 3의 덧셈
+```
+* 색깔 혼합
+```CPP
+int a = 2, b = 3, c;
+c = a + b;
+
+// 결과 5
+// 정수가 피연산자일 때 2와 3의 덧셈
+```
+* 배열 결합
+```CPP
+int a = 2, b = 3, c;
+c = a + b;
+
+// 결과 5
+// 정수가 피연산자일 때 2와 3의 덧셈
+```
 
 #### Static 멤버와 Non-static 멤버의 관계
 
