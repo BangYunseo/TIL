@@ -28,95 +28,111 @@ c = a + b;
 ```
 * 문자열 혼합
 ```CPP
-int a = 2, b = 3, c;
-c = a + b;
+string a = "C", c;
+c = a + "++";
 
-// 결과 5
-// 정수가 피연산자일 때 2와 3의 덧셈
+// 결과 C++
+// 문자열이 피연산자일 때 두 개의 문자열 혼합
 ```
 * 색깔 혼합
 ```CPP
-int a = 2, b = 3, c;
+Color a(BLUE), b(RED), c;
 c = a + b;
 
-// 결과 5
-// 정수가 피연산자일 때 2와 3의 덧셈
+// c = VIOLET
+// a, b의 두 색을 섞은 새로운 Color 객체 c
 ```
 * 배열 결합
 ```CPP
-int a = 2, b = 3, c;
+SortedArray a(2, 5, 9), b(3, 7, 10), c;
 c = a + b;
 
-// 결과 5
-// 정수가 피연산자일 때 2와 3의 덧셈
+// c = {2, 3, 5, 7, 9, 10}
+// 정렬된 두 배열을 결합(merge)한 새로운 배열 생성
 ```
 
-#### Static 멤버와 Non-static 멤버의 관계
+#### 연산자 중복의 특징
+* C++에 본래 있는 연산자만 중복 가능
+  * 컴파일 오류 발생 예시
+    * 3 %% 5
+    * 6 ## 7
+* 피연산자 타입이 다른 새로운 연산 정의
+* 연산자는 함수 형태로 구현 : 연산자 함수(operator funcion)
+* 반드시 클래스와 관계를 가짐
+* 피연산자의 개수를 바꿀 수 없음
+* 연산의 우선 순위 변경 안됨
+* 모든 연산자가 중복 가능하지 않음
 
-![Staticor2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/Staticor2.PNG)
+* 중복 가능한 연산자          
 
-* han, lee, park, choi 등 4개의 Person 객체 생성
-* sharedMoney와 addShared() 함수는 하나만 생성되고 4개의 객체들에 의해 공유
-* sharedMoney와 addShared() 함수는 han, lee, park, shoi 객체들의 멤버
+![OverloadingOperator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/OverloadingOperator.PNG)
 
-#### Static 멤버와 Non-Static 멤버 비교
 
-![Staticor3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/Staticor3.PNG)
+* 중복 불가능한 연산자
 
-## 2절. Static
-#### static 멤버 선언
-* 멤버의 static 선언
-```C++
-class Person{
-public:
-  double money;                    // 개인 소유의 돈
-  void addMoney(int money){
-    this->money += money;
-  }
+![NotOverloadingOperator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/NotOverloadingOperator.PNG)
 
-  // 위는 non-static 멤버 선언에 대한 코드
+#### 연산자 함수
+* 연산자 함수 구현 방법 2가지
+  * 클래스의 멤버 함수로 구현
+  * 외부 함수로 구현하고 클래스에 프렌드 함수로 선언
+* 연산자 함수 형식
+```CPP
+ReturnType(double, int, ...) Operator(ParameterList);
+```
 
-  static int sharedMoney;          // static 멤버 변수 선언
-  static void addShared(int n){    // static 멤버 함수 선언
-    sharedMoney += n;
-  }
+
+#### +와 == 연산자의 작성 사례
+* 연산자 함수 작성이 필요한 코드
+```CPP
+Color a(BLUE), b(RED), c;
+
+c = a + b;
+// a와 b를 더하기 위한 + 연산자 작성 필요
+
+if(a == b){
+...
+// a와 b를 비교하기 위한 == 연산자 작성 필요
+```
+
+* 외부 함수로 구현되고 클래스에 프렌드로 선언되는 경우
+```CPP
+Color operator+(Color op1, Color op2);
+bool operator==(Color op1, Color op2);
+// 외부 함수
+
+class Color{
+ ...
+ friend Color operator+(Color op1, Color op2);
+ friend bool operator==(Color op1, Color op2);
 };
-
-int Person::sharedMoney = 10;      // sharedMoney를 10으로 초기화
-// static 변수 공간 할당
-// 프로그램 전역 공간에 선언
 ```
-* static 멤버 변수 생성
-  * 전역 변수로 생성
-  * 전체 프로그램 내에 한 번만 생성
 
-* static 멤버 변수에 대한 외부 선언이 없다면 아래와 같은 오류가 발생
-
-![staticerror](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/staticerror.PNG)
-
-#### static 멤버 사용 : 객체의 멤버로 접근
-* static 멤버는 객체 이름이나 객체 포인터로 접근
-  * 보통 멤버처럼 접근 가능
-```C++
-obj.staticMember
-objpointer->staticMember
+* 클래스의 멤버 함수로 작성되는 경우
+```CPP
+class Color{
+ ...
+ Color operator+(Color op2);
+ bool operator==(Color op2);
+};
 ```
-  * Person 타입의 객체 lee와 포인터 p를 이용하여 static 멤버를 접근하는 예시
-```C++
-Person lee;
-lee.sharedMoney = 500;      // obj.staticMember 방식
 
-Person *p;
-p = &lee;
-p->addShared(200);          // objpointer->staticMember 방식
+#### 2절과 3절에 예시로 사용될 클래스
+```CPP
+class Power{
+ int kick;
+ int punch;
+public:
+ Power(int kick = 0, int punch = 0){
+  this->kick = kick;
+  this->punch = punch;
+ }
+};
 ```
-* 그림으로 먼저 보기
-![staticmember](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/staticmember.PNG)
 
-* 예제 1. Static 멤버 사용 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch08_Static/UsingStaticMember.cpp)
+## 2절. 이항 연산자 중복
+#### + 연산자 (여기부터 작성)
 
-* han와 lee의 money는 각각 100, 350으로 값이 다르지만 han와 lee의 sharedMoney는 공통 400으로 같음
 
 #### static 멤버 사용 : 클래스명과 범위 지정 연산자 (::)로 접근
 * 클래스 이름과 범위 지정 연산자 (::)로 접근 가능
