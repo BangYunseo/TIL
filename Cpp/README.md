@@ -2,6 +2,7 @@
 
 ## Why? 
 * C++ 정리 및 공부
+
 ## What? 
 * C++
 * 참고 서적 : 명품 C++ Programming
@@ -39,8 +40,8 @@
 * [ch06](https://github.com/BangYunseo/Basic_CPP/tree/main/ch06_CopyConstructor)
 * [ch07](https://github.com/BangYunseo/Basic_CPP/tree/main/ch07_FunctionOverloading)
 * [ch08](https://github.com/BangYunseo/Basic_CPP/tree/main/ch08_Static)
-* [ch09]()
-* [ch10]()
+* [ch09](https://github.com/BangYunseo/Basic_CPP/tree/main/ch09_Friend)
+* [ch10](https://github.com/BangYunseo/Basic_CPP/tree/main/ch10_OperatorOverloadingFunction)
 * [ch11]()
 * [ch12]()
 * [ch13]()
