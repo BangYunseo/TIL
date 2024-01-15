@@ -1,7 +1,7 @@
 #  Chapter 12. 가상 함수      
 > '명품 C++Programming - 황기태' 9장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch10_OperatorOverloadingFunction)
+> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch12_VirtualFunction)
 > 
 > 1절. 연산자 중복
 > 
