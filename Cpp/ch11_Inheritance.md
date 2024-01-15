@@ -54,57 +54,37 @@
 
 ![instudent](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/inclass.PNG)
 
-#### 2절과 3절에 예시로 사용될 클래스
-```CPP
-class Power{
- int kick;
- int punch;
-public:
- Power(int kick = 0, int punch = 0){
-  this->kick = kick;
-  this->punch = punch;
- }
-};
-```
+* Student 클래스는 Person 클래스의 멤버를 물려받음
+* StudentWorker 클래스는 Student의 멤버를 물려받음
+  * Student가 물려받은 Person의 멤버도 함께 물려받음
 
-## 2절. 이항 연산자
-#### + 연산자 중복
-
-![op+](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/op+.PNG)
-
-* 예제 1. + 연산자 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/Operator%2B.cpp)
-
-#### == 연산자 중복
-
-![op==](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/op==.PNG)
-
-* 예제 2. == 연산자 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/Operator%3D%3D.cpp)
-
-#### += 연산자 중복
-
-![op+=](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/op+=.PNG)
-
-* 예제 3. += 연산자 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/Operator%2B%3D.cpp)
-
-#### + 연산자(정수형 매개 변수) 중복
-
-* 예제 4. 정수형 매개 변수를 가진 + 연산자 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/OperatorInt%2B.cpp)
+ 
+* 예제 1. Point 클래스를 상속받는 ColorPoint 클래스 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/ColorPoint.cpp)
 
 
-## 3절. 단항 연산자
-#### 단항 연산자 중복
-* 단항 연산자
-  * 피연산자가 하나 뿐인 연산자
-    * 연산자 중복 방식은 이항 연산자의 경우와 거의 유사
-  * 단항 연산자 종류
-    * 전위 연산자(prefix operator)
-      * !op, ~op, ++op, --op
-    * 후위 연산자(postfix operator)
-      * op++, op--
+## 2절. 파생 클래스
+#### 파생 클래스의 객체 구성
+
+![po](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/po.PNG)
+![cpo](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/cpo.PNG)
+
+#### 파생 클래스에서 기본 클래스 멤버 접근
+
+![cpo2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/cpo2.PNG)
+
+#### 외부에서 파생 클래스 객체에 대한 접근
+
+![cpo3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/cpo3.PNG)
+
+## 3절. 업 캐스팅과 다운 캐스팅
+#### 상속과 객체 포인터 : 업 캐스팅
+* 업 캐스팅(up - casting)
+  * 파생 클래스 포인터가 기본 클래스 포인터에 치환
+    * ex) 사람을 동물로 보는 것(사람은 동물 안에 속함)
+
+
+(여기서부터 작성)
 
 #### 전위 ++ 연산자 중복
 
