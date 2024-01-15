@@ -1,7 +1,7 @@
-#  Chapter 12. 가상 함수      
+#  Chapter 12. 가상 함수와 추상 클래스      
 > '명품 C++Programming - 황기태' 9장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch12_VirtualFunction)
+> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch12_VirtualFunctionAndAbstractClass)
 > 
 > 1절. 연산자 중복
 > 
