@@ -9,7 +9,7 @@
 
 ## When?
 * 2023.09 ~ 2023.12 학습 내용
-* 마지막 수정일 : 2024.01.14
+* 마지막 수정일 : 2024.01.15
 
 ## Learning List
 * ch01 [C++소개](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch01_IntroduceC%2B%2B.md)
@@ -23,14 +23,13 @@
 * ch09 [Friend](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch09_Friend.md)
 * ch10 [연산자 중복](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch08_OperatorOverloadingFunction.md)
 * ch11 [상속]()
-* ch12 [가상 함수]()
-* ch13 [추상 클래스]()
-* ch14 [템플릿]()
-* ch15 [표준 템플릿 라이브러리]()
-* ch16 [C++ 입출력 시스템]()
-* ch17 [C++ 파일 입출력]()
-* ch18 [예외처리]()
-* ch19 [C와 링크]()
+* ch12 [가상 함수와 추상 클래스]()
+* ch13 [템플릿]()
+* ch14 [표준 템플릿 라이브러리]()
+* ch15 [C++ 입출력 시스템]()
+* ch16 [C++ 파일 입출력]()
+* ch17 [예외처리]()
+* ch18 [C와 링크]()
 
 ## SourceCode List
 * [ch02](https://github.com/BangYunseo/Basic_CPP/tree/main/ch02_BasicC%2B%2B)
@@ -50,4 +49,3 @@
 * [ch16]()
 * [ch17]()
 * [ch18]()
-* [ch19]()
