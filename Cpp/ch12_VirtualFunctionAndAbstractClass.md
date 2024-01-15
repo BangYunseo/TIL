@@ -3,11 +3,15 @@
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch12_VirtualFunctionAndAbstractClass)
 > 
-> 1절. 연산자 중복
+> 1절. 가상 함수
 > 
-> 2절. 이항 연산자
+> 2절. 오버라이딩
 >
-> 3절. 단항 연산자
+> 3절. 동적 바인딩
+>
+> 4절. 가상 소멸자
+>
+> 5절. 추상 클래스
 
 ## 1절. 연산자 중복
 #### C++의 연산자 중복
