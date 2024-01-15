@@ -3,119 +3,56 @@
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch11_Inheritance)
 > 
-> 1절. 연산자 중복
+> 1절. 상속
 > 
-> 2절. 이항 연산자
+> 2절. 파생 클래스
 >
-> 3절. 단항 연산자
+> 3절. 업 캐스팅과 다운 캐스팅
+>
+> 4절. 접근 지정 상속
+>
+> 5절. 다중 상속
+>
+> 6절. 가상 상속
 
-## 1절. 연산자 중복
-#### C++의 연산자 중복
-* C++ 언어에서 연산자 중복 가능
-  * C++ 언어에 본래부터 있던 연산자에 새로운 의미 정의
-  * 높은 프로그램 가독성
-  * 간결한 의미 전달
-  * 다형성
+## 1절. 상속
+#### C++의 상속
+* 클래스 사이에서 상속 관계 정의
+  * 객체 사이에는 상속 관계 없음
+* 기본 클래스의 속성과 기능을 파생 클래스에 물려줌
+  * 기본 클래스(base class)
+    * 상속해주는 클래스
+    * 부모 클래스
+  * 파생 클래스(derived class)
+    * 상속받는 클래스
+    * 자식 클래스
+      * 기본 클래스의 속성과 기능을 물려받음
+      * 자신만의 속성과 기능을 추가하여 작성
+* 기본 클래스에서 파생 클래스로 갈수록 클래스의 개념이 구체화
+* 다중 상속을 통한 클래스의 재활용성 증가
 
-#### 연산자 중복의 사례
-* 정수 덧셈
-```CPP
-int a = 2, b = 3, c;
-c = a + b;
+#### 상속의 표현
 
-// 결과 5
-// 정수가 피연산자일 때 2와 3의 덧셈
-```
-* 문자열 혼합
-```CPP
-string a = "C", c;
-c = a + "++";
+![inim](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/inim.PNG)
 
-// 결과 C++
-// 문자열이 피연산자일 때 두 개의 문자열 혼합
-```
-* 색깔 혼합
-```CPP
-Color a(BLUE), b(RED), c;
-c = a + b;
+#### 상속의 목적 및 장점
+* 간결한 클래스 작성
+  * 기본 클래스의 기능을 물려받아 파생 클래스를 간결하게 작성
+* 클래스 간의 계층적 분류 및 관리의 용이
+  * 상속은 클래스들의 구조적 관계 파악 용이
+* 클래스 재사용과 확장을 통한 소프트웨어 생산성 향상
+  * 빠른 소프트웨어 생산 필요
+  * 기존에 작성한 클래스의 재사용 : 상속
+    * 상속받아 새로운 기능을 확장
+  * 앞으로 있을 상속에 대비한 클래스의 객체 지향적 설계 필요
 
-// c = VIOLET
-// a, b의 두 색을 섞은 새로운 Color 객체 c
-```
-* 배열 결합
-```CPP
-SortedArray a(2, 5, 9), b(3, 7, 10), c;
-c = a + b;
+#### 상속 관계로 클래스의 간결화 사례 예시
 
-// c = {2, 3, 5, 7, 9, 10}
-// 정렬된 두 배열을 결합(merge)한 새로운 배열 생성
-```
+![inclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/inclass.PNG)
 
-#### 연산자 중복의 특징
-* C++에 본래 있는 연산자만 중복 가능
-  * 컴파일 오류 발생 예시
-    * 3 %% 5
-    * 6 ## 7
-* 피연산자 타입이 다른 새로운 연산 정의
-* 연산자는 함수 형태로 구현 : 연산자 함수(operator funcion)
-* 반드시 클래스와 관계를 가짐
-* 피연산자의 개수를 바꿀 수 없음
-* 연산의 우선 순위 변경 안됨
-* 모든 연산자가 중복 가능하지 않음
+#### 상속 선언
 
-* 중복 가능한 연산자          
-
-![OverloadingOperator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/OverloadingOperator.PNG)
-
-
-* 중복 불가능한 연산자
-
-![NotOverloadingOperator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/NotOverloadingOperator.PNG)
-
-#### 연산자 함수
-* 연산자 함수 구현 방법 2가지
-  * 클래스의 멤버 함수로 구현
-  * 외부 함수로 구현하고 클래스에 프렌드 함수로 선언
-* 연산자 함수 형식
-```CPP
-ReturnType(double, int, ...) Operator(ParameterList);
-```
-
-
-#### +와 == 연산자의 작성 사례
-* 연산자 함수 작성이 필요한 코드
-```CPP
-Color a(BLUE), b(RED), c;
-
-c = a + b;
-// a와 b를 더하기 위한 + 연산자 작성 필요
-
-if(a == b){
-...
-// a와 b를 비교하기 위한 == 연산자 작성 필요
-```
-
-* 외부 함수로 구현되고 클래스에 프렌드로 선언되는 경우
-```CPP
-Color operator+(Color op1, Color op2);
-bool operator==(Color op1, Color op2);
-// 외부 함수
-
-class Color{
- ...
- friend Color operator+(Color op1, Color op2);
- friend bool operator==(Color op1, Color op2);
-};
-```
-
-* 클래스의 멤버 함수로 작성되는 경우
-```CPP
-class Color{
- ...
- Color operator+(Color op2);
- bool operator==(Color op2);
-};
-```
+![instudent](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/inclass.PNG)
 
 #### 2절과 3절에 예시로 사용될 클래스
 ```CPP
