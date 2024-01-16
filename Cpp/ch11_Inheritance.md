@@ -83,9 +83,13 @@
   * 파생 클래스 포인터가 기본 클래스 포인터에 치환
     * ex) 사람을 동물로 보는 것(사람은 동물 안에 속함)
 
-
 (여기서부터 작성)
 
+```CPP
+int main() {
+ ColorPoint cp;
+}
+```
 #### 전위 ++ 연산자 중복
 
 ![++op](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/++op.PNG)
