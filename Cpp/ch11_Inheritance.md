@@ -157,6 +157,33 @@ int main(){
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/AcessProtected.cpp)
 
 
+#### 상속 지정
+* 상속 선언 시 public, private, protected의 3가지 중 하나 지정
+* 기본 클래스 멤버의 접근 속성을 어떻게 계승할 것인지 지정
+  * public : 기본 클래스의 protected, public 멤버 속성을 그대로 계승
+  * private : 기본 클래스의 protected, public 멤버를 private로 계승
+  * protected : 기본 클래스의 protected, public 멤버를 protected로 계승
+ 
+
+#### 상속 시 접근 지정에 따른 멤버의 접근 지정 속성 변화
+
+![ppp](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/ppp.PNG)
+
+
+> 컴파일 오류 탐색 예제 3, 4, 5
+(여기부터 다시 작성)
+* 예제 3. private 상속 사례 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/AcessProtected.cpp)
+
+
+* 예제 4. protected 상속 사례 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/AcessProtected.cpp)
+
+
+* 예제 5. 상속이 중첨될 때 접근 지정 사례 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/AcessProtected.cpp)
+
+
 ## 5절. 생성자와 소멸자
 #### 상속 관계의 생성자와 소멸자
 * 파생 클래스의 객체가 생성될 때
@@ -169,21 +196,40 @@ int main(){
 ![con1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/con1.PNG)
 
 
-* 예제 9. 객체 끼리의 덧셈을 위한 + 연산자 프렌드 작성 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/Operator%2BFriend.cpp)
+#### 소멸자의 실행 순서
+* 파생 클래스의 객체가 생성될 때
+  * 파생 클래스의 소멸자 먼저 실행
+  * 기본 클래스의 소멸자가 나중에 실행
+
+#### 컴파일러에 의해 묵시적으로 기본 클래스의 생성자를 선택하는 경우
+* 파생 클래스의 생성자에서 기본 클래스의 기본 생성자 호출      
+
+![basiccon](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/basiccon.PNG)
 
 
-#### 단항 연산자 ++를 프렌드로 작성 
-* 전위 연산자
-![fop+](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/fop+.PNG)
+#### 기본 클래스에 기본 생성자가 없는 경우 : 컴파일 오류
 
-* 후위 연산자
-![bop+](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/bop+.PNG)
+![errorcon](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/errorcon.PNG)
 
 
-* 예제 10. ++ 연산자 프렌드 작성 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/Operator%2B%2BFriend.cpp)
+#### 매개 변수를 가진 파생 클래스의 생성자는 묵시적으로 기본 클래스의 기본 생성자 선택
+* 파생 클래스의 매개 변수를 가진 생성자가 기본 클래스의 기본 생성자를 호출               
+
+![basiccon2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/basiccon2.PNG)
+
+#### 파생 클래스의 생성자에서 명시적으로 기본 클래스의 생성자 선택
+
+![basiccon3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/basiccon3.PNG)
 
 
-* 예제 11. << 연산자 작성 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/Operator%3C%3C.cpp)
+#### 컴파일러의 기본 생성자 호출 코드 삽입
+
+![con2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/con2.PNG)
+
+
+* 예제 6. TV, WideTV, SmartTV 생성자 매개 변수 전달 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/TV.cpp)
+
+
+## 6절. 다중 상속
+#### 
