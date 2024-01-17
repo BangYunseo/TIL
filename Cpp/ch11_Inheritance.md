@@ -83,17 +83,26 @@
   * 파생 클래스 포인터가 기본 클래스 포인터에 치환
     * ex) 사람을 동물로 보는 것(사람은 동물 안에 속함)
 
-(여기서부터 작성)
+![upcasting](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/upcasting.PNG)
 
 ```CPP
 int main() {
  ColorPoint cp;
+ ColorPoint *pDER = &cp;
+ Point* pBase = pDer;
+ // 업캐스팅
+
+ pDer->set(3, 4);
+ pBase->showPoint();
+ pDer->setColor("Red");
+ pDer->showColorPoint();
+ pBase->showColorPoint();    // 컴파일 오류
 }
 ```
-#### 전위 ++ 연산자 중복
 
-![++op](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/++op.PNG)
-
+#### 상속과 객체 포인터 : 다운 캐스팅
+* 다운 캐스팅(down - casting)
+  * 기본 클래스의 포인터가 파생 클래스의 포인터에 치환되는 것
 
 * 예제 5. 전위 ++ 연산자 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/%2B%2BOperator.cpp)
