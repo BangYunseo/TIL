@@ -9,11 +9,13 @@
 >
 > 3절. 업 캐스팅과 다운 캐스팅
 >
-> 4절. 접근 지정 상속
+> 4절. 접근 상속 지정
 >
-> 5절. 다중 상속
+> 5절. 생성자와 소멸자
 >
-> 6절. 가상 상속
+> 6절. 다중 상속
+>
+> 7절. 가상 상속
 
 ## 1절. 상속
 #### C++의 상속
@@ -98,44 +100,73 @@ int main() {
  pDer->showColorPoint();
  pBase->showColorPoint();    // 컴파일 오류
 }
+// 출력 예시
+// (3, 4)
+// Red(3, 4)
 ```
 
 #### 상속과 객체 포인터 : 다운 캐스팅
 * 다운 캐스팅(down - casting)
   * 기본 클래스의 포인터가 파생 클래스의 포인터에 치환되는 것
 
-* 예제 5. 전위 ++ 연산자 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/%2B%2BOperator.cpp)
+![downcasting](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/downcasting.PNG)
+
+```CPP
+int main(){
+ ColorPoint cp;
+ ColorPoint *PDer;
+ Point* pBase = &cp;
+ // 업캐스팅
+
+ pBase->set(3, 4);
+ pBase->showPoint();
+
+ pDer = (ColorPoint *)pBase;
+ // 다운 캐스팅
+ // 강제 타입 변환이 반드시 필요
+
+ pDer->setColor("Red");
+ pDer->showColorPoint();
+ // 둘 다 정상 컴파일
+}
+// 출력 예시
+// (3, 4)
+// Red(3, 4)
+```
+
+[업 캐스팅과 다운 캐스팅 이해하기](https://lesslate.github.io/cpp/%EC%97%85-%EC%BA%90%EC%8A%A4%ED%8C%85-%EB%8B%A4%EC%9A%B4-%EC%BA%90%EC%8A%A4%ED%8C%85/)
+
+## 4절. 접근 상속 지정
+#### 접근 지정자
+* private 멤버
+  * 선언된 클래스 내에서만 접근 가능
+  * 파생 클래스에서도 기본 클래스의 private 멤버 직접 접근 불가
+* public 멤버
+  * 선언된 클래스나 외부 어떤 클래스, 모든 외부 함수에 접근 허용
+  * 파생 클래스에서 기본 클래스의 public 멤버 접근 가능
+* protected 멤버
+  * 선언된 클래스에서 접근 가능
+  * 파생된 클래스에서만 접근 허용
+    * 파생 클래스가 아닌 다른 클래스, 혹은 외부 함수에서는 protected 멤버 접근 불가
+
+#### 멤버의 접근 지정에 따른 접근성
+
+![am](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/am.PNG)
+
+* 예제 2. protected 멤버에 대한 접근 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/AcessProtected.cpp)
 
 
-#### !연산자 중복
+## 5절. 생성자와 소멸자
+#### 상속 관계의 생성자와 소멸자
+* 파생 클래스의 객체가 생성될 때
+   * 파생 클래스의 생성자와 기본 클래스의 생성자가 모두 실행
+   * 기본 클래스의 생성자가 먼저 실행된 후 파생 클래스의 생성자 실행  
 
 
-* 예제 6. !연산자 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/!Operator.cpp)
+#### 생성자 호출 관계 및 실행 순서
 
-
-#### 후위 ++ 연산자 중복
-
-![op++](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/op++.PNG)
-
-
-* 예제 7. 후위 ++ 연산자 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/Operator%2B%2B.cpp)
-
-
-#### 2 + a 덧셈을 위한 + 연산자 함수 작성
-
-![intop+](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/intop+.PNG)
-
-
-* 예제 8. 정수형 매개 변수를 가진 + 연산자 프렌드 작성 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/OperatorInt+Friend.cpp)
-
-
-#### + 연산자를 외부 프렌드 함수로 구현
-
-![friendop+](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/friendop+.PNG)
+![con1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/con1.PNG)
 
 
 * 예제 9. 객체 끼리의 덧셈을 위한 + 연산자 프렌드 작성 예제     
