@@ -173,15 +173,15 @@ int main(){
 > 컴파일 오류 탐색 예제 3, 4, 5
 (여기부터 다시 작성)
 * 예제 3. private 상속 사례 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/AcessProtected.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/Private.cpp)
 
 
 * 예제 4. protected 상속 사례 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/AcessProtected.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/Protected.cpp)
 
 
-* 예제 5. 상속이 중첨될 때 접근 지정 사례 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/AcessProtected.cpp)
+* 예제 5. 상속이 중첩될 때 접근 지정 사례 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/TwoInheritance.cpp)
 
 
 ## 5절. 생성자와 소멸자
@@ -232,4 +232,79 @@ int main(){
 
 
 ## 6절. 다중 상속
-#### 
+#### 기기의 컨버전스와 C++의 다중 상속
+
+![ti](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/ti.PNG)
+
+#### 다중 상속 선언 및 멤버 호출
+* 다중 상속 선언
+```CPP
+class MP3{
+public:
+ void play();
+ void stop();
+};
+
+class MobilePhone{
+public:
+ bool sendCall();
+ bool receiveCall();
+ bool sendSMS();
+ bool receiveSMS();
+};
+
+class MusicPhone : public MP3, public MobilePhone{
+// 다중 상속 선언
+public:
+ void dial();
+};
+```
+
+* 다중 상속 활용 1
+```CPP
+void MusicPhone::dial(){
+ play();          // MP3 클래스의 play() 함수 호출
+ sendCall();      // MobilePhone 클래스의 sendCall() 함수 호출
+}
+```
+
+* 다중 상속 활용 2
+```CPP
+int main(){
+ MusicPhone hanPhone;       
+ hanPhone.play();               // MP3 클래스의 play() 함수 호출
+ hanPhone.sendSMS();            // MobilePhone 클래스의 sendSMS() 함수 호출
+}
+```
+
+* 예제 7. Adder와 Subtractor를 다중 상속받는 Calculator 클래스 작성 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/Calculator.cpp)
+
+#### 다중 상속의 문제점
+* 기본 클래스 멤버의 중복 상속
+  * 기본 클래스의 멤버가 이중으로 객체에 삽입되는 문제점
+  * 동일한 x를 접근하는 프로그램이 서로 다른 x에 접근하는 결과를 발생시킴
+    * 즉, 잘못된 실행 오류가 발생
+   
+![ti2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/ti2.PNG)
+
+
+## 7절. 가상 상속
+#### 가상 상속
+* 다중 상속으로 인한 기본 클래스 멤버의 중복 상속 해결
+* 가상 상속이란?
+  * 파생 클래스의 선언문에서 기본 클래스 앞에 virtual로 선언
+  * 파생 클래스의 객체가 생성될 때 기본 클래스의 멤버는 오직 한 번만 생성
+    * 기본 클래스의 멤버가 중복하여 생성되는 것을 방지
+```CPP
+class A : virtual public BaseIO{
+// A 클래스는 BaseIO 클래스를 가상 상속
+};
+```   
+
+
+#### 가상 상속의 해결법
+* 가상 상속을 통해 다중 상속의 모호성 해결
+
+![vi](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/vi.PNG)
+
