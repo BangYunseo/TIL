@@ -9,7 +9,7 @@
 
 ## When?
 * 2023.09 ~ 2023.12 학습 내용
-* 마지막 수정일 : 2024.01.15
+* 마지막 수정일 : 2024.01.19
 
 ## Learning List
 * ch01 [C++소개](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch01_IntroduceC%2B%2B.md)
