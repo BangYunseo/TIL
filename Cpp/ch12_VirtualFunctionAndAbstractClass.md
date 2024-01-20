@@ -14,65 +14,37 @@
 > 5절. 추상 클래스
 
 ## 1절. 가상 함수
-#### C++의 연산자 중복
+#### 가상 함수
+
+![vf](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/vf.PNG)            
+
 * 예제 1. 파생 클래스에서 함수를 재정의하는 사례 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/FunctionRedefine.cpp)
 
-
-#### 연산자 중복의 사례
-* 정수 덧셈
+* 가상 함수(virtual function)
+  * virtual 키워드로 선언된 멤버 함수
+  * virtual 키워드의 의미
+    * 동적 바인딩 지시어
+    * 컴파일러에게 함수에 대한 호출 바인딩을 실행 시간까지 미루도록 지시
 ```CPP
-int a = 2, b = 3, c;
-c = a + b;
+class Base{
+public:
+ virtual void f();
+ // f()는 가상 함수
+};
+``` 
 
-// 결과 5
-// 정수가 피연산자일 때 2와 3의 덧셈
-```
-* 문자열 혼합
-```CPP
-string a = "C", c;
-c = a + "++";
+## 2절. 오버라이딩
+#### 오버라이딩
 
-// 결과 C++
-// 문자열이 피연산자일 때 두 개의 문자열 혼합
-```
-* 색깔 혼합
-```CPP
-Color a(BLUE), b(RED), c;
-c = a + b;
+![overriding](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/overriding.PNG)
 
-// c = VIOLET
-// a, b의 두 색을 섞은 새로운 Color 객체 c
-```
-* 배열 결합
-```CPP
-SortedArray a(2, 5, 9), b(3, 7, 10), c;
-c = a + b;
-
-// c = {2, 3, 5, 7, 9, 10}
-// 정렬된 두 배열을 결합(merge)한 새로운 배열 생성
-```
-
-#### 연산자 중복의 특징
-* C++에 본래 있는 연산자만 중복 가능
-  * 컴파일 오류 발생 예시
-    * 3 %% 5
-    * 6 ## 7
-* 피연산자 타입이 다른 새로운 연산 정의
-* 연산자는 함수 형태로 구현 : 연산자 함수(operator funcion)
-* 반드시 클래스와 관계를 가짐
-* 피연산자의 개수를 바꿀 수 없음
-* 연산의 우선 순위 변경 안됨
-* 모든 연산자가 중복 가능하지 않음
-
-* 중복 가능한 연산자          
-
-![OverloadingOperator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/OverloadingOperator.PNG)
-
-
-* 중복 불가능한 연산자
-
-![NotOverloadingOperator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/NotOverloadingOperator.PNG)
+* 함수 오버라이딩(function overriding)
+  * 파생 클래스에서 기본 클래스의 가상 함수와 동일한 이름의 함수 선언
+    * 기본 클래스 가상 함수의 존재감 상실
+    * 파생 클래스에서 오버라이딩한 함수가 호출되도록 동적 바인딩
+    * 함수 재정의
+    * 다형성의 한 종류
 
 #### 연산자 함수
 * 연산자 함수 구현 방법 2가지
