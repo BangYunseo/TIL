@@ -13,13 +13,11 @@
 >
 > 5절. 추상 클래스
 
-## 1절. 연산자 중복
+## 1절. 가상 함수
 #### C++의 연산자 중복
-* C++ 언어에서 연산자 중복 가능
-  * C++ 언어에 본래부터 있던 연산자에 새로운 의미 정의
-  * 높은 프로그램 가독성
-  * 간결한 의미 전달
-  * 다형성
+* 예제 1. 파생 클래스에서 함수를 재정의하는 사례 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/FunctionRedefine.cpp)
+
 
 #### 연산자 중복의 사례
 * 정수 덧셈
