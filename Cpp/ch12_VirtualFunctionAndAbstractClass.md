@@ -46,66 +46,34 @@ public:
     * 함수 재정의
     * 다형성의 한 종류
 
-#### 연산자 함수
-* 연산자 함수 구현 방법 2가지
-  * 클래스의 멤버 함수로 구현
-  * 외부 함수로 구현하고 클래스에 프렌드 함수로 선언
-* 연산자 함수 형식
-```CPP
-ReturnType(double, int, ...) Operator(ParameterList);
-```
+#### 함수 재정의와 오버라이딩 사례 비교
+![fror](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/fror.PNG)
 
 
-#### +와 == 연산자의 작성 사례
-* 연산자 함수 작성이 필요한 코드
-```CPP
-Color a(BLUE), b(RED), c;
+#### 함수 재정의와 오버라이딩
+* 가상 함수를 재정의하는 경우 : 오버라이딩
+  * 동적 바인딩 발생
+* 가상 함수를 재정의하지 않는 경우 : 함수 재정의
+  * 컴파일 시간에 결정된 함수 단순 호출(정적 바인딩 발생)
+* Java는 무조건 동적 바인딩이 일어나는 언어
 
-c = a + b;
-// a와 b를 더하기 위한 + 연산자 작성 필요
+![orvf](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/orvf.PNG)            
 
-if(a == b){
-...
-// a와 b를 비교하기 위한 == 연산자 작성 필요
-```
+* 예제 2. 오버라이딩과 가상 함수 호출 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/OverridingVirtualFunction.cpp)
 
-* 외부 함수로 구현되고 클래스에 프렌드로 선언되는 경우
-```CPP
-Color operator+(Color op1, Color op2);
-bool operator==(Color op1, Color op2);
-// 외부 함수
 
-class Color{
- ...
- friend Color operator+(Color op1, Color op2);
- friend bool operator==(Color op1, Color op2);
-};
-```
+#### 오바리이딩의 목적
+* 파생 클래스에서 구현할 함수 인터페이스 제공
+  * 파생 클래스의 다형성
+![draw](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/draw.PNG)            
 
-* 클래스의 멤버 함수로 작성되는 경우
-```CPP
-class Color{
- ...
- Color operator+(Color op2);
- bool operator==(Color op2);
-};
-```
+* 다형성의 실현
+  * draw() 가상 함수를 가진 기본 클래스 Shape
+  * 오버라이딩을 통해 Circle, Rect, Line 클래스에서 자신만의 draw() 구현
 
-#### 2절과 3절에 예시로 사용될 클래스
-```CPP
-class Power{
- int kick;
- int punch;
-public:
- Power(int kick = 0, int punch = 0){
-  this->kick = kick;
-  this->punch = punch;
- }
-};
-```
-
-## 2절. 이항 연산자
-#### + 연산자 중복
+## 3절. 동적 바인딩
+#### 동적 바인딩
 
 ![op+](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/op+.PNG)
 
