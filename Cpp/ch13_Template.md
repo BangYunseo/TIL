@@ -3,22 +3,15 @@
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch13_Template)
 > 
-> 1절. 가상 함수
+> 1절. 템플릿
 > 
-> 2절. 오버라이딩
+> 2절. 구체화
 >
-> 3절. 동적 바인딩
->
-> 4절. 가상 소멸자
->
-> 5절. 가상 함수
-> 
-> 6절. 추상 클래스
+> 3절. 제네릭 프로그래밍
 
 
-(20페이지까지 내용)
-## 1절. 가상 함수
-#### 가상 함수
+## 1절. 템플릿
+#### 함수 중복의 약점 : 중복 함수의 코드 중복
 
 ![vf](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/vf.PNG)            
 
