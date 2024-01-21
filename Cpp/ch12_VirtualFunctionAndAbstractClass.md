@@ -74,15 +74,17 @@ public:
 
 ## 3절. 동적 바인딩
 #### 동적 바인딩
+* 파생 클래스에 대해
+* 기본 클래스에 대한 포인터로 가상 함수를 호출하는 경우
+* 객체 내에 오버라이딩한 파생 클래스의 함수를 찾아 실행
+  * 실행 중에 이루어짐
+    * 실행시간 바인딩, 런타임 바인딩, 늦은 바인디
 
-![op+](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/op+.PNG)
+![db](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/db.PNG)
 
-* 예제 1. + 연산자 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/Operator%2B.cpp)
+#### 오버라이딩된 함수를 호출하는 동적 바인딩
 
-#### == 연산자 중복
-
-![op==](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/op==.PNG)
+![db](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/db.PNG)
 
 * 예제 2. == 연산자 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/Operator%3D%3D.cpp)
