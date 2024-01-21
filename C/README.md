@@ -1,7 +1,7 @@
 # C Language
 
 ## Why? 
-* C언어 기초 복습        
+* C언어 기초 정리        
 
 ## What? 
 * C언어
