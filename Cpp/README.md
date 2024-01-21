@@ -9,7 +9,7 @@
 
 ## When?
 * 2023.09 ~ 2023.12 학습 내용
-* 마지막 수정일 : 2024.01.19
+* 마지막 수정일 : 2024.01.21
 
 ## Learning List
 * ch01 [C++소개](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch01_IntroduceC%2B%2B.md)
@@ -41,8 +41,8 @@
 * [ch08](https://github.com/BangYunseo/Basic_CPP/tree/main/ch08_Static)
 * [ch09](https://github.com/BangYunseo/Basic_CPP/tree/main/ch09_Friend)
 * [ch10](https://github.com/BangYunseo/Basic_CPP/tree/main/ch10_OperatorOverloadingFunction)
-* [ch11]()
-* [ch12]()
+* [ch11](https://github.com/BangYunseo/Basic_CPP/tree/main/ch11_Inheritance)
+* [ch12](https://github.com/BangYunseo/Basic_CPP/tree/main/ch12_VirtualFunctionAndAbstractClass)
 * [ch13]()
 * [ch14]()
 * [ch15]()
