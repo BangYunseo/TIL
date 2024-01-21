@@ -268,7 +268,6 @@ int main(){
 
 ![main](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/main.PNG)
 
-
 #### 기본 클래스의 포인터 활용
 * 기본 클래스의 포인터로 파생 클래스 접근
   * pStart, pLast, p의 타입이 Shape*
@@ -322,3 +321,32 @@ Shape *p = new Shape();
 ```CPP
 Shape *p;
 ```
+
+#### 추상 클래스의 목적
+* 추상 클래스의 인스턴스를 생성할 목적 X
+* 상속에서 기본 클래스의 역할을 하기 위한 목적
+  * 순수 가상 함수를 통해 파생 클래스에서 구현할 함수의 형태(원형)을 보여주는 인터페이스 역할
+  * 추상 클래스의 모든 멤버 함수를 순수 가상 함수로 선언할 필요는 없음
+ 
+#### 추상 클래스의 상속과 구현
+* 추상 클래스의 상속
+  * 추상 클래스를 단순 상속하면 자동 추상 클래스
+* 추상 클래스 구현
+  * 추상 클래스를 상속받아 순수 가상 함수를 오버라이딩
+    * 파생 클래스는 추상 클래스가 아님
+   
+![abclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/abclass.PNG)
+
+#### Shape를 추상 클래스로 수정
+
+![abclass2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/abclass2.PNG)
+
+
+
+* 예제 6. 추상 클래스 구현 연습 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/AbstractClass.cpp)
+
+
+
+* 예제 7. 추상 클래스를 상속받는 파생 클래스 구현 연습 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/AbstractClass2.cpp)
