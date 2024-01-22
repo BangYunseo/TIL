@@ -13,36 +13,79 @@
 ## 1절. 템플릿
 #### 함수 중복의 약점 : 중복 함수의 코드 중복
 
-![vf](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/vf.PNG)            
-
-* 예제 1. 파생 클래스에서 함수를 재정의하는 사례 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/FunctionRedefine.cpp)
-
-* 가상 함수(virtual function)
-  * virtual 키워드로 선언된 멤버 함수
-  * virtual 키워드의 의미
-    * 동적 바인딩 지시어
-    * 컴파일러에게 함수에 대한 호출 바인딩을 실행 시간까지 미루도록 지시
 ```CPP
-class Base{
-public:
- virtual void f();
- // f()는 가상 함수
-};
-``` 
+#include <iostream>
 
-## 2절. 오버라이딩
-#### 오버라이딩
+using namespace std;
 
-![overriding](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/overriding.PNG)
+void myswap(int& a, int& b){
+ int tmp;
+ tmp = a;
+ a = b;
+ b = tmp;
+}
 
-* 함수 오버라이딩(function overriding)
-  * 파생 클래스에서 기본 클래스의 가상 함수와 동일한 이름의 함수 선언
-    * 기본 클래스 가상 함수의 존재감 상실
-    * 파생 클래스에서 오버라이딩한 함수가 호출되도록 동적 바인딩
-    * 함수 재정의
-    * 다형성의 한 종류
+void myswap(double& a, double& b){
+ double tmp;
+ tmp = a;
+ a = b;
+ b = tmp;
+}
 
+// 위의 두 함수는 매개 변수만 다르고 나머지 코드가 동일
+// 즉, 동일한 코드를 중복 작성하는 약점 발생
+
+int main(){
+ int a = 4, b = 5;
+ myswap(a, b);
+ // myswap(int& a, int& b) 호출
+
+ cout << a << '\t' << b << endl;
+
+ double c = 0.3, d = 12.5
+ myswap(a, b);
+ // myswap(double& a, double& b) 호출
+
+ cout << a << '\t' << b << endl;
+}
+
+// 출력 예시
+// 5          4
+// 12.5       0.3
+```
+
+
+#### 일반화와 템플릿
+* 제네릭(generic) 또는 일반화
+  * 함수나 클래스를 일반화시키고 매개 변수 타입을 지정하여 틀에서 찍어 내듯이 함수나 클래스 코드를 생산하는 기법
+* 템플릿
+  * 함수나 클래스를 일반화하는 C++ 도구
+  * template 키워드로 함수나 클래스 선언
+    * 변수나 매개 변수의 타입만 다르고 코드 부분이 동일한 함수를 일반화
+  * 제네릭 타입 : 일반화를 위한 타입
+* 템플릿 선언
+
+```CPP
+template <class T>
+template <typename T>
+
+// 3개의 제네릭 타입을 가진 템플릿 선언
+template <class T1, class T2, class T3>
+```
+
+![myswap](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/myswap.PNG)
+
+#### 중복 함수들로부터 템플릿 만들기 사례
+
+![myswap2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/myswap2.PNG)
+
+## 2절. 구체화
+#### 템플릿으로부터의 구체화 
+* 구체화(specialization)
+  * 템플릿의 제네릭 타입에 구체적인 타입 지정
+    * 템플릿 함수로부터 구체화된 함수의 소스 코드 생성
+
+(여기부터 작성)
 #### 함수 재정의와 오버라이딩 사례 비교
 ![fror](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/fror.PNG)
 
