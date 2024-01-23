@@ -85,49 +85,59 @@ template <class T1, class T2, class T3>
   * 템플릿의 제네릭 타입에 구체적인 타입 지정
     * 템플릿 함수로부터 구체화된 함수의 소스 코드 생성
 
-(여기부터 작성)
-#### 함수 재정의와 오버라이딩 사례 비교
-![fror](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/fror.PNG)
+![intT](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/intT.PNG)
 
+#### 제네릭 함수로부터 구체화된 함수 생성 사례
 
-#### 함수 재정의와 오버라이딩
-* 가상 함수를 재정의하는 경우 : 오버라이딩
-  * 동적 바인딩 발생
-* 가상 함수를 재정의하지 않는 경우 : 함수 재정의
-  * 컴파일 시간에 결정된 함수 단순 호출(정적 바인딩 발생)
-* Java는 무조건 동적 바인딩이 일어나는 언어
+![special](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/special.PNG)
 
-![orvf](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/orvf.PNG)            
+* 예제 1. 제네릭 myswap() 함수 생성 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch13_Template/GenericMyswap.cpp)
 
-* 예제 2. 오버라이딩과 가상 함수 호출 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/OverridingVirtualFunction.cpp)
+#### 구체화 오류
+* 제네릭 타입에 구체적인 타입 지정 시 주의
 
+![errorspecial](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/errorspecial.PNG)
 
-#### 오바리이딩의 목적
-* 파생 클래스에서 구현할 함수 인터페이스 제공
-  * 파생 클래스의 다형성
-![draw](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/draw.PNG)            
+#### 템플릿의 장단점
+* 장점
+  * 함수 코드의 재사용
+    * 높은 소프트웨어의 생산성과 유용성
+* 단점
+  * 포팅에 취약
+    * 컴파일러에 따라 지원하지 않을 가능성 존재
+  * 컴파일 오류 메시지 빈약
+  * 디버깅에 많은 어려움
+ 
 
-* 다형성의 실현
-  * draw() 가상 함수를 가진 기본 클래스 Shape
-  * 오버라이딩을 통해 Circle, Rect, Line 클래스에서 자신만의 draw() 구현
+## 3절. 제네릭 프로그래밍
+#### 제네릭 프로그래밍
+* Generic Programming
+  * 일반화 프로그래밍
+  * 제네릭 함수나 제네릭 클래스를 활용하는 프로그래밍 기법
+  * C++에서 STL(Standard Template Library) 제공 및 활용
+* 보편화 추세
+  * Java, C# 등 많은 언어에서 활용
 
-## 3절. 동적 바인딩
-#### 동적 바인딩
-* 파생 클래스에 대해
-* 기본 클래스에 대한 포인터로 가상 함수를 호출하는 경우
-* 객체 내에 오버라이딩한 파생 클래스의 함수를 찾아 실행
-  * 실행 중에 이루어짐
-    * 실행시간 바인딩, 런타임 바인딩, 늦은 바인디
+(여기서부터 작성)
 
-![db](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/db.PNG)
+* 예제 2. 큰 값 리턴하는 bigger() 함수 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch13_Template/GenericMyswap.cpp)
 
-#### 오버라이딩된 함수를 호출하는 동적 바인딩
+* 예제 3. 배열의 함을 리턴하는 add() 함수 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch13_Template/GenericMyswap.cpp)
+
+* 예제 4. 배열을 복사하는 mcopy() 함수 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch13_Template/GenericMyswap.cpp)
+
+#### 배열을 출력하는 print() 템플릿 함수의 문제점
 
 ![ordb](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/ordb.PNG)
 
 ![ordb2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/ordb2.PNG)
 
+* 예제 5. 템플릿 함수보다 중복 함수가 우선인 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch13_Template/GenericMyswap.cpp)
 
 #### 오버라이딩의 특징
 * 오버라이딩의 성공 조건
