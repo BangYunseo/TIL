@@ -20,24 +20,26 @@
 
 ## 1절. 표준 템플릿 라이브러리(STL)
 #### C++ 표준 템플릿 라이브러리, STL
+* STL(Standard Template Library)
+  * 표준 템플릿 라이브러리
+    * C++ 표준 라이브러리 중 하나
+  * 많은 제네릭 클래스와 제네릭 함수 포함
+    * 개발자는 이들을 이용하여 쉽게 응용 프로그램 작성
+* STL의 구성
+  * 컨테이너 : 템플릿 클래스
+    * 데이터를 담아두는 자료 구조를 표현한 클래스
+    * 리스트, 큐, 스택, 맵, 셋, 벡터
+  * iterator : 컨테이너 원소에 대한 포인터
+    * 컨테이너의 원소들을 순회하면서 접근하기 위해 만들어진 컨테이너 원소에 대한 포인터
+  * 알고리즘 : 템플릿 함수
+    * 컨테이너 원소에 대한 복사, 검색, 삭제, 정렬 등의 기능을 구현한 템플릿 함수
+    * 컨테이너의 멤버 함수 아님
 
-![vf](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/vf.PNG)            
-
-* 예제 1. 파생 클래스에서 함수를 재정의하는 사례 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/FunctionRedefine.cpp)
-
-* 가상 함수(virtual function)
-  * virtual 키워드로 선언된 멤버 함수
-  * virtual 키워드의 의미
-    * 동적 바인딩 지시어
-    * 컴파일러에게 함수에 대한 호출 바인딩을 실행 시간까지 미루도록 지시
-```CPP
-class Base{
-public:
- virtual void f();
- // f()는 가상 함수
-};
-``` 
+(여기서부터 작성)
+![overriding](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/overriding.PNG)
+![overriding](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/overriding.PNG)
+![overriding](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/overriding.PNG)
+ 
 
 ## 2절. 오버라이딩
 #### 오버라이딩
