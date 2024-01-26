@@ -1,4 +1,4 @@
-#  Chapter 13. 표준 템플릿 라이브러리(STL)      
+#  Chapter 14. 표준 템플릿 라이브러리(STL)      
 > '명품 C++Programming - 황기태' 10장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch14_StandardTemplateLibrary)
