@@ -35,51 +35,49 @@
     * 컨테이너 원소에 대한 복사, 검색, 삭제, 정렬 등의 기능을 구현한 템플릿 함수
     * 컨테이너의 멤버 함수 아님
 
-(여기서부터 작성)
-![overriding](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/overriding.PNG)
-![overriding](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/overriding.PNG)
-![overriding](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/overriding.PNG)
+![STLcontainer](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLcontainer.PNG)
+![STLiterator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLiterator.PNG)
+![STLalgorithm](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLalgorithm.PNG)
  
-
-## 2절. 오버라이딩
-#### 오버라이딩
-
-![overriding](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/overriding.PNG)
-
-* 함수 오버라이딩(function overriding)
-  * 파생 클래스에서 기본 클래스의 가상 함수와 동일한 이름의 함수 선언
-    * 기본 클래스 가상 함수의 존재감 상실
-    * 파생 클래스에서 오버라이딩한 함수가 호출되도록 동적 바인딩
-    * 함수 재정의
-    * 다형성의 한 종류
-
-#### 함수 재정의와 오버라이딩 사례 비교
-![fror](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/fror.PNG)
+#### STL과 관련된 헤더 파일과 이름 공간
+* 헤더 파일
+  * 컨테이너 클래스를 사용하기 위한 헤더 파일
+    * 해당 클래스가 선언된 헤더 파일 includee
+      * vector 클래스를 사용하려면 #include <vector>
+      * list 클래스를 사용하려면 #include <list>
+  * 알고리즘 함수를 사용하기 위한 헤더 파일
+    * 알고리즘 함수에 상관 없이 #include <algorithm>
+* 이름 공간
+  * STL이 선언된 이름 공간은 std  
 
 
-#### 함수 재정의와 오버라이딩
-* 가상 함수를 재정의하는 경우 : 오버라이딩
-  * 동적 바인딩 발생
-* 가상 함수를 재정의하지 않는 경우 : 함수 재정의
-  * 컴파일 시간에 결정된 함수 단순 호출(정적 바인딩 발생)
-* Java는 무조건 동적 바인딩이 일어나는 언어
+## 2절. Vector
+#### Vector 컨테이너
+* 가변 길이 배열을 구현한 제네릭 클래스
+  * 개발자가 벡터의 길이에 대한 고민할 필요 없음
+* 원소의 저장, 삭제, 검색 등 다양한 멤버 함수 지원
+* 벡터에 저장된 원소는 인덱스로 접근 가능
+  * 인덱스는 0부터 시작
 
-![orvf](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/orvf.PNG)            
+![container](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/container.PNG)
 
-* 예제 2. 오버라이딩과 가상 함수 호출 예제     
+#### vector 클래스의 주요 멤버와 연산자
+![vectormem](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/vectormem.PNG)
+
+
+#### vector 다루기 사례
+
+![vector](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/vector.PNG)
+
+(여기부터 작성)
+* 예제 1. vector 컨테이너 활용 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/OverridingVirtualFunction.cpp)
+
+* 예제 2. 문자열을 저장하는 벡터 생성 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/OverridingVirtualFunction.cpp)
 
 
-#### 오바리이딩의 목적
-* 파생 클래스에서 구현할 함수 인터페이스 제공
-  * 파생 클래스의 다형성
-![draw](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/draw.PNG)            
-
-* 다형성의 실현
-  * draw() 가상 함수를 가진 기본 클래스 Shape
-  * 오버라이딩을 통해 Circle, Rect, Line 클래스에서 자신만의 draw() 구현
-
-## 3절. 동적 바인딩
+## 3절. Iterator
 #### 동적 바인딩
 * 파생 클래스에 대해
 * 기본 클래스에 대한 포인터로 가상 함수를 호출하는 경우
