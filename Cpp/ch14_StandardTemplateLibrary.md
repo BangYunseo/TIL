@@ -69,25 +69,28 @@
 
 ![vector](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/vector.PNG)
 
-(여기부터 작성)
 * 예제 1. vector 컨테이너 활용 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/OverridingVirtualFunction.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/VectorContainer.cpp)
 
 * 예제 2. 문자열을 저장하는 벡터 생성 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/OverridingVirtualFunction.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/SavingString.cpp)
 
 
 ## 3절. Iterator
-#### 동적 바인딩
-* 파생 클래스에 대해
-* 기본 클래스에 대한 포인터로 가상 함수를 호출하는 경우
-* 객체 내에 오버라이딩한 파생 클래스의 함수를 찾아 실행
-  * 실행 중에 이루어짐
-    * 실행시간 바인딩, 런타임 바인딩, 늦은 바인디
+#### iterator 사용
+* iterator란 ?
+  * 반복자라고도 부름
+  * 컨테이너의 원소를 가리키는 포인터
+* iterator 변수 선언
+  * 구체적인 컨테이너를 지정하여 반복자 변수 생성
 
-![db](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/db.PNG)
+![iterator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/iterator.PNG)
 
-#### 오버라이딩된 함수를 호출하는 동적 바인딩
+* 예제 3. iterator를 사용하여 vector의 모든 원소에 2를 곱하는 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/IteratorToVector.cpp)
+
+## 4절. Map
+#### map 컨테이너
 
 ![ordb](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/ordb.PNG)
 
