@@ -91,12 +91,34 @@
 
 ## 4절. Map
 #### map 컨테이너
+* 특징
+  * ('키', '값')의 쌍을 원소로 저장하는 제네릭 컨테이너
+    * 동일한 '키'를 가진 원소가 중복 저장되면 오류 발생
+  * '키'로 '값' 검색
+  * 많은 응용에 필요
+  * #include <map> 필요
+* 맵 컨테이너 생성 예시
+  * 영한 사전을 저장하기 위한 맵 컨테이너 생성 및 활용
+    * 영어 단어와 한글 단어를 쌍으로 저장하고 영어 단어로 검색
 
-![ordb](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/ordb.PNG)
+```CPP
+// 맵 생성
+Map<string, string> dic;               // 키는 영어 단어, 값은 한글 단어
 
-![ordb2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/ordb2.PNG)
+// 원소 저장
+dic.insert(make_pair("love", "사랑"));  // ("love", "사랑") 저장
+dec["love"] = "사랑";                   // ("love", "사랑") 저장
 
+// 원소 검색
+string kor = dic["love"];               // kor은 "사랑"
+string kor = dic.at("love");            // kor은 "사랑"
+```
 
+* 예제 4. map으로 만든 영한 사전 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/MapDictionary.cpp)
+
+(여기서부터 작성)
+## 5절. STL 알고리즘
 #### 오버라이딩의 특징
 * 오버라이딩의 성공 조건
   * 가상 함수 이름, 매개 변수 타입과 개수, 리턴 타입이 모두 일치
