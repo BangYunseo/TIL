@@ -29,14 +29,18 @@
   * 컨테이너 : 템플릿 클래스
     * 데이터를 담아두는 자료 구조를 표현한 클래스
     * 리스트, 큐, 스택, 맵, 셋, 벡터
+
+![STLcontainer](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLcontainer.PNG)
+
   * iterator : 컨테이너 원소에 대한 포인터
     * 컨테이너의 원소들을 순회하면서 접근하기 위해 만들어진 컨테이너 원소에 대한 포인터
+
+![STLiterator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLiterator.PNG)  
+  
   * 알고리즘 : 템플릿 함수
     * 컨테이너 원소에 대한 복사, 검색, 삭제, 정렬 등의 기능을 구현한 템플릿 함수
     * 컨테이너의 멤버 함수 아님
 
-![STLcontainer](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLcontainer.PNG)
-![STLiterator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLiterator.PNG)
 ![STLalgorithm](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLalgorithm.PNG)
  
 #### STL과 관련된 헤더 파일과 이름 공간
