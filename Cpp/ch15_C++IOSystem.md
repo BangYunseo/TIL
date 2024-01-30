@@ -3,59 +3,62 @@
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch15_C++IOSystem)
 > 
-> 1절. 표준 템플릿 라이브러리(STL)
+> 1절. 스트림
 > 
-> 2절. Vector
+> 2절. 스트림 객체
 >
-> 3절. Iterator
->
-> 4절. Map
->
-> 5절. STL 알고리즘
->
-> 6절. Auto
->
-> 7절. 람다
+> 3절. 
 
 
-## 1절. 표준 템플릿 라이브러리(STL)
-#### C++ 표준 템플릿 라이브러리, STL
-* STL(Standard Template Library)
-  * 표준 템플릿 라이브러리
-    * C++ 표준 라이브러리 중 하나
-  * 많은 제네릭 클래스와 제네릭 함수 포함
-    * 개발자는 이들을 이용하여 쉽게 응용 프로그램 작성
-* STL의 구성
-  * 컨테이너 : 템플릿 클래스
-    * 데이터를 담아두는 자료 구조를 표현한 클래스
-    * 리스트, 큐, 스택, 맵, 셋, 벡터
+## 1절. 스트림
+#### 스트림(stream)
+* 데이터의 흐름
+* 데이터를 전송하는 소프트웨어 모듈
+  * 흐르는 시내와 유사한 개념
+* 스트림의 양 끝에는 프로그램과 장치 연결
+  * 보낸 순서대로 데이터 전달
+  * 입출력 기본 단위 : 바이트(byte)
+* 스트림 종류
+  * 입력 스트림
+    * 입력 장치, 네트워크, 파일로부터 데이터를 프로그램으로 전달하는 스트림
+  * 출력 스트림
+    * 프로그램에서 출력되는 데이터를 출력 장치, 네트워크, 파일로 전달하는 스트림
 
-![STLcontainer](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLcontainer.PNG)
+#### C++ 입출력 스트림
 
-  * iterator : 컨테이너 원소에 대한 포인터
-    * 컨테이너의 원소들을 순회하면서 접근하기 위해 만들어진 컨테이너 원소에 대한 포인터
+![IOstream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/IOstream.PNG)
 
-![STLiterator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLiterator.PNG)  
-  
-  * 알고리즘 : 템플릿 함수
-    * 컨테이너 원소에 대한 복사, 검색, 삭제, 정렬 등의 기능을 구현한 템플릿 함수
-    * 컨테이너의 멤버 함수 아님
+#### C++ 입출력 스트림 버퍼
+* C++ 입출력 스트림은 버퍼를 가짐
+* 키 입력 스트림의 버퍼
+  * 목적
+    * 입력장치로부터 입력된 데이터를 프로그램으로 전달하기 전에 일시 저장
+    * 키 입력 도중 수정 가능
+      * <Backspace> 키가 입력되면 이전 입력된 키를 버퍼에서 지움
+  * 프로그램은 사용자의 키 입력이 끝난 시점에서 읽음
+    * <Enter> 키 : 키 입력의 끝
+    * <Enter> 키가 입력된 시점부터 키 입력 버퍼에서 프로그램이 읽기 시작
+* 스크린 출력 스트림 버퍼
+  * 목적
+    * 프로그램에서 출력된 데이터를 출력 장치로 보내기 전에 일시 저장
+    * 출력 장치를 반복적으로 사용하는 비효율성 개선
+  * 버퍼가 꽉 차거나 강제 출력 명령 시에 출력 장치에 출력
 
-![STLalgorithm](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLalgorithm.PNG)
- 
-#### STL과 관련된 헤더 파일과 이름 공간
-* 헤더 파일
-  * 컨테이너 클래스를 사용하기 위한 헤더 파일
-    * 해당 클래스가 선언된 헤더 파일 includee
-      * vector 클래스를 사용하려면 #include <vector>
-      * list 클래스를 사용하려면 #include <list>
-  * 알고리즘 함수를 사용하기 위한 헤더 파일
-    * 알고리즘 함수에 상관 없이 #include <algorithm>
-* 이름 공간
-  * STL이 선언된 이름 공간은 std  
+#### 키 입력 스트림과 버퍼의 역할
 
+![Istream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/Istream.PNG)
 
-## 2절. Vector
+#### 스크린 출력 스트림과 버퍼의 역할
+
+![Ostream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/Ostream.PNG)
+
+#### C++ 표준 : 스트림 입출력만 지원
+* 입출력 방식 2가지
+  * 스트림 입출력 방식(stream I/O)
+  * 저 수준 입출력 방식(raw lever console I/O)
+* C++ 표준은 스트림 방식만 지원
+
+## 2절. 스트림 객체
 #### Vector 컨테이너
 * 가변 길이 배열을 구현한 제네릭 클래스
   * 개발자가 벡터의 길이에 대한 고민할 필요 없음
