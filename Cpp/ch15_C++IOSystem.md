@@ -55,24 +55,79 @@
 #### C++ 표준 : 스트림 입출력만 지원
 * 입출력 방식 2가지
   * 스트림 입출력 방식(stream I/O)
+    * 슽트림 버퍼를 이용한 입출력 방식
+    * 입력된 키는 버퍼에 저장
+      * <Enter> 키가 입력되면 프로그램이 버퍼에서 읽어가는 방식
+    * 출력되는 데이터는 일차적으로 스트림 버퍼에 저장
+      * 특정한 경우에만 버퍼가 출력 장치에 출력
+        * 버퍼가 꽉 찼을 경우
+        * '\n'을 만난 경우
+        * 강제 출력 명령의 경우
   * 저 수준 입출력 방식(raw lever console I/O)
+    * 키가 입력되는 즉시 프로그램에게 키 값 전달
+      * <Backspace> 키 그 자체도 프로그램에 바로 전달
+      * 게임 등 키 입력이 즉각적으로 필요한 곳에 사용
+    * 프로그램이 출력하는 즉시 출력 장치에 출력
+    * 컴파일러마다 다른 라이브러리나 API 지원
+      * C++ 프로그램의 호환성 낮음
 * C++ 표준은 스트림 방식만 지원
+  * 스트림 입출력은 모든 표준 C++ 컴파일러에 의해 컴파일
+  * 높은 호환성
+ 
+#### 2003년 이전의 C++ 입출력 라이브러리 약점
+* 대표적인 구 표준(C++03) 입출력 라이브러리 클래스
+  * ios, istream, ostream, iostream, ifstream, ofstream, fstream
+* 문자를 한 바이트의 char로 처리
+  * cin >> 로 문자를 읽을 때, 한글 문자 읽기 불가능
+    * 영어나 기호 : 1 바이트
+    * 한글 문자 : 2 바이트
+```CPP
+char ch;
+cin >> ch;
+// 키보드로 문자 입력
+// 한글 문자는 읽을 수 없음
+```
+* 현재도 cin은 한글을 문자 단위로 읽을 수 없음
+
+#### 새 표준 C++ 입출력 라이브러리
+* 다양한 크기의 다국어 문자를 수용하기 위해 입출력 라이브러리를 템플릿으로 작성
+
+![IOlib](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/IOlib.PNG)
+
+#### typedef로 선언된 ios, istream, ostream, iostream 클래스
+
+![typedef](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/typedef.PNG)
+
+#### 입출력 클래스 소개
+
+![IOclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/IOclass.PNG)
 
 ## 2절. 스트림 객체
-#### Vector 컨테이너
-* 가변 길이 배열을 구현한 제네릭 클래스
-  * 개발자가 벡터의 길이에 대한 고민할 필요 없음
-* 원소의 저장, 삭제, 검색 등 다양한 멤버 함수 지원
-* 벡터에 저장된 원소는 인덱스로 접근 가능
-  * 인덱스는 0부터 시작
+#### 표준 입출력 스트림 객체
+* C++ 프로그램이 실행될 때 자동으로 생겨나는 스트림
+  * cin
+    * istream 타입의 스트림 객체
+    * 키보드 장치와 연결
+  * cout
+    * ostream 타입의 스트림 객체
+    * 스크린 장치와 연결
+  * cerr
+    * ostream 타입의 스트림 객체
+    * 스크린 장치와 연결
+    * 오류 메시지를 출력할 목적
+    * 스트림 내부 버퍼 거치지 않고 출력
+  * clog
+    * ostream 타입의 스트림 객체
+    * 스크린 장치와 연결
+    * 오류 메시지를 출력할 목적
+    * 스트림 내부 버퍼 거치지 않고 출력
 
-![container](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/container.PNG)
+#### <iostream>에 선언된 스트림 객체
 
-#### vector 클래스의 주요 멤버와 연산자
-![vectormem](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/vectormem.PNG)
+![iostream2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/iostream2.PNG)
 
-
-#### vector 다루기 사례
+(여기서부터 작성)
+#### ostream 멤버 함수
 
 ![vector](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/vector.PNG)
 
