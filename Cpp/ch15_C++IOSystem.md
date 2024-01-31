@@ -7,7 +7,11 @@
 > 
 > 2절. 스트림 객체
 >
-> 3절. 
+> 3절. 포맷
+>
+> 4절. 조작자
+>
+> 5절. 연산자
 
 
 ## 1절. 스트림
@@ -126,19 +130,66 @@ cin >> ch;
 
 ![iostream2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/iostream2.PNG)
 
-(여기서부터 작성)
 #### ostream 멤버 함수
+```CPP
+ostream& put(char ch);
+// ch의 문자를 스트림에 출력
 
-![vector](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/vector.PNG)
+ostream& write(char *str, int n)
+// str 배열에 있는 n개의 문자를 스트림에 출력
 
-* 예제 1. vector 컨테이너 활용 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/VectorContainer.cpp)
+ostream& flush()
+// 현재 스트림 버퍼에 있는 내용 강제 출력
+```
 
+* 예제 1. ostream 멤버 함수를 이용한 문자 출력 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/OstreamStringPrint.cpp)
+
+#### istream 멤버 함수 : 문자 입력, get() 함수
+```CPP
+int get()
+// 입력 스트림에서 문자를 읽어 리턴
+// 오류나 EOF를 만나면 -1(EOF) 리턴
+
+istream& get(char& ch)
+// 입력 스트림에서 문자를 읽어 ch에 저장
+// 현재 입력 스트림 객체(*this)의 참조 리턴
+// 오류나 EOF를 만나면 스트림 내부의 오류 플래그(failbit) 세팅 - (16장 참고)
+```
+* int get()을 이용하여 한 라인의 문자들을 읽는 코드
+```CPP
+int ch;
+while((ch = cin/get()) != EOF{
+// EOF = -1 : 입력 스트림의 끝인지 비교
+ cout.put(ch);
+ // 읽은 문자 출력
+ if(ch == '\n') break;
+ // <Enter> 키가 입력되면 읽기 중단
+```
+* istream& get(char& ch)을 이용하여 한 라인의 문자들을 읽는 코드
+```CPP
+char ch;
+while(true){
+ cin.get(ch);
+ // 입력된 키를 ch에 저장하여 리턴
+ if(cin.eof()) break;
+ // EOF를 만나면 읽기 종료 : 입력 스트림의 끝인지 비교
+ cout.put(ch);
+ // ch의 문자 출력
+ if(ch == '\n') break;
+ // <Enter> 키가 입력되면 읽기 중단
+}
+```
+#### ch = cin.get()의 실행 사례
+
+![cinget](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/cinget.PNG)
+
+(여기서부터 작성)
 * 예제 2. 문자열을 저장하는 벡터 생성 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/SavingString.cpp)
 
 
-## 3절. Iterator
+## 3절. 포맷
 #### iterator 사용
 * iterator란 ?
   * 반복자라고도 부름
