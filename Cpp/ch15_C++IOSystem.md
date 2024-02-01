@@ -184,25 +184,37 @@ while(true){
 
 ![cinget](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/cinget.PNG)
 
-(여기서부터 작성)
-* 예제 2. 문자열을 저장하는 벡터 생성 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/SavingString.cpp)
+* 예제 2. get()과 get(char&)을 이용한 한 줄의 문자를 읽는 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/FunctionGet.cpp)
 
+#### 문자열 입력
+```CPP
+istream& get(char *s, int n);
+// 입력 스트림으로부터 n-1개의 문자를 읽어 배열 s에 저장
+// 마지막에 '\0' 문자 삽입
+// 입력 도중 '\n'을 만나면 '\0'을 삽입하고 리턴
+```
+* 사용 예시
+```CPP
+char str[10];
+cin.get(str, 10);
+// 최대 9개의 문자를 읽고 끝에 '\0'을 붙여 str 배열에 저장
 
-## 3절. 포맷
-#### iterator 사용
-* iterator란 ?
-  * 반복자라고도 부름
-  * 컨테이너의 원소를 가리키는 포인터
-* iterator 변수 선언
-  * 구체적인 컨테이너를 지정하여 반복자 변수 생성
+cout << str;
+// str을 화면에 출력
+```
 
-![iterator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/iterator.PNG)
+* 입력 도중 <Enter> 키('\n')을 만날 때
+  * 읽기를 중단하고 리턴
+  * <Enter> 키('\n')를 스트림 버퍼에 남김
+    * 다시 get()으로 문자열 읽기를 시도하면 입력 스트림에 남은 '\n'키를 읽게 되어 무한 루프에 빠짐
+    * cin.get()이나 cin.ignore(1);를 통해 문자 1개('\n')를 스트림에서 읽어야 함
 
-* 예제 3. iterator를 사용하여 vector의 모든 원소에 2를 곱하는 예제     
+(여기부터 다시 작성)
+* 예제 3. get(char*, int)을 이용한 문자열 입력 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/IteratorToVector.cpp)
 
-## 4절. Map
+## 3절. 포맷
 #### map 컨테이너
 * 특징
   * ('키', '값')의 쌍을 원소로 저장하는 제네릭 컨테이너
