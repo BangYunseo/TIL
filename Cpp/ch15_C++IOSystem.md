@@ -210,12 +210,55 @@ cout << str;
     * 다시 get()으로 문자열 읽기를 시도하면 입력 스트림에 남은 '\n'키를 읽게 되어 무한 루프에 빠짐
     * cin.get()이나 cin.ignore(1);를 통해 문자 1개('\n')를 스트림에서 읽어야 함
 
-(여기부터 다시 작성)
 * 예제 3. get(char*, int)을 이용한 문자열 입력 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/IteratorToVector.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/FunctionGet*.cpp)
+
+#### 한 줄 읽기
+```CPP
+istream& get(char *s, int n, char delim = '\n');
+// 입력 스트림으로부터 최대 n-1개의 문자를 읽어 배열 s에 저장
+// 마지막에 '\0' 문자 삽입
+// 입력 도중 delim에 지정된 구분 문자를 만나면 지금까지 읽은 문자를 배열 s에 저장하고 리턴
+
+istream& getline(char *s, int n, char delim = '\n');
+// get()과 동일하지만 delim에 저장된 구분 문자를 스트림에서 제거
+```
+
+![readingline](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/readingline.PNG)
+
+* 예제 4. getline()으로 한 줄 단위 문장 읽는 예제     
+[SourceCodeChecking]https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/ReadingGetLine.cpp)
+
+#### 입력 문자 건너뛰기와 문자 개수 알아내기
+```CPP
+istream& ignore(int n = 1, int delime = EOF);
+// 입력 스트림에서 n개 문자 제거
+// 도중 delim 문자를 만나면 delim 문자를 제거하고 리턴
+
+int gcount();
+// 최근 입력 스트림에서 읽은 바이트 수(문자의 개수) 리턴
+// <Enter> 키도 개수에 포함
+```
+* 입력 스트림에서 문자 건너뛰기
+```CPP
+cin.ignore(10);
+// 입력 스트림에 입력된 문자 중 10개 제거
+
+cin.ignore(10, ';');
+// 입력 스트림에서 10개의 문자 제거
+// 제거 도중 ';' 을 만나면 종료
+```
+
+* 최근에 읽은 문자 개수 리턴
+```CPP
+char line[80];
+cin.getline(line, 80);
+int n = cin.gcount();
+// 최근 실행한 getline() 함수에서 읽은 문자의 개수 리턴
+```
 
 ## 3절. 포맷
-#### map 컨테이너
+#### 포맷 입출력
 * 특징
   * ('키', '값')의 쌍을 원소로 저장하는 제네릭 컨테이너
     * 동일한 '키'를 가진 원소가 중복 저장되면 오류 발생
