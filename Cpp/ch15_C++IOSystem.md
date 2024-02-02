@@ -227,7 +227,7 @@ istream& getline(char *s, int n, char delim = '\n');
 ![readingline](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/readingline.PNG)
 
 * 예제 4. getline()으로 한 줄 단위 문장 읽는 예제     
-[SourceCodeChecking]https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/ReadingGetLine.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/ReadingGetLine.cpp)
 
 #### 입력 문자 건너뛰기와 문자 개수 알아내기
 ```CPP
@@ -259,33 +259,68 @@ int n = cin.gcount();
 
 ## 3절. 포맷
 #### 포맷 입출력
-* 특징
-  * ('키', '값')의 쌍을 원소로 저장하는 제네릭 컨테이너
-    * 동일한 '키'를 가진 원소가 중복 저장되면 오류 발생
-  * '키'로 '값' 검색
-  * 많은 응용에 필요
-  * #include <map> 필요
-* 맵 컨테이너 생성 예시
-  * 영한 사전을 저장하기 위한 맵 컨테이너 생성 및 활용
-    * 영어 단어와 한글 단어를 쌍으로 저장하고 영어 단어로 검색
+* 입출력 시 포맷 지정 가능
+  * C언어의 printf()와 유사
+* 포맷 입출력 방법 3가지
+  * 포맷 플래그
+  * 포맷 함수
+  * 조작자
 
+#### 포맷 플래그
+* 입출력 스트림에서 입출력 형식을 지정하기 위한 플래그
+
+![ios](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/ios.PNG)
+
+#### ios 클래스에 정의된 포맷 플래그
+
+![iosflag](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/iosflag.PNG)
+
+#### 포맷 플래그를 세팅하는 멤버 함수
 ```CPP
-// 맵 생성
-Map<string, string> dic;               // 키는 영어 단어, 값은 한글 단어
+long setf(long flags);
+// flags를 스트림의 포맷 플래그로 설정하고 이전 플래그 리턴
 
-// 원소 저장
-dic.insert(make_pair("love", "사랑"));  // ("love", "사랑") 저장
-dec["love"] = "사랑";                   // ("love", "사랑") 저장
-
-// 원소 검색
-string kor = dic["love"];               // kor은 "사랑"
-string kor = dic.at("love");            // kor은 "사랑"
+long unsetf(long flags);
+// flags에 설정된 비트 값에 따라 스트림의 포맷 플래그를 해체하고 이전 플래그 리턴
 ```
 
-* 예제 4. map으로 만든 영한 사전 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/MapDictionary.cpp)
+* 10진수를 16진수로 출력 예시
+```CPP
+cout.unsetf(iost::dec);
+// 10진수 해제
 
+cout.setf(ios::hex);
+// 16진수 설정
 
+cout << 30 << endl;
+// 1e 출력
+```
+
+* 사용 예시 2
+```CPP
+cout.setf(ios::dec | ios::showpoint);
+// 10진수 표현, 실수에 소숫점 이하 나머지는 0으로 출력 설정
+
+cout << 23.5 << endl;
+// 23.5000으로 출력
+```
+
+* 예제 5. setf(), unsetf() 사용한 포맷 출력 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/SetfUnsetf.cpp)
+
+#### 포맷 함수 활용
+```CPP
+int width(int minWidth);
+// 출력되는 필드의 최소 너비를 minWidth로 설정
+//- 이전에 설정된 너비 값 리턴
+
+char fill(char cFill);
+// 필드의 빈칸을 cFill 문자로 채우도록 지정하고 이전 문자 값 리턴
+
+int precision(int np);
+// 출력되는 수의 유효 숫자 자리 수를 np개로 설정
+// 정수 부분과 소수점 이하의 수의 자리를 모두 포함하고 소수점(.) 제외
+```
 ## 5절. STL 알고리즘
 #### STL 알고리즘 사용
 * 알고리즘 함수
