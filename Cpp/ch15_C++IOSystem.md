@@ -340,44 +340,83 @@ cout << 12 << endl;
 //      hello
 //    12
 ```
-(여기부터 작성)
 * 너비 설정 예제 2
 ```CPP
 cout << '%';
 cout.width(10);
-// 
+// 다음에 출력되는 "Korea/"만 10칸으로 지정
+cout << "Korea/" << "Seoul/" << "City" << endl;
+
+// 출력 예시
+// %   Korea/Seoul/City
 ```
 * 빈칸 채우기 예제
-* 유효 숫자 자리 수 예제
-## 5절. STL 알고리즘
-#### STL 알고리즘 사용
-* 알고리즘 함수
-  * 템플릿 함수
-  * 전역 함수
-    * STL 컨테이너 클래스의 멤버 함수가 아님
-  * iterator와 함께 작동
-* sort() 함수 사례
-  * 두 개의 매개 변수
-    * 첫 번째 매개 변수 : sorting을 시작한 원소의 주소
-    * 두 번째 매개 변수 : sorting 범위의 마지막 원소 다음 주소
 ```CPP
-vector<int> v;
-...
-sort(v.begin(), v.begin() + 3);
-// v.begin()에서 v.begin() + 2까지 : 처음 3개 원소 정렬
+cout.fill('^');
+cout.width(10);
+cout << "Hello" << endl;
 
-sort(v.begin() + 2, v.begin() + 5);
-// v.begin() + 2에서 v.begin() + 4까지 : 벡터의 세 번째 원소에서 3개 원소 정렬
+// 출력 예시
+// ^^^^^Hello
+```
+* 유효 숫자 자리 수 예제
+```CPP
+cout.precision(5);
+cout << 11./3.;
 
-sort(v.begin(), v.end());
-// 벡터 전체 정렬
+// 출력 예시
+// 3.6667
 ```
 
-* 예제 5. sort() 함수를 이용한 vector Sorting 예제     
+* 예제 5. width(), fill(), precision() 사용한 포맷 출력 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/WidthFillPrecision.cpp)
+
+## 4절. 조작자
+#### 조작자
+* manipulator
+* 스트림 조작자(stream manipulator)
+* 조작자는 함수
+  * C++ 표준 라이브러리에 구현된 조작자 : 입출력 포맷 지정 목적
+  * 개발자만의 조작자 작성 가능 : 다양한 목적
+  * 매개 변수 없는 조작자와 매개 변수를 가진 조작자로 구분
+* 조작자는 항상 << 나 >> 연산자와 함께 사용
+
+#### 조작자의 종류
+* 매개 변수 없는 조작자
+```CPP
+cout << hex << showbase << 30 << endl;
+cout << dex << showpos << 100 << endl;
+
+// 출력 예시
+// 0x1e
+// +100
+```
+* 매개 변수 있는 조작자
+  * #include <iomanip> 필요
+```CPP
+cout << setw(10) << setfill('^') << "Hello" << endl;
+
+// 출력 예시
+// ^^^^^Hello
+```
+
+#### 매개 변수 없는 조작자
+
+![nohavemani](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/nohavemani.PNG)
+
+#### 매개 변수 있는 조작자
+
+![havemani](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/havemani.PNG)
+
+(여기부터 작성)
+* 예제 7. 매개 변수 없는 조작자 사용 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/VectorSorting.cpp)
 
-## 6절. Auto
-#### auto를 이용한 쉬운 변수 선언
+* 예제 8. 매개 변수 있는 조작자 사용 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/VectorSorting.cpp)
+
+## 5절. 연산자
+#### 삽입 연산자(<<)
 * auto
   * 기능
     * C++11부터 auto 선언 의미 수정 : 컴파일러에게 변수선언문에서 추론하여 타입을 자동 선언하도록 지시
