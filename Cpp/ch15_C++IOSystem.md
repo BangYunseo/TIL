@@ -126,7 +126,7 @@ cin >> ch;
     * 오류 메시지를 출력할 목적
     * 스트림 내부 버퍼 거치지 않고 출력
 
-#### <iostream>에 선언된 스트림 객체
+#### iostream에 선언된 스트림 객체
 
 ![iostream2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/iostream2.PNG)
 
