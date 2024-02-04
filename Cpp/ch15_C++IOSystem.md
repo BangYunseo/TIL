@@ -269,11 +269,11 @@ int n = cin.gcount();
 #### 포맷 플래그
 * 입출력 스트림에서 입출력 형식을 지정하기 위한 플래그
 
-![ios](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/ios.PNG)
+![ios](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/ios.png)
 
 #### ios 클래스에 정의된 포맷 플래그
 
-![iosflag](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/iosflag.PNG)
+![iosflag](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/iosflag.png)
 
 #### 포맷 플래그를 세팅하는 멤버 함수
 ```CPP
