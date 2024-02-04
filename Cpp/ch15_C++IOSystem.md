@@ -408,96 +408,161 @@ cout << setw(10) << setfill('^') << "Hello" << endl;
 
 ![havemani](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/havemani.PNG)
 
-(여기부터 작성)
 * 예제 7. 매개 변수 없는 조작자 사용 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/VectorSorting.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/NoParameterMani.cpp)
 
 * 예제 8. 매개 변수 있는 조작자 사용 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/VectorSorting.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/ParameterMani.cpp)
+
+#### 조작자 실행 과정
+
+![usingmani](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/usingmani.PNG)
+
+#### 사용자 정의 조작자 함수 원형
+* 매개 변수 없는 조작자
+```CPP
+istream& manipulatorFuncion(istream& ins);
+// 입력 스트림에 사용되는 조작자 원형
+
+ostream& maniupularFunction(ostream& outs);
+// 출력 스트림에 사용되는 조작자 원형
+```
+
+* 예제 9. 사용자 정의 조작자 예제 1    
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/UserMani1.cpp)
+
+* 예제 10. 사용자 정의 조작자 예제 2    
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/UserMani2.cpp)
 
 ## 5절. 연산자
 #### 삽입 연산자(<<)
-* auto
-  * 기능
-    * C++11부터 auto 선언 의미 수정 : 컴파일러에게 변수선언문에서 추론하여 타입을 자동 선언하도록 지시
-    * C++11이전 : 스택에 할당되는 지역 변수를 선언하는 키워드
-  * 장점
-    * 복잡한 변수 선언을 간소하게, 긴 타입 선언 시 오타 줄임
-* auto의 기본 사용 사례
+* insertion operator
+* 삽입자라고 불림
+  * << 연산자는 C++의 기본 연산자 : 정수 shift 연산자
+* ostream 클래스에 중복 작성
 
 ```CPP
-auto pi = 3.14;
-// 3.14는 실수이므로 pi는 double 타입으로 선언
-
-auto n = 3;
-// 3이 정수이므로 n은 int 타입으로 선언
-
-auto *p = &n;
-// 변수 p는 int* 타입으로 추론
-```
-
-```CPP
-int n = 10;
-int &ref = n;
-// ref는 int에 대한 참조 변수
-
-auto ref2 = ref;
-// ref2는 int& 변수로 자동 선언
-```
-
-#### auto의 다른 활용 사례
-* 함수의 리턴 타입으로부터 추론하여 변수 타입 선언
-```CPP
-int square(int x){ return x * x; }
+class ostream: virtual public ios{
 ...
-auto ret = square(3);
-// 변수 ret는 int 타입으로 추론
+public:
+ ostream& operator << (int n);
+ // 정수를 출력하는 << 연산자
+ ostream& operator << (char c);
+ // 문자를 출력하는 << 연산자
+ ostream& operator << (const char* s);
+ // 문자열를 출력하는 << 연산자
+...
+};
 ```
-* STL 템플릿에 활용
-  * vector<int>iterator 타입의 변수 it를 auto를 이용하여 간단히 선언
 
-![auto](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/auto.PNG)
+#### 삽입 연산자의 실행 과정
 
-* 예제 6. auto 변수 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/AutoVariable.cpp)
+![usingio](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/usingio.PNG)
 
-## 7절. 람다
-#### 람다
-* 람다 대수와 람다식
-  * 람다 대수에서 람다식은 수학 함수를 단순하게 표현하는 기법
+#### 사용자 삽입 연산자 만들기
+* 개발자가 작성한 클래스의 객체에 << 연산자 출력 예제
+```CPP
+#include <iostream>
 
-![lambda](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/lambda.PNG)
+using namespace std;
 
-* C++ 람다
-  * 익명의 함수 만드는 기능으로 C++11에서 도입
-    * 람다식, 람다 함수로도 불림
-    * C#, Java, 파이썬, 자바스크립트 등 많은 언어들이 도입
+class Point{
+ int x, y;
+public:
+ Point(int x = 0, int y = 0){ this->x = x; this->y = y; }
+ friend ostream& operator <<(ostream& stream, Point a);
+};
 
-#### 람다식 선언
-* 람다식의 구성
-  * 4부분으로 구성
-    * 캡쳐 리스트 : 람다식에서 사용하고자 하는 함수 바깥의 변수 목록
-    * 매개 변수 리스트 : 보통 함수의 매개 변수 리스트와 동일
-    * 라턴 타입
-    * 함수 바디 : 람다 식의 함수 코드
+ostream& operator <<(ostream& stream, Point a){
+ stream << "(" << a.x << ", " << a.y << ")";
+ return stream;
+}
 
-![lambda2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/lambda2.PNG)
+int main(){
+ Point p(3, 4);
+ // Point 객체 생성
+ cout << p << endl;
+ // Point 객체 화면 출력
 
+ Point q(1, 100), r(2, 200);
+ // Point 객체 생성
+ cout << q << r << endl;
+ // Point 객체 화면 출력
+}
 
-* 예제 7. 매개 변수 x, y의 합을 출력하는 람다식 생성 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/MakingLambda.cpp)
+// 출력 예시
+// (3, 4)
+// (1, 100)(2, 200)
+```
 
-* 예제 8. auto로 람다식 저장 및 호출 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/AutoLambda.cpp)
+#### cout << p;를 위한 << 연산자 만들기
 
-* 예제 9. 캡쳐 리스트와 리턴 타입을 가지는 람다식 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/PiLambda.cpp)
+![userio](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/userio.PNG)
 
-* 예제 10. 캡쳐 리스트에 참조를 활용하는 람다식 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/SumLambda.cpp)
+* 예제 11. Book 클래스 예제    
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/Book.cpp)
 
-* 예제 11. STL for-each() 함수를 이용하여 벡터의 모든 원소를 출력하는 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/STLVectorLambda.cpp)
+#### 추출 연산자(>>)
+* extraction operator
+  * >> 연산자는 C++의 기본 연산자 : 정수 shift 연산자
+* ostream 클래스에 중복 작성
+```CPP
+class istream : virtual public ios{
+...
+public:
+ istream& operator >> (int& n);
+ // 정수를 입력하는 >> 연산자
+ istream& operator >> (char& c);
+ // 문자를 입력하는 >> 연산자
+ istream& operator >> (const char* s);
+ // 문자열를 입력하는 >> 연산자
+...
+};
+```
+* 추출 연산자의 실행 과정
+  * 삽입 연산자의 실행 과정과 유사
 
-* 예제 12. STL 템플릿에 람다식 활용 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/STLLambda.cpp)
+#### 사용자 추출 연산자 만들기
+* 개발자가 작성한 클래스의 객체에 >> 연산자 입력
+```CPP
+#include <iostream> 
+
+using namespace std;
+
+class Point { // 한 점을 표현하는 클래스 
+    int x, y; // private 멤버
+public:
+    Point(int x = 0, int y = 0) { this->x = x; this->y = y; }
+    friend istream& operator >> (istream& ins, Point &a); // friend 선언 
+    friend ostream& operator << (ostream& stream, Point a); // friend 선언
+};
+
+istream& operator >> (istream& ins, Point &a){ // >> 연산자 함수
+    cout << "x 좌표 >> "; 
+    ins >> a.x;
+    cout << "y 좌표 >> "; 
+    ins >> a.y;
+    return ins;
+}
+ostream& operator << (ostream& stream, Point a){
+    stream << "(" << a.x << ", " << a.y << ")";
+    return stream; 
+}
+int main() {
+    Point p; 
+    // Point 객체 생성
+    cin >> p;  // >> 연산자 호출하여 x 좌표와 y 좌표를 
+    cout << p;  // << 연산자 호출하여 객체 p 출력
+}
+
+// 출력 예시
+// x 좌표 >> 100
+// y 좌표 >> 200 
+// (100,200)
+
+// 첫 줄부터 cin >> p, cout << p 실행
+```
+
+#### cin >> p;를 위한 >> 연산자 만들기
+
+![usereo](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/usereo.PNG)
