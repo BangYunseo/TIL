@@ -106,7 +106,7 @@ using namespace std;
 (여기부터 작성)
 
 * 예제 1. 키보드로 입력받은 텍스트 파일 저장 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/FunctionGet.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/SavingTextFile.cpp)
 
 * 예제 2. ifstream과 >> 연산자로 텍스트 파일 읽기 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/FunctionGet.cpp)
