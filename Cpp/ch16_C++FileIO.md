@@ -5,103 +5,113 @@
 > 
 > 1절. 텍스트 파일과 바이너리 파일
 > 
-> 2절. 
+> 2절. C++ 파일 입출력
+>
+> 3절. 파일 모드
+>
+> 4절.
 
 
 ## 1절. 텍스트 파일과 바이너리 파일
 #### 텍스트 파일
-(여기부터 작성)
-* 데이터의 흐름
-* 데이터를 전송하는 소프트웨어 모듈
-  * 흐르는 시내와 유사한 개념
-* 스트림의 양 끝에는 프로그램과 장치 연결
-  * 보낸 순서대로 데이터 전달
-  * 입출력 기본 단위 : 바이트(byte)
-* 스트림 종류
-  * 입력 스트림
-    * 입력 장치, 네트워크, 파일로부터 데이터를 프로그램으로 전달하는 스트림
-  * 출력 스트림
-    * 프로그램에서 출력되는 데이터를 출력 장치, 네트워크, 파일로 전달하는 스트림
+* 사람들이 사용하는 글자 혹은 문자들로만 구성되는 파일
+  * 알파벳, 한글, 숫자, % # @ < ? 등의 기호 문자
+* '\n', '\t' 등의 특수 문자도 포함
+* 각 문자마다 문자 코드(이진수) 할당
+  * 아스키 코드, 유니 코드
+* 텍스트 파일의 종류
+  * txt 파일, HTML 파일, XML 파일, C++ 소스 파일, C 소스 파일, 자바 소스 파일
+* 텍스트 파일과 <Enter> 키
+  * <Enter>키를 입력하면 텍스트 파일에 '\r', '\n'의 두 코드가 기록
+* 아스키 코드 표 샘플
 
-#### C++ 입출력 스트림
+![asciicode](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/asciicode.PNG)
 
-![IOstream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/IOstream.PNG)
+#### 텍스트 파일의 내부
 
-#### C++ 입출력 스트림 버퍼
-* C++ 입출력 스트림은 버퍼를 가짐
-* 키 입력 스트림의 버퍼
-  * 목적
-    * 입력장치로부터 입력된 데이터를 프로그램으로 전달하기 전에 일시 저장
-    * 키 입력 도중 수정 가능
-      * <Backspace> 키가 입력되면 이전 입력된 키를 버퍼에서 지움
-  * 프로그램은 사용자의 키 입력이 끝난 시점에서 읽음
-    * <Enter> 키 : 키 입력의 끝
-    * <Enter> 키가 입력된 시점부터 키 입력 버퍼에서 프로그램이 읽기 시작
-* 스크린 출력 스트림 버퍼
-  * 목적
-    * 프로그램에서 출력된 데이터를 출력 장치로 보내기 전에 일시 저장
-    * 출력 장치를 반복적으로 사용하는 비효율성 개선
-  * 버퍼가 꽉 차거나 강제 출력 명령 시에 출력 장치에 출력
+![elvis](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/elvis.PNG)
+![elvis2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/elvis2.PNG)
 
-#### 키 입력 스트림과 버퍼의 역할
+#### 바이너리 파일
+* 문자로 표현되지 않는 바이너리 데이터가 기록된 파일
+  * 이미지, 오디오, 그래픽, 컴파일된 코드는 문자로 표현되지 않음
+* 텍스트 파일의 각 바이트 -> 문자로 해석
+* 바이너리 파일의 각 바이트 -> 문자로 해석되지 않는 것도 존재
+  * 각 바이트의 의미는 파일을 만든 응용프로그램만이 해석 가능
+* 바이너리 파일의 종류
+  * jpeg, bmp 등의 이미지 파일
+  * mp3 등의 오디오 파일
+  * hwp, doc, ppt 등의 확장자를 가진 멀티미디어 문서 파일
+  * obj, exe 등의 확장자를 가진 컴파일된 코드나 실행 파일 
 
-![Istream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/Istream.PNG)
+#### 바이너리 파일의 내부
 
-#### 스크린 출력 스트림과 버퍼의 역할
+![uisee](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/uisee.PNG)
 
-![Ostream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/Ostream.PNG)
+#### hwp 파일은 바이너리 파일
+* 텍스트 정보 포함
+  * 한글, 영어 문자 포함
+* 바이너리 정보 포함
+  * 글자 색이나 서체 등의 문자 포맷 정보
+  * 비트맵 이미지
+  * 표
+  * 선, 원 등의 그래픽 정보
+  * 왼쪽 마진, 오른쪽 마진 등 문서 포맷 정보
 
-#### C++ 표준 : 스트림 입출력만 지원
-* 입출력 방식 2가지
-  * 스트림 입출력 방식(stream I/O)
-    * 슽트림 버퍼를 이용한 입출력 방식
-    * 입력된 키는 버퍼에 저장
-      * <Enter> 키가 입력되면 프로그램이 버퍼에서 읽어가는 방식
-    * 출력되는 데이터는 일차적으로 스트림 버퍼에 저장
-      * 특정한 경우에만 버퍼가 출력 장치에 출력
-        * 버퍼가 꽉 찼을 경우
-        * '\n'을 만난 경우
-        * 강제 출력 명령의 경우
-  * 저 수준 입출력 방식(raw lever console I/O)
-    * 키가 입력되는 즉시 프로그램에게 키 값 전달
-      * <Backspace> 키 그 자체도 프로그램에 바로 전달
-      * 게임 등 키 입력이 즉각적으로 필요한 곳에 사용
-    * 프로그램이 출력하는 즉시 출력 장치에 출력
-    * 컴파일러마다 다른 라이브러리나 API 지원
-      * C++ 프로그램의 호환성 낮음
-* C++ 표준은 스트림 방식만 지원
-  * 스트림 입출력은 모든 표준 C++ 컴파일러에 의해 컴파일
-  * 높은 호환성
- 
-#### 2003년 이전의 C++ 입출력 라이브러리 약점
-* 대표적인 구 표준(C++03) 입출력 라이브러리 클래스
-  * ios, istream, ostream, iostream, ifstream, ofstream, fstream
-* 문자를 한 바이트의 char로 처리
-  * cin >> 로 문자를 읽을 때, 한글 문자 읽기 불가능
-    * 영어나 기호 : 1 바이트
-    * 한글 문자 : 2 바이트
+## 2절. C++ 파일 입출력
+#### C++ 표준 파일 입출력 라이브러리
+* 스트림 입출력 방식 지원
+![stream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/stream.PNG)
+
+#### 템플릿에 char 타입으로 구체화한 클래스
+
+![typedef](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/typedef.PNG)
+
+#### 파일과 프로그램을 연결하는 파일 입출력 스트림
+
+![iostream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/iostream.PNG)
+
+* >> 연산자와 istream의 get(), read() 함수
+  * 연결된 장치로부터 읽는 함수
+  * 키보드에 연결되면 키 입력을, 파일에 연결되면 파일에서 입력
+* << 연산자와 ostream의 put(), write() 함수
+  * 연결된 장치에 쓰는 함수
+  * 스크린에 연결되면 화면에, 파일에 연결되면 파일에 출력
+
+#### 헤더 파일과 namespace
+* C++ 파일 입출력 라이브러리 사용
+  * fstream 헤더 파일과 std 이름 공간의 선언 필요
 ```CPP
-char ch;
-cin >> ch;
-// 키보드로 문자 입력
-// 한글 문자는 읽을 수 없음
+#include <fstream>
+
+using namespace std;
 ```
-* 현재도 cin은 한글을 문자 단위로 읽을 수 없음
 
-#### 새 표준 C++ 입출력 라이브러리
-* 다양한 크기의 다국어 문자를 수용하기 위해 입출력 라이브러리를 템플릿으로 작성
+#### 파일 입출력 모드 : 텍스트 I / O와 바이너리 I / O
+* 파일 입출력 방식
+  * 텍스트 I / O와 바이너라 I / O의 두 방식
+    * C++ 파일 입출력 클래스(ifstream, ofstream, fstream)는 두 방식 지원
+* 텍스트 I / O
+  * 문자 단위로 파일에 쓰기, 파일에서 읽기
+    * 문자를 기록하고, 읽은 바이트를 문자로 해석
+  * 텍스트 파일에만 적용
+* 바이너리 I / O
+  * 바이트 단위로 파일에 쓰기, 파일에서 읽기
+    * 데이터를 문자로 해석하지 말고 그대로 기록하거나 읽음
+  * 텍스트 파일과 바이너리 파일 모두 입출력 가능
+* 텍스트 I / O와 바이너리 I / O 입출력 시 차이점
+  * 개형 문자('\n')를 다루는데 차이점 존재
 
-![IOlib](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/IOlib.PNG)
+#### << 연산자를 이용한 간단한 파일 출력
+(여기부터 작성)
 
-#### typedef로 선언된 ios, istream, ostream, iostream 클래스
+* 예제 1. 키보드로 입력받은 텍스트 파일 저장 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/FunctionGet.cpp)
 
-![typedef](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/typedef.PNG)
+* 예제 2. ifstream과 >> 연산자로 텍스트 파일 읽기 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/FunctionGet.cpp)
 
-#### 입출력 클래스 소개
-
-![IOclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/IOclass.PNG)
-
-## 2절. 스트림 객체
+## 3절. 파일 모드
 #### 표준 입출력 스트림 객체
 * C++ 프로그램이 실행될 때 자동으로 생겨나는 스트림
   * cin
