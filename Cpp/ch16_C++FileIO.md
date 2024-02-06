@@ -9,7 +9,11 @@
 >
 > 3절. 파일 모드
 >
-> 4절.
+> 4절. 텍스트 I/O와 바이너리 I/O
+>
+> 5절. 스트림 상태
+>
+> 6절. 임의 접근과 파일 포인터
 
 
 ## 1절. 텍스트 파일과 바이너리 파일
@@ -103,51 +107,68 @@ using namespace std;
   * 개형 문자('\n')를 다루는데 차이점 존재
 
 #### << 연산자를 이용한 간단한 파일 출력
-(여기부터 작성)
+```CPP
+ofstream fout;
+// 파일 쓰기를 위한 스트림 생성
+
+fout.open("song.txt");
+// song.txt 파일 열기
+// ofstream fout("song.txt"); 한 줄로 줄여 쓰기 가능
+
+if(!fout){
+ // fout 스트림의 파일 열기가 실패한 경우 파일 열기 실패를 처리하는 코드
+ // 파일 열기 성공 검사로, operator !() 실행
+ // if(!fout.is_open())과 동일
+}
+
+ int age = 21;
+ char singer[] = "Kim";
+ char song[] = "Yesterday";
+
+ // 파일 쓰기 예시
+ fout << age << "\n";
+ // 파일에 21과 '\n'을 기록
+
+ fout << singer << endl;
+ // 파일에 "Kim"과 '\n'을 덧붙여 기록
+
+ fout << song << endl;
+ // 파일에 "Yesterday"와 '\n'을 덧붙여 기록
+ fout.close();
+ // 파일 닫기
+```
+
+![song](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/song.PNG)
 
 * 예제 1. 키보드로 입력받은 텍스트 파일 저장 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/SavingTextFile.cpp)
 
 * 예제 2. ifstream과 >> 연산자로 텍스트 파일 읽기 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/FunctionGet.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/Ifstream%3E%3E.cpp)
 
 ## 3절. 파일 모드
-#### 표준 입출력 스트림 객체
-* C++ 프로그램이 실행될 때 자동으로 생겨나는 스트림
-  * cin
-    * istream 타입의 스트림 객체
-    * 키보드 장치와 연결
-  * cout
-    * ostream 타입의 스트림 객체
-    * 스크린 장치와 연결
-  * cerr
-    * ostream 타입의 스트림 객체
-    * 스크린 장치와 연결
-    * 오류 메시지를 출력할 목적
-    * 스트림 내부 버퍼 거치지 않고 출력
-  * clog
-    * ostream 타입의 스트림 객체
-    * 스크린 장치와 연결
-    * 오류 메시지를 출력할 목적
-    * 스트림 내부 버퍼 거치지 않고 출력
+#### 파일 모드(file mode)
+* 파일 입출력에 대한 구체적인 작업 형태에 대한 지정
+* 사례
+  * 파일에서 읽을 작업을 할 것인지, 쓰기 작업을 할 것인지
+  * 기존 파이르이 데이터를 모두 지우고 쓸 것인지, 파일의 끝 부분에 쓸 것인지
+  * 텍스트 I / O 방식인지 바이너리 I / O 방식인지
+ 
+#### 파일 모드 지정 : 파일 열 때
+* open("파일 이름", 파일 모드)
+* ifstream("파일 이름", 파일 모드)
+* ofstream("파일 이름", 파일 모드)
 
-#### iostream에 선언된 스트림 객체
+![filemode](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/filemode.PNG)
 
-![iostream2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/iostream2.PNG)
-
-#### ostream 멤버 함수
+#### 파일 모드 설정
 ```CPP
-ostream& put(char ch);
-// ch의 문자를 스트림에 출력
-
-ostream& write(char *str, int n)
-// str 배열에 있는 n개의 문자를 스트림에 출력
-
-ostream& flush()
-// 현재 스트림 버퍼에 있는 내용 강제 출력
+void open(const char* filename, ios::openmode mode);
+// mode로 지정된 파일 모드로 filename의 파일을 열고 파일 모드 지정
 ```
+(여기부터 작성)
 
-* 예제 1. ostream 멤버 함수를 이용한 문자 출력 예제     
+* 예제 3. get()을 이용한 텍스트 파일 읽기 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/OstreamStringPrint.cpp)
 
 #### istream 멤버 함수 : 문자 입력, get() 함수
