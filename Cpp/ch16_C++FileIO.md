@@ -276,50 +276,45 @@ while(getline(fin, line){ // 한 라인을 읽어 line에 저장한 후 파일 �
 * 예제 6. getline(ifstream&, string&)으로 words.txt 파일을 읽고 단어 검색하는 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/GetlineWord.cpp)
 
-(여기부터 작성)
 #### 바이너리 I/O
+* 바이너리 I/O 방식
+  * 데이터의 바이너리 값을 그대로 파일에 저장
+  * 파일의 바이너리 값을 그래도 읽어서 변수나 버퍼에 저장
+  * 텍스트 파일이든 바이너리 파일이든 바이너리 I/O로 입출력 가능
+* 바이너리 I/O 모드 열기
+  * ios::binary가 설정되지 않으면 디폴트가 텍스트 I/O
 ```CPP
-istream& get(char *s, int n, char delim = '\n');
-// 입력 스트림으로부터 최대 n-1개의 문자를 읽어 배열 s에 저장
-// 마지막에 '\0' 문자 삽입
-// 입력 도중 delim에 지정된 구분 문자를 만나면 지금까지 읽은 문자를 배열 s에 저장하고 리턴
+ifstream fin;
+fin.open("desert.jpg", ios::in | ios::binary);
+// 바이너리 I/O로 파일 읽기
 
-istream& getline(char *s, int n, char delim = '\n');
-// get()과 동일하지만 delim에 저장된 구분 문자를 스트림에서 제거
+ofstream fout("desert.jpg", ios::out | ios::binary);    // 바이너리 I/O로 파일 쓰기
+fstream fsin("desert.jpg", ios::in | ios::binary);      // 바이너리 I/O로 파일 읽기
+![readingline](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/readingline.PNG)
 ```
 
-![readingline](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/readingline.PNG)
+* 예제 7. 바이너리 I/O로 파일 복사 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/BinaryFileCopy.cpp)
 
-* 예제 4. getline()으로 한 줄 단위 문장 읽는 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/ReadingGetLine.cpp)
-
-#### 입력 문자 건너뛰기와 문자 개수 알아내기
+#### read()/write()로 블록 단위 파일 입출력
+* get() / put()
+  * 문자 혹은 바이트 단위로 파일 입출력
+* read() / write()
+  * 블록 단위로 파일 입출력
 ```CPP
-istream& ignore(int n = 1, int delime = EOF);
-// 입력 스트림에서 n개 문자 제거
-// 도중 delim 문자를 만나면 delim 문자를 제거하고 리턴
+istream& read(char* s, int n);
+// 파일에서 최대 n개의 바이트를 배열 s에 읽으며 파일의 끝을 만나면 읽기 중단
+
+ostream& write(char* s, int n);
+// 배열 s에 있는 처음 n개의 바이트를 파일에 저장
 
 int gcount();
-// 최근 입력 스트림에서 읽은 바이트 수(문자의 개수) 리턴
-// <Enter> 키도 개수에 포함
-```
-* 입력 스트림에서 문자 건너뛰기
-```CPP
-cin.ignore(10);
-// 입력 스트림에 입력된 문자 중 10개 제거
-
-cin.ignore(10, ';');
-// 입력 스트림에서 10개의 문자 제거
-// 제거 도중 ';' 을 만나면 종료
+// 최근에 파일에서 읽은 바이트 수 리턴
 ```
 
-* 최근에 읽은 문자 개수 리턴
-```CPP
-char line[80];
-cin.getline(line, 80);
-int n = cin.gcount();
-// 최근 실행한 getline() 함수에서 읽은 문자의 개수 리턴
-```
+(여기부터 작성)
+* 예제 8. read()로 텍스트 파일을 바이너리 I/O로 읽는 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/ReadingGetLine.cpp)
 
 ## 3절. 포맷
 #### 포맷 입출력
