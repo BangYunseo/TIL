@@ -272,10 +272,11 @@ while(getline(fin, line){ // 한 라인을 읽어 line에 저장한 후 파일 �
 
 * 예제 5. istream의 getline()을 이용하여 텍스트 파일을 읽고 화면에 출력하는 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/GetlineIstream.cpp)
-(여기부터 작성)
-* 예제 6. getline(ifstream&, string&)으로 words.txt 파일을 읽고 단어 검색하는 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/FunctionGet*.cpp)
 
+* 예제 6. getline(ifstream&, string&)으로 words.txt 파일을 읽고 단어 검색하는 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/GetlineWord.cpp)
+
+(여기부터 작성)
 #### 바이너리 I/O
 ```CPP
 istream& get(char *s, int n, char delim = '\n');
