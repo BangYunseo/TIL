@@ -238,11 +238,45 @@ while(!fin.eof()){
 }
 ```
 
+## 4절. 텍스트 I/O와 바이너리 I/O
+#### 텍스트 파일의 라인 단위 읽기
+* 두 가지 방법
+  * istream의 getline(char*line, int n) 함수 이용
+  * getline(ifstream& fin, string& line) 함수 이용
+* 라인 단위로 텍스트 파일을 읽는 코드 2가지
+  * istream의 getline() 함수 이용
+```CPP
+char buf[81];
+// 한 라인이 최대 80개의 문자로 구성된다고 가정
+
+ifstream fin("c:\\windows\\system.ini");
+while(fin.getline(buf, 81){ // 한 라인이 최대 80개의 문자로 구성되었으며 끝에 '\0' 문자 추가
+ ...   // 읽은 라인(buf[])을 활용하는 코드
+}
+```
+  * 전역 함수 getline(ifstream& fin, string& line) 함수 이용 
+```CPP
+string line;
+ifstream fin("c:\\windows\\system.ini");
+while(getline(fin, line){ // 한 라인을 읽어 line에 저장한 후 파일 끝까지 반복
+ ...   // 읽은 라인(line)을 활용하는 코드
+}
+```
+
+
+* 예제 4 참고 이미지
+![ex4](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/ex4.PNG)
 
 * 예제 4. 텍스트 파일 연결 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/ConnectTextFile.cpp)
+
+* 예제 5. istream의 getline()을 이용하여 텍스트 파일을 읽고 화면에 출력하는 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/GetlineIstream.cpp)
+(여기부터 작성)
+* 예제 6. getline(ifstream&, string&)으로 words.txt 파일을 읽고 단어 검색하는 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/FunctionGet*.cpp)
 
-#### 한 줄 읽기
+#### 바이너리 I/O
 ```CPP
 istream& get(char *s, int n, char delim = '\n');
 // 입력 스트림으로부터 최대 n-1개의 문자를 읽어 배열 s에 저장
