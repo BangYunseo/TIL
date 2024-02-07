@@ -166,77 +166,80 @@ if(!fout){
 void open(const char* filename, ios::openmode mode);
 // mode로 지정된 파일 모드로 filename의 파일을 열고 파일 모드 지정
 ```
-(여기부터 작성)
+
+* student.txt 파일에서 처음부터 읽고자 하는 경우
+```CPP
+// case 1
+ifstream fin;
+fin.open("student.txt");
+```
+```CPP
+// case 2
+ifstream fin;
+fin.open("student.txt", ios::in);
+```
+* student.txt 파일의 끝에 데이터를 저장하는 경우
+```CPP
+ofstream fout;
+fout.open("student.txt", ios::out | ios::app);
+fout << "tel:01044447777";
+// 기존의 stduent.txt 끝에 "tel:01044447777"을 추가하여 저장
+```
+* 바이너리 I / O로 data.bin 파일을 기록하는 경우
+```CPP
+fstream fbinout;
+fbinout.open("data.bin", ios::out | ios:: binary);
+char buf[128];
+...
+fbinout.write(buf, 128);
+// buf에 있는 128 바이트를 파일에 기록
+```
 
 * 예제 3. get()을 이용한 텍스트 파일 읽기 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/OstreamStringPrint.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/GetFunction.cpp)
 
-#### istream 멤버 함수 : 문자 입력, get() 함수
-```CPP
-int get()
-// 입력 스트림에서 문자를 읽어 리턴
-// 오류나 EOF를 만나면 -1(EOF) 리턴
+#### get()과 EOF
+* 파일의 끝에서 읽기를 시도하면 get()은 EOF(-1값)를 리턴
 
-istream& get(char& ch)
-// 입력 스트림에서 문자를 읽어 ch에 저장
-// 현재 입력 스트림 객체(*this)의 참조 리턴
-// 오류나 EOF를 만나면 스트림 내부의 오류 플래그(failbit) 세팅 - (16장 참고)
-```
-* int get()을 이용하여 한 라인의 문자들을 읽는 코드
+![EOFget](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/EOFget.PNG)
+
+#### get()으로 파일의 끝을 인지하는 방법
+* 방법 1
 ```CPP
-int ch;
-while((ch = cin/get()) != EOF{
-// EOF = -1 : 입력 스트림의 끝인지 비교
- cout.put(ch);
- // 읽은 문자 출력
- if(ch == '\n') break;
- // <Enter> 키가 입력되면 읽기 중단
-```
-* istream& get(char& ch)을 이용하여 한 라인의 문자들을 읽는 코드
-```CPP
-char ch;
+// case 1
 while(true){
- cin.get(ch);
- // 입력된 키를 ch에 저장하여 리턴
- if(cin.eof()) break;
- // EOF를 만나면 읽기 종료 : 입력 스트림의 끝인지 비교
- cout.put(ch);
- // ch의 문자 출력
- if(ch == '\n') break;
- // <Enter> 키가 입력되면 읽기 중단
+ int c = fin.get();
+ // 파일에서 문자(바이트)를 읽음
+ if(c == EOF){
+  ...  // 파일의 끝을 만난 경우 이에 대응하는 코드 작성
+  break;
+  // while 루프문 탈출
+ }
+ else{
+  // 읽은 문자(바이트) c 처리
+ }
 }
 ```
-#### ch = cin.get()의 실행 사례
-
-![cinget](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/cinget.PNG)
-
-* 예제 2. get()과 get(char&)을 이용한 한 줄의 문자를 읽는 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/FunctionGet.cpp)
-
-#### 문자열 입력
+* 방법 2
 ```CPP
-istream& get(char *s, int n);
-// 입력 스트림으로부터 n-1개의 문자를 읽어 배열 s에 저장
-// 마지막에 '\0' 문자 삽입
-// 입력 도중 '\n'을 만나면 '\0'을 삽입하고 리턴
-```
-* 사용 예시
-```CPP
-char str[10];
-cin.get(str, 10);
-// 최대 9개의 문자를 읽고 끝에 '\0'을 붙여 str 배열에 저장
-
-cout << str;
-// str을 화면에 출력
+// case 2
+while((c = fin.get()) != EOF){// 파일의 끝을 만나면 루프 종료
+ ... // 파일에서 읽은 값 c를 처리하는 코드
+}
 ```
 
-* 입력 도중 <Enter> 키('\n')을 만날 때
-  * 읽기를 중단하고 리턴
-  * <Enter> 키('\n')를 스트림 버퍼에 남김
-    * 다시 get()으로 문자열 읽기를 시도하면 입력 스트림에 남은 '\n'키를 읽게 되어 무한 루프에 빠짐
-    * cin.get()이나 cin.ignore(1);를 통해 문자 1개('\n')를 스트림에서 읽어야 함
+#### 파일의 끝을 잘못 인지하는 코드
+* EOF 값을 c에 읽어 사용한 후 다음 루프의 while 조건문에서 EOF에 도달한 사실을 알게 되기 때문에 잘못된 코드
+```CPP
+while(!fin.eof()){
+ int c = fin.get();
+ // 마지막 읽은 EOF(-1) 값이 c에 리턴
+ ...  // 읽은 값 c를 처리하는 코드
+}
+```
 
-* 예제 3. get(char*, int)을 이용한 문자열 입력 예제     
+
+* 예제 4. 텍스트 파일 연결 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/FunctionGet*.cpp)
 
 #### 한 줄 읽기
