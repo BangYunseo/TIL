@@ -13,7 +13,7 @@
 >
 > 5절. 스트림 상태
 >
-> 6절. 임의 접근과 파일 포인터
+> 6절. 파일 포인터
 
 
 ## 1절. 텍스트 파일과 바이너리 파일
@@ -104,7 +104,7 @@ using namespace std;
     * 데이터를 문자로 해석하지 말고 그대로 기록하거나 읽음
   * 텍스트 파일과 바이너리 파일 모두 입출력 가능
 * 텍스트 I / O와 바이너리 I / O 입출력 시 차이점
-  * 개형 문자('\n')를 다루는데 차이점 존재
+  * 개행 문자('\n')를 다루는데 차이점 존재
 
 #### << 연산자를 이용한 간단한 파일 출력
 ```CPP
@@ -312,123 +312,51 @@ int gcount();
 // 최근에 파일에서 읽은 바이트 수 리턴
 ```
 
-(여기부터 작성)
 * 예제 8. read()로 텍스트 파일을 바이너리 I/O로 읽는 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/ReadingGetLine.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/FuncionRead.cpp)
 
-## 3절. 포맷
-#### 포맷 입출력
-* 입출력 시 포맷 지정 가능
-  * C언어의 printf()와 유사
-* 포맷 입출력 방법 3가지
-  * 포맷 플래그
-  * 포맷 함수
-  * 조작자
+* 예제 9. read()/write()로 이미지 파일 복사 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/ReadWriteTulips.cpp)
 
-#### 포맷 플래그
-* 입출력 스트림에서 입출력 형식을 지정하기 위한 플래그
+* 예제 10 참고 이미지
+![ex10](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/ex10.PNG)
 
-![ios](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/ios.png)
+* 예제 10. int 배열과 double 값을 바이너리 파일에 저장하고 읽는 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/IntDoubleBinary.cpp)
 
-#### ios 클래스에 정의된 포맷 플래그
+#### 텍스트 I/O와 바이너리 I/O의 확실한 파이점
+* 파일의 끝을 처리하는 방법에는 차이가 없음
+  * 텍스트 I/O든 바이너리 I/O든 파일의 끝을 만나면 EOF 리턴
+* 개행 문자 '\n'를 읽고 쓸 때 서로 다르게 작동
 
-![iosflag](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/iosflag.png)
+![textbinary](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/textbinary.PNG)
 
-#### 포맷 플래그를 세팅하는 멤버 함수
-```CPP
-long setf(long flags);
-// flags를 스트림의 포맷 플래그로 설정하고 이전 플래그 리턴
+#### 텍스트 I/O와 바이너리 I/O의 실행 결과 비교
 
-long unsetf(long flags);
-// flags에 설정된 비트 값에 따라 스트림의 포맷 플래그를 해체하고 이전 플래그 리턴
-```
+![textbinary2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/textbinary2.PNG)
 
-* 10진수를 16진수로 출력 예시
-```CPP
-cout.unsetf(iost::dec);
-// 10진수 해제
+## 5절. 스트림 상태
+#### 스트림 상태 검사
+* 스트림 상태
+  * 파일 입출력이 진행되는 동안 스트림(열어 놓은 파일)에 관한 입출력 오류 저장
+    * 스트림 상태를 저장하는 멤버 변수 이용
 
-cout.setf(ios::hex);
-// 16진수 설정
+![streamstat](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/streamstat.PNG)
 
-cout << 30 << endl;
-// 1e 출력
-```
+#### 스트림 상태를 나타내는 비트 정보
 
-* 사용 예시 2
-```CPP
-cout.setf(ios::dec | ios::showpoint);
-// 10진수 표현, 실수에 소숫점 이하 나머지는 0으로 출력 설정
+![streambit](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/streambit.PNG)
 
-cout << 23.5 << endl;
-// 23.5000으로 출력
-```
+#### 스트림 상태를 검사하는 멤버 함수
 
-* 예제 5. setf(), unsetf() 사용한 포맷 출력 예제     
+![streammem](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/streammem.PNG)
+
+* 예제 11. 스트림 상태 검사 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/SetfUnsetf.cpp)
 
-#### 포맷 함수 활용
-```CPP
-int width(int minWidth);
-// 출력되는 필드의 최소 너비를 minWidth로 설정
-//- 이전에 설정된 너비 값 리턴
+## 6절. 파일 포인터
+#### 임의 접근과 파일 포인터
 
-char fill(char cFill);
-// 필드의 빈칸을 cFill 문자로 채우도록 지정하고 이전 문자 값 리턴
-
-int precision(int np);
-// 출력되는 수의 유효 숫자 자리 수를 np개로 설정
-// 정수 부분과 소수점 이하의 수의 자리를 모두 포함하고 소수점(.) 제외
-```
-
-* 너비 설정 예제 1
-```CPP
-cout.width(10);
-// 다음에 출력되는 "hello"를 10칸으로 지정
-
-cout << "hello" << endl;
-// 빈칸 5 + hello 5문자 출력
-
-cout.width(5);
-// 다음에 출력되는 12를 5칸으로 지정
-
-cout << 12 << endl;
-// 빈칸 3 + 12 2문자 출력
-
-// 출력 예시
-//      hello
-//    12
-```
-* 너비 설정 예제 2
-```CPP
-cout << '%';
-cout.width(10);
-// 다음에 출력되는 "Korea/"만 10칸으로 지정
-cout << "Korea/" << "Seoul/" << "City" << endl;
-
-// 출력 예시
-// %   Korea/Seoul/City
-```
-* 빈칸 채우기 예제
-```CPP
-cout.fill('^');
-cout.width(10);
-cout << "Hello" << endl;
-
-// 출력 예시
-// ^^^^^Hello
-```
-* 유효 숫자 자리 수 예제
-```CPP
-cout.precision(5);
-cout << 11./3.;
-
-// 출력 예시
-// 3.6667
-```
-
-* 예제 5. width(), fill(), precision() 사용한 포맷 출력 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/WidthFillPrecision.cpp)
 
 ## 4절. 조작자
 #### 조작자
