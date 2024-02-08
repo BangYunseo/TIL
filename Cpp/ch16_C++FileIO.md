@@ -264,7 +264,7 @@ while(getline(fin, line){ // 한 라인을 읽어 line에 저장한 후 파일 �
 ```
 
 
-* 예제 4 참고 이미지
+* 예제 4 참고 이미지              
 ![ex4](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/ex4.PNG)
 
 * 예제 4. 텍스트 파일 연결 예제     
@@ -318,7 +318,7 @@ int gcount();
 * 예제 9. read()/write()로 이미지 파일 복사 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/ReadWriteTulips.cpp)
 
-* 예제 10 참고 이미지
+* 예제 10 참고 이미지              
 ![ex10](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/ex10.PNG)
 
 * 예제 10. int 배열과 double 값을 바이너리 파일에 저장하고 읽는 예제     
@@ -411,7 +411,7 @@ streampos tellp();
 
 ![seekg](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/seekg.PNG)
 
-* 예제 12 참고 이미지
+* 예제 12 참고 이미지                 
 ![ex12](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/ex12.PNG)
 
 * 예제 12. 파일 크기 알아내기 예제     
