@@ -352,204 +352,67 @@ int gcount();
 ![streammem](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/streammem.PNG)
 
 * 예제 11. 스트림 상태 검사 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/SetfUnsetf.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/StreamState.cpp)
 
 ## 6절. 파일 포인터
-#### 임의 접근과 파일 포인터
+#### C++ 파일 입출력 방식
+* 순차 접근
+  * 읽은 다음 위치에서 읽고 쓴 다음 위치에 쓰는 방식
+  * 디폴트 파일 입출력 방식
+* 임의 접근
+  * 파일 내의 임의의 위치로 옮겨 다니면서 읽고 쓸 수 있는 방식
+  * 파일 포인터를 옮겨 파일 입출력
+ 
+#### 파일 포인터
+* 파일은 연속된 바이트의 집합
+* 파일 포인터
+  * 파일에서 다음에 읽거나 쓸 위치를 표시하는 특별한 마크
+* C++는 알려진 파일마다 두 개의 파일 포인터 유지
+  * get pointer : 파일 내 다음에 읽을 위치
+  * put pointer : 파일 내 다음에 쓸 위치
 
+#### 파일 모드와 파일 포인터
 
-## 4절. 조작자
-#### 조작자
-* manipulator
-* 스트림 조작자(stream manipulator)
-* 조작자는 함수
-  * C++ 표준 라이브러리에 구현된 조작자 : 입출력 포맷 지정 목적
-  * 개발자만의 조작자 작성 가능 : 다양한 목적
-  * 매개 변수 없는 조작자와 매개 변수를 가진 조작자로 구분
-* 조작자는 항상 << 나 >> 연산자와 함께 사용
+![FileMP](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/FileMP.PNG)
 
-#### 조작자의 종류
-* 매개 변수 없는 조작자
-```CPP
-cout << hex << showbase << 30 << endl;
-cout << dex << showpos << 100 << endl;
-
-// 출력 예시
-// 0x1e
-// +100
-```
-* 매개 변수 있는 조작자
-  * #include <iomanip> 필요
-```CPP
-cout << setw(10) << setfill('^') << "Hello" << endl;
-
-// 출력 예시
-// ^^^^^Hello
-```
-
-#### 매개 변수 없는 조작자
-
-![nohavemani](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/nohavemani.PNG)
-
-#### 매개 변수 있는 조작자
-
-![havemani](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/havemani.PNG)
-
-* 예제 7. 매개 변수 없는 조작자 사용 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/NoParameterMani.cpp)
-
-* 예제 8. 매개 변수 있는 조작자 사용 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/ParameterMani.cpp)
-
-#### 조작자 실행 과정
-
-![usingmani](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/usingmani.PNG)
-
-#### 사용자 정의 조작자 함수 원형
-* 매개 변수 없는 조작자
-```CPP
-istream& manipulatorFuncion(istream& ins);
-// 입력 스트림에 사용되는 조작자 원형
-
-ostream& maniupularFunction(ostream& outs);
-// 출력 스트림에 사용되는 조작자 원형
-```
-
-* 예제 9. 사용자 정의 조작자 예제 1    
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/UserMani1.cpp)
-
-* 예제 10. 사용자 정의 조작자 예제 2    
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/UserMani2.cpp)
-
-## 5절. 연산자
-#### 삽입 연산자(<<)
-* insertion operator
-* 삽입자라고 불림
-  * << 연산자는 C++의 기본 연산자 : 정수 shift 연산자
-* ostream 클래스에 중복 작성
+#### 임의의 접근 방법
+* 파일 포인터 제어
+  * 절대 위치로 이동시키는 방법과 상대 위치로 이동시키는 두 방법
 
 ```CPP
-class ostream: virtual public ios{
-...
-public:
- ostream& operator << (int n);
- // 정수를 출력하는 << 연산자
- ostream& operator << (char c);
- // 문자를 출력하는 << 연산자
- ostream& operator << (const char* s);
- // 문자열를 출력하는 << 연산자
-...
-};
+// istream의 두 방법
+istream& seekg(streampos pos);
+// 정수 값으로 주어진 절대 위치 pos로 get pointer를 옮김
+
+istream& seekg(streamoff offset, ios::seekdir seekbase);
+// seekbase를 기준으로 offset만큼 떨어진 위치로 get pointer를 옮김
 ```
-
-#### 삽입 연산자의 실행 과정
-
-![usingio](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/usingio.PNG)
-
-#### 사용자 삽입 연산자 만들기
-* 개발자가 작성한 클래스의 객체에 << 연산자 출력 예제
 ```CPP
-#include <iostream>
+// ostream의 두 방법
+ostream& seekp(streampos pos);
+// 정수 값으로 주어진 절대 위치 pos로 put pointer를 옮김
 
-using namespace std;
-
-class Point{
- int x, y;
-public:
- Point(int x = 0, int y = 0){ this->x = x; this->y = y; }
- friend ostream& operator <<(ostream& stream, Point a);
-};
-
-ostream& operator <<(ostream& stream, Point a){
- stream << "(" << a.x << ", " << a.y << ")";
- return stream;
-}
-
-int main(){
- Point p(3, 4);
- // Point 객체 생성
- cout << p << endl;
- // Point 객체 화면 출력
-
- Point q(1, 100), r(2, 200);
- // Point 객체 생성
- cout << q << r << endl;
- // Point 객체 화면 출력
-}
-
-// 출력 예시
-// (3, 4)
-// (1, 100)(2, 200)
+ostream& seekp(streamoff offset, ios::seekdir seekbase);
+// seekbase를 기준으로 offset만큼 떨어진 위치로 put pointer를 옮김
 ```
 
-#### cout << p;를 위한 << 연산자 만들기
-
-![userio](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/userio.PNG)
-
-* 예제 11. Book 클래스 예제    
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/Book.cpp)
-
-#### 추출 연산자(>>)
-* extraction operator
-  * >> 연산자는 C++의 기본 연산자 : 정수 shift 연산자
-* ostream 클래스에 중복 작성
 ```CPP
-class istream : virtual public ios{
-...
-public:
- istream& operator >> (int& n);
- // 정수를 입력하는 >> 연산자
- istream& operator >> (char& c);
- // 문자를 입력하는 >> 연산자
- istream& operator >> (const char* s);
- // 문자열를 입력하는 >> 연산자
-...
-};
-```
-* 추출 연산자의 실행 과정
-  * 삽입 연산자의 실행 과정과 유사
+// streampos의 두 방법
+streampos tellg();
+// 입력 스트림의 현재 get pointer의 값 리턴
 
-#### 사용자 추출 연산자 만들기
-* 개발자가 작성한 클래스의 객체에 >> 연산자 입력
-```CPP
-#include <iostream> 
-
-using namespace std;
-
-class Point { // 한 점을 표현하는 클래스 
-    int x, y; // private 멤버
-public:
-    Point(int x = 0, int y = 0) { this->x = x; this->y = y; }
-    friend istream& operator >> (istream& ins, Point &a); // friend 선언 
-    friend ostream& operator << (ostream& stream, Point a); // friend 선언
-};
-
-istream& operator >> (istream& ins, Point &a){ // >> 연산자 함수
-    cout << "x 좌표 >> "; 
-    ins >> a.x;
-    cout << "y 좌표 >> "; 
-    ins >> a.y;
-    return ins;
-}
-ostream& operator << (ostream& stream, Point a){
-    stream << "(" << a.x << ", " << a.y << ")";
-    return stream; 
-}
-int main() {
-    Point p; 
-    // Point 객체 생성
-    cin >> p;  // >> 연산자 호출하여 x 좌표와 y 좌표를 
-    cout << p;  // << 연산자 호출하여 객체 p 출력
-}
-
-// 출력 예시
-// x 좌표 >> 100
-// y 좌표 >> 200 
-// (100,200)
-
-// 첫 줄부터 cin >> p, cout << p 실행
+streampos tellp();
+// 출력 스트림의 현재 put pointer의 값 리턴
 ```
 
-#### cin >> p;를 위한 >> 연산자 만들기
+![seekbase](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/seekbase.PNG)
 
-![usereo](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/usereo.PNG)
+#### seekg()에 의한 get pointer의 이동 사례
+
+![seekg](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/seekg.PNG)
+
+* 예제 12 참고 이미지
+![ex12](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/ex12.PNG)
+
+* 예제 12. 파일 크기 알아내기 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/FileSize.cpp)
