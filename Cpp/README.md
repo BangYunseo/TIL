@@ -27,7 +27,7 @@
 * ch13 [템플릿](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch13_Template.md)
 * ch14 [표준 템플릿 라이브러리](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch14_StandardTemplateLibrary.md)
 * ch15 [C++ 입출력 시스템](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch15_C%2B%2BIOSystem.md)
-* ch16 [C++ 파일 입출력]()
+* ch16 [C++ 파일 입출력](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch16_C%2B%2BFileIO.md)
 * ch17 [예외처리]()
 * ch18 [C와 링크]()
 
@@ -46,6 +46,6 @@
 * [ch13](https://github.com/BangYunseo/Basic_CPP/tree/main/ch13_Template)
 * [ch14](https://github.com/BangYunseo/Basic_CPP/tree/main/ch14_StandardTemplateLibrary)
 * [ch15](https://github.com/BangYunseo/Basic_CPP/tree/main/ch15_C%2B%2BIOSystem)
-* [ch16]()
+* [ch16](https://github.com/BangYunseo/Basic_CPP/tree/main/ch16_FileIO)
 * [ch17]()
 * [ch18]()
