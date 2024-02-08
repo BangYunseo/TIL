@@ -1,34 +1,30 @@
-#  Chapter 9. 구조체(미완)
+#  Chapter 9. 구조체
 
 > '쉽게 풀어쓴 C언어 Express - 천인국' 13장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch9_%EA%B5%AC%EC%A1%B0%EC%B2%B4)
 > 
-> 1절. 구조체 기초
+> 1절. 구조체 정의
 > 
-> 2절. 선언
+> 2절. 구조체 선언
 >
-> 3절. 
+> 3절. 구조체 멤버
 >
 > 4절. 
 >
 > 5절. 
 >
-> 6절. 
->
-> 7절. 
->
 
 ## 1절. 구조체 기초
 #### 자료형의 분류
-* 자료형의 분류는 구조체와 비슷하다.
+* 자료형의 분류는 구조체와 유사
 	 
 ![struct](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/struct.PNG)
 
 #### 구조체의 필요성
 * 연관성 있는 서로 다른 개별적인 자료형의 변수들을 하나의 단위로 묶은 새로운 자료형
 * 연관된 멤버로 구성되는 통합 자료형으로 대표적인 유도 자료형
-  * 기존 자료형으로 새로이 만들어진 자료형을 유도 자료형(derived data types)이라고 한다.
+  * 기존 자료형으로 새로이 만들어진 자료형은 유도 자료형(derived data types)
 
 ![needstruct](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/needstruct.PNG)
 
@@ -41,116 +37,214 @@
 ![arraystruct](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/arraystruct.PNG)
 
 #### 구조체 정의 개념
-* 구조체를 자료형으로 사용하려면 먼저 구조체를 정의해야 한다.
-  * 구조체를 만들 구조체 틀(template)을 정의한다.
+* 구조체를 자료형으로 사용하려면 먼저 구조체를 정의
+  * 구조체를 만들 구조체 틀(template)을 정의
 ![structtemplate](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structtemplate.PNG)
 
-## 2절. 선언(여기부터 다시 작성 - 8페이지)
+#### 구조체 정의 구문
+
+![structcode](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structcode.PNG)
+
+#### 구조체 정의 위치
+* 구조체 정의는 정의 위치에 따라 구조체의 유효 범위 결정
+* 구조체의 정의도 변수 선언처럼 유효범위는 전역(global) 또는 지역(local)
+  * 전역(global)
+    * main() 함수 외부 상단에서 정의된 구조체
+  * 지역(local)
+    * main() 함수 또는 다른 함수 내부에서 정의된 구조체
+   
+![struct4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/struct4.PNG)
+
+## 2절. 선언
 #### 구조체 선언
 
-![arraystruct](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/arraystruct.PNG)
+![struct3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/struct3.PNG)
   
-#### 4. 변수의 주소
+#### 구조체 선언의 예시
+```C
+// x와 y로 이루어지는 화면의 좌표 구조체
+struct point{
+	int x;	// x 좌표
+	int y;	// y 좌표
+};
+```
+```C
+// 날짜 구조체
+struct date{
+	int month;	// 월
+	int day;	// 일
+	int year;	// 년도
+};
+```
+```C
+// 복소수 구조체
+struct complex{
+	double real;	// 실수부
+	double image;	// 허수부
+};
+```
+```C
+// 사각형 구조체
+struct rectangle{
+	int x, y;	// x, y
+	int width;	// 너비
+	int height;	// 높이
+};
+```
+
+#### 구조체 변수 선언
+* 구조체 정의와 구조체 변수 선언은 다름
+
+![structdef](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structdef.PNG)
 
 ```C
-int main(void){
-	int i = 10;
-	char c = 69;
-	float f = 12.3;
+struct accout{
+	char name[12];	// 계좌주 이름
+	int actnum;	// 계좌 번호
+	double balance;	// 잔고
+};
 
-	printf("i의 주소 : %u\n", &i);	// 변수 i의 주소 출력
-	printf("c의 주소 : %u\n", &c);	// 변수 i의 주소 출력
-	printf("f의 주소 : %u\n", &f);	// 변수 i의 주소 출력
+struct account mine = {"홍길동", 1001, 300000};
+```
+
+![structaccount](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structaccount.PNG)
+
+## 3절. 구조체 멤버
+#### 구조체 초기화
+* 중괄호를 이용하여 초기값 나열
+  * 초기화 값은 중괄호 내부에서 각 멤버 정의 순서대로 초기값을 쉼표로 구분하여 나타냄
+  * 기술되지 않은 멤버값들은 자료형에 따라 기본값인 0, 0.0, '\0' 등으로 저장
+
+```C
+struct student{
+	int number;
+	char name[10];
+	double grade;
+};
+
+struct student s1 = { 24, "Kim", 4.3 };
+```
+
+![structstudent](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structstudent.PNG)
+
+#### 구조체 멤버 참조
+
+![structmem](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structmem.PNG)
+
+#### 학생 정보 출력 예제
+```C
+#include <stdio.h>
+
+struct student{
+	int number;		// 정수형 변수이자 학번을 저장할 변수 number를 생성
+	char name[10];		// 문자형 배열이자 이름을 저장할 배열 name[10]을 생성
+	double grade;		// 실수형 변수이자 학점을 저장할 변수 grade를 생성
+};
+int main(void){
+	struct student s;
+	// 구조체 student를 변수 s로 선언
+
+	s.number = 20190001;		// 구조체 안의 변수 number의 값을 2019000로 초기화
+	strcpy(s.name, "홍길동");	// 구조체 안의 배열 name[10]의 값을 홍길동으로 초기화
+	// 문자열 배열은 문자열 변수와 다르게 strcpy() 함수를 이용하여 문자열로 변경
+	
+	s.grade = 4.3;				// 구조체 안의 변수 grade의 값을 4.3으로 초기화
+
+	printf("학번 : %d\n", s.number);		// 학번을 구조체를 이용한 변수 s.student로 출력
+	printf("이름 : %s\n", s.name);			// 이름을 구조체를 이용한 변수 s.name로 출력
+	printf("학점 : %f\n", s.grade);			// 학점을 구조체를 이용한 변수 s.grade로 출력
 
 	return 0;
 }
-/* 출력 예시
-i의 주소 : 1245024
-c의 주소 : 1245015
-f의 주소 : 1245000  */
-```
-#### 4-1. 변수의 주소 출력 주의사항
 
-	- 여러 개의 포인터 변수를 한 줄에 선언할 때는 주의해야 한다.
- 	- 아래는 잘못된 선언 예제이다.
-
- ```C
-int *p1, p2, p3;		// p2와 p3는 정수형 변수로 선언됨
+// 출력 예시
+// 학번 : 20190001
+// 이름 : 홍길동
+// 학점 : 4.3
 ```
 
-	- 아래는 올바른 선언 예제이다.
-  ```C
-int *p1, *p2, *p3;		// p2와 p3는 올바른 포인터 변수로 선언됨
-```
-
-#### 5. 포인터의 선언
-
-	- 포인터 변수 선언에서 자료형과 포인터 변수 이름 사이에 연산자 *(asterisk)를 삽입한다.
- 	- ptrint, ptrshort, ptrchar, ptrdouble은 모두 포인터 변수이다.
-  		- 간단히 포인터라고도 부른다.
- 
-![pointerV](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerV.PNG)
-
-
-#### 6. 포인터와 변수의 연결
-
-```C
-int i;		// 정수형 변수 i 선언
-int *p;		// 포인터 변수 p 선언
-p = &i;		// 변수 i의 주소가 포인터 변수 p로 대입됨			
-```
-
-![pointerV2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerV2.PNG)
-
-#### 7. 다양한 포인터 선언
-
-```C
-char c = 'A';				// 문자형 변수 c
-float f = 36.5;				// 실수형 변수 f
-double d = 3.141592;			// 실수형 변수 d
-
-char *pc = &c;				// 문자를 가리키는 포인터 pc
-float *pf = &f;				// 실수를 가리키는 포인터 pf
-double *pd = &d;			// 실수를 가리키는 포인터 pd
-```
-
-![pointerV3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerV3.PNG)
-
-#### 7-1. 예제 1. 포인터 선언하기
+#### 학생 정보 입력받고 출력하는 예제
 
 ```C
 #include <stdio.h>
 
-int main(void)
-{
-	int i = 10;
-	double f = 12.3;
-	int *pi = NULL;		// NULL로 초기화를 하면 어느 메모리도 지정하지 않음
+struct student{
+	int number;		// 정수형 변수이자 학번을 저장할 변수 number를 생성
+	char name[10];		// 문자형 배열이자 이름을 저장할 배열 name[10]을 생성
+	double grade;		// 실수형 변수이자 학점을 저장할 변수 grade를 생성
+};
+int main(void){
+	struct student s;	// 구조체 student를 변수 s로 선언
 
-	double *pf = NULL;
-	pi = &i;		// 포인터 변수 pi는 정수형 변수 i의 주소값을 저장 
-	pf = &f;		// 포인터 변수 pf는 실수형 변수 f의 주소값을 저장 
+	printf("학번을 입력하세요 : ");
+	scanf_s("%d", &s.number);			// 학번을 입력받고 구조체의 s.number의 주소에 전달
 
-	printf("%p %p \n", pi, &i);
-	printf("%p %p \n", pf, &f);
+	printf("이름을 입력하세요 : ");
+	scanf_s("%s", s.name, 16);			// 이름을 입력받고 구조체의 s.name의 주소에 전달
+	// name은 배열의 이름이며 이는 이미 배열을 가리키는 포이너라는 의미
+	// 따라서 앞에 & 없음
+
+	printf("학점을 입력하세요(실수) : ");		
+	scanf_s("%lf", &s.grade);			// 학점을 입력받고 구조체의 s.grade의 주소에 전달
+
+	printf("학번 : %d\n", s.number);		// 학번을 구조체를 이용한 변수 s.student로 출력
+	printf("이름 : %s\n", s.name);			// 이름을 구조체를 이용한 변수 s.name로 출력
+	printf("학점 : %lf\n", s.grade);		// 학점을 구조체를 이용한 변수 s.grade로 출력
+
 	return 0;
 }
-/* 출력 예제
-0000002AFF8FFB24 0000002AFF8FFB24 
-0000002AFF8FFB48 0000002AFF8FFB48  */
+
+// 출력 예시
+// 학번을 입력하세요 : 20190001
+// 이름을 입력하세요 : 홍길동
+// 학점을 입력하세요(실수) : 4.3
+// 학번 : 20190001
+// 이름 : 홍길동
+// 학점 : 4.3
 ```
 
-#### 7-2. 포인터 참고사항
-
-	- NULL은 stdio.h 헤더 파일에 정의된 포인터 상수로 0번을 의미한다.
- 	- 0번은 일반적으로는 사용할 수 없다.
-  	- CPU가 인터럽트를 위해 사용한다.
-   	- 따라서 포인터 변수의 값이 0이라면 아무것도 가리키고 있지 않다.
+#### 구조체를 멤버로 가지는 구조체
 ```C
-#define NULL ((void *)0)
-```
-![NULL](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/NULL.PNG)
+struct date{		// 구조체 선언
+	int year;	// 년
+	int month;	// 월
+	int day;	// 일
+};
 
+struct account{
+	struct date open;	// 계좌 개설일자			// 구조체 안에 구조체 포함
+	char name[12];		// 계좌주 이름
+	int actnum;		// 계좌번호
+	double balance;		// 잔고
+};
+struct account me = {{2012, 3, 9}, "홍길동", 1001, 30000 };	// 구조체 변수 선언
+
+// 멤버 참조
+me.open.year = 2024;
+me.open.month = 2;
+me.open.month = 15;
+```
+
+![structdate](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structdate.PNG)
+
+#### 구조체 변수의 대입과 비교
+* 같은 구조체 변수끼리 대입은 가능하지만 비교는 불가능
+```C(다시 작성)
+struct point{
+	int x;
+	int y;
+};
+
+int main(void){
+	struct point p1 = {10, 20};
+	struct point p2 = {30, 40};
+
+	p2 = p1;
+	// 대입 가능
+
+	if(p1 == p2)	printf("p1 and p2 same!");
+	if((
+```
 #### 8. 간접 참조 연산자
 
 	- 간접 참조 연산자 * : 포인터가 가리키는 값을 가져오는 연산자
