@@ -21,10 +21,9 @@
     * 결과가 틀리거나 엉뚱한 코드 실행
     * 프로그램이 비정상적으로 종료
 
-(예제 작성)
 * 예제 1. 예외 상황에 대한 대처가 없는 프로그램 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/SavingTextFile.cpp)
-
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch17_ExceptionHandling/GetExp.cpp)
+(예제 작성)
 * 예제 2. if문과 리턴을 통한 오류 처리 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/Ifstream%3E%3E.cpp)
 
