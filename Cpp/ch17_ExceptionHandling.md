@@ -3,151 +3,36 @@
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch17_ExceptionHandling)
 > 
-> 1절. 텍스트 파일과 바이너리 파일
-> 
-> 2절. C++ 파일 입출력
+> 1절. 오류 처리
 >
-> 3절. 파일 모드
+> 2절. 예외
 >
-> 4절. 텍스트 I/O와 바이너리 I/O
->
-> 5절. 스트림 상태
->
-> 6절. 파일 포인터
+> 3절. 
 
 
-## 1절. 텍스트 파일과 바이너리 파일
-#### 텍스트 파일
-* 사람들이 사용하는 글자 혹은 문자들로만 구성되는 파일
-  * 알파벳, 한글, 숫자, % # @ < ? 등의 기호 문자
-* '\n', '\t' 등의 특수 문자도 포함
-* 각 문자마다 문자 코드(이진수) 할당
-  * 아스키 코드, 유니 코드
-* 텍스트 파일의 종류
-  * txt 파일, HTML 파일, XML 파일, C++ 소스 파일, C 소스 파일, 자바 소스 파일
-* 텍스트 파일과 <Enter> 키
-  * <Enter>키를 입력하면 텍스트 파일에 '\r', '\n'의 두 코드가 기록
-* 아스키 코드 표 샘플
+## 1절. 오류 처리
+#### 오류
+* 컴파일 오류
+  * 문법에 맞지 않는 구문으로 인한 오류
+* 실행 오류
+  * 개발자의 논리 오류
+  * 예외적으로 발생하는 입력이나 상황에 대한 대처가 없을 때 발생하는 오류
+  * 실행 오류의 결과
+    * 결과가 틀리거나 엉뚱한 코드 실행
+    * 프로그램이 비정상적으로 종료
 
-![asciicode](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/asciicode.PNG)
-
-#### 텍스트 파일의 내부
-
-![elvis](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/elvis.PNG)
-![elvis2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/elvis2.PNG)
-
-#### 바이너리 파일
-* 문자로 표현되지 않는 바이너리 데이터가 기록된 파일
-  * 이미지, 오디오, 그래픽, 컴파일된 코드는 문자로 표현되지 않음
-* 텍스트 파일의 각 바이트 -> 문자로 해석
-* 바이너리 파일의 각 바이트 -> 문자로 해석되지 않는 것도 존재
-  * 각 바이트의 의미는 파일을 만든 응용프로그램만이 해석 가능
-* 바이너리 파일의 종류
-  * jpeg, bmp 등의 이미지 파일
-  * mp3 등의 오디오 파일
-  * hwp, doc, ppt 등의 확장자를 가진 멀티미디어 문서 파일
-  * obj, exe 등의 확장자를 가진 컴파일된 코드나 실행 파일 
-
-#### 바이너리 파일의 내부
-
-![uisee](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/uisee.PNG)
-
-#### hwp 파일은 바이너리 파일
-* 텍스트 정보 포함
-  * 한글, 영어 문자 포함
-* 바이너리 정보 포함
-  * 글자 색이나 서체 등의 문자 포맷 정보
-  * 비트맵 이미지
-  * 표
-  * 선, 원 등의 그래픽 정보
-  * 왼쪽 마진, 오른쪽 마진 등 문서 포맷 정보
-
-## 2절. C++ 파일 입출력
-#### C++ 표준 파일 입출력 라이브러리
-* 스트림 입출력 방식 지원
-![stream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/stream.PNG)
-
-#### 템플릿에 char 타입으로 구체화한 클래스
-
-![typedef](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/typedef.PNG)
-
-#### 파일과 프로그램을 연결하는 파일 입출력 스트림
-
-![iostream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/iostream.PNG)
-
-* >> 연산자와 istream의 get(), read() 함수
-  * 연결된 장치로부터 읽는 함수
-  * 키보드에 연결되면 키 입력을, 파일에 연결되면 파일에서 입력
-* << 연산자와 ostream의 put(), write() 함수
-  * 연결된 장치에 쓰는 함수
-  * 스크린에 연결되면 화면에, 파일에 연결되면 파일에 출력
-
-#### 헤더 파일과 namespace
-* C++ 파일 입출력 라이브러리 사용
-  * fstream 헤더 파일과 std 이름 공간의 선언 필요
-```CPP
-#include <fstream>
-
-using namespace std;
-```
-
-#### 파일 입출력 모드 : 텍스트 I / O와 바이너리 I / O
-* 파일 입출력 방식
-  * 텍스트 I / O와 바이너라 I / O의 두 방식
-    * C++ 파일 입출력 클래스(ifstream, ofstream, fstream)는 두 방식 지원
-* 텍스트 I / O
-  * 문자 단위로 파일에 쓰기, 파일에서 읽기
-    * 문자를 기록하고, 읽은 바이트를 문자로 해석
-  * 텍스트 파일에만 적용
-* 바이너리 I / O
-  * 바이트 단위로 파일에 쓰기, 파일에서 읽기
-    * 데이터를 문자로 해석하지 말고 그대로 기록하거나 읽음
-  * 텍스트 파일과 바이너리 파일 모두 입출력 가능
-* 텍스트 I / O와 바이너리 I / O 입출력 시 차이점
-  * 개행 문자('\n')를 다루는데 차이점 존재
-
-#### << 연산자를 이용한 간단한 파일 출력
-```CPP
-ofstream fout;
-// 파일 쓰기를 위한 스트림 생성
-
-fout.open("song.txt");
-// song.txt 파일 열기
-// ofstream fout("song.txt"); 한 줄로 줄여 쓰기 가능
-
-if(!fout){
- // fout 스트림의 파일 열기가 실패한 경우 파일 열기 실패를 처리하는 코드
- // 파일 열기 성공 검사로, operator !() 실행
- // if(!fout.is_open())과 동일
-}
-
- int age = 21;
- char singer[] = "Kim";
- char song[] = "Yesterday";
-
- // 파일 쓰기 예시
- fout << age << "\n";
- // 파일에 21과 '\n'을 기록
-
- fout << singer << endl;
- // 파일에 "Kim"과 '\n'을 덧붙여 기록
-
- fout << song << endl;
- // 파일에 "Yesterday"와 '\n'을 덧붙여 기록
- fout.close();
- // 파일 닫기
-```
-
-![song](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/song.PNG)
-
-* 예제 1. 키보드로 입력받은 텍스트 파일 저장 예제     
+(예제 작성)
+* 예제 1. 예외 상황에 대한 대처가 없는 프로그램 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/SavingTextFile.cpp)
 
-* 예제 2. ifstream과 >> 연산자로 텍스트 파일 읽기 예제     
+* 예제 2. if문과 리턴을 통한 오류 처리 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/Ifstream%3E%3E.cpp)
 
-## 3절. 파일 모드
-#### 파일 모드(file mode)
+* 예제 3. 리턴 값과 참조 매개 변수를 통한 오류 처리 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/Ifstream%3E%3E.cpp)
+
+## 2절. 예외
+#### 예외
 * 파일 입출력에 대한 구체적인 작업 형태에 대한 지정
 * 사례
   * 파일에서 읽을 작업을 할 것인지, 쓰기 작업을 할 것인지
