@@ -9,7 +9,7 @@
 
 ## When?
 * 2023.09 ~ 2023.12 학습 내용
-* 마지막 수정일 : 2024.02.08
+* 마지막 수정일 : 2024.02.09
 
 ## Learning List
 * ch01 [C++소개](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch01_IntroduceC%2B%2B.md)
@@ -28,7 +28,7 @@
 * ch14 [표준 템플릿 라이브러리](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch14_StandardTemplateLibrary.md)
 * ch15 [C++ 입출력 시스템](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch15_C%2B%2BIOSystem.md)
 * ch16 [C++ 파일 입출력](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch16_C%2B%2BFileIO.md)
-* ch17 [예외처리]()
+* ch17 [예외처리](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch17_ExceptionHandling.md)
 * ch18 [C와 링크]()
 
 ## SourceCode List
@@ -47,5 +47,5 @@
 * [ch14](https://github.com/BangYunseo/Basic_CPP/tree/main/ch14_StandardTemplateLibrary)
 * [ch15](https://github.com/BangYunseo/Basic_CPP/tree/main/ch15_C%2B%2BIOSystem)
 * [ch16](https://github.com/BangYunseo/Basic_CPP/tree/main/ch16_FileIO)
-* [ch17]()
+* [ch17](https://github.com/BangYunseo/Basic_CPP/tree/main/ch17_ExceptionHandling)
 * [ch18]()
