@@ -23,72 +23,44 @@
 
 * 예제 1. 예외 상황에 대한 대처가 없는 프로그램 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch17_ExceptionHandling/GetExp.cpp)
-(예제 작성)
+
 * 예제 2. if문과 리턴을 통한 오류 처리 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/Ifstream%3E%3E.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch17_ExceptionHandling/IfReturn.cpp)
 
 * 예제 3. 리턴 값과 참조 매개 변수를 통한 오류 처리 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/Ifstream%3E%3E.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch17_ExceptionHandling/RRParameter.cpp)
 
 ## 2절. 예외
 #### 예외
-* 파일 입출력에 대한 구체적인 작업 형태에 대한 지정
-* 사례
-  * 파일에서 읽을 작업을 할 것인지, 쓰기 작업을 할 것인지
-  * 기존 파이르이 데이터를 모두 지우고 쓸 것인지, 파일의 끝 부분에 쓸 것인지
-  * 텍스트 I / O 방식인지 바이너리 I / O 방식인지
+* 실행 중에 프로그램 오동작이나 결과에 영향을 미치는 상황이 발생하는 경우
+  * ex) getExp() 함수에 예상치 못하게 사용자가 음수를 입력하여 2^-3을 1로 계산한 경우
  
-#### 파일 모드 지정 : 파일 열 때
-* open("파일 이름", 파일 모드)
-* ifstream("파일 이름", 파일 모드)
-* ofstream("파일 이름", 파일 모드)
+#### 예외 처리기
+* 예외 발생을 탐지하고 예외를 처리하는 코드
+  * 잘못된 결과, 비정상적인 실행, 시스템에 의한 강제 종료를 방지
+  * ex) 마이크로프로세서의 인터럽트와 비슷한 역할
+ 
+#### 예외 처리 수준
+* 운영 체제 수준 예외 처리
+  * 운영체제가 예외의 발생을 탐지하여 응용프로그램에게 알려주어 예외에 대처하게 하는 방식
+  * 운영체제마다 서로 다르므로 운영체제나 컴파일러 별로 예외 처리 라이브러리로 작성
+  * Java의 경우, JVM 혹은 라이브러리에서 탐지한 예외를 자바응용프로그램에게 전달
+  * 윈도우 운영체제는 탐지한 예외를 C/C++ 응용프로그램에게 알려줌
+    * 운영체제와 컴파일러에 의존적인 C++ 문법 사용
+* 응용프로그램 수준 예외 처리
+  * 사용자의 잘못된 입력이나 없는 파일을 여는 등 응용프로그램 수준에서 발생하는 예외를 자체적으로 탐지하고 처리하는 방법
+  * C++ 예외 처리
+ 
+#### C++ 예외 처리
+* C++ 표준의 예외 처리
+* 응용프로그램 수준 예외 처리
 
-![filemode](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/filemode.PNG)
 
-#### 파일 모드 설정
-```CPP
-void open(const char* filename, ios::openmode mode);
-// mode로 지정된 파일 모드로 filename의 파일을 열고 파일 모드 지정
-```
+#### 피자 자동 기계외 예외 처리개념
 
-* student.txt 파일에서 처음부터 읽고자 하는 경우
-```CPP
-// case 1
-ifstream fin;
-fin.open("student.txt");
-```
-```CPP
-// case 2
-ifstream fin;
-fin.open("student.txt", ios::in);
-```
-* student.txt 파일의 끝에 데이터를 저장하는 경우
-```CPP
-ofstream fout;
-fout.open("student.txt", ios::out | ios::app);
-fout << "tel:01044447777";
-// 기존의 stduent.txt 끝에 "tel:01044447777"을 추가하여 저장
-```
-* 바이너리 I / O로 data.bin 파일을 기록하는 경우
-```CPP
-fstream fbinout;
-fbinout.open("data.bin", ios::out | ios:: binary);
-char buf[128];
-...
-fbinout.write(buf, 128);
-// buf에 있는 128 바이트를 파일에 기록
-```
+![pizza](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/pizza.PNG)
 
-* 예제 3. get()을 이용한 텍스트 파일 읽기 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/GetFunction.cpp)
-
-#### get()과 EOF
-* 파일의 끝에서 읽기를 시도하면 get()은 EOF(-1값)를 리턴
-
-![EOFget](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/EOFget.PNG)
-
-#### get()으로 파일의 끝을 인지하는 방법
-* 방법 1
+#### 예외 처리 기본 형식(여기부터 다시 작성)
 ```CPP
 // case 1
 while(true){
