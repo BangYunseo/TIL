@@ -7,7 +7,7 @@
 >
 > 2절. 예외
 >
-> 3절. 
+> 3절. 예외 클래스 만들기
 
 
 ## 1절. 오류 처리
@@ -60,99 +60,84 @@
 
 ![pizza](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/pizza.PNG)
 
-#### 예외 처리 기본 형식(여기부터 다시 작성)
+#### 예외 처리 기본 형식
+* try - throw - catch
+  * try { } 블록
+    * 예외가 발생할 가능성이 있는 코드를 묶음
+  * throw 문
+    * 발견된 예외를 처리하기 위해 예외 발생을 알리는 문장
+    * try { } 블록 내에서 이루어져야 함
+  * catch() { } 블록
+    * throw에 의해 발생한 예외를 처리하는 코드
 ```CPP
-// case 1
-while(true){
- int c = fin.get();
- // 파일에서 문자(바이트)를 읽음
- if(c == EOF){
-  ...  // 파일의 끝을 만난 경우 이에 대응하는 코드 작성
-  break;
-  // while 루프문 탈출
- }
- else{
-  // 읽은 문자(바이트) c 처리
- }
+try{ // 예외가 발생할 가능성이 있는 실행문 : try {} 블록
+ ..................
+ throw xxx;
+ // 예외를 발견할 경우
+ // 예외 발생을 알리는 throw문 : xxx는 예외 값
 }
-```
-* 방법 2
-```CPP
-// case 2
-while((c = fin.get()) != EOF){// 파일의 끝을 만나면 루프 종료
- ... // 파일에서 읽은 값 c를 처리하는 코드
+catch( // 처리할 예외 파라미터 선언){ // catch {} 블록
+ // 예외 처리문
 }
 ```
 
-#### 파일의 끝을 잘못 인지하는 코드
-* EOF 값을 c에 읽어 사용한 후 다음 루프의 while 조건문에서 EOF에 도달한 사실을 알게 되기 때문에 잘못된 코드
+#### throw와 catch
+
+![throwcatch](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/throwcatch.PNG)
+
 ```CPP
-while(!fin.eof()){
- int c = fin.get();
- // 마지막 읽은 EOF(-1) 값이 c에 리턴
- ...  // 읽은 값 c를 처리하는 코드
+try{
+ ...
+ throw 3.5;
+ // double 타입의 예외 던지기
+}
+catch(double d){ // double 타입 예외 처리 : 3.5가 d에 전달
+ ...
 }
 ```
 
-## 4절. 텍스트 I/O와 바이너리 I/O
-#### 텍스트 파일의 라인 단위 읽기
-* 두 가지 방법
-  * istream의 getline(char*line, int n) 함수 이용
-  * getline(ifstream& fin, string& line) 함수 이용
-* 라인 단위로 텍스트 파일을 읽는 코드 2가지
-  * istream의 getline() 함수 이용
 ```CPP
-char buf[81];
-// 한 라인이 최대 80개의 문자로 구성된다고 가정
-
-ifstream fin("c:\\windows\\system.ini");
-while(fin.getline(buf, 81){ // 한 라인이 최대 80개의 문자로 구성되었으며 끝에 '\0' 문자 추가
- ...   // 읽은 라인(buf[])을 활용하는 코드
+try{
+ ...
+ throw "음수 불가능";
+ // char* 타입의 예외 던지기
 }
-```
-  * 전역 함수 getline(ifstream& fin, string& line) 함수 이용 
-```CPP
-string line;
-ifstream fin("c:\\windows\\system.ini");
-while(getline(fin, line){ // 한 라인을 읽어 line에 저장한 후 파일 끝까지 반복
- ...   // 읽은 라인(line)을 활용하는 코드
+catch(const char* s){ // const char* 타입 예외 처리 : 예외 값은 "음수 불가능"이 s에 전달
+ ...
+ cout << s;
+ // 음수 불가능 출력
 }
 ```
 
+#### try - throw - catch의 예외 처리 과정
+* 예외가 발생하지 않은 경우     
 
-* 예제 4 참고 이미지              
-![ex4](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/ex4.PNG)
+![notexpt](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/notexpt.PNG)
 
-* 예제 4. 텍스트 파일 연결 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/ConnectTextFile.cpp)
+* 예외가 발생한 경우     
 
-* 예제 5. istream의 getline()을 이용하여 텍스트 파일을 읽고 화면에 출력하는 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/GetlineIstream.cpp)
+![expt](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/expt.PNG)
 
-* 예제 6. getline(ifstream&, string&)으로 words.txt 파일을 읽고 단어 검색하는 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/GetlineWord.cpp)
+* 예제 4. 0으로 나누는 예외 처리 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch17_ExceptionHandling/Average0.cpp)
 
-#### 바이너리 I/O
-* 바이너리 I/O 방식
-  * 데이터의 바이너리 값을 그대로 파일에 저장
-  * 파일의 바이너리 값을 그래도 읽어서 변수나 버퍼에 저장
-  * 텍스트 파일이든 바이너리 파일이든 바이너리 I/O로 입출력 가능
-* 바이너리 I/O 모드 열기
-  * ios::binary가 설정되지 않으면 디폴트가 텍스트 I/O
-```CPP
-ifstream fin;
-fin.open("desert.jpg", ios::in | ios::binary);
-// 바이너리 I/O로 파일 읽기
+#### throw와 catch의 예
+* 하나의 try { } 블록에 다수의 catch() { } 블록 연결     
 
-ofstream fout("desert.jpg", ios::out | ios::binary);    // 바이너리 I/O로 파일 쓰기
-fstream fsin("desert.jpg", ios::in | ios::binary);      // 바이너리 I/O로 파일 읽기
-![readingline](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch15/readingline.PNG)
-```
+![mcatch](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/mcatch.PNG)
 
-* 예제 7. 바이너리 I/O로 파일 복사 예제     
+* 함수를 포함하는 try { } 블록
+
+![includefunction](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/includefunction.PNG)
+
+(여기부터 작성)
+* 예제 5. 지수 승 계산을 예외 처리 코드로 재작성하는 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/BinaryFileCopy.cpp)
 
-#### read()/write()로 블록 단위 파일 입출력
+* 예제 6. 문자열을 정수로 변환하는 예제     
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/BinaryFileCopy.cpp)
+
+#### 예외를 발생시키는 함수의 선언
 * get() / put()
   * 문자 혹은 바이트 단위로 파일 입출력
 * read() / write()
