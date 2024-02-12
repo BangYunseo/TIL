@@ -1,17 +1,15 @@
-#  Chapter 17. 예외 처리   
+#  Chapter 18. C 언어와의 링크 지정  
 > '명품 C++Programming - 황기태' 13장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch17_ExceptionHandling)
 > 
-> 1절. 오류 처리
+> 1절. C 코드와의 링킹
 >
-> 2절. 예외
->
-> 3절. 예외 클래스
+> 2절. extern "c"
 
 
-## 1절. 오류 처리
-#### 오류
+## 1절. C 코드와의 링킹
+#### C++ 에서의 C 코드와 링킹
 * 컴파일 오류
   * 문법에 맞지 않는 구문으로 인한 오류
 * 실행 오류
