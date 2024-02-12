@@ -1,7 +1,7 @@
 #  Chapter 18. C 언어와의 링크 지정  
 > '명품 C++Programming - 황기태' 13장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch17_ExceptionHandling)
+> [소스코드]는 존재하지 않습니다.
 > 
 > 1절. C 코드와의 링킹
 >
