@@ -7,7 +7,7 @@
 >
 > 2절. 예외
 >
-> 3절. 예외 클래스 만들기
+> 3절. 예외 클래스
 
 
 ## 1절. 오류 처리
@@ -130,130 +130,58 @@ catch(const char* s){ // const char* 타입 예외 처리 : 예외 값은 "음�
 
 ![includefunction](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/includefunction.PNG)
 
-(여기부터 작성)
 * 예제 5. 지수 승 계산을 예외 처리 코드로 재작성하는 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/BinaryFileCopy.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch17_ExceptionHandling/GetExp2.cpp)
 
 * 예제 6. 문자열을 정수로 변환하는 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/BinaryFileCopy.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch17_ExceptionHandling/StringToInt.cpp)
 
-#### 예외를 발생시키는 함수의 선언
-* get() / put()
-  * 문자 혹은 바이트 단위로 파일 입출력
-* read() / write()
-  * 블록 단위로 파일 입출력
+#### 예외를 발생시키는 함수의 선언(여기부터 작성)
+* 예외를 발생시키는 함수는 다음과 같이 선언 가능
+  * 함수 원형에 연이어 throw(예외 타입, 예외 타입, ...) 선언
 ```CPP
-istream& read(char* s, int n);
-// 파일에서 최대 n개의 바이트를 배열 s에 읽으며 파일의 끝을 만나면 읽기 중단
-
-ostream& write(char* s, int n);
-// 배열 s에 있는 처음 n개의 바이트를 파일에 저장
-
-int gcount();
-// 최근에 파일에서 읽은 바이트 수 리턴
 ```
+```CPP
+```
+* 장점
+  * 프로그램의 작동 명확
+  * 프로그램의 가독성 상승
 
-* 예제 8. read()로 텍스트 파일을 바이너리 I/O로 읽는 예제     
+* 예제 7. 예외 처리를 가진 스택 클래스 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/FuncionRead.cpp)
 
-* 예제 9. read()/write()로 이미지 파일 복사 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/ReadWriteTulips.cpp)
+#### 다중 try { } 블록
+* try { } 블록 내에 try { } 블록의 중첩 가능
+```CPP
+```
 
-* 예제 10 참고 이미지              
-![ex10](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/ex10.PNG)
-
-* 예제 10. int 배열과 double 값을 바이너리 파일에 저장하고 읽는 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/IntDoubleBinary.cpp)
-
-#### 텍스트 I/O와 바이너리 I/O의 확실한 파이점
-* 파일의 끝을 처리하는 방법에는 차이가 없음
-  * 텍스트 I/O든 바이너리 I/O든 파일의 끝을 만나면 EOF 리턴
-* 개행 문자 '\n'를 읽고 쓸 때 서로 다르게 작동
-
-![textbinary](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/textbinary.PNG)
-
-#### 텍스트 I/O와 바이너리 I/O의 실행 결과 비교
+#### throw 사용 시 주의 사항
+* throw 문의 위치
+  * 항상 try { } 블록 안에서 실행
+    * 시스템이 abort() 호출, 강제 종료
+```CPP
+```  
+* 예외를 처리할 catch()가 없으면 프로그램 강제 종료
+```CPP
+```  
+* catch() { } 블록 내에도 try { } catch() { } 블록 선언 가능
+```CPP
+```  
 
 ![textbinary2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/textbinary2.PNG)
 
-## 5절. 스트림 상태
-#### 스트림 상태 검사
-* 스트림 상태
-  * 파일 입출력이 진행되는 동안 스트림(열어 놓은 파일)에 관한 입출력 오류 저장
-    * 스트림 상태를 저장하는 멤버 변수 이용
+## 3절. 예외 클래스
+#### 예외 클래스 만들기
+* 예외 값의 종류
+  * 기본 타입의 예외 값
+    * 정수, 실수, 문자열 등 비교적 간단한 예외 정보 전달
+  * 객체 예외 값
+    * 예외 값으로 객체를 던짐
+    * 예외 값으로 사용할 예외 클래스 작성 필요
+* 예외 클래스
+  * 사용자는 자신만의 예외 정보를 포함하는 클래스 작성
+  * throw로 객체를 던짐
+    * 객체가 복사되어 예외 파라미터에 전달
 
-![streamstat](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/streamstat.PNG)
-
-#### 스트림 상태를 나타내는 비트 정보
-
-![streambit](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/streambit.PNG)
-
-#### 스트림 상태를 검사하는 멤버 함수
-
-![streammem](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/streammem.PNG)
-
-* 예제 11. 스트림 상태 검사 예제     
+* 예제 8. 예외 클래스 작성 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/StreamState.cpp)
-
-## 6절. 파일 포인터
-#### C++ 파일 입출력 방식
-* 순차 접근
-  * 읽은 다음 위치에서 읽고 쓴 다음 위치에 쓰는 방식
-  * 디폴트 파일 입출력 방식
-* 임의 접근
-  * 파일 내의 임의의 위치로 옮겨 다니면서 읽고 쓸 수 있는 방식
-  * 파일 포인터를 옮겨 파일 입출력
- 
-#### 파일 포인터
-* 파일은 연속된 바이트의 집합
-* 파일 포인터
-  * 파일에서 다음에 읽거나 쓸 위치를 표시하는 특별한 마크
-* C++는 알려진 파일마다 두 개의 파일 포인터 유지
-  * get pointer : 파일 내 다음에 읽을 위치
-  * put pointer : 파일 내 다음에 쓸 위치
-
-#### 파일 모드와 파일 포인터
-
-![FileMP](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/FileMP.PNG)
-
-#### 임의의 접근 방법
-* 파일 포인터 제어
-  * 절대 위치로 이동시키는 방법과 상대 위치로 이동시키는 두 방법
-
-```CPP
-// istream의 두 방법
-istream& seekg(streampos pos);
-// 정수 값으로 주어진 절대 위치 pos로 get pointer를 옮김
-
-istream& seekg(streamoff offset, ios::seekdir seekbase);
-// seekbase를 기준으로 offset만큼 떨어진 위치로 get pointer를 옮김
-```
-```CPP
-// ostream의 두 방법
-ostream& seekp(streampos pos);
-// 정수 값으로 주어진 절대 위치 pos로 put pointer를 옮김
-
-ostream& seekp(streamoff offset, ios::seekdir seekbase);
-// seekbase를 기준으로 offset만큼 떨어진 위치로 put pointer를 옮김
-```
-
-```CPP
-// streampos의 두 방법
-streampos tellg();
-// 입력 스트림의 현재 get pointer의 값 리턴
-
-streampos tellp();
-// 출력 스트림의 현재 put pointer의 값 리턴
-```
-
-![seekbase](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/seekbase.PNG)
-
-#### seekg()에 의한 get pointer의 이동 사례
-
-![seekg](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/seekg.PNG)
-
-* 예제 12 참고 이미지                 
-![ex12](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/ex12.PNG)
-
-* 예제 12. 파일 크기 알아내기 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/FileSize.cpp)
