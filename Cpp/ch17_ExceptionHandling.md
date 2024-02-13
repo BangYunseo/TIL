@@ -140,35 +140,77 @@ catch(const char* s){ // const char* 타입 예외 처리 : 예외 값은 "음�
 * 예외를 발생시키는 함수는 다음과 같이 선언 가능
   * 함수 원형에 연이어 throw(예외 타입, 예외 타입, ...) 선언
 ```CPP
+int max(int x, int y) throw(int){
+ if(x < 0) throw x;
+ else if(y < 0) throw y;
+ else if(x > y) return x;
+ else return y;
+}
 ```
 ```CPP
+double valueAt(double *p, int dex) throw(int, char*){
+ if(index < 0) throw "index out of bounds exception";
+ // char* 타입 예외 발생
+
+ else if(p == NULL) throw 0;
+ // int 타입 예외 발생
+
+ else return p[indedx];
+}
 ```
 * 장점
   * 프로그램의 작동 명확
   * 프로그램의 가독성 상승
 
 * 예제 7. 예외 처리를 가진 스택 클래스 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/FuncionRead.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/tree/main/ch17_ExceptionHandling/StackClass)
 
 #### 다중 try { } 블록
 * try { } 블록 내에 try { } 블록의 중첩 가능
-```CPP
-```
+
+![try](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/try.PNG)
 
 #### throw 사용 시 주의 사항
 * throw 문의 위치
   * 항상 try { } 블록 안에서 실행
     * 시스템이 abort() 호출, 강제 종료
 ```CPP
+throw 3;
+// 프로그램이 비정상적으로 종료됨
+try{
+...
+}
+catch(int n){
+...
+}
 ```  
 * 예외를 처리할 catch()가 없으면 프로그램 강제 종료
 ```CPP
+try{
+...
+ throw "aa";
+ // char* 타입의 예외를 처리할 catch(){} 블록이 없고
+ // double 타입의 예외를 처리할 catch(){} 블록만 존재하기 때문에 프로그램 종료
+}
+catch(double p){
+...
+}
 ```  
 * catch() { } 블록 내에도 try { } catch() { } 블록 선언 가능
 ```CPP
+try{
+ throw 3;
+}
+catch(int x){
+ try{
+  throw "aa";
+  // 아래의 catch(const char* p){} 블록에서 처리
+ }
+  catch(const char* p){
+   ...
+ }
+}
 ```  
-
-![textbinary2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/textbinary2.PNG)
 
 ## 3절. 예외 클래스
 #### 예외 클래스 만들기
@@ -184,4 +226,4 @@ catch(const char* s){ // const char* 타입 예외 처리 : 예외 값은 "음�
     * 객체가 복사되어 예외 파라미터에 전달
 
 * 예제 8. 예외 클래스 작성 예제     
-[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/StreamState.cpp)
+[SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch17_ExceptionHandling/ExceptClass.cpp)
