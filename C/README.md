@@ -9,7 +9,7 @@
 
 ## When?
 * 2023.03 ~ 2023.07 학습 완료
-* 마지막 수정일 : 2023.11.04 (ch5 및 코드파일 수정 완료)
+* 마지막 수정일 : 2023.02.15
 
 ## Learning List
 * ch1 [변수와 자료형](https://github.com/BangYunseo/TIL/blob/main/C/ch1_DataType.md)
