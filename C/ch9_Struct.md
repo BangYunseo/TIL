@@ -10,10 +10,12 @@
 >
 > 3절. 구조체 멤버
 >
-> 4절. 
+> 4절. 구조체 배열
 >
-> 5절. 
+> 5절. 구조체와 포인터
 >
+> 6절. 구조체와 함수
+
 
 ## 1절. 구조체 기초
 #### 자료형의 분류
@@ -242,35 +244,49 @@ int main(void){
 	p2 = p1;
 	// 대입 가능
 
-	if(p1 == p2)	printf("p1 and p2 same!");
-	if((
-```
-#### 8. 간접 참조 연산자
+	// if(p1 == p2)				printf("p1 and p2 are same!");
+	// 위의 if문은 올바른 비교가 아니며 이 비교문을 사용할 경우 컴파일 오류가 발생
 
-	- 간접 참조 연산자 * : 포인터가 가리키는 값을 가져오는 연산자
+	if((p1.x == p2.x) && (p1.y == p2.y))	printf("p1 and p2 are same!");
+	// 즉, 각각의 요소들을 한 번에 비교할 수 없음
+	// 하나의 요소들마다 비교해야 함
+```
+
+## 4절. 구조체 배열
+#### 구조체 배열
+* 구조체를 여러 개 모은 것
+
+![structarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structarray.PNG)
+
 ```C
-int i = 10;
-int *p;			// 포인터 변수 선언(자료형과 *p)
-p = &i;			// p에는 i의 주소값인 4 저장
-printf("%d", *p)	// 간접 참조(p변수의 주소에 가서 값을 알아오기)
-// 실행 결과
-// 10 
+struct student{
+	int number;
+	char name[20];
+	double grade;
+};
+
+int main(void){
+	struct student list[100];
+	// 구조체의 배열 선언
+	// 구조체 100개를 저장 가능
+
+	list[2].number = 24;
+	strcpy(list[2].name, "홍길동");
+	list[2].grade = 4.3;
+}
 ```
-![ppointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/ppointer.PNG)
 
-
-#### 8-1. 간접 참조 연산자의 해석 
-
-	- 간접 참조 연산자 : 지정된 위치에서 포인터의 타입에 따라 값을 읽어들인다.
+#### 구조체 배열의 초기화
+* 배열 초기화 안에 구조체 초기화가 필요하므로 중괄호 안에 중괄호를 사용
 ```C
-int *p = 8;			// 위치 8에서 정수를 읽는다.
-char *pc = 8;			// 위치 8에서 문자를 읽는다.
-double *pd = 8;			// 위치 8에서 실수를 읽는다.
+struct student list[3] = {
+	{ 1, "Park", 3.42 },
+	{ 2, "Kim", 4.31 },
+	{ 3, "Lee", 2.98 }
+};
 ```
 
-![ppointer2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/ppointer2.PNG)
-
-#### 9. & 연산자와 * 연산자
+#### 구조체 배열 변수 선언(여기부터 다시)
 
 	- & 연산자 : 주소 연산자로, 변수의 주소를 반환한다.
  	- * 연산자 : 내용 연산자로, 포인터가 가리키는 곳의 내용을 반환한다.
