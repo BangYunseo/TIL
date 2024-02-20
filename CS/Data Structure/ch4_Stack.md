@@ -14,6 +14,7 @@
   * push(item) : item 하나를 스택의 가장 윗 부분에 추가
   * top() : 스택의 가장 위 항목 반환
   * isEmpty() : 스택이 비어있다면 True 반환
+
 ![stack2](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch4/stack2.PNG)
 
 #### 스택의 예시
@@ -33,7 +34,18 @@
 * 값을 삽입할 때는 위에서 놓음
 * 값을 삭제할 때는 위에서 뺌
   * 즉, 맨 윗 항목의 값만 파악 가능
+
 ![stackir](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch4/stackir.PNG)
+
+#### 스택의 삽입 : push(item)
+* 스택에 데이터를 삽입하면 맨 윗부분에 항목이 추가
+
+![push](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch4/push.PNG)
+
+#### 스택의 삭제 : pop()
+* 스택에 데이터를 삭제하면 맷 윗부분의 항목이 삭제
+
+![pop](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch4/pop.PNG)
 
 #### 리스트로 구현한 스택
 ```py
@@ -66,6 +78,12 @@ class ListStack:
       print(self.__stack[i], end=' ')
     print()
 ```
+
+#### 스택의 시간복잡도
+* 스택의 삽입이나 삭제 시 맨 위의 데이터를 삭제
+  * 따라서 스택의 시간복잡도는 항상 O(1)
+* 만약 특정 데이터를 찾을 경우
+  * 순차적으로 수행해야 하므로 O(n)의 시간복잡도를 가짐
 
 #### 장점 
 * 구조가 단순
