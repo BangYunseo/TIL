@@ -94,5 +94,5 @@ class ListStack:
 * 데이터 최대 개수를 미리 정할 필요가 존재
 * 저장 공간 낭비 발생 가능성 존재
 
-[본문 참고 자료](https://velog.io/@alkwen0996/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%8A%A4%ED%83%9DStack)
-[본문 참고 자료](https://jin-network.tistory.com/130)
+[본문 참고 자료 1 ](https://velog.io/@alkwen0996/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%8A%A4%ED%83%9DStack)            
+[본문 참고 자료 2 ](https://jin-network.tistory.com/130)
