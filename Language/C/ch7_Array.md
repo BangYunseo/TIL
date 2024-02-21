@@ -32,12 +32,12 @@
 int s[10];	// 10개의 공간을 가진 배열을 생성
 ```
 	 
-![array1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/array1.PNG)
+![array1](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/array1.PNG)
 
 #### 배열의 필요성
 * 많은 변수를 한 번에 저장할 수 있다.
 	 
-![array2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/array2.PNG)
+![array2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/array2.PNG)
 
 #### 배열의 특징
 * 배열은 메모리의 연속적인 공간에 저장한다.   
@@ -113,13 +113,13 @@ int main(void)
 ## 2절. 인덱스
 #### 배열 선언
 
-![definearray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/definearray.PNG)   
+![definearray](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/definearray.PNG)   
 
 #### 배열 원소와 인덱스
 * 인덱스(index) : 배열 원소의 번호   
 * 인덱스는 1부터 시작되지 않고 0부터 시작된다.     
 
-![array3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/array3.PNG)  
+![array3](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/array3.PNG)  
 
 #### 배열 선언의 예
 
@@ -142,11 +142,11 @@ int scores[3.1];	// 배열의 크기가 실수일 수 없음
 ```
 #### 기호 상수를 이용한 배열
 
-![array4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/array4.PNG)  
+![array4](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/array4.PNG)  
 
 #### 배열 요소 접근
 
-![array5](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/array5.PNG)   
+![array5](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/array5.PNG)   
 
  
 ```C
@@ -192,12 +192,12 @@ int main(void)
 int score[5];			// score[5]는 인덱스가 0 ~ 4인 배열을 생성한다는 의미
 score[5] = 60;  		// 인덱스는 0 ~ 4까지 있기 때문에 score[5]는 존재하지 않는 배열 공간
 ```
-![arrayindex](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/arrayindex.PNG) 
+![arrayindex](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/arrayindex.PNG) 
 
 ## 3절. 배열 채우기
 #### 배열과 반복문
 * 배열의 가장 큰 장점은 반복문을 사용해서 배열의 원소를 간편하게 처리할 수 있다는 점이다.
-![arrayfor](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/arrayfor.PNG)  
+![arrayfor](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/arrayfor.PNG)  
  
 #### 배열 난수로 채우는 예제
 
@@ -248,17 +248,17 @@ int main(void)
 ## 4절. 배열의 초기화
 #### 배열의 초기화
 * 배열의 초기값들을 콤마로 분리하여 중괄호로 감싼 후에 배열을 선언한다.     
-![arrayfirst1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/arrayfirst1.PNG) 
+![arrayfirst1](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/arrayfirst1.PNG) 
 * 초기값의 개수가 배열보다 적은 경우는 앞의 요소들만 초기화되고 나머지는 0으로 초기화된다.
-![arrayfirst2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/arrayfirst2.PNG) 
+![arrayfirst2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/arrayfirst2.PNG) 
 * 초기화 후에 배열의 크기를 비워두면 컴파일러가 자동으로 초기값의 개수만큼 크기를 지정한다.
-![arrayfirst3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/arrayfirst3.PNG) 
+![arrayfirst3](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/arrayfirst3.PNG) 
 
 
 #### 초기값이 주어지지 않았다면 ? 
 * 만약 초기값이 주어지지 않은 지역 변수로 선언된 배열이라면, 일반적인 지역 변수와 마찬가지로 아무 의미 없는 쓰레기 값들이 들어간다.     
 
-![arrayfirst4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/arrayfirst4.PNG) 
+![arrayfirst4](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/arrayfirst4.PNG) 
 
 #### 배열의 초기값 주의사항
 * 배열의 모든 요소를 10으로 초기화하려고 할 때,
@@ -288,7 +288,7 @@ int main(void){
 ## 5절. 다양한 배열 예제
 #### 배열 원소의 개수 계산  
 
-![howmanyarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/howmanyarray.PNG) 
+![howmanyarray](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/howmanyarray.PNG) 
 
 ```C
 int scores[] = {1, 2, 3, 4, 5, 6};
@@ -304,7 +304,7 @@ for (i = 0; i < size; i++)
 
 #### 배열 원소의 개수 계산 2
 
-![howmanyarray2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/howmanyarray2.PNG) 
+![howmanyarray2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/howmanyarray2.PNG) 
 
 
 #### 주사위 던지기 예제
@@ -400,7 +400,7 @@ int main(void)
 #### 배열과 함수
 * 배열의 경우에는 사본이 아닌 원본이 전달된다.    
 
-![orignalarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/orignalarray.PNG) 
+![orignalarray](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/orignalarray.PNG) 
 
 * 함수 : 매개변수와 인수     
 * 매개변수 : 함수 바깥에서 전달된 값이 저장되는 변수   
@@ -500,7 +500,7 @@ void print_array(const int a[], int size){// const를 사용하면 함수 안에
 |(1, 2, 3, 5, 7)|(8)|5 선택|
 |(1, 2, 3, 5, 7, 8)|()|6 선택|
 
-![sorting1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/sorting1.PNG) 
+![sorting1](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/sorting1.PNG) 
 
  #### 선택 정렬 예제
 ```C
@@ -538,7 +538,7 @@ int main(void)
 	return 0;
 }
 ```
-![sortingRE](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/sortingRE.PNG) 
+![sortingRE](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/sortingRE.PNG) 
 
 
  #### 선택 정렬 변수의 값을 교환할 때
@@ -552,7 +552,7 @@ int main(void)
 		(2) list[i] = list[least];
  		(3) list[least] = temp;
 
-![rightway](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/rightway.PNG) 
+![rightway](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/rightway.PNG) 
 
 
 ## 9절. 순차 탐색
@@ -562,7 +562,7 @@ int main(void)
 		> 순차 탐색은 첫 번째 요소에서 성공할 수도 있고 마지막 요소까지 가야 찾을 수도 있음
 		> 평균적으로는 절반 정도의 배열요소와 비교
 
-![waysearch](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/waysearch.PNG) 
+![waysearch](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/waysearch.PNG) 
 
 
 #### 순차 탐색 예시
@@ -634,11 +634,10 @@ int main(void)
 
 ## 10절. 이진 탐색
 #### 이진 탐색
+* 이진 탐색(binary search) : 정렬된 배열의 중앙에 위치한 원소와 비교 되풀이
+  * 단, 탐색하려는 배열이 미리 정렬되어 있어야 한다. 
 
-	- 이진 탐색(binary search) : 정렬된 배열의 중앙에 위치한 원소와 비교 되풀이
-		- 단, 탐색하려는 배열이 미리 정렬되어 있어야 한다. 
-
-![binarysearch](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/binarysearch.PNG) 
+![binarysearch](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/binarysearch.PNG) 
 
 
 
@@ -695,7 +694,7 @@ int binary_search(int list[], int n, int key)
    * ex) 디지털 이미지, 보드 게임 등
 
 
-![2tharray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharray.PNG) 
+![2tharray](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/2tharray.PNG) 
 
 
 ```C
@@ -706,7 +705,7 @@ int s[5][3][10];	// 3차원
 
 * 2차원 배열의 인덱스
 
-![2tharrayindex](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayindex.PNG)   
+![2tharrayindex](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/2tharrayindex.PNG)   
 
 
 #### 2차원 배열 예제
@@ -750,15 +749,15 @@ int main(void)
 #### 2차원 배열 초기화
 * 행과 열이 모두 주어진 2차원 배열 초기화
 
-![2tharrayreset](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayreset.PNG)
+![2tharrayreset](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/2tharrayreset.PNG)
 
 * 행이 주어지지 않고 열만 주어진 2차원 배열 초기화
 
-![2tharrayreset2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayreset2.PNG)
+![2tharrayreset2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/2tharrayreset2.PNG)
 
 * 행이 주어지지 않고 열만 주어진 2차원 배열 초기화 - 2
 
-![2tharrayreset3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/2tharrayreset3.PNG)
+![2tharrayreset3](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/2tharrayreset3.PNG)
 
 
 
@@ -798,4 +797,4 @@ int main(void)
 
 #### 다차원 배열 주의사항
 
-![ntharray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch7/ntharray.PNG)
+![ntharray](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch7/ntharray.PNG)
