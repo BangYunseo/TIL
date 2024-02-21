@@ -14,7 +14,7 @@
 ## 1절. 복사
 #### 얕은 복사와 깊은 복사
  
-![copy](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/copy.PNG)
+![copy](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch06/copy.PNG)
 
 
 #### C++에서 얕은 복사와 깊은 복사(여기부터 작성)
@@ -41,7 +41,7 @@ class Person{
 };
 ```
 
-![person](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/person.PNG)
+![person](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch06/person.PNG)
 
 
 ## 2절. 복사 생성자
@@ -69,7 +69,7 @@ Circle::Circle(Circle& c){
 
 #### 복사 생성 과정
 
-![copycon](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/copycon.PNG)
+![copycon](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch06/copycon.PNG)
 
 
 * 예제 1. Circle의 복사 생성자와 객체 복사 예제      
@@ -81,12 +81,12 @@ Circle::Circle(Circle& c){
 * 복사 생성자가 선언되어 있지 않는 클래스
   * 컴파일러는 자동으로 디폴트 복사 생성자 삽입
 
-![circle2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/circle2.PNG)
+![circle2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch06/circle2.PNG)
 
         
 #### 디폴트 복사 생성자 사례
 
-![exdefault](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/exdefault.PNG)
+![exdefault](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch06/exdefault.PNG)
 
 
 * 예제 2. 얕은 복사 생성자의 프로그램의 오류를 가진 Person Class 예제           
@@ -94,9 +94,9 @@ Circle::Circle(Circle& c){
 
 #### 예제 2의 실행과정
 
-![howex2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/howex2.PNG)
+![howex2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch06/howex2.PNG)
 
-![howex3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/howex3.PNG)
+![howex3](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch06/howex3.PNG)
 
 
 * 예제 3. 깊은 복사 생성자를 가진 Person Class 예제          
@@ -105,9 +105,9 @@ Circle::Circle(Circle& c){
 
 #### 예제 3의 실행과정
 
-![howex2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/howex2.PNG)
+![howex2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch06/howex2.PNG)
 
-![howex3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch06/howex3.PNG)
+![howex3](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch06/howex3.PNG)
 
 
 
