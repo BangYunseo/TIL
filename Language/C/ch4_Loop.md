@@ -50,29 +50,29 @@ printf("%d는 거짓입니다.\n", i);
 ```
 #### 반복문 선택 방법
 
-![howtoselect_loop](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/howtoselect_loop.PNG)
+![howtoselect_loop](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/howtoselect_loop.PNG)
 
 ## 2절. while문
 #### while
 * 주어진 조건이 만족되는 동안 문장들을 반복 실행한다.
   
-![while](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/while.PNG)   
-![while1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/while1.PNG) 
+![while](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/while.PNG)   
+![while1](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/while1.PNG) 
 
 #### while문 실행 과정
 
-![whilee](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/whilee.PNG)   
+![whilee](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/whilee.PNG)   
 * 만일 i를 증가시키는 증가식이 없었다면, 무한 루프(infinite loop) 문제가 발생한다.
 * 반복문을 사용할 때는 반드시 반복이 종료되는지 확인해야 한다.
 
 #### if-while 비교
 
-![if-while](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/if-while.PNG)   
+![if-while](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/if-while.PNG)   
 
 #### while 문에서 주의할 점
 
-![important_while](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/important_while.PNG)   
-![important_while2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/important_while2.PNG)  
+![important_while](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/important_while.PNG)   
+![important_while2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/important_while2.PNG)  
 
 ## 3절. 센티널
 #### 센티널 (보초값)
@@ -87,7 +87,7 @@ printf("%d는 거짓입니다.\n", i);
   * 일반적인 데이터 값에서는 절대 등장할 수 없는 값으로 정해 줄 수 있음
   * 예시) 성적을 입력받아 성적의 평균을 구하는 경우, 음수나 100보다 큰 값이 센티널이 될 수 있음
 		
-![sentinel](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/sentinel.PNG)
+![sentinel](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/sentinel.PNG)
 
 #### 센티널 예제
 
@@ -131,7 +131,7 @@ int main(void)
 ## 4절. do-while문
 #### do-while
      
-![do-while](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/do-while.PNG)
+![do-while](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/do-while.PNG)
      
 #### do - while문 예제
 
@@ -202,12 +202,13 @@ int main(void)
 ## 6절. for문
 #### for
 * 정해진 횟수만큼 반복하는 구조
-![for](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/for.PNG)
-![for2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/for2.PNG)
+![for](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/for.PNG)
+
+![for2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/for2.PNG)
 
 #### while 루프와 for 루프와의 관계 
 
-![while-for](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/while-for.PNG)
+![while-for](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/while-for.PNG)
 
 ## 7절. 증감식
 #### 초기식, 조건식, 증감식
@@ -220,7 +221,7 @@ int main(void)
 * 증감식
   * 한 번의 루프 실행이 끝나면 증감식이 실행된다.
 		
-![structure_for](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/structure_for.PNG)
+![structure_for](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/structure_for.PNG)
 
  
 #### 다양한 증감수식의 형태  
@@ -269,7 +270,7 @@ for (i = 0;i < 100 && sum < 2000; i++)
 ## 8절. 중첩 반복문
 #### 중첩 반복문
 
-![nested_loop](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/nested_loop.PNG)
+![nested_loop](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/nested_loop.PNG)
 
 #### 중첩 반복문 예제     
          
@@ -314,14 +315,14 @@ int main(void)
 * 다만 가끔은 의도적으로 무한 루프를 사용하는 경우도 있다.
   * ex)신호등 제어 프로그램
 	
-![infinite_loop](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/infinite_loop.PNG)
+![infinite_loop](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/infinite_loop.PNG)
 
 #### 무한 루프가 유용한 경우
 
 	- 반복을 빠져나가는 조건이 까다로운 경우에 많이 사용된다.
 	ex) 사용자가 입력한 수가 3의 배수이거나 음수인 경우에 while 루프를 빠져나가야 한다고 하자.
 
-![infinite_loop2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/infinite_loop2.PNG)
+![infinite_loop2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/infinite_loop2.PNG)
 
 ## 10절. break문 & goto문 & continue문
 #### break
@@ -350,16 +351,16 @@ int main(void)
 * 중첩 루프 안에서 어떤 문제가 발생했을 경우, goto를 이용하면 단번에 외부로 빠져나올 수 있다.
 * break를 사용하면 하나의 루프만을 벗어날 수 있다.
 	
-![goto](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/goto.PNG)
+![goto](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/goto.PNG)
 
 #### goto 문 예제
 
-![goto2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/goto2.PNG)
+![goto2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/goto2.PNG)
 
 #### continue 문
 * 0부터 10까지의 정수 중에서 3의 배수만 제외하고 출력하는 예제를 살펴보자
 
-![continue](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/continue.PNG)
+![continue](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/continue.PNG)
 
 #### continue 문 예제
 
@@ -392,5 +393,6 @@ int main(void)
 * 위에서 썼던 두 가지 형식을 모두 한꺼번에 적용
   * 전체 자리 수는 6자리로 맞추고 반드시 소수점 이하 셋째 자리까지만 표시
       
-![another_printf](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/another_printf.PNG)
-![another_printf2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch4/another_printf2.PNG)
+![another_printf](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/another_printf.PNG)
+
+![another_printf2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch4/another_printf2.PNG)
