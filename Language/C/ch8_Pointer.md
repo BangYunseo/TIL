@@ -22,14 +22,14 @@
 #### 포인터(Pointer)
 
 * 주소를 가지고 있는 변수   
-![pointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointer.PNG)
+![pointer](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pointer.PNG)
 
 #### 변수의 저장
 * 변수는 메모리에 저장된다.
 * 메모리는 바이트 단위로 엑세스된다.
   * 첫 번째 바이트의 주소는 0, 두 번째 바이트는 1, ...
 	 
-![pointer2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointer2.PNG)
+![pointer2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pointer2.PNG)
 
 #### 변수의 메모리
 * 변수의 크기에 따라서 차지하는 메모리 공간이 달라진다.
@@ -41,13 +41,13 @@ int main(void){
 	float f = 12.3;
 }
 ```
-![memory](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/memory.PNG)
+![memory](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/memory.PNG)
 
 
 ## 2절. 주소
 #### 주소의 개념
 
-![adress](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/adress.PNG)
+![adress](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/adress.PNG)
 
 #### 주소 연산자 &
 * 함수 scanf()를 사용하면서 인자를 '&변수이름'으로 사용
@@ -55,14 +55,14 @@ int main(void){
   * 함수 scanf()에서 입력값을 저장하는 변수의 주소값이 인자의 자료형
   * 함수 scanf()에서 일반 변수 앞에는 주소 연산자 &를 사용
 
-![adressOP](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/adressOP.PNG)
+![adressOP](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/adressOP.PNG)
 
   
 #### 변수의 주소
 * 변수의 주소를 계산하는 연산자 : &
 * 변수 i의 주소 : &i
 
-![Vadress](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/Vadress.PNG)
+![Vadress](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/Vadress.PNG)
  
 #### 변수의 주소
 
@@ -103,7 +103,7 @@ int *p1, *p2, *p3;		// p2와 p3는 올바른 포인터 변수로 선언
 * ptrint, ptrshort, ptrchar, ptrdouble은 모두 포인터 변수이다.
 * 간단히 포인터라고도 부른다.
  
-![pointerV](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerV.PNG)
+![pointerV](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pointerV.PNG)
 
 
 #### 포인터와 변수의 연결
@@ -114,7 +114,7 @@ int *p;		// 포인터 변수 p 선언
 p = &i;		// 변수 i의 주소가 포인터 변수 p로 대입됨			
 ```
 
-![pointerV2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerV2.PNG)
+![pointerV2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pointerV2.PNG)
 
 #### 다양한 포인터 선언
 
@@ -128,7 +128,7 @@ float *pf = &f;				// 실수를 가리키는 포인터 pf
 double *pd = &d;			// 실수를 가리키는 포인터 pd
 ```
 
-![pointerV3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerV3.PNG)
+![pointerV3](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pointerV3.PNG)
 
 #### 포인터 선언 예제
 
@@ -162,7 +162,7 @@ int main(void)
 ```C
 #define NULL ((void *)0)
 ```
-![NULL](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/NULL.PNG)
+![NULL](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/NULL.PNG)
 
 
 #### 포인터 사용 시 주의점 1
@@ -175,7 +175,7 @@ int main(void){
 }
 ```
 
-![warningpointer1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/warningpointer1.PNG)
+![warningpointer1](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/warningpointer1.PNG)
 
 #### 포인터 사용 시 주의점 2
 * 포인터가 아무것도 가리키고 있지 않은 경우에는 NULL로 초기화한다.
@@ -184,7 +184,7 @@ int main(void){
 int *p = NULL;
 ```
 
-![warningpointer2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/warningpointer2.PNG)
+![warningpointer2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/warningpointer2.PNG)
 
 #### 포인터 사용 시 주의점 3
 * 포인터의 타입과 변수의 타입은 일치해야 한다.
@@ -201,11 +201,11 @@ int main(void){
 	return 0;
 }
 ```
-![warningpointer3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/warningpointer3.PNG)
+![warningpointer3](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/warningpointer3.PNG)
 
 #### 포인터의 사용 이유
 
-![whypointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/whypointer.PNG)
+![whypointer](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/whypointer.PNG)
 
 * 문자(char)는 'a' 처럼 글자가 하나만 있는 상태이다.
 * 문자열(char *)은 "Hello"처럼 글자 여러 개가 계속 이어진 상태이다.
@@ -226,17 +226,18 @@ int main(void){
 
 #### 포인터 연산
 
-![pointerop](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop.PNG)
-![pointerop2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop2.PNG)
+![pointerop](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/pointerop.PNG)
+
+![pointerop2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pointerop2.PNG)
 
 
 #### 포인터 주소 연산
 
-![pointerop3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop3.PNG)
+![pointerop3](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pointerop3.PNG)
 
 #### 포인터 증감 연산
 
-![pointerop4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerop4.PNG)
+![pointerop4](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pointerop4.PNG)
 
 #### 포인터의 증가 연산 예제
 ```C
@@ -288,14 +289,14 @@ void sub(const int *p){
 * 배열의 이름이 포인터이다.
 * 포인터는 배열처럼 사용 가능하다.
 
-![pointerarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerarray.PNG) 
+![pointerarray](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pointerarray.PNG) 
 
 * 인덱스 표기법을 포인터에 사용할 수 있다.
   * 인덱스 표기 = 배열에서 사용
   * a + i == &a[i]
   * *(a + i) == a[i]
 
-![pointerarray2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointerarray2.PNG) 
+![pointerarray2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pointerarray2.PNG) 
 
 #### 포인터를 배열처럼 사용하는 예제
 ```C
@@ -328,11 +329,11 @@ int main(void)
 
 * 사진으로 보기
 
-![pointertoarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointertoarray.PNG) 
+![pointertoarray](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pointertoarray.PNG) 
 
 #### 포인터를 배열의 이름으로 사용
 
-![pointertoname](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pointertoname.PNG) 
+![pointertoname](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pointertoname.PNG) 
 
 #### 포인터와 배열의 관계 예제
 ```C
@@ -398,7 +399,7 @@ printf("%d", *p)	// 간접 참조(p변수의 주소에 가서 값을 알아오�
 // 실행 결과
 // 10 
 ```
-![ppointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/ppointer.PNG)
+![ppointer](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/ppointer.PNG)
 
 
 #### 간접 참조 연산자의 해석 
@@ -409,13 +410,13 @@ char *pc = 8;			// 위치 8에서 문자를 읽는다.
 double *pd = 8;			// 위치 8에서 실수를 읽는다.
 ```
 
-![ppointer2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/ppointer2.PNG)
+![ppointer2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/ppointer2.PNG)
 
 #### & 연산자와 * 연산자
 * & 연산자 : 주소 연산자로, 변수의 주소를 반환한다.
 * * 연산자 : 내용 연산자로, 포인터가 가리키는 곳의 내용을 반환한다.
 
-![ppointer3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/ppointer3.PNG)
+![ppointer3](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/ppointer3.PNG)
 
 #### 간접 참조 연산자 확인 예제
 
@@ -447,7 +448,7 @@ int main(void){
 // *p = 3000
 ```
 
-![pipointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/pipointer.PNG)
+![pipointer](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/pipointer.PNG)
 
 #### * 연산자 확인 예제 
 
@@ -478,7 +479,7 @@ int main(void){
 // p = 1245048
 // *p = 20
 ```
-![starpointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/starpointer.PNG)
+![starpointer](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/starpointer.PNG)
 
 #### 주소 연산자와 내용 연산자
 
@@ -507,7 +508,7 @@ int main(void){
 // i = 20
 ```
 
-![adpointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/adpointer.PNG)
+![adpointer](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/adpointer.PNG)
 
 #### 간접 참조 연산자와 증감 연산자
 * *p++;
@@ -583,7 +584,7 @@ void swap(int x, int y) {
 
 #### 값에 의한 호출 : Why error?
 
-![whyerror](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/whyerror.PNG) 
+![whyerror](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/whyerror.PNG) 
 
 #### swap() 함수 2 -  참조에 의한 호출
 
@@ -613,23 +614,23 @@ void swap(int *px, int *py) {
 // a=200	b=100
 ```
 
-![callpointer](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/callpointer.PNG) 
+![callpointer](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/callpointer.PNG) 
 
 ## 6절. scanf()
 #### scanf() 함수
 * 변수에 값을 저장하기 위해 변수의 주소를 입력받는다.
 
-![scanf](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/scanf.PNG) 
+![scanf](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/scanf.PNG) 
 
 ## 7절. 매개 변수
 #### 배열 매개 변수
 * 일반 매개 변수와 배열 매개 변수
-![argument](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/argument.PNG)
+![argument](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/argument.PNG)
 
 * why?
   * 배열을 함수로 복사하려면 많은 시간이 소모되므로 배열은 주소만을 전달
 * 배열 매개 변수는 포인터로 생각할 수 있다.
-![arrayarg](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/arrayarg.PNG)
+![arrayarg](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/arrayarg.PNG)
 
 * 배열 a의 주소를 가리키고 있기 때문에 배열의 이름은 포인터이다.
 * 함수를 호출할 때 배열을 전달하면 자동으로 배열의 주소가 전달된다.
@@ -669,13 +670,13 @@ void sub(int b[], int n){
 
 #### 동일한 포인터 매개 변수 방법
 
-![sametwoway](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/sametwoway.PNG)
+![sametwoway](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/sametwoway.PNG)
 
 #### 포인터를 사용한 방법의 장점
 * 포인터가 인덱스 표기법보다 빠르다.
   * Why?
     * 인덱스를 주소로 변환할 필요가 없기 때문이다.
 
-![advantage](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch8/advantage.PNG)
+![advantage](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch8/advantage.PNG)
 
 * 컴파일러 최적화를 하면 성능은 비슷해진다.
