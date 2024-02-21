@@ -10,10 +10,10 @@
 
 ## 학습 내역
 * Language
-  * [C](https://github.com/BangYunseo/TIL/tree/main/C)
+  * [C](https://github.com/BangYunseo/TIL/tree/main/Language/C)
   * [C++](https://github.com/BangYunseo/TIL/tree/main/Cpp)
-  * [Java]()
-  * [Python]()
+  * [Java](https://github.com/BangYunseo/TIL/tree/main/Language/Java)
+  * [Python](https://github.com/BangYunseo/TIL/tree/main/Language/Python)
 * CS(Computer Science)
   * [Data Structure](https://github.com/BangYunseo/TIL/tree/main/CS/Data%20Structure)
 * GameEngine
