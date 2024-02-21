@@ -25,28 +25,29 @@
   * 생존 시간(lifetime) : 메모리에 존재하는 시간
   * 연결(linkage) : 다른 영역에 있는 변수와의 연결 상태
  
-![vtype](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/vtype.PNG)
+![vtype](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/vtype.PNG)
 
 #### 변수의 범위
 * 변수는 크게 지역 변수와 전역 변수로 나눠진다.
 	 
-![vtype2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/vtype2.PNG)
+![vtype2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/vtype2.PNG)
 
 #### 지역 변수와 전역 변수
 
-![localglobal](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/localglobal.PNG)
+![localglobal](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/localglobal.PNG)
 
 #### 같은 이름의 전역 변수와 지역 변수
 	
-![localglobal2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/localglobal2.PNG)
+![localglobal2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/localglobal2.PNG)
 
 ## 2절. 지역 변수
 #### 지역 변수
 * 지역 변수(local variable)은 블록 안에 선언되는 변수이다.
 * 또한 지역 변수는 블록 안의 어떤 위치에서도 선언할 수 있다. 	
 
-![local1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/local1.PNG)   
-![local2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/local2.PNG)  
+![local1](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/local1.PNG)   
+
+![local2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/local2.PNG)  
 
 #### 지역 변수의 생존 기간
 * 지역 변수는 변수가 선언된 블록이 시작할 때 시스템 스택(stack)인 메모리 공간에 만들어진다.
@@ -54,7 +55,7 @@
 * 블록이 종료되면 지역 변수에 할당된 메모리 공간은 반환된다.
 * 메모리 공간이 반환되면 지역 변수도 사라진다. 
  
-![local3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/local3.PNG)  
+![local3](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/local3.PNG)  
 
 #### 지역 변수의 예제
 
@@ -79,7 +80,7 @@ int main(void){
 * 전역 변수(global variable)는 함수 외부에서 선언되는 변수이다.
 * 전역 변수의 범위는 소스 파일 전체이다.
 
-![global1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/global1.PNG)  
+![global1](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/global1.PNG)  
 
 #### 전역 변수의 초기값과 생존 기간
 
@@ -104,7 +105,7 @@ int add(){
 
 #### 전역 변수의 초기값
 * 전역 변수의 생존 기간 : 프로그램의 시작과 동시에 생성되어 프로그램이 종료되기 전까지 메모리에 존재
-![global2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/global2.PNG)  
+![global2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/global2.PNG)  
  
 #### 전역 변수의 사용
 
@@ -126,7 +127,7 @@ void sub()	// 별 출력 예제
 }
 ```
 * 위 코드의 출력은 아래와 같이 된다.
-![global3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/global3.PNG)   
+![global3](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/global3.PNG)   
 
 * 전역 변수는 그 변수를 어디에서 변경하고 있는지 파악하지 못하는 경우가 많다.
 * 그래서 스파게티 코드가 많이 일어난다.
@@ -140,7 +141,7 @@ void sub()	// 별 출력 예제
   * 즉, 지역 변수가 지니는 모든 특징을 가지고 있다.
 * 지역 변수와 다른 점은 함수 호출 시의 인수 값을 초기화되어 있다는 점이다.
  
-![local4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/local4.PNG)  
+![local4](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/local4.PNG)  
 
 #### 함수와 매개 변수의 예제
 
@@ -182,7 +183,7 @@ void inc(int counter)	// 매개 변수도 일종의 지역 변수이기 때문�
 * 자동 할당(automatuc allocation)
   * 블록에 들어갈 때 생성
   * 블록에서 나올 때 소멸  
-![allocation](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/allocation.PNG)
+![allocation](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/allocation.PNG)
 * 생존 기간을 결정하는 요인
   * 변수가 선언된 위치
   * 저장 유형 지정자
@@ -196,38 +197,38 @@ void inc(int counter)	// 매개 변수도 일종의 지역 변수이기 때문�
 * 변수를 선언한 위치에서 자동으로 만들어지고 블록을 벗어나게 되며 자동으로 소멸되는 저장 유형을 지정
 * 지역 변수는 auto가 생략되어도 자동 변수가 된다.
 
-![auto](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/auto.PNG)
+![auto](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/auto.PNG)
 
 #### 저장 유형 지정자 static 
 * 지역변수처럼 블록에서만 사용되지만, 블록을 벗어나도 자동으로 제거되지 않는 변수
 * 이런 변수를 정적 변수라고 부른다.
 
-![static](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/static.PNG)
+![static](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/static.PNG)
 
 #### 함수 앞의 static
 * 변수나 함수 이름은 모두 식별자이므로 같은 조건으로 취급된다.
 
-![static2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/static2.PNG)
+![static2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/static2.PNG)
 
 #### 저장 유형 지정자 register
 * 레지스터(register)에 변수를 저장 
   
-![register](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/register.PNG)
+![register](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/register.PNG)
 
 #### volatile
 * volatile 지정자는 하드웨어가 수시로 변수의 값을 변경하는 경우에 사용된다.
 * 마이크로프로세서에서 사용된다.
- ![volatile](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/volatile.PNG)
+ ![volatile](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/volatile.PNG)
 
 #### 외부 연결
 * 전역 변수를 extern을 이용해서 서로 연결한다.
 
- ![linkage2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/linkage2.PNG)
+ ![linkage2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/linkage2.PNG)
 
 #### 블록에서 extern을 이용한 전역 변수 참조
 * extern은 블록에서 전역 변수에 접근할 때도 사용된다.
 * 
-![extern](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/extern.PNG)
+![extern](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/extern.PNG)
 
 #### 저장 유형
 * 일반적으로 자동 저장 유형을 사용 권장
@@ -251,22 +252,20 @@ void inc(int counter)	// 매개 변수도 일종의 지역 변수이기 때문�
   * 무연결
 * 전역 변수만이 연결을 가질 수 있다.  
  
- ![linkage](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/linkage.PNG)
+ ![linkage](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/linkage.PNG)
 
 #### 연결 예제
 * 전역 변수는 외부 연결이 가능하다.	
- ![linkageex](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/linkageex.PNG)
+ ![linkageex](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/linkageex.PNG)
  
 ## 7절. 순환
 #### 순환(recursion)
 * 함수는 자기 자신을 호출할 수도 있다.
 * 이것을 순환이라 부른다.
 
-![recursion](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/recursion.PNG)
+![recursion](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/recursion.PNG)
 
 #### 순환 함수의 구조
 * 순환 알고리즘은 자기 자신을 순환적으로 호출하는 부분과 순환 호출을 멈추는 부분으로 구성되어 있다.
  
-![recursion2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch6/recursion2.PNG)
-
- 
+![recursion2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch6/recursion2.PNG)
