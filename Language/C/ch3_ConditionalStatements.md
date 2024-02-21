@@ -19,12 +19,12 @@
       
 #### 제어구조
 
-![selection](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/selection.PNG)
+![selection](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch3/selection.PNG)
 
 ## 2절. if문 (if ... else ...)
 #### if 문
 
-![IF](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/IF.PNG)   
+![IF](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch3/IF.PNG)   
 
 #### if 문 예제
 
@@ -43,11 +43,11 @@ printf("현재 온도는 %lf도 입니다.\n", temperature);
 
 #### 오류 주의
 
-![error_if](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/error_if.PNG)   
+![error_if](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch3/error_if.PNG)   
 
 #### 실수 비교
 
-![compare_int](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/compare_int.PNG)   
+![compare_int](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch3/compare_int.PNG)   
 
 #### 복합문 (compound statement)
 * 중괄호를 사용하여 문장들을 그룹핑
@@ -65,7 +65,7 @@ if (score >= 60)
   
 #### if-else 문
 
-![if-else](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/ifelse.PNG)
+![if-else](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch3/ifelse.PNG)
 
 #### if-else 문 예제
 
@@ -89,7 +89,7 @@ else{
 ```
 #### 중첩 if
 * if 문에 다시 if 문이 포함된다.   
-![if-if](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/ifif.PNG)
+![if-if](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch3/ifif.PNG)
 
 #### 중첩 if 문 예제
 
@@ -110,7 +110,7 @@ if (score >= 80)
 
 #### 연속적 if
 
-![if-if-if](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/ififif.PNG)
+![if-if-if](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch3/ififif.PNG)
 
 
 ## 3절. 조건연산자
@@ -137,7 +137,7 @@ if (ch == '' || ch == '\n' || ch == '\t')
 ## 4절. switch문
 #### switch문 
 * 제어식의 값에 따라서 여러 경로 중에서 하나를 선택할 수 있는 제어 구조 
-![switch](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/switch.PNG)
+![switch](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch3/switch.PNG)
 
 #### switch문 예제 
 
@@ -166,15 +166,15 @@ int main(void){
 
 #### break가 생략되는 경우   
 
-![delbreak1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/delbreak1.PNG)
+![delbreak1](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch3/delbreak1.PNG)
  
 #### break가 의도적으로 생략되는 경우      
 
-![delbreak2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/delbreak2.PNG)
+![delbreak2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch3/delbreak2.PNG)
 
 #### default
 
-![default](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/default.PNG)
+![default](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch3/default.PNG)
 
 #### switch문 주의할 점   
 * 제어식의 값은 반드시 정수형으로 계산한다.
@@ -204,5 +204,5 @@ switch(number) {
 ## 5절. if문과 switch문
 #### if-else문과 switch문  
             
-![switch_if-else](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch3/switch_if-else.PNG)  
+![switch_if-else](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch3/switch_if-else.PNG)  
 
