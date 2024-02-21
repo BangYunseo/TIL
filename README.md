@@ -1,6 +1,5 @@
-## TIL - Today I Learned
-#### ※ Makrdown 언어 사용 ※
-
+# TIL - Today I Learned
+* Makrdown 사용
 
 ## 작성 팁
 * [Markdown 작성법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
