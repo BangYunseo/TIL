@@ -21,31 +21,31 @@
 #### 자료형의 분류
 * 자료형의 분류는 구조체와 유사
 	 
-![struct](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/struct.PNG)
+![struct](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/struct.PNG)
 
 #### 구조체의 필요성
 * 연관성 있는 서로 다른 개별적인 자료형의 변수들을 하나의 단위로 묶은 새로운 자료형
 * 연관된 멤버로 구성되는 통합 자료형으로 대표적인 유도 자료형
   * 기존 자료형으로 새로이 만들어진 자료형은 유도 자료형(derived data types)
 
-![needstruct](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/needstruct.PNG)
+![needstruct](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/needstruct.PNG)
 
 #### 구조체 개념
 
-![struct2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/struct2.PNG)
+![struct2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/struct2.PNG)
 
 #### 구조체와 배열
 
-![arraystruct](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/arraystruct.PNG)
+![arraystruct](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/arraystruct.PNG)
 
 #### 구조체 정의 개념
 * 구조체를 자료형으로 사용하려면 먼저 구조체를 정의
   * 구조체를 만들 구조체 틀(template)을 정의
-![structtemplate](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structtemplate.PNG)
+![structtemplate](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/structtemplate.PNG)
 
 #### 구조체 정의 구문
 
-![structcode](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structcode.PNG)
+![structcode](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/structcode.PNG)
 
 #### 구조체 정의 위치
 * 구조체 정의는 정의 위치에 따라 구조체의 유효 범위 결정
@@ -55,12 +55,12 @@
   * 지역(local)
     * main() 함수 또는 다른 함수 내부에서 정의된 구조체
    
-![struct4](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/struct4.PNG)
+![struct4](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/struct4.PNG)
 
 ## 2절. 선언
 #### 구조체 선언
 
-![struct3](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/struct3.PNG)
+![struct3](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/struct3.PNG)
   
 #### 구조체 선언의 예시
 ```C
@@ -97,7 +97,7 @@ struct rectangle{
 #### 구조체 변수 선언
 * 구조체 정의와 구조체 변수 선언은 다름
 
-![structdef](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structdef.PNG)
+![structdef](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/structdef.PNG)
 
 ```C
 struct accout{
@@ -109,7 +109,7 @@ struct accout{
 struct account mine = {"홍길동", 1001, 300000};
 ```
 
-![structaccount](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structaccount.PNG)
+![structaccount](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/structaccount.PNG)
 
 ## 3절. 구조체 멤버
 #### 구조체 초기화
@@ -127,11 +127,11 @@ struct student{
 struct student s1 = { 24, "Kim", 4.3 };
 ```
 
-![structstudent](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structstudent.PNG)
+![structstudent](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/structstudent.PNG)
 
 #### 구조체 멤버 참조
 
-![structmem](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structmem.PNG)
+![structmem](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/structmem.PNG)
 
 #### 학생 정보 출력 예제
 ```C
@@ -227,7 +227,7 @@ me.open.month = 2;
 me.open.month = 15;
 ```
 
-![structdate](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structdate.PNG)
+![structdate](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/structdate.PNG)
 
 #### 구조체 변수의 대입과 비교
 * 같은 구조체 변수끼리 대입은 가능하지만 비교는 불가능
@@ -256,7 +256,7 @@ int main(void){
 #### 구조체 배열
 * 구조체를 여러 개 모은 것
 
-![structarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structarray.PNG)
+![structarray](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/structarray.PNG)
 
 ```C
 struct student{
@@ -288,7 +288,7 @@ struct student list[3] = {
 
 #### 구조체 배열 변수 선언
 
-![structarrayv](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structarrayv.PNG)
+![structarrayv](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/structarrayv.PNG)
 
 #### 학생 정보 입력 예제
 
@@ -351,13 +351,13 @@ char name[12];		// 학생 이름
   * 마지막에 '\0' 문자를 저장하여 사용
 * char 포인터와 char 배열
 
-![pointerarray](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/pointerarray.PNG)
+![pointerarray](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/pointerarray.PNG)
 
 #### 구조체와 포인터
 * 구조체를 가리키는 포인터
 * 포인터를 멤버로 가지는 구조체
 
-![sp](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/sp.PNG)
+![sp](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/sp.PNG)
 
 #### 구조체를 가리키는 포인터
 ```C
@@ -384,7 +384,7 @@ int main(void){
 }
 ```
 
-![structpointerp](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/stuructpointerp.PNG)
+![structpointerp](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/stuructpointerp.PNG)
 
 #### 구조체의 포인터 변수 선언
 * 변수 os를 선언
@@ -392,7 +392,7 @@ int main(void){
     * lecture 포인터 변수 p에 &os 저장
     * 포인터 p로 구조체 변수 os 멤버 참조 가능
 
-![structpointeros](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/stuructpointeros.PNG)
+![structpointeros](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/stuructpointeros.PNG)
 
 #### -> 연산자 : 구조체 포인터
 * -> 연산자는 구조체 포인터
@@ -429,7 +429,7 @@ int main(void){
     * *p.name은 *(p.name)과 같은 연산식
     * p가 포인터이므로 p.name은 문법 오류 발생
 
-![pointerp](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/pointerp.PNG)
+![pointerp](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/pointerp.PNG)
 
 * 접근연산자 ->와 .의 연산자 우선 순위
   * 간접연산자 *를 포함한 다른 어떠한 연산자 우선순위보다 가장 높음
@@ -523,13 +523,13 @@ int main(void){
   * 구조체의 복사본이 함수로 전달
   * 만약 구조체의 크기가 크면 그만큼의 시간과 메모리 소요
 
-![structdef1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structdef1.PNG)
+![structdef1](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/structdef1.PNG)
 
 * 구조체의 포인터를 함수의 인수로 전달하는 경우
   * 시간과 메모리 절약 가능
   * 원본 훼손의 가능성 존재
 
-![structdef2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch9/structdef2.PNG)
+![structdef2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch9/structdef2.PNG)
 
 #### 구조체를 반환하는 경우
 * 복사본이 반환됨
