@@ -17,7 +17,7 @@
 ## 1절. 함수 정의
 #### 함수(function)의 개념
 * 입력을 받아 특정한 작업을 통해 결과를 반환하는 코드     
-![functionN](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/functionN.PNG)
+![functionN](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/functionN.PNG)
 
 #### 함수가 필요한 이유
 * 코드의 중복을 피할 수 있기 때문이다.     
@@ -31,15 +31,15 @@
 * 서로 구별되는 이름을 가진다.    
 * 특정한 작업을 수행한다.     
 * 입력을 받을 수 있고 결과를 반환한다.   
-![functionN1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/functionN1.PNG)
+![functionN1](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/functionN1.PNG)
 
 #### 함수의 종류
 
-![FunctionType](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/FuntionType.PNG)   
+![FunctionType](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/FuntionType.PNG)   
 
 #### 함수의 정의
 
-![defineFunction](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/defineFunction.PNG)   
+![defineFunction](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/defineFunction.PNG)   
 
 #### 함수의 정의 - 2
 * 반환형   
@@ -48,7 +48,7 @@
   * 함수 이름은 식별자에 대한 규칙만 따른다면 어떤 이름이라도 가능하다.   
   * 함수의 기능을 암시하는 (동사+명사)를 사용하면 좋다.   
 
-![functionName](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/functionName.PNG)
+![functionName](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/functionName.PNG)
 
 * 함수의 길이     
   * C에서는 함수의 길이에 아무런 제한을 두지 않는다.   
@@ -67,7 +67,7 @@
   * 호출된 함수로 이동해서 함수 몸체 안의 문장들이 순차적으로 실행된다.   
     * 실행이 끝나면 호출한 위치로 되돌아가서 잠시 중단됐던 코드를 실행한다.   
 
-  ![functionCall](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/functionCall.PNG)
+  ![functionCall](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/functionCall.PNG)
 #### 함수의 원형(function prototyping)
 * 함수의 원형은 컴파일러에게 함수에 대하여 미리 알리는 것을 말한다.     
 * 함수의 원형은 함수의 이름, 매개변수, 반환형을 함수가 정의되기 전에 미리 알려주는 것이다.     
@@ -76,7 +76,7 @@
 * 매개 변수의 자료형만 적어도 된다.     
 * 일반적으로 함수의 원형을 사용하는 것이 좋다.
   
- ![functionnn](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/functionnn.PNG)
+ ![functionnn](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/functionnn.PNG)
 
 #### 함수 호출 예제
 
@@ -106,15 +106,16 @@ void print_stars()	// 입력할 함수
 ## 2절. 매개 변수와 반환값
 #### 매개 변수와 반환값
 
-![functionAA](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/functionAA.PNG)
-![functionAB](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/functionAB.PNG)
+![functionAA](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/functionAA.PNG)
+
+![functionAB](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/functionAB.PNG)
 
      
 #### 매개 변수와 인수
 * 인수(argument) : 호출 프로그램에 의하여 함수에 실제로 전달되는 값     
 * 매개 변수(parameter) : 인수를 전달받는 변수     
   
-![functionBB](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/functionBB.PNG)   
+![functionBB](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/functionBB.PNG)   
 
 * 만약 매개 변수가 없는 경우에는 매개 변수 위치에 void를 써주거나 아무 것도 적지 않는다.     
 * 함수가 호출될 때마다 인수는 달라질 수 있다.     
@@ -153,7 +154,7 @@ int max(int x, int y){
 
 #### 반환값 함수 get_integer() 예제
 * 함수 사용 예시		
-![getinteger](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/getinteger.PNG)
+![getinteger](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/getinteger.PNG)
 
 ```C
 #include <stdio.h>
@@ -293,9 +294,9 @@ int main(void){
 * 이 때, 엔터키를 누르면 버퍼에 개행문자(\n)이 저장된다.      
 * 다음 getchar()함수가 호출될 때 먼저 개행문자가 호출되면서 입력을 받지 못하는 문제가 발생할 수 있다.  
 
- ![GetcharScanf](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/GetcharScanf.PNG)
- ![getchar1](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/getchar1.PNG)
- ![getchar2](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/getchar2.PNG)
+ ![GetcharScanf](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/GetcharScanf.PNG)
+ ![getchar1](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/getchar1.PNG)
+ ![getchar2](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/getchar2.PNG)
  
 #### 온도 변환기 예제 
 
@@ -431,11 +432,11 @@ void array1(int list[])
 * 수학 함수는 일반적으로 double형의 매개 변수와 반환값을 가진다.
 
 
-![mathh](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/mathh.PNG)
+![mathh](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/mathh.PNG)
 
 #### floor()함수와 ceil()함수
 
-![floorceil](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/floorceil.PNG)
+![floorceil](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/floorceil.PNG)
 * floor()은 바닥, ceil()은 천장을 나타내는 함수이다.
 * 만약 1.6가 입력됐을 때, floor()함수를 이용하면 1.0이 출력된다.
 * 앞과 마찬가지로 1.6가 입력됐을 때, ceil()함수를 이용하면 2.0이 출력된다.
@@ -457,7 +458,7 @@ int main(void)
 
 #### 기타 함수
 
-![anyfunction](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/anyfunction.PNG)
+![anyfunction](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/anyfunction.PNG)
 
 #### 시간 맞추기 게임 예제
 
@@ -493,4 +494,4 @@ int main(void)
 * 모듈 내에서는 최대의 상호 작용이 있어야 하고 모듈 사이에는 최소의 상호 작용만 존재해야 한다.
 * 만약 모듈과 모듈 사이의 연결이 복잡하다면 모듈화가 잘못된 것이다.
 
-![modularization](https://github.com/BangYunseo/TIL/blob/main/C/Image/ch5/modularization.PNG)
+![modularization](https://github.com/BangYunseo/TIL/blob/main/Language/C/Image/ch5/modularization.PNG)
