@@ -1,6 +1,6 @@
 # chapter 1. 배열(Array)
 
-![array](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch01/array.PNG)
+![array](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch01/array.PNG)
 
 #### 배열이란 ? 
 * 연속된 메모리 공간에 순차적으로 저장된 데이터 모음
@@ -21,11 +21,11 @@
 
 #### C언어의 배열 표현
   
-![array2](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch01/array2.PNG)      
+![array2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch01/array2.PNG)      
 
 #### 배열 표현의 요소와 인덱스
 
-![array3](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch01/array3.PNG)      
+![array3](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch01/array3.PNG)      
   
 * 연속된 메모리 공간에 데이터들은 순차적으로 저장됨     
 * 인덱스는 0부터 시작    
