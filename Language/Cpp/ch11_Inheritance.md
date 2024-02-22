@@ -35,7 +35,7 @@
 
 #### 상속의 표현
 
-![inim](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/inim.PNG)
+![inim](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/inim.PNG)
 
 #### 상속의 목적 및 장점
 * 간결한 클래스 작성
@@ -50,17 +50,16 @@
 
 #### 상속 관계로 클래스의 간결화 사례 예시
 
-![inclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/inclass.PNG)
+![inclass](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/inclass.PNG)
 
 #### 상속 선언
 
-![instudent](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/inclass.PNG)
+![instudent](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/inclass.PNG)
 
 * Student 클래스는 Person 클래스의 멤버를 물려받음
 * StudentWorker 클래스는 Student의 멤버를 물려받음
   * Student가 물려받은 Person의 멤버도 함께 물려받음
 
- 
 * 예제 1. Point 클래스를 상속받는 ColorPoint 클래스 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/ColorPoint.cpp)
 
@@ -68,16 +67,17 @@
 ## 2절. 파생 클래스
 #### 파생 클래스의 객체 구성
 
-![po](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/po.PNG)
-![cpo](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/cpo.PNG)
+![po](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/po.PNG)
+
+![cpo](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/cpo.PNG)
 
 #### 파생 클래스에서 기본 클래스 멤버 접근
 
-![cpo2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/cpo2.PNG)
+![cpo2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/cpo2.PNG)
 
 #### 외부에서 파생 클래스 객체에 대한 접근
 
-![cpo3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/cpo3.PNG)
+![cpo3](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/cpo3.PNG)
 
 ## 3절. 업 캐스팅과 다운 캐스팅
 #### 상속과 객체 포인터 : 업 캐스팅
@@ -85,7 +85,7 @@
   * 파생 클래스 포인터가 기본 클래스 포인터에 치환
     * ex) 사람을 동물로 보는 것(사람은 동물 안에 속함)
 
-![upcasting](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/upcasting.PNG)
+![upcasting](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/upcasting.PNG)
 
 ```CPP
 int main() {
@@ -109,7 +109,7 @@ int main() {
 * 다운 캐스팅(down - casting)
   * 기본 클래스의 포인터가 파생 클래스의 포인터에 치환되는 것
 
-![downcasting](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/downcasting.PNG)
+![downcasting](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/downcasting.PNG)
 
 ```CPP
 int main(){
@@ -151,7 +151,7 @@ int main(){
 
 #### 멤버의 접근 지정에 따른 접근성
 
-![am](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/am.PNG)
+![am](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/am.PNG)
 
 * 예제 2. protected 멤버에 대한 접근 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/AcessProtected.cpp)
@@ -167,11 +167,10 @@ int main(){
 
 #### 상속 시 접근 지정에 따른 멤버의 접근 지정 속성 변화
 
-![ppp](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/ppp.PNG)
+![ppp](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/ppp.PNG)
 
 
-> 컴파일 오류 탐색 예제 3, 4, 5
-(여기부터 다시 작성)
+> 컴파일 오류 탐색 예제 3, 4, 5      
 * 예제 3. private 상속 사례 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/Private.cpp)
 
@@ -183,18 +182,15 @@ int main(){
 * 예제 5. 상속이 중첩될 때 접근 지정 사례 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/TwoInheritance.cpp)
 
-
 ## 5절. 생성자와 소멸자
 #### 상속 관계의 생성자와 소멸자
 * 파생 클래스의 객체가 생성될 때
    * 파생 클래스의 생성자와 기본 클래스의 생성자가 모두 실행
    * 기본 클래스의 생성자가 먼저 실행된 후 파생 클래스의 생성자 실행  
 
-
 #### 생성자 호출 관계 및 실행 순서
 
-![con1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/con1.PNG)
-
+![con1](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/con1.PNG)
 
 #### 소멸자의 실행 순서
 * 파생 클래스의 객체가 생성될 때
@@ -204,37 +200,36 @@ int main(){
 #### 컴파일러에 의해 묵시적으로 기본 클래스의 생성자를 선택하는 경우
 * 파생 클래스의 생성자에서 기본 클래스의 기본 생성자 호출      
 
-![basiccon](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/basiccon.PNG)
+![basiccon](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/basiccon.PNG)
 
 
 #### 기본 클래스에 기본 생성자가 없는 경우 : 컴파일 오류
 
-![errorcon](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/errorcon.PNG)
+![errorcon](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/errorcon.PNG)
 
 
 #### 매개 변수를 가진 파생 클래스의 생성자는 묵시적으로 기본 클래스의 기본 생성자 선택
 * 파생 클래스의 매개 변수를 가진 생성자가 기본 클래스의 기본 생성자를 호출               
 
-![basiccon2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/basiccon2.PNG)
+![basiccon2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/basiccon2.PNG)
 
 #### 파생 클래스의 생성자에서 명시적으로 기본 클래스의 생성자 선택
 
-![basiccon3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/basiccon3.PNG)
+![basiccon3](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/basiccon3.PNG)
 
 
 #### 컴파일러의 기본 생성자 호출 코드 삽입
 
-![con2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/con2.PNG)
+![con2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/con2.PNG)
 
 
 * 예제 6. TV, WideTV, SmartTV 생성자 매개 변수 전달 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch11_Inheritance/TV.cpp)
 
-
 ## 6절. 다중 상속
 #### 기기의 컨버전스와 C++의 다중 상속
 
-![ti](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/ti.PNG)
+![ti](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/ti.PNG)
 
 #### 다중 상속 선언 및 멤버 호출
 * 다중 상속 선언
@@ -286,8 +281,7 @@ int main(){
   * 동일한 x를 접근하는 프로그램이 서로 다른 x에 접근하는 결과를 발생시킴
     * 즉, 잘못된 실행 오류가 발생
    
-![ti2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/ti2.PNG)
-
+![ti2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/ti2.PNG)
 
 ## 7절. 가상 상속
 #### 가상 상속
@@ -302,9 +296,7 @@ class A : virtual public BaseIO{
 };
 ```   
 
-
 #### 가상 상속의 해결법
 * 가상 상속을 통해 다중 상속의 모호성 해결
 
-![vi](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch11/vi.PNG)
-
+![vi](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch11/vi.PNG)
