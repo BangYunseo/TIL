@@ -30,7 +30,7 @@
 
 #### C++ 입출력 스트림
 
-![IOstream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Language/Image/ch15/IOstream.PNG)
+![IOstream](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/IOstream.PNG)
 
 #### C++ 입출력 스트림 버퍼
 * C++ 입출력 스트림은 버퍼를 가짐
@@ -50,11 +50,11 @@
 
 #### 키 입력 스트림과 버퍼의 역할
 
-![Istream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Language/Image/ch15/Istream.PNG)
+![Istream](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/Istream.PNG)
 
 #### 스크린 출력 스트림과 버퍼의 역할
 
-![Ostream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Language/Image/ch15/Ostream.PNG)
+![Ostream](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/Ostream.PNG)
 
 #### C++ 표준 : 스트림 입출력만 지원
 * 입출력 방식 2가지
@@ -96,15 +96,15 @@ cin >> ch;
 #### 새 표준 C++ 입출력 라이브러리
 * 다양한 크기의 다국어 문자를 수용하기 위해 입출력 라이브러리를 템플릿으로 작성
 
-![IOlib](https://github.com/BangYunseo/TIL/blob/main/Cpp/Language/Image/ch15/IOlib.PNG)
+![IOlib](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/IOlib.PNG)
 
 #### typedef로 선언된 ios, istream, ostream, iostream 클래스
 
-![typedef](https://github.com/BangYunseo/TIL/blob/main/Cpp/Language/Image/ch15/typedef.PNG)
+![typedef](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/typedef.PNG)
 
 #### 입출력 클래스 소개
 
-![IOclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Language/Image/ch15/IOclass.PNG)
+![IOclass](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/IOclass.PNG)
 
 ## 2절. 스트림 객체
 #### 표준 입출력 스트림 객체
