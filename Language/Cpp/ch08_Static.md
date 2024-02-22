@@ -10,7 +10,7 @@
 ## 1절. Static과 Non-Static
 #### static 멤버와 non-static 멤버
 
-![Staticor](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/Staticor.PNG)
+![Staticor](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch08/Staticor.PNG)
 
 #### static 멤버와 non-static 멤버의 특성
 * static
@@ -30,7 +30,7 @@
 
 #### Static 멤버와 Non-static 멤버의 관계
 
-![Staticor2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/Staticor2.PNG)
+![Staticor2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch08/Staticor2.PNG)
 
 * han, lee, park, choi 등 4개의 Person 객체 생성
 * sharedMoney와 addShared() 함수는 하나만 생성되고 4개의 객체들에 의해 공유
@@ -38,7 +38,7 @@
 
 #### Static 멤버와 Non-Static 멤버 비교
 
-![Staticor3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/Staticor3.PNG)
+![Staticor3](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch08/Staticor3.PNG)
 
 ## 2절. Static
 #### static 멤버 선언
@@ -69,7 +69,7 @@ int Person::sharedMoney = 10;      // sharedMoney를 10으로 초기화
 
 * static 멤버 변수에 대한 외부 선언이 없다면 아래와 같은 오류가 발생
 
-![staticerror](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/staticerror.PNG)
+![staticerror](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch08/staticerror.PNG)
 
 #### static 멤버 사용 : 객체의 멤버로 접근
 * static 멤버는 객체 이름이나 객체 포인터로 접근
@@ -88,7 +88,7 @@ p = &lee;
 p->addShared(200);          // objpointer->staticMember 방식
 ```
 * 그림으로 먼저 보기
-![staticmember](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/staticmember.PNG)
+![staticmember](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch08/staticmember.PNG)
 
 * 예제 1. Static 멤버 사용 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch08_Static/UsingStaticMember.cpp)
@@ -101,7 +101,7 @@ p->addShared(200);          // objpointer->staticMember 방식
 ```C++
 classname::staticmember
 ```
-![staticmember2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/staticmember2.PNG)
+![staticmember2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch08/staticmember2.PNG)
 
  * non-static 멤버는 클래스 이름을 접근 불가
 ```C++
@@ -109,7 +109,7 @@ Person::money = 100;        // 컴파일 오류 : non-static 멤버는 클래스
 Person::addMoney(200);      // 컴파일 오류 : non-static 멤버는 클래스 명으로 접근 불가
 ```
 * 그림으로 먼저 보기
-![staticmember3](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/staticmember3.PNG)
+![staticmember3](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch08/staticmember3.PNG)
 
 * 예제 2. Static 멤버 클래스 접근 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch08_Static/AcessingStaticMember.cpp)
@@ -124,13 +124,13 @@ Person::addMoney(200);      // 컴파일 오류 : non-static 멤버는 클래스
 
 #### 특정한 목적을 가진 static 멤버
 * 그림으로 먼저 보기
-![Mathclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/Mathclass.PNG)
+![Mathclass](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch08/Mathclass.PNG)
 
 * 예제 3. static 멤버를 가진 Math 클래스 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch08_Static/MathClass.cpp)
 
 * 그림으로 먼저 보기
-![Circleclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/Circleclass.PNG)
+![Circleclass](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch08/Circleclass.PNG)
 
 * 예제 4. 공유의 목적으로 static 멤버를 사용하는 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch08_Static/CircleClass.cpp)
@@ -145,7 +145,7 @@ Person::addMoney(200);      // 컴파일 오류 : non-static 멤버는 클래스
 
 #### static 멤버 함수의 오류
 * static 멤버 함수 getMoney()가 non-static 멤버 변수 money를 접근하는 오류
-![getArea](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch08/getArea.PNG)
+![getArea](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch08/getArea.PNG)
 
 #### non-static 멤버 함수는 static에 접근 가능
 ```C++
