@@ -1,6 +1,6 @@
 # chapter 3. 행렬(Matrix)
 
-![matrix](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch03/matrix.PNG)
+![matrix](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch03/matrix.PNG)
 
 #### 행렬이란? 
 * 행과 열을 가진 2차원 데이터
