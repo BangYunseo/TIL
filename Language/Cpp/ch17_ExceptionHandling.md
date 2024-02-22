@@ -58,7 +58,7 @@
 
 #### 피자 자동 기계외 예외 처리개념
 
-![pizza](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/pizza.PNG)
+![pizza](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch17/pizza.PNG)
 
 #### 예외 처리 기본 형식
 * try - throw - catch
@@ -83,7 +83,7 @@ catch( // 처리할 예외 파라미터 선언){ // catch {} 블록
 
 #### throw와 catch
 
-![throwcatch](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/throwcatch.PNG)
+![throwcatch](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch17/throwcatch.PNG)
 
 ```CPP
 try{
@@ -112,11 +112,11 @@ catch(const char* s){ // const char* 타입 예외 처리 : 예외 값은 "음�
 #### try - throw - catch의 예외 처리 과정
 * 예외가 발생하지 않은 경우     
 
-![notexpt](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/notexpt.PNG)
+![notexpt](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch17/notexpt.PNG)
 
 * 예외가 발생한 경우     
 
-![expt](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/expt.PNG)
+![expt](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch17/expt.PNG)
 
 * 예제 4. 0으로 나누는 예외 처리 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch17_ExceptionHandling/Average0.cpp)
@@ -124,11 +124,11 @@ catch(const char* s){ // const char* 타입 예외 처리 : 예외 값은 "음�
 #### throw와 catch의 예
 * 하나의 try { } 블록에 다수의 catch() { } 블록 연결     
 
-![mcatch](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/mcatch.PNG)
+![mcatch](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch17/mcatch.PNG)
 
 * 함수를 포함하는 try { } 블록
 
-![includefunction](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/includefunction.PNG)
+![includefunction](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch17/includefunction.PNG)
 
 * 예제 5. 지수 승 계산을 예외 처리 코드로 재작성하는 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch17_ExceptionHandling/GetExp2.cpp)
@@ -168,7 +168,7 @@ double valueAt(double *p, int dex) throw(int, char*){
 #### 다중 try { } 블록
 * try { } 블록 내에 try { } 블록의 중첩 가능
 
-![try](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch17/try.PNG)
+![try](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch17/try.PNG)
 
 #### throw 사용 시 주의 사항
 * throw 문의 위치
