@@ -18,7 +18,7 @@
 ## 1절. 가상 함수
 #### 가상 함수
 
-![vf](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/vf.PNG)            
+![vf](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/vf.PNG)            
 
 * 예제 1. 파생 클래스에서 함수를 재정의하는 사례 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/FunctionRedefine.cpp)
@@ -39,7 +39,7 @@ public:
 ## 2절. 오버라이딩
 #### 오버라이딩
 
-![overriding](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/overriding.PNG)
+![overriding](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/overriding.PNG)
 
 * 함수 오버라이딩(function overriding)
   * 파생 클래스에서 기본 클래스의 가상 함수와 동일한 이름의 함수 선언
@@ -49,7 +49,7 @@ public:
     * 다형성의 한 종류
 
 #### 함수 재정의와 오버라이딩 사례 비교
-![fror](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/fror.PNG)
+![fror](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/fror.PNG)
 
 
 #### 함수 재정의와 오버라이딩
@@ -59,7 +59,7 @@ public:
   * 컴파일 시간에 결정된 함수 단순 호출(정적 바인딩 발생)
 * Java는 무조건 동적 바인딩이 일어나는 언어
 
-![orvf](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/orvf.PNG)            
+![orvf](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/orvf.PNG)            
 
 * 예제 2. 오버라이딩과 가상 함수 호출 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/OverridingVirtualFunction.cpp)
@@ -67,8 +67,8 @@ public:
 
 #### 오바리이딩의 목적
 * 파생 클래스에서 구현할 함수 인터페이스 제공
-  * 파생 클래스의 다형성
-![draw](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/draw.PNG)            
+  * 파생 클래스의 다형성           
+![draw](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/draw.PNG)            
 
 * 다형성의 실현
   * draw() 가상 함수를 가진 기본 클래스 Shape
@@ -82,13 +82,13 @@ public:
   * 실행 중에 이루어짐
     * 실행시간 바인딩, 런타임 바인딩, 늦은 바인디
 
-![db](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/db.PNG)
+![db](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/db.PNG)
 
 #### 오버라이딩된 함수를 호출하는 동적 바인딩
 
-![ordb](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/ordb.PNG)
+![ordb](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/ordb.PNG)
 
-![ordb2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/ordb2.PNG)
+![ordb2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/ordb2.PNG)
 
 
 #### 오버라이딩의 특징
@@ -134,7 +134,7 @@ public:
 };
 ```
 
-![db2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/db2.PNG)
+![db2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/db2.PNG)
 
 * 예제 3. 상속이 반복되는 경우 가상 함수 호출 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/CallVirtualFunction.cpp)
@@ -170,7 +170,7 @@ public:
 * 소멸자를 virtual 키워드로 선언
 * 소멸자 호출 시 동적 바인딩 발생
 
-![vd](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/vd.PNG)
+![vd](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/vd.PNG)
 
 * 예제 5. 가상 소멸자 선언 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/VirtualDestructor.cpp)
@@ -178,7 +178,7 @@ public:
 
 #### 오버로딩과 함수 재정의, 오버라이딩의 비교
 
-![over](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/over.PNG)
+![over](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/over.PNG)
 
 
 ## 5절. 가상 함수
@@ -189,7 +189,7 @@ public:
   * 파생 클래스에서 draw() 재정의
   * 자신의 도형을 그리도록 유도
 
-![shape](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/shape.PNG)
+![shape](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/shape.PNG)
 
 
 #### 가상 함수 오버라이딩
@@ -266,7 +266,7 @@ int main(){
 
 #### main() 함수가 실행될 때 구성된 객체의 연결
 
-![main](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/main.PNG)
+![main](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/main.PNG)
 
 #### 기본 클래스의 포인터 활용
 * 기본 클래스의 포인터로 파생 클래스 접근
@@ -335,13 +335,11 @@ Shape *p;
   * 추상 클래스를 상속받아 순수 가상 함수를 오버라이딩
     * 파생 클래스는 추상 클래스가 아님
    
-![abclass](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/abclass.PNG)
+![abclass](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/abclass.PNG)
 
 #### Shape를 추상 클래스로 수정
 
-![abclass2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch12/abclass2.PNG)
-
-
+![abclass2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch12/abclass2.PNG)
 
 * 예제 6. 추상 클래스 구현 연습 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch12_VirtualFunctionAndAbstractClass/AbstractClass.cpp)
