@@ -13,7 +13,7 @@
   * [C++](https://github.com/BangYunseo/TIL/tree/main/Cpp)
   * [Java](https://github.com/BangYunseo/TIL/tree/main/Language/Java)
   * [Python](https://github.com/BangYunseo/TIL/tree/main/Language/Python)
-* CS(Computer Science)
+* Computer Science
   * [Data Structure](https://github.com/BangYunseo/TIL/tree/main/CS/Data%20Structure)
 * GameEngine
   * [Unity]()

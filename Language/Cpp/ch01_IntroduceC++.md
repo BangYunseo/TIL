@@ -55,14 +55,14 @@
 * 데이터를 캡슐로 싸서 외부의 접근으로부터 보호     
 * C++에서 클래스(class 키워드)로 캡슐을 표현      
 
-![class](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch01/class.PNG)
+![class](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/class.PNG)
 
 #### 클래스와 객체     
 * 클래스 : 객체를 만드는 틀     
 * 객체 : 클래스라는 틀에서 생겨난 실체      
 * 객체(object), 실체(instance)는 같은 뜻     
       
-![instance](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch01/instance.PNG)
+![instance](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/instance.PNG)
 
 ```C++
 // 원을 추상화한 클래스 Circle
@@ -81,14 +81,14 @@ public :
 #### C++ 상속  
 * 객체가 자식 클래스의 멤버와 부모 클래스에 선언된 모양 그대로 멤버들을 가지고 탄생
       
-![Inheritance](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch01/Inheritance.PNG)
+![Inheritance](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/Inheritance.PNG)
       
  
 #### 객체 지향 특성 3 - 다형성(Polymorphism)
 * 하나의 기능이 경우에 따라 다르게 보이거나 다르게 작동하는 현상
 * 연산자 중복, 함수 중복, 함수 재정의(overriding)
 
-![Polymorphism](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch01/Polymorphism.PNG)
+![Polymorphism](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/Polymorphism.PNG)
 
 #### C++ 언어에서 객체 지향을 도입한 목적
 * 소프트웨어 생산성 향상
@@ -104,7 +104,7 @@ public :
     * 객체를 중심으로 하는 객체 지향 언어 적합
 
 #### 절차 지향 프로그래밍과 객체 지향 프로그래밍
-![Programming2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch01/Programming2.PNG)
+![Programming2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/Programming2.PNG)
 
 
 ## 3절. 추가 설명
@@ -126,7 +126,7 @@ public :
 * 목적 파일과 C++ 표준 라이브러리의 함수 연결
 * 실행 파일을 만드는 과정
 
-![Linking](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch01/Linking.PNG)
+![Linking](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/Linking.PNG)
 
 #### C++ 표준 라이브러리
 * C++ 표준 라이브러리는 3개의 그룹으로 구분
@@ -139,4 +139,4 @@ public :
   * C++ STL 라이브러리
     * 제네릭 프로그래밍을 지원하기 위한 템플릿 라이브러리
 
-![Library](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch01/Library.PNG)
+![Library](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/Library.PNG)

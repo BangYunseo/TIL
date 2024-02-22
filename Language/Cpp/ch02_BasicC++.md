@@ -107,7 +107,7 @@ int main(){
    * 이름 공간 사용
      * 이름 공간 :: 이름     
 
-![functionf](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch02/functionf.PNG)
+![functionf](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch02/functionf.PNG)
 
 #### std
 * std:: 란?
@@ -163,7 +163,7 @@ cout << width << '\n' << height << '\n';
 
 * cin으로부터 키 입력받는 과정
 
-![inputcin](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch02/inputcin.PNG)
+![inputcin](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch02/inputcin.PNG)
 
 #### 실행문 중간에 변수 선언
 * C++의 변수 선언
@@ -224,7 +224,7 @@ char name1[6] = {'G', 'r', 'a', 'c', 'e', '\0'};
 char name2[5] = {'G', 'r', 'a', 'c', 'e'};
 // name2는 문자열이 아닌 단순 문자 배열
 ```
-![stringchar](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch02/stringchar.PNG)
+![stringchar](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch02/stringchar.PNG)
 
   * string 클래스 이용
     * <string> 헤더 파일에 선언
@@ -251,7 +251,7 @@ cin >> name;
 // 키 입력 : Grace
 ```
 
-![grace](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch02/grace.PNG)
+![grace](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch02/grace.PNG)
 
 * 예제 3. 문자열 입력받고 출력하는 예제      
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/InputChar.cpp)
@@ -272,7 +272,7 @@ cin.getline(address, 100, '\n');
 // 도중에 <Enter> 키를 만나면 입력 중단
 ```
 
-![cingetline](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch02/cingetline.PNG)
+![cingetline](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch02/cingetline.PNG)
 
 * 예제 5. cin.getline()을 이용한 문자열 입력 예제      
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/CinGetLine().cpp)
