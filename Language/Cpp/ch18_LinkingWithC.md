@@ -26,19 +26,19 @@
 
 #### C 언어 프로그램의 컴파일과 링킹
 
-![linking](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch18/linking.PNG)
+![linking](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch18/linking.PNG)
 
 #### C++ 소스의 컴파일과 링킹
 
-![linking2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch18/linking2.PNG)
+![linking2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch18/linking2.PNG)
 
 #### C++에서 C 언어 함수 호출 시 링크 오류 발생 
 
-![C++C](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch18/C++C.PNG)
+![C++C](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch18/C++C.PNG)
 
 #### Visual C++ 에서의 링크 오류 메시지
 
-![errorC++](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch18/errorC++.PNG)
+![errorC++](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch18/errorC++.PNG)
 
 ## 2절. extern "c"
 #### extern "c"
@@ -67,4 +67,4 @@ extern "C"{
 
 #### extern "C"를 이용한 링크 성공
 
-![linkingC](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch18/linkingC.PNG)
+![linkingC](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch18/linkingC.PNG)
