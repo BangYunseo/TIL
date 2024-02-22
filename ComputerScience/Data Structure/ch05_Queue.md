@@ -2,7 +2,7 @@
 
 ### 1. 큐(수정중)
 
-![stack](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch4/stack.PNG)
+![stack](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch4/stack.PNG)
 
 #### (1) 스택이란 ? 한쪽 끝에서만 데이터를 넣고 뺄 수 있는 제한적으로 접근할 수 있는 후입선출(Last-In-First-Out) 형태의 선형 자료구조
     - 후입선출 : 나중에 들어온 값을 먼저 계산하는 방식
