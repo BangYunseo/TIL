@@ -21,7 +21,9 @@
 |isEmpty()|큐가 비어있다면 True 반환|
 |dequeueAll()|큐를 깨끗이 청소|
 
-##### 1. 단일 연결 리스트(Singly Linked Linear List)
+![queue2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch5/queue2.PNG)
+
+#### 큐의 삽입과 삭제(여기서부터 다시 작성)
     - 단일 연결 리스트는 각 노드에 자료 공간과 한 개의 포인터 공간이 있고, 각 노드의 포인터는 다음 노드를 가리킴
 
 ![Singly](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch2/Singly.PNG)
