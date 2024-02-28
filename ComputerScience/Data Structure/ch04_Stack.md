@@ -13,10 +13,11 @@
 
 |함수|특성|
 |:--:|:---|
+|push()|item 하나를 스택의 가장 윗 부분에 추가|
 |pop()|스택의 가장 위 항목 제거|
-|push(item)|item 하나를 스택의 가장 윗 부분에 추가|
 |top()|스택의 가장 위 항목 반환|
 |isEmpty()|스택이 비어있다면 True 반환|
+|popAll()|스택을 깨끗이 청소|
 
 ![stack2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch04/stack2.PNG)
 
