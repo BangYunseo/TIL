@@ -2,13 +2,13 @@
 
 ![stack](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch04/stack.PNG)
 
-#### 스택이란 ? 
+#### 스택
 * 한쪽 끝에서만 데이터를 넣고 뺄 수 있는 제한적으로 접근할 수 있는 후입선출(Last-In-First-Out) 형태의 선형 자료구조
   * 후입선출 : 나중에 들어온 값을 먼저 계산하는 방식
 * 위의 그림에서 스택을 계산한다고 가정하자
   * 맨 위의 top 자료부터 계산을 진행
 
-#### 스택의 간단한 개념
+#### 스택 연산
 * 스택 제공 연산 종류
   * pop() : 스택의 가장 위 항목 제거
   * push(item) : item 하나를 스택의 가장 윗 부분에 추가
