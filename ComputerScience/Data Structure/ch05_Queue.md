@@ -23,33 +23,52 @@
 
 ![queue2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch5/queue2.PNG)
 
-#### 큐의 삽입과 삭제(여기서부터 다시 작성)
-    - 단일 연결 리스트는 각 노드에 자료 공간과 한 개의 포인터 공간이 있고, 각 노드의 포인터는 다음 노드를 가리킴
+#### 큐의 삽입
+* 큐에 값을 삽입하면 tail(끝)부분에 값이 삽입
 
-![Singly](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch2/Singly.PNG)
+![enqueue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch5/enqueue.PNG)
 
-##### 2. 이중 연결 리스트(Doubly Linked Linear List)
-    - 이중 연결 리스트의 구조는 단일 연결 리스트와 비슷하지만, 포인터 공간이 두 개가 있고 각각의 포인터는 앞의 노드와 뒤의 노드를 가리킴
-    
-![Doubly](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch2/Doubly.PNG)
+#### 큐의 삭제
+* 큐에 값을 삭제하면 front(처음)부분에 값이 삽입
 
-##### 3. 원형 연결 리스트(Circularly Linked Linear List)
-    - 원형 연결 리스트는 일반적인 연결 리스트에 마지막 노드와 처음 노드를 연결시켜 원형으로 만든 구조 
+![dequeue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch5/dequeue.PNG)
 
-![Circularly](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch2/Circularly.PNG)
+#### 리스트로 구현한 큐
 
-#### (3) 연결 리스트 표현
+```py
+class ListQueue:
+  def __init__(self):
+    self.__queue = []
 
-##### 연결리스트의 표현
+  def enqueue(self, x):
+    self.__queue.append(x)
 
-- 연결 리스트는 그림과 같이 포인터를 사용해서 각 노드를 연결함
-![linkedlist2](https://github.com/BangYunseo/TIL/blob/main/CS/Data%20Structure/%20Image/ch2/linkedlist2.PNG)
+  def dequeue(self):
+    return self.__stack.pop(0)
+    # pop(0) : 리스트의 첫 원소 삭제 후 반환
 
-    - Head는 리스트의 처음을 나타냄
-    - 노드는 데이터와 다음 노드를 가리키는 Next 포인터로 구성됨
-    - 각 노드는 Next 포인터를 사용하여 다음 노드와 연결됨
-    - 마지막 노드는 NULL을 가리켜 리스트의 끝을 나타냄
-        
+  def front(self):
+    if self.isEmpty():
+      return None
+    else:
+      return self.__queue[0]
+
+  def isEmpty(self) -> bool:
+    return (len(self.__queue) == 0)
+
+  def dequeueAll(self):
+    self.__queue.clear()
+
+  def printQueue(self):
+    print("Queue from top : ")
+    for i in range(len(self.__queue)):
+      print(self.__queue[i], end=' ')
+    print()
+```
+
+#### 큐의 시간 복잡도(여기부터 다시 작성)
+
+
 #### (4) 장단점
 
 ##### 1. 장점 
