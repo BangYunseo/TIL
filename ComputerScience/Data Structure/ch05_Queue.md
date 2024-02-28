@@ -1,17 +1,25 @@
 # chapter 5. 큐(Queue)
 
-### 1. 큐(수정중)
+![queue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch5/queue.PNG)
 
-![stack](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch4/stack.PNG)
+#### 큐
+* 가장 먼저 삽입한 원소를 유일하게 접근 가능한 원소로 갖는 선입선출(First-In-First-Out) 형태의 선형 자료 구조
+  * 선입선출 : 먼저 들어온 값을 먼저 계산하는 방식
+* 위의 그림에서 큐를 연산한다고 가정하자
+  * 맨 왼쪽의 front 값부터 연산 가능
+  * 삭제할 때는 front 값부터, 삽입할 때는 tail의 값 뒤부터 연산
+* 큐와 스택은 한 쌍으로 취급하는 경우가 많음
 
-#### (1) 스택이란 ? 한쪽 끝에서만 데이터를 넣고 뺄 수 있는 제한적으로 접근할 수 있는 후입선출(Last-In-First-Out) 형태의 선형 자료구조
-    - 후입선출 : 나중에 들어온 값을 먼저 계산하는 방식
-    - 위의 그림에서 스택을 계산한다고 가정하자
-    -> 맨 위의 top 자료부터 계산을 진행
+#### 큐 연산
+* 큐 제공 연산 종류
 
-(아래부터 작성)
-#### (2) 연결 리스트의 구분  
-- 연결 리스트는 연결 방향에 따라 단일 연결 리스트, 이중 연결 리스트, 원형 연결 리스트가 존재함
+|함수|특성|
+|:--:|:---|
+|dequeue()|큐의 맨 뒤 원소 삽입|
+|enqueue()|큐의 맨 앞 원소를 알려주고 삭제|
+|front()|큐의 맨 앞 원소를 알려줌|
+|isEmpty()|큐가 비어있다면 True 반환|
+|dequeueAll()|큐를 깨끗이 청소|
 
 ##### 1. 단일 연결 리스트(Singly Linked Linear List)
     - 단일 연결 리스트는 각 노드에 자료 공간과 한 개의 포인터 공간이 있고, 각 노드의 포인터는 다음 노드를 가리킴
