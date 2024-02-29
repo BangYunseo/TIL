@@ -85,8 +85,10 @@ class ListStack:
 
 #### 스택의 시간복잡도
 * 삽입(Insertion) : O(1)
-* 삭제(Deletion) - pop : O(1)
-* 삭제(Deletion) - remove : O(N)
+* 삭제(Deletion)
+  * pop : O(1)
+  * remove : O(N)
+* 검색(Search) : O(N)    
 * 스택의 삽입과 삭제 연산은 항상 top에서만 일어나므로 삽입과 삭제에 소요되는 시간 복잡도는 O(1)로 고정
 
 #### 장점 
