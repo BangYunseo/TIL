@@ -84,10 +84,10 @@ class ListStack:
 ```
 
 #### 스택의 시간복잡도
-* 스택의 삽입이나 삭제 시 맨 위의 데이터를 삭제
-  * 따라서 스택의 시간복잡도는 항상 O(1)
-* 만약 특정 데이터를 찾을 경우
-  * 순차적으로 수행해야 하므로 O(n)의 시간복잡도를 가짐
+* 삽입(Insertion) : O(1)
+* 삭제(Deletion) - pop : O(1)
+* 삭제(Deletion) - remove : O(N)
+* 스택의 삽입과 삭제 연산은 항상 top에서만 일어나므로 삽입과 삭제에 소요되는 시간 복잡도는 O(1)로 고정
 
 #### 장점 
 * 구조가 단순
@@ -98,5 +98,6 @@ class ListStack:
 * 데이터 최대 개수를 미리 정할 필요가 존재
 * 저장 공간 낭비 발생 가능성 존재
 
-[본문 참고 자료 1 ](https://velog.io/@alkwen0996/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%8A%A4%ED%83%9DStack)            
-[본문 참고 자료 2 ](https://jin-network.tistory.com/130)
+[본문 참고 자료 1 ](https://velog.io/@alkwen0996/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%8A%A4%ED%83%9DStack)   
+
+[본문 참고 자료 2 ](https://bigsong.tistory.com/32)
