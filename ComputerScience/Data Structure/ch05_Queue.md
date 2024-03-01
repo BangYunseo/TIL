@@ -1,6 +1,6 @@
 # chapter 5. 큐(Queue)
 
-![queue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch5/queue.PNG)
+![queue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch05/queue.PNG)
 
 #### 큐
 * 가장 먼저 삽입한 원소를 유일하게 접근 가능한 원소로 갖는 선입선출(First-In-First-Out) 형태의 선형 자료 구조
