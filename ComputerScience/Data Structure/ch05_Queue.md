@@ -21,17 +21,17 @@
 |isEmpty()|큐가 비어있다면 True 반환|
 |dequeueAll()|큐를 깨끗이 청소|
 
-![queue2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch5/queue2.PNG)
+![queue2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch05/queue2.PNG)
 
 #### 큐의 삽입
 * 큐에 값을 삽입하면 tail(끝)부분에 값이 삽입
 
-![enqueue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch5/enqueue.PNG)
+![enqueue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch05/enqueue.PNG)
 
 #### 큐의 삭제
 * 큐에 값을 삭제하면 front(처음)부분에 값이 삽입
 
-![dequeue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch5/dequeue.PNG)
+![dequeue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch05/dequeue.PNG)
 
 #### 리스트로 구현한 큐
 
