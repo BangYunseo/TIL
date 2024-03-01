@@ -1,8 +1,9 @@
 # chapter 2. 연결 리스트(Linked List)
 
+#### 연결리스트
+
 ![linkedlist](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch02/linkedlist.PNG)
 
-#### 연결리스트란 ? 
 * 데이터와 포인트로 구성된 노드 간의 연결을 이용해서 리스트를 구현한 자료구조
 * 저장되는 데이터의 크기가 동적으로 변하고 리스트 중간에 있는 데이터를 삽입하거나 삭제해야 할 때 사용
 * 연결 리스트는 배열의 고정크기의 단점을 보완
