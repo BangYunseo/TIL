@@ -1,8 +1,9 @@
 # chapter 3. 행렬(Matrix)
 
-![matrix](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch03/matrix.PNG)
+#### 행렬 
 
-#### 행렬이란? 
+![matrix](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch03/matrix.PNG)
+ 
 * 행과 열을 가진 2차원 데이터
 * 영상, 그래프, 다차원을 표현하는 자료구조
 
