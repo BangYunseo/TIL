@@ -20,9 +20,10 @@
    
 ![CBT](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch06/CBT.PNG)
 
+#### 힙
+
 ![heap](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch06/heap.PNG)
 
-#### 힙
 * 대표적인 우선순위 큐
 * 우선순위를 관리하기 위한 특수한 성질을 가진 자료구조
 * 힙이 만족해야 하는 두 조건
@@ -30,23 +31,23 @@
   * 힙 특성
     * 모든 노드는 값을 갖고 자식 노드 값보다 크거나 같음
     * 결과적으로 루트 노드가 제일 큰 원소를 가짐
+* 최대 힙(Max heap) : 최소 힙(Min heap)
+  * 루트가 최댓값 : 최솟값을 가짐
+  * 둘은 대칭적인 특성을 가짐
 
-#### 이진 트리 종류
+#### 힙과 배열
 
-|함수|특성|
-|:--:|:---|
-|dequeue()|큐의 맨 뒤 원소 삽입|
-|enqueue()|큐의 맨 앞 원소 반환 후 삭제|
-|front()|큐의 맨 앞 원소 반환|
-|isEmpty()|큐가 비어있다면 True 반환|
-|dequeueAll()|큐를 깨끗이 청소|
+![heaparray](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch06/heaparray.PNG)
 
-![queue2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch05/queue2.PNG)
+* A[i]의 자식은 A[2i + 1]과 A[2i + 2]
 
-#### 큐의 삽입
-* 큐에 값을 삽입하면 tail(끝)부분에 값이 삽입
+![array](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch06/array.PNG)
+* 배열은 그 자체로 완전 이진 트리
+  * 노드 i의 자식 노드 : 2i + 1, 2i + 2
+  * 노드 i의 부모 노드 : (i-1)/2
 
-![enqueue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch05/enqueue.PNG)
+#### 힙의 예시(여기부터 다시 작성)
+
 
 #### 큐의 삭제
 * 큐에 값을 삭제하면 front(처음)부분에 값이 삽입
