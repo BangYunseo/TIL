@@ -42,14 +42,21 @@
 * A[i]의 자식은 A[2i + 1]과 A[2i + 2]
 
 ![array](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch06/array.PNG)
+
 * 배열은 그 자체로 완전 이진 트리
   * 노드 i의 자식 노드 : 2i + 1, 2i + 2
   * 노드 i의 부모 노드 : (i-1)/2
 
-#### 힙의 예시(여기부터 다시 작성)
+#### 힙의 예시
+* 10개의 원소로 구성된 힙과 대응되는 배열의 형태
 
+![trueex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch06/trueex.PNG)
 
-#### 큐의 삭제
+* 힙 특성은 만족하지만 완전 이진 트리를 만족하지 못하는 형태
+
+![falseex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch06/falseex.PNG)
+
+#### 힙의 구조
 * 큐에 값을 삭제하면 front(처음)부분에 값이 삽입
 
 ![dequeue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch05/dequeue.PNG)
