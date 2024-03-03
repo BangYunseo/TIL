@@ -47,7 +47,7 @@
   * 노드 i의 자식 노드 : 2i + 1, 2i + 2
   * 노드 i의 부모 노드 : (i-1)/2
 
-#### 힙의 예시
+#### 힙 예시
 * 10개의 원소로 구성된 힙과 대응되는 배열의 형태
 
 ![trueex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch06/trueex.PNG)
@@ -56,12 +56,19 @@
 
 ![falseex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch06/falseex.PNG)
 
-#### 힙의 구조
-* 큐에 값을 삭제하면 front(처음)부분에 값이 삽입
+#### 힙 구조
+* 힙 제공 연산 종류
 
-![dequeue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch05/dequeue.PNG)
+|함수|특성|
+|:--:|:---|
+|insert(x)|힙에 원소 x 삽입|
+|deleteMax()|힙의 최대 원소를 알려주면서 삭제|
+|max()|힙의 최대 원소 반환|
+|buildHeap()|배열을 힙으로 변환|
+|isEmpty()|힙이 빈 힙인지 반환|
+|clear()|힙 청소|
 
-#### 리스트로 구현한 큐
+#### 힙의 삽입(여기부터 작성)
 
 ```py
 class ListQueue:
