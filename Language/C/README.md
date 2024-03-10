@@ -1,8 +1,5 @@
 # C Language
 
-## Why? 
-* C언어 기초 정리        
-
 ## What? 
 * C언어 기초 정리  
 * 참고 서적 : 쉽게 풀어쓴 C언어 Express (개정 3판)
