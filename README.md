@@ -8,18 +8,24 @@
 
 
 ## Learning List
+* AI
+  * [DeepLearning](https://github.com/BangYunseo/TIL/tree/main/AI/DeepLearning)
+  * [MachineLearning](https://github.com/BangYunseo/TIL/tree/main/AI/MachineLearning)
 * Language
   * [C](https://github.com/BangYunseo/TIL/tree/main/Language/C)
-  * [C++](https://github.com/BangYunseo/TIL/tree/main/Cpp)
+  * [C++](https://github.com/BangYunseo/TIL/tree/main/Language/Cpp)
   * [Java](https://github.com/BangYunseo/TIL/tree/main/Language/Java)
   * [Python](https://github.com/BangYunseo/TIL/tree/main/Language/Python)
 * Computer Science
-  * [Data Structure](https://github.com/BangYunseo/TIL/tree/main/CS/Data%20Structure)
+  * [Data Structure](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/Data%20Structure)
 * GameEngine
-  * [Unity]()
-  * [Unreal]()
+  * [Unity](https://github.com/BangYunseo/TIL/tree/main/GameEngine/Unity)
+  * [Unreal](https://github.com/BangYunseo/TIL/tree/main/GameEngine/Unreal)
 * Plus
-  *     
+  * [InformationSecurity](https://github.com/BangYunseo/TIL/tree/main/Plus/InformationSecurity)
+  * [Microprocessor](https://github.com/BangYunseo/TIL/tree/main/Plus/Microprocessor)
+  * [SignalsAndSystems](https://github.com/BangYunseo/TIL/tree/main/Plus/SignalsAndSystems)
+
 
 ## Unity Lecture
 * [C#](https://www.inflearn.com/course/c-sharp-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%EB%B0%B0%EC%9A%B0%EA%B8%B0)

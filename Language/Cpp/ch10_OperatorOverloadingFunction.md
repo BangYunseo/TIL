@@ -65,12 +65,11 @@ c = a + b;
 
 * 중복 가능한 연산자          
 
-![OverloadingOperator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/OverloadingOperator.PNG)
-
+![OverloadingOperator](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch10/OverloadingOperator.PNG)
 
 * 중복 불가능한 연산자
 
-![NotOverloadingOperator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/NotOverloadingOperator.PNG)
+![NotOverloadingOperator](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch10/NotOverloadingOperator.PNG)
 
 #### 연산자 함수
 * 연산자 함수 구현 방법 2가지
@@ -133,21 +132,21 @@ public:
 ## 2절. 이항 연산자
 #### + 연산자 중복
 
-![op+](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/op+.PNG)
+![op+](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch10/op+.PNG)
 
 * 예제 1. + 연산자 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/Operator%2B.cpp)
 
 #### == 연산자 중복
 
-![op==](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/op==.PNG)
+![op==](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch10/op==.PNG)
 
 * 예제 2. == 연산자 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/Operator%3D%3D.cpp)
 
 #### += 연산자 중복
 
-![op+=](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/op+=.PNG)
+![op+=](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch10/op+=.PNG)
 
 * 예제 3. += 연산자 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch10_OperatorOverloadingFunction/Operator%2B%3D.cpp)
@@ -171,7 +170,7 @@ public:
 
 #### 전위 ++ 연산자 중복
 
-![++op](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/++op.PNG)
+![++op](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch10/++op.PNG)
 
 
 * 예제 5. 전위 ++ 연산자 예제     
@@ -187,7 +186,7 @@ public:
 
 #### 후위 ++ 연산자 중복
 
-![op++](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/op++.PNG)
+![op++](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch10/op++.PNG)
 
 
 * 예제 7. 후위 ++ 연산자 예제     
@@ -196,7 +195,7 @@ public:
 
 #### 2 + a 덧셈을 위한 + 연산자 함수 작성
 
-![intop+](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/intop+.PNG)
+![intop+](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch10/intop+.PNG)
 
 
 * 예제 8. 정수형 매개 변수를 가진 + 연산자 프렌드 작성 예제     
@@ -205,7 +204,7 @@ public:
 
 #### + 연산자를 외부 프렌드 함수로 구현
 
-![friendop+](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/friendop+.PNG)
+![friendop+](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch10/friendop+.PNG)
 
 
 * 예제 9. 객체 끼리의 덧셈을 위한 + 연산자 프렌드 작성 예제     
@@ -214,10 +213,10 @@ public:
 
 #### 단항 연산자 ++를 프렌드로 작성 
 * 전위 연산자
-![fop+](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/fop+.PNG)
+![fop+](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch10/fop+.PNG)
 
 * 후위 연산자
-![bop+](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch10/bop+.PNG)
+![bop+](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch10/bop+.PNG)
 
 
 * 예제 10. ++ 연산자 프렌드 작성 예제     

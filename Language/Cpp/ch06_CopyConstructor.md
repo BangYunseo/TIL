@@ -17,7 +17,7 @@
 ![copy](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch06/copy.PNG)
 
 
-#### C++에서 얕은 복사와 깊은 복사(여기부터 작성)
+#### C++에서 얕은 복사와 깊은 복사
 * 얕은 복사(shallow copy)
   * 객체 복사 시, 객체의 멤버를 1대 1로 복사
   * 객체의 멤버 변수에 동적 메모리가 할당된 경우

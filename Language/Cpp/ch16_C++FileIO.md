@@ -29,12 +29,13 @@
   * <Enter>키를 입력하면 텍스트 파일에 '\r', '\n'의 두 코드가 기록
 * 아스키 코드 표 샘플
 
-![asciicode](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/asciicode.PNG)
+![asciicode](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/asciicode.PNG)
 
 #### 텍스트 파일의 내부
 
-![elvis](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/elvis.PNG)
-![elvis2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/elvis2.PNG)
+![elvis](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/elvis.PNG)
+
+![elvis2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/elvis2.PNG)
 
 #### 바이너리 파일
 * 문자로 표현되지 않는 바이너리 데이터가 기록된 파일
@@ -50,7 +51,7 @@
 
 #### 바이너리 파일의 내부
 
-![uisee](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/uisee.PNG)
+![uisee](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/uisee.PNG)
 
 #### hwp 파일은 바이너리 파일
 * 텍스트 정보 포함
@@ -65,15 +66,15 @@
 ## 2절. C++ 파일 입출력
 #### C++ 표준 파일 입출력 라이브러리
 * 스트림 입출력 방식 지원
-![stream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/stream.PNG)
+![stream](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/stream.PNG)
 
 #### 템플릿에 char 타입으로 구체화한 클래스
 
-![typedef](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/typedef.PNG)
+![typedef](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/typedef.PNG)
 
 #### 파일과 프로그램을 연결하는 파일 입출력 스트림
 
-![iostream](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/iostream.PNG)
+![iostream](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/iostream.PNG)
 
 * >> 연산자와 istream의 get(), read() 함수
   * 연결된 장치로부터 읽는 함수
@@ -138,7 +139,7 @@ if(!fout){
  // 파일 닫기
 ```
 
-![song](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/song.PNG)
+![song](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/song.PNG)
 
 * 예제 1. 키보드로 입력받은 텍스트 파일 저장 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/SavingTextFile.cpp)
@@ -159,7 +160,7 @@ if(!fout){
 * ifstream("파일 이름", 파일 모드)
 * ofstream("파일 이름", 파일 모드)
 
-![filemode](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/filemode.PNG)
+![filemode](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/filemode.PNG)
 
 #### 파일 모드 설정
 ```CPP
@@ -201,7 +202,7 @@ fbinout.write(buf, 128);
 #### get()과 EOF
 * 파일의 끝에서 읽기를 시도하면 get()은 EOF(-1값)를 리턴
 
-![EOFget](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/EOFget.PNG)
+![EOFget](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/EOFget.PNG)
 
 #### get()으로 파일의 끝을 인지하는 방법
 * 방법 1
@@ -265,7 +266,7 @@ while(getline(fin, line){ // 한 라인을 읽어 line에 저장한 후 파일 �
 
 
 * 예제 4 참고 이미지              
-![ex4](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/ex4.PNG)
+![ex4](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/ex4.PNG)
 
 * 예제 4. 텍스트 파일 연결 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/ConnectTextFile.cpp)
@@ -319,7 +320,7 @@ int gcount();
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/ReadWriteTulips.cpp)
 
 * 예제 10 참고 이미지              
-![ex10](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/ex10.PNG)
+![ex10](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/ex10.PNG)
 
 * 예제 10. int 배열과 double 값을 바이너리 파일에 저장하고 읽는 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/IntDoubleBinary.cpp)
@@ -329,11 +330,11 @@ int gcount();
   * 텍스트 I/O든 바이너리 I/O든 파일의 끝을 만나면 EOF 리턴
 * 개행 문자 '\n'를 읽고 쓸 때 서로 다르게 작동
 
-![textbinary](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/textbinary.PNG)
+![textbinary](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/textbinary.PNG)
 
 #### 텍스트 I/O와 바이너리 I/O의 실행 결과 비교
 
-![textbinary2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/textbinary2.PNG)
+![textbinary2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/textbinary2.PNG)
 
 ## 5절. 스트림 상태
 #### 스트림 상태 검사
@@ -341,15 +342,15 @@ int gcount();
   * 파일 입출력이 진행되는 동안 스트림(열어 놓은 파일)에 관한 입출력 오류 저장
     * 스트림 상태를 저장하는 멤버 변수 이용
 
-![streamstat](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/streamstat.PNG)
+![streamstat](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/streamstat.PNG)
 
 #### 스트림 상태를 나타내는 비트 정보
 
-![streambit](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/streambit.PNG)
+![streambit](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/streambit.PNG)
 
 #### 스트림 상태를 검사하는 멤버 함수
 
-![streammem](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/streammem.PNG)
+![streammem](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/streammem.PNG)
 
 * 예제 11. 스트림 상태 검사 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/StreamState.cpp)
@@ -373,7 +374,7 @@ int gcount();
 
 #### 파일 모드와 파일 포인터
 
-![FileMP](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/FileMP.PNG)
+![FileMP](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/FileMP.PNG)
 
 #### 임의의 접근 방법
 * 파일 포인터 제어
@@ -405,14 +406,14 @@ streampos tellp();
 // 출력 스트림의 현재 put pointer의 값 리턴
 ```
 
-![seekbase](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/seekbase.PNG)
+![seekbase](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/seekbase.PNG)
 
 #### seekg()에 의한 get pointer의 이동 사례
 
-![seekg](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/seekg.PNG)
+![seekg](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/seekg.PNG)
 
 * 예제 12 참고 이미지                 
-![ex12](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch16/ex12.PNG)
+![ex12](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch16/ex12.PNG)
 
 * 예제 12. 파일 크기 알아내기 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch16_FileIO/FileSize.cpp)

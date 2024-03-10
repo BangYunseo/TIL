@@ -73,11 +73,11 @@ template <typename T>
 template <class T1, class T2, class T3>
 ```
 
-![myswap](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/myswap.PNG)
+![myswap](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch13/myswap.PNG)
 
 #### 중복 함수들로부터 템플릿 만들기 사례
 
-![myswap2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/myswap2.PNG)
+![myswap2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch13/myswap2.PNG)
 
 ## 2절. 구체화
 #### 템플릿으로부터의 구체화 
@@ -85,11 +85,11 @@ template <class T1, class T2, class T3>
   * 템플릿의 제네릭 타입에 구체적인 타입 지정
     * 템플릿 함수로부터 구체화된 함수의 소스 코드 생성
 
-![intT](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/intT.PNG)
+![intT](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch13/intT.PNG)
 
 #### 제네릭 함수로부터 구체화된 함수 생성 사례
 
-![special](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/special.PNG)
+![special](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch13/special.PNG)
 
 * 예제 1. 제네릭 myswap() 함수 생성 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch13_Template/GenericMyswap.cpp)
@@ -97,7 +97,7 @@ template <class T1, class T2, class T3>
 #### 구체화 오류
 * 제네릭 타입에 구체적인 타입 지정 시 주의
 
-![errorspecial](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/errorspecial.PNG)
+![errorspecial](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch13/errorspecial.PNG)
 
 #### 템플릿의 장단점
 * 장점
@@ -130,7 +130,7 @@ template <class T1, class T2, class T3>
 
 #### 배열을 출력하는 print() 템플릿 함수의 문제점
 
-![charspec](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/charspec.PNG)
+![charspec](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch13/charspec.PNG)
 
 * 예제 5. 템플릿 함수보다 중복 함수가 우선인 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch13_Template/PrintFunction.cpp)
@@ -180,7 +180,7 @@ double d = dStack.pop();
 
 #### cout << a << b << c; 의 실행 순서
 
-![coutabc1](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/coutabc1.PNG)
+![coutabc1](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch13/coutabc1.PNG)
 
 * 예제 7의 라인 39 ~ 40을 다음과 같이 연결하면 잘못된 결과가 나오며 이유는 아래와 같음
 ![coutabc2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch13/coutabc2.PNG)

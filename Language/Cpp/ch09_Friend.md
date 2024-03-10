@@ -33,7 +33,7 @@
 * 다른 클래스 전체
   * 다른 클래스의 모든 멤버 함수
 
-![becomefriend](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch09/becomefriend.PNG)
+![becomefriend](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch09/becomefriend.PNG)
 
 #### 프렌드 선언 3 종류
 * 외부 함수 equals()를 Rect 클래스에 프렌드로 선언

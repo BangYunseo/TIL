@@ -30,18 +30,18 @@
     * 데이터를 담아두는 자료 구조를 표현한 클래스
     * 리스트, 큐, 스택, 맵, 셋, 벡터
 
-![STLcontainer](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLcontainer.PNG)
+![STLcontainer](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch14/STLcontainer.PNG)
 
   * iterator : 컨테이너 원소에 대한 포인터
     * 컨테이너의 원소들을 순회하면서 접근하기 위해 만들어진 컨테이너 원소에 대한 포인터
 
-![STLiterator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLiterator.PNG)  
+![STLiterator](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch14/STLiterator.PNG)  
   
   * 알고리즘 : 템플릿 함수
     * 컨테이너 원소에 대한 복사, 검색, 삭제, 정렬 등의 기능을 구현한 템플릿 함수
     * 컨테이너의 멤버 함수 아님
 
-![STLalgorithm](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/STLalgorithm.PNG)
+![STLalgorithm](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch14/STLalgorithm.PNG)
  
 #### STL과 관련된 헤더 파일과 이름 공간
 * 헤더 파일
@@ -63,15 +63,15 @@
 * 벡터에 저장된 원소는 인덱스로 접근 가능
   * 인덱스는 0부터 시작
 
-![container](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/container.PNG)
+![container](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch14/container.PNG)
 
 #### vector 클래스의 주요 멤버와 연산자
-![vectormem](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/vectormem.PNG)
+![vectormem](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch14/vectormem.PNG)
 
 
 #### vector 다루기 사례
 
-![vector](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/vector.PNG)
+![vector](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch14/vector.PNG)
 
 * 예제 1. vector 컨테이너 활용 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/VectorContainer.cpp)
@@ -88,7 +88,7 @@
 * iterator 변수 선언
   * 구체적인 컨테이너를 지정하여 반복자 변수 생성
 
-![iterator](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/iterator.PNG)
+![iterator](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch14/iterator.PNG)
 
 * 예제 3. iterator를 사용하여 vector의 모든 원소에 2를 곱하는 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/IteratorToVector.cpp)
@@ -190,7 +190,7 @@ auto ret = square(3);
 * STL 템플릿에 활용
   * vector<int>iterator 타입의 변수 it를 auto를 이용하여 간단히 선언
 
-![auto](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/auto.PNG)
+![auto](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch14/auto.PNG)
 
 * 예제 6. auto 변수 예제     
 [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch14_StandardTemplateLibrary/AutoVariable.cpp)
@@ -200,7 +200,7 @@ auto ret = square(3);
 * 람다 대수와 람다식
   * 람다 대수에서 람다식은 수학 함수를 단순하게 표현하는 기법
 
-![lambda](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/lambda.PNG)
+![lambda](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch14/lambda.PNG)
 
 * C++ 람다
   * 익명의 함수 만드는 기능으로 C++11에서 도입
@@ -215,7 +215,7 @@ auto ret = square(3);
     * 라턴 타입
     * 함수 바디 : 람다 식의 함수 코드
 
-![lambda2](https://github.com/BangYunseo/TIL/blob/main/Cpp/Image/ch14/lambda2.PNG)
+![lambda2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch14/lambda2.PNG)
 
 
 * 예제 7. 매개 변수 x, y의 합을 출력하는 람다식 생성 예제     
