@@ -19,31 +19,31 @@
 * 변수를 통해 해당 메모리 번지에 하나의 값을 저장하고 읽음
 * 변수는 정수, 실수 등 다양한 타입의 값을 저장            
 
-![variable](https://github.com/BangYunseo/TIL/blob/main/Java/Image/ch1/variable.PNG)
+![variable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable.PNG)
  
 #### 1. 변수 선언  
 - 변수 사용을 위해서 변수 선언이 필요
   
       - 변수에 어떤 타입의 데이터를 저장할 것인지, 변수의 이름이 무엇인지 결정
             
-![variable1](https://github.com/BangYunseo/TIL/blob/main/Java/Image/ch1/variable1.PNG)
+![variable1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable1.PNG)
 
       - 같은 타입의 변수는 콤마를 이용해 한꺼번에 선언
 
-![variable2](https://github.com/BangYunseo/TIL/blob/main/Java/Image/ch1/variable2.PNG)
+![variable2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable2.PNG)
 
 - 변수 이름
 
       - 자바 언어에서 정한 명명 규칙에 따라 작성
 
-![variablename](https://github.com/BangYunseo/TIL/blob/main/Java/Image/ch1/variablename.PNG)
+![variablename](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablename.PNG)
 
 - 예약어
 
       - 자바 언어에서 의미를 가지고 사용되는 단어
       - 변수 이름으로 사용할 경우 컴파일 에러
 
-![variablename1](https://github.com/BangYunseo/TIL/blob/main/Java/Image/ch1/variablename1.PNG)
+![variablename1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablename1.PNG)
 
 #### 2. 값 저장
 
@@ -52,7 +52,7 @@
       - 변수를 선언
       - 대입 연산자를 사용해서 오른쪽의 값을 왼쪽 변수에 저장
 
-![variablesave](https://github.com/BangYunseo/TIL/blob/main/Java/Image/ch1/variablesave.PNG)
+![variablesave](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablesave.PNG)
 
 - 변수 초기화     
 
@@ -60,11 +60,11 @@
       - 생성되는 변수는 초기화
       - 생성되는 변수의 값은 초기값
 
-![variablereset](https://github.com/BangYunseo/TIL/blob/main/Java/Image/ch1/variablereset.PNG)
+![variablereset](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablereset.PNG)
 
       - 초기화를 하지 않은 변수는 메모리에서 값을 읽을 수 없음
 
-![variableresetno](https://github.com/BangYunseo/TIL/blob/main/Java/Image/ch1/variableresetno.PNG)
+![variableresetno](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variableresetno.PNG)
 
 ```Java
 // VariableInitializationExample 실습
@@ -87,7 +87,7 @@ public class VariableInitializationExample {
 #### 3. 변수 사용 
 - 변수 사용 : 변수의 값을 이용해서 출력문이나 연산식을 수행
 
-![usevariable](https://github.com/BangYunseo/TIL/blob/main/Java/Image/ch1/usevariable.PNG)
+![usevariable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/usevariable.PNG)
 
 ```Java
 // VariableUseExample 실습
@@ -106,7 +106,7 @@ public class VariableUseExample {
 ```
 - 변수 값 복사 : 변수의 값을 다른 변수에 저장
 
-![copyvariable](https://github.com/BangYunseo/TIL/blob/main/Java/Image/ch1/copyvariable.PNG)
+![copyvariable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/copyvariable.PNG)
 
 ```Java
 // VariableExchangeExample 실습
@@ -131,11 +131,11 @@ public class VariableExchangeExample {
       - 메소드 블록 내에서 선언된 변수는 지역 변수
       - 지역 변수는 메소드 블록 내에서만 사용되고 실행이 끝나면 자동으로 삭제
   
-![localvariable](https://github.com/BangYunseo/TIL/blob/main/Java/Image/ch1/localvariable.PNG)
+![localvariable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/localvariable.PNG)
 
       - 지역 변수는 해당 중괄호 블록 내에서만 사용 가능
 
-![localvariable1](https://github.com/BangYunseo/TIL/blob/main/Java/Image/ch1/localvariable1.PNG)
+![localvariable1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/localvariable1.PNG)
 
       - 지역 변수를 선언할 때 변수가 어떤 범위에서 사용될 것인지 고려하여 선언 위치를 결정
       - 메소드 블록 전체에서 사용하려는 경우 메소드 블록 첫머리에 선언
