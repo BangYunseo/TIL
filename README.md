@@ -17,7 +17,7 @@
   * [Java](https://github.com/BangYunseo/TIL/tree/main/Language/Java)
   * [Python](https://github.com/BangYunseo/TIL/tree/main/Language/Python)
 * Computer Science
-  * [Data Structure](https://github.com/BangYunseo/TIL/tree/main/CS/Data%20Structure)
+  * [Data Structure](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/Data%20Structure)
 * GameEngine
   * [Unity](https://github.com/BangYunseo/TIL/tree/main/GameEngine/Unity)
   * [Unreal](https://github.com/BangYunseo/TIL/tree/main/GameEngine/Unreal)
