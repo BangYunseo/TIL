@@ -14,58 +14,60 @@
 > 5절. 정리
 
 ## 1절. 변수
-#### 변수(Variable)
+#### 메모리(RAM)
+* 컴퓨터 메모리(RAM)는 값을 저장할 수 있는 수많은 번지(주소)들로 구성
+* 메모리의 어디에, 어떤 방식으로 저장할 지 결정해야 프로그램 개발이 쉬움
+  * 프로그래밍 언어가 변수라는 개념을 사용하는 이유
+
+![variable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable.PNG)
+
+ #### 변수(Variable)
 * 값을 저장할 수 있는 메모리의 특정 번지에 붙여진 이름
 * 변수를 통해 해당 메모리 번지에 하나의 값을 저장하고 읽음
 * 변수는 정수, 실수 등 다양한 타입의 값을 저장            
 
-![variable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable.PNG)
- 
-#### 1. 변수 선언  
-- 변수 사용을 위해서 변수 선언이 필요
-  
-      - 변수에 어떤 타입의 데이터를 저장할 것인지, 변수의 이름이 무엇인지 결정
-            
+## 2절. 변수 선언
+#### 변수 선언  
+* 변수 사용을 위해서 변수를 선언
+  * 어떤 타입의 데이터를 저장하는가?
+  * 변수 이름은 무엇인가?
+         
 ![variable1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable1.PNG)
 
-      - 같은 타입의 변수는 콤마를 이용해 한꺼번에 선언
+* 같은 타입의 변수는 콤마를 이용해 한꺼번에 선언
 
 ![variable2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable2.PNG)
 
-- 변수 이름
-
-      - 자바 언어에서 정한 명명 규칙에 따라 작성
+#### 변수 이름
+* Java에서 정한 작성 규칙
 
 ![variablename](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablename.PNG)
 
-- 예약어
-
-      - 자바 언어에서 의미를 가지고 사용되는 단어
-      - 변수 이름으로 사용할 경우 컴파일 에러
+#### 예약어
+* Java에서 의미를 가지고 사용되는 단어
+* 변수 이름으로 사용할 경우 컴파일 에러 발생
 
 ![variablename1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablename1.PNG)
 
-#### 2. 값 저장
-
-- 값을 저장할 경우 대입 연산자 (=) 사용
-
-      - 변수를 선언
-      - 대입 연산자를 사용해서 오른쪽의 값을 왼쪽 변수에 저장
+## 3절. 변수 저장
+#### 저장
+* 값을 저장할 경우 대입 연산자 (=) 사용
+  * 변수 선언 후 대입 연산자를 통해 오른쪽의 값을 왼쪽 변수에 저장
 
 ![variablesave](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablesave.PNG)
 
-- 변수 초기화     
-
-      - 변수에 최초로 값이 저장될 때 메모리에 변수가 생성됨
-      - 생성되는 변수는 초기화
-      - 생성되는 변수의 값은 초기값
+#### 변수 초기화     
+* 변수에 최초로 값이 저장될 때 메모리에 변수가 생성
+  * 생성되는 변수 : 초기화
+  * 생성되는 변수의 값 : 초기값
 
 ![variablereset](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablereset.PNG)
 
-      - 초기화를 하지 않은 변수는 메모리에서 값을 읽을 수 없음
+* 초기화를 하지 않은 변수는 메모리에서 값을 읽을 수 없음
 
 ![variableresetno](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variableresetno.PNG)
 
+(여기부터 다시 작성)
 ```Java
 // VariableInitializationExample 실습
 package sec01.exam01;
