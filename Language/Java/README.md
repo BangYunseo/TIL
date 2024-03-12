@@ -6,11 +6,11 @@
 
 ## When?
 * 2023.09 ~ 2023.12 학습 내용
-* 마지막 수정일 : 2024.03.10
+* 마지막 수정일 : 2024.03.12
 
 ## Learning List(ch02~)
 * ch01 [변수](https://github.com/BangYunseo/TIL/blob/main/Language/Java/ch01_Variable.md)
-* ch02 [C++기초](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch02_BasicC%2B%2B.md)
+* ch02 [기본 타입](https://github.com/BangYunseo/TIL/blob/main/Language/Java/ch02_PrimitiveType.md)
 * ch03 [클래스와 객체](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch03_ClassAndObject.md)
 * ch04 [객체 포인터](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch04_ObjectPointer.md)
 * ch05 [함수와 참조](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch05_FunctionAndReference.md)
@@ -29,8 +29,8 @@
 * ch18 [C와 링크](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch18_LinkingWithC.md)
 
 ## SourceCode List(ch01~)
-* [ch01 변수](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch01_IntroduceC%2B%2B.md)
-* [ch02 C++기초](https://github.com/BangYunseo/Basic_CPP/tree/main/ch02_BasicC%2B%2B)
+* [ch01 변수](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch01_Variable)
+* [ch02 기본 타입](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch02_PrimitiveType)
 * [ch03 클래스와 객체](https://github.com/BangYunseo/Basic_CPP/tree/main/ch03_ClassAndObject)
 * [ch04 객체와 포인터](https://github.com/BangYunseo/Basic_CPP/tree/main/ch04_ObjectPointer)
 * [ch05 함수와 참조](https://github.com/BangYunseo/Basic_CPP/tree/main/ch05_FunctionAndReference)
