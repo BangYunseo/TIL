@@ -32,8 +32,71 @@
 
 ![Memory](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/Memory.PNG)
 
-## 2절. 변수 선언
-#### 변수 선언  
+#### 리터럴(literal)
+* 소스 코드에서 프로그래머에 의해 직접 입력된 값
+* 아래의 경우 자바에서 정수로 인식
+
+![Exchange](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/Exchange.PNG)
+
+* 예제 1. 10진수 변환 예제   
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_PrimitiveType/IntegerLiteralExample.java)
+
+* 예제 2. byte 범위에 맞는 출력 예제   
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_PrimitiveType/ByteExample.java)
+
+* 예제 3. long 범위에 맞는 출력 예제  
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_PrimitiveType/LongExample.java)
+
+#### char 타입
+* 하나의 문자를 저장하는 타입
+  * ex) 'A', '한'
+* 작은 따옴표로 감싼 문자 리터럴은 유니코드로 변환되어 저장
+  * char 타입은 정수 타입
+ 
+![char](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/char.PNG)
+
+* char는 정수 타입이므로 10진수 또는 16진수 형태의 유니코드 저장 가능
+
+![char2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/char2.PNG)
+
+* 예제 4. char 타입 예제   
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_PrimitiveType/CharExample.java)
+
+#### 문자열
+* 큰따옴표로 감싼 문자들
+* 문자열은 char 타입이 아닌 String 타입에 저장
+
+![string](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/string.PNG)
+
+* 예제 5. String 타입 예제   
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_PrimitiveType/StringExample.java)
+
+#### 이스케이프 문자(escape)
+* 문자열 내부의 '\'를 의미
+* 이스케이프 문자를 통해 특정 문자를 포함시키거나, 문자열의 출력 제어 가능
+
+* 예시 1) 문자열 내부에 " 문자 포함
+
+![escape](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/escape.PNG)
+
+* 예시 2) 문자열 출력 제어
+
+![escape2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/escape2.PNG)
+
+#### 이스케이프 문자 종류
+
+|이스케이프 문자|출력 용도|
+|:---:|:---:|
+|\t|탭만큼 띄움|
+|\n|줄 바꿈(라인 피드)|
+|\r|캐리지리턴|
+|\"|" 출력|
+|\'|' 출력|
+|\u16진수|16진수 유니코드에 해당하는 문자 출력|
+* '\\\\\' 을 통해 \를 출력 가능
+
+## 2절. 실수 타입
+#### 실수 타입(여기부터 다시 작성)
 * 변수 사용을 위해서 변수를 선언
   * 어떤 타입의 데이터를 저장하는가?
   * 변수 이름은 무엇인가?
