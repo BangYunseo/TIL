@@ -1,7 +1,7 @@
 #  Chapter 2. 기본 타입
-> '혼자 공부하는 자바 - 신용권' 2장 1절 학습 내용
+> '혼자 공부하는 자바 - 신용권' 2장 2절 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch01_Variable)
+> [소스코드](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch02_PrimitiveType)
 > 
 > 1절. 기본 타입
 >
@@ -95,92 +95,54 @@
 |\u16진수|16진수 유니코드에 해당하는 문자 출력|
 * '\\\\\' 을 통해 \를 출력 가능
 
-## 2절. 실수 타입
-#### 실수 타입(여기부터 다시 작성)
-* 변수 사용을 위해서 변수를 선언
-  * 어떤 타입의 데이터를 저장하는가?
-  * 변수 이름은 무엇인가?
-         
-![variable1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable1.PNG)
+## 3절. 실수 타입
+#### 실수 타입
 
-* 같은 타입의 변수는 콤마를 이용해 한꺼번에 선언
+![fd](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/fd.PNG)
 
-![variable2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable2.PNG)
+#### 실수 리터럴
+* 소스 코드에서 소수점 있는 리터럴은 10진수 실수로 인식
+> 0.25, -3.14
 
-#### 변수 이름
-* Java에서 정한 작성 규칙
+* 알파벳 e 또는 E가 포함된 숫자 리터럴은 지수 및 가수로 표현된 소수점 있는 10진수 실수로 인식
 
-![variablename](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablename.PNG)
+![fd2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/fd2.PNG)
 
-#### 예약어
-* Java에서 의미를 가지고 사용되는 단어
-* 변수 이름으로 사용할 경우 컴파일 에러 발생
+#### double 타입
+* double 타입 변수에 저장
+  * Java는 실수 리터럴을 기본적으로 double 타입으로 해석
 
-![variablename1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablename1.PNG)
+![double](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/double.PNG)
 
-## 3절. 변수 저장
-#### 저장
-* 값을 저장할 경우 대입 연산자 (=) 사용
-  * 변수 선언 후 대입 연산자를 통해 오른쪽의 값을 왼쪽 변수에 저장
+#### float 타입
+* float 타입 변수에 저장
+  * 리터럴 뒤 f 혹은 F를 붙여 float 타입 표시
 
-![variablesave](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablesave.PNG)
+![float](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/float.PNG)
 
-#### 변수 초기화     
-* 변수에 최초로 값이 저장될 때 메모리에 변수가 생성
-  * 생성되는 변수 : 초기화
-  * 생성되는 변수의 값 : 초기값
+#### 실수 타입의 범위
+* double 타입이 float 타입보다 2배 가량 정밀도 높아 정확한 데이터 저장 가능
+  * float : 소수점 이하자리 약 7 (6 ~ 9)
+    > 0.12345679
+  * double : 소수점 이하자리 약 15 (15 ~ 18)
+    > 0.1234567890123457
 
-![variablereset](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablereset.PNG)
-
-* 초기화를 하지 않은 변수는 메모리에서 값을 읽을 수 없음
-
-![variableresetno](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variableresetno.PNG)
-
-* 예제 1. 변수 선언 및 초기화 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/VariableInitializationExample.java)
-
-## 4절. 변수 사용
-#### 변수 사용 
-* 변수의 값을 이용해서 출력문이나 연산식을 수행
-
-![usevariable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/usevariable.PNG)
-
-* 예제 2. 변수 사용 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/VariableUseExample.java)
-
-#### 변수 값 복사
-* 변수의 값을 다른 변수에 저장
-
-![copyvariable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/copyvariable.PNG)
-
-* 예제 3. 변수 교환 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/VariableExchangeExample.java)
-
-#### 변수 사용 범위
-* 지역 변수(Local Variable)
-  * 메소드 블록 내에서 선언된 변수
-  * 메소드 블록 내에서만 사용되고 실행이 끝나면 자동으로 삭제
-  
-![localvariable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/localvariable.PNG)
-
-* 지역 변수는 해당 중괄호 블록 내에서만 사용 가능
-
-![localvariable1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/localvariable1.PNG)
-
-#### 지역 변수 사용 범위 주의할 점
-* 변수가 어떤 범위에서 사용될 것인지 고려하여 선언 위치를 결정
-* 메소드 블록 전체에서 사용하려는 경우 메소드 블록 첫머리에 선언
-* 특정 블록 내부에서만 사용하려는 경우 해당 블록 내에 선언
-
-* 예제 4. 변수 교환 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/VariableScopeExample.java)
+## 4절. 논리 타입
+#### 논리 타입
+* 참과 거짓에 해당하는 true와 false 리터럴을 저장하는 타입
+```Java
+boolean stop = true;
+boolean state = false;
+```
+* 두 가지 상태값에 따라 제어문의 실행 흐름을 변경할 때 사용
 
 ## 5절. 정리
 #### 핵심 포인트 확인하기
 
 |키워드|설명|
 |:---:|:---|
-|변수|값을 저장할 수 있는 메모리 번지에 붙인 이름으로 프로그램은 변수를 통해 메모리 번지에 값을 저장하고 읽음|
-|변수 선언|변수에 어떤 타입의 데이터를 저장할 지, 변수의 이름이 무엇인지를 결정|
-|변수 사용|변수의 값을 읽거나 변경하는 것으로 출력문이나 연산식 내부에서 사용되며 변수에 저장된 값을 출력하거나 연산에 사용|
-|변수 사용 범위|변수는 자신이 선언된 위치에서 자신이 속한 블록 내부까지만 사용 가능|
+|정수 타입|정수를 저장할 수 있는 byte, short, int, long과 같은 타입|
+|char 타입|작은따옴표(')로 감싼 하나의 문자 리터럴을 저장하는 타입|
+|String 타입|큰따옴표(")로 감싼 문자열을 저장하는 타입|
+|실수 타입|실수를 저장할 수 있는 float, double와 같은 타입|
+|boolean 타입|참과 거짓을 의미하는 true와 false를 저장할 수 있는 타입|
