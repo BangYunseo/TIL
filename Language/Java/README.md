@@ -6,7 +6,7 @@
 
 ## When?
 * 2023.09 ~ 2023.12 학습 내용
-* 마지막 수정일 : 2024.03.12
+* 마지막 수정일 : 2024.03.13
 
 ## Learning List(ch02~)
 * ch01 [변수](https://github.com/BangYunseo/TIL/blob/main/Language/Java/ch01_Variable.md)
