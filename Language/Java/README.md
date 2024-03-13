@@ -8,7 +8,7 @@
 * 2023.09 ~ 2023.12 학습 내용
 * 마지막 수정일 : 2024.03.13
 
-## Learning List(ch02~)
+## Learning List(ch03~)
 * ch01 [변수](https://github.com/BangYunseo/TIL/blob/main/Language/Java/ch01_Variable.md)
 * ch02 [기본 타입](https://github.com/BangYunseo/TIL/blob/main/Language/Java/ch02_PrimitiveType.md)
 * ch03 [클래스와 객체](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch03_ClassAndObject.md)
@@ -28,7 +28,7 @@
 * ch17 [예외처리](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch17_ExceptionHandling.md)
 * ch18 [C와 링크](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch18_LinkingWithC.md)
 
-## SourceCode List(ch01~)
+## SourceCode List(ch03~)
 * [ch01 변수](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch01_Variable)
 * [ch02 기본 타입](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch02_PrimitiveType)
 * [ch03 클래스와 객체](https://github.com/BangYunseo/Basic_CPP/tree/main/ch03_ClassAndObject)
