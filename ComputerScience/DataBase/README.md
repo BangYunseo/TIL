@@ -2,7 +2,7 @@
 
 ## What? 
 * 데이터베이스 정리 및 공부  
-* 참고 강의 : http://www.kocw.net/home/cview.do?mty=p&kemId=1163794
+* [참고 강의 바로가기](http://www.kocw.net/home/cview.do?mty=p&kemId=1163794)
 
 ## When?
 * 마지막 수정일 : 2024.03.17
