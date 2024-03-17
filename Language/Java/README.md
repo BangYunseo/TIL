@@ -8,6 +8,10 @@
 * 2023.09 ~ 2023.12 학습 내용
 * 마지막 수정일 : 2024.03.13
 
+## Why?
+* 웹 개발 공부
+* 객체지향 프로그래밍 언어 학습
+
 ## Learning List(ch03~)
 * ch01 [변수](https://github.com/BangYunseo/TIL/blob/main/Language/Java/ch01_Variable.md)
 * ch02 [기본 타입](https://github.com/BangYunseo/TIL/blob/main/Language/Java/ch02_PrimitiveType.md)
