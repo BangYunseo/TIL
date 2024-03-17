@@ -8,6 +8,10 @@
 * 2023.09 ~ 2023.12 학습 내용
 * 마지막 수정일 : 2024.02.20
 
+## Why?
+* 게임 개발을 위한 언어 학습(언리얼 엔진)
+* 객체지향 프로그래밍 언어 학습
+
 ## Learning List
 * ch01 [C++소개](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch01_IntroduceC%2B%2B.md)
 * ch02 [C++기초](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch02_BasicC%2B%2B.md)
