@@ -13,7 +13,7 @@
 ## List
 * Computer Architecture
 * [Data Structure](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/Data%20Structure)
-* DataBase
+* [DataBase](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase)
 * Network
 * Operating System
 * Software Engineering
