@@ -1,5 +1,5 @@
 # TIL - Today I Learned
-* Makrdown 사용
+* Makrdown"만" 사용
 
 ## Tips for TIL
 * [Markdown 작성법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
