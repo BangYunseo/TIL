@@ -9,7 +9,10 @@
 * 마지막 수정일 : 2024.02.20
 
 ## Learning List
-* ch00 [자료 구조 소개](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch01_IntroduceC%2B%2B.md)
+<details>
+    <summary>List</summary>
+ 
+* ch00 [자료 구조란?](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch01_IntroduceC%2B%2B.md)
 * ch01 [배열]()
 * ch02 [연결리스트](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch02_BasicC%2B%2B.md)
 * ch03 [행렬](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch03_ClassAndObject.md)
@@ -21,3 +24,5 @@
 * ch09 []()
 * ch10 []()
 
+
+</details>
