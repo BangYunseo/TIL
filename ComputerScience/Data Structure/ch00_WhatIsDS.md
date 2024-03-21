@@ -1,6 +1,6 @@
-# chapter 0. Introduce Data Structure
+# chapter 0. 자료 구조란?
 
-#### 자료 구조
+#### 자료 구조(Data Structure)
 * 데이터를 저장, 조직, 관리하는 방법   
 * 컴퓨터 프로그래밍 언어에서 효율적인 데이터의 형태
 * 생각하는 방법을 훈련하는 도구
