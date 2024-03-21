@@ -8,19 +8,16 @@
 
 #### 자료 구조의 종류
 * 기본 자료 구조
-  * 배열
-  * 연결리스트
-  * 스택
-  * 큐
-  * 트리
-  * 이진 트리
-  * 그래프
-  * 해시테이블
+  * 배열(Array)
+  * 연결리스트(Linket List)
+  * 스택(Stack)
+  * 큐(Queue)
+  * 트리(Tree)
+  * 이진 트리(Binary Tree)
+  * 그래프(Graph)
+  * 해시테이블(Hash Table)
 * 응용 자료 구조
-  * 덱
-  * 힙
-  * 우선순위 큐
-  * 세그먼트 트리
-  * 트라이 트리
-         
-![datastructure](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch00/datastructure.PNG) 
+  * 덱(Deque)
+  * 힙(Heap) & 우선순위 큐(Priority Queue)
+  * 세그먼트 트리(Indexed Tree - Segment Tree)
+  * 트라이 트리(Trie Tree)
