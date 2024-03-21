@@ -10,7 +10,7 @@
 * 마지막 수정일 : 2024.03.17
 
 ## Learning List
-* ch00 []()
+* ch00 [데이터베이스란?](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/ch00_WhatIsDataBase.md)
 * ch01 []()
 * ch02 []()
 * ch03 []()
