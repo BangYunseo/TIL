@@ -103,6 +103,12 @@ int intVal = (int) doubleVal;
 
 ![longtype](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/longtype.PNG)
 
+* 예제 3. byte 자동 타입 변환 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/ByteOperationExample.java)
+
+* 예제 4. Long 자동 타입 변환 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/LongOperationExample.java)
+
 #### 실수 타입 변수
 * 피연산자 중 하나가 double 타입일 경우 다른 피연산자는 double 타입으로 자동 변환
 
@@ -145,6 +151,9 @@ System.out.println(res);
 
 ![doubletype](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/doubletype.PNG)
 
+* 예제 5. 데이터 보존 자동 타입 변환 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/OperationsPromotionExample.java)
+
 #### + 연산
 * 피연산자가 모두 숫자일 경우 덧셈 연산
 * 피연산자 중 하나가 문자열일 경우 나머지 피연산자도 문자열로 자동 변환
@@ -156,6 +165,9 @@ System.out.println(res);
   * 먼저 수행된 연산이 결합 연산인 경우 이후 모든 연산은 결합 연산
 
 ![type+2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/type+2.PNG)
+
+* 예제 6. + 연산 예제           
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/StringConcatExample.java)
 
 ## 3절. 강제 타입 변환
 #### 기본 타입
@@ -178,6 +190,9 @@ int Val = Integer.parseInt(str);
 ```Java
 String str = String.valueOf(3);
 ```
+
+* 예제 7. Long 자동 타입 변환 예제             
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/PrimitiveAndStringConversionExample.java)
 
 ## 4절. 정리
 #### 핵심 포인트 확인하기
