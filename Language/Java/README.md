@@ -13,6 +13,12 @@
 * 객체지향 프로그래밍 언어 학습
 
 ## Learning List(ch03~)
+
+<details>
+    <summary>
+        Learning List
+    </summary>
+
 * ch01 [변수](https://github.com/BangYunseo/TIL/blob/main/Language/Java/ch01_Variable.md)
 * ch02 [기본 타입](https://github.com/BangYunseo/TIL/blob/main/Language/Java/ch02_PrimitiveType.md)
 * ch03 [클래스와 객체](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch03_ClassAndObject.md)
@@ -31,8 +37,16 @@
 * ch16 [C++ 파일 입출력](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch16_C%2B%2BFileIO.md)
 * ch17 [예외처리](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch17_ExceptionHandling.md)
 * ch18 [C와 링크](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch18_LinkingWithC.md)
+ 
+</details>
 
 ## SourceCode List(ch03~)
+
+<details>
+    <summary>
+        SourceCode List
+    </summary>
+
 * [ch01 변수](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch01_Variable)
 * [ch02 기본 타입](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch02_PrimitiveType)
 * [ch03 클래스와 객체](https://github.com/BangYunseo/Basic_CPP/tree/main/ch03_ClassAndObject)
@@ -46,3 +60,6 @@
 * [ch11 상속](https://github.com/BangYunseo/Basic_CPP/tree/main/ch11_Inheritance)
 * [ch12 가상 함수와 추상 클래스](https://github.com/BangYunseo/Basic_CPP/tree/main/ch12_VirtualFunctionAndAbstractClass)
 * [ch13 템플릿](https://github.com/BangYunseo/Basic_CPP/tree/main/ch13_Template)
+ 
+</details>
+
