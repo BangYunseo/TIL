@@ -12,7 +12,7 @@
 <details>
     <summary>List</summary>
  
-* ch00 [자료 구조란?](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch01_IntroduceC%2B%2B.md)
+* ch00 [자료 구조란?](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/ch00_WhatIsDS.md)
 * ch01 [배열]()
 * ch02 [연결리스트](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch02_BasicC%2B%2B.md)
 * ch03 [행렬](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch03_ClassAndObject.md)
