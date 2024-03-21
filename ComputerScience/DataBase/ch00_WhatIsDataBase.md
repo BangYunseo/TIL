@@ -1,4 +1,4 @@
-# Chapter 1. 데이터베이스란?
+# Chapter 0. 데이터베이스란?
 
 > [참고 강의](http://www.youtube.com/playlist?list=PLcXyemr8ZeoREWGhhZi5FZs6cvymjIBVe)
 >
