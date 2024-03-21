@@ -14,7 +14,7 @@
  
 * ch00 [자료 구조란?](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/ch00_WhatIsDS.md)
 * ch01 [배열](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/ch01_Array.md)
-* ch02 [연결리스트](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch02_BasicC%2B%2B.md)
+* ch02 [연결리스트](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/ch02_LinkedList.md)
 * ch03 [행렬](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch03_ClassAndObject.md)
 * ch04 [스택](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch04_ObjectPointer.md)
 * ch05 [큐](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch05_FunctionAndReference.md)
