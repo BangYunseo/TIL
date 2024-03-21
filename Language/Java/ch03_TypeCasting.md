@@ -53,7 +53,7 @@ char charVal = byteVal;
 // Why? byte에서 char로의 변환은 손실이 있는 변환
 ```
 
-* 예제 1. 자동 타입 변환 예제
+* 예제 1. 자동 타입 변환 예제      
 [SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/PromotionExample.java)
 
 #### 강제 타입 변환(casting)
@@ -88,7 +88,7 @@ int intVal = (int) doubleVal;
 // intVal은 정수 부분 3만 저장
 ```
 
-* 예제 2. 강제 타입 변환 예제
+* 예제 2. 강제 타입 변환 예제           
 [SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/CastingExample.java)
 
 ## 2절. 자동 타입 변환
