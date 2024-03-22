@@ -61,6 +61,9 @@ System.out.printf("이름 : %1$s, 나이 : %2$d", "방윤서", 22);
 
 ![print2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch04/print2.PNG)
 
+* 예제 1. printf 예제      
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch04_VariableSystemIO/PrintfExample.java)
+
 ## 2절. 변수 선언
 #### 변수 선언  
 * 변수 사용을 위해서 변수를 선언
