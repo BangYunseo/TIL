@@ -3,28 +3,63 @@
 >
 > [소스코드](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch04_VariableSystemIO)
 > 
-> 1절. 변수
+> 1절. 변수 출력
 >
-> 2절. 변수 선언
+> 2절. 변수 저장
 >
-> 3절. 변수 저장
->
-> 4절. 변수 사용
->
-> 5절. 정리
+> 3절. 정리
 
-## 1절. 변수
-#### 메모리(RAM)
-* 컴퓨터 메모리(RAM)는 값을 저장할 수 있는 수많은 번지(주소)들로 구성
-* 메모리의 어디에, 어떤 방식으로 저장할 지 결정해야 프로그램 개발이 쉬움
-  * 프로그래밍 언어가 변수라는 개념을 사용하는 이유
+## 1절. 변수 출력
+#### System.out
+* 시스템의 표준 출력 장치로 출력
+```Java
+System.out.println("Hello, World!");
+// 출력 예시
+// Hello, World!
+```
 
-![variable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable.PNG)
+#### System.in
+* 시스템의 표준 입력 장치에서 읽음
+```Java
+System.in.read();
+```
 
- #### 변수(Variable)
-* 값을 저장할 수 있는 메모리의 특정 번지에 붙여진 이름
-* 변수를 통해 해당 메모리 번지에 하나의 값을 저장하고 읽음
-* 변수는 정수, 실수 등 다양한 타입의 값을 저장            
+#### println()
+* 괄호 안의 문자열이나 변수를 출력하는 메소드
+
+![println](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch04/println.PNG)
+
+#### 여러가지 출력 메소드
+          
+![print](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch04/print.PNG)
+
+#### printf()
+* 형식화된 문자열(formal string) 출력
+* 전체 출력 자릿수 및 소수 자릿수 제한
+
+![printf](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch04/printf.PNG)
+
+* 형식 문자열에서 %와 conversion 외에는 모두 생략 가능
+* conversion에는 제공되는 값의 타입에 따라 d(정수), f(실수), s(문자열) 입력
+
+```Java
+System.out.printf("이름 : %s\n", "방윤서");
+System.out.printf("나이 : %d", 22);
+// 출력 예시
+// 이름 : 방윤서
+// 나이 : 22
+```
+
+* 형식 문자열에 포함될 값이 2개 이상인 경우 순번표시
+```Java
+System.out.printf("이름 : %1$s, 나이 : %2$d", "방윤서", 22);
+// 출력 예시
+// 이름 : 방윤서, 나이 : 22
+```
+
+* 다양한 형식 문자열
+
+![print2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch04/print2.PNG)
 
 ## 2절. 변수 선언
 #### 변수 선언  
