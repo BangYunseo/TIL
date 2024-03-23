@@ -6,7 +6,7 @@
 
 ## When?
 * 2023.09 ~ 2023.12 학습 내용
-* 마지막 수정일 : 2024.03.17
+* 마지막 수정일 : 2024.03.23
 
 ## Why?
 * 게임 개발을 위한 언어 학습(언리얼 엔진)
@@ -37,6 +37,7 @@
 * ch16 [C++ 파일 입출력](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch16_C%2B%2BFileIO.md)
 * ch17 [예외처리](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch17_ExceptionHandling.md)
 * ch18 [C와 링크](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch18_LinkingWithC.md)
+* ch19 [형변환](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/ch19_TypeConversion.md)
 
 </details>
 
