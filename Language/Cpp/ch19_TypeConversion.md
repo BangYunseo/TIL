@@ -70,6 +70,7 @@ static_cast<new_type*>(ptr.get());
 reinterpret_cast<new_type*>(ptr.get());
 dynamic_cast<new_type*>(ptr.get());
 ```
+
 ## 2절. static_cast
 #### static_cast란?
 * 대부분의 객체 형변환에 사용
@@ -78,9 +79,36 @@ dynamic_cast<new_type*>(ptr.get());
 * 사용자 정의 자료형은 사용자 정의 형변환 연산자(user-defined type conversion function)를 정의
 
 #### 기본자료형 형변환
+```cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+    double dValue = 3.141592;
+    int nValue = 0;
+    nValue = static_cast<int>(dValue);
 
-![linking2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch18/linking2.PNG)
+    printf("%lf\n", dValue);
+    printf("%d\n", nValue);
 
+    size_t unValue = 0x0102030405060708;
+    short sValue = 0;
+    sValue = static_cast<short>(unValue);
+
+    printf("%016lx\n", unValue);
+    printf("%x\n", sValue);
+    return EXIT_SUCCESS;
+}
+
+// 출력 예시
+// 3.141592
+// 3
+// 0102030405060708
+// 708
+```
+
+* double형 자료를 int로 변환하면 정수부 값만 int형으로 변환
+* 
 #### C++에서 C 언어 함수 호출 시 링크 오류 발생 
 
 ![C++C](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch18/C++C.PNG)
