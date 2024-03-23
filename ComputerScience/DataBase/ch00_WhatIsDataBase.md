@@ -1,6 +1,6 @@
 # Chapter 0. 데이터베이스란?
 
-> [참고 강의](http://www.youtube.com/playlist?list=PLcXyemr8ZeoREWGhhZi5FZs6cvymjIBVe)
+> [참고 강의](https://www.youtube.com/watch?v=aL0XXc1yGPs&list=PLcXyemr8ZeoREWGhhZi5FZs6cvymjIBVe&index=1)
 >
 > 1절. DB, DBMS, DB System
 >
