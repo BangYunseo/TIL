@@ -7,12 +7,11 @@
 >
 > 2절. static_cast
 >
-> 3절.
+> 3절. const_cast
 >
-> 4절.
+> 4절. reinterpret_cast
 >
-> 5절.
-
+> 5절. dynamic_cast
 
 ## 1절. 형변환
 #### 형변환이란?
