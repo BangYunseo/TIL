@@ -15,7 +15,8 @@
 
 ## 1절. 형변환
 #### 형변환이란?
-* type conversion으로 불리는 형변환은 캐스팅(casting) 이라고도 함
+* 형변환(type conversion)
+* 캐스팅(casting)이라고도 함
 * 명시적(explicit) 또는 묵시적(implicit)으로 자료의 형식을 변환하는 것
 
 #### 형변환 구문
@@ -49,14 +50,11 @@ dynamic_cast<new_type>(value);
 ```
 
 * 형변환의 반환형은 new_type
-* 형변환은 대상에 따라 변환 할 수 없는 것 존재
-  * 사용자 정의 자료형에 형변환 연산자(user-defined type conversion function)를 정의하지 않으면 형변환 방법에 따라
-  * 다른 자료형으로 형변환 할 때 문제가 발생
+* 대상에 따라 변환 할 수 없는 것 존재
+  * 사용자 정의 자료형에 형변환 연산자(user-defined type conversion function)를 정의하지 않으면
+    * 형변환 방법에 따라 다른 자료형으로 형변환 할 때 문제 발생
 
-#### 스마트 포인터 std::shared_ptr<T>
-* std::shared_ptr<T>의 T로 형변환 하는 경우
-  * 멤버 함수인 get()을 이용하여 일반적인 형변환 형식 사용
-
+#### 스마트 포인터 std::shared_ptr<T>로 형변환 
 ```cpp
 std::static_pointer_cast<new_type>(ptr);
 std::dynamic_pointer_cast<new_type>(ptr);
@@ -64,10 +62,14 @@ std::const_pointer_cast<new_type>(ptr);
 std::reinterpret_pointer_cast<new_type>(ptr);
 ```
 
+#### std::shared_ptr<T>의 T로 형변환
+* 멤버 함수인 get()을 이용하여 일반적인 형변환 형식 사용
+
+```cpp
 static_cast<new_type*>(ptr.get());
 reinterpret_cast<new_type*>(ptr.get());
 dynamic_cast<new_type*>(ptr.get());
-
+```
 ## 2절. 
 #### C 언어 프로그램의 컴파일과 링킹
 
