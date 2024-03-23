@@ -70,12 +70,14 @@ static_cast<new_type*>(ptr.get());
 reinterpret_cast<new_type*>(ptr.get());
 dynamic_cast<new_type*>(ptr.get());
 ```
-## 2절. 
-#### C 언어 프로그램의 컴파일과 링킹
+## 2절. static_cast
+#### static_cast란?
+* 대부분의 객체 형변환에 사용
+* 컴파일러가 형변환 방법을 아는 경우 사용
+* 기본 자료형은 명시적, 묵시적으로 형변환 가능
+* 사용자 정의 자료형은 사용자 정의 형변환 연산자(user-defined type conversion function)를 정의
 
-![linking](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch18/linking.PNG)
-
-#### C++ 소스의 컴파일과 링킹
+#### 기본자료형 형변환
 
 ![linking2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch18/linking2.PNG)
 
