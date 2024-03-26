@@ -14,6 +14,18 @@
 > 5절. dynamic_cast
 
 ## 1절. 형변환
+#### 빠른 형변환
+* 문자형 변수를 정수형 변수로 변환하는 함수
+  * stoi(val);
+* 정수형 변수를 문자형 변수로 변환하는 함수
+  * to_string(val);
+```CPP
+answer = stoi(string);
+// string 타입의 값을 int 타입의 정수로 변환 후 answer에 저장
+
+answer = to_string(int);
+// int 타입의 값을 string 타입의 문자로 변환 후 answer에 저장
+```
 #### 형변환이란?
 * 형변환(type conversion)
 * 캐스팅(casting)이라고도 함
