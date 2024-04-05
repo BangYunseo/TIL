@@ -63,10 +63,22 @@
 * 간단한 기계학습 예제
   * 가로축은 시간, 세로축은 이동체의 위치
   * 관측된 4개의 점은 데이터
+  * 간단한 회귀 문제     
 
 ![exampleML](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/exampleML.PNG)
 
-      
+* 예측(prediction) 예제
+  * 임의의 시간이 주어졌을 때 이동체의 위치 예측
+  * 회귀(regression) 문제와 분류(classification) 문제로 나눠짐
+    * 회귀(regression)
+      * 실수의 목표값을 가짐
+    * 분류(classification)
+      * 부류값으로 분류
+
+* 훈련집합
+  * 가로축은 특징, 세로축은 목표치
+  * 관측한 4개의 점이 훈련집합 구성
+  
 #### 객체 지향 특성 1 - 캡슐화
 * 데이터를 캡슐로 싸서 외부의 접근으로부터 보호     
 * C++에서 클래스(class 키워드)로 캡슐을 표현      
