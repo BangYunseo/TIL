@@ -60,7 +60,12 @@
 
 
 #### 기계학습 이해
-* 
+* 간단한 기계학습 예제
+  * 가로축은 시간, 세로축은 이동체의 위치
+  * 관측된 4개의 점은 데이터
+
+![exampleML](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/exampleML.PNG)
+
       
 #### 객체 지향 특성 1 - 캡슐화
 * 데이터를 캡슐로 싸서 외부의 접근으로부터 보호     
