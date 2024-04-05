@@ -1,4 +1,4 @@
-#  Chapter 1. C++소개   
+#  Chapter 1. 기계학습 소개   
 > '기계학습 - 오일석' 1장 학습 내용
 >
 > [소스코드]는 존재하지 않습니다.
@@ -20,33 +20,47 @@
 ## 1절. 기계학습의 개념
 #### 인공지능, 머신러닝, 딥러닝
 * 인공지능
+  * 사고나 학습 등 인간이 가진 지적 능력을 컴퓨터를 통해 구현하는 기술
+  * 인간 혹은 인간 이상의 지식 상태 구현 목적
 * 머신러닝
+  * 컴퓨터가 스스로 학습하여 인공지능의 성능을 향상시키는 기술 방법
+  * 여러 가지 경우를 학습하여 그와 비슷한 경우의 문제 해결
 * 딥러닝
+  * 인간의 뉴런과 비슷한 인공신경망 방식으로 정보 처리
+  * 상황에 적합한 학습 경험 이용
 
-#### C++ 언어에 추가된 기능
-* 함수 중복(Function Overloading)
-  * 매개 변수의 개수나 타입이 다른 동일한 이름의 함수들 선언
-* 디폴트 매개 변수(Default Parameter)
-  * 매개 변수에 디폴트 값이 전달되도록 함수 선언
-* 참조와 참조 변수(Reference)
-  * 하나의 변수에 별명을 사용하는 참조 변수 도입
-* 참조에 의한 호출(Call-By-Reference)
-  * 함수 호출 시 참조 전달
-* New / Delete 연산자
-  * 동적 메모리 할당/해제를 위해 new와 delete 연산자 도입
-* 연산자 재정의
-  * 기존 C++ 연산자에 새로운 연산 정의
-* 제네릭 함수와 클래스
-  * 데이터 타입에 의존하지 않고 일반화시킨 함수나 클래스 작성 가능
+#### 기계 학습의 정의
+* 학습이란? <표준국어대사전>
+> " 경험의 결과로 나타나는. 비교적 지속적인 행동의 변화나 그 잠재력의 변화 또는 지식을 습득하는 과정. [국립국어원, 2017] "
 
-## 2절. 객체
-#### 객체(Object)
-* 데이터의 분산을 막기 위해 데이터와 기능을 하나로 묶은 그룹
- 
-#### 객체 지향 언어(Object-oriented Language)  
-* 컴퓨터 프로그래밍의 한 가지 기법으로 객체를 만들고 객체를 사용하는 프로그래밍 언어
-* 프로그램을 데이터와 처리 방법으로 나누는 것이 아님
-* 프로그램을 다수의 "객체"로 만들고, 이들을 상호작용해서 만들어지는 방식
+* 기계학습이란?
+  * 인공지능 초창기 사무엘의 정의
+> " Programming computers to learn from experience should eventually eliminate the need for much of this detailed programming effort."     
+> " 컴퓨터가 경험을 통해 학습할 수 있도록 프로그래밍할 수 있다면 세세하게 프로그래밍해야 하는 번거로움에서 벗어날 수 있다. [Samuel, 1959] "
+
+  * 현대적 정의
+> " A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P. improves with experience E."     
+> " 어떤 컴퓨터 프로그램이 T라는 작업을 수행한다. 이 프로그램의 성능을 P라는 척도로 평가했을 때 경험 E를 통해 성능이 개선된다면 이 프로그램은 학습을 한다고 말할 수 있다. [Mitchell, 1997(2page)] "
+
+> " Programming computers to optimize a performance criterion using example data or past experience. "     
+> "사례 데이터. 즉 과거 경험을 이용하여 성능 기준을 최적화하도록 프로그래밍하는 작업. [Alpaydin, 2010] "
+
+> " Computational methods using experience to improve performance or to make accurate predictions."     
+> "성능을 개선하거나 정확하게 예측하기 위해 경험을 이용하는 계산학 방법들. [Mohri, 2012] "
+
+#### 지식 기반 방식에서 기계 학습으로의 전환
+* 인공지능의 탄생
+  * 컴퓨터의 뛰어난 능력
+  * 컴퓨터에 대한 기대감
+  * -> 이를 통한 지식 기반 방식 사용
+* 인공지능의 주도권 전환
+  * 점차 지식 기반 방식에서 기계 학습 방식으로 전환
+  * 기계 학습 : 데이터 중심 접근 방식
+    * 데이터를 기반으로 인간처럼 응용 가능하도록 학습
+
+
+#### 기계학습 이해
+* 
       
 #### 객체 지향 특성 1 - 캡슐화
 * 데이터를 캡슐로 싸서 외부의 접근으로부터 보호     
