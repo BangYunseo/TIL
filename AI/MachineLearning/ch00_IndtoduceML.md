@@ -122,13 +122,26 @@
   * 특징 벡터 표기
     * $x = (x_1, x_2, ..., x_d)^T$
 * $d$-차원 데이터를 위한 학습 모델
+  * 직선 모델을 사용하는 경우 매개 변수의 수 = $d+1$
+
+  $y = w_1x_1 + w_2x_2 + ... + w_dx_d + b$
+
+  * 2차 곡선 모델을 사용하는 경우 매개 변수의 수 크게 증가
+    * 매개 변수 수 = $d^2 + d + 1$
+      * 예시
+        * Iris 데이터 : $d = 4$이므로 21개의 매개 변수
+        * MNIST 데이터 : $d = 784$ 이므로 615,441개의 매개 변수     
+ 
+ $y = w_1x^2_1 + w_2x^2_2 + ... + w_dx^2_d + w_{d+1}x_1x_2 + ... + w_{d^2}x_{d-1}x_d+w_{{d^2}+1}x_1+...+w_{{d^2}+d}x_d+b$
+
 #### 다차원 특징 공간 예제
 * 특징이 너무 많으면 목표값에 대한 정확도 감소
 * 올바른 학습 발생 불가
 
 ![dimensionN](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/dimensionN.PNG) 
 
-#### C++ 상속  
+## 3절. 데이터
+#### 데이터에 대한 이해 
 * 객체가 자식 클래스의 멤버와 부모 클래스에 선언된 모양 그대로 멤버들을 가지고 탄생
       
 ![HumanAndMachine](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/HumanAndMachine.PNG) 
