@@ -47,7 +47,7 @@ int n = (int)d;
 ```
 
 #### 형변환 종류
-```cpp
+```CPP
 static_cast<new_type>(value);
 // 형변환 방법을 컴파일러가 아는 경우
 
@@ -120,7 +120,7 @@ int main()
 ```
 
 * double형 자료를 int로 변환하면 정수부 값만 int형으로 변환
-* 
+
 #### C++에서 C 언어 함수 호출 시 링크 오류 발생 
 
 ![C++C](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch18/C++C.PNG)
