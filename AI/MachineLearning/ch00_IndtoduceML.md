@@ -1,4 +1,4 @@
-#  Chapter 1. 기계학습 소개   
+#  Chapter 0. 기계학습 소개   
 > '기계학습 - 오일석' 1장 학습 내용
 >
 > [소스코드]는 존재하지 않습니다.
@@ -48,13 +48,13 @@
 > " Computational methods using experience to improve performance or to make accurate predictions."     
 > "성능을 개선하거나 정확하게 예측하기 위해 경험을 이용하는 계산학 방법들. [Mohri, 2012] "
 
-#### 지식 기반 방식에서 기계 학습으로의 전환
+#### 지식 기반 방식에서 기계학습으로의 전환
 * 인공지능의 탄생
   * 컴퓨터의 뛰어난 능력
   * 컴퓨터에 대한 기대감
   * -> 이를 통한 지식 기반 방식 사용
 * 인공지능의 주도권 전환
-  * 점차 지식 기반 방식에서 기계 학습 방식으로 전환
+  * 점차 지식 기반 방식에서 기계학습 방식으로 전환
   * 기계 학습 : 데이터 중심 접근 방식
     * 데이터를 기반으로 인간처럼 응용 가능하도록 학습
 
@@ -78,38 +78,60 @@
 * 훈련집합
   * 가로축은 특징, 세로축은 목표치
   * 관측한 4개의 점이 훈련집합 구성
-  
-#### 객체 지향 특성 1 - 캡슐화
-* 데이터를 캡슐로 싸서 외부의 접근으로부터 보호     
-* C++에서 클래스(class 키워드)로 캡슐을 표현      
 
-![class](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/class.PNG)
+![TrainingData](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/TrainingData.PNG)  
 
-#### 클래스와 객체     
-* 클래스 : 객체를 만드는 틀     
-* 객체 : 클래스라는 틀에서 생겨난 실체      
-* 객체(object), 실체(instance)는 같은 뜻     
-      
-![instance](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/instance.PNG)
+#### 데이터 모델링 방법
+* 데이터가 직선을 이루므로 직선을 모델로 선택
+* 직선 모델의 수식
+  * 2개의 매개 변수 w와 b
+    * 1차원 : $y = wx + b$   
+    * 2차원 : $y = w_1x^2 + w_2x + b$  
 
-```C++
-// 원을 추상화한 클래스 Circle
-class Circle{
-private :
-      int radius;      // 반지름 값
-public :
-      Circle(int r){ radius = r; }
-      double getArea(){ return 3.14 * radius * radius }
-};    
-```
+#### 기계학습의 목적    
+* 가장 정확하게 예측할 수 있는 최적의 매개 변수를 찾는 작업
+* 처음에는 최적값을 모르는 상태이므로 임의의 값에서 학습 시작한 후, 점차 성능을 개선하여 최적에 도달
+  * 그림[1 - 4] 예시 참
+    * $f_1$에서 시작하여 $f_1$ -> $f_2$ -> $f_3$ 까지 성능을 개선했으며 최적인 $f_3$은 $w=0.5$와 $b=2.0$
+* 기계학습의 궁극적 목표
+  * 훈련 집합에 없는 새로운 샘플(테스트 샘플)에 대한 오류 최소화
+  * 새로운 샘플에 대한 높은 성능 일반화(generalization) 능력 탑재
 
-#### 객체 지향 특성 2 - 상속성(Inheritance)     
-* 자식이 부모의 유전자를 물려 받는 것과 유사
+#### 기계학습 단순 비교
+
+![HumanAndMachine](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/HumanAndMachine.PNG)  
+
+## 2절. 특징 공간
+#### 차원 별 특징 공간
+* 1차원 특징 공간
+
+![dimension1](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/dimension1.PNG) 
+
+* 2차원 특징 공간   
+  * 특징 벡터 표기
+    * $x=(x_1, y_1)^T$
+  * 예시 
+    * $x = 특징$, $y = 목표값$
+      * $x=(몸무게, 키)^T$, $y=bmi$
+      * $x=(체온, 두통)^T$, $y=감기 여부$
+
+![dimension2](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/dimension2.PNG) 
+
+#### 다차원 특징 공간 개념
+* $d$-차원 데이터
+  * 특징 벡터 표기
+    * $x = (x_1, x_2, ..., x_d)^T$
+* $d$-차원 데이터를 위한 학습 모델
+#### 다차원 특징 공간 예제
+* 특징이 너무 많으면 목표값에 대한 정확도 감소
+* 올바른 학습 발생 불가
+
+![dimensionN](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/dimensionN.PNG) 
 
 #### C++ 상속  
 * 객체가 자식 클래스의 멤버와 부모 클래스에 선언된 모양 그대로 멤버들을 가지고 탄생
       
-![Inheritance](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/Inheritance.PNG)
+![HumanAndMachine](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/HumanAndMachine.PNG) 
       
  
 #### 객체 지향 특성 3 - 다형성(Polymorphism)
