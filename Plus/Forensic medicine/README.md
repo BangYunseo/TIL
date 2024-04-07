@@ -1,5 +1,4 @@
 # 법의학
-* [서울대 의대 커리큘럼](https://medicine.snu.ac.kr/fnt/bbm/bbs/selectBoardArticleView.do?nttId=24355#)
 
 # Study List
 <details>
