@@ -10,7 +10,12 @@
 * [목차 참고 깃허브 : CS-study](https://github.com/Seogeurim/CS-study)
 * 내용 참고는 내용 밑에 삽입
 
-## List
+<details>
+    <summary>list
+    </summary>
+
+## CS
+
 * Computer Architecture
 * [Data Structure](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/Data%20Structure)
 * [DataBase](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase)
@@ -18,5 +23,17 @@
 * Operating System
 * Software Engineering
 * Algorithm
+* Design Pattern
+
+
+## Game CS
+
+* Computer Grapcis
+* Open GL
+
+## Web CS
+
 * Linux
 * [FrameWork]()
+
+</details>
