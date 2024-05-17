@@ -17,7 +17,7 @@
         Learning List
     </summary>
 
-* ch01 [정보보안소개](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch01_IntroduceC%2B%2B.md)
+* ch01 [정보보안소개](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/ch00_IntroduceIS.md)
 * ch02 [C++기초](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch02_BasicC%2B%2B.md)
 * ch03 [클래스와 객체](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch03_ClassAndObject.md)
 * ch04 [객체 포인터](https://github.com/BangYunseo/TIL/blob/main/Cpp/ch04_ObjectPointer.md)
