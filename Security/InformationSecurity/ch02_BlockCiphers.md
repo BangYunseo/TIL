@@ -1,5 +1,5 @@
-#  Chapter 1. 고전 암호 기술
-> 0절. Basic Terminology
+#  Chapter 1. 블럭 암호
+> 1절. Block and Stream Ciphers
 > 
 > 1절. Symmetric Encryption
 >
@@ -7,23 +7,25 @@
 >
 > 3절. Many Ciphers
 >
-> 4절. Steganography
+> 4절. Feistel Cipher
 
-## 0절. Basic Terminology
-#### 대칭형 암호(Symmetric Encryption)
-* 일반적인 / 비밀 키 / 단일 키 암호
-* 1970년대 공개 키 암호호화가 발명되기 이전의 유일한 암호화 유형
-* 두 가지 암호화 유형(비대칭형과 대칭형) 중 가장 널리 사용되는 암호화 유형
-* 발신자와 수신자가 공통 키 공유
-* 모든 기존 암호화 알고리즘은 대칭
+## 1절. Block and Stream Ciphers
+#### 블럭 암호(Block Cipher)
+* 메시지를 블럭 단위로 처리한 후 각 메시지를 암호화 / 해독
+* 현재 대부분의 암호는 블럭 암호 사용
+    * 왜?
+        * 더 나은 분석
+        * 더 넓은 적용범위
 
-#### 대칭형과 비대칭형
-|용어|번역|특성|키의 개수|
-|:---:|:---|:---|:---:|
-|Non-Symmetric|비대칭형|보내는 사람과 받는 사람의 암호 불일치|2|
-|Symmetric|대칭형|보내는 사람과 받는 사람의 암호 일치|1|
+![BC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/BC.PNG)
+
+#### 스트림 암호(Stream Cipher)
+* 암호화 / 해독 시 메시지를 한 번에 비트 또는 바이트 단위로 처리
+
+![SC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/SC.PNG)
 
 #### 암호학 기본 용어
+
 |용어|의미|번역|의미번역|
 |:---:|:---|:---|:---|
 |plaintext|original message|평문|암호화되기 이전의 정보|
@@ -37,7 +39,7 @@
 |cryptology|field of both cryptography and cryptanalysis|암호학|암호에 대한 모든 학문|
 
 ## > 1절. Symmetric Encryption
-#### 대칭형 암호 모델(Symmetric Cipher Model)
+#### Symmetric Cipher Model
 
 ![SE](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch01/SE.PNG)
 
@@ -66,8 +68,7 @@
         * 자신이 가지고 있던 평문(또는 암호문)에 대한 정보를 공부한 후 새로운 메시지로 해독하는 공격
         * 공격자가 정보를 더 많이 얻었을 때 이뤄지는 공격이므로 공격자가 유리
 
-* 브루트포스 공격(Brute-force attacks)
-    * 물리적인 힘의 공격(무식한 방법이자 전수 조사)
+* Brute-force attacks : 물리적인 힘의 공격(무식한 방법이자 전수 조사)
     * [브루트포스 알고리즘 - hcr3066님의 블로그 참고](https://hcr3066.tistory.com/26)
     * 예시 : 4자리의 암호(0000 ~ 9999)를 모두 시도해 암호를 얻는 방법의 공격
         * 컴퓨터 대수를 높여 효율 증가
