@@ -1,5 +1,5 @@
-#  Chapter 2. 블럭 암호 및 데이터 표준 암호화
-> 1절. Block and Stream Ciphers
+#  Chapter 3. 유클리드 호제법
+> 1절. Division Algorithm
 > 
 > 2절. Ideal Block Cipher
 >
@@ -10,7 +10,7 @@
 > 5절. Brute-Force Attack
 
 
-## 1절. Block and Stream Ciphers
+## 1절. Division Algorithm
 #### 블럭 암호(Block Cipher)
 * 메시지를 블럭 단위로 처리한 후 각 메시지를 암호화 / 해독
 * 현재 대부분의 암호는 블럭 암호 사용
