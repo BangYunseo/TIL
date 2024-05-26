@@ -1,9 +1,13 @@
-#  Chapter 1. 블럭 암호
+#  Chapter 1. 블럭 암호 및 데이터 표준 암호화
 > 1절. Block and Stream Ciphers
 > 
 > 2절. Ideal Block Cipher
 >
 > 3절. Feistel Cipher
+>
+> 4절. Data Encryption Standard
+
+
 
 ## 1절. Block and Stream Ciphers
 #### 블럭 암호(Block Cipher)
@@ -65,3 +69,32 @@
 
 ## 3절. Feistel Cipher
 #### 파이스텔 암호 구조
+* 섀넌(Shannon)의 S-P 네트워크에서 S-box는 역함수가 존재해야 함(가역성)
+* 파이스텔 네트워크
+    * S-box가 역함수가 존재해야 한다는 조건 필요 X
+    * 역함수가 존재하지 않더라도 역함수가 존재한 기능을 수행하는 방법
+    * 비가역 요소로부터 가역 함수의 기능 실행
+        * 이유
+            * 수신자와 송신자 모두 XOR 연산을 진행하기 때문
+    * 과정을 뒤집으면 모양이 일치하기 때문에 암호화와 복호화 알고리즘을 둘 다 짤 필요 X
+* 일반적으로 16라운드로 진행
+
+![FCS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/FCS.PNG)
+
+* 파이스텔 암호 디자인 요소
+    * 블럭 사이즈
+    * 키 사이즈
+        * 라운드마다 키가 존재하고 하나의 마스터 키 존재
+    * 라운드의 수
+    * 서브 키 생성 알고리즘
+    * 라운드 함수
+
+#### XOR의 성질
+
+![XOR](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/XOR.PNG)
+
+* $((A ⊕ B) ⊕ B) = (A ⊕ (B ⊕ B)) = C ⊕ B = A ⊕ 0$이므로 $A = B ⊕ C$
+
+* 파이스텔 구조와 관련된 XOR 연산 예제
+
+![XOR2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/XOR2.PNG)
