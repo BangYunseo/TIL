@@ -12,12 +12,12 @@
 ## 0절. Basic Terminology
 #### 기본 배경 지식
 
-|용어|의미|
-|:---:|:---|
-|plaintext|original message|
-|ciphertext|coded message|
-|cipher|algorithm for transforming plaintext to ciphertext
-|key|info used in cipher known only to sender/receiver|
+|용어|의미|번역|
+|:---:|:---|:---|
+|plaintext : 평문|original message|
+|ciphertext : 암호문|coded message|
+|cipher : 암호|algorithm for transforming plaintext to ciphertext|
+|key : 키|info used in cipher known only to sender/receiver|
 |encrypt(encipher)|converting plaintext to ciphertext|
 |decrypt(decipher)|recovering plaintext from ciphertext|
 |cryptography|study of encryption principles/methods|
