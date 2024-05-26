@@ -36,7 +36,7 @@
 |cryptanalysis(codebreaking)|study of principles/methods of deciphering ciphertext without knowing key|암호분석학|암호 분석(공격)|
 |cryptology|field of both cryptography and cryptanalysis|암호학|암호에 대한 모든 학문|
 
-## > 1절. Symmetric Encryption
+## 1절. Symmetric Encryption
 #### 대칭형 암호 모델(Symmetric Cipher Model)
 
 ![SE](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch01/SE.PNG)
