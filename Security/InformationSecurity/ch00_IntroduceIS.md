@@ -5,8 +5,8 @@
 
 ## 1절. What is Security?
 #### 컴퓨터 보안
-* 정보 시스템 자원(HW / SW / 펌웨어 / 정보, 데이터 / 통신)에 대한 무결성과 가용성, 기밀성 유지와 같은 목적 달성을 위해 자동화된 정보 시스템에 적용되는 보호
-    * NIST Computer Security HandBook
+* 정보 시스템 자원(HW / SW / 펌웨어 / 정보, 데이터 / 통신)에 대한 무결성과 가용성, 기밀성 유지와 같은 목적 달성을 위해 자동화된 정보 시스템에 적용되는 보호   
+[출처 : NIST Computer Security HandBook]
 
 #### 보안 목적
 ![CIA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch00/CIA.PNG)
