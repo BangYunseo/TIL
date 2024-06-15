@@ -1,184 +1,121 @@
-# Chapter 0. 데이터베이스란?
+# Chapter 0. DB의 개요 및 필요성
 
-> [참고 강의](https://www.youtube.com/watch?v=aL0XXc1yGPs&list=PLcXyemr8ZeoREWGhhZi5FZs6cvymjIBVe&index=1)
+> 1절. 데이터와 정보의 차이점
 >
-> 1절. DB, DBMS, DB System
+> 2절. DB의 정의 및 특징
 >
-> 2절. Data Models
+> 3절. DB의 출현 배경
 >
-> 3절. DB schema & state
->
-> 4절. DB Language(DDL, DML, etc.)
+> 4절. DB 구축의 필요성
 
-## 1절. 기본 개념
-#### 데이터베이스(DB)의 개념
-* 데이터베이스 : DataBase
-* 전자적으로 저장되고 사용되는 관련있는 데이터들의 조직화된 집합
-  * 관련있는 데이터들
-    * 같은 목적으로 서비스되거나 같은 출처를 가진 데이터들
-  * 조직화된 집합
-    * 데이터 탐색 및 중복 데이터를 걸러낼 때 효율적
-    * 데이터 불일치 해결 가능
+## 1절. 데이터와 정보의 차이점
+#### 데이터
+* 현실 세계에서 단순한 관찰 및 측정을 통해 수집된 사실 또는 값이 어떤 기준에 의해 정리된 것
 
-#### 데이터베이스 관리 시스템(DBMS)의 개념
-* 데이터베이스 관리 시스템 : DataBase Management Systems
-* 사용자에게 DB를 정의하고 만들며 관리하는 기능을 제공하는 소프트웨어 시스템
-* 대표적인 DBMS의 예시
-  * PostgreSQL
-  * MySQL
-  * ORACLE
-  * SQL Server
+#### 정보
+* 어떤 상황에서 적절한 의사 결정을 할 수 있도록 지원하는 지식
+* 컴퓨터 시스템과 같은 처리기를 통한 데이터의 유효한 해석이나 데이터 상호간의 관계
 
-#### 메타데이터(metadata)의 개념
-* data-about-data : 데이터를 설명하기 위한 데이터
-* DBMS에서 DB를 정의하거나 기술하는 부가적인 데이터
-* DBMS를 통해 저장, 관리
-* 다른 명칭 : catalog
-* 대표적인 metadata 사용 예시
-  * 데이터 유형, 구조, 제약 조건, 보안, 저장, 인덱스, 사용자 그룹 등
+#### 데이터와 정보의 차이점
+* 정보는 데이터가 어떤 목적에 의해 해석되거나 가공된 형태
 
-#### 데이터베이스 시스템(DataBase System)의 개념
-* DataBase + DBMS + 연관된 어플리케이션들
-* 데이터베이스 시스템을 DataBase라고 부르기도 함
-* DataBase와 DataBase System의 차이점
-  * DataBase
-    * 순수하게 조직화된 데이터의 집합
-  * DataBase System
-    * 여러 데이터베이스 및 타 시스템의 집합
+![DataAndinformation](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/DataAndinformation.PNG)
 
-![database](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/database.PNG)
+## 2절. DB의 정의 및 특징
+#### 데이터베이스의 정의
+* 어느 한 조직의 다양한 응용 프로그램들이 공동으로 사용하는 데이터들을 통합하여 저장한 운영 데이터의 집합
+* 사람들이 필요로하는 데이터의 집합
+* 데이터베이스 = Database = DB
 
-## 2절. Data Models
-#### 데이터 모델(Data Models)의 개념
-* DB의 구조(structure)를 기술하는데 사용될 수 있는 개념들이 모인 집합
-* DB의 구조를 추상화해서 표현할 수 있는 수단 제공
-* Data Model은 여러 종류 존재
-  * 추상화 수준과 DB 구조화 방식에 차이 존재
-* DB에서 읽고 쓰기 위한 기본적인 동작들(operations)도 포함
-* DB의 구조 : 데이터 유형, 데이터 관계(relationship), 제약 사항(constraints) 등
+#### 데이터베이스 정의 종류
+* 공용 데이터(Shared Data)
+  * 한 조직의 여러 응용 프로그램들이 공동으로 사용
+  * 여러 사용자가 서로 다른 목적으로 공유
 
-#### Data Models 분류
-* 개념적 데이터 모델
-  * conceptual(or high-level) data models
-* 논리적 데이터 모델
-  * logical(or representational) data models
-* 물리적 데이터 모델
-  * physical(or low-level) data models
+* 통합된 데이터(Integrated Data)
+  * 여러 부서에서 사용하는 데이터를 한 곳에 모아서 공동 관리(기억장소 절약)
+  * 원칙적으로 동일한 데이터의 중복을 허용하지 않음
+  * 검색의 효율성을 위해 [최소한의 중복(Minimal Redundancy)](#최소한의-중복이란)을 허용하여 통합
 
-#### 개념적 데이터 모델(conceptual(or high-level) data models)
-* 일반 사용자들이 쉽게 이해할 수 있는 개념들로 이루어진 모델
-* 가장 높은 추상화 수준
-* 비즈니스 요구사항을 추상화하여 기술할 때 사용
+* 저장된 데이터(Stored Data)
+  * 컴퓨터가 접근할 수 있는 디스크와 같은 저장 매체에 저장된 것
 
-![concept](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/concept.PNG)
+* 운영 데이터(Operational Data)
+  * 조직의 운영에 기본적으로 반드시 필요한 데이터를 저장하는 것
+  * 조직의 고유한 기능을 수행하는데 필수적인 데이터를 저장하는 것
+  * 일시적으로 필요한 임시 데이터나 단순한 입출력 데이터는 운영 데이터에 해당하지 않음
 
-#### 논리적 데이터 모델(logical(or representational) data models)
-* 이해하기 어렵지 않으면서도 디테일하게 DB를 구조화할 수 있는 개념들 제공
-* 데이터가 컴퓨터에 저장될 때 구조와 크게 다르지 않게 DB 구조화 가능
-* 특정 DBMS나 storage에 종속되지 않는 수준에서 DB를 구조화할 수 있는 모델
-* 백엔드 개발자가 가장 많이 사용하는 데이터 모델
-* 테이블형 데이터 모델
+#### 최소한의 중복이란?
+* DB는 원칙적으로 데이터의 중복 저장을 허용하지 않음
+* 하지만 효율적인 처리를 위해 최소한의 중복이 사용되는 경우 존재
+* 최소한의 중복은 미리 파악해서 관리가 가능하므로 통제된 중복(Controlled Redundancy)라고도 함
 
-![logical](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/logical.PNG)
+![MRex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/MRex.PNG)
 
-#### 논리적 데이터 모델의 종류
-* 관계형 데이터 모델(relational data model)
-  * 데이터를 테이블로 구성하고, 테이블 간의 관계를 통해 데이터를 표현하는 방식
-  * 테이블은 행과 열로 구성
-  * 각 행은 레코드(또는 튜플)를, 각 열은 속성(또는 필드)를 표현
-  * 테이블들을 관리하고, SQL(Structured Query Language)을 사용하여 데이터를 조작하고 조회
-  * ex) ORACLE, MySQL, MSSQL
+* 학생 데이터에도, 학과 정보 데이터에도 '학과'라는 데이터가 중복되어 표시
+* 위의 중복은 통해 학생이 속한 학과의 학과장이나 재학생의 수를 검색하기 위한 최소한의 중복
 
-* 객체 데이터 모델(object data model)
-  * 객체 지향 프로그래밍의 개념을 기반으로 데이터를 모델링하는 방식
-  * 데이터를 객체로 표현
-  * 객체는 속성과 메서드(행위)를 보유
-  * 객체 간에는 상속, 다형성, 캡슐화와 같은 객체 지향적인 특징을 이용하여 관계를 정의
-  * 주로 객체 지향 프로그래밍 언어와 함께 사용
-  * 객체 지향 데이터베이스 시스템에서 데이터를 관리
+#### 데이터베이스 특징
+* 동시 공용(Concurrent Sharing)
+  * 여러 응용 프로그램이나 사용자들이 서로 다른 목적으로 데이터 동시 사용 가능
 
-* 객체-관계형 데이터 모델(object-relational data model)
-  * 관계형 데이터 모델과 객체 데이터 모델의 특징을 결합한 형태
-  * 관계형 데이터베이스의 테이블과 객체 지향적인 데이터 모델의 객체를 함께 사용하여 데이터를 표현
-  * 객체-관계형 매핑(Object-Relational Mapping, ORM)기술로 객체와 테이블 간의 변환과 관계를 정의
-  * 객체 지향적인 특징을 관계형 데이터베이스에 반영
-  * 객체 지향 언어와 관계형 데이터베이스 사이의 간극을 감소시킴
-  * 객체 지향적인 설계와 관계형 데이터베이스의 성능을 모두 충족시키는데 사용
-  * ex) PostgreSQL
+* 지속적인 변화(Continuous Evolution)
+  * DB에 저장된 데이터는 고정된 것이 아니며, 삽입, 삭제, 갱신 등을 통해 지속적으로 변화함으로써 현재의 정확한 데이터 유지 필요
 
-#### 물리적 데이터 모델(physical(or low-level) data models)
-* 컴퓨터에 데이터가 어떻게 파일 형태로 저장되는지 기술하는 수단 제
-* ex) data format, data orderings, acess path 등
-  * access path : 데이터 검색을 빠르게 하기 위한 구조체
-    * ex) index
+* 실시간 접근성(Real-Time Accessibility)
+  * 컴퓨터가 접근할 수 있는 기록 매체에 저장되어 관리
+  * 언제든지 필요한 시점에 바로 접근 가능
+  * 어떤 질의에 대해 실시간 응답 가능
 
-## 3절. DB schema & state
-#### 데이터베이스 스키마(DB schema)
-* Data Model을 바탕으로 DB의 구조를 기술한 것
-* schema는 DB를 설계할 때 정해짐
-* 한 번 정해진 후 자주 바뀌지 않음
+* 내용에 의한 참조(Content Reference)
+  * 데이터가 저장된 주소나 위치가 아닌 데이터의 내용 즉 값에 의해서 참조
+  * 사용자가 원하는 데이터의 조건을 명시할 경우 조건을 만족하는 레코드가 어디에 위치하든 접근 가능
 
-* 관계형 데이터 모델에서의 schema
+* 데이터베이스 관리 시스템(Database Management System : DBMS)에 의한 관리
+  * DB의 구축 및 관리를 위해 전용 소프트웨어인 DBMS가 필요
 
-![schema](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/schema.PNG)
 
-#### 데이터베이스 상태(DB state)
-* DB에 있는 실제 데이터는 자주 바뀔 가능성 존재
-* 특정 시점에 DB에 있는 데이터를 DB state 혹은 snapshot이라고 함
-* DB에 있는 현재 instances의 집합이라고 함
+## 3절. DB의 출현 배경
+#### 파일 관리 시스템의 특징
 
-#### 3단계-스키마 구조(three-schema architecture)
-* DB system을 구축하는 architecture 중의 하나
-* user application으로부터 물리적인(physical) DB를 분리시키는 목적
-* 세 가지 level이 존재하며 각각의 level마다 schema가 정의
-* 각 레벨을 독립시켜 어느 레벨에서의 변화가 상위 레벨에 영향을 주지 않기 위함
-  * 하지만 오늘날 대부분의 DBMS가 three level을 완벽하게 혹은 명시적으로 나누지는 않음
-* 데이터가 존재하는 곳은 internal level
+![FMS](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/FMS.PNG)
 
-#### 3단계-스키마 구조(three-schema architecture) 종류
-* 외부 수준의 외부 스키마
-  * external schemas(or user views) at external(or view) level
-* 개념 수준의 개념 스키마
-  * conceptual schemas at conceptual level
-* 내부 수준의 내부 스키마
-  * internal schemas at internal level
+#### 파일 관리 시스템의 문제점
+* [데이터 중복 저장으로 인한 비효율성](#데이터-중복-저장으로-인한-비효율성-예시)
+* [데이터 일관성(Consistency)유지의 어려움](#데이터-일관성consistency유지의-어려움-예시)
+* [데이터 무결성(Integrity)유지의 어려움](#데이터-무결성integrity유지의-어려움-예시)
+* [데이터 공유의 어려움](#데이터-공유의-어려움-예시)
 
-![threeschema](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/threeschema.PNG)
+#### DB의 출현 배경과 파일 관리 시스템의 연관성
+![DB](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/DB.PNG)
 
-#### 외부 스키마(external schemas)
-* 실제 사용자가 바라보는 schemas
-* enternal views, user views 라고도 불림
-* 특정 사용자들이 필요로하는 데이터만 표현
-* 그 외 알려줄 필요가 없는 데이터는 숨김
-* logical data model을 통한 표현
+* 결국 DB는 파일 관리 시스템의 문제점으로 인해 출현된 것
 
-#### 개념 스키마(conceptual schemas)
-* 전체 DB에 대한 구조 기술
-* 물리적인 저장 구조에 관한 내용은 숨김
-* entities, data types, relationships, user operations, constraints에 집중
-* logical data model을 통한 기술
+#### 데이터 중복 저장으로 인한 비효율성 예시
+* 여러 파일에 동일한 데이터가 중복될 가능성이 높음
+* 저장공간의 낭비, 유지 및 보수의 어려움, 데이터 보안의 어려움 등 유발
 
-#### 내부 스키마(internal schemas)
-* 물리적으로 데이터가 어떻게 저장되는지 physical data model을 통해 표현
-* data storage, data structure, acess path 등 실체가 있는 내용 기술
+![FMSrisk1](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/FMSrisk1.PNG)
 
-## 4절. DB Language(DDL, DML, etc.)
-#### 데이터 정의 언어(Data Definition Language - DDL)
-* 개념 스키마를 정의하기 위해 사용되는 언어
-* internal schema까지 정의할 수 있는 경우도 존재
+#### 데이터 일관성(Consistency)유지의 어려움 예시
+* 동일한 데이터가 여러 파일에 흩어진 형태
+* 시간이 지남에 따라 동일한 데이터가 서로 다른 값을 가질 가능성 존재
 
-#### 스토리지 정의 언어(Storage Definition Language - SDL)
-* 내부 스키마를 정의하는 용도로 사용되는 언어
-* 요즘은 특히 relational DBMS에서는 SDL이 거의 없고 파라미터 등의 설정으로 대체
+![FMSrisk2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/FMSrisk2.PNG)
 
-#### 뷰 정의 언어(View Definition Language - VDL)
-* 외부 스키마를 정의하기 위해 사용되는 언어
-* 대부분의 DBMS에서는 DDL이 VDL의 역할 수행
+#### 데이터 무결성(Integrity)유지의 어려움 예시
+* 어떤 데이터가 반드시 만족해야 하는 무결성 제약 조건을 모든 프로그램에서 처리할 필요 전재
+* 하나의 프로그램이라도 무결성이 지켜지지 않으면 무결성 유지 불가능
 
-#### 데이터 조작 언어(Data Manipulation Language - DML)
-* DB에 있는 데이터를 활용하기 위한 언어
-* 데이터 추가, 삭제, 수정, 검색 등의 기능 제공
+![FMSrisk3](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/FMSrisk3.PNG)
 
-#### 관계형 데이터베이스 언어(relational database language - SQL)
-* 오늘날의 DBMS는 DML, VDL, DDL이 따로 존재하지 않고 통합된 언어로 존재
-* 통합적 언어의 대표적인 예시
+#### 데이터 공유의 어려움 예시
+* 데이터의 구조가 응용 프로그램마다 다르므로 동일한 데이터 파일을 포함해도 공유가 어려움
+
+![FMSrisk4](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/FMSrisk4.PNG)
+
+## 4절. DB 구축의 필요성
+#### 파일 관리 시스템의 특징
+* 기술적 측면에서의 필요성
+
+* 조직적 측면에서의 필요성

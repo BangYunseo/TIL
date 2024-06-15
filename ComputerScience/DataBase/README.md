@@ -2,7 +2,7 @@
 
 ## What? 
 * 데이터베이스 정리 및 공부  
-* [참고 강의](http://www.kocw.net/home/cview.do?mty=p&kemId=1163794)
+* [참고 강의](https://www.step.or.kr/home/ncs)
 * [참고 강의 2](http://www.youtube.com/playlist?list=PLcXyemr8ZeoREWGhhZi5FZs6cvymjIBVe)
 
 
@@ -10,7 +10,7 @@
 * 마지막 수정일 : 2024.03.17
 
 ## Learning List
-* ch00 [데이터베이스란?](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/ch00_WhatIsDataBase.md)
+* ch00 [DB의 개요 및 필요성](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/ch00_WhatIsDataBase.md)
 * ch01 []()
 * ch02 []()
 * ch03 []()
