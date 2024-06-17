@@ -1,25 +1,43 @@
-# Chapter 1. 관계형 데이터베이스
+# Chapter 1. 데이터베이스 관리 시스템(DBMS)
 
-> [참고 강의](https://www.youtube.com/watch?v=gjcbqZjlXjM&list=PLcXyemr8ZeoREWGhhZi5FZs6cvymjIBVe&index=2)
+> 1절. DBMS의 개념
 >
-> 1절. DB, DBMS, DB System
+> 2절. DBMS의 발전 배경
 >
-> 2절. Data Models
+> 3절. DBMS의 필수 기능과 장단점
 >
-> 3절. DB schema & state
->
-> 4절. DB Language(DDL, DML, etc.)
+> 4절. DBMS의 역사
 
-## 1절. 기본 개념
-#### 데이터베이스(DB)의 개념
-* 데이터베이스 : DataBase
-* 전자적으로 저장되고 사용되는 관련있는 데이터들의 조직화된 집합
-  * 관련있는 데이터들
-    * 같은 목적으로 서비스되거나 같은 출처를 가진 데이터들
-  * 조직화된 집합
-    * 데이터 탐색 및 중복 데이터를 걸러낼 때 효율적
-    * 데이터 불일치 해결 가능
+## 1절. DBMS의 개념
+#### 데이터베이스 관리 시스템(DBMS)이란?
+* DBMS(DataBase Management System)
+* 데이터베이스 관리 시스템
 
+![DBMS](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/DBMS.PNG)
+
+* DB의 정의와 조작, 제어 기능 제공
+* 여러 사용자와 응용 프로그램이 DB를 공용할 수 있도록 관리
+
+#### DBMS의 목적
+* 응용 프로그램이 데이터에 종속되지 않는 데이터 독립성(Data Independency)의 제공
+  * 데이터 독립성 : 응용 프로그램에 영향을 주지 않고 DB의 구조 변경
+* DB의 구조를 변경해도 응용프로그램에 영향이 없도록 설계
+* 응용 프로그램을 변경해도 DB에 영향이 없도록 설계
+
+## 2절. DBMS의 발전 배경
+#### 사회적 요구
+
+![SocialDBMS](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/SocialDBMS.PNG)
+
+#### 기술적 발전
+* 저렴한 고속 자기디스크(Magnetic Disk)의 실용화
+* 대량 정보 저장 및 빠른 검색 지원 가능
+* 데이터 통신 기술의 발전으로 빠른 정보 전송 가능
+* 데이터의 동시 공유 가능
+
+> 3절. DBMS의 필수 기능과 장단점
+>
+> 4절. DBMS의 역사
 #### 데이터베이스 관리 시스템(DBMS)의 개념
 * 데이터베이스 관리 시스템 : DataBase Management Systems
 * 사용자에게 DB를 정의하고 만들며 관리하는 기능을 제공하는 소프트웨어 시스템
