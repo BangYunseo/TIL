@@ -1,4 +1,4 @@
-# Chapter 3. DB 시스템의 구성과 데이터 언어
+# Chapter 3. DBS, DBMS의 구성과 데이터 언어
 
 > 1절. DB 시스템이란?
 >
