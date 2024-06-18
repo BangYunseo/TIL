@@ -1,19 +1,37 @@
-# Chapter 2. ANSI/SPARC 구조와 데이터 독립성
+# Chapter 3. DB 시스템의 구성과 데이터 언어
 
-> 1절. ANSI/SPARC 구조 이해
+> 1절. DB 시스템이란?
 >
-> 2절. ANSI/SPARC 3단계 구조의 구성
+> 2절. 데이터 언어
 >
-> 3절. ANSI/SPARC 구조와 스키마
+> 3절. DB 관리자와 사용자
 >
-> 4절. 데이터 독립성
+> 4절. DB 컴퓨터
 
-## 1절. ANSI/SPARC 구조 이해
-#### ANSI/SPARC 정의
-* ANSI
-    * American National Standards Insitute
-* SPARC
-    * Standards Planning And Requirements Committee
+## 1절. DB 시스템이란?
+#### DB 시스템(DBS : DataBase System)이란?
+* 데이터를 DB에 저장하고 DBMS를 사용해서 필요한 정보를 생성하는 컴퓨터 중심의 시스템
+
+#### DBS의 구성요소
+|구성요소|영어|특성|
+|:---:|:---:|:---|
+|데이터베이스|DataBase|데이터를 저장|
+|데이터베이스 관리 시스템|DataBase Management System|DB를 생성, 관리, 조작함으로써 사용자와 DB를 연결해주는 소프트웨어|
+|데이터 언어|Data Language|DB 정의와 조작, 제어를 위한 DB 전용 언어|
+|데이터베이스 사용자|DataBase User|데이터 언어를 사용해서 DB에 접근하는 사람으로 일반 사용자, 응용 프로그래머, DB 관리자로 구분|
+|데이터베이스 컴퓨터|DataBase Computer|효율적인 DB 관리를 위해 DB에 대한 연산을 전담하는 DB 관리 전용 컴퓨터|
+
+## 2절. 데이터 언어
+#### 데이터 언어(Data Language)란?
+* DB를 정의, 조작, 제어하기 위해 사용하는 언어
+* 사용자가 데이터에 접근하는 수단
+* 사용자와 DBMS 간의 통신 수단 제공
+
+#### 데이터 언어의 종류
+
+> 3절. DB 관리자와 사용자
+>
+> 4절. DB 컴퓨터
 
 * 미국의 컴퓨터 및 정보 처리에 관한 표준화 위원회
 
