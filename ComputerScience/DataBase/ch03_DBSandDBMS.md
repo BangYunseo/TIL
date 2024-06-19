@@ -56,121 +56,145 @@
     * 별도의 데이터 저장 정의어(DSDL : Data Storage Definition Language)를 사용하여 명세하는 경우
 * 논리적 데이터 구조와 물리적 데이터 구조 간의 사상(Mapping) 정의
 
-#### 데이터 정의 저장
-(여기부터 작성)
+#### 데이터 정의의 저장
+* DDL로 정의된 DB 스키마 
+    * DBMS의 구성 요소 가운데 하나인 DDL 컴파일러가 컴파일 후 시스템 카탈로그(System Catalog) 또는 데이터 디렉토리(Data Directory)에 저장하고 필요할 경우 참조
+
+#### 시스템 카탈로그(System Catalog)
+* 시스템 DB 또는 메타 데이터(Metadata) 혹은 데이터 사전(Data Dictionary) 라고 칭함
+* DB에 포함된 모든 객체들에 대한 정의(Definition)나 명세(Specification)에 대한 정보가 수록된 시스템 테이블
+* DB 관리자가 주로 사용하는 도구
+* 사용자와 시스템 모두 사용 가능
+
+#### 데이터 디렉토리(Data Directory)
+* DB에 저장된 데이터를 참조하는데 필요한 정보가 수록된 시스템 테이블
+* 시스템만 사용 가능
+
+#### 데이터 정의어의 상세 구분
+* DB를 ANSI/SPARC의 3단계로 엄격히 구분하는 시스템의 경우
+    * 외부 스키마 정의어와 개념 스키마 정의어, 내부 스키마 정의어 각각 제공
+* DB를 ANSI/SPARC의 3단계로 엄격히 구분하지 않는 시스템의 경우
+    * DDL을 외부 스키마와 개념 스키마를 정의(개체와 속성, 관계, 제약 조건 및 스키마 간의 사상(Mapping)등 포함)할 때 모두 사용
+* 개념 스키마와 내부 스키마를 분명히 구분하는 경우
+    * 내부 스키마 정의를 위해 별도의 데이터 저장 정의어(DSDL : Data Storage Definition Language) 사용
+* 외부 스키마와 개념 스키마를 분명히 구분하는 경우
+    * 외부 스키마를 정의할 때 대개 약간 확장된 DDL을 사용
+    * 외부 스키마 대신 서브 스키마(Sub Schema)라는 용어를 사용하는 시스템의 경우 스키마 DDL과 서브 스키마 DDL로 구분
+    * 외부 스키마는 응용 프로그램 안에 DDL 명령문으로 정의되는 경우가 다반사 
+
+#### 데이터 조작어(DML : Data Manipulation Language)란?
+* DB 사용자(응용 프로그램 포함)와 DBMS 사이의 통신 수단
+* 데이터 검색, 삽입, 삭제, 갱신과 같은 DB 연산 처리
+
+#### 데이터 조작어의 종류 및 역할
+* 절차적 DML
+    * 사용자가 데이터를 어떻게 접근해서 처리해야 하는지 기술 
+    * 저수준 데이터 언어(Low Level Data Language)
+    * 한 번에 하나의 레코드만 검색해서 호스트 언어로 전달해서 처리되는 특성
+        * 독자적으로 사용 불가능
+        * 응용 프로그램 속에 삽입(embedded)되어 사용
+    * 호스트 언어로 작성된 응용 프로그램 안에서 프로시저(Procedure) 호출문 형식으로 표현
+    * DML 예비 컴파일러(Pre-compiler)에 의해 별도로 컴파일
+
+* 비절차적 DML
+    * 사용자가 어떤 데이터를 원하는 지만 기술
+    * 어떻게 접근해서 처리해야 하는지 기술하지 않고 DBMS에게 위임
+    * 고수준 데이터 언어(High Level Data Language)
+    * 한 번에 여러 개의 레코드 처리
+    * 단말기에서 일반 사용자가 대화식으로 사용
+    * 응용 프로그램 속에 삽입해서 사용
+    * 독자적이고 대화식으로 사용하는 고급 명령어 형태의 데이터 조작어를 질의어(Query Language)라고 칭함
+
+##### 데이터 부속어(DSL : Data Sublanguage)
+* 절차적이든 비절차적이든 호스트 프로그램 속에 삽입해서 사용하는 DML 명령어
+
+#### 데이터 제어어(DCL : Data Control Language)란?
+* 공용 DB 관리를 위해 데이터 제어를 정의하고 기술하는 언어
+* DB 관리를 목적으로 주로 DB 관리자가 사용
+
+#### 데이터 제어의 기능
+* 데이터 보안(Security)
+* 데이터 무결성(Integrity)
+* 데이터 복구(Recovery)
+* 병행 수행 제어(oncurrency Control)
+
+#### 데이터 언어의 주의사항
+* 데이터 언어는 개념적으로 DDL / DML / DCL로 구분
+    * 현실적으로는 별도의 언어로 존재하는 것이 아닌 하나의 언어 안에 포함된 다른 명령어로서 기능적으로만 구분되는 것이 일반적
+
+## 3절. DB 관리자와 사용자
+#### 일반 사용자
+* 대개 질의어(Query Language)를 사용해서 DB에 접근하는 사람
+    * 질의어(Query Language)
+        * 독자적이고 대화식으로 사용하는 고급 명령어 형태의 독립된 데이터 조작어
+* DB에 대한 특별한 지식 없이 주로 데이터 검색, 삽입, 삭제, 갱신을 목적으로 DB에 접근
+
+![NU](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/NU.PNG)
+
+#### 응용 프로그래머(Application Programmer)
+* 업무 중심의 응용 프로그램을 개발하는데 참여하는 정보 기술 전문가
+* C, Java 등과 같은 호스트 언어와 DML에 익숙
+* DB에 대한 기초 지식을 갖춘 프로그래밍 전문가
+
+##### 호스트 언어(Host Language)
+* 응용 프로그램을 작성할 때 사용되는 범용 프로그래밍 언어
+
+#### DB 관리자
+* DB 시스템이 기능을 원활히 수행할 수 있도록 관리를 책임지는 사
+* DB 시스템을 총체적으로 감시하고 관리하는 책임과 권한을 가진 사람
+* DB를 설계 및 구축
+* DB의 변경 및 계획도 수립
+
+#### DB 관리자의 주요 역할
+* DB 시스템 감시(Monitoring) 및 성능 분석
+* DB의 구성 요소 결정 및 스키마 정의
+* DB의 저장 구조와 접근 방법 결정
+* 보안 및 권한 부여 정책과 데이터 유효성 검사 방법 수립
+* 백업(BackUp) 및 복구(Recovery) 절차 수립
+* DB의 무결성 유지를 위한 대책 수립
+* DB 시스템의 성능 향상 및 새로운 요구에 대응한 DB 재구성
+* 시스템 카탈로그의 관리
+* 데이터 표현 및 시스템 문서화에 대한 표준 설정
+* 사용자의 요구 및 불만 해소 등
 
 
-> 3절. DB 관리자와 사용자
->
-> 4절. DB 컴퓨터
 
-* 미국의 컴퓨터 및 정보 처리에 관한 표준화 위원회
+## 4절. DB 컴퓨터
+#### DB 컴퓨터란?
+* 대규모 DB(VLDB : Very Large DataBase)를 보다 효율적으로 관리하기 위한 DB 관리 전용 컴퓨터
+* DB 머신(Machine)라고도 함
 
-#### ANSI/SPARC 구조의 정의
-* DBMS의 구현을 위한 추상적인 설계 표준
-* 1975년 ANSI/SPARC에 처음 제안
+#### DB 컴퓨터 특징
+* 호스트 컴퓨터 후위에서 DB 관리 및 연산 수행 기능을 전담하는 특수 목적의 컴퓨터
+* 일종의 후위 컴퓨터(Backend Computer)
+* DB 관리 기능을 소프트웨어만으로 처리하는 것이 아닌 펌웨어(Firmware)나 하드웨어로 수행
+    * 저비용으로 고성능 달성 가능
+* 후위 처리기(Backend processor), 고성능 메인 메모리, CPU, 대용량 저장장치, 병렬 처리 및 DB 연산 수행을 위한 특수 처리기 등으로 구성
 
-![ANSISPARC](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ANSISPARC.PNG)
+##### 펌웨어(Firmware)
+* 변경할 필요가 없는 소프트웨어를 ROM 등에 고정시켜 하드웨어처럼 사용
 
-#### ANSI/SPARC 3단계 구조
+#### DB 컴퓨터와 호스트 컴퓨터의 관계
 
-![Schema](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/Schema.PNG)
+![DBHOST](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/DBHOST.PNG)
 
-[사진출처](https://velog.io/@yyeongjin/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B2%A0%EC%9D%B4%EC%8A%A4-ANSISPARC-%EA%B5%AC%EC%A1%B0)
+#### DB 컴퓨터의 주요 역할
+* DB 연산 기능
+    * 호스트 컴퓨터가 일반 사용자나 응용 프로그램으로부터 DB 접근 요청을 받아 DB 컴퓨터로 전달하면 실제로 DB 컴퓨터가 데이터 검색, 삽입, 삭제, 갱신 등의 연산 수행
 
-* 물리 단계(Physical level)
-    * DBMS의 지시에 따라 운영체제가 관리
-    * 디스크와 같은 저장장치에 데이터를 실제로 저장하는 기법
+* DB 관리 기능
+    * 데이터 접근 권한 확인, 병행 수행 제어, 데이터 복구, 최적의 접근 경로 신청 등을 포함하는 데이터 관리 기능 직접 수행
 
-#### ANSI/SPARC 구조의 목적
+## 5절. DBMS의 DB 연산 처리 방법
+#### DBMS의 주요 기능
+* DB 관리 및 사용자 요구 처리를 위한 연산 수행을 통해 필요한 정보 생성
 
-![DBstructure](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/DBstructure.PNG)
+#### DBMS의 연산 수행 절차
 
-* 응용 프로그램과 데이터 간의 독립성 제공
+![DBMS1](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/DBMS1.PNG)
 
-|관점|특징|
-|:---:|:---|
-|사용자|DB의 내부 구조에 대해 알지 못해도 DB 사용 가능|
-|DB 관리자|응용 프로그램에 영향을 주지 않고 DB 구조 변경|
+![DBMS2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/DBMS2.PNG)
 
-#### 외부 단계(External Level)
-* DB에 관한 개별 사용자의 관점
-* 각 사용자나 응용프로그래머가 생각하는 개인적 DB 구조
-* Example
-    * 은행 DB에 접근하는 개인 고객이나 창구의 직원
-    * 신용카드 회사 직원은 각자 전체 DB의 일부분에만 관심을 가짐
-    * 사람이 생각하는 DB 구조의 차이
-
-* 외부 단계에서 각 사용자가 생각하는 DB의 구조
-
-![EL](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/EL.PNG)
-
-#### 외부 스키마(External Schema)
-* 외부 단계에서 당야한 개별 사용자나 응용 프로그램이 필요로하는 데이터 구조의 정의
-* 여러 개로 존재 가능
-
-#### 개념 단계(Conceptual Level)
-* DB에 관한 사용자 공동체의 관점
-* 한 조직 전체를 위한 DB의 논리적 구조
-
-#### 개념 스키마(Conceptual Schema)
-* 개념 단계의 범 기관적 입장에서의 전체 DB를 정의
-* 단 하나만 존재
-
-#### 내부 단계(Internal Level)
-* DB에 관한 물리적 저장 장치 관점
-* DB에 어떤 데이터가 어떻게 저장되는지를 표현한 저장 구조
-* Example
-    * 실제로 저장된 내부 레코드의 형식
-    * 인덱스(Index) 유무
-    * 저장 데이터 항목의 표현 방법
-
-#### 내부 스키마(Internal Schema)
-* 내부 단계에서 DB의 물리적 데이터 구조 정의
-* 단 하나만 존재
-
-#### 내부 단계와 물리 단계
-* 내부 단계에서 특정 물리적 저장 장치를 직접 다루지 않음
-* 실제로 내부 단계가 물리 단계보다 한 단계 위에 있는 형태
-* 물리 단계(Physical level)는 DBMS의 지시에 따라 운영체제가 관리
-
-#### 외부 / 개념 사상(External / Conceptual Mapping)
-* 응용 인터페이스(Application Interface)
-* 외부 스키마와 개념 스키마 간의 대응 관계 정의
-* 개념 스키마가 변경되더라도 응용 인터페이스만 수정할 경우 외부 스키마에 영향 없음
-* 응용 프로그램의 변경 필요 X
-
-#### 개념 / 내부 사상(Conceptual / Internal Mapping)
-* 저장 인터페이스(Storage Interface)
-* 개념 스키마와 내부 스키마 간의 대응 관계 정의
-* 내부 스키마가 변경되더라도 저장 인터페이스만 수정한다면 개념 스키마에 영향 없음
-
-## 3절. ANSI/SPARC 구조와 스키마
-#### 스키마(Schema)란?
-* DB의 구조(Structure)
-* 개체와 속성, 관계를 포함하는 논리적 정의
-* 제약조건(Constraints)의 기술
-
-#### ANSI/SPARC 3단계 구조와 스키마
-
-![ANSISPARCSchema](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ANSISPARCSchema.PNG)
-
-#### 스키마 작성 예시
-
-![ANSISPARCSchemaex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ANSISPARCSchemaex.PNG)
-
-## 4절. 데이터 독립성
-#### 데이터 독립성(Data Independency)이란?
-* 응용 프로그램과 데이터가 서로 종속되지 않으며 영향을 미치지 않는 것
-* DB의 논리적 구조나 물리적 구조가 변경되더라도 응용 프로그램에 영향 X
-
-#### 데이터 독립성 분류
-
-![DI](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/DI.PNG)
-
-![DI2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/DI2.PNG)
-
-#### ANSI/SPARC 각 단계 간의 사상(Mapping)
-
-![DI3](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/DI3.PNG)
-
+#### DBMS의 연산 수행 절차 세부 사항
+* 질의어 처리기
+    * 터미널에서 일반 사용자가 입력한 질의문을 컴파일한 후 DB에 접근하기 위한 오브젝트 코드(Object Code) 생성
