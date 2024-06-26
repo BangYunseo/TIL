@@ -197,7 +197,7 @@
 #### 논리적 데이터 모델링의 예시
 * ER 다이어그램
 
-![EREX1](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/EREX2.PNG)
+![EREX1](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/EREX1.PNG)
 
 * 관계 데이터 모델(Relational Data Model)
 
