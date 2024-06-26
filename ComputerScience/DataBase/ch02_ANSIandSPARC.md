@@ -21,7 +21,7 @@
 * DBMS의 구현을 위한 추상적인 설계 표준
 * 1975년 ANSI/SPARC에 처음 제안
 
-![ANSISPARC](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ANSISPARC.PNG)
+![ANSISPARC](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ANSISPARC.png)
 
 #### ANSI/SPARC 3단계 구조
 
@@ -104,11 +104,11 @@
 
 #### ANSI/SPARC 3단계 구조와 스키마
 
-![ANSISPARCSchema](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ANSISPARCSchema.PNG)
+![ANSISPARCSchema](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ANSISPARCSchema.png)
 
 #### 스키마 작성 예시
 
-![ANSISPARCSchemaex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ANSISPARCSchemaex.PNG)
+![ANSISPARCSchemaex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ANSISPARCSchemaex.png)
 
 ## 4절. 데이터 독립성
 #### 데이터 독립성(Data Independency)이란?
