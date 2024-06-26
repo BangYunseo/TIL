@@ -1,4 +1,4 @@
-# Chapter 5. ER 다이어그램(Entity-Relationship Diagram)
+# Chapter 6. ER 다이어그램(Entity-Relationship Diagram)
 
 > 1절. ER 다이어그램
 >
@@ -8,8 +8,33 @@
 >
 > 4절. EER 모델
 
-## 1절. 데이터의 구분
-#### 데이터가 속한 세계에 따른 데이터 구분
+## 1절. ER 다이어그램
+#### ER 다이어그램(Diagram)
+* 개념적 데이터 모델인 ER 모델을 표현하는 그래픽 방식의 표현 방법
+
+![ERD](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ERD.PNG)
+
+#### ER 다이어그램 작성 지침
+* 개체 타입은 키(Key) 속성 이외의 개체 타입을 설명하는 속성들 보유
+* 다중값 속성은 별도의 개체 타입으로 분류
+* 개체 타입을 직접적으로 설명하는 속성들을 개체 타입과 연결
+* 관계 타입은 독자적인 존재 불가능
+* 키 속성(또는 속성 집합)에는 밑줄 표현
+
+#### ER 다이어그램 표현 기호
+
+![ERDexpression](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ERDexpression.PNG)
+
+#### ER 다이어그램 예제
+
+![ERDex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ERDex.PNG)
+
+## 2절. 강한 개체 타입과 약한 개체 타입
+#### 
+> 3절. 부분 참여와 전체 참여
+>
+> 4절. EER 모델
+#### ER 다이어그램(Diagram)
 * 현실 세계(Real World)
     * 오감으로 인지할 수 있는 실체
     * 하나 이상의 특성으로 구성된 개체 표현
