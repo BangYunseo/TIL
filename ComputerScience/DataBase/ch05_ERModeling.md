@@ -28,7 +28,7 @@
 * 무형의 정보 대상
 * "존재"하면서 서로 구별될 수 있는 요소
 
-#### 개체의 종류
+#### 개체 종류
 * 개념적 개체(무형의 개체)
     * 개념적으로는 존재하지만 눈에 보이지 않는 개체
     * 예시
@@ -43,12 +43,12 @@
         * 상품
         * 건물
 
-#### 개체의 표현
+#### 개체 표현
 * 직사각형 표현
 
 ![EntityExpression](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/EntityExpression.PNG)
 
-#### 개체의 특징
+#### 개체 특징
 * 파일 시스템에서 '레코드(Record)에 대응'
 * 단독으로 존재 가능
 * 정보로서의 역할 가능
@@ -73,12 +73,12 @@
 * 개체나 관계의 특성을 나타내는 요소
 * 이름을 가진 정보의 가장 작은 논리적 단위
 
-#### 속성의 표현
+#### 속성 표현
 * 개체 집합을 나타내는 직사각형에 실선으로 연결된 타원형
 
 ![AttributeExpression](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/AttributeExpression.PNG)
 
-#### 속성의 특징
+#### 속성 특징
 * 파일 시스템에서 '데이터 항목(Data Item)' 혹은 '필드(Field)'에 대응
 * 단독으로 존재할 경우 대개 무의미
 
@@ -88,7 +88,7 @@
     * 학번의 도메인은 정수 10자리
     * 주소의 도메인은 문자 30자리
 
-#### 속성의 종류
+#### 속성 종류
 |종류|영어|특성|예시|
 |:--:|:--:|:---|:---|
 |상수 속성|Constant Attribute|시간이 지나도 값이 변하지 않는 속성|학생의 주민등록번호|
@@ -129,4 +129,86 @@
 #### 관계(Relationship)
 * 개체들 간의 의미 있는 연결 또는 연관성을 의미하는 요소
 
+#### 관계 표현
+* 개체 집합을 나타내는 직사각형에 실선으로 연결된 마름모 표현
 
+![RelationshipExpression](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/RelationExpression.PNG)
+
+#### 관계 특징
+* 하나의 개체로 간주
+* 속성 보유 가능
+* 두 개의 개체 사이에 두 개 이상의 관계 존재 가능(다중 관계)
+
+#### 관계 타입 속성
+* 관계의 특성을 나타내는 속성 보유 가능
+* 관계 타입은 키 속성 미보유
+
+![RA](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/RA.PNG)
+
+#### 관계 유형
+* 일 대 일(1 : 1)
+    * 한 개체가 한 개체와만 연관성 있는 유형
+    * 예시
+        * 부부 관계
+
+![OO](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/OO.PNG)
+
+* 일 대 다(1 : n)
+    * 두 개체 가운데 어느 한 개체를 기준으로 볼 때 하나 이상의 개체와 연관성을 보유하며 다른 개체를 기준으로 봤을 때 한 개체와만 연관성 있는 유형
+    * 예시
+        * 모자 관계
+
+![ON](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ON.PNG)
+
+* 다 대 다(m : n)
+    * 하나 이상의 개체와 연관성 있는 유형
+    * 여러 개체가 여러 개체와 연관성 보유
+    * 예시
+        * 이성 친구 관계
+
+![MN](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/MN.PNG)
+
+#### 관계 구분
+* 속성 관계(Attribute Relationship)
+    * 한 개체 내의 속성과 속성 사이의 연관성
+
+* 개체 관계(Entity Relationship)
+    * 개체와 개체 사이의 연관성
+    * 그냥 "관계" 라고 하면 개체 관계를 의미
+
+![ARandER](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ARandER.PNG)
+
+#### 카디널리티(Cardinality)
+* 관계에 대응하는 개체 수
+* 관계에 참여하는 하나의 개체에 대해 다른 개체가 몇 개 대응하는지 표현
+
+#### 카디널리티 표현
+* 대응 개체 수는 (min, max)의 한 쌍의 값으로 표현
+    * min
+        * 관계에 참여하는 개체의 최소 개수
+    * max
+        * 관계에 참여하는 개체의 최대 개수
+
+![CardinalityEX1](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/CardinalityEX1.PNG)
+
+![CardinalityEX2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/CardinalityEX2.PNG)
+
+#### 차수(Degree)
+* 관계로 연결된 개체 타입의 개수
+
+#### 차수 유형
+* 1진 관계
+
+![D1](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/D1.PNG)
+
+* 2진 관계
+
+![D2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/D2.PNG)
+
+* 3진 관계
+
+![D3](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/D3.PNG)
+
+* n진 관계
+
+![Dn](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/Dn.PNG)
