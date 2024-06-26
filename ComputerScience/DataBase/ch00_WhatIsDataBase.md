@@ -25,7 +25,7 @@
 #### 데이터와 정보의 차이점
 * 정보는 데이터가 어떤 목적에 의해 해석되거나 가공된 형태
 
-![DataAndinformation](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/DataAndinformation.PNG)
+![DataAndInformation](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/DataAndInformation.PNG)
 
 ## 2절. DB의 정의 및 특징
 #### 데이터베이스의 정의
