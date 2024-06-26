@@ -132,7 +132,7 @@
 #### 관계 표현
 * 개체 집합을 나타내는 직사각형에 실선으로 연결된 마름모 표현
 
-![RelationshipExpression](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/RelationExpression.PNG)
+![RelationshipExpression](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/RelationshipExpression.PNG)
 
 #### 관계 특징
 * 하나의 개체로 간주
