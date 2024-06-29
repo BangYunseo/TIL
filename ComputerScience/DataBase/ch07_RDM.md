@@ -1,18 +1,26 @@
-# Chapter 6. ER 다이어그램(Entity-Relationship Diagram)
+# Chapter 7. 관계 데이터 모델링(Relationship Data Modeling)
 
-> 1절. ER 다이어그램
+> 1절. 관계 데이터 모델
 >
-> 2절. 강한 개체 타입과 약한 개체 타입
+> 2절. 주요 용어들
 >
-> 3절. 부분 참여와 전체 참여
+> 3절. 관계 DB
 >
-> 4절. EER 모델
+> 4절. 키(Key)
+>
+> 5절. 무결성 제약조건
 
-## 1절. ER 다이어그램
-#### ER 다이어그램(Diagram)
-* 개념적 데이터 모델인 ER 모델을 표현하는 그래픽 방식의 표현 방법
+## 1절. 관계 데이터 모델
+#### 
+> 2절. 주요 용어들
+>
+> 3절. 관계 DB
+>
+> 4절. 키(Key)
+>
+> 5절. 무결성 제약조건
 
-![ERD](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ERD.PNG)
+![ERD](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch07/ERD.PNG)
 
 #### ER 다이어그램 작성 지침
 * 개체 타입은 키(Key) 속성 이외의 개체 타입을 설명하는 속성들 보유
