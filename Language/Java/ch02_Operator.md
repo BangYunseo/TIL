@@ -1,16 +1,16 @@
-#  Chapter 4. 변수와 시스템 입출력
-> '혼자 공부하는 자바 - 신용권' 2장 4절 학습 내용
+#  Chapter 2. 연산자
+> '혼자 공부하는 자바 - 신용권' 3장 1절 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch04_VariableSystemIO)
+> [소스코드](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch05_Operator)
 > 
-> 1절. 변수 출력
+> 1절. 연산자와 종류
 >
-> 2절. 변수 저장
+> 2절. 연산 방향과 우선순위ㅣ
 >
 > 3절. 정리
 
-## 1절. 변수 출력
-#### System.out
+## 1절. 연산자와 종류
+#### 연산자
 * 시스템의 표준 출력 장치로 출력
 ```Java
 System.out.println("Hello, World!");
