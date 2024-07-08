@@ -20,7 +20,7 @@
 
 ![variable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable.PNG)
 
- #### 변수(Variable)
+#### 변수(Variable)
 * 값을 저장할 수 있는 메모리의 특정 번지에 붙여진 이름
 * 변수를 통해 해당 메모리 번지에 하나의 값을 저장하고 읽음
 * 변수는 정수, 실수 등 다양한 타입의 값을 저장            
@@ -64,24 +64,15 @@
 
 ![variableresetno](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variableresetno.PNG)
 
-* 예제 1. 변수 선언 및 초기화 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/VariableInitializationExample.java)
-
 #### 변수 사용 
 * 변수의 값을 이용해서 출력문이나 연산식을 수행
 
 ![usevariable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/usevariable.PNG)
 
-* 예제 2. 변수 사용 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/VariableUseExample.java)
-
 #### 변수 값 복사
 * 변수의 값을 다른 변수에 저장
 
 ![copyvariable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/copyvariable.PNG)
-
-* 예제 3. 변수 교환 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/VariableExchangeExample.java)
 
 #### 변수 사용 범위
 * 지역 변수(Local Variable)
@@ -99,9 +90,6 @@
 * 메소드 블록 전체에서 사용하려는 경우 메소드 블록 첫머리에 선언
 * 특정 블록 내부에서만 사용하려는 경우 해당 블록 내에 선언
 
-* 예제 4. 변수 교환 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/VariableScopeExample.java)
-
 #### 변수 정리
 
 |키워드|설명|
@@ -110,6 +98,10 @@
 |변수 선언|변수에 어떤 타입의 데이터를 저장할 지, 변수의 이름이 무엇인지를 결정|
 |변수 사용|변수의 값을 읽거나 변경하는 것으로 출력문이나 연산식 내부에서 사용되며 변수에 저장된 값을 출력하거나 연산에 사용|
 |변수 사용 범위|변수는 자신이 선언된 위치에서 자신이 속한 블록 내부까지만 사용 가능|
+
+(여기부터 작성 : 변수 예제 하나로 축약해서 표현, 각 절마다 예제 1개씩 총 4개 생성)
+* 예제 1. 변수 예제   
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/VariableScopeExample.java)
 
 ## 2절. 변수 타입
 #### 타입
