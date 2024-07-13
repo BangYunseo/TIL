@@ -99,10 +99,10 @@
 |변수 사용|변수의 값을 읽거나 변경하는 것으로 출력문이나 연산식 내부에서 사용되며 변수에 저장된 값을 출력하거나 연산에 사용|
 |변수 사용 범위|변수는 자신이 선언된 위치에서 자신이 속한 블록 내부까지만 사용 가능|
 
-(여기부터 작성 : 변수 예제 하나로 축약해서 표현, 각 절마다 예제 1개씩 총 4개 생성)
 * 예제 1. 변수 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/VariableScopeExample.java)
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/WhatIsVariable.java)
 
+(여기부터 작성 : 변수 예제 하나로 축약해서 표현, 각 절마다 예제 1개씩 총 4개 생성)
 ## 2절. 변수 타입
 #### 타입
 * 변수 타입에 따라 변수에 저장할 수 있는 값의 종류와 허용 범위 변화
