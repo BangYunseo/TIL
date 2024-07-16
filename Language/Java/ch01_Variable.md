@@ -5,7 +5,7 @@
 > 
 > 1절. 변수
 >
-> 2절. 변수 타입
+> 2절. 타입
 >
 > 3절. 타입 변환
 >
@@ -102,18 +102,18 @@
 * 예제 1. 변수 예제   
 [SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/WhatIsVariable.java)
 
-(여기부터 작성 : 변수 예제 하나로 축약해서 표현, 각 절마다 예제 1개씩 총 4개 생성)
-## 2절. 변수 타입
-#### 타입
-* 변수 타입에 따라 변수에 저장할 수 있는 값의 종류와 허용 범위 변화
+## 2절. 타입
+#### 변수 타입
+* 타입
+  * 변수 타입에 따라 변수에 저장할 수 있는 값의 종류와 허용 범위 변화
 
-#### 기본 타입(Primitive Type)
-* 자바 언어는 정수, 실수, 논리값을 저장하는 총 8개의 기본 타입
+* 기본 타입(Primitive Type)
+  * 자바는 정수, 실수, 논리값을 저장하는 총 8개의 기본 타입 보유
 
-![PrimitiveType](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/PrimitiveType.PNG)
+![PrimitiveType](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/PrimitiveType.PNG)
 
-#### 정수 타입
-* 메모리 사용 크기와 저장되는 값의 허용 범위는 각기 다름
+* 정수 타입
+  * 메모리 사용 크기와 저장되는 값의 허용 범위에 차이 존재
       
 ![IntType](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/IntType.PNG)
 
@@ -127,15 +127,6 @@
 
 ![Exchange](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/Exchange.PNG)
 
-* 예제 1. 10진수 변환 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_PrimitiveType/IntegerLiteralExample.java)
-
-* 예제 2. byte 범위에 맞는 출력 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_PrimitiveType/ByteExample.java)
-
-* 예제 3. long 범위에 맞는 출력 예제  
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_PrimitiveType/LongExample.java)
-
 #### char 타입
 * 하나의 문자를 저장하는 타입
   * ex) 'A', '한'
@@ -144,12 +135,10 @@
  
 ![char](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/char.PNG)
 
-* char는 정수 타입이므로 10진수 또는 16진수 형태의 유니코드 저장 가능
+* char는 정수 타입
+  * 10진수 또는 16진수 형태의 유니코드 저장 가능
 
 ![char2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/char2.PNG)
-
-* 예제 4. char 타입 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_PrimitiveType/CharExample.java)
 
 #### 문자열
 * 큰따옴표로 감싼 문자들
@@ -157,14 +146,11 @@
 
 ![string](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/string.PNG)
 
-* 예제 5. String 타입 예제   
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_PrimitiveType/StringExample.java)
-
 #### 이스케이프 문자(escape)
 * 문자열 내부의 '\'를 의미
 * 이스케이프 문자를 통해 특정 문자를 포함시키거나, 문자열의 출력 제어 가능
 
-* 예시 1) 문자열 내부에 " 문자 포함
+* 예시 1) 문자열 내부에 " 문자 포함   
 
 ![escape](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/escape.PNG)
 
@@ -179,10 +165,10 @@
 |\t|탭만큼 띄움|
 |\n|줄 바꿈(라인 피드)|
 |\r|캐리지리턴|
-|\"|" 출력|
-|\'|' 출력|
+|\\"|" 출력|
+|\\'|' 출력|
+| \\\ |\ 출력|
 |\u16진수|16진수 유니코드에 해당하는 문자 출력|
-* '\\\\\' 을 통해 \를 출력 가능
 
 #### 실수 타입
 
@@ -216,14 +202,14 @@
     > 0.1234567890123457
 
 #### 논리 타입
-* 참과 거짓에 해당하는 true와 false 리터럴을 저장하는 타입
+* 참(true)과 거짓(false)에 해당하는 리터럴을 저장하는 타입
 ```Java
 boolean stop = true;
 boolean state = false;
 ```
 * 두 가지 상태값에 따라 제어문의 실행 흐름을 변경할 때 사용
 
-#### 2절 정리
+#### 타입 정리
 
 |키워드|설명|
 |:---:|:---|
@@ -233,7 +219,10 @@ boolean state = false;
 |실수 타입|실수를 저장할 수 있는 float, double와 같은 타입|
 |boolean 타입|참과 거짓을 의미하는 true와 false를 저장할 수 있는 타입|
 
+* 예제 2. 타입 예제    
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/WhatTypeIs.java)
 
+(여기부터 작성)
 ## 3절. 타입 변환
 #### 타입 변환
 * 데이터 타입을 다른 데이터 타입으로 변환하는 것
