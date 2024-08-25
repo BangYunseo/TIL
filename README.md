@@ -1,5 +1,5 @@
 # TIL - Today I Learned
-* Using Makrdown 
+* 개념 까먹을 때마다 지랄말고 여기서 찾아서 다시 공부하세요!!!!
 
 ## Tips for TIL
 * [Markdown 작성법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
