@@ -500,3 +500,35 @@ System.out.printf("이름 : %1$s, 나이 : %2$d", "방윤서", 22);
 
 * 예제 4. 변수와 시스템 입출력 예제    
 [SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/WhatIsSysIO.java)
+
+
+### 예제 문제 해결하기
+
+<details>
+    <summary>
+        문제 1
+    </summary>
+
+[문제 1 바로가기](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/Exam1)
+
+</details>
+
+<details>
+    <summary>
+        문제 2
+    </summary>
+
+[문제 2 바로가기](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/Exam2)
+
+
+</details>
+
+<details>
+    <summary>
+        문제 3
+    </summary>
+
+[문제 3 바로가기](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/Exam3)
+
+
+</details>
