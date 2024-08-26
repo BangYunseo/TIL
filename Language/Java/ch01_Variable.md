@@ -115,17 +115,17 @@
 * 정수 타입
   * 메모리 사용 크기와 저장되는 값의 허용 범위에 차이 존재
       
-![IntType](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/IntType.PNG)
+![IntType](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/IntType.PNG)
 
 * 메모리
 
-![Memory](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/Memory.PNG)
+![Memory](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/Memory.PNG)
 
 #### 리터럴(literal)
 * 소스 코드에서 프로그래머에 의해 직접 입력된 값
 * 아래의 경우 자바에서 정수로 인식
 
-![Exchange](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/Exchange.PNG)
+![Exchange](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/Exchange.PNG)
 
 #### char 타입
 * 하나의 문자를 저장하는 타입
@@ -133,30 +133,30 @@
 * 작은 따옴표로 감싼 문자 리터럴은 유니코드로 변환되어 저장
   * char 타입은 정수 타입
  
-![char](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/char.PNG)
+![char](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/char.PNG)
 
 * char는 정수 타입
   * 10진수 또는 16진수 형태의 유니코드 저장 가능
 
-![char2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/char2.PNG)
+![char2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/char2.PNG)
 
 #### 문자열
 * 큰따옴표로 감싼 문자들
 * 문자열은 char 타입이 아닌 String 타입에 저장
 
-![string](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/string.PNG)
+![string](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/string.PNG)
 
 #### 이스케이프 문자(escape)
-* 문자열 내부의 '\'를 의미
+* 문자열 내부의 '\'
 * 이스케이프 문자를 통해 특정 문자를 포함시키거나, 문자열의 출력 제어 가능
 
 * 예시 1) 문자열 내부에 " 문자 포함   
 
-![escape](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/escape.PNG)
+![escape](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/escape.PNG)
 
 * 예시 2) 문자열 출력 제어
 
-![escape2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/escape2.PNG)
+![escape2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/escape2.PNG)
 
 #### 이스케이프 문자 종류
 
@@ -172,7 +172,7 @@
 
 #### 실수 타입
 
-![fd](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/fd.PNG)
+![fd](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/fd.PNG)
 
 #### 실수 리터럴
 * 소스 코드에서 소수점 있는 리터럴은 10진수 실수로 인식
@@ -180,19 +180,19 @@
 
 * 알파벳 e 또는 E가 포함된 숫자 리터럴은 지수 및 가수로 표현된 소수점 있는 10진수 실수로 인식
 
-![fd2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/fd2.PNG)
+![fd2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/fd2.PNG)
 
 #### double 타입
 * double 타입 변수에 저장
   * Java는 실수 리터럴을 기본적으로 double 타입으로 해석
 
-![double](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/double.PNG)
+![double](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/double.PNG)
 
 #### float 타입
 * float 타입 변수에 저장
   * 리터럴 뒤 f 혹은 F를 붙여 float 타입 표시
 
-![float](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/float.PNG)
+![float](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/float.PNG)
 
 #### 실수 타입의 범위
 * double 타입이 float 타입보다 2배 가량 정밀도 높아 정확한 데이터 저장 가능
@@ -220,13 +220,13 @@ boolean state = false;
 |boolean 타입|참과 거짓을 의미하는 true와 false를 저장할 수 있는 타입|
 
 * 예제 2. 타입 예제    
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/WhatTypeIs.java)
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/WhatIsType.java)
 
-(여기부터 작성)
 ## 3절. 타입 변환
 #### 타입 변환
 * 데이터 타입을 다른 데이터 타입으로 변환하는 것
 * 변수 값을 다른 타입의 변수에 저장할 때 발생
+
 ```Java
 byte a = 10;
 // byte 타입 변수 a에 10 저장
@@ -238,10 +238,11 @@ int b = a;
 #### 자동 타입 변환(promotion)
 * 값의 허용 범위가 작은 타입이 큰 타입으로 저장될 경우
 
-![promotion](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/promotion.PNG)
+![promotion](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/promotion.PNG)
 
 * 기본 타입의 허용 범위 순서
-* byte < short < int < long < float < double
+  * byte < short < int < long < float < double
+
 ```Java
 byte byteVal = 10;
 int intVal = byteVal;
@@ -254,24 +255,22 @@ double doubleVal = longVal;          // 5.0E9로 저장
 
 * char 타입의 경우
   * int 타입으로 자동변환되면 유니코드 값이 int 타입에 저장
+
 ```Java
 char charVal = 'A';
 int intVal = charVal;
-// 65가 저장
+// 65 저장
 
 byte byteVal = 65;
 char charVal = byteVal;
-// 컴파일 에러 발생
-// Why? byte에서 char로의 변환은 손실이 있는 변환
+// 컴파일 에러
+// Why? byte에서 char로의 변환 == 손실이 있는 변환
 ```
-
-* 예제 1. 자동 타입 변환 예제      
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/PromotionExample.java)
 
 #### 강제 타입 변환(casting)
 * 큰 허용 범위 타입을 작은 허용 범위 타입으로 강제로 나누어 한 조각만 저장
 
-![casting](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/casting.PNG)
+![casting](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/casting.PNG)
 
 * 캐스팅 연산자 괄호 () 사용
   * 괄호 안이 나누는 단위
@@ -288,7 +287,7 @@ byte byteVal = (byte) intVal;
 int intVal = 65;
 char charVal = (char) intVal;
 System.out.println(charVal);
-// 'A' 가 출력
+// 'A' 출력
 ```
 
 * ex 2) 실수 타입을 정수 타입으로 강제 변환
@@ -297,45 +296,37 @@ System.out.println(charVal);
 ```Java
 double doubleVal = 3.14;
 int intVal = (int) doubleVal;
-// intVal은 정수 부분 3만 저장
+// intVal = 정수 부분 3 저장
 ```
-
-* 예제 2. 강제 타입 변환 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/CastingExample.java)
 
 #### 정수 타입 변수
 * 정수 타입 변수가 산술 연산식에서 피연산자로 사용되는 경우
   * byte, char, short 타입 변수는 int 타입으로 자동 변환
   * 특별한 경우가 아니라면 정수 연산에 사용하는 변수는 int 타입으로 선언
 
-![inttype2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/inttype2.PNG)
+![inttype2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/inttype2.PNG)
 
-  * 피연산자 중 하나가 long 타입이면 다른 피연산자는 long 타입으로 자동 변환
+* 피연산자 중 하나가 long 타입이면 다른 피연산자는 long 타입으로 자동 변환   
 
-![longtype](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/longtype.PNG)
-
-* 예제 3. byte 자동 타입 변환 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/ByteOperationExample.java)
-
-* 예제 4. Long 자동 타입 변환 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/LongOperationExample.java)
+![longtype](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/longtype.PNG)
 
 #### 실수 타입 변수
-* 피연산자 중 하나가 double 타입일 경우 다른 피연산자는 double 타입으로 자동 변환
+* 피연산자 중 하나가 double 타입일 경우 다른 피연산자는 double 타입으로 자동 변환   
 
 ```Java
 int intVal = 10;
 double doubleVal = 5.5;
-double res = intVal + doubleVal;            // res에 15.5가 저장
+double res = intVal + doubleVal;            // res에 15.5 저장
 // res, intVal, doubleVal은 모두 double 값으로 변환
 
 int intVal2 = 10;
 double doubleVal2 = 5.5;
-int res2 = intVal2 + (int) doubleVal2;      // res2에 15가 저장
+int res2 = intVal2 + (int) doubleVal2;      // res2에 15 저장
 // doubleVal2를 int형으로 강제 타입 변환
 ```
 
-* 실수 리터럴 연산
+* 실수 리터럴 연산   
+
 ```Java
 double res = 1.5 + 2.3;
 // double형 연산
@@ -345,7 +336,8 @@ float res2 = 1.5f + 2.3f;
 ```
 
 #### 정수 연산의 결과를 실수로 저장할 때 주의할 점
-* 정수 연산의 결과는 정수
+* 정수 연산의 결과는 정수    
+
 ```Java
 int x = 5;
 int y = 2;
@@ -354,36 +346,30 @@ System.out.println(res);
 
 // 출력 예시
 // 2.0
-// 5 / 2 는 2.5로 나타낼 수 있음에도 정수끼리의 연산 결과는 정수가 나옴
+// (5 / 2)는 2.5로 나타낼 수 있음에도 정수끼리의 연산 결과는 정수가 나옴
  ```
 
 * 실수 결과를 얻으려면 실수 연산으로의 변환 필요
   * 하나의 정수 혹은 둘 모두를 (double)을 이용해서 강제 타입 변환 진행
 
-![doubletype](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/doubletype.PNG)
-
-* 예제 5. 데이터 보존 자동 타입 변환 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/OperationsPromotionExample.java)
+![doubletype](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/doubletype.PNG)
 
 #### + 연산
 * 피연산자가 모두 숫자일 경우 덧셈 연산
 * 피연산자 중 하나가 문자열일 경우 나머지 피연산자도 문자열로 자동 변환
 * 그 후 문자열 결합 연산
 
-![type+](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/type+.PNG)
+![type+](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/type+.PNG)
 
 * '+ 연산'은 앞에서부터 순차적으로 수행
   * 먼저 수행된 연산이 결합 연산인 경우 이후 모든 연산은 결합 연산
 
-![type+2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/type+2.PNG)
-
-* 예제 6. + 연산 예제           
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/StringConcatExample.java)
+![type+2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/type+2.PNG)
 
 #### 기본 타입
 * 문자열을 기본 타입으로 강제 변환
 
-![Casting2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/Casting2.PNG)
+![Casting2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/Casting2.PNG)
 
 * 숫자 형식 예외 발생
   * 숫자 타입 변환 시도할 경우
@@ -401,10 +387,7 @@ int Val = Integer.parseInt(str);
 String str = String.valueOf(3);
 ```
 
-* 예제 7. Long 자동 타입 변환 예제             
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_TypeCasting/PrimitiveAndStringConversionExample.java)
-
-#### 3절 정리
+#### 타입 변환 정리
 
 |키워드|설명|
 |:---:|:---|
@@ -413,6 +396,9 @@ String str = String.valueOf(3);
 |문자열 결합 연산|문자열과 + 연산을 하면 다른 피연산자도 문자열로 변환되어 문자열 결합 발생|
 |Integer.parseInt()|문자열을 정수 int 타입으로 변환|
 |Double.parseDouble()|문자열을 실수 double 타입으로 변환|
+
+* 예제 3. 타입 변환 예제    
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/WhatTypeIs.java)
 
 ## 4절. 변수와 시스템 입출력
 #### System.out
