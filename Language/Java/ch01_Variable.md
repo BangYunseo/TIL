@@ -398,7 +398,7 @@ String str = String.valueOf(3);
 |Double.parseDouble()|문자열을 실수 double 타입으로 변환|
 
 * 예제 3. 타입 변환 예제    
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/WhatTypeIs.java)
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch01_Variable/WhatIsTypeConversion.java)
 
 ## 4절. 변수와 시스템 입출력
 #### System.out
