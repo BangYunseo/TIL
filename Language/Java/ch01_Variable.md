@@ -496,13 +496,13 @@ System.out.printf("이름 : %1$s, 나이 : %2$d", "방윤서", 22);
   * 'equals()' 함수 사용
   * 예시
     * String str1 = "Java";
-    * boolean res1 = str.equals("java");    --> 거짓
-    * boolean res2 = str.equals("Java");    --> 참
+    * boolean res1 = str.equals("java");    --> FALSE
+    * boolean res2 = str.equals("Java");    --> TRUE
 
 ![scan](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/strequal.PNG)
 
 
-#### 4절 정리
+#### 변수와 시스템 입출력 정리
 
 |키워드|설명|
 |:---:|:---|
