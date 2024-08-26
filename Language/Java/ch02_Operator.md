@@ -1,7 +1,7 @@
 #  Chapter 2. 연산자
 > '혼자 공부하는 자바 - 신용권' 3장 1절 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch05_Operator)
+> [소스코드](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch02_Operator)
 > 
 > 1절. 연산자와 종류
 >
