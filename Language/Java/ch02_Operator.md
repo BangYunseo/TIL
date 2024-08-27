@@ -10,73 +10,149 @@
 > 3절. 단항 | 이항 | 삼항 연산자
 
 ## 1절. 연산자와 종류
-#### 연산자
-* 시스템의 표준 출력 장치로 출력
-```Java
-System.out.println("Hello, World!");
-// 출력 예시
-// Hello, World!
-```
+#### 연산자(Operator)와 관련 정의
+* 연산자   
+    * 연산에 사용되는 표시나 기호   
+* 피연산자(operand)   
+    * 연산자와 함께 연산되는 데이터   
+* 연산식(expression)
+    * 연산자와 피연산자를 사용한 연산 과정 기술
 
-#### System.in
-* 시스템의 표준 입력 장치에서 읽음
-```Java
-System.in.read();
-```
+![expression](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/expression.PNG)
 
-#### println()
-* 괄호 안의 문자열이나 변수를 출력하는 메소드
+#### JAVA 연산자
+* 산출되는 값의 타입이 연산자별로 다름을 주의
 
-![println](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch04/println.PNG)
+![JavaExpression](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/JavaExpression.PNG)
 
-#### 여러가지 출력 메소드
-          
-![print](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch04/print.PNG)
-
-#### printf()
-* 형식화된 문자열(formal string) 출력
-* 전체 출력 자릿수 및 소수 자릿수 제한
-
-![printf](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch04/printf.PNG)
-
-* 형식 문자열에서 %와 conversion 외에는 모두 생략 가능
-* conversion에는 제공되는 값의 타입에 따라 d(정수), f(실수), s(문자열) 입력
+* 연산식은 반드시 하나의 값 산출
+* 하나의 값이 오는 모든 자리에 연산식 사용 가능
+* 변수에 연산식의 값 저장 가능  
 
 ```Java
-System.out.printf("이름 : %s\n", "방윤서");
-System.out.printf("나이 : %d", 22);
-// 출력 예시
-// 이름 : 방윤서
-// 나이 : 22
+int res = x + y;
 ```
 
-* 형식 문자열에 포함될 값이 2개 이상인 경우 순번표시
+* 다른 연산식의 피연산자 위치에 연산식 대입 가능
+
 ```Java
-System.out.printf("이름 : %1$s, 나이 : %2$d", "방윤서", 22);
-// 출력 예시
-// 이름 : 방윤서, 나이 : 22
+boolean result = (A + B) >= 5;
 ```
 
-* 다양한 형식 문자열
+## 2절. 연산 방향과 우선순위
+#### 연산 방향
+* 우선순위에 따라 수행
+    * 단항 -> 이항 -> 삼항
+    * 산술 -> 비교 -> 논리 -> 대입
 
-![print2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch04/print2.PNG)
+* 우선순위가 같은 연산자는 왼쪽에서 오른쪽 방향으로 수행
 
-* 예제 1. printf 예제      
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch04_VariableSystemIO/PrintfExample.java)
+```Java
+100 * 2 / 3 % 5
+// 왼쪽부터 차례대로 수행
+```
 
-## 2절. 변수 저장
-#### 키 코드(Key Code) 
-* 키보드에서 키를 입력할 때 프로그램에서 숫자로 된 키 코드를 읽음
-* System.in의 read() 사용
-* 얻은 키코드는 대입 연산자 사용하여 int 변수에 저장
+* 예외 : 대입 연산자
+```Java
+a = b = c = 10;
+/* 예외의 경우 아래 순서로 실행
+1) c = 10
+2) b = c
+3) a = b
+*/
+```
 
-![keycode](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch04/keycode.PNG)
+#### 연산 방향
 
-(여기부터 다시 작성!)
+![ExpressionDirection](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionDirection.PNG)
 
-## 3절. 정리
-#### 핵심 포인트 확인하기
+#### 괄호 사용
+* 먼저 처리할 연산식을 괄호로 묶기
 
+![ExpressionDirectionEX1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionDirectionEX1.PNG)
+
+#### 연산자 정리
+
+|키워드|설명|
+|:---:|:---|
+|연산자|연산의 종류를 결정짓는 기호|
+|피연산자|연산식에서 연산되는 데이터|
+|연산 방향|연산자를 사용했을 시 연산되는 방향|
+|연산 우선순위|연산자들이 복합적으로 구성되면 우선적으로 연산되는 연산자이며 순서를 임의로 정하고 싶을 경우 괄호 사용|
+
+## 3절. 단항 | 이항 | 삼항 연산자
+#### 피연산자 수에 따른 구분
+|구분|종류|예시|
+|:---|:---|:---|
+|단항 연산자|부호, 증감 연산자|++x;|
+|이항 연산자|산술, 비교, 논리 연산자|x + y;|
+|삼항 연산자|조건 연산자|(sum > 90) ? "True" : "False";|
+
+#### 부호 연산자
+* boolean 타입과 char 타입을 제외한 기본 타입에 사용
+
+![expression2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/expression2.PNG)
+
+* 정수 및 실수 타입 변수 앞에 붙는 경우   
+
+```Java
+int x = -100;
+int result1 = +x;
+int result2 = -x;
+```
+
+* 부호 연산의 결과는 int
+```Java
+byte b = 100;
+byte res = -b;
+// 위와 같이 작성할 경우 컴파일 에러 발생
+```
+
+#### 증감 연산자
+* booleaan 타입 외 모든 기본 타입 피연산자에 사용 가능
+
+![ExpressionPlus](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionPlus.PNG)
+
+* 증가 연산자(++)
+    * 피연산자 값에 1을 더한 결과를 다시 피연산자에 저장
+
+```Java
+int num = 5;
+++num;
+// num = 6
+```
+
+* 감소 연산자(--)
+    * 피연산자 값에 1을 뺀 결과를 다시 피연산자에 저장
+
+```Java
+int num = 5;
+--num;
+// num = 4
+```
+
+* 변수의 앞 뒤 어디에서든 사용 가능
+
+```Java
+++a; a++;
+// 위는 모두 a = a + 1;로 동일
+
+--a; a--;
+// 위는 모두 a = a - 1;로 동일
+```
+
+* 다른 연산자와 함께 사용될 경우 증감 연산자 위치에 따라 결과가 달라질 수 있음을 주의
+
+```Java
+int x = 1;
+int y = 1;
+int res1 = ++x + 10;
+int res2 = y++ + 10;
+```
+
+![ExpressionPlus2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionPlus2.PNG)
+
+#### 논리 부정 연산자
 |키워드|설명|
 |:---:|:---|
 |System.out.println()|괄호에 주어진 매개값을 모니터로 출력 하고 개행 |
