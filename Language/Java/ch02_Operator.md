@@ -209,3 +209,37 @@ String str2 = str1 + " 특징";
 |논리 연산자|&&, ||, !의 연산자를 통해 논리곱, 논리합, 논리 부정을 수행하고 boolean 값 산출|
 |대입 연산자|=, +=, -=의 연산자를 통해 값을 왼쪽에 대입하거나 연산 후 대입|
 |삼항 연산자|(조건식) ? A : B를 통해 조건이 true일 경우 A, false일 경우 B 산출|
+
+* 예제 1. 연산자 예제    
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_Variable/WhatIsOperator.java)
+
+### 예제 문제 해결하기
+
+<details>
+    <summary>
+        문제 1
+    </summary>
+
+[문제 1 바로가기](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_Operator/Exam1)
+
+</details>
+
+<details>
+    <summary>
+        문제 2
+    </summary>
+
+[문제 2 바로가기](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_Operator/Exam2)
+
+
+</details>
+
+<details>
+    <summary>
+        문제 3
+    </summary>
+
+[문제 3 바로가기](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch02_Operator/Exam3)
+
+
+</details>
