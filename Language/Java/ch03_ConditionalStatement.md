@@ -56,182 +56,86 @@
 
 ![elif](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/elif.PNG)
 
-#### 조건문 정리
+#### if문 정리
 
-|키워드|설명|
-|:---:|:---|
-|연산자|연산의 종류를 결정짓는 기호|
-|피연산자|연산식에서 연산되는 데이터|
-|연산 방향|연산자를 사용했을 시 연산되는 방향|
-|연산 우선순위|연산자들이 복합적으로 구성되면 우선적으로 연산되는 연산자이며 순서를 임의로 정하고 싶을 경우 괄호 사용|
+|키워드|형태|설명|
+|:---:|:---|:---|
+|if문|if(조건식) {}|조건식이 true가 되면 중괄호 내부 실행|
+|if - else문|if(조건식) {} else {}|조건식이 true일 경우 if 중괄호 내부, false일 경우 else 중괄호 내부 실행|
+|if - else if - else문|if(조건식1) {} else if(조건식2) {} else {}|조건식1이 true일 경우 if 중괄호 내부, 조건식2가 true일 경우 else if 중괄호 내부, 조건식1과 조건식2 모두 false일 경우 else 중괄호 내부 실행|
 
 ## 2절. switch
 #### switch문
-* 우선순위에 따라 수행
-    * 단항 -> 이항 -> 삼항
-    * 산술 -> 비교 -> 논리 -> 대입
+* 변수가 어떤 값을 갖는지에 따라 실행문 선택
+* 같은 기능의 if문보다 코드 간결
 
-* 우선순위가 같은 연산자는 왼쪽에서 오른쪽 방향으로 수행
+![switch](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/switch.PNG)
 
-```Java
-100 * 2 / 3 % 5
-// 왼쪽부터 차례대로 수행
-```
+#### switch문 정리
 
-* 예외 : 대입 연산자
-```Java
-a = b = c = 10;
-/* 예외의 경우 아래 순서로 실행
-1) c = 10
-2) b = c
-3) a = b
-*/
-```
+|키워드|형태|설명|
+|:---:|:---|:---|
+|switch문|switch(변수) {case 값1: ... case 값2: ... default ...}|변수의 값이 값1일 경우 첫 번째 case 블록, 변수의 값이 값2일 경우 두 번째 case 블록, 값1과 값2 모두 아닐 경우 default 블록 실행|
 
-#### 연산 방향
+## 3절. for
+#### 반복문
+* 어떤 작업을 반복적으로 실행할 경우 사용
 
-![ExpressionDirection](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionDirection.PNG)
+![loop](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/loop.PNG)
 
-#### 괄호 사용
-* 먼저 처리할 연산식을 괄호로 묶기
+#### for, while, do - while
+* for문
+    * 반복 횟수를 주로 알고 있을 경우 사용
+* while문
+    * 조건에 따라 반복할 경우 사용
+* do - while문
+    * while문과 유사하나 조건을 나중에 검사
 
-![ExpressionDirectionEX1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionDirectionEX1.PNG)
+#### for문
+* 주어진 횟수만큼 반복하고 싶을 경우 사용
 
-#### 연산자 정리
+![for](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/for.PNG)
 
-|키워드|설명|
-|:---:|:---|
-|연산자|연산의 종류를 결정짓는 기호|
-|피연산자|연산식에서 연산되는 데이터|
-|연산 방향|연산자를 사용했을 시 연산되는 방향|
-|연산 우선순위|연산자들이 복합적으로 구성되면 우선적으로 연산되는 연산자이며 순서를 임의로 정하고 싶을 경우 괄호 사용|
+## 4절. while
+#### while문
+* 조건식에 따라 반복 여부를 결정할 경우
+    * true일 경우 계속 반복
+    * false일 경우 반복 종료
+* 조건식에서는 주로 비교 연산식, 논리 연산식
 
-## 3절. 단항 | 이항 | 삼항 연산자
-#### 피연산자 수에 따른 구분
-|구분|종류|예시|
-|:---|:---|:---|
-|단항 연산자|부호, 증감 연산자|++x;|
-|이항 연산자|산술, 비교, 논리 연산자|x + y;|
-|삼항 연산자|조건 연산자|(sum > 90) ? "True" : "False";|
+![while](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/while.PNG)
 
-### 3 - 1 ) 단항 연산자
-#### 부호 연산자
-* boolean 타입과 char 타입을 제외한 기본 타입에 사용
+#### do - while문
+* 조건식에 의해 반복 실행하는 점에서 while문과 동일
+* 블록 내부 실행문을 우선 실행하고 그 결과에 따라 반복 실행 여부 결정
 
-![expression2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/expression2.PNG)
+![dowhile](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/dowhile.PNG)
 
-* 정수 및 실수 타입 변수 앞에 붙는 경우   
+## 5절. break
+#### break문
+* for, while, do - while, switch문의 실행을 종료할 경우 사용
+* 주로 if문과 함께 사용
 
-```Java
-int x = -100;
-int result1 = +x;
-int result2 = -x;
-```
+![break1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/break1.PNG)
 
-* 부호 연산의 결과는 int
-```Java
-byte b = 100;
-byte res = -b;
-// 위와 같이 작성할 경우 컴파일 에러 발생
-```
+* 반복문이 중첩된 경우
+    * Label을 통해 바깥 반복문 탈출
 
-#### 증감 연산자
-* booleaan 타입 외 모든 기본 타입 피연산자에 사용 가능
+![break2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/break2.PNG)
 
-![ExpressionPlus](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionPlus.PNG)
+## 6절. continue
+#### continue문
+* for, while, do - while 문에서만 사용
+* for문의 증감식이나 while, do - while문의 조건식 이동
+* 주로 if문과 사용
 
-* 증가 연산자(++)
-    * 피연산자 값에 1을 더한 결과를 다시 피연산자에 저장
+![continue](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/continue.PNG)
 
-```Java
-int num = 5;
-++num;
-// num = 6
-```
-
-* 감소 연산자(--)
-    * 피연산자 값에 1을 뺀 결과를 다시 피연산자에 저장
-
-```Java
-int num = 5;
---num;
-// num = 4
-```
-
-* 변수의 앞 뒤 어디에서든 사용 가능
-
-```Java
-++a; a++;
-// 위는 모두 a = a + 1;로 동일
-
---a; a--;
-// 위는 모두 a = a - 1;로 동일
-```
-
-* 다른 연산자와 함께 사용될 경우 증감 연산자 위치에 따라 결과가 달라질 수 있음을 주의
-
-```Java
-int x = 1;
-int y = 1;
-int res1 = ++x + 10;
-int res2 = y++ + 10;
-```
-
-![ExpressionPlus2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionPlus2.PNG)
-
-#### 논리 부정 연산자(!)
-* true -> false로, false -> true로 변경
-* 조건문과 제어문에서 조건식 값을 부정하며 실행 흐름 제어
-* 토글(toggle) 기능
-* boolean 타입에만 사용 가능
-
-### 3 - 2 ) 이항 연산자
-#### 산술 연산자
-![ExpressionMath](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionMath.PNG)   
-
-* 피연산자 타입이 동일하지 않을 경우 아래 규칙에 따라 일치시킨 후 연산 수행
-    * 피연산자가 byte, short, char 타입인 경우 모두 int 타입으로 변환
-    * 피연산자가 모두 정수 타입이고 long 타입이 포함될 경우 모두 long 타입으로 변환
-    * 피연산자 중 실수 타입이 있을 경우 허용 범위 큰 실수 타입으로 변환
-
-#### 문자열 결합 연산자(+)
-* + 연산자의 피연산자 중 한 쪽이 문자열인 경우
-
-```Java
-String str1 = "JDK" + 6.0;
-String str2 = str1 + " 특징";
-```
-
-#### 비교 연산자
-* 피연산자의 대소 비교하여 true / false 산출
-    * 조건문이나 반복문에서 실행 흐름 제어
-* 동등 비교 연산자는 모든 타입에 사용 가능
-* 크기 비교 연산자는 boolean 외 모든 기본 타입에 사용 가능
-
-![ExpressionIs](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionIs.PNG)  
-
-#### 논리 연산자
-* boolean 타입만 사용 가능
-
-![ExpressionBool](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionBool.PNG)  
-
-#### 대입 연산자
-* 오른쪽 피연산자의 값을 왼쪽 피연산자인 변수에 저장
-
-![ExpressionEqual](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionEqual.PNG)  
-
-### 3 - 3 ) 삼항 연산자
-#### 삼항 연산자
-* 3개의 피연산자를 필요로 하는 연산자
-* ? 앞의 조건식에 따라 콜론 앞뒤의 피연산자 선택
-
-![Expression3](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/Expression3.PNG)  
-
-#### 연산자 종류 정리
-|키워드|설명|
-|:---:|:---|
-|증감 연산자|++, --의 연산자를 통해 변수의 값을 1씩 증가, 감소|
-|비교 연산자|==, !=의 연산자를 통해 값의 동등 유무를 비교하고 boolean 값 산출|
-|논리 연산자|&&, ||, !의 연산자를 통해 논리곱, 논리합, 논리 부정을 수행하고 boolean 값 산출|
-|대입 연산자|=, +=, -=의 연산자를 통해 값을 왼쪽에 대입하거나 연산 후 대입|
-|삼항 연산자|(조건식) ? A : B를 통해 조건이 true일 경우 A, false일 경우 B 산출|
+#### 반복문 정리
+|키워드|형태|설명|
+|:---:|:---|:---|
+|for문|for(초기화식; 조건식; 증감식) {}|지정한 횟수만큼 반복|
+|while문|while(조건식) {}|조건식이 true가 될 때까지 반복|
+|do - while문|do {} while(조건식) {}|while문과 동일하나 조건식이 뒤에 위치|
+|break문|break;|for문, while문, do - while문의 반복 종료 시 사용|
+|continue문|continue;|for문, while문, do - while문의 증감식 또는 조건식|
