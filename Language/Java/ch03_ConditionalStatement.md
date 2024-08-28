@@ -1,13 +1,19 @@
-#  Chapter 2. 연산자
-> '혼자 공부하는 자바 - 신용권' 3장 1절 학습 내용
+#  Chapter 3. 조건문
+> '혼자 공부하는 자바 - 신용권' 4장 학습 내용
 >
-> [소스코드](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch02_Operator)
+> [소스코드](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch03_ConditionalStatement)
 > 
-> 1절. 연산자와 종류
+> 1절. if
 >
-> 2절. 연산 방향과 우선순위
+> 2절. switch
 >
-> 3절. 단항 | 이항 | 삼항 연산자
+> 3절. for
+>
+> 4절. while
+>
+> 5절. break
+>
+> 6절. continue
 
 ## 1절. 연산자와 종류
 #### 연산자(Operator)와 관련 정의
