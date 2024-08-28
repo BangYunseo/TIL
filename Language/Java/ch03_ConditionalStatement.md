@@ -15,38 +15,58 @@
 >
 > 6절. continue
 
-## 1절. 연산자와 종류
-#### 연산자(Operator)와 관련 정의
-* 연산자   
-    * 연산에 사용되는 표시나 기호   
-* 피연산자(operand)   
-    * 연산자와 함께 연산되는 데이터   
-* 연산식(expression)
-    * 연산자와 피연산자를 사용한 연산 과정 기술
+## 1절. if
+#### 조건문
+* 조건식에 따라 다른 실행을 하기 위해 사용
+* if문 : 조건식 결과의 true / false 여부에 따라 실행문 결정
+* switch문 : 변수 값에 따라 실행문 결정
 
-![expression](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/expression.PNG)
+![conditional](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/conditional.PNG)
 
-#### JAVA 연산자
-* 산출되는 값의 타입이 연산자별로 다름을 주의
+#### if문
+* 조건식 결과에 따라 블록 실행 여부 결정
+* 조건식에 올 수 있는 요소
+    * true / false 값 산출 연산식
+    * boolean 타입 변수
+* 중괄호 블록은 조건식이 true일 경우에만 실행
+    * 실행할 문장이 하나뿐인 경우 생략 가능
 
-![JavaExpression](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/JavaExpression.PNG)
+![if1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/if1.PNG)
 
-* 연산식은 반드시 하나의 값 산출
-* 하나의 값이 오는 모든 자리에 연산식 사용 가능
-* 변수에 연산식의 값 저장 가능  
+#### if - else문
+* if문을 else 블록과 함께 사용
+* 조건식의 결과에 따라 실행 블록 선택
 
-```Java
-int res = x + y;
-```
+* if문 조건식 여부     
 
-* 다른 연산식의 피연산자 위치에 연산식 대입 가능
+|boolean|실행 블록|
+|:---:|:---|
+|true|if문 블록 실행|
+|false|else문 블록 실행|
 
-```Java
-boolean result = (A + B) >= 5;
-```
 
-## 2절. 연산 방향과 우선순위
-#### 연산 방향
+![ifelse](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/ifelse.PNG)
+
+
+#### if - else if - else문
+* 조건식이 여러 개인 if문
+* 처음 if문의 조건식이 false일 경우 다른 조건식의 결과에 따라 실행 블록 선택
+    * if 블록 끝에 else if문 추가ㅣ
+    * else if문 개수에는 제한 X
+
+![elif](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/elif.PNG)
+
+#### 조건문 정리
+
+|키워드|설명|
+|:---:|:---|
+|연산자|연산의 종류를 결정짓는 기호|
+|피연산자|연산식에서 연산되는 데이터|
+|연산 방향|연산자를 사용했을 시 연산되는 방향|
+|연산 우선순위|연산자들이 복합적으로 구성되면 우선적으로 연산되는 연산자이며 순서를 임의로 정하고 싶을 경우 괄호 사용|
+
+## 2절. switch
+#### switch문
 * 우선순위에 따라 수행
     * 단항 -> 이항 -> 삼항
     * 산술 -> 비교 -> 논리 -> 대입
