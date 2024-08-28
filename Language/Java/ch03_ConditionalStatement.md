@@ -77,6 +77,9 @@
 |:---:|:---|:---|
 |switch문|switch(변수) {case 값1: ... case 값2: ... default ...}|변수의 값이 값1일 경우 첫 번째 case 블록, 변수의 값이 값2일 경우 두 번째 case 블록, 값1과 값2 모두 아닐 경우 default 블록 실행|
 
+* 예제 1. 조건문 예제    
+[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_ConditionalStatement/WhatIsConditional.java)
+
 ## 3절. for
 #### 반복문
 * 어떤 작업을 반복적으로 실행할 경우 사용
