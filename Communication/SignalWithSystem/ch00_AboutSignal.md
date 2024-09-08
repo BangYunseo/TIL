@@ -3,7 +3,7 @@
 >
 > 2절. 퓨리에(Fourier)
 >
-> 3절. 정현파
+> 3절. 신호
 
 ## 1절. 디지털 신호 처리(DSP)
 #### 디지털 신호 처리란?
@@ -34,112 +34,40 @@
 * 주파수를 분리해서 표현하기 위해
     * 즉, Time Domain으로 구성된 그래프를 Frequency Domain에 따른 그래프로 변환하기 위해
 
-![TimeFrequency]()
+![TimeFrequency](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/TimeFrequency.PNG)
 
 ##### 주파수를 분리해서 표현해야 하는 이유
 * Time Domain 그래프에서는 어느 수준의 주파수가 높게 출력되는지 확인 불가
 * 하지만, Fourier를 통해 변환한 Frequency Domain 그래프에서는 어느 수준의 주파수가 높게 출력되는지 확인 가능
 
-|boolean|실행 블록|
-|:---:|:---|
-|true|if문 블록 실행|
-|false|else문 블록 실행|
+## 3절. 신호
+#### 신호란?
+* 시간에 대한 함수 $x(t)$
 
+#### 아날로그 신호
+* Analog Signal
+* Continuous-time Signal
+* $x(t)$
+* 매개변수(parameter)로 시간 $t$를 사용하며 Time Domain 그래프
+* 소괄호를 사용함으로써 연속적인 시간 의미
+* $t$를 독립 변수로 사용
 
-![ifelse](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/ifelse.PNG)
+![Analog](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Analog.PNG)
 
+#### 디지털 신호
+* Digital Signal
+* Discrete-time Signal
+* $x[n]$
+* 매개변수(parameter)로 숫자 번호(index)를 사용하는 그래프
+* 대괄호를 사용함으로써 불연속적인 시간 의미
+* $n$을 독립 변수로 사용
+* 그래프마다 $x[n]$에서의 값이 상이할 수 있음
+    * 예시
+        * A그래프 $x[1]$은 n = 9의 값
+        * B 그래프 $x[1]$은 n = 15의 값
 
-#### if - else if - else문
-* 조건식이 여러 개인 if문
-* 처음 if문의 조건식이 false일 경우 다른 조건식의 결과에 따라 실행 블록 선택
-    * if 블록 끝에 else if문 추가ㅣ
-    * else if문 개수에는 제한 X
+![Digital](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Digital.PNG)
 
-![elif](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/elif.PNG)
-
-#### if문 정리
-
-|키워드|형태|설명|
-|:---:|:---|:---|
-|if문|if(조건식) {}|조건식이 true가 되면 중괄호 내부 실행|
-|if - else문|if(조건식) {} else {}|조건식이 true일 경우 if 중괄호 내부, false일 경우 else 중괄호 내부 실행|
-|if - else if - else문|if(조건식1) {} else if(조건식2) {} else {}|조건식1이 true일 경우 if 중괄호 내부, 조건식2가 true일 경우 else if 중괄호 내부, 조건식1과 조건식2 모두 false일 경우 else 중괄호 내부 실행|
-
-## 2절. switch
-#### switch문
-* 변수가 어떤 값을 갖는지에 따라 실행문 선택
-* 같은 기능의 if문보다 코드 간결
-
-![switch](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/switch.PNG)
-
-#### switch문 정리
-
-|키워드|형태|설명|
-|:---:|:---|:---|
-|switch문|switch(변수) {case 값1: ... case 값2: ... default ...}|변수의 값이 값1일 경우 첫 번째 case 블록, 변수의 값이 값2일 경우 두 번째 case 블록, 값1과 값2 모두 아닐 경우 default 블록 실행|
-
-* 예제 1. 조건문 예제    
-[SourceCodeChecking](https://github.com/BangYunseo/SelfStudyJava/blob/main/ch03_ConditionalStatement/WhatIsConditional.java)
-
-## 3절. for
-#### 반복문
-* 어떤 작업을 반복적으로 실행할 경우 사용
-
-![loop](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/loop.PNG)
-
-#### for, while, do - while
-* for문
-    * 반복 횟수를 주로 알고 있을 경우 사용
-* while문
-    * 조건에 따라 반복할 경우 사용
-* do - while문
-    * while문과 유사하나 조건을 나중에 검사
-
-#### for문
-* 주어진 횟수만큼 반복하고 싶을 경우 사용
-
-![for](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/for.PNG)
-
-## 4절. while
-#### while문
-* 조건식에 따라 반복 여부를 결정할 경우
-    * true일 경우 계속 반복
-    * false일 경우 반복 종료
-* 조건식에서는 주로 비교 연산식, 논리 연산식
-
-![while](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/while.PNG)
-
-#### do - while문
-* 조건식에 의해 반복 실행하는 점에서 while문과 동일
-* 블록 내부 실행문을 우선 실행하고 그 결과에 따라 반복 실행 여부 결정
-
-![dowhile](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/dowhile.PNG)
-
-## 5절. break
-#### break문
-* for, while, do - while, switch문의 실행을 종료할 경우 사용
-* 주로 if문과 함께 사용
-
-![break1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/break1.PNG)
-
-* 반복문이 중첩된 경우
-    * Label을 통해 바깥 반복문 탈출
-
-![break2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/break2.PNG)
-
-## 6절. continue
-#### continue문
-* for, while, do - while 문에서만 사용
-* for문의 증감식이나 while, do - while문의 조건식 이동
-* 주로 if문과 사용
-
-![continue](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/continue.PNG)
-
-#### 반복문 정리
-|키워드|형태|설명|
-|:---:|:---|:---|
-|for문|for(초기화식; 조건식; 증감식) {}|지정한 횟수만큼 반복|
-|while문|while(조건식) {}|조건식이 true가 될 때까지 반복|
-|do - while문|do {} while(조건식) {}|while문과 동일하나 조건식이 뒤에 위치|
-|break문|break;|for문, while문, do - while문의 반복 종료 시 사용|
-|continue문|continue;|for문, while문, do - while문의 증감식 또는 조건식|
+#### 소리 신호란?
+* 정현파(Sinusoidal)
+* 모든 소리 신호는 여러 개의 정현파 합
