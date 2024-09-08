@@ -1,39 +1,44 @@
-#  Chapter 0. 신호에 대해서
-> 1절. if
+#  Chapter 0. 신호
+> 1절. 디지털 신호 처리(DSP)
 >
-> 2절. switch
+> 2절. 퓨리에(Fourier)
 >
-> 3절. for
->
-> 4절. while
->
-> 5절. break
->
-> 6절. continue
+> 3절. 정현파
 
-## 1절. if
-#### 조건문
-* 조건식에 따라 다른 실행을 하기 위해 사용
-* if문 : 조건식 결과의 true / false 여부에 따라 실행문 결정
-* switch문 : 변수 값에 따라 실행문 결정
+## 1절. 디지털 신호 처리(DSP)
+#### 디지털 신호 처리란?
+* Digital Signal Processing(DSP)
+* 디지털화된 신호를 원하는 방향으로 정보 신호를 수정하거나 개선할 목적으로 알고리즘에 의해 수치적으로 처리
+* 일반적으로 아날로그 신호를 디지털화하는 과정에서 이산 신호가 되며 수치화
 
-![conditional](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/conditional.PNG)
+#### 목적
+* 연속적인 실세계 아날로그 측정 후 걸러내고 압축
 
-#### if문
-* 조건식 결과에 따라 블록 실행 여부 결정
-* 조건식에 올 수 있는 요소
-    * true / false 값 산출 연산식
-    * boolean 타입 변수
-* 중괄호 블록은 조건식이 true일 경우에만 실행
-    * 실행할 문장이 하나뿐인 경우 생략 가능
+#### 사용 이유
+* 디지털 기기의 대표적 예시 중 하나인 컴퓨터가 상용화되었기 때문
+* 수학적 추상화를 통해 일반화 및 새로운 처리 기술 발견을 위해
+* 컴퓨터로의 구현이 유연하기 때문
+* 애플리케이션은 물리적인 내용, 글을 제공하기 때문(디스플레이)
 
-![if1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/if1.PNG)
+## 2절. 퓨리에(Fourier)
+#### 퓨리에(Fourier)의 사용처
+* 통신
+* 소리, 음악(CD ROM, 영상)
+* 퓨리에 광학
+* X-ray 결정학(프로틴 구조, DNA)
+* 컴퓨터화 단층 촬영(CT)
+* 자기공명영상(MRI)
+* 전파천문학
 
-#### if - else문
-* if문을 else 블록과 함께 사용
-* 조건식의 결과에 따라 실행 블록 선택
+#### 퓨리에(Fourier) 사용 이유
+* 주파수를 분리해서 표현하기 위해
+    * 즉, Time Domain으로 구성된 그래프를 Frequency Domain에 따른 그래프로 변환하기 위해
 
-* if문 조건식 여부     
+![TimeFrequency]()
+
+##### 주파수를 분리해서 표현해야 하는 이유
+* Time Domain 그래프에서는 어느 수준의 주파수가 높게 출력되는지 확인 불가
+* 하지만, Fourier를 통해 변환한 Frequency Domain 그래프에서는 어느 수준의 주파수가 높게 출력되는지 확인 가능
 
 |boolean|실행 블록|
 |:---:|:---|
