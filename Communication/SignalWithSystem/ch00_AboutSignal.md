@@ -68,7 +68,33 @@
 
 ![Digital](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Digital.PNG)
 
-#### 소리 신호란?
+#### 소리 신호
 * 정현파(Sinusoidal)
 * 모든 소리 신호는 여러 개의 정현파 합
 * 정현파 공식
+
+![Sinusoidal](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Sinusoidal.PNG)
+
+##### 주기(Period)
+* 1초당 신호 횟수
+
+![Period](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Period.PNG)
+
+##### 위상(Phase)
+* $t = 0$일 때 시작점과의 차이
+* 기호 
+
+![Phase](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Phase.PNG)
+
+##### 진폭(Amplitude)
+* Magnitude 라고도 부름
+* 기호
+
+![Amplitude](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Amplitude.PNG)
+
+##### 주파수(Frequency)
+* Radians / sec
+* 헤르츠(Hertz) : (cycles / sec)
+
+![Frequency](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Frequency.PNG)
+
