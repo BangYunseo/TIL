@@ -34,7 +34,7 @@
 * 주파수를 분리해서 표현하기 위해
     * 즉, Time Domain으로 구성된 그래프를 Frequency Domain에 따른 그래프로 변환하기 위해
 
-![TimeFrequency](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/TimeFrequency.PNG)
+![TimeFrequency](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalProcessing/Image/ch00/TimeFrequency.PNG)
 
 ##### 주파수를 분리해서 표현해야 하는 이유
 * Time Domain 그래프에서는 어느 수준의 주파수가 높게 출력되는지 확인 불가
@@ -52,7 +52,7 @@
 * 소괄호를 사용함으로써 연속적인 시간 의미
 * $t$를 독립 변수로 사용
 
-![Analog](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Analog.PNG)
+![Analog](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalProcessing/Image/ch00/Analog.PNG)
 
 #### 디지털 신호
 * Digital Signal
@@ -66,35 +66,35 @@
         * A그래프 $x[1]$은 n = 9의 값
         * B 그래프 $x[1]$은 n = 15의 값
 
-![Digital](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Digital.PNG)
+![Digital](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalProcessing/Image/ch00/Digital.PNG)
 
 #### 소리 신호
 * 정현파(Sinusoidal)
 * 모든 소리 신호는 여러 개의 정현파 합
 * 정현파 공식
 
-![Sinusoidal](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Sinusoidal.PNG)
+![Sinusoidal](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalProcessing/Image/ch00/Sinusoidal.PNG)
 
 ##### 주기(Period)
 * 1초당 신호 횟수
 
-![Period](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Period.PNG)
+![Period](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalProcessing/Image/ch00/Period.PNG)
 
 ##### 위상(Phase)
 * $t = 0$일 때 시작점과의 차이
 * 기호 
 
-![Phase](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Phase.PNG)
+![Phase](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalProcessing/Image/ch00/Phase.PNG)
 
 ##### 진폭(Amplitude)
 * Magnitude 라고도 부름
 * 기호
 
-![Amplitude](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Amplitude.PNG)
+![Amplitude](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalProcessing/Image/ch00/Amplitude.PNG)
 
 ##### 주파수(Frequency)
 * Radians / sec
 * 헤르츠(Hertz) : (cycles / sec)
 
-![Frequency](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalWithSystem/Image/ch00/Frequency.PNG)
+![Frequency](https://github.com/BangYunseo/TIL/blob/main/Communication/SignalProcessing/Image/ch00/Frequency.PNG)
 
