@@ -19,29 +19,22 @@
     * 3. 캐시 메모리(임시 저장소)의 용량
 * 클럭 수치가 높으면 단일 작업을 빠르게 처리하는데 유리
 * 코어의 수가 많을 경우 작업 효율 상승
-    * 
-* 코어의 수가 많으면 멀티 태스킹(다중작업)을 하거나 멀티코어 연산에 최적화된 프로그램을 구동
+    * 멀티 태스킹(다중 작업)을 할 경우
+    * 멀티코어 연산에 최적화된 프로그램을 구동할 경우
+    * 캐시 메모리가 넉넉할 경우
+    * 덩치가 큰 프로그램을 구동하거나 자주 하는 작업을 반복처리할 경우
 
 #### GPU
+* 최초 목적
+    * 병렬 연산에 특화된 구조를 통한 높은 3D 그래픽 처리
+* 최근 목적 
+    * 그래픽 처리 뿐 아니라 이외의 범용 작업에도 GPU의 처리 능력을 보태는 'GPGPU(General Purpose computing on Graphics Processing Units)' 기술 발전
+* GPU 성능 기준은 CPU와 동일
 
-![ML](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/ML.PNG)
-
-#### 지도 학습(Supervised Learning)
-* 데이터에 대한 레이블(Label)의 명시적인 대답이 주어진 상태에서 컴퓨터를 학습시키는 방법
-
-##### 분류(classification)
-* 이산값(Discrete value)일 경우 해당
-
-![Classification](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/Classification.PNG)
-
-* ex) 이미지에 해당하는 숫자가 1인지 2인지?
-
-##### 회귀(regression)
-* 연속값(Continuous value)일 경우 해당
-
-![Regression](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/Regression.PNG)
-
-* 3개월 뒤 아파트의 가격은 2억 1천만원? 2억 2천만원?
+#### CPU와 GPU 내부 구조 차이
+* CPU
+* GPU
+#### GPU vs CPU vs TPU
 
 #### 비지도 학습(Unsupervised Learning)
 * 레이블(Label)의 명시적인 대답이 주어지지 않은 상태에서 컴퓨터를 학습시키는 방법론
