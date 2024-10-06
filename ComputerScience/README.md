@@ -16,14 +16,14 @@
 
 ## CS
 
-* Computer Architecture
-* [Data Structure](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/Data%20Structure)
+* ComputerArchitecture
+* [DataStructure](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataStructure)
 * [DataBase](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase)
 * Network
-* Operating System
-* Software Engineering
+* [OperatingSystem]((https://github.com/BangYunseo/TIL/tree/main/ComputerScience/OperatingSystem))
+* SoftwareEngineering
 * Algorithm
-* Design Pattern
+* DesignPattern
 
 
 ## Game CS
