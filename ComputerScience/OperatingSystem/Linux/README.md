@@ -1,14 +1,13 @@
-# DeepLearning
+# Linux
 
 ## What? 
-* 딥러닝 정리  
-* 3학년 2학기
+* 리눅스 정리  
 
 ## When?
 * 마지막 수정일 : 2024.10.05
 
 ## Learning List
-* ch00 [딥러닝]()
+* ch00 [리눅스 CMD]()
 * ch01 []()
 * ch02 []()
 * ch03 []()

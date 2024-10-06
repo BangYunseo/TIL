@@ -1,26 +1,28 @@
 #  Chapter 0. 딥러닝(DeepLearning)
-> 1절. 기계학습과 딥러닝
+> 1절. 서버
 >
-> 2절. 딥러닝의 예시
->
-> 3절. 생성형 AI
+> 2절. 리눅스 기본 명령어
 
 
-## 1절. 기계학습과 딥러닝
-#### 인공지능, 기계학습 딥러닝
-* 인공지능
+## 1절. 서버
+#### 서버 접속
+* 클라이언트 / 서버 구조
 
-![AI](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/AI.PNG)
+![CSA](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/CSA.PNG)
 
-* 딥러닝 vs 기계학습 vs 인공지능
+#### CPU
+* CPU(Central Processing Unit)
+    * 입력받은 명령을 해석 / 연산 후 이를 통해 결과 값을 출력 장치로 전달하는 컴퓨터의 주요 부품
+* CPU의 성능 지표   
+    * 1. 클럭(동작속도)의 수치
+    * 2. 코어(핵습 회로)의 수
+    * 3. 캐시 메모리(임시 저장소)의 용량
+* 클럭 수치가 높으면 단일 작업을 빠르게 처리하는데 유리
+* 코어의 수가 많을 경우 작업 효율 상승
+    * 
+* 코어의 수가 많으면 멀티 태스킹(다중작업)을 하거나 멀티코어 연산에 최적화된 프로그램을 구동
 
-![CompareAI](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/CompareAI.PNG)
-
-#### 인공지능
-
-![AI2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/AI2.PNG)
-
-#### 기계학습의 종류
+#### GPU
 
 ![ML](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/ML.PNG)
 
