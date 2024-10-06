@@ -63,6 +63,8 @@
 
 ![MLOps](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/MLOps.PNG)
 
-> 2절. 딥러닝의 예시
->
+## 2절. 딥러닝의 예시
+#### 지도 학습 예시(MNIST)
+![MNIST](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/MNIST.PNG)
+
 > 3절. 생성형 AI
