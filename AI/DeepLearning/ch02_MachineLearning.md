@@ -1,5 +1,5 @@
-#  Chapter 1. 넘파이(Numpy)
-> 1절. Numpy
+#  Chapter 2. 머신러닝의 기초(Basic of MachineLearning)
+> 1절. 머신러닝
 >
 > 2절. Numpy 함수
 >
@@ -8,10 +8,10 @@
 > 4절. 과제 해결
 
 
-## 1절. Numpy
+## 1절. 머신러닝
 #### 넘파이(Numpy)란?
 
-![Numpy](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Numpy.PNG)
+![Numpy](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Numpy.PNG)
 
 
 ![Numpy2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Numpy2.PNG)
