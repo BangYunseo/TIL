@@ -7,9 +7,13 @@
 >
 > 4절. 교차 검증 
 >
-> 5절. 데이터 세트
+> 5절. 데이터 세트(iris)
 >
-> 6절.
+> 6절. 데이터 세트(MNIST)
+>
+> 7절. 모델 평가 방법
+> 
+> 8절. 모델 정확도
 
 
 ## 1절. 머신러닝
@@ -171,7 +175,7 @@
 
 ![OCV](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/OCV.PNG)
 
-## 5절. 데이터 세트
+## 5절. 데이터 세트(iris)
 #### 예측
 * 머신러닝 시스템은 사용자의 질문에 대답
 * 예시
@@ -187,14 +191,26 @@
 ![iris](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/iris.PNG)
 
 * 특징과 레이블의 구조
-![43p사진구조]()
+
+![IS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/IS.PNG)
+
 ```Python
 from sklearn import datasets
 iris = datasets.load_iris()
+
 print(iris)
+# {'data': array([[5.1, 3.5, 1.4, 0.2],
+# [4.9, 3. , 1.4, 0.2], 
+# [4.7, 3.2, 1.3, 0.2],
+# [4.6, 3.1, 1.5, 0.2],
+# ...
+# [5.9, 3. , 5.1, 1.8]]),
+# 'target' : array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+# ..., 0])
 ```
 
 * 훈련 데이터와 테스트 데이터 분리
+
 ```Python
 from sklearn.model_selection import train_test_split
 
@@ -212,6 +228,7 @@ print(X_test.shape)
 ```
 
 * 붗꽃 데이터 실습 결과
+
 ```Python
 from sklearn.datasets import load_iris
 from sklearn.linear_model import Perceptron
@@ -223,16 +240,19 @@ iris = load_iris()
 print(iris.feature_names)
 print(iris.target_names)
 
+# ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)'] 
+# ['setosa' 'versicolor' 'virginica']
+
 X, y = iris.data, iris,target
 ```
 
-![45p]()
+![Res](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Res.PNG)
 
 #### 모델 선택
 * K-Nearest Neighbor(KNN) 알고리즘은 모든 머신러닝 알고리즘 중에서도 가장 간단하고 이해하기 쉬운 분류 알고리즘
 * KNN은 학습 시에 교사가 존재하는 "지도 학습"
 
- ![46p]() 
+![KNN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/KNN.PNG) 
 
 * 학습
 ```Python
@@ -257,7 +277,7 @@ scores = metrics.accuracy_score(y_testm y_pred)
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
 
-classes={0:'setosa',1:'versicolor',2:'virginica’}
+classes = {0 : 'setosa', 1 : 'versicolor', 2 : 'virginica'}
 
 # 전혀 보지 못한 새로운 데이터 제시
 x_new = [[3, 4, 5, 2], [5, 4, 2, 2]]
@@ -271,16 +291,137 @@ print(classes[y_predict[1]])
 ```
 
 * 모델 - perceptron
-* 
+```Python
+from sklearn.datasets import load_iris 
+from sklearn.linear_model import Perceptron
+import numpy as np
+import matplotlib as mpl
+import matplotlib.pyplot as plt 
 
+iris = load_iris()
+idx = np.in1d(iris.target, [0, 2]) 
+X = iris.data[idx, :2]
+y = (iris.target[idx] / 2).astype(np.int)
 
+model = Perceptron(max_iter=300, shuffle=False, tol=0, n_iter_no_change=1e9).fit(X, y) 
+XX_min = X[:, 0].min() - 1
+XX_max = X[:, 0].max() + 1 
+YY_min = X[:, 1].min() - 1 
+YY_max = X[:, 1].max() + 1
+XX, YY = np.meshgrid(np.linspace(XX_min, XX_max, 1000),
+         np.linspace(YY_min, YY_max, 1000))
+ZZ = model.predict(np.c_[XX.ravel(), YY.ravel()]).reshape(XX.shape)
 
+plt.contourf(XX, YY, ZZ, cmap=mpl.cm.autumn)
+plt.scatter(X[y == 0, 0], X[y == 0, 1], c='w', s=100, marker='o', edgecolor='k')
+plt.scatter(X[y == 1, 0], X[y == 1, 1], c='k', s=100, marker='x', edgecolor='k')
 
+plt.xlabel("꽃받침의 길이")
+plt.ylabel("꽃받침의 폭")
+plt.title("붓꽃 데이터(setosa/virginica)")
+plt.xlim(XX_min, XX_max)
+plt.ylim(YY_min, YY_max)
+plt.grid(False)
+plt.show()
+```
 
+![Model](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Model.PNG) 
 
+## 6절. 데이터 세트(MNIST)
+#### 필기체 숫자 분류
+* MNIST가 배포하는 필기체 숫자 이미지
+* sklearn을 사용하여 필기체 숫자 이미지 인식 프로그램 실행
 
+* 데이터 세트 읽기
 
+```Python
+import matplotlib.pyplot as plt
+from sklearn import datasets, metrics
+from sklearn.model_selection import train_test_split
 
+digits = datasets.load_digits()
+plt.imshow(digits.images[0], cmap = plt.cm.gray_r, interpolation = 'nearest')
+```
 
+![MNISTex](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/MNISTex.PNG) 
 
+* 이미지 평탄화
 
+```Python
+n_samples = len(digits.images)
+data = digits.images.reshape((n_samples, -1))
+```
+
+![Image2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Image2.PNG) 
+
+* 훈련 데이터와 테스트 데이터
+```Python
+X_train, X_test, y_train, y_test = train_test_split(data, digits.target, test_size = 0.2)
+```
+
+![DataSet](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/DataSet.PNG) 
+
+* 모델과 학습
+```Python
+from sklearn.neighbors import KNeighborsClassifier
+
+knn = KNeighborsClassifier(n_neighbors = 6)
+knn.fit(X_train, y_train)
+```
+
+![knnfit](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/knnfit.PNG) 
+
+* 예측
+```Python
+# 테스트 데이터 예측
+y_pred = knn.predict(X_test)
+
+# 정확도 계산
+scores = metrics.accuracy_score(y_test, y_pred)
+print(scores)
+
+# 0.95328142338042269
+
+# 이미지 출력을 위한 평탄화된 이미지를 다시 8 * 8 형상으로 변환
+plt.imshow(X_test[10].reshape(8, 8), cmap = plt.cm.gray_r, interpolation = 'nearest')
+
+y_pred = knn.predict([X_test[10]])
+# 입력은 항상 2차원 행렬 : why? 8 * 8의 격자 형태이기 때문
+
+print(y_pred)
+# [3]
+```
+
+![pred3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/pred3.PNG) 
+
+## 7절. 모델 평가 방법과 정확도
+#### 머신러닝 알고리즘의 성능 평가
+* 정확도
+* 혼동행렬
+
+#### 머신 러닝 응용 분야
+
+![usingML](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/usingML.PNG)
+
+* 복잡한 데이터들이 존재하는 분야
+* 데이터에 기반하여 결정을 내려야 하는 분야
+    
+* 구체적 응용 분야 예시
+    * 영상 인식, 음석 인식
+        * 프로그램으로 작성하기에 규칙과 공식이 너무 복잡한 경우
+
+    * 보안 시스템
+        * 침입을 탐지하거나 신용 카드 거래 기록에서 사기를 감지하는 경우
+        * 작업 규칙이 지속적으로 바뀌는 경우
+
+    * 주식 거래, 에너지 수요 예측, 쇼핑 추세 예측
+        * 데이터 특징이 지속적으로 변화하며 프로그램을 계속 변경해야 하는 상황인 경우
+    
+    * 전자 메일 메시지
+        * 스팸인지 아닌지 판단하기 위한 경우
+    
+    * 신용 카드 거래
+        * 허위인지 아닌지 판단하기 위한 경우
+    
+    * 광고
+        * 구매자가 클릭할 확률이 높은 광고가 무엇인지 파악하기 위한 경우
