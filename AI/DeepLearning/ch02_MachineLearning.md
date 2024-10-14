@@ -185,3 +185,102 @@
 
 #### 붓꽃 데이터 세트
 ![iris](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/iris.PNG)
+
+* 특징과 레이블의 구조
+![43p사진구조]()
+```Python
+from sklearn import datasets
+iris = datasets.load_iris()
+print(iris)
+```
+
+* 훈련 데이터와 테스트 데이터 분리
+```Python
+from sklearn.model_selection import train_test_split
+
+X = iris.data
+y = iris.target
+
+# (80 : 20)으로 분할
+X_train, X_test, y_Train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 4)
+
+print(X_train.shape)
+print(X_test.shape)
+
+# (120, 4)
+# (30, 4)
+```
+
+* 붗꽃 데이터 실습 결과
+```Python
+from sklearn.datasets import load_iris
+from sklearn.linear_model import Perceptron
+import numpy as np
+import matplotlib.pyplot as plt
+
+iris = load_iris()
+
+print(iris.feature_names)
+print(iris.target_names)
+
+X, y = iris.data, iris,target
+```
+
+![45p]()
+
+#### 모델 선택
+* K-Nearest Neighbor(KNN) 알고리즘은 모든 머신러닝 알고리즘 중에서도 가장 간단하고 이해하기 쉬운 분류 알고리즘
+* KNN은 학습 시에 교사가 존재하는 "지도 학습"
+
+ ![46p]() 
+
+* 학습
+```Python
+from sklearn.neighbors import KNeighborsClassifier
+
+knn = KNeighborsClassifier(n_neighbors = 6)
+knn.fit(X_train, y_train)
+```
+
+* 평가
+```Python
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn import metrics
+
+y_pred = knn.predict(X_train)
+scores = metrics.accuracy_score(y_testm y_pred)
+# 0.9666666666666666667
+```
+
+* 예측
+```Python
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn import metrics
+
+classes={0:'setosa',1:'versicolor',2:'virginica’}
+
+# 전혀 보지 못한 새로운 데이터 제시
+x_new = [[3, 4, 5, 2], [5, 4, 2, 2]]
+y_predict = knn.predict(x_new)
+
+print(classes[y_predict[0]])
+print(classes[y_predict[1]])
+
+# versicolor
+# setosa
+```
+
+* 모델 - perceptron
+* 
+
+
+
+
+
+
+
+
+
+
+
+
