@@ -11,9 +11,9 @@
 >
 > 6절. 데이터 세트(MNIST)
 >
-> 7절. 모델 평가 방법
+> 7절. 모델 평가 방법과 정확도
 > 
-> 8절. 모델 정확도
+> 8절. 머신러닝 응용 및 실용
 
 
 ## 1절. 머신러닝
@@ -397,9 +397,35 @@ print(y_pred)
 ## 7절. 모델 평가 방법과 정확도
 #### 머신러닝 알고리즘의 성능 평가
 * 정확도
+
+![AC](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/AC.PNG) 
+
 * 혼동행렬
 
-#### 머신 러닝 응용 분야
+![ConfusedM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/ConfusedM.PNG) 
+
+#### 정확도(Accuracy)
+* 불균형(Imbalanced)한 데이터에서는 Accuracy를 사용할 경우 잘못된 성능 예측 결과가 생길 가능성 존재
+* 모델 성능 평가
+    * Accuracy, Percision, Recall과 이를 이용한 F1 Score 등을 주로 사용
+
+#### 혼동 행렬(Confusion Matrix)
+* 앞에 True가 붙을 경우 예측과 실제가 동일
+* 앞에 False가 붙을 경우 예측과 실제가 상이
+
+|긍정 OR 부정|명칭|내용|
+|:--|:---:|:--|
+|긍정|TP(True Positive)|긍정을 긍정으로 올바르게 예측한 경우|
+|긍정|FN(False Negative)|긍정을 부정으로 잘못 예측한 경우|
+|부정|FP(False Positive)|부정을 긍정으로 잘못 예측한 경우|
+|부정|TN(True Nagative)|부정을 부정으로 올바르게 예측한 경우|
+
+![SetSpe](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/SetSpe.PNG)
+
+![ConfusionMatrix](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/ConfusionMatrix.PNG)
+
+## 8절. 머신러닝 응용 및 실용
+#### 머신러닝 응용 분야
 
 ![usingML](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/usingML.PNG)
 
@@ -409,19 +435,28 @@ print(y_pred)
 * 구체적 응용 분야 예시
     * 영상 인식, 음석 인식
         * 프로그램으로 작성하기에 규칙과 공식이 너무 복잡한 경우
-
     * 보안 시스템
         * 침입을 탐지하거나 신용 카드 거래 기록에서 사기를 감지하는 경우
         * 작업 규칙이 지속적으로 바뀌는 경우
-
     * 주식 거래, 에너지 수요 예측, 쇼핑 추세 예측
         * 데이터 특징이 지속적으로 변화하며 프로그램을 계속 변경해야 하는 상황인 경우
-    
     * 전자 메일 메시지
         * 스팸인지 아닌지 판단하기 위한 경우
-    
     * 신용 카드 거래
         * 허위인지 아닌지 판단하기 위한 경우
-    
     * 광고
         * 구매자가 클릭할 확률이 높은 광고가 무엇인지 파악하기 위한 경우
+
+#### 머신러닝의 실용적 가치
+* 프로그래밍 시간 단축 가능
+* 맞춤형 제품의 쉬운 개발
+* 프로그래머로 시도할 알고리즘이 떠오르지 않는 문제 해결 가능
+
+#### 데이터 라벨링(Data labeling)
+* 주어진 데이터에 라벨을 붙이는 작업
+* 데이터 라벨러라는 직업의 탄생
+* 머신러닝 시스템이 강아지와 고양이를 구별시키는 경우
+    * 수천 장의 사진들 필요
+    * 각각 강아지와 고양이로 구분
+    * 사진에 라벨 필요
+    * AI가 라벨은 할 수 없기에 구분 작업은 사람의 도움 필요
