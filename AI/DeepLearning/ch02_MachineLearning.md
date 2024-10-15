@@ -424,6 +424,100 @@ print(y_pred)
 
 ![ConfusionMatrix](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/ConfusionMatrix.PNG)
 
+* Accuracy(정확성) = (TP + TN) / (TP + FN + FP + TN)
+* Precision(정밀도) = TP / TP + FP
+* Sensitivity(민감도) = Recall = TP / TP + FN
+* Specify(특이도) = TN / TN + FP
+
+##### F1 score
+* $\frac{2 * Precision * Recall}{Precision + Recall}$
+
+![F1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/F1.PNG)
+
+##### ROC Curve
+
+![ROC](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/ROC.PNG)
+
+#### 실습(1)
+```Python
+from sklearn.metrics import accuracy_score 
+from sklearn.metrics import confusion_matrix
+
+label = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2] 
+predict = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 0]
+
+print(confusion_matrix(label, predict))
+```
+
+* 0번 클래스
+    * 11개 보유
+        * 0 - 11개
+        * 1 - 0개
+        * 2 - 0개
+
+* 1번 클래스
+    * 4개 보유
+        * 0 - 3개
+        * 1 - 1개
+        * 2 - 0개
+
+* 2번 클래스
+    * 4개 보유
+        * 0 - 1개
+        * 1 - 1개
+        * 2 - 2개
+
+#### 실습(2)
+```Python
+import seaborn as sns
+
+label = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2] 
+predict = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 0]
+
+cmatrix = confusion_matrix(label, predict) 
+
+sns.set(rc = {'figure.figsize' : (6, 5)})
+sns.heatmap(data = cmatrix, annot = True)
+```
+
+![CMP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/CMP.PNG)
+
+#### 혼동 행렬 출력
+```Python
+import matplotlib.pyplot as plt
+from sklearn.metrics import datasets, metrics
+from sklearn.model_selection import train_test_split
+
+digits = datasets.load_digits()
+n_samples = len(digits.images)
+data = digits.images.reshape((n_samples, -1))
+
+from sklearn.neighbors import KNeighborsClassifier
+knn = KNeighborsClassifier(n_neighbors = 6)
+
+X_train, X_test, y_train, y_test = train_test_split(data, digits.target, tets_size = 0.2)
+
+knn.fit(X_train, y_train)
+y_pred = knn.predict(X_test)
+
+disp = metrics.plot_confusion_matrix(knn, X_test, y_test)
+plt.show()
+```
+
+![CMPring](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/CMPring.PNG)
+
+#### 분류 리포트
+* 사이킷런에서 사용
+* 분류 리포트를 생성하는 기능
+* 대표적인 성능 척도들 계산
+* 변수나 수식의 값을 문자열로 통합
+
+```Python
+print(f"{metrics.classification_report(y_test, y_pred)}\n")
+```
+
+![RP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/RP.PNG)
+
 ## 8절. 머신러닝 응용 및 실용
 #### 머신러닝 응용 분야
 
