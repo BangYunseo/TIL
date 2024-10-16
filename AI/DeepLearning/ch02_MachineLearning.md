@@ -14,6 +14,8 @@
 > 7절. 모델 평가 방법과 정확도
 > 
 > 8절. 머신러닝 응용 및 실용
+>
+> 9절. 과제 해결
 
 
 ## 1절. 머신러닝
@@ -554,3 +556,98 @@ print(f"{metrics.classification_report(y_test, y_pred)}\n")
     * 각각 강아지와 고양이로 구분
     * 사진에 라벨 필요
     * AI가 라벨은 할 수 없기에 구분 작업은 사람의 도움 필요
+
+## 9절. 과제 해결
+#### 사용 모듈(라이브러리)
+```Python
+import numpy as np
+```
+#### Q1) Iris 데이터를 이용하여 머신러닝 방법으로 예측한 것을 비교해라. 단, 같은 random seed와 같은 테스트 데이터 셋으로 naïve bayes, decision tree, adaboost을 비교해라.
+* Naïve bayes (from sklearn.naive_bayes import GaussianNB)
+    * GaussianNB implements the Gaussian Naive Bayes algorithm for classification. The likelihood of the features is assumed to be Gaussian:Decision tree from sklearn.tree import DecisionTreeClas sifier
+* Decision tree from sklearn.tree import DecisionTreeClassifier
+* AdaBoost (from sklearn.ensemble import AdaBoostClassifier)
+    * n_estimators : 부스팅 종료를 위한 위한 맥시멈 추정값
+
+* 사용 데이터 셋 라이브러리
+
+```Python
+from sklearn import datasets 
+iris = datasets.load_iris()
+```
+
+#### 방법 1) Class 활용
+```Python
+from sklearn import datasets, metrics
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import AdaBoostClassifier
+import matplotlib.pyplot as plt
+
+class ModelComparator:
+    model = [GaussianNB(), DecisionTreeClassifier(), AdaBoostClassifier()]
+
+    def __init__(self, X, y):
+        self.X_train, self.X_test, self.y_train,self.y_test = train_test_split(X,y,test_size=0.2,random_state=4)
+    
+    def compare_model(self):
+
+        for m in self.model:
+            m.fit(self.X_train, self.y_train)
+            print("Model: ", m, ", Score:", metrics.accuracy_score(self.y_test, m.predict(self.X_test)))
+
+# iris data 
+iris = datasets.load_iris()
+
+X = iris.data
+y = iris.target
+
+irisCompare = ModelComparator(X, y)
+irisCompare.compare_model()
+
+
+# digit  data
+digit = datasets.load_digits()
+X = digit.data
+y = digit.target
+
+digitCompare = ModelComparator(X, y)
+digitCompare.compare_model()
+```
+
+#### 방법 2) 함수 활용
+
+```Python
+# 데이터 분할
+def load_data():
+    iris = datasets.load_iris()
+    X = iris.data
+    y = iris.target
+    return train_test_split(X, y, test_size=0.2, random_state=4)
+
+# 모델 생성 및 학습
+def model_prediction(model, X_train, X_test, y_train, y_test, title):
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    score = metrics.accuracy_score(y_test, y_pred)
+    print(title, score)
+
+def main():
+    X_train,X_test,y_train,y_test = load_data()
+    
+    model = KNeighborsClassifier(n_neighbors = 6)
+    model_prediction(model, X_train,X_test,y_train,y_test, "Result Of KNeighborsClassifier():")
+
+    model = GaussianNB()
+    model_prediction(model, X_train,X_test,y_train,y_test, "Result Of GaussianNB():")
+
+    model = DecisionTreeClassifier()
+    model_prediction(model, X_train,X_test,y_train,y_test, "Result Of DecisionTreeClassifier():")
+    
+    model = AdaBoostClassifier(algorithm = 'SAMME')
+    model_prediction(model, X_train,X_test,y_train,y_test, "Result Of AdaBoost():")
+
+if __name__ == "__main__":
+    main()
+```

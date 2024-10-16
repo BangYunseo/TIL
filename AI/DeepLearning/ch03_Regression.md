@@ -1,4 +1,4 @@
-#  Chapter 2. 회귀(Regression)
+#  Chapter 3. 회귀(Regression)
 
 > 1절. 회귀
 >
@@ -63,6 +63,7 @@ plt.show()
 ![RES](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/RES.PNG)
 
 * 최선의 것은 데이터 간의 오차가 작은 경우
+
 ![RES2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/RES2.PNG)
 
 #### 손실 함수(Loss Function)
@@ -215,14 +216,16 @@ reg.predict([[5]])
 # array([8.])
 ```
 
-##### 그래프 생성(d여기부터 다시 수정)
+##### 그래프 생성
 ```Python
-# 학습 데이터와 y 값을 산포도로 그린다.
+# 학습 데이터와 y 값을 산포도화
 plt.scatter(X, y, color='black')
-# 학습 데이터를 입력으로 하여 예측값을 계산한다.
+
+# 예측값을 계산
 y_pred = reg.predict(X)
-# 학습 데이터와 예측값으로 선그래프로 그린다.
-# 계산된 기울기와 y 절편을 가지는 직선이 그려진다.
+
+# 학습 데이터와 예측값을 선그래프로
+# 계산된 기울기와 y 절편을 가지는 직선
 plt.plot(X, y_pred, color='blue', linewidth=3)
 plt.show()
 ```
@@ -231,6 +234,212 @@ plt.show()
 
 ![RES](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/RES.PNG)
 
-## 3절. 과잉 적합과 과소 적합
+#### 선형 회귀 실습
+* 인간의 키와 몸무게는 어느 정도 비례할 것으로 예상
+* 아래의 데이터가 있을 경우 선형 회귀를 이용하여 학습시켜 키가 165cm일 때의 예측값 계산
 
-## 4절. 회귀 구현
+![RES3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/RES3.PNG)
+
+##### 정답 코드
+```Python
+import matplotlib.pylab as plt
+from sklearn import linear_model 
+
+reg = linear_model.LinearRegression() 
+
+X = [[174], [152], [138], [128], [186]]
+y = [71, 55, 46, 38, 88] 
+
+# 학습
+reg.fit(X, y)
+
+print(reg.predict([[165]]))
+
+# 학습 데이터와 y값 산포도화
+plt.scatter(X, y, color='black')
+
+# 학습 데이터를 입력으로 하여 예측값을 계산
+y_pred = reg.predict(X)
+
+# 학습 데이터와 예측값으로 선그래프로
+# 계산된 기울기와 y 절편을 가지는 직선
+plt.plot(X, y_pred, color='blue', linewidth=3)
+plt.show()
+```
+
+![RES4](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/RES4.PNG)
+
+#### 선형 회귀 예제 - 당뇨병
+* sklearn 라이브러리에 기본적으로 포함된 당뇨병 환자들의 데이터 사용
+
+```Python
+import matplotlib.pylab as plt 
+import numpy as np
+from sklearn.linear_model import LinearRegression 
+from sklearn import datasets
+
+# 당뇨병 데이터 세트
+diabetes_X, diabetes_y = datasets.load_diabetes(return_X_y=True)
+
+# 하나의 특징(BMI)으로 2차원 배열화
+# BMI 특징의 인덱스가 2 
+diabetes_X_new = diabetes_X[:, np.newaxis, 2]
+
+# 학습 데이터와 테스트 데이터를 분리 
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(diabetes_X_new, diabetes_y, test_size = 0.1, random_state = 0) 
+regr = linear_model.LinearRegression()
+regr.fit(X_train, y_train)
+
+# 테스트 데이터로 예측
+y_pred = model.predict(X_test) 
+
+# 실제 데이터와 예측 데이터를 비교
+plt.plot(y_test, y_pred, '.')
+plt.xlim([-0.13,0.15])
+plt.scatter(X_test, y_test,  color ='black')
+plt.plot(X_test, y_pred, color ='blue', linewidth = 3)
+```
+
+![RES6](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/RES6.PNG)
+
+## 3절. 과잉 적합과 과소 적합
+#### 과잉 적합(overfitting)
+* 학습하는 데이터는 성능이 뛰어나지만 새로운 데이터(일반화)에 대해서는  성능이 잘 나오지 않는 모델을 생성하는 것
+
+#### 과소 적합(underfitting)
+* 학습 데이터에서도 성능이 좋지 않은 경우
+* 이 경우에는 모델 자체가 적합 지 않은 경우 존재 
+* 더 나은 모델 탐색 필요
+
+#### 과잉 적합과 과소 적합 비교
+
+![OU](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/OU.PNG)
+
+* 1차 : 과소 적합
+    * 모델의 용량이 작아 오차가 클 수밖에 없는 현상
+* 2차, 3차, 4차의 순서가 지날 수록 오차가 감소하는 모습
+
+
+
+* 12차 : 과잉 적합
+    * 다항식 곡선을 채택한다면 훈련집합에 대해 거의 완벽하게 근사화
+    * '새로운' 데이터를 예측한다면 큰 문제가 발생
+        * $x_0$에서 빨간 막대 근방을 예측해야 하지만 빨간 점을 예측하는 상황이 발생할 수 있음
+    * 용량이 크기 때문에 학습 과정에서 잡음까지 수용(과잉 적합 현상)
+    * 적절한 용량의 모델을 선택하는 모델 선택 작업 필요
+
+![set12](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/set12.PNG)
+
+* 그래프에서 보는 과잉 적합과 과소 적합의 비교
+
+![COU](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/COU.PNG)
+
+## 4절. 로지스틱 회귀
+#### 선형 회귀 vs 로지스틱 회귀(Logistic Regression)
+* 선형 회귀
+    * MSE(Mean Squared Error)라는 Loss 함수 사용
+        * 직선과 데이터의 차이를 제곱한 값의 평균
+        * 즉, 분산을 최소화 시키는 방향으로 학습
+
+* 로지스틱 회귀
+    * 분류 모델은 이진 분류 모델
+    * 클래스가 2개 있을 경우에만 사용 가능
+    * 선형 회귀 다음으로 간단한 분류, 회귀 알고리즘 
+    * 데이트 샘플에 맞는 최적의 로지스틱 함수 계산
+        * 이를 통해(데이터 특성으로) 예측 값 추출
+    * 선형 회귀 모델 => 연속성
+        * 선형 회귀의 출력값 분류 방법
+            * 전체의 절반을 넘었으면 반올림 후 출력을 1로 설정
+            * 전체의 절반을 넘기지 못했으면 출력을 0으로 설정
+
+![Logistic](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/Logistic.PNG)
+
+* 직선의 중간쯤을 넘어가면 불합격
+* 직선의 중간쯤을 넘어가면 합격
+
+![Logistic2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/Logistic2.PNG)
+
+* 데이터($y$)와 직선($^y$)간의 평균을 최소화하기 위한 직선의 기울기 움직임
+
+![Logistic3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/Logistic3.PNG)
+
+* 기울기 $y = wx + b$ 에서 $w$의 변화에 따른 0.5 의 기준 변화
+    * 함숫값이 0.5를 지나는 구간의 변경
+        * 이에 다른 데이터들의 정답 여부 변경
+    * 원래 정답이었으나 기준 선이 오른쪽으로 움직여서 오답
+
+#### 선형 회귀와 로지스틱 회귀의 비교
+
+![LL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/LL.PNG)
+
+#### 시그모이드 함수(Sigmoid)
+
+![Sig](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/Sig.PNG)
+
+* Logistic Regression에서는 Linear Regression의 결과값을 인풋값으로 사용
+    * 시그모이드 함수는 곧 베이즈 정리
+    *  기존에 사용했던 선형회귀 모델의 출력을 그대로 시그모이드 함수의 입력으로 넣으면 0 OR 1의 값을 출력
+    * 위의 값으로 예측 수행
+    * 기존의 출력은 $y = wx + b$
+    * 위 출력을 시그모이드 함수 $sigmoid(z)$의 입력으로 넣을 경우
+        * y = ![input](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/input.PNG)
+        * 위 값은 0 또는 1에 가까운 분류값
+
+#### 가장 좋은 가중치 W의 값
+* Cost Function 초기화
+* Linear Regression은 MSE로 최솟값 가능
+
+![Sig2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/Sig2.PNG)
+
+* 하지만 Logistics Regression은 불가
+    * Log Loss(Cross Entropy 사용)
+
+#### Cross Entropy Loss 함수
+* 로지스틱 모델의 예측 분포는 $sigmoid(wx + b)$
+
+![CE](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/CE.PNG)
+
+![CEL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/CEL.PNG)
+
+#### 로지스틱 회귀
+* 장점
+    * Cross Entropy Loss 함수를 적용한 알고리즘
+    * Cross Entropy Loss 함수를 가장 처음으로 이해하기 좋은 알고리즘
+    * 선형적인 문제를 간단하게 풀 때 매우 효과적
+    * 전세계적으로 가장 사랑받는 머신러닝 알고리즘
+
+* 단점
+    * 이진 분류만 가능(클래스가 2개 있을 때만 사용 가능)
+    * 복잡한 비선형 문제를 해결하는데 큰 어려움
+    * 다중공선성과 같은 문제 자체적 해결 불가
+
+#### 예제 - 유방암 분류
+```Python
+import pandas as pd 
+from sklearn import datasets
+from sklearn.linear_model import LogisticRegression 
+
+# 0 : 양성 / 1 : 악성
+cancer_ds = datasets.load_breast_cancer()
+
+clf = LogisticRegression(multi_class = 'ovr', solver='liblinear') #one-vs-rest (OvR)
+clf.fit(cancer_ds.data , cancer_ds.target)
+clf.predict(cancer_ds.data)- cancer_ds.target
+
+clf.score(cancer_ds.data, cancer_ds.target)
+```
+
+#### 요약
+* 지도 학습에는 회귀(regression)와 분류(classification) 존재
+* 회귀
+    * 연속 적인 값을 예측
+    * 손실 함수를 최소로 하는 직선의 기울기와 절편값을 계산
+* 분류
+    * 입력을 어떤 카테고리 중의 하나로 예측
+* 선형 회귀는 입력 데이터를 가장 잘 설명하는 직선의 기울기와 절편값을 찾는 문제
+* 손실 함수(loss function)
+    * 실제 데이터와 직선 간의 차이를 제곱한 값
+    * 값이 작아지는 방향을 알려면 일반적으로 경사 하강법(gradient 
+descent method)과 같은 방법 사용
