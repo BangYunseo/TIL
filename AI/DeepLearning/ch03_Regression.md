@@ -58,8 +58,6 @@ plt.plot(X, y, 'o')
 plt.show()
 ```
 
-![Data](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/Data.PNG)
-
 ![RES](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/RES.PNG)
 
 * 최선의 것은 데이터 간의 오차가 작은 경우
@@ -118,8 +116,6 @@ plt.show()
 ```
 
 ![GDM2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/GDM2.PNG)
-
-![GDM3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/GDM3.PNG)
 
 #### 학습률
 
