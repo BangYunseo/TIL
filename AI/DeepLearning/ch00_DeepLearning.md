@@ -7,7 +7,7 @@
 
 
 ## 1절. 기계학습과 딥러닝
-#### 인공지능, 기계학습 딥러닝
+#### 인공지능, 기계학습, 딥러닝
 * 인공지능
 
 ![AI](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/AI.PNG)
