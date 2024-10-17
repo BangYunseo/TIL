@@ -22,11 +22,6 @@
 
 ![AF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/AF.PNG)
 
-#### 선형 레이어
-* 선형 레이어는 아무리 많아도 하나의 레이어로 대체 가능
-
-![LL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/LL.PNG)
-
 #### 계단 함수
 * 입력 신호의 총합이 0을 넘으면 1을, 그렇지 않으면 0을 출력하는 함수
 
@@ -199,10 +194,6 @@ test()
 
 ![LF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/LF.PNG)
 
-#### 가중치 == 다이얼
-
-![W](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/W.PNG)
-
 #### 평균 제곱 오차(MSE)
 *  예측값과 정답 간의 평균 제곱 오차
 
@@ -217,9 +208,7 @@ test()
 * 역전파 알고리즘
   * 신경망 학습 문제를 최적화 문제(optimization)로 접근
   * 손실함수 값(오차값)을 최소화하는 가중치 탐색
-      
-![GD](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/GD.PNG)
-
+ 
 ![GD2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/GD2.PNG)
 
 * 기울기 : 손실함수를 가중치로 미분한 값
@@ -259,10 +248,6 @@ print("최소값 = ", x)
 # 손실함수값( 3.54432 )= 10.2962842624
 # 손실함수값( 3.3265919999999998 )= 10.106662334464
 # 손실함수값( 3.1959551999999998 )= 10.03839844040704
-# 손실함수값( 3.11757312 )= 10.013823438546535
-# 손실함수값( 3.070543872 )= 10.004976437876753
-# 손실함수값( 3.0423263232 )= 10.001791517635631
-# 손실함수값( 3.02539579392 )= 10.000644946348826
 # ...
 # 손실함수값( 3.0000000000000004 )= 10.0
 # 손실함수값( 3.0000000000000004 )= 10.0
@@ -445,6 +430,7 @@ def fit():
    W1 += -learning_rate*np.dot(layer0.T, layer1_delta) # 
    B2 += -learning_rate*np.sum(layer2_delta, axis=0) # ⑤
    B1 += -learning_rate*np.sum(layer1_delta, axis=0) #
+
 def test():
  for x, y in zip(X, T):
    x = np.reshape(x, (1, -1))
