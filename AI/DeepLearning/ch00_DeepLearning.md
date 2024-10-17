@@ -7,16 +7,10 @@
 
 
 ## 1절. 기계학습과 딥러닝
-#### 인공지능, 기계학습 딥러닝
-* 인공지능
-
-![AI](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/AI.PNG)
-
+#### 인공지능, 기계학습, 딥러닝
 * 딥러닝 vs 기계학습 vs 인공지능
 
 ![CompareAI](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/CompareAI.PNG)
-
-#### 인공지능
 
 ![AI2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/AI2.PNG)
 
@@ -66,16 +60,8 @@
 ## 2절. 딥러닝의 예시
 #### 지도 학습 예시
 * MNIST
-
-![MNIST](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/MNIST.PNG)
-
 * Fashion MNIST
-
-![Fashion_MNIST](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/MNIST.PNG)
-
 * QuickDrawing
-
-![QuickDrawing](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/QuickDrawing.PNG)
 
 #### 비지도 학습 예시
 * 비지도 학습
@@ -83,20 +69,10 @@
 * GAN(Generative Adversarial Networks)
     * 최대한 진짜 같은 데이터를 생성하려는 생성 모델과 진짜와 가짜를 판별하려는 분류 모델이 각각 존재하여 서로 적대적으로 학습
 
-![GAN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/GAN.PNG)
-
 #### 강화 학습 예시
 * Random Face Generator
-
-![RFG](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/RFG.PNG)
-
 * Pac-Man
-
-![PM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/PM.PNG)
-
 * Break-Out
-
-![BO](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/BO.PNG)
 
 #### 강화 학습 과정
 
@@ -156,5 +132,3 @@
 
 #### 생성형 AI 예시
 * NVIDIA Picasso
-
-![NAI](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/NAI.PNG)
