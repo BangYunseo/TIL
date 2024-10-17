@@ -430,16 +430,3 @@ clf.predict(cancer_ds.data)- cancer_ds.target
 
 clf.score(cancer_ds.data, cancer_ds.target)
 ```
-
-#### 요약
-* 지도 학습에는 회귀(regression)와 분류(classification) 존재
-* 회귀
-    * 연속 적인 값을 예측
-    * 손실 함수를 최소로 하는 직선의 기울기와 절편값을 계산
-* 분류
-    * 입력을 어떤 카테고리 중의 하나로 예측
-* 선형 회귀는 입력 데이터를 가장 잘 설명하는 직선의 기울기와 절편값을 찾는 문제
-* 손실 함수(loss function)
-    * 실제 데이터와 직선 간의 차이를 제곱한 값
-    * 값이 작아지는 방향을 알려면 일반적으로 경사 하강법(gradient 
-descent method)과 같은 방법 사용

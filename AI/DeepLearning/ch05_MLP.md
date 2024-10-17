@@ -4,7 +4,7 @@
 >
 > 2절. 경사하강법
 > 
-
+> 3절. 학습률
 
 ## 1절. MLP
 #### MLP(Multilayer Perceptron)
@@ -114,21 +114,104 @@ plt.show()
 
 ![tFG](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/tFG.PNG)
 
-(여기부터 수정)
 ##### ReLU 함수
 ```Python
 import numpy as np 
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
 
-x = np.linspace(-np.pi, np.pi, 60) 
-y = np.tanh(x) 
+def relu(x):
+  return np.maximum(x, 0) 
+
+x = np.arange(-10.0, 10.0, 0.1)
+y = relu(x) 
 plt.plot(x, y) 
 plt.show() 
 ```
 
-![tFG](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/tFG.PNG)
+![ReLUG](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/ReLUG.PNG)
 
 #### MLP의 순방향 패스
+* 입력 신호가 입력층 유닛에 가해지고, 이들 입력 신호가 은닉층을 통해 출력층으로 전파되는 과정
+
+![MLPP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/MLPP.PNG)
+
+#### 순방향 패스 계산 단계
+
+![MLPex](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/MLPex.PNG)
+
+![MLPPro](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/MLPPro.PNG)
+
+#### 순방향 패스 코드
+```Python
+import numpy as np 
+
+# 시그모이드  함수
+def actf(x):
+  return 1 / (1 + np.exp(-x)) 
+  
+  # 시그모이드 함수 미분치
+def actf_deriv(x): 
+  return x * (1 - x)
+
+# 입력유닛의  개수, 은닉유닛의  개수, 출력유닛의  개수 
+inputs, hiddens, outputs = 2, 2, 1
+learning_rate = 0.2 
+  
+# 훈련 샘플과 정답
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]]) 
+T = np.array([[0], [1], [1], [0]])
+
+W1 = np.array([[0.10, 0.20], [0.30, 0.40]])
+W2 = np.array([[0.50], [0.60]]) 
+B1 = np.array([0.1, 0.2])
+B2 = np.array([0.3])   
+
+# 순방향 전파 계산
+def predict(x): 
+  layer0 = x                     # 입력을 layer0에 대입
+  Z1 = np.dot(layer0, W1)+B1     # 행렬 곱 계산
+  layer1 = actf(Z1)              # 활성화 함수 적용
+  Z2 = np.dot(layer1, W2)+B2     # 행렬 곱 계산 
+  layer2 = actf(Z2)              # 활성화 함수 적용
+  return layer0, layer1, layer2
+
+def test():
+  for x, y in zip(X, T):
+    x = np.reshape(x, (1, -1))   # x를 2차원 행렬로, 입력은 2차원
+
+    layer0, layer1, layer2 = predict(x) 
+    print(x, y, layer2)
+test() 
+
+# [[0 0]] [1] [[0.70938314]] 
+# [[0 1]] [0] [[0.72844306]] 
+# [[1 0]] [0] [[0.71791234]] 
+# [[1 1]] [1] [[0.73598705]]
+
+# 학습이 없으므로 난수만 출력
+```
+
+#### 손실 함수 계산
+* 손실 함수(Loss Function)
+  * 오차 계산 함수
+  * 신경망에서 학습의 성과를 나타내는 지표
+  * 신경망에서 학습할 때 실제 출력과 원하는 출력 사이의 오차 이용
+
+![LF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/LF.PNG)
+
+#### 가중치 == 다이얼
+
+![W](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/W.PNG)
+
+#### 평균 제곱 오차(MSE)
+*  예측값과 정답 간의 평균 제곱 오차
+
+![MSE](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/MSE.PNG)
+
+* 예측값과 정답의 차이가 큰 경우
+
+![MSE2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/MSE2.PNG)
+
 ## 2절. 경사하강법
 #### 경사하강법
 * 역전파 알고리즘
@@ -180,21 +263,7 @@ print("최소값 = ", x)
 # 손실함수값( 3.070543872 )= 10.004976437876753
 # 손실함수값( 3.0423263232 )= 10.001791517635631
 # 손실함수값( 3.02539579392 )= 10.000644946348826
-# 손실함수값( 3.015237476352 )= 10.000232180685577
-# 손실함수값( 3.0091424858112 )= 10.000083585046807
-# 손실함수값( 3.00548549148672 )= 10.000030090616852
-# 손실함수값( 3.003291294892032 )= 10.000010832622067
-# 손실함수값( 3.0019747769352194 )= 10.000003899743945
-# 손실함수값( 3.0011848661611316 )= 10.00000140390782
-# 손실함수값( 3.000710919696679 )= 10.000000505406815
-# 손실함수값( 3.0004265518180073 )= 10.000000181946453
-# 손실함수값( 3.0002559310908046 )= 10.000000065500723
-# 손실함수값( 3.0001535586544827 )= 10.00000002358026
-# 손실함수값( 3.0000921351926895 )= 10.000000008488893
-# 손실함수값( 3.0000552811156136 )= 10.000000003056002
-# 손실함수값( 3.000033168669368 )= 10.00000000110016
-# 손실함수값( 3.000019901201621 )= 10.000000000396058
-# . ..
+# ...
 # 손실함수값( 3.0000000000000004 )= 10.0
 # 손실함수값( 3.0000000000000004 )= 10.0
 # 손실함수값( 3.0000000000000004 )= 10.0
@@ -236,7 +305,7 @@ U = -2 * X
 V = -2 * Y
 
 plt.figure()
-Q = plt.quiver(X, Y, U, V, units = 'width)
+Q = plt.quiver(X, Y, U, V, units = 'width')
 plt.show()
 ```
 
@@ -278,10 +347,40 @@ plt.show()
 ![HL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/HL.PNG)
 
 #### 델타
+
+![theta](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/theta.PNG)
 * 여러 문헌에서 델타라는 이름으로 불리는 값
+* 가중치가 보는 유닛 k에서의 "오차"
+* 신경망을 통해 역전파
 
-(중간부분 학습 후 입력)
+#### 역전파 알고리즘 정리
+* 그래디언트는 델타의 유닛 출력값을 곱하면 계산 가능
+* 델타는 신경망의 레이어에 따라 아래와 같이 구분해서 계산 가능
 
+![theta2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/theta2.PNG)
+
+#### 역전파 알고리즘 계산
+
+![APRO](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/APRO.PNG)
+
+![APRO2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/APRO2.PNG)
+
+#### 경사 하강법의 적용
+
+![aaa](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/aaa.PNG)
+
+#### 은닉층 -> 출력층의 가중치와 바이어스
+
+![HPWB](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/HPWB.PNG)
+
+#### 입력층 -> 은닉층의 가중치와 바이어스
+
+![IHWB](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/IHWB.PNG)
+
+#### 손실함수 평가
+* 오차가 크게 줄어듦
+
+![review](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/review.PNG)
 
 #### MLP 구현
 ```Python
@@ -362,3 +461,134 @@ test()
 # [[1 0]] [0] [[0.00836107]]
 # [[1 1]] [1] [[0.98974873]]
 ```
+
+## 3절. 학습률
+#### 가중치를 변경하는 2가지 방법
+* 온라인 학습(Online Learning)
+* 확률적 경사 하강법(Stochastic Gradient)
+
+![Learning](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/Learning.PNG)
+
+##### 풀 배치 학습(Full Batch Learning)
+
+![FBL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/FBL.PNG)
+
+##### 온라인 학습(확률적 경사 하강법)
+
+![SGL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/SGL.PNG)
+
+#### 미니 배치 학습
+* 온라인 학습과 풀 배치 학습의 중간 방법
+
+![MBL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/FBL.PNG)
+
+#### 방법들의 비교
+
+![MP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/MP.PNG)
+
+#### 실습 - 미니 배치 학습
+```Python
+import numpy as np 
+import tensorflow as tf
+
+# 학습 데이터와 테스트 데이터로 분리
+(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
+
+data_size = x_train.shape[0] 
+batch_size = 12               # 배치 크기
+
+selected = np.random.choice(data_size, batch_size)  # 배치 크기만큼 랜덤 선택
+print(selected)
+x_batch = x_train[selected] 
+y_batch = y_train[selected]
+
+# [58298  3085 27743 33570 35343 47286 18267 25804  4632 10890 44164 18822]
+```
+
+#### 행렬로 미니 배치 구현
+
+![IMB](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/IMB.PNG)
+
+#### 각 샘플 별 출력 계산
+
+![Sample](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/Sample.PNG)
+
+#### 미니 배치 구현
+```Python
+import numpy as np 
+
+# 시그모이드  함수
+def actf(x):
+  return 1 / (1 + np.exp(-x)) 
+  
+# 시그모이드  함수의  미분치
+def actf_deriv(x): 
+  return x * (1 - x)
+
+# 입력유닛의  개수, 은닉유닛의  개수, 출력유닛의  개수 
+inputs, hiddens, outputs = 2, 2, 1
+learning_rate = 0.5 
+
+# 훈련 입력과 출력
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]]) 
+T = np.array([[0], [1], [1], [0]])
+
+# 가중치를 –1.0에서 1.0 사이의 난수로 초기화 
+W1 = 2 * np.random.random((inputs, hiddens)) - 1   
+W2 = 2 * np.random.random((hiddens, outputs)) - 1  
+B1 = np.zeros(hiddens)   
+B2 = np.zeros(outputs) 
+
+# 순방향 전파 계산 
+def predict(x):
+  layer0 = x
+  Z1 = np.dot(layer0, W1)+B1        # 행렬 곱 계산 
+  layer1 = actf(Z1)                 # 활성화 함수 적용
+  Z2 = np.dot(layer1, W2)+B2        # 행렬 곱 계산
+  layer2 = actf(Z2)                 # 활성화 함수 적용
+  return layer0, layer1, layer2     # 역방향 전파 계산
+
+def fit():
+  global W1, W2, B1, B2 
+  for i in range(60000):
+    layer0, layer1, layer2 = predict(X)
+    layer2_error = layer2-T
+
+    layer2_delta = layer2_error*actf_deriv(layer2)
+    layer1_error = np.dot(layer2_delta, W2.T)
+    layer1_delta = layer1_error*actf_deriv(layer1)
+
+    W2 += -learning_rate * np.dot(layer1.T, layer2_delta) / 4.0 
+    W1 += -learning_rate * np.dot(layer0.T, layer1_delta) / 4.0 
+    B2 += -learning_rate * np.sum(layer2_delta, axis = 0) / 4.0 
+    B1 += -learning_rate * np.sum(layer1_delta, axis = 0) / 4.0
+    # 바이어스는 입력이 1이므로 단순히 합만 계산
+
+def test():
+  for x, y in zip(X, T):
+    x = np.reshape(x, (1, -1))            # 2차원 형태
+    layer0, layer1, layer2 = predict(x) 
+    print(x, y, layer2)
+
+fit() 
+test()
+
+# [[0 0]] [0] [[0.0124954]] 
+# [[0 1]] [1] [[0.98683933]] 
+# [[1 0]] [1] [[0.9869228]] 
+# [[1 1]] [0] [[0.01616628]]
+```
+
+#### 학습률
+* 한 번에 가중치를 얼마나 변경할 것인가 표현
+* 모델의 성능에 심대한 영향을 끼치지만 설정하기 매우 어려움
+
+![LR](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/LR.PNG)
+
+![LR2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/LR2.PNG)
+
+
+#### 학습률을 설정하는 방법
+
+##### 모멘텀(momentum)
+* 운동량으로 학습 속도를 가속시킬 목적으로 사용
