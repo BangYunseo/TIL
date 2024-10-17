@@ -18,6 +18,41 @@
 
 ![AC](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/AC.PNG)
 
+#### 일반적으로 많이 사용되는 활성화 함수
+
+![AF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/AF.PNG)
+
+#### 선형 레이어
+* 선형 레이어는 아무리 많아도 하나의 레이어로 대체 가능
+
+![LL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/LL.PNG)
+
+#### 계단 함수
+* 입력 신호의 총합이 0을 넘으면 1을, 그렇지 않으면 0을 출력하는 함수
+
+![USF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/USF.PNG)
+
+#### 시그모이드 함수
+* 1980년대부터 사용된 전통적인 활성화 함수
+* S자 형태의 함수
+
+![SF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/SF.PNG)
+
+#### ReLU 함수(Rectifed Linear Unit Function)
+* 최근에 가장 인기있는 활성화 함수
+* 입력이 0을 넘으면 그대로 출력하고, 그렇지 않으면 0 출력
+
+![RF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/RF.PNG)
+
+#### tanh 함수
+* numpy에서 제공하고 있는 함수
+ * 별도의 함수 작성은 필요 X
+* 시그모이드 함수와 매우 비슷하지만 출력값이 -1 ~ 1까지
+
+![tF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/tF.PNG)
+
+#### 실습 - 활성화 함수 구현
+
 ## 2절. 경사하강법
 #### 경사하강법
 * 역전파 알고리즘
