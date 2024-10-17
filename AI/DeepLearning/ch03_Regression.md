@@ -374,7 +374,7 @@ plt.plot(X_test, y_pred, color ='blue', linewidth = 3)
     * 위의 값으로 예측 수행
     * 기존의 출력은 $y = wx + b$
     * 위 출력을 시그모이드 함수 $sigmoid(z)$의 입력으로 넣을 경우
-        * y = ![input](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/input.PNG)
+        * y = $\frac{1}{1+e^{-(wx+b)}}$
         * 위 값은 0 또는 1에 가까운 분류값
 
 #### 가장 좋은 가중치 W의 값
