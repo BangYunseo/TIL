@@ -27,12 +27,6 @@
 |전통적인 프로그래밍|데이터, 코드|
 |머신러닝|데이터, 출력값|
 
-#### 인공지능, 머신러닝, 딥러닝
-![AI](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/AI.PNG)
-
-#### 머신러닝의 역사
-![HOM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/HOM.PNG)
-
 #### 머신러닝
 * 입력을 받아 출력하는 함수 $y = f(x)$의 학습(함수 근사)
 
@@ -41,8 +35,6 @@
 * 종류
 
 ![MT](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/MT.PNG)
-
-![MT2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/MT2.PNG)
 
 ![MT3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/MT3.PNG)
 
@@ -107,6 +99,7 @@
 ![Feature](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Feature.PNG)
 
 * 데이터 수집을 통한 특징 비교
+
 ![Feature2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Feature2.PNG)
 
 #### 훈련 데이터, 테스트 데이터
@@ -130,8 +123,6 @@
 #### 모델 선택
 * 머신러닝의 모델 선택
 * 특징(Feature)의 개수에 따라 여러 타입 모델 존재
-
-![MF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/MF.PNG)
 
 #### 선형 모델
 
@@ -361,8 +352,6 @@ data = digits.images.reshape((n_samples, -1))
 X_train, X_test, y_train, y_test = train_test_split(data, digits.target, test_size = 0.2)
 ```
 
-![DataSet](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/DataSet.PNG) 
-
 * 모델과 학습
 ```Python
 from sklearn.neighbors import KNeighborsClassifier
@@ -416,7 +405,7 @@ print(y_pred)
 * 앞에 False가 붙을 경우 예측과 실제가 상이
 
 |긍정 OR 부정|명칭|내용|
-|:--|:---:|:--|
+|:--|:---|:--|
 |긍정|TP(True Positive)|긍정을 긍정으로 올바르게 예측한 경우|
 |긍정|FN(False Negative)|긍정을 부정으로 잘못 예측한 경우|
 |부정|FP(False Positive)|부정을 긍정으로 잘못 예측한 경우|
