@@ -33,10 +33,6 @@
 * 공부 시간과 학점과의 관계
 * CPU 속도와 프로그램 실행 시간 예측
 
-#### 선형 회귀 예제
-
-![EX](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/EX.PNG)
-
 #### 선형 회귀 종류
 * 단순 선형 회귀
     * 독립 변수($x$)가 하나인 경우
@@ -168,8 +164,6 @@ plt.show()
 
 # 1.2532418085611319 2.745502230882486 (기울기 절편 순서)
 ```
-
-![GDMex](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/GDMex.PNG)
 
 #### 선형 회귀 예제
 * 아나콘다에 포함된 Scikit-Learn 라이브러리를 사용하여 회귀 함수를 구현하는 방법
@@ -380,7 +374,7 @@ plt.plot(X_test, y_pred, color ='blue', linewidth = 3)
     * 위의 값으로 예측 수행
     * 기존의 출력은 $y = wx + b$
     * 위 출력을 시그모이드 함수 $sigmoid(z)$의 입력으로 넣을 경우
-        * y = ![input](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch03/input.PNG)
+        * y = $\frac{1}{1+e^{-(wx+b)}}$
         * 위 값은 0 또는 1에 가까운 분류값
 
 #### 가장 좋은 가중치 W의 값

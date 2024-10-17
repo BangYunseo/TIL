@@ -9,15 +9,9 @@
 > 4절. 다층 퍼셉트론(MLP)
 
 ## 1절. 신경망
-#### 개요
-* 딥러닝의 시작 : 1950년대 인공 신경망(Artificial Neural Network : ANN)부터 시작
-
-
 #### 퍼셉트론
 * 1957년 프랑크 로젠블라트가 고안한 신경망의 기원이 되는 알고리즘
 * 인공 뉴런으로 다수의 신호를 입력으로 받아 하나의 신호를 출력하는 것
-
-![ANN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch04/ANN.PNG)
 
 #### 컴퓨터 vs 인공신경망
 
@@ -47,8 +41,6 @@
     * 위의 그림처럼 뉴런 A가 활성화되고 뉴런 B가 비활성화일 경우 뉴런 C 활성화
 
 #### 퍼셉트론(Perceptron)
-
-![PCT](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch04/PCT.PNG)
 
 ![PCT2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch04/PCT2.PNG)
 
@@ -215,8 +207,6 @@ def NAND(x1, x2):
 #### 퍼셉트론의 한계 - XOR
 * 선형과 비선형 출력의 한계
   * 직선의 영역은 선형 영역, 곡선의 영역을 비선형 영역이라고 함
-
-![NLinear](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch04/NLinear.PNG)
 
 ![NLinear2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch04/NLinear2.PNG)
 
