@@ -13,9 +13,6 @@
 
 ![Numpy](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Numpy.PNG)
 
-
-![Numpy2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Numpy2.PNG)
-
 * 넘파이 라이브러리에는 다차원 배열 데이터 구조 포함
 * 다양한 수학적 행렬 연산 수행 시 사용
 
@@ -23,8 +20,6 @@
 * 왜 딥러닝에서 넘파이가 중요할까?
     * 훈련 샘플이 2차원 or 3차원 행렬에 저장되기 때문
     * 4차원 이상으로 넘어갈 시 값이 매우 커져서 오히려 구하기 힘듦
-
-![Numpy3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Numpy3.PNG)
 
 #### Numpy 모듈 불러오기
 ```Python
@@ -69,8 +64,6 @@ b[0][2]
 ![NumpyShape](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/NumpyShape.PNG)
 
 ![NumpyShape2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/NumpyShape2.PNG)
-
-![NumpyShape3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/NumpyShape3.PNG)
 
 * 사용 코드
 ```Python
@@ -133,8 +126,6 @@ np.arrange(1, 10, 2)
 # array([1, 3, 5, 7, 9])
 ```
 
-![Arrange](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Arrange.PNG)
-
 #### linspace() 함수
 ```Python
 import numpy as np
@@ -147,8 +138,6 @@ np.linspace(0, 10, 100)
 # 9.09090909,  9.19191919,  9.29292929,  9.39393939,  9.49494949, 
 # 9.5959596 ,  9.6969697 ,  9.7979798 ,  9.8989899 , 10.])
 ```
-
-![Linspace](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Linspace.PNG)
 
 #### concatenate(), vstack() 함수
 * 배열 Addition 함수
@@ -166,8 +155,6 @@ np.concatenate((x, y), axis = 1)
 # [3, 4, 7, 8]])
 ```
 
-![Concatenate](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Concatenate.PNG)
-
 ##### vstack()
 * 세로로 Addition
 ```Python
@@ -183,11 +170,7 @@ np.vstack((x, y))
 # [7, 8]])
 ```
 
-![Vstack](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Vstack.PNG)
-
 #### reshape() 함수
-
-![Reshape](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Reshape.PNG)
 
 ```Python
 import numpy as np
@@ -201,7 +184,8 @@ a.reshape(3, 4)
 # [4, 5, 6, 7], 
 # [8, 9, 10, 11])
 
-# reshape() 함수의 매개 변수(parameter)의 곱을 요소의 전체 개수와 맞출 때, 하나의 매개 변수만 작성 후 다른 매개 변수를 -1로 쓰더라도 정상적인 넘파이 배열 출력 가능
+# reshape() 함수의 매개 변수(parameter)의 곱을 요소의 전체 개수와 맞출 경우
+# 하나의 매개 변수만 작성 후 다른 매개 변수를 -1로 쓰더라도 정상적인 넘파이 배열 출력 가능
 a.reshape(6, -1)
 # array([0, 1],
 # [2, 3],
@@ -289,8 +273,6 @@ ages[ages > 20]
 # array([25, 30, 28])
 ```
 
-![Indexing](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Indexing.PNG)
-
 * 2차원 배열
 ```Python
 a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
@@ -329,8 +311,6 @@ result
 # 넘파이 배열에 + 연산 적용
 ```
 
-![ArrayAdd](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/ArrayAdd.PNG)
-
 #### 브로드캐스팅
 ```Python
 import numpy as np
@@ -340,8 +320,6 @@ result = miles * 1.6
 result
 # array([1.6, 3.2, 4.8])
 ```
-
-![BroadCasting](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/BroadCasting.PNG)
 
 #### 넘파이 곱셈
 ```Python
@@ -355,8 +333,6 @@ res
 # [6, 8],
 # [10, 12]])
 ```
-
-![Mul](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Mul.PNG)
 
 #### 행렬 곱셈
 ```Python
@@ -372,8 +348,6 @@ res
 # [30, 30],
 # [48, 48]])
 ```
-
-![Mul2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Mul2.PNG)
 
 #### 넘파이 배열 함수
 ```Python
@@ -393,8 +367,6 @@ a.min()
 a.max()
 # 9
 ```
-
-![Func](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Func.PNG)
 
 #### 특정 행 사용
 ```Python
