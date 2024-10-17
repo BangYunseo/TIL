@@ -587,8 +587,29 @@ test()
 
 ![LR2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/LR2.PNG)
 
-
 #### 학습률을 설정하는 방법
 
 ##### 모멘텀(momentum)
 * 운동량으로 학습 속도를 가속시킬 목적으로 사용
+
+![MM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/MM.PNG)
+
+##### Adagrad
+* 가변 학습률을 사용하는 방법
+* SGD 방법을 개량한 최적화 방법
+* 주된 방법은 학습률 감쇠(Learning Rate Decay)
+* 학습률을 이전 단계의 기울기들을 누적한 값에 반비례하여 설정
+
+![Adagrad](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/Adagrad.PNG)
+
+##### RMSprop
+* Adagrad에 대한 수정판
+* 그래디언트 누적 대신 지수 가중 이동 평균 사용
+
+![RMSprop](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/RMSprop.PNG)
+
+##### Adam
+* Adaptive Moment Estimation의 약자
+* (RMSprop + Mometum)
+
+![Adam](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/Adam.PNG)
