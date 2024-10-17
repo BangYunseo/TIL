@@ -12,8 +12,6 @@
 
 ![CompareAI](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/CompareAI.PNG)
 
-#### 인공지능
-
 ![AI2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch00/AI2.PNG)
 
 #### 기계학습의 종류
