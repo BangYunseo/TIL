@@ -281,6 +281,6 @@ print(XOR(1, 1))
 
 ![LC](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch04/LC.PNG)
 
-* 1개의 레이어로 구성된 퍼셉트론은 XOR 문제를 학습할 수 없으므로 아래의 과정 진행
+* 1개의 레이어로 구성된 퍼셉트론은 XOR 문제를 학습할 수 없음
 
 ![MLPXOR](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch04/MLPXOR.PNG)
