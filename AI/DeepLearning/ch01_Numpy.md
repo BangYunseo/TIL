@@ -1,4 +1,5 @@
-#  Chapter 1. 넘파이(Numpy)
+# Chapter 1. 넘파이(Numpy)
+
 > 1절. Numpy
 >
 > 2절. Numpy 함수
@@ -7,21 +8,23 @@
 >
 > 4절. 과제 해결
 
-
 ## 1절. Numpy
+
 #### 넘파이(Numpy)란?
 
 ![Numpy](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Numpy.PNG)
 
-* 넘파이 라이브러리에는 다차원 배열 데이터 구조 포함
-* 다양한 수학적 행렬 연산 수행 시 사용
+- 넘파이 라이브러리에는 다차원 배열 데이터 구조 포함
+- 다양한 수학적 행렬 연산 수행 시 사용
 
 #### 딥러닝에서의 넘파이
-* 왜 딥러닝에서 넘파이가 중요할까?
-    * 훈련 샘플이 2차원 or 3차원 행렬에 저장되기 때문
-    * 4차원 이상으로 넘어갈 시 값이 매우 커져서 오히려 구하기 힘듦
+
+- 왜 딥러닝에서 넘파이가 중요할까?
+  - 훈련 샘플이 2차원 or 3차원 행렬에 저장되기 때문
+  - 4차원 이상으로 넘어갈 시 값이 매우 커져서 오히려 구하기 힘듦
 
 #### Numpy 모듈 불러오기
+
 ```Python
 import numpy as np
 ```
@@ -39,7 +42,8 @@ a[0]
 # 1
 ```
 
-* 2차원 배열에서의 사용
+- 2차원 배열에서의 사용
+
 ```Python
 import numpy as np
 
@@ -51,21 +55,24 @@ b[0][2]
 # 3
 ```
 
-* 배열의 인덱스는 일반적으로 0부터 시작
+- 배열의 인덱스는 일반적으로 0부터 시작
 
 ![NumpyIndex](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/NumpyIndex.PNG)
 
 ## 2절. Numpy 함수
+
 #### 넘파이 배열 속성
-* 배열의 차원 및 항목 수는 형상(shape)에 의해 정의
-* 배열의 형상은 각 차원의 크기를 지정하는 정수의 튜플
-* 넘파이에서 차원은 축(axes)
+
+- 배열의 차원 및 항목 수는 형상(shape)에 의해 정의
+- 배열의 형상은 각 차원의 크기를 지정하는 정수의 튜플
+- 넘파이에서 차원은 축(axes)
 
 ![NumpyShape](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/NumpyShape.PNG)
 
 ![NumpyShape2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/NumpyShape2.PNG)
 
-* 사용 코드
+- 사용 코드
+
 ```Python
 import numpy as np
 
@@ -74,7 +81,7 @@ a = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
 a.shape         # 배열의 형상
 # (3, 3)
 
-a.ndim          # 배열의 차원 
+a.ndim          # 배열의 차원
 # 2
 
 a.dtype         # 요소의 자료형
@@ -95,22 +102,23 @@ import numpy as np
 np.zeors((3, 4))
 # array([[0., 0., 0., 0.],
 # [0., 0., 0., 0.],
-# [0., 0., 0., 0.]]) 
+# [0., 0., 0., 0.]])
 
 np.ones((3, 4))
-# array([[1, 1, 1, 1], 
-# [1, 1, 1, 1], 
+# array([[1, 1, 1, 1],
+# [1, 1, 1, 1],
 # [1, 1, 1, 1]])
 
 np.eye(3)
 # array([[1., 0., 0.],
-# [0., 1., 0.], 
+# [0., 1., 0.],
 # [0., 0., 1.]])
 ```
 
 ![NumpyFunc](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/NumpyFunc.PNG)
 
 #### arrange() 함수
+
 ```Python
 import numpy as np
 
@@ -127,23 +135,27 @@ np.arrange(1, 10, 2)
 ```
 
 #### linspace() 함수
+
 ```Python
 import numpy as np
 
 np.linspace(0, 10, 100)
 # array([ 0. ,  0.1010101 ,  0.2020202 ,  0.3030303 ,  0.4040404 ,
 # ...
-# 8.08080808,  8.18181818,  8.28282828,  8.38383838,  8.48484848, 
-# 8.58585859,  8.68686869,  8.78787879,  8.88888889,  8.98989899, 
-# 9.09090909,  9.19191919,  9.29292929,  9.39393939,  9.49494949, 
+# 8.08080808,  8.18181818,  8.28282828,  8.38383838,  8.48484848,
+# 8.58585859,  8.68686869,  8.78787879,  8.88888889,  8.98989899,
+# 9.09090909,  9.19191919,  9.29292929,  9.39393939,  9.49494949,
 # 9.5959596 ,  9.6969697 ,  9.7979798 ,  9.8989899 , 10.])
 ```
 
 #### concatenate(), vstack() 함수
-* 배열 Addition 함수
+
+- 배열 Addition 함수
 
 ##### concatenate()
-* 가로로 Addition
+
+- 가로로 Addition
+
 ```Python
 import numpy as np
 
@@ -156,7 +168,9 @@ np.concatenate((x, y), axis = 1)
 ```
 
 ##### vstack()
-* 세로로 Addition
+
+- 세로로 Addition
+
 ```Python
 import numpy as np
 
@@ -165,7 +179,7 @@ y = np.array([[5, 6], [7, 8]])
 
 np.vstack((x, y))
 # array([[1, 2],
-# [3, 4], 
+# [3, 4],
 # [5, 6],
 # [7, 8]])
 ```
@@ -181,7 +195,7 @@ a = np.arrange(12)
 # a에 대하여 reshape(3, 4)를 호출하면 2차원 배열로 변형
 a.reshape(3, 4)
 # array([0, 1, 2, 3],
-# [4, 5, 6, 7], 
+# [4, 5, 6, 7],
 # [8, 9, 10, 11])
 
 # reshape() 함수의 매개 변수(parameter)의 곱을 요소의 전체 개수와 맞출 경우
@@ -196,7 +210,8 @@ a.reshape(6, -1)
 ```
 
 #### split() 함수
-* 배열 분할 함수
+
+- 배열 분할 함수
 
 ```Python
 import numpy as np
@@ -222,7 +237,9 @@ arr2
 ```
 
 #### newaxis 함수
-* 배열에 새로운 축 추가 함수
+
+- 배열에 새로운 축 추가 함수
+
 ```Python
 import numpy as np
 
@@ -232,26 +249,28 @@ a.shape
 # 1차원 함수
 
 a1 = a[np.newaxis, :]
-a1 
+a1
 # array([[1, 2, 3, 4, 5, 6]])
 a1.shape
 # (1, 6)
 # 2차원 함수이며 행이 1, 열이 6
 
-a2 = a[:, np.newaxis] 
+a2 = a[:, np.newaxis]
 array([[1],
 [2],
 [3],
 [4],
 [5],
 [6]])
-a2.shape 
+a2.shape
 # (6, 1)
 # 2차원 함수이며 행이 6, 열이 1
 ```
 
 #### 넘파이 인덱싱과 슬라이싱
-* 1차원 배열
+
+- 1차원 배열
+
 ```Python
 import numpy as np
 
@@ -273,7 +292,8 @@ ages[ages > 20]
 # array([25, 30, 28])
 ```
 
-* 2차원 배열
+- 2차원 배열
+
 ```Python
 a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 a[0, 2]
@@ -294,11 +314,12 @@ a[0:2, 1:3]
 
 ![Indexing3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Indexing3.PNG)
 
-* 2차원 배열의 슬라이싱
+- 2차원 배열의 슬라이싱
 
 ![Slice](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Slice.PNG)
 
 #### 배열끼리의 연산
+
 ```Python
 arr1 = np.array([[1, 2], [3, 4], [5, 6]])
 arr2 = np.array([[1, 1], [1, 1], [1, 1]])
@@ -312,6 +333,7 @@ result
 ```
 
 #### 브로드캐스팅
+
 ```Python
 import numpy as np
 
@@ -322,6 +344,7 @@ result
 ```
 
 #### 넘파이 곱셈
+
 ```Python
 import numpy as np
 
@@ -335,6 +358,7 @@ res
 ```
 
 #### 행렬 곱셈
+
 ```Python
 import numpy as np
 
@@ -350,6 +374,7 @@ res
 ```
 
 #### 넘파이 배열 함수
+
 ```Python
 import numpy as np
 
@@ -369,6 +394,7 @@ a.max()
 ```
 
 #### 특정 행 사용
+
 ```Python
 import numpy as np
 
@@ -380,7 +406,8 @@ scores.mean(axis = 0)
 ![Mean](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Mean.PNG)
 
 #### 난수 생성
-* 균일 분포
+
+- 균일 분포
 
 ![Rand1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Rand1.PNG)
 
@@ -399,7 +426,7 @@ np.random.rand(5, 3)
 # [0.17194101, 0.81622475, 0.27407375]])
 ```
 
-* 정규 분포
+- 정규 분포
 
 ![Rand2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Rand2.PNG)
 
@@ -409,17 +436,17 @@ import numpy as np
 np.random.randn(5)
 # array([ 0.78148842, -0.65438103,  0.04117247, -0.20191691, -0.87081315])
 np.random.randn(5, 4)
-# array([[ 0.22893207, -0.40803994, -0.10392514,  1.56717879], 
-# [ 0.49702472,  1.15587233,  1.83861168,  1.53572662], 
-# [ 0.25499773, -0.84415725, -0.98294346, -0.30609783], 
-# [ 0.83850061, -1.69084816,  1.15117366, -1.02933685], 
+# array([[ 0.22893207, -0.40803994, -0.10392514,  1.56717879],
+# [ 0.49702472,  1.15587233,  1.83861168,  1.53572662],
+# [ 0.25499773, -0.84415725, -0.98294346, -0.30609783],
+# [ 0.83850061, -1.69084816,  1.15117366, -1.02933685],
 # [-0.51099219, -2.36027053,  0.10359513,  1.73881773]])
 
 m, sigma = 10, 2
 m + sigma*np.random.randn(5)
 # array([ 8.56778091, 10.84543531,  9.77559704,  9.09052469,  9.48651379])
 
-mu, sigma = 0, 0.1        # 평균과 표준 편차 
+mu, sigma = 0, 0.1        # 평균과 표준 편차
 np.random.normal(mu, sigma, 5)
 # array([ 0.15040638,  0.06857496, -0.01460342, -0.01868375, -0.1467971 ])
 ```
@@ -431,12 +458,14 @@ np.random.normal(mu, sigma, 5)
 ![tensor](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/tensor.PNG)
 
 ## 3절. Matplotlib
+
 #### Matplotlib
-* GNUplot처럼 그래프를 그리는 라이브러리
-* 무료이며 오픈 소스
-* 사용법
-    * 함수 호출 방식
-    * 객체 지향 방식
+
+- GNUplot처럼 그래프를 그리는 라이브러리
+- 무료이며 오픈 소스
+- 사용법
+  - 함수 호출 방식
+  - 객체 지향 방식
 
 #### 선 그래프
 
@@ -455,6 +484,7 @@ plt.legend(loc="upper left")
 plt.title("Temperatures of Cities")
 plt.show()
 ```
+
 ![Line](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Line.PNG)
 
 #### 점 그래프
@@ -462,8 +492,8 @@ plt.show()
 ```Python
 import matplotlib.pyplot as plt %matplotlib inline
 
-X = [ "Mon", "Tue", "Wed", "Thur", "Fri",  "Sat", "Sun" ] 
-plt.plot(X, [15.6, 14.2, 16.3, 18.2, 17.1, 20.2, 22.4], "sm") 
+X = [ "Mon", "Tue", "Wed", "Thur", "Fri",  "Sat", "Sun" ]
+plt.plot(X, [15.6, 14.2, 16.3, 18.2, 17.1, 20.2, 22.4], "sm")
 plt.show()
 ```
 
@@ -474,9 +504,9 @@ plt.show()
 ```Python
 import matplotlib.pyplot as plt %matplotlib inline
 
-X = [ "Mon", "Tue", "Wed", "Thur", "Fri",  "Sat", "Sun" ] 
+X = [ "Mon", "Tue", "Wed", "Thur", "Fri",  "Sat", "Sun" ]
 Y = [15.6, 14.2, 16.3, 18.2, 17.1, 20.2, 22.4]
-plt.bar(X, Y) 
+plt.bar(X, Y)
 plt.show()
 ```
 
@@ -485,7 +515,7 @@ plt.show()
 #### 히스토그램
 
 ```Python
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 import numpy as np
 
 numbers = np.random.normal(size = 10000)
@@ -501,15 +531,15 @@ plt.show()
 #### Numpy & Matplotlib
 
 ```Python
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 import numpy as np
 
-X = np.arange(0, 10) 
-Y1 = np.ones(10) 
-Y2 = X 
+X = np.arange(0, 10)
+Y1 = np.ones(10)
+Y2 = X
 Y3 = X**2
 
-plt.plot(X, Y1, X, Y2, X, Y3) 
+plt.plot(X, Y1, X, Y2, X, Y3)
 plt.show()
 ```
 
@@ -520,31 +550,34 @@ plt.show()
 ![Sig](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Sig.PNG)
 
 ```Python
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 import numpy as np
 
 def sigmoid(x):
-    s = 1 / (1 + np.exp(-x)) 
-    ds = s*(1 - s)  
+    s = 1 / (1 + np.exp(-x))
+    ds = s*(1 - s)
     return s,ds
     # 시그모이드 1차 미분 함수
 
-X = np.linspace(-10, 10, 100) 
+X = np.linspace(-10, 10, 100)
 Y1, Y2 = sigmoid(X)
 
-plt.plot(X, Y1, X, Y2) 
-plt.xlabel("x") 
-plt.ylabel("Sigmoid(X), Sigmoid'(X)") 
-plt.show() 
+plt.plot(X, Y1, X, Y2)
+plt.xlabel("x")
+plt.ylabel("Sigmoid(X), Sigmoid'(X)")
+plt.show()
 ```
 
 ![Lab1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Lab1.PNG)
 
 ## 4절. 과제 해결
+
 #### 사용 모듈(라이브러리)
+
 ```Python
 import numpy as np
 ```
+
 #### Q1) 0 ~ 10 사이로 이루어진 정수를 랜덤하게 36개로 만들어라. 참고 : 사이즈 (36,)
 
 ```Python
@@ -554,7 +587,7 @@ res
 # array([ 6,  8,  4,  2,  0,  6,  1,  7,  0,  7,  0,  7,  4,  7,  8,  7,  7, 9,  4,  4,  5,  3,  0, 10,  3,  6,  6, 10,  4,  9,  0,  5,  2,  8, 2,  3])
 ```
 
-#### Q2) Q1에서 만들어진 배열을 2 * 3 * 6으로 shape 변경해라.
+#### Q2) Q1에서 만들어진 배열을 2 _ 3 _ 6으로 shape 변경해라.
 
 ```Python
 res_mod1 = res.reshape(2, 3, 6)
@@ -563,13 +596,13 @@ res_mod1
 # array([[[ 6,  8,  4,  2,  0,  6],
 # [ 1,  7,  0,  7,  0,  7],
 # [ 4,  7,  8,  7,  7,  9]],
-# 
+#
 # [[ 4,  4,  5,  3,  0, 10],
 # [ 3,  6,  6, 10,  4,  9],
 # [ 0,  5,  2,  8,  2,  3]]])
 ```
 
-#### Q3) Q1에서 만들어진 배열을 4 * 9로 변경해라.
+#### Q3) Q1에서 만들어진 배열을 4 \* 9로 변경해라.
 
 ```Python
 res_mod2 = res.reshape(4, 9)
@@ -581,7 +614,7 @@ res_mod2
 # [10,  4,  9,  0,  5,  2,  8,  2,  3]])
 ```
 
-#### Q4) 각 원소에 +4를 한 후 transpose를 이용하여 9 * 4로 변경해라.
+#### Q4) 각 원소에 +4를 한 후 transpose를 이용하여 9 \* 4로 변경해라.
 
 ```Python
 res_plus4 = res_mod2 + 4
@@ -611,7 +644,7 @@ res
 # [334, 453, 347, 475]])
 ```
 
-#### Q6) Q3의 원소 중 다음 색을 칠해진 부분만 배열 슬라이싱하여 4 * 4 행렬로 만들어라.
+#### Q6) Q3의 원소 중 다음 색을 칠해진 부분만 배열 슬라이싱하여 4 \* 4 행렬로 만들어라.
 
 ![Q6](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Q6.PNG)
 
