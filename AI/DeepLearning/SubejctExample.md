@@ -20,7 +20,7 @@ import numpy as np
 res = np.random.randint(0, 11, size = 36)
 res
 
-# array([ 6,  8,  4,  2,  0,  6,  1,  7,  0,  7,  0,  7,  4,  7,  8,  7,  7, 9,  4,  4,  5,  3,  0, 10,  3,  6,  6, 10,  4,  9,  0,  5,  2,  8, 2,  3])
+# array([ 6, 8, 4, 2, 0, 6, 1, 7, 0, 7, 0, 7, 4, 7, 8, 7, 7, 9, 4, 4, 5, 3, 0, 10, 3, 6, 6, 10, 4, 9, 0, 5, 2, 8, 2, 3])
 ```
 
 #### Q2) Q1에서 만들어진 배열을 2 _ 3 _ 6으로 shape 변경해라.
@@ -29,13 +29,13 @@ res
 res_mod1 = res.reshape(2, 3, 6)
 res_mod1
 
-# array([[[ 6,  8,  4,  2,  0,  6],
-# [ 1,  7,  0,  7,  0,  7],
-# [ 4,  7,  8,  7,  7,  9]],
+# array([[[6, 8, 4, 2, 0, 6],
+# [1, 7, 0, 7, 0, 7],
+# [4, 7, 8, 7, 7, 9]],
 #
-# [[ 4,  4,  5,  3,  0, 10],
-# [ 3,  6,  6, 10,  4,  9],
-# [ 0,  5,  2,  8,  2,  3]]])
+# [[4, 4, 5, 3, 0, 10],
+# [3, 6, 6, 10, 4, 9],
+# [0, 5, 2, 8, 2, 3]]])
 ```
 
 #### Q3) Q1에서 만들어진 배열을 4 \* 9로 변경해라.
@@ -96,15 +96,11 @@ np.vstack((temp1, temp2, temp3, temp4))
 
 #### Iris 데이터를 이용하여 머신러닝 방법의 예측 비교
 
-- Naïve bayes (from sklearn.naive_bayes import GaussianNB)
-  - GaussianNB implements the Gaussian Naive Bayes algorithm for classification.
-  - The likelihood of the features is assumed to be Gaussian:Decision tree from sklearn.tree import DecisionTreeClas sifier
-- Decision tree from sklearn.tree import DecisionTreeClassifier
-- AdaBoost (from sklearn.ensemble import AdaBoostClassifier)
+- 베이즈 정리 (from sklearn.naive_bayes import GaussianNB)
+- 결정 트리(from sklearn.tree import DecisionTreeClassifier)
+- 아다부스터 (from sklearn.ensemble import AdaBoostClassifier)
 
-  - n_estimators : 부스팅 종료를 위한 위한 맥시멈 추정값
-
-#### 사용 데이터 셋 라이브러리(예시)
+#### 사용 데이터 셋 라이브러리
 
 ```Python
 from sklearn import datasets
@@ -192,7 +188,7 @@ if __name__ == "__main__":
 
 #### 선형 회귀 문제
 
-#### 사용 헤더
+#### 사용 라이브러리
 
 ```Python
 import pandas as pd
@@ -217,36 +213,11 @@ female_age = female_data[['age']]
 female_charges = female_data['charges']
 model_female_AC = LinearRegression().fit(female_age, female_charges)
 
-plt.figure(figsize=(14, 5))
-
-plt.subplot(1, 2, 2)
-plt.scatter(female_age, female_charges, color='red', label='Female Data')
-plt.plot(female_age, model_female_AC.predict(female_age), color='blue', label = 'Regression Line')
-plt.xlabel('Age')
-plt.ylabel('Charges')
-plt.title('Female')
-plt.legend()
-
-plt.show()
-
 # 남자의 나이와 요금
 male_age = male_data[['age']]
 male_charges = male_data['charges']
 model_male_AC = LinearRegression().fit(male_age, male_charges)
 
-plt.figure(figsize=(14, 5))
-
-plt.subplot(1, 2, 1)
-plt.scatter(male_age, male_charges, color='red', label='Male Data')
-plt.plot(male_age, model_male_AC.predict(male_age), color='blue', label = 'Regression Line')
-plt.xlabel('Age')
-plt.ylabel('Charges')
-plt.title('Male')
-plt.legend()
-
-plt.show()
-
-# 기울기(W)와 절편(b) 비교
 # 여자
 print("그래프 기울기(W)_여자 : ", model_female_AC.coef_[0])
 print("그래프 절편(b):_여자 : ", model_female_AC.intercept_)
@@ -270,36 +241,11 @@ female_bmi = female_data[['bmi']]
 female_charges = female_data['charges']
 model_female_BC = LinearRegression().fit(female_bmi, female_charges)
 
-plt.figure(figsize=(14, 5))
-
-plt.subplot(1, 2, 2)
-plt.scatter(female_bmi, female_charges, color='red', label='Female Data')
-plt.plot(female_bmi, model_female_BC.predict(female_bmi), color='blue', label = 'Regression Line')
-plt.xlabel('Bmi')
-plt.ylabel('Charges')
-plt.title('Female')
-plt.legend()
-
-plt.show()
-
 # 남자의 나이와 요금
 male_bmi = male_data[['bmi']]
 male_charges = male_data['charges']
 model_male_BC = LinearRegression().fit(male_bmi, male_charges)
 
-plt.figure(figsize=(14, 5))
-
-plt.subplot(1, 2, 1)
-plt.scatter(male_bmi, male_charges, color='red', label='Male Data')
-plt.plot(male_bmi, model_male_BC.predict(male_bmi), color='blue', label = 'Regression Line')
-plt.xlabel('Bmi')
-plt.ylabel('Charges')
-plt.title('Male')
-plt.legend()
-
-plt.show()
-
-# 기울기(W)와 절편(b) 비교
 # 여자
 print("그래프 기울기(W)_여자 : ", model_female_BC.coef_[0])
 print("그래프 절편(b):_여자 : ", model_female_BC.intercept_)
@@ -317,7 +263,7 @@ print("그래프 절편(b)_남자 : ", model_male_BC.intercept_)
 
 #### 로지스틱 회귀 문제
 
-#### 사용 헤더
+#### 사용 라이브러리
 
 ```Python
 from sklearn.model_selection import cross_val_predict
@@ -338,13 +284,9 @@ y = pima.label
 
 # cross validation 테스트 + 5-fold 교차 검증(80 : 20)
 LR = LogisticRegression(max_iter = 200)
-
 y_pred = cross_val_predict(LR, X, y, cv = 5)
-
 cm = confusion_matrix(y, y_pred)
 ConfusionMatrixDisplay(cm).plot()
-plt.title("confusion matrix")
-plt.show()
 
 tn, fp, fn, tp = cm.ravel()
 print("TP = {}\nFN = {}\nFP = {}\nTN = {}".format(tp, fn, fp, tn))
