@@ -609,7 +609,7 @@ test()
 
 ![LR2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/LR2.PNG)
 
-#### 학습률을 설정하는 방법
+#### 학습률을 설정 방법
 
 ##### 모멘텀(momentum)
 

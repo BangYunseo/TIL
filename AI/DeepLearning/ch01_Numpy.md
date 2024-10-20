@@ -5,8 +5,6 @@
 > 2절. Numpy 함수
 >
 > 3절. Matplotlib
->
-> 4절. 과제 해결
 
 ## 1절. Numpy
 
@@ -569,95 +567,3 @@ plt.show()
 ```
 
 ![Lab1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Lab1.PNG)
-
-## 4절. 과제 해결
-
-#### 사용 모듈(라이브러리)
-
-```Python
-import numpy as np
-```
-
-#### Q1) 0 ~ 10 사이로 이루어진 정수를 랜덤하게 36개로 만들어라. 참고 : 사이즈 (36,)
-
-```Python
-res = np.random.randint(0, 11, size = 36)
-res
-
-# array([ 6,  8,  4,  2,  0,  6,  1,  7,  0,  7,  0,  7,  4,  7,  8,  7,  7, 9,  4,  4,  5,  3,  0, 10,  3,  6,  6, 10,  4,  9,  0,  5,  2,  8, 2,  3])
-```
-
-#### Q2) Q1에서 만들어진 배열을 2 _ 3 _ 6으로 shape 변경해라.
-
-```Python
-res_mod1 = res.reshape(2, 3, 6)
-res_mod1
-
-# array([[[ 6,  8,  4,  2,  0,  6],
-# [ 1,  7,  0,  7,  0,  7],
-# [ 4,  7,  8,  7,  7,  9]],
-#
-# [[ 4,  4,  5,  3,  0, 10],
-# [ 3,  6,  6, 10,  4,  9],
-# [ 0,  5,  2,  8,  2,  3]]])
-```
-
-#### Q3) Q1에서 만들어진 배열을 4 \* 9로 변경해라.
-
-```Python
-res_mod2 = res.reshape(4, 9)
-res_mod2
-
-# array([[ 6,  8,  4,  2,  0,  6,  1,  7,  0],
-# [ 7,  0,  7,  4,  7,  8,  7,  7,  9],
-# [ 4,  4,  5,  3,  0, 10,  3,  6,  6],
-# [10,  4,  9,  0,  5,  2,  8,  2,  3]])
-```
-
-#### Q4) 각 원소에 +4를 한 후 transpose를 이용하여 9 \* 4로 변경해라.
-
-```Python
-res_plus4 = res_mod2 + 4
-res_plus4 = res_plus4.T
-res_plus4
-
-# array([[10, 11,  8, 14],
-# [12,  4,  8,  8],
-# [ 8, 11,  9, 13],
-# [ 6,  8,  7,  4],
-# [ 4, 11,  4,  9],
-# [10, 12, 14,  6],
-# [ 5, 11,  7, 12],
-# [11, 11, 10,  6],
-# [ 4, 13, 10,  7]])
-```
-
-#### Q5) Q3, Q4의 내적을 구해라.
-
-```Python
-res = res_mod2 @ res_plus4
-res
-
-# array([[342, 318, 323, 298],
-# [406, 630, 496, 505],
-# [351, 436, 411, 339],
-# [334, 453, 347, 475]])
-```
-
-#### Q6) Q3의 원소 중 다음 색을 칠해진 부분만 배열 슬라이싱하여 4 \* 4 행렬로 만들어라.
-
-![Q6](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Q6.PNG)
-
-```Python
-temp1 = res_mod2[0, :8:2]
-temp2 = res_mod2[1, 1:9:2]
-temp3 = res_mod2[2, :8:2]
-temp4 = res_mod2[3, 1:9:2]
-np.vstack((temp1, temp2, temp3, temp4))
-
-# temp1 = res_mod2[0, :8:2]
-# temp2 = res_mod2[1, 1:9:2]
-# temp3 = res_mod2[2, :8:2]
-# temp4 = res_mod2[3, 1:9:2]
-# np.vstack((temp1, temp2, temp3, temp4))
-```
