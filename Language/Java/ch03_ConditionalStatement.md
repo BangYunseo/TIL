@@ -56,7 +56,7 @@
 
 ![elif](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/elif.PNG)
 
-#### if문 정리
+#### 조건문 정리
 
 |키워드|형태|설명|
 |:---:|:---|:---|
