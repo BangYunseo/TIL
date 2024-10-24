@@ -499,7 +499,7 @@ test()
 
 - 온라인 학습과 풀 배치 학습의 중간 방법
 
-![MBL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/FBL.PNG)
+![MBL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch05/MBL.PNG)
 
 #### 방법들의 비교
 
