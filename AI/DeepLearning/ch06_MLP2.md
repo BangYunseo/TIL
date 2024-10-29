@@ -55,19 +55,27 @@
 
 ![TrainData](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/TrainData.PNG)
 
-- 모델 코드
+- 모델 생성 코드
 
 ```Python
 model = tf.keras.models.Sequential()
 # Sequential 모델 생성
 
 model.add(tf.keras.layers.Dense(units = 2, input_shape = (2,), activation = 'sigmoid'))  # 유닛 1 : 은닉층
-model.add(tf.keras.layers.Dense(units = 1, activation='sigmoid'))                    # 유닛 2 : 출력층
+
+# 은닉층이 하나 더 생겼을 경우 아래 코드 작성
+# model.add(tf.keras.layers.Dense(units = 2, activation = 'sigmoid'))
+
+model.add(tf.keras.layers.Dense(units = 1, activation='sigmoid'))                        # 유닛 2 : 출력층
 # Sequential 모델에 add() 함수를 이용하여 필요한 레이어 추가
 
 model.compile(loss='mean_squared_error', optimizer=keras.optimizers.SGD(lr = 0.3))
 # compile() 함수 호출을 통한 Sequential 모델 컴파일
+# 사용 학습법에 따라 성능 차이 존재
+```
 
+- 모델 테스트 코드
+```Python
 model.fit(X, y, batch_size=1, epochs=10000)
 # fit() 호출을 통한 학습 수행
 
@@ -77,8 +85,152 @@ print(model.predict(X))
 
 #### 케라스 사용 방법
 
-##### Sequential 모델 생성 후 모델에 필요한 레이어 추가
+##### 1) Sequential 모델 생성 후 모델에 필요한 레이어 추가
 
-##### 함수형 API 사용
+```Python
+model = Sequential()
+model.add(Dense(units=2, input_shape=(2,), activation='sigmoid')) 
+model.add(Dense(units=1, activation='sigmoid')) 
+```
 
-##### Model 클래스 상속 후 클래스 정의
+![Seq](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/Seq.png)
+
+##### 2) 함수형 API 사용
+
+```Python
+inputs = Input(shape=(2,))                         # 입력층
+x = Dense(2, activation="sigmoid")(inputs)         # 은닉층 1
+prediction = Dense(1, activation="sigmoid")(x)     # 출력층
+
+model = Model(inputs=inputs, outputs=prediction)
+```
+
+![API](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/API.png)
+
+##### 3) Model 클래스 상속 후 클래스 정의
+
+```Python
+class SimpleMLP(Model):
+
+  def __init__(self, num_classes):            # 생성자 작성
+    super(SimpleMLP, self).__init__(name='mlp')
+    self.num_classes = num_classes
+
+    self.dense1 = Dense(32, activation='sigmoid')
+    self.dense2 = Dense(num_classes, activation='sigmoid')
+
+  def call(self, inputs):                     # 순방향 호출을 구현 
+    x = self.dense1(inputs)
+    return self.dense2(x)
+
+model = SimpleMLP()
+model.compile(...)
+model.fit(...)
+```
+
+#### Keras를 이용한 MNIST 숫자 인식
+
+![MNIST](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/MNIST.png)
+
+- 입력 : 784(28 * 28)
+- 출력 : 10(0 ~ 9)
+
+#### 숫자 데이터 관리
+
+##### 숫자 데이터 불러오기
+
+- 28 * 28로 60000개의 이미지 존재
+
+```Python
+import matplotlib.pyplot as plt
+import tensorflow as tf
+
+(train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.mnist.load_data()
+```
+
+##### 숫자 데이터 표시
+
+```Python
+train_images.shape
+# (60000, 28, 28)
+
+train_label
+# array([5, 0, 4, ..., 5, 6, 8], dtype=uint8)
+
+test_images.shape
+# (10000, 28, 28)
+
+plt.imshow(train_images[0], cmap="Greys")
+```
+
+![img](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/img.png)
+
+##### 신경망 모델 구축
+
+```Python
+```
+
+![MNISTmodel](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/MNISTmodel.png)
+
+#### 컴파일 단계
+- 손실 함수(Loss Function) : 신경망의 출력과 정답 간의 오차를 계산하는 함수
+- 옵티마이저(Optimizer) : 손실 함수를 기반으로 신경망의 파라미터(매개 변수)를 최적화하는 알고리즘
+- 지표(Metric) : 훈련과 테스트 과정에서 사용되는 척도
+
+```Python
+model.compile(optimizer = 'rmsprop', loss = 'mse', metrics = ['accuracy'])
+```
+
+#### 데이터 전처리 과정
+
+##### 데이터 전처리
+
+```Python
+train_images = train_images.reshape((60000, 784))
+train_images = train_images.astype('float32') / 255.0
+
+test_images = test_images.reshape((10000, 784))
+test_images = test_images.astype('float32') / 255.0
+```
+
+- 데이터를 축소함
+- 왜?
+  - [읽어보고 정리하기](https://velog.io/@dan_/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B8%B0%EC%B4%88-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC-MNIST)
+
+![DP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/DP.png)
+
+##### 정답 레이블 형태 변경(원핫 인코딩)
+```Python
+train_labels = tf.keras.utils.to_categorical(train_labels)
+test_labels = tf.keras.utils.to_categorical(test_labels)
+```
+
+![Incoding](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/Incoding.png)
+
+##### 학습
+
+```Python
+model.fit(train_images, train_labels, epochs = 5, batch_size = 128)
+
+# Epoch 1/5
+# 469/469 [==============================] - 2s 3ms/step - loss: 0.0158 - accuracy: 
+# 0.9168
+# ...
+# Epoch 5/5
+# 469/469 [==============================] - 2s 3ms/step - loss: 0.0027 - accuracy: 
+# 0.9867
+```
+
+- Loss값은 감소, accuracy는 증가
+
+##### 테스트
+
+```Python
+test_loss, test_acc = model.evaluate(test_images, test_labels)
+print('테스트 정확도 : ', test_acc)
+
+# 313/313 [==============================] - 0s 892us/step - loss: 0.0039 -
+# accuracy: 0.9788
+# 테스트 정확도: 0.9787999987602234
+```
+
