@@ -15,7 +15,6 @@ class_names = ["T-shirt/top", "Trouser", "Pullover", "Dress", "Coat",
 
 print(class_names)
 
-
 def load_data():
 
     (X_train_full, y_train_full), (X_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()  
@@ -68,6 +67,7 @@ def makemodel(X_train, y_train, X_valid, y_valid):
     model.add(keras.layers.Dense(10, activation="softmax")) # 출력층     10개
 
     # (784 * 300 + 300) + (300 * 100 + 100) + (100 * 10 + 10) = 학습이 필요한 데이터
+    
     model.summary()
 
     model.compile(loss = "sparse_categorical_crossentropy",
@@ -87,7 +87,7 @@ def makemodel(X_train, y_train, X_valid, y_valid):
     start = time.time()
     history = model.fit(X_train, y_train, epochs=100,
                         validation_data=(X_valid, y_valid), callbacks=[tb_hist])
-    print("time :", time.time() - start)
+    print("time : ", time.time() - start)
     return model, history
 
 
@@ -95,6 +95,7 @@ def evalmodel(model, history, X_test, y_test):
     model.evaluate(X_test, y_test)
 
     X_new = X_test[:3]
+    # 3개만 보여지는 데이터셋
     y_proba = model.predict(X_new)
     y_proba.round(2)
 
@@ -116,7 +117,6 @@ def evalmodel(model, history, X_test, y_test):
     # plt.show()
     # plt.show()
 
-
 def main():
     X_train_full, y_train_full, X_test, y_test = load_data()
 
@@ -126,6 +126,5 @@ def main():
     model, history = makemodel(X_train, y_train, X_valid, y_valid)
     evalmodel(model, history, X_test, y_test)
     plt.show()
-
 
 main()
