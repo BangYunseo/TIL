@@ -22,6 +22,34 @@
 
 - C++ 커널을 Python 으로 한 번 래핑
 
+#### Tensor
+
+- 다차원 넘파이 배열
+- 데이터(실수)를 저장하는 컨테이너
+- 배열의 차원은 축(axis)
+
+##### 3차원 텐서 생성
+
+```Python
+import numpy as np
+
+x = np.array([[[0, 1, 2, 3, 4], [5, 6, 7, 8, 9]], [[10, 11, 12, 13, 14], [15, 16, 17, 18, 19]], [[20, 21, 22, 23, 24], [25, 26, 27, 28, 29]],])
+
+x.ndim
+# 3
+
+x.shape 
+# (3, 2, 5)
+```
+
+![img2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/img2.png)
+
+#### 텐서의 속성
+
+- 텐서의 차원(축의 개수) : 텐서에 존재하는 축의 개수 / 3차원 텐서에는 3개의 축이 있으며 ndim 속성
+- 형상(Shape) : 텐서의 각 축으로 얼마나 데이터가 있는지를 파이썬 튜플로 표현
+- 데이터 타입(Data Type) : 텐서 요소의 자료형
+
 ## 2절. Keras
 
 #### 케라스(Keras)
@@ -193,9 +221,8 @@ test_images = test_images.reshape((10000, 784))
 test_images = test_images.astype('float32') / 255.0
 ```
 
-- 데이터를 축소함
-- 왜?
-  - [읽어보고 정리하기](https://velog.io/@dan_/%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B8%B0%EC%B4%88-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%B2%98%EB%A6%AC-MNIST)
+- 데이터를 255로 나눈 후 축소(정규화)
+- 0~1 범위의 실수로 교체하는 과정
 
 ![DP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/DP.png)
 
@@ -234,3 +261,54 @@ print('테스트 정확도 : ', test_acc)
 # 테스트 정확도: 0.9787999987602234
 ```
 
+##### 그래프 그리기
+
+```Python
+history = model.fit(train_images, train_labels, epochs=5, batch_size=128)
+loss = history.history['loss']
+acc = history.history['accuracy']
+epochs = range(1, len(loss) + 1)
+
+plt.plot(epochs, loss, 'b', label='Training Loss')    # 파란색
+plt.plot(epochs, acc, 'r', label='Accuracy')          # 빨간색
+plt.xlabel('epochs')
+plt.ylabel('loss/acc')
+plt.show()
+```
+
+![Graph](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/Graph.png)
+
+##### 실제 이미지로 테스트
+
+```Python
+import cv2 as cv
+
+image = cv.imread('test.png', cv.IMREAD_GRAYSCALE)
+image = cv.resize(image, (28, 28))
+image = image.astype('float32')
+image = image.reshape(1, 784)
+image = 255-image
+image /= 255.0
+
+plt.imshow(image.reshape(28, 28),cmap='Greys')
+plt.show()
+```
+
+![Testing](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/Testing.png)
+
+##### 테스트
+
+```Python
+pred = model.predict(image.reshape(1, 784), batch_size=1)
+print("추정된 숫자 =", pred.argmax())
+
+# 추정된 숫자 = 2
+```
+![CM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/CM.png)
+
+#### 케라스 입력 데이터
+- 넘파이 배열
+  - TensorFlow Dataset 객체 : 크기가 커서 메모리에 한 번에 적재될 수 없는 경우 디스크 또는 분산 파일 시스템에서 스트리밍 가능
+  - Python Generator : 예시로, keras.utils.Sequence 클래스는 하드 디스크에 위치한 파일을 읽어서 순차적으로 케라스 모델로 공급
+ 
+#### 
