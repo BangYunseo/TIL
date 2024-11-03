@@ -246,7 +246,10 @@ plt.imshow(train_images[0], cmap="Greys")
 ##### 신경망 모델 구축
 
 ```Python
+model = tf.keras.models.Sequential()
 
+model.add(tf.keras.layers.Dense(512, activation = 'relu', input_size = (784, )))
+model.add(tf.keras.layers.Dense(10, activation = 'sigmoid'))
 ```
 
 ![MNISTmodel](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/MNISTmodel.png)
