@@ -16,7 +16,7 @@
 
 #### 텐서플로우 구조
 
-![TensorSturucture](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/TensorSturucture.PNG)
+![TensorStructure](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/TensorStructure.PNG)
 
 - C++ 커널을 Python 으로 한 번 래핑
 
@@ -30,6 +30,7 @@
 
 - 차원 수가 증가하면 차원(size)의 앞에 숫자 추가
 -
+
 ```Python
 import numpy as np
 x = np.random.randint(5, size = (2, 4, 3, 3))     # 3차원 = (4, 3, 3) / 4차원 = (2, 4, 3, 3)
@@ -74,27 +75,29 @@ x.shape
 - 형상(Shape) : 텐서의 각 축으로 얼마나 데이터가 있는지를 파이썬 튜플로 표현
 - 데이터 타입(Data Type) : 텐서 요소의 자료형
 
-![tensorA]()
+![tensorA](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/tensorA.PNG)
 
 #### 훈련 데이터 형상
 
 ##### 벡터 데이터
+
 - (배치 크기, 특징 수)의 형상
 
-![TrainData1]()
+![TrainData1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/TrainData1.PNG)
 
 ##### 이미지 데이터
+
 - (배치 크기, 이미지 높이, 이미지 너비, 채널 수)의 형상
 - 4차원 넘파이 텐서에 저장
 
-![TrainData2]()
+![TrainData2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/TrainData2.PNG)
 
 ##### 시계열 데이터
 
 - (배치 크기, 타입 스텝, 특징 수)의 형상
 - 3차원 넘파이 텐서에 저장
 
-![TrainData3]()
+![TrainData3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/TrainData3.PNG)
 
 ## 2절. Keras
 
@@ -149,6 +152,7 @@ model.compile(loss='mean_squared_error', optimizer=keras.optimizers.SGD(lr = 0.3
 ```
 
 - 모델 테스트 코드
+
 ```Python
 model.fit(X, y, batch_size=1, epochs=10000)
 # fit() 호출을 통한 학습 수행
@@ -206,14 +210,14 @@ model.fit(...)
 
 ![MNIST](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/MNIST.png)
 
-- 입력 : 784(28 * 28)
+- 입력 : 784(28 \* 28)
 - 출력 : 10(0 ~ 9)
 
 #### 숫자 데이터 관리
 
 ##### 숫자 데이터 불러오기
 
-- 28 * 28로 60000개의 이미지 존재
+- 28 \* 28로 60000개의 이미지 존재
 
 ```Python
 import matplotlib.pyplot as plt
@@ -242,11 +246,13 @@ plt.imshow(train_images[0], cmap="Greys")
 ##### 신경망 모델 구축
 
 ```Python
+
 ```
 
 ![MNISTmodel](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/MNISTmodel.png)
 
 #### 컴파일 단계
+
 - 손실 함수(Loss Function) : 신경망의 출력과 정답 간의 오차를 계산하는 함수
 - 옵티마이저(Optimizer) : 손실 함수를 기반으로 신경망의 파라미터(매개 변수)를 최적화하는 알고리즘
 - 지표(Metric) : 훈련과 테스트 과정에서 사용되는 척도
@@ -273,6 +279,7 @@ test_images = test_images.astype('float32') / 255.0
 ![DP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/DP.png)
 
 ##### 정답 레이블 형태 변경(원핫 인코딩)
+
 ```Python
 train_labels = tf.keras.utils.to_categorical(train_labels)
 test_labels = tf.keras.utils.to_categorical(test_labels)
@@ -350,14 +357,17 @@ print("추정된 숫자 =", pred.argmax())
 
 # 추정된 숫자 = 2
 ```
+
 ![CM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/CM.png)
 
 #### 케라스 입력 데이터
+
 - 넘파이 배열
   - TensorFlow Dataset 객체 : 크기가 커서 메모리에 한 번에 적재될 수 없는 경우 디스크 또는 분산 파일 시스템에서 스트리밍 가능
   - Python Generator : 예시로, keras.utils.Sequence 클래스는 하드 디스크에 위치한 파일을 읽어서 순차적으로 케라스 모델로 공급
- 
+
 #### 케라스 클래스
+
 - 모델 : 하나의 신경망
 - 레이어 : 신경망에서 하나의 층
 - 입력 데이터 : 텐서플로우 텐서 형식
@@ -365,6 +375,7 @@ print("추정된 숫자 =", pred.argmax())
 - 옵티마이저 : 학습 수행 최적화 알고리즘으로 학습률과 모멘텀 동적 변경
 
 #### Sequential 모델
+
 - compile(optimizer, loss=None, metrics=None) : 훈련을 위해 모델 구성
 - fit(x=None, y=None, batch_size=None, epochs=1, verbose=1) : 훈련 메소드
 - evaluate(x=None, y=None) : 테스트 모드에서 모델의 손실 함수 값과 측정 항목 값 반환
@@ -372,17 +383,21 @@ print("추정된 숫자 =", pred.argmax())
 - add(layer) : 레이어를 모델에 추가
 
 #### 레이어 클래스
+
 - Input(shape, batch_size, name) : 입력 받아 케라스 텐서 생성 객체
 - Dense(units, activation=None, use_bias=True, input_shape) : 유닛이 연결된 레이어
 - Embedding(input_dim, output_dim)
 
 #### 손실 함수
+
 - MeanSquaredError : 정답 레이블과 예측값 사이의 평균 제곱 오차를 계산
 
 - BinaryCrossentropy : 정답 레이블과 예측 레이블 간의 교차 엔트로피 손실 계산
+
   - ex) 강아지인지 아닌지 확인 여부
 
 - CategoricalCrossentropy : 정답 레이블과 예측 레이블 간의 교차 엔트로피 손실 계산
+
   - ex) 강아지, 고양이, 호랑이인지 확인 여부
   - 정답 레이블은 원핫 인코딩 제공
 
@@ -391,22 +406,25 @@ print("추정된 숫자 =", pred.argmax())
   - 정답 레이블은 정수 제공
 
 #### 측정 항목
+
 - Accuracy : 정확도
+
   - 예측값이 정답 레이블과 같은 횟수 계산
 
 - categorical_accuracy : 범주형 정확도
   - 신경망의 예측값이 원-핫 레이블과 일치하는 빈도 계산
 
 #### 옵티마이저
+
 - SGD : 확률적 경사 하강법(Stochastic Gradient Descent, SGD)
   - Nesterov 모멘텀을 지원
-   
 - Adagrad : 가변 학습률을 사용하는 방법
 - Adadelta : 모멘텀을 이용하여 감소하는 학습률 문제를 처리하는 Adagrad의 변형
-- RMSprop :  Adagrad에 대한 수정판
+- RMSprop : Adagrad에 대한 수정판
 - Adam : (RMSprop + 모멘텀)
 
 #### 활성화 함수
+
 - sigmoid
 - relu(Rectified Linear Unit)
 - softmax
@@ -414,7 +432,7 @@ print("추정된 숫자 =", pred.argmax())
 - selu(Scaled Exponential Linear Unit)
 - softplus
 
-![AF]()
+![AF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/AF.PNG)
 
 #### 하이퍼 매개 변수
 
@@ -422,7 +440,7 @@ print("추정된 숫자 =", pred.argmax())
   - 학습률이나 은닉층을 몇 개로 할 것인가?
   - 은닉층의 개수나 유닛의 개수는 누가 정하는가?
 
-![HP]()
+![HP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/HP.PNG)
 
 #### 하이퍼 매개 변수 탐색 방법
 
@@ -433,7 +451,6 @@ print("추정된 숫자 =", pred.argmax())
 
 #### 그리드 검색
 
-![grid]()
+![grid](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/grid.PNG)
 
 - 각 하이퍼 매개변수에 대해 값을 지정하면 이 중 가장 좋은 조합을 찾는 알고리즘
-
