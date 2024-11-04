@@ -1,17 +1,18 @@
 #  Chapter 1. 고전 암호 기술
-> 0절. Basic Terminology
-> 
-> 1절. Symmetric Encryption
->
-> 2절. Attack Scenarios
->
-> 3절. Many Ciphers
->
-> 4절. Steganography
 
-## 0절. Basic Terminology
+> 0절. 암호학 기초
+> 
+> 1절. 대칭형 암호
+>
+> 2절. 암호 공격
+>
+> 3절. 고전 암호
+>
+> 4절. 스테가노그라피(Steganography)
+
+## 0절. 암호학 기초
 #### 대칭형 암호(Symmetric Encryption)
-* 일반적인 / 비밀 키 / 단일 키 암호
+* 일반적인 / 비밀 / 단일 키 암호
 * 1970년대 공개 키 암호호화가 발명되기 이전의 유일한 암호화 유형
 * 두 가지 암호화 유형(비대칭형과 대칭형) 중 가장 널리 사용되는 암호화 유형
 * 발신자와 수신자가 공통 키 공유
@@ -36,12 +37,13 @@
 |cryptanalysis(codebreaking)|study of principles/methods of deciphering ciphertext without knowing key|암호분석학|암호 분석(공격)|
 |cryptology|field of both cryptography and cryptanalysis|암호학|암호에 대한 모든 학문|
 
-## 1절. Symmetric Encryption
+## 1절. 대칭형 암호
 #### 대칭형 암호 모델(Symmetric Cipher Model)
 
 ![SE](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch01/SE.PNG)
 
 ![SE2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch01/SE2.PNG)
+
 * Secure Channel은 키 값을 보내는 안전한 채널
 
 #### Kerckhoffs의 원리
@@ -52,7 +54,7 @@
         * 암호화 알고리즘이 모두가 다 알고 있더라도 풀지 못하게 만들어야 보안이 유지되기 때문
 
 
-## 2절. Attack Scenarios
+## 2절. 암호 공격 
 #### 공격 종류
 * 암호분석학 공격(Cryptanalytic attacks)
     |용어|의미|
@@ -72,8 +74,8 @@
     * 예시 : 4자리의 암호(0000 ~ 9999)를 모두 시도해 암호를 얻는 방법의 공격
         * 컴퓨터 대수를 높여 효율 증가
 
-## 3절. Many Classical Ciphers
-#### 고전적 암호의 종류
+## 3절. 고전 암호
+#### 고전 암호의 종류
 * 평문의 문자가 다른 문자나 숫자 또는 기호로 대체되는 경우
 * 평문이 일련의 비트로 간주되는 경우         
     * 평문의 비트 패턴을 암호문 비트 패턴으로 바꾸는 작업 포함
@@ -219,7 +221,7 @@
             * 때문에 두 가지 성질을 섞은 경우가 더 복잡하고 안전
 * 고전 암호에서 현대 암호로의 발전
 
-## 4절. Steganography
+## 4절. 스테가노그라피(Steganography)
 #### 스테가노그라피
 * 암호화의 대안으로 취급되며 타 암호화 방법과 같이 사용 시 더 안전하며 효율적
     * 암호화와는 다르기 때문에 암호화 방법과 함께 사용되는 것
