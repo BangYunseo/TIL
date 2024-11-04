@@ -97,68 +97,33 @@
 
   - 관계 $d ∣ a$와 $d ∣ b$
     - $d ∣ (r_1 = a − q_1b)$를 의미
-  - $c = gcd(b,r_1)$라 가정
-    - $d ∣ b$와
-      𝑑
-      ∣
-      𝑟
-      1
-      d∣r
-      1
-      ​
-      로부터,
-      𝑑
-      ≤
-      𝑐
-      d≤c입니다.
-      𝑐
-      ∣
-      (
-      𝑎
-      =
-      𝑞
-      1
-      𝑏
+  - $c = gcd(b, r_1)$라 가정
+    - $d ∣ b$와 $d∣r_1$로 $d ≤ c$ 성립
+    - $c ∣ (a = q_1b + r_1)$이고 $c ∣ b$이므로 $c ≤ d$ 성립
 
-- 𝑟
-  1
-  )
-  c∣(a=q
-  1
-  ​
-  b+r
-  1
-  ​
-  )이고
-  𝑐
-  ∣
-  𝑏
-  c∣b이므로
-  𝑐
-  ≤
-  𝑑
-  c≤d입니다.
-  따라서,
-  𝑐
-  =
-  𝑑
-  c=d가 성립합니다.
-  결론적으로,
-  gcd
-  (
-  𝑎
-  ,
-  𝑏
-  )
-  =
-  gcd
-  (
-  𝑏
-  ,
-  𝑟
-  1
-  )
-  gcd(a,b)=gcd(b,r
-  1
-  ​
-  )입니다.
+- 결론
+  - $c = d$ 성립
+  - $gcd(a, b) = gcd(b, r_1)$ 증명
+
+##### 유클리디언 알고리즘 과정
+
+![EAP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EAP.PNG)
+
+- $b = r_0$ 가정
+  - 각 단계에서 $d = gcd(r_i, r_{i+1})$, $d = gcd(r_n,0) = r_n$이 될 때까지 반복
+
+##### $gcd(1970, 1066)$의 경우
+
+![EAPex1](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EAPex1.PNG)
+
+##### $gcd(1160718174, 316258250)$의 경우
+
+![EAPex2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EAPex2.PNG)
+
+## 4절. 모듈(나눗셈기)
+
+#### 모듈러(Modulus)
+
+## 5절. $Z_n$
+
+## 6절. 확장 유클리디언 알고리즘
