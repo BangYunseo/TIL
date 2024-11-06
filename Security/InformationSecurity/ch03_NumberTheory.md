@@ -124,6 +124,8 @@
 
 #### 모듈러(Modulus)
 
+![Modulus](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/Modulus.PNG)
+
 ## 5절. $Z_n$
 
 ## 6절. 확장 유클리디언 알고리즘
