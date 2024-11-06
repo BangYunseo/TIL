@@ -122,9 +122,43 @@
 
 ## 4절. 모듈(나눗셈기)
 
-#### 모듈러(Modulus)
+#### 모듈러스(Modulus)
+
+- $a$ mod $n$
+  - $a$가 정수이고 $n$이 양의 정수일 경우 $a$를 $n$으로 나누었을 때의 나머지
+  - 정수 $n$은 모듈러스(Modulus)
 
 ![Modulus](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/Modulus.PNG)
+
+- ($a$ mod $n$) = ($b$ mod $n$)
+- $a ≡ b$ (mod $n$)
+- 둘은 서로 동일
+
+![Modulus2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/Modulus2.PNG)
+
+#### 모듈러 산술
+
+##### 합동 관계(Congruence)의 특징
+
+1. $a ≡ b$ $(mod$ $n)$는 $n ∣ (a − b)$
+
+2. $a ≡ b$ $(mod$ $n)$라면 $b ≡ a$ $(mod$ $n)$
+
+3. $a ≡ b$ $(mod$ $n)$이고 $b ≡ c$ $(mod$ $n)$이면 $a ≡ c$ $(mod$ $n)$
+
+##### 모듈러 산술 연산
+
+1. $(a + b)$ $mod$ $n$ = $[(a$ $mod$ $n)$ $+$ $(b$ $mod$ $n)]$ $mod$ $n$
+
+2. $(a - b)$ $mod$ $n$ = $[(a$ $mod$ $n)$ $-$ $(b$ $mod$ $n)]$ $mod$ $n$
+
+3. $(a × b)$ $mod$ $n$ = $[(a$ $mod$ $n)$ $×$ $(b$ $mod$ $n)]$ $mod$ $n$
+
+#### 모듈러 산술 예시
+
+![ModulusEx](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/ModulusEx.PNG)
+
+#### 모듈러 8
 
 ## 5절. $Z_n$
 

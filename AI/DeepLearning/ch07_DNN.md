@@ -144,10 +144,11 @@
 ![SW](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch07/SW.PNG)
 
 #### 난수 가중치 초기값
+
 - 가중치의 초깃값은 난수로 결정
 - 반대로 너무 큰 가중치는 그래디언트 폭발(Exploding Gradients) 발생
   - 학습이 수렴하지 않고 발산
- 
+
 ##### Xavier 방법
 
 ![Xavier](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch07/Xavier.PNG)
@@ -160,25 +161,28 @@
 
 ```Python
 def load_mnist() :
- digits = load_digits()
- x_data= digits.data
- y_data= digits.target
- x_trainf, x_test, y_trainf, y_test= train_test_split(x_data, y_data, test_size=0.3)
- X_valid, X_train= x_trainf[:50] , x_trainf[50:]
- y_valid, y_train= y_trainf[:50], y_trainf[50:]
- return X_valid,X_train,y_valid,y_train,x_test,y_test
+  digits = load_digits()
+  x_data = digits.data
+  y_data = digits.target
+  x_trainf, x_test, y_trainf, y_test = train_test_split(x_data, y_data, test_size = 0.3)
+
+  X_valid, X_train = x_trainf[:50] , x_trainf[50:]
+  y_valid, y_train = y_trainf[:50], y_trainf[50:]
+
+  return X_valid,X_train,y_valid,y_train,x_test,y_test
 ```
 
 ##### 기존 가중치 초기화 방법
 
 ```Python
 def makemodel(X_train, y_train, X_valid, y_valid):
- model = keras.models.Sequential()
- model.add(keras.layers.Flatten(input_shape=[28, 28]))
- model.add(keras.layers.Dense(300, activation="relu"))
- model.add(keras.layers.Dense(100, activation="relu"))
- model.add(keras.layers.Dense(10, activation="softmax"))
- model.summary()
+  model = keras.models.Sequential()
+  model.add(keras.layers.Flatten(input_shape=[28, 28]))
+  model.add(keras.layers.Dense(300, activation="relu"))
+  model.add(keras.layers.Dense(100, activation="relu"))
+  model.add(keras.layers.Dense(10, activation="softmax"))
+
+  model.summary()
 ```
 
 ##### 서로 다른 가중치 초기화 방법
@@ -196,9 +200,9 @@ def makemodel(X_train, y_train, X_valid, y_valid, weight_init,):
 ##### 정확도, 손실 함수 비교
 
 ```Python
-model_xavier,hist_xavier= makemodel(X_train, y_train, X_valid, y_valid,'glorot_uniform')
- model_RandomNormal,hist_RandomNormal= makemodel(X_train, y_train, X_valid, y_valid,'RandomNormal')
- model_he,hist_he= makemodel(X_train, y_train, X_valid, y_valid,'he_normal')
+model_xavier,hist_xavier = makemodel(X_train, y_train, X_valid, y_valid,'glorot_uniform')
+model_RandomNormal,hist_RandomNormal = makemodel(X_train, y_train, X_valid, y_valid,'RandomNormal')
+model_he,hist_he= makemodel(X_train, y_train, X_valid, y_valid,'he_normal')
 ```
 
 ![HX](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch07/HX.PNG)
@@ -206,7 +210,9 @@ model_xavier,hist_xavier= makemodel(X_train, y_train, X_valid, y_valid,'glorot_u
 - He 나 Xiver의 정확도와 손실함수가 더 좋은 모습
 
 ## 5절. 데이터
+
 #### 범주형 데이터 처리
+
 - 입력 데이터 중 여러 가지 카테고리를 가진(female, male 등) 데이터들 존재 => 숫자로 변환
 
 ```Python
@@ -218,11 +224,13 @@ for ix in train.index:
 ```
 
 #### 범주형 데이터 변환 방법
+
 - 정수 인코딩(Integer Encoding) : 각 레이블이 정수로 매핑
 - 원-핫 인코딩(One-Hot Encoding) : 각 레이블이 이진 벡터에서 매핑
 - 임베딩(Embedding) : 범주의 분산된 표현 학습(자연어 처리)
 
 ##### 정수 인코딩(Integer Encoding)
+
 - sklearn 라이브러리의 Label Encoder 클래스 사용
 
 ```Python
@@ -246,6 +254,7 @@ print(X)
 ```
 
 ##### 원-핫 인코딩(One-Hot Encoding) : sklearn 라이브러리
+
 - 단 하나의 값만 1, 나머지는 모두 0인 인코딩
 - 가장 많이 사용
 
@@ -253,14 +262,14 @@ print(X)
 
 ```Python
 import numpyas np
-X = np.array([['Korea', 44, 7200], 
-              ['Japan', 27, 4800], 
+X = np.array([['Korea', 44, 7200],
+              ['Japan', 27, 4800],
               ['China', 30, 6100]])
 
 from sklearn.preprocessingimport OneHotEncoder
 onehotencoder= OneHotEncoder()
 
- # 원하는 열로 2차원 배열을 만들어 전달 
+ # 원하는 열로 2차원 배열을 만들어 전달
 XX = onehotencoder.fit_transform(X[:,0].reshape(-1,1)).toarray()
 print(XX)
 
@@ -276,9 +285,11 @@ print(X)
 # ['0.0' '1.0' '0.0' '27' '4800']
 # ['1.0' '0.0' '0.0' '30' '6100']]
 ```
+
 ##### 원-핫 인코딩(One-Hot Encoding) : 케라스(keras) 사용
 
 - 케라스의 to_categorical() 호출로 구현 가능
+
 ```Python
 class_vector =[2, 6, 6, 1]
 
@@ -333,7 +344,7 @@ adapt_data = np.array([[1.], [2.], [3.], [4.], [5.]], dtype=np.float32)
  <tf.Tensor: shape=(3, 1), dtype=float32, numpy=
  array([[-1.4142135 ],
  [-0.70710677],
- [ 0.        
+ [ 0.
 ]], dtype=float32)>
 ```
 
@@ -435,7 +446,6 @@ model.add(tf.keras.layers.Dense(16, kernel_regularizer=tf.keras.regularizers.l2(
 model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 ```
 
-
 ##### 드롭 아웃
 
 - 일부 노드를 랜덤 제외
@@ -456,4 +466,3 @@ model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 ##### 데이터 증강
 
 - 소량의 훈련 데이터에서 많은 훈련 데이터를 추출하는 방법
-
