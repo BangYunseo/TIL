@@ -312,9 +312,11 @@ print(output)
 
 ![DN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch07/DN.PNG)
 
-#### sklearn 데이터 정규화
+#### 데이터 정규화
 
 ![SDN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch07/SDN.PNG)
+
+##### sklearn 데이터 정규화
 
 ```Python
 from sklearn.preprocessing import MinMaxScaler
@@ -337,20 +339,21 @@ print(scaler.transform(data))            # 데이터 변환
 
 ```Python
 adapt_data = np.array([[1.], [2.], [3.], [4.], [5.]], dtype=np.float32)
- >>> input_data = np.array([[1.], [2.], [3.]], np.float32)
- >>> layer = Normalization()
- >>> layer.adapt(adapt_data)
- >>> layer(input_data)
- <tf.Tensor: shape=(3, 1), dtype=float32, numpy=
- array([[-1.4142135 ],
- [-0.70710677],
- [ 0.
-]], dtype=float32)>
+input_data = np.array([[1.], [2.], [3.]], np.float32)
+layer = Normalization()
+layer.adapt(adapt_data)
+layer(input_data)
+
+# <tf.Tensor: shape=(3, 1), dtype=float32, numpy=
+# array([[-1.4142135 ],
+# [-0.70710677],
+# [ 0.
+# ]], dtype=float32)>
 ```
 
-#### 과잉 적합과 과소 적합
+#### 과잉 적합(Over Fitting)
 
-- 과잉 적합(Over Fitting) : 지나치게 훈련 데이터에 특화되어 실제 적용 시 좋지 못할 경우
+- 지나치게 훈련 데이터에 특화되어 실제 적용 시 좋지 못할 경우
 
 ##### 과잉 적합 확인 방법
 
@@ -401,17 +404,17 @@ validation_data = (test_data, test_labels), verbose = 2)
 
 # 훈련 데이터의 손실값과 검증 데이터의 손실값 출력
 history_dict= history.history
- loss_values= history_dict['loss'] # 훈련데이터손실값
+loss_values= history_dict['loss'] # 훈련데이터손실값
 val_loss_values= history_dict['val_loss'] # 검증데이터손실값
 acc = history_dict['accuracy'] # 정확도
 epochs = range(1, len(acc) + 1) # 에포크수
 plt.plot(history.history['loss'])
- plt.plot(history.history['val_loss'])
- plt.title('Loss Plot')
- plt.ylabel('loss')
- plt.xlabel('epochs')
- plt.legend(['train error', 'valerror'], loc='upper left')
- plt.show()
+plt.plot(history.history['val_loss'])
+plt.title('Loss Plot')
+plt.ylabel('loss')
+plt.xlabel('epochs')
+plt.legend(['train error', 'valerror'], loc='upper left')
+plt.show()
 ```
 
 ![res](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch07/res.PNG)
@@ -437,8 +440,6 @@ plt.plot(history.history['loss'])
 
 ![WS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch07/WS.PNG)
 
-##### 신경망 모델 구축 - 가중치 규제
-
 ```Python
 model = tf.keras.Sequential()
 model.add(tf.keras.layers.Dense(16, kernel_regularizer=tf.keras.regularizers.l2(0.001), activation='relu', input_shape=(1000,)))
@@ -452,8 +453,6 @@ model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 
 ![DO](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch07/DO.PNG)
 
-##### 신경망 모델 구축 - 드롭 아웃
-
 ```Python
 model = tf.keras.Sequential()
 model.add(tf.keras.layers.Dense(16, activation='relu', input_shape=(10000,)))
@@ -463,6 +462,34 @@ model.add(tf.keras.layers.Dropout(0.5))
 model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 ```
 
-##### 데이터 증강
+##### 데이터 증강(Data Augmentation)
 
-- 소량의 훈련 데이터에서 많은 훈련 데이터를 추출하는 방법
+- 소량의 훈련 데이터에서 많은 훈련 데이터 추출
+
+#### 앙상블
+
+- 여러 전문가를 동시에 훈련
+- 동일한 딥러닝 신경망 N개 생성
+- 각 신경망을 독립적으로 학습시킨 후 결합
+
+#### 모델 구축
+```Python
+model = tf.keras.models.Sequential()
+model.add(tf.keras.layers.Dense(16, activation='relu', input_shape=(2,)))
+model.add(tf.keras.layers.Dense(8, activation='relu'))
+model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
+# 0 ~ 1 바이너리의 출력을 위해 sigmoid 함수 사용
+
+model.compile(loss='binary_crossentropy',
+             optimizer='adam',
+             metrics=['accuracy'])
+ 
+model.fit(train, target, epochs=30, batch_size=1, verbose=1)
+```
+
+- 바이너리 값이 10개
+  - activation = softmax
+  - loss = sparse_categorical_crossentropy
+- 바이너리 값이 2개(0, 1)
+  - activation = sigmoid
+  - loss = binary_crossentropy
