@@ -47,7 +47,7 @@
   - 시그모이드 활성화 함수로 인해 발생
   - 특성상, 아주 큰 양수나 음수가 입력되면 출력이 포화되어 0이 됨
 
-    ![SF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch07/SF.PNG)
+![SF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch07/SF.PNG)
 
 ![GP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch07/GP.PNG)
 
@@ -189,12 +189,13 @@ def makemodel(X_train, y_train, X_valid, y_valid):
 
 ```Python
 def makemodel(X_train, y_train, X_valid, y_valid, weight_init,):
- model = keras.models.Sequential()
- model.add(keras.layers.Flatten(input_shape=[28, 28]))
- model.add(keras.layers.Dense(300, weight_init, activation="relu"))
- model.add(keras.layers.Dense(100, weight_init, activation="relu"))
- model.add(keras.layers.Dense(10, weight_init, activation="softmax"))
- model.summary()
+  model = keras.models.Sequential()
+  model.add(keras.layers.Flatten(input_shape=[28, 28]))
+  model.add(keras.layers.Dense(300, weight_init, activation="relu"))
+  model.add(keras.layers.Dense(100, weight_init, activation="relu"))
+  model.add(keras.layers.Dense(10, weight_init, activation="softmax"))
+
+  model.summary()
 ```
 
 ##### 정확도, 손실 함수 비교
@@ -372,7 +373,7 @@ import tensorflowas tf
 import matplotlib.pyplotas plt
 
 # 데이터 다운로드
-(train_data, train_labels), (test_data, test_labels) = \ tf.keras.datasets.imdb.load_data(num_words=1000)
+(train_data, train_labels), (test_data, test_labels) = tf.keras.datasets.imdb.load_data(num_words=1000)
 # imdb를 활용하여 많이 사용되는 단어 1000개 추출
 
 # 원-핫 인코딩 변환 함수
@@ -404,10 +405,10 @@ validation_data = (test_data, test_labels), verbose = 2)
 
 # 훈련 데이터의 손실값과 검증 데이터의 손실값 출력
 history_dict= history.history
-loss_values= history_dict['loss'] # 훈련데이터손실값
-val_loss_values= history_dict['val_loss'] # 검증데이터손실값
-acc = history_dict['accuracy'] # 정확도
-epochs = range(1, len(acc) + 1) # 에포크수
+loss_values= history_dict['loss']           # 훈련데이터 손실 값
+val_loss_values= history_dict['val_loss']   # 검증데이터 손실 값
+acc = history_dict['accuracy']              # 정확도
+epochs = range(1, len(acc) + 1)             # 에포크수
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
 plt.title('Loss Plot')
@@ -473,6 +474,7 @@ model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 - 각 신경망을 독립적으로 학습시킨 후 결합
 
 #### 모델 구축
+
 ```Python
 model = tf.keras.models.Sequential()
 model.add(tf.keras.layers.Dense(16, activation='relu', input_shape=(2,)))
@@ -483,7 +485,7 @@ model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 model.compile(loss='binary_crossentropy',
              optimizer='adam',
              metrics=['accuracy'])
- 
+
 model.fit(train, target, epochs=30, batch_size=1, verbose=1)
 ```
 
