@@ -164,10 +164,10 @@
 
 ## 5절. $Z_n$
 
-#### $Z_n$
-
-- $Z_n$에서의 모듈러 산술 성질
+#### $Z_n$ 모듈러 산술 특징
 
 ![zn](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/zn.PNG)
 
 ## 6절. 확장 유클리디언 알고리즘
+
+####
