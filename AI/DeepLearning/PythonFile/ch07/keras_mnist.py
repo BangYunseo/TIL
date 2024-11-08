@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import tensorflow as tf
+import cv2 as cv
 
 (train_images, train_labels), (test_images, test_labels)	= tf.keras.datasets.mnist.load_data()
 
@@ -43,8 +44,6 @@ plt.plot(epochs, acc, 'r', label='Accuracy')
 plt.xlabel('epochs')
 plt.ylabel('loss/acc')
 plt.show()
-
-import cv2 as cv
 
 image = cv.imread('test.png', cv.IMREAD_GRAYSCALE)
 image = cv.resize(image, (28, 28))
