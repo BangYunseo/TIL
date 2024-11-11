@@ -168,6 +168,32 @@
 
 ![zn](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/zn.PNG)
 
+![zn2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/zn2.PNG)
+
+![zn3](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/zn3.PNG)
+
 ## 6절. 확장 유클리디언 알고리즘
 
-####
+#### $ax$ + $by$ = $d$
+
+![EUA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EUA.PNG)
+
+#### 확장 유클리디언 알고리즘 예시
+
+- gcd(259, 70)
+
+![EU](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EU.PNG)
+
+- $a = 1759$, $b = 550$
+
+![EU2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EU2.PNG)
+
+## 7절. 정수론
+
+#### Group, Ring, Field
+
+![GRF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/GRF.PNG)
+
+#### GF(7)
+
+![GF7](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/GF7.PNG)
