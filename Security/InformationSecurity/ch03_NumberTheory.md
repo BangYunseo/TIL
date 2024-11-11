@@ -66,7 +66,7 @@
 - $a$와 $b$의 최대공약수
 
   - $a$와 $b$가 동시에 나눠지는 가장 큰 양의 정수
-  - $gcd(a, b)$ = $max[k such that k∣a and k∣b]$
+  - $gcd(a, b)$ = $max$ $[k$ such that $k∣a$ and $k∣b]$
   - $gcd(a, b) = gcd(a, −b) = gcd(−a, b) = gcd(−a, −b)$
     - ex) $gcd(60, 24) = gcd(60, −24) = 12$
 
