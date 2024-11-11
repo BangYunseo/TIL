@@ -1,72 +1,62 @@
-# Chapter 4. 유클리드 호제법
+# Chapter 4. 고급 암호화 표준(AES : Advanced Encryption Standard)
 
-> 1절. Division Algorithm
+> 1절. AES의 구조
 >
-> 2절. Greatest Common Divisor(GCD)
+> 2절. SubBytes
 >
-> 3절. Euclidean Algorithm
+> 3절. ShiftRows
 >
-> 4절. The Modulus
+> 4절. MixColumns
 >
-> 5절. $Z_n$
->
-> 6절. Extended Euclidean Algorithm
+> 5절. AddRoundKey
 
-## 1절. Division Algorithm
+## 1절. AES의 구조
 
-#### Divisivility
+#### 개요
 
-- $a, b, m$이 모두 정수일 때 $m$에 대해 $a = mb$가 성립한다면 0이 아닌 숫자 $b$는 $a$를 나눔
-  - $b | a$는 $b$가 $a$를 나눈다는 것을 의미
-  - $b | a$일 때, $b$는 $a$의 약수
-  - 예시
-    - $24$의 양의 약수는 $1, 2, 3, 4, 6, 8, 12, 24$
-    - 비슷한 예시
-      - $13|182$
-      - $-5|30$
-      - $17|289$
-      - $-3|33$
-      - $17|0$
+- 2001년 미국 국립표준기술연구소(NIST)에서 전자 데이터 암호화를 위한 규격으로 제정
+- 벨기에의 두 암호학자인 조안 다멘(Joan Daemen)과 빈센트 리멘(Vincent Rijmen)이 개발한 Rijndael 암호 기반
+- 미국 정부에 의해 채택되어 전 세계적으로 사용
+- 1977년의 데이터 암호화 표준(DES) 대체
 
-#### Divisivility의 특성
+#### AES 일반적인 구조
 
-- 만약 $a|1$ 이라면, $a = ±1$
-  - a가 1의 약수
-- 만약 $a|b$ 와 $b|a$ 이라면, $a = ±b$
-  - 절댓값이 동일
-- 0이 아닌 b는 0으로 나눠짐
-- $a | b$와 $b | c$가 성립한다면, $a | c$도 성립
-- $b | g$ 와 $b | h$가 성립한다면, $b | (mg + nh) $도 $m$과 $n$이 선형결합에 의해 성립
+##### $GF(2^8)$ 
+- $m(x) = x⁸ + x⁴ + x³ + x + 1$ 이므로  $x⁸ = x⁴ + x³ + x + 1 = (00011011) =$ $\{1B\}$ 
+- $A = (a_7a_6...a_1a_0)$와 $B = (b_7b_6...b_1b_0)$일 때, 합은 $A + B = (c_7c_6...c_1c_0)$
+  - $c_i = a_i ⊕ b_i$ 성립
+- 곱셈 $\{02\}$⋅A는 $a_7$이 $0$이면 $(a_6...a_1a_00)$, $a_7$이 $1$이면 $(a_6...a_1a_00)⊕(00011011)$
 
-#### 나눗셈 알고리즘(Divisibility Algorithm)
+##### 매개 변수(Parameter)
+- 128비트 (16바이트)의 평문 블록 크기 사용
+- 키 길이는 128, 192, 또는 256비트(16, 24, 또는 32바이트)
+- 라운드 수는 10, 12, 또는 14
+- 키 길이에 따라 AES-128, AES-192, 또는 AES-256
 
-- 양의 정수 n과 정수 a가 주어지면 a를 n으로 나누고 정수 몫 q와 정수 나머지 r을 얻음
-  > $a = qn + r$ 의 수식으로 표현 가능  
-  > 조건 : $0 ≤  r < n$ and $ q = [a/n]$
-- $[x]$는 $x$보다 작거나 같은 가장 큰 정수
-- 예시
+##### 상태(State)
+- 4x4 바이트 행렬로 나타내는 4개의 열과 4개의 바이트로 구성된 데이터 블록
+- 키는 바이트 행렬
 
-![DA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/DA.PNG)
+![AES](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/AES.PNG)
 
-## 2절. Greatest Common Divisor(GCD)
+#### AES의 구체적인 구조
 
-#### 최대공약수
+##### 전체적인 구조
+- 페이스텔(Feistel) 구조가 아닌 AES
+- AES-128
+  - AddRoundKey 변환으로 시작
+  - 각 라운드마다 네 가지 변환을 포함한 9개의 라운드 진행
+  - 세 가지 변환이 포함된 열 번째 라운드가 진행
 
-- 정수 $p > 1$은 약수가 $±1$과 $±p$뿐인 경우 소수
-  - $2, 3, 5, 7, 11, 13, 17, 19, …$
-- a와 b의 최대공약수는 a와 b가 동시에 나눠지는 가장 큰 양의 정수
-  - $gcd(a, b)$ = max[k, $k|a$ 와 $k|b$인 a와 b의 공약수 중 가장 큰 수]
-  - $gcd(a, b) = gcd(a, −b) = gcd(−a, b) = gcd(−a, −b)$
-    - 부호와 관계 없는 최대공약수
-  - $gcd(60, 24) = gcd(60, −24) = 12$
-- 두 정수의 유일한 공약수가 1인 경우 그 둘은 서로소에 해당
-  - 만약 gcd(a, b) = 1인 경우 두 정수 a와 b가 소수
-  - 8과 15
-    - 각 숫자는 소수가 아님
-    - 두 숫자는 서로소에 해당(최대공약수가 1)
+#### 4 - 변환(Transformation)
+- SubBytes
+- ShiftRows
+- MixColumns
+- AddRoundKey(Key를 사용하는 유일한 과정)
 
-## 3절. Euclidean Algorithm
+![AESDS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/AESDS.PNG)
 
-#### 유클리드 알고리즘 : GCD
+## 2절. SubBytes
 
-- GCD는
+#### SubBytes Transformation
+
