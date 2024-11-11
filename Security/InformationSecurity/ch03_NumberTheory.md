@@ -197,3 +197,14 @@
 #### GF(7)
 
 ![GF7](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/GF7.PNG)
+
+#### GF($p^n$)에서의 역원
+
+- $x_8 + x_4 + x_3 + x + 1$을 법으로 하는 $x_7 + x + 1$의 곱셈 역원
+- 답 : $(x_7 + x + 1)⋅x^7 ≡ 1$ ($mod$ $x_8 + x_4 + x_3 + x + 1$)
+
+  ∴ $ x^7$
+
+![EEU](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EEU.PNG)
+
+![EEU2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EEU2.PNG)
