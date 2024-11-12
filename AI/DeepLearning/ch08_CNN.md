@@ -222,7 +222,8 @@
 ##### Conv2D()
 ```Python
 import tensorflow as tf
-tf.keras.layers.Conv2D(filters, kernel_size, strides=(1, 1), activation=None, input_shape, padding='valid’)
+tf.keras.layers.Conv2D(filters, kernel_size, strides=(1, 1),
+                       activation=None, input_shape, padding='valid’)
 ```
 
 - filters : 필터 개수
