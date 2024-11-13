@@ -38,6 +38,7 @@
 #### 함수 중복 실패 사례
 
 - 리턴 타입이 다르다고 함수 중복이 성공하지는 않음
+
   ![failoverloading](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch07/failoverloading.PNG)
 
 #### 함수 중복의 편리함
