@@ -9,8 +9,8 @@
 #### 텐서플로우(TensorFlow)
 
 - 딥러닝 프레임워크의 일종
-- 내부적으로 C/C++로 구현
-- 파이썬을 비룻하여 여러 가지 언어에서 접근할 수 있도록 인터페이스를 제공
+- 내부적인 C/C++ 구현
+- 여러 가지 언어(+ Python)에서 접근 가능한 인터페이스 제공
 
 ![Tensor](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/Tensor.PNG)
 
