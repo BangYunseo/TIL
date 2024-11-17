@@ -17,40 +17,40 @@
 
 #### 전통적 영상 인식 시스템 구조
 
-![]()
+![TIR](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/TIR.PNG)
 
 #### 심층 신경망을 이용한 영상 인식 과정
 
-![]()
+![DNNIR](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/DNNIR.PNG)
 
 #### 영상 인식
 
 - 영상 인식에 가장 많이 사용되는 신경망 : 컨볼루션 신경망(Convolution Neural Network)
 
-![]()
+![IRCNN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/IRCNN.PNG)
 
 ##### 구조
 
-![]()
+![IRS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/IRS.PNG)
 
 - 특징 추출기(컨볼루션 신경망)
 - 특징 분류기(완전 연결 신경망)
 
 ##### 예시
 
-![]()
+![IREX](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/IREX.PNG)
 
 #### 데이터 증대(Data augmentation)
 
 - 한정된 데이터에서 여러 가지로 변형된 데이터를 만들어내는 기법
 
-![]()
+![DA](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/DA.PNG)
 
 #### ImageDataGenerator()
 
 - 파이썬의 제네레이터 형식
 - 영상 생성 제네레이터 객체 생성
-  - 제네레이터의 경우 next()가 호출되면 변형 영상 표시
+- next()가 호출되면 변형 영상 표시
 
 ```Python
 # 라이브러리 포함
@@ -81,10 +81,9 @@ for i in range(8):
   plt.subplot(1,8,i+1)
   image = obj.next()
   plt.imshow(image[0])
-
 ```
 
-![]()
+![OP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/OP.PNG)
 
 ## 2절. 가중치 저장 및 복원
 
@@ -93,7 +92,7 @@ for i in range(8):
 - 이미 학습된 모델의 가중치 저장 가능
 - 필요 시 가중치를 불러와 신경망 예측 가능
 
-![]()
+![WM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/WM.PNG)
 
 ##### 저장
 
@@ -102,6 +101,7 @@ model.save('mymodel')
 ```
 
 - 저장 정보
+
   - 신경망 모델의 아키텍처 및 구성
   - 훈련 중 학습된 모델의 가중치 값
   - 신경망 모델 컴파일 정보
@@ -136,10 +136,10 @@ model.compile(optimizer = "adam", loss = "mean_squared_error")
 # 신경망 3번 훈련
 model.fit(test_input, test_target, epochs = 3)
 
-# 모델 저장 
+# 모델 저장
 model.save("my_model")
 
-# 저장된 모델 불러오기 
+# 저장된 모델 불러오기
 saved_model = tf.keras.models.load_model("my_model")
 
 # 저장된 모델 재학습
@@ -155,29 +155,33 @@ saved_model.fit(test_input, test_target, epochs = 3)
 
 #### 전이 학습(TL)
 
+- 사전 학습된 신경망 모델을 다른 용도로 사용하는 것
 - 하나의 문제에 대해 학습한 신경망의 모델과 가중치를 새로운 문제에 적용
 - 특징과 분류를 묶어서 학습
 
-![]()
+![TL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/TL.PNG)
 
 #### 사전 훈련 신경망 모델
 
 ##### 종류
-- 케라스 어플리케이션(keras applications)
 
-![]()
+- 케라스 어플리케이션(Keras Applications)
+
+![KA](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/KA.PNG)
 
 ##### 프로젝트 적용
 
-![]()
+![PU](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/PU.PNG)
 
 ##### 예제 1)
-- ResNet50을 다운로드 받아 변경하지 않고 그대로 사용해보자. 인터넷에서 강아지 사진을 다운받아 올바르게 인식하는지 보자.
+
+- ResNet50을 다운로드 받아 변경하지 않고 그대로 사용
+- 인터넷에서 강아지 사진을 다운받아 올바르게 인식하는지 확인
 
 ```Python
 from tensorflow.keras.applications.resnet50 import ResNet50
 from tensorflow.keras.preprocessingimport image
-from tensorflow.keras.applications.resnet50 import preprocess_input, 
+from tensorflow.keras.applications.resnet50 import preprocess_input,
 decode_predictions
 import numpyas np
 
@@ -199,7 +203,9 @@ print('예측:', decode_predictions(preds, top=3)[0])
 ```
 
 ##### 예제 2)
-- 케라스가 제공하는 사전 훈련 모델 중 MobileNet로 분류기 레이어를 붙여 새 신경망을 생성하자. 강아지와 고양이 영상으로 학습하자.
+
+- 케라스가 제공하는 사전 훈련 모델 중 MobileNet로 분류기 레이어를 붙여 새 신경망을 생성
+- 강아지와 고양이 영상으로 학습
 
 ```Python
 import numpyas np
@@ -217,10 +223,10 @@ base_model=MobileNet(weights='imagenet',include_top=False)
 
 x = base_model.output
 x = GlobalAveragePooling2D()(x)
-x = Dense(1024,activation='relu')(x) 
-x = Dense(1024,activation='relu')(x) 
-x = Dense(512,activation='relu')(x) 
-preds = Dense(2,activation='softmax')(x) 
+x = Dense(1024,activation='relu')(x)
+x = Dense(1024,activation='relu')(x)
+x = Dense(512,activation='relu')(x)
+preds = Dense(2,activation='softmax')(x)
 
 model = Model(inputs=base_model.input,outputs=preds)
 # 모델 input, output 추가 부분
@@ -229,8 +235,8 @@ for layer in model.layers[:20]:
   layer.trainable=False
 for layer in model.layers[20:]:
   layer.trainable=True
-train_datagen=ImageDataGenerator(preprocessing_function=preprocess_input) 
-train_generator=train_datagen.flow_from_directory('./Petimages/', 
+train_datagen=ImageDataGenerator(preprocessing_function=preprocess_input)
+train_generator=train_datagen.flow_from_directory('./Petimages/',
 target_size=(128,128),
  color_mode='rgb',
  batch_size=32,
@@ -245,23 +251,7 @@ model.fit_generator(generator = train_generator,
                     epochs = 5)
 
 # 출력
-WARNING:tensorflow:`input_shape` is undefined or non-square, or `rows` is not in 
-[128, 160, 192, 224]. Weights for input shape (224, 224) will be loaded as the 
-default.
- Found 2200 images belonging to 2 classes.
- Epoch 1/5
- 68/68 [==============================] -30s 434ms/step -loss: 0.4500 
-accuracy: 0.8875
- Epoch 2/5
- 68/68 [==============================] -30s 443ms/step -loss: 0.2678 
-accuracy: 0.9096
- Epoch 3/5
- 68/68 [==============================] -29s 430ms/step -loss: 0.2181 
-accuracy: 0.9179
- Epoch 4/5
- 68/68 [==============================] -29s 431ms/step -loss: 0.1864 
-accuracy: 0.9290
- Epoch 5/5
- 68/68 [==============================] -29s 431ms/step -loss: 0.1646 
-accuracy: 0.9470
+# ...
+# Epoch 5/5
+# 68/68 [==============================] -29s 431ms/step - loss: 0.1646 - accuracy: 0.9470
 ```

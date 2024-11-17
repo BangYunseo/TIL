@@ -9,22 +9,15 @@ import numpy as np
 import time
 
 def load_data():
-    # MNIST 데이터셋 로드
-    # 케라스는 `keras.datasets`에 널리 사용하는 데이터셋을 로드하기 위한 함수를 제공합니다. 
-    # 이 데이터셋은 이미 훈련 세트와 테스트 세트로 나누어져 있습니다. 
-    # 훈련 세트를 더 나누어 검증 세트를 만드는 것이 좋습니다
 
     (X_train_full, y_train_full), (X_test, y_test) = mnist.load_data()
     X_train_full = X_train_full.astype(np.float32)
     X_test = X_test.astype(np.float32)
-    #print(X_train_full.shape, y_train_full.shape)
-    #print(X_test.shape, y_test.shape)
+
     return X_train_full, y_train_full, X_test, y_test
 
 def data_normalization(X_train_full, X_test):
-    # 전체 훈련 세트를 검증 세트와 (조금 더 작은) 훈련 세트로 나누어 보죠. 또한 픽셀 강도를 255로 나누어 0~1 범위의 실수로 바꾸겠습니다.
-
-    X_train_full = X_train_full / 255\
+    X_train_full = X_train_full / 255.
 
     X_test = X_test / 255.
     train_feature = np.expand_dims(X_train_full, axis=3)

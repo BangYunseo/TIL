@@ -1,7 +1,6 @@
 # Chapter 10. 순환 신경망(RNN : Recurrent Neural Networks)
 
 > 1절. 순환 데이터
->
 
 ## 1절. 순환 데이터
 
@@ -14,102 +13,65 @@
 
 ##### 응용 분야
 
-![]()
+![RNNEX](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNEX.PNG)
 
 #### 표준 신경망과 순환 신경망
-- 1980년 후쿠시마에 의해 소개된 신경망 구조
 
-![]()
+##### 순환 신경망(RNN : Recurrent Neural Network)
 
-#### 컨볼루션 레이어
+- 표준 신경망의 구조를 데이터가 잘 처리되게끔 변경한 신경망
+- 표준 신경망 : 일부만 예측 가능 / 멀리 떨어진 과거의 데이터는 희미
 
-##### Conv2D()
-```Python
-import tensorflow as tf
-tf.keras.layers.Conv2D(filters, kernel_size, strides=(1, 1),
-                       activation=None, input_shape, padding='valid’)
-```
+##### 예시 : 빈칸 예측 문제
 
-- filters : 필터 개수
-- kernel_size : 필터 크기
-- strides : 보폭
-- activation : 유닛 활성화 함수
-- input_shape : 입력 배열 형상
-- padding : 패딩 방법 선택(Default = "valid")
+- "난 주말이면 영화를 보기 위해 우리 동네의 \_\_\_\_에 간다."
 
-```Python
- shape = (4, 28, 28, 3)
- x = tf.random.normal(shape)
- y = tf.keras.layers.Conv2D(2, 3, activation='relu', input_shape=shape[1:])(x)
- print(y.shape)
+-> 이전 단어로부터 새로운 단어 예측
 
-# 출력
-# (4, 26, 26, 2)
-```
+#### 순환 신경망 기능
 
-##### MaxPooling2D()
+- 가변 길이 입력 처리 가능
+- 장기 의존성 추적 가능
+- 순서에 대한 정보 유지
+- 시퀀스 전체의 파라미터 공유 가능
 
-```Python
-tf.keras.layers.MaxPooling2D(pool_size=(2, 2), strides=None, padding="valid")
-```
+#### 순환 데이터
 
-- pool_size : 풀링 윈도우의 크기로 정수 또는 2개 정수의 튜플
-  - ex) (2, 2)라면 2 x 2 풀링 윈도우에서 최대값 추출
-- strides : 보폭, 각 풀링 단계에 대해 풀링 윈도우가 이동하는 거리 지정
-- padding : "valid"나 "same" 중 하나
-  - valid = 패딩이 없음
-  - same = 출력이 입력과 동일한 높이 / 너비 치수를 갖도록 입력의 왼, 오, 위, 아래쪽에 균일하게 패딩
+- 본격적으로 순환 신경망을 학습시키는 데 사용되는 데이터
+- 순환 신경망 학습을 위해 데이터를 일정 길이로 잘라서 여러 훈련 샘플 생성
+
+##### 순환 데이터 예시
+
+1. 일정한 길이(윈도우 크기 = 3)로 자른 후 여러 개의 훈련 샘플 생성
+
+![window3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/window3.PNG)
+
+2. 전체 데이터를 다음과 같이 크기가 3인 샘플과 정답으로 분리
+
+![res](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/res.PNG)
+
+#### 예제 : 데이터 다운 후 그래프 표현
 
 ```Python
-x = tf.constant([[1., 2., 3.], [4., 5., 6.], [7., 8., 9.]])
- x = tf.reshape(x, [1, 3, 3, 1])
- max_pool_ 2d = tf.keras.layers.MaxPooling2D(pool_size=(2, 2), strides=(1, 1),
- padding='valid')
- print(max_pool_2d(x))
+# 라이브러리 포함
+import FinanceDataReader as fdr
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 삼성전자 코드 = '005930', 2020년 데이터부터 다운로드
+samsung = fdr.DataReader('005930', '2020')
+
+# 시작가격
+seq_data = (samsung[['Open']]).to_numpy() # 선형 그래프
+plt.plot(seq_data, color = 'blue')
+plt.title("Samsung Electronics Stock Price")
+plt.xlabel("days")
+plt.xlabel("")
+plt.show()
 ```
 
-- 출력
+- 결과 출력
 
-![]()
+![samsung](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/samsung.PNG)
 
-#### EX : MNIST 필기체 숫자 인식
-
-```Python
-import tensorflow as tf
-from tensorflow.keras import datasets, layers, models
-
-(train_images, train_labels), (test_images, test_labels) = datasets.mnist.load_data()
-train_images = train_images.reshape((60000, 28, 28, 1))
-test_images = test_images.reshape((10000, 28, 28, 1))
-
-# 픽셀 값 0~1로 정규화 
-train_images, test_images = train_images / 255.0, test_images / 255.0
-
-model = models.Sequential()
-
-model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
-model.add(layers.MaxPooling2D((2, 2)))                                              # 은닉층 1
-model.add(layers.Conv2D(64, (3, 3), activation='relu'))
-model.add(layers.MaxPooling2D((2, 2)))                                              # 은닉층 2
-model.add(layers.Conv2D(64, (3, 3), activation='relu'))
-
-model.add(layers.Flatten())
-model.add(layers.Dense(64, activation='relu'))                                      # n2 = 4
-model.add(layers.Dense(10, activation='softmax'))                                   # 0 ~ 9
-
-model.summary()
-model.compile(optimizer='adam’, loss='sparse_categorical_crossentropy’, metrics=['accuracy'])
-model.fit(train_images, train_labels, epochs=5)
-
-# 출력
-#  Epoch 1/5
-#  1875/1875 [==============================] - 14s 7ms/step - loss: 0.1414 
-# accuracy: 0.9560
-#  ...
-#  Epoch 5/5
-#  1875/1875 [==============================] - 14s 7ms/step - loss: 0.0194 
-# accuracy: 0.9940
-```
-
-- 출력 결과 예시
-![]()
+##### 샘플화
