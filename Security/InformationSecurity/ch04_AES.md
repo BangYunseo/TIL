@@ -64,3 +64,34 @@
 ## 2절. SubBytes
 
 #### SubBytes Transformation
+
+![sbt](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/sbt.PNG)
+
+- 상태(State)
+
+  - 가장 왼쪽 4비트 : 행 값
+  - 가장 오른쪽 4비트 : 열 값
+
+- 예시) 16진수 값 {95}
+  - S-box의 9행 5열 참조
+  - 값 {2A} 포함
+  - 즉 {95}는 {2A} 매핑
+
+![AESsb](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/AESsb.PNG)
+
+- SubBytes Transformation Process
+
+![sbtP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/sbtP.PNG)
+
+## 3절. ShiftRows
+
+#### ShiftRows Transformation
+
+![srt](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/srt.PNG)
+
+- 상태(State)
+  - 첫 번째 행은 불변
+    두 번째 행에서는 1바이트 왼쪽 순환 이동이 수행됩니다.
+    세 번째 행에서는 2바이트 왼쪽 순환 이동이 수행됩니다.
+    네 번째 행에서는 3바이트 왼쪽 순환 이동이 수행됩니다.
+    – 반대 방향의 행 이동 변환은 InvShiftRows라고 하며, 마지막 세 개의 행 각각에 대해 오른쪽 순환 이동을 수행합니다. 두 번째 행은 1바이트 오른쪽 순환 이동을 하고, 나머지 행도 같은 방식으로 이동합니다.

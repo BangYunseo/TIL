@@ -198,7 +198,53 @@
 
 ![GF7](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/GF7.PNG)
 
-#### GF($p^n$)에서의 역원
+#### 다항식 나눗셈(Polynomial Division)
+
+- $f(x)=q(x)g(x)+r(x)$ 의 차수(Degree)
+
+![Degree](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/Degree.PNG)
+
+##### GF(2)에서의 다항식 예시
+
+![GF2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/GF2.PNG)
+
+##### 유클리디안 알고리즘
+
+![EAP2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EAP2.PNG)
+
+- Irreducible Polynomial(Prime Polynomial) : 소수 다항식
+  - 소수로 나눠진 다항식일 경우 효율 상승
+  - 식에서 인수분해가 더이상 불가능하기 때문
+
+#### GF($2^n$)
+
+- 동기(Motivation)
+
+> 8비트씩 데이터를 처리하는 일반적인 암호화 알고리즘 정의하고, 이 과정에서 나눗셈 연산을 수행한다고 가정하자. 8비트를 사용하면, 정수는 0부터 255까지의 범위 표현이 가능하다. 허나 256은 소수가 아니기에, 만약 산술 연산이 $Z_{256}$ (256 모듈 산술)에서 수행된다면, 이 정수 집합은 체(field)가 아니다. 256보다 작은 소수 중 가장 가까운 수는 251 이므로 $Z_{251}$ (251 모듈로 산술)은 체(field)다. 하지만 이 경우, 정수 251부터 255까지를 표현하는 8비트 패턴은 사용되지 않게 되어 저장 공간의 비효율적인 사용이다.
+
+- 예제 (Example)
+
+> GF($2_3$)을 구성하려면 차수가 3인 기약 다항식을 선택하는데 다항식은 두 개다. ($x^3 + x^2 + 1$)과 ($x^3 + x + 1$) 이다. 후자를 사용하여 덧셈과 곱셈을 진행한다.
+
+- 다항식 덧셈과 곱셈
+
+![Pam](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/Pam.PNG)
+
+- 10진수 덧셈과 곱셈
+
+![10am](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/10am.PNG)
+
+##### 덧셈 예시(Addition)
+
+![MGF2n](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/MGF2n.PNG)
+
+##### 곱셈 예시(Multiplication)
+
+![MGF2n1](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/MGF2n1.PNG)
+
+![MGF2n2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/MGF2n2.PNG)
+
+#### GF($p^n$)에서의 역원 : 확장 유클리디안 알고리즘 공식
 
 - $x_8 + x_4 + x_3 + x + 1$을 법으로 하는 $x_7 + x + 1$의 곱셈 역원
 - 답 : $(x_7 + x + 1)⋅x^7 ≡ 1$ ($mod$ $x_8 + x_4 + x_3 + x + 1$)
