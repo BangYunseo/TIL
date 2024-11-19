@@ -6,7 +6,7 @@
 >
 > 3절. 순환 신경망 유형
 >
-> 4절. 
+> 4절. 역전파 방향향
 
 
 ## 1절. 순환 데이터
@@ -102,11 +102,11 @@ plt.show()
 
 seq_data = (samsung[['Open']]).to_numpy()
 def make_sample(data, window):
-  train = [] # 공백 리스트 생성
+  train = []                                   # 공백 리스트 생성
   target = []
-  for i in range(len(data) - window):          # 데이터의 길이만큼 반복
-    train.append(data[i:i+window])             # i부터 (i+window-1) 까지를 저장
-    target.append(data[i+window])              # (i+window) 번째 요소는 정답
+  for i in range(len(data) - window):          # 데이터의 길이만큼 반복(0 ~ len(data) - window)
+    train.append(data[i : i + window])         # i부터 (i+window-1) 까지를 저장
+    target.append(data[i + window])            # (i+window) 번째 요소는 정답
   return np.array(train), np.array(target)     # 훈련 샘플과 정답 레이블을 반환
 
 X, y = make_sample(seq_data, 7)                # 윈도우 크기 = 7
@@ -114,7 +114,8 @@ print(X.shape, y.shape)                        # 넘파이 배열의 형상 출�
 print(X[0], y[0])                              # 첫 번째 샘플 출력
 
 # 출력 결과
-# (284, 7, 1) (284, 1)
+#
+# (284, 7, 1) (284, 1)      # Rank = 3, Rank = 2 (1 생략 불가)
 # [[55500]
 # [56000]
 # [54900]
@@ -133,6 +134,8 @@ print(X[0], y[0])                              # 첫 번째 샘플 출력
 
 ![FFNNRNN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/FFNNRNN.PNG)
 
+- 피드-포워드 신경망 : 여태까지 배웠던 신경망
+
 #### 단어 예측 RNN
 
 ![PredictWord](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/PredictWord.PNG)
@@ -148,6 +151,135 @@ print(X[0], y[0])                              # 첫 번째 샘플 출력
 #### 순환 신경망의 동작
 
 - 활성화 함수 : tanh 함수
+
+![RNNA](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNA.PNG)
+
+![RNNA2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNA2.PNG)
+
+#### Vanilla RNN(Keras.SimpleRNN)
+
+- 레이어의 출력을 다시 입력으로 받아서 사용
+- 이전의 데이터가 함께 결과에 영향
+
+![VRNN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRNN.PNG)
+
+##### return_sequences
+
+- RNN 계산과정에 있는 hidden state의 출력 여부 결정 값
+- RNN, one-to-many, many-to-many 출력을 위해 사용
+
+![rs](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/rs.PNG)
+
+##### Ideal RNN Layer
+
+![IRNN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/IRNN.PNG)
+
+##### 예제 1)
+
+```Python
+X = []
+Y = []
+for
+i in range
+(
+6):
+lst = list
+(range(i,i+
+4))
+X.append
+(list
+(map
+(lambda c: [c/10], lst)))
+Y.append((i+
+4)/10
+)
+X = np.array(X)
+Y = np.array(Y)
+print(X)
+print(Y)
+
+# 출력
+# array([[[0. ],
+ [0.1],
+ [0.2],
+ [0.3]],
+ [[0.1],
+ [0.2],
+ [0.3],
+ [0.4]],
+ [[0.2],
+ [0.3],
+ [0.4],
+ [0.5]],
+ [[0.3],
+ [0.4],
+ [0.5],
+ [0.6]],
+ [[0.4],
+ [0.5],
+ [0.6],
+ [0.7]],
+ [[0.5],
+ [0.6],
+ [0.7],
+ [0.8]]])
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+```
+
+##### 예제 2)
+
+```Python
+model = Sequential()
+model.add(SimpleRNN(50, return_sequences=False, input_shape=(4,1)))
+model.add(Dense(1))
+model.summary()
+model.compile(loss='mse',
+optimizer='adam',
+metrics=['accuracy'])
+model.fit(X,Y,epochs=200, verbose=2)
+print(model.predict(X))
+X_test = np.array([[[0.8],[0.9],[1.0],[1.1]]])
+print(model.predict(X_test))
+
+# 출력
+
+```
+
+- 파라미터 아웃값 * (파라미터 아웃값 + 차원수 (아웃풋 1) + 1(바이어스)
+- 50 * (50+1+1)
+
+![VRNNOP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRRNOP.PNG)
+
+## 3절. 순환 신경망 유형
+
+#### RNN 유형
+
+- 일대일(One to One)
+- 일대다(One to Many)
+- 다대일(Many to One)
+- 다대다(Many to Many)
+
+## 4절. 역전파 방향
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### 정리(11/19)
 - 퍼셉트론 : weight값, 입력값 각각 2개씩 존재하고 bias를 더해준 값(ex : $X_1*W_1 + X_2*W_2 + b$)
