@@ -6,7 +6,9 @@
 >
 > 3절. 순환 신경망 유형
 >
-> 4절. 역전파 방향향
+> 4절. 역전파 방향과 그래디언트
+>
+> 5절. 
 
 
 ## 1절. 순환 데이터
@@ -130,6 +132,13 @@ print(X[0], y[0])                              # 첫 번째 샘플 출력
 
 ![RNNStructure](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNStructure.PNG)
 
+- MLP와 비슷하게 입력층, 은닉층, 출력층 보유(입력 벡터, 은닉 상태, 출력 벡터)
+- 은닉 상태(은닉층)이 순환 엣지(Recurrent Edge) 보유
+  - 시간성, 가변 길이, 문맥 의존성 모두 처리 가능
+  - 순환 엣지는 $t - 1$ 순간에 발생한 정보를 $t$ 지점으로 전달하는 역할
+ 
+![RNNS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNS.PNG)
+
 #### 피드-포워드 신경망(Feed-Forward Neural Network)과 RNN
 
 ![FFNNRNN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/FFNNRNN.PNG)
@@ -191,22 +200,10 @@ print(Y)
 # 출력(X)
 # array([[[0. ], [0.1], [0.2], [0.3]],
 #        [[0.1], [0.2], [0.3], [0.4]],
-# [[0.2],
-# [0.3],
-# [0.4],
-# [0.5]],
-# [[0.3],
-# [0.4],
-# [0.5],
-# [0.6]],
-# [[0.4],
-# [0.5],
-# [0.6],
-# [0.7]],
-# [[0.5],
-# [0.6],
-# [0.7],
-# [0.8]]])
+#        [[0.2], [0.3], [0.4], [0.5]],
+#        [[0.3], [0.4], [0.5], [0.6]],
+#        [[0.4], [0.5], [0.6], [0.7]],
+#        [[0.5], [0.6], [0.7], [0.8]]])
 
 # 출력(Y)
 # 0.4
@@ -224,20 +221,31 @@ model = Sequential()
 model.add(SimpleRNN(50, return_sequences=False, input_shape=(4,1)))
 model.add(Dense(1))
 model.summary()
-model.compile(loss='mse',
-optimizer='adam',
-metrics=['accuracy'])
+model.compile(loss = 'mse',
+              optimizer = 'adam',
+              metrics = ['accuracy'])
 model.fit(X,Y,epochs=200, verbose=2)
 print(model.predict(X))
+
 X_test = np.array([[[0.8],[0.9],[1.0],[1.1]]])
 print(model.predict(X_test))
 
-# 출력
+# 출력(X)
+# [[0.37884986]
+#  [0.5052986 ]
+#  [0.62007874]
+#  [0.72003114]
+#  [0.8036888 ]
+#  [0.87106013]]
 
+# 출력(X_test)
+# [[0.98860174]]
 ```
 
-- 파라미터 아웃값 * (파라미터 아웃값 + 차원수 (아웃풋 1) + 1(바이어스)
-- 50 * (50+1+1)
+![VRNNOP1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRRNOP1.PNG)
+
+- 파라미터 아웃값 * (파라미터 아웃값 + 1(차원 수 1) + 1(바이어스)) + 덴스(Dense) 값
+- $50 * (50 + 1 + 1) + 51 = 2651$
 
 ![VRNNOP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRRNOP.PNG)
 
@@ -250,17 +258,76 @@ print(model.predict(X_test))
 - 다대일(Many to One)
 - 다대다(Many to Many)
 
-## 4절. 역전파 방향
+##### 일대일(One to One)
 
+- 단일 입력과 단일 출력이 있는 가장 일반적인 신경망
+- 다수의 머신 러닝 문제에 사용
+- Vanilla Neural Network
 
+![OtO](htps://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OtO.PNG)
 
+##### 일대다(One to Many)
 
+- 단일 입력으로 다수 출력 생성의 신경망
+- 이미지 캡션을 생성하는 RNN에서 사용
+- 하나의 이미지가 입력되면 이미지를 가장 잘 설명하는 캡션들 생성
 
+![OtM](htps://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OtM.PNG)
 
+##### 다대일(Many to One)
 
+- 다수 입력으로 단일 출력 생성의 신경망
+- 감정(Sentiment) 분석 신경망에 사용
+  - 주어진 문장들이 긍정적 OR 부정적 감정인지 분류
+ 
+![MtO](htps://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/MtO.PNG)
 
+##### 다대다(Many to Many)
 
+- 다수 입력으로 다수 출력 생성의 신경망
+- 기계 번역에서 사용되며 단어들이 계속 다른 단어들로 출력
+ 
+![MtM](htps://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/MtM.PNG)
 
+## 4절. 역전파 방향과 그래디언트
+
+#### 순환 신경망 순방향 패스
+
+![RNNPass](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNPass.PNG)
+
+![RNNPass1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNPass1.PNG)
+
+##### 다대일(Many to One) 방식 : 맨 끝 하나의 출력 생성
+
+![RNNPass2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNPass2.PNG)
+
+#### 순방향 패스 알고리즘(Ideal)
+
+```Python
+hidden_state = [0, 0, 0, 0]
+sentence = ["I", "love", "recurrent", "neural"]
+
+for word in sentence:
+  hidden_state = np.tanh(np.dot(Wxh, word) + np.dot(Whh, hidden_state))
+  prediction = f(np.dot(Wxh, word) + np.dot(Why, hidden_state))
+
+print(prediction)
+# "network"
+
+```
+
+#### Keras에서의 순환 신경망
+
+```Python
+inputs = np.random.random([32, 10, 8]).astype(np.float32)
+simple_rnn = tf.keras.layers.SimpleRNN(4) # 4개의 셀
+output = simple_rnn(inputs) # output은 최종 은닉 상태로 `[32, 4]` 형상이다.
+```
+- SimpleRNN(4)
+  - 셀이 4개인 RNN 레이어 생성
+  - 입력 : [batch, timesteps, feature]의 형상을 갖는 3차원 텐서
+ 
+  
 
 
 
