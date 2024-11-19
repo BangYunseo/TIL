@@ -19,6 +19,11 @@
 - ch02 [머신러닝의 기초](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch02_MachineLearning.md)
 - ch03 [회귀](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch03_Regression.md)
 - ch04 [퍼셉트론](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch04_Perceptron.md)
-- ch05 [MLP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch05_MLP.md)
+- ch05 [다층 퍼셉트론](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch05_MLP.md)
+- ch06 [다층 퍼셉트론 - 2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch06_MLP2.md)
+- ch07 [심층 신경망](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch07_DNN.md)
+- ch08 [컨볼루션 신경망](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch08_CNN.md)
+- ch09 [영상 인식](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch09_ImageRecognition.md)
+- ch10 [순환 신경망](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch10_RNN.md)
 
 </details>
