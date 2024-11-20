@@ -90,8 +90,42 @@
 ![srt](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/srt.PNG)
 
 - 상태(State)
-  - 첫 번째 행은 불변
-    두 번째 행에서는 1바이트 왼쪽 순환 이동이 수행됩니다.
-    세 번째 행에서는 2바이트 왼쪽 순환 이동이 수행됩니다.
-    네 번째 행에서는 3바이트 왼쪽 순환 이동이 수행됩니다.
-    – 반대 방향의 행 이동 변환은 InvShiftRows라고 하며, 마지막 세 개의 행 각각에 대해 오른쪽 순환 이동을 수행합니다. 두 번째 행은 1바이트 오른쪽 순환 이동을 하고, 나머지 행도 같은 방식으로 이동합니다.
+
+  - 첫 번째 행 : 불변
+  - 두 번째 행 : 1바이트 왼쪽 순환 이동
+  - 세 번째 행 : 2바이트 왼쪽 순환 이동
+  - 네 번째 행 : 3바이트 왼쪽 순환 이동
+
+- InvShiftRows
+  - 반대 방향의 행 이동 변환
+  - 마지막 세 개의 행 각각에 대해 오른쪽 순환 이동 수행
+  - 두 번째 행은 1바이트 오른쪽 순환 이동
+  - 나머지 행도 같은 방식으로 이동
+
+## 4절. MixColumns
+
+#### MixColumns Transformation
+
+![MCT](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/MCT.PNG)
+
+#### InvMixColumns Transformation
+
+![IMCT](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/IMCT.PNG)
+
+## 5절. AddRoundKey
+
+#### AddRoundKey Transformation
+
+![ART](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/ART.PNG)
+
+- 첫 번째 행렬 : State
+- 두 번째 행렬 : RoundKey
+
+- 순방향 AddRoundKey 변환
+  - State 128비트가 라운드 키 128비트와 비트별 XOR 연산 수행
+- 첫 번째 행렬 : State
+- 두 번째 행렬 : RoundKey
+
+- 역방향 AddRoundKey 변환
+  - 순방향 AddRoundKey 변환과 동일
+  - 이는 XOR 연산이 자기 자신의 역연산이기 때문
