@@ -122,9 +122,8 @@
 - 두 번째 행렬 : RoundKey
 
 - 순방향 AddRoundKey 변환
+
   - State 128비트가 라운드 키 128비트와 비트별 XOR 연산 수행
-- 첫 번째 행렬 : State
-- 두 번째 행렬 : RoundKey
 
 - 역방향 AddRoundKey 변환
   - 순방향 AddRoundKey 변환과 동일
