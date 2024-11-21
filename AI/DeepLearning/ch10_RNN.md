@@ -315,8 +315,8 @@ print(prediction)
 ```Python
 inputs = np.random.random([32, 10, 8]).astype(np.float32)
 # 32개 샘플 / 각 샘플 당 10개의 시계열 데이터 / 하나의 데이터는 8개의 실수 형태
-simple_rnn = tf.keras.layers.SimpleRNN(4) # 4개의 셀
-output = simple_rnn(inputs) # output은 최종 은닉 상태로 `[32, 4]` 형상이다.
+simple_rnn = tf.keras.layers.SimpleRNN(4)   # 4개의 셀
+output = simple_rnn(inputs)                 # 최종 은닉 상태로 [32, 4] 형상
 ```
 
 - SimpleRNN(4)
@@ -332,6 +332,7 @@ output = simple_rnn(inputs) # output은 최종 은닉 상태로 `[32, 4]` 형상
 ```Python
 simple_rnn = tf.keras.layers.SimpleRNN(4, return_sequences=True, return_state=True)
 whole_sequence_output, final_state = simple_rnn(inputs)
+
 # whole_sequence_output의 형상 : [32, 10, 4]
 # final_state의 형상 : [32, 4]
 ```
