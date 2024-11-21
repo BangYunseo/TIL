@@ -320,23 +320,66 @@ print(prediction)
 
 ```Python
 inputs = np.random.random([32, 10, 8]).astype(np.float32)
+# 32개 샘플 / 각 샘플 당 10개의 시계열 데이터 / 하나의 데이터는 8개의 실수 형태
 simple_rnn = tf.keras.layers.SimpleRNN(4) # 4개의 셀
 output = simple_rnn(inputs) # output은 최종 은닉 상태로 `[32, 4]` 형상이다.
 ```
+
 - SimpleRNN(4)
   - 셀이 4개인 RNN 레이어 생성
   - 입력 : [batch, timesteps, feature]의 형상을 갖는 3차원 텐서
- 
-  
 
+#### RNN에서의 입력 형상
 
+![RNNINPUT](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNINPUT.PNG)
 
+#### 메모리 셀의 각 시점에서 모든 은닉 상태값 반환
 
+```Python
+simple_rnn = tf.keras.layers.SimpleRNN(4, return_sequences=True, return_state=True)
+whole_sequence_output, final_state = simple_rnn(inputs)
+# whole_sequence_output의 형상 : [32, 10, 4]
+# final_state의 형상 : [32, 4]
+```
 
+#### 시간에 따른 역전파(BPTT : Backpropagation Through Time)
 
-#### 정리(11/19)
-- 퍼셉트론 : weight값, 입력값 각각 2개씩 존재하고 bias를 더해준 값(ex : $X_1*W_1 + X_2*W_2 + b$)
-- 다층 퍼셉트론 : 퍼셉트론에서 은닉층이 추가된 값으로, 은닉층의 값들은 여러 개가 될 수 있음. 은닉층의 값마다 bias가 추가됨
-- 다층 퍼셉트론 최적화 : 끝쪽을 미분하면 0으로 수렴했기에, 조금 더 자세한 값이 필요하게 됨 => Sigmoid, ReLU, tanh, softmax, UnitStep의 활성화 함수 / He, Xaiver과 같은 방법으로도 가능
-- 컨볼루션 신경망 : 영상, 이미지에서의 값을 계산할 경우 여러 개의 커널로 엣지, 색깔, 원 등 다양한 입력에 따른 결과를 추출 / 출력값이 늘어날수록 고수준 / pooling이나 데이터 증강 등의 방법으로 OverFitting(과적합) 방지
-- 심층 신경망과 컨볼루션 신경망 : 사용 환경에 따라 성능 차이가 존재 = 둘 다 좋은 방법이나 환경, 계산 형식에 맞는 신경망을 사용하는 것이 중요
+- 계층을 통해 오류를 역전파하는 대신 시간을 거슬러 올라가면서 그래디언트 역전파
+
+![BPTT](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/BPTT.PNG)
+
+#### 그래디언트 문제
+
+- 1보다 작은 값이 여러 번 곱해지는 경우 : 그래디언트가 점점 작아지다가 소멸
+- 1보다 큰 값이 여러 번 곱해지는 경우 : 그래디언트가 폭발적 증가
+
+![PE](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/PE.PNG)
+
+##### 그래디언트 소실
+
+![GD](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/GD.PNG)
+
+- 문제
+  - 학습이 진행되더라도 먼 거리의 의존 관계를 파악하지 못하고 근거리의 의존 관계만 중시하는 문제
+
+- 방안
+  - 활성화 함수를 ReLU로 변환
+  - 가중치를 단위 행렬로 초기화(바이어스를 0으로 초기화)
+  - 복잡한 순환 유닛인 LSTM, GRU같은 Gated Cell 사용
+=> 게이트들이 어떤 정보를 지나가게 할 것인지의 제어로 장기적 기억 가능
+
+##### 그래디언트 폭증
+
+![GI](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/GI.PNG)
+
+- 문제
+  - 그래디언트가 너무 커지는 문제
+
+- 방안
+  - 그래디언트를 일정 크기 이상 커지지 못하도록 제한
+
+#### 예제) 사인파 예측 프로그램
+
+```Python
+
+```
