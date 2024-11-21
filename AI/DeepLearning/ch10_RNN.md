@@ -8,7 +8,9 @@
 >
 > 4절. 역전파 방향과 그래디언트
 >
-> 5절. 
+> 5절. LSTM
+>
+> 6절. 
 
 
 ## 1절. 순환 데이터
@@ -340,13 +342,14 @@ whole_sequence_output, final_state = simple_rnn(inputs)
 #### 시간에 따른 역전파(BPTT : Backpropagation Through Time)
 
 - 계층을 통해 오류를 역전파하는 대신 시간을 거슬러 올라가면서 그래디언트 역전파
+- 즉 현재의 역전파를 진행하고 싶다면 과거의 역전파 값을 알아야 하는 형태
 
 ![BPTT](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/BPTT.PNG)
 
 #### 그래디언트 문제
 
-- 1보다 작은 값이 여러 번 곱해지는 경우 : 그래디언트가 점점 작아지다가 소멸
-- 1보다 큰 값이 여러 번 곱해지는 경우 : 그래디언트가 폭발적 증가
+- 1보다 작은 값이 여러 번 곱해지는 경우 : 그래디언트가 점점 감소(소멸)
+- 1보다 큰 값이 여러 번 곱해지는 경우 : 그래디언트가 폭발적 증가(폭증)
 
 ![PE](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/PE.PNG)
 
@@ -355,7 +358,7 @@ whole_sequence_output, final_state = simple_rnn(inputs)
 ![GD](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/GD.PNG)
 
 - 문제
-  - 학습이 진행되더라도 먼 거리의 의존 관계를 파악하지 못하고 근거리의 의존 관계만 중시하는 문제
+  - 학습이 진행될 때 먼 거리의 의존 관계를 파악하지 못하고 근거리의 의존 관계만 중시하는 문제
 
 - 방안
   - 활성화 함수를 ReLU로 변환
@@ -419,7 +422,7 @@ plt.show()
 ```Python
 seq_data = []
 for i in np.arange(0, 1000):                    # 테스트 샘플 생성
-  seq_data += [[np.cos( np.pi * i* 0.01 )]]
+  seq_data += [[np.cos(np.pi * i * 0.01)]]
 X, y = make_sample(seq_data, 10)                # 윈도우 크기 = 10
 
 y_pred = model.predict(X, verbose=0)            # 테스트 예측값
@@ -431,3 +434,74 @@ plt.show()
 - 출력
 
 ![GOP2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/GOP2.PNG)
+
+## 5절. LSTM(Long Short-Term Memory)
+
+#### LSTM 신경망
+- RNN은 그래디언트 소실 현상으로 초반의 입력이 뒤로 갈수록 점차 소실
+- 즉, 다음 단어를 엉뚱하게 예측하는 장기 의존성 문제 발생
+
+#### LSTM(Long Short-Term Memory)
+
+- 개발 배경
+  - RNN은 그래디언트 소실 현상으로 초반의 입력이 뒤로 갈수록 점차 소실
+  - 즉, 다음 단어를 엉뚱하게 예측하는 장기 의존성 문제 발생
+
+- 기존 RNN을 훈련할 때 발생할 수 있는 그래디언트 소실 문제 해결을 위해 개발
+- 셀, 입력 게이트, 출력 게이트, 삭제 게이트의 구성
+  - 셀 : 임의의 시점에 대한 값을 기억
+  - 게이트(입력, 망각, 출력) : 셀로 출입하는 정보의 흐름 조절
+ 
+![LSTM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/LSTM.PNG)
+
+##### 게이트
+
+- LSTM의 주된 빌딩 블록
+- 정보는 게이트를 통하여 추가 or 삭제
+
+![Gate](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/Gate.PNG)
+
+##### 저장 연산
+
+- 셀 상태에 관련있는 새로운 정보 저장
+ 
+![SM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/SM.PNG)
+
+##### 삭제 연산
+
+- 예전 상태 중 일부 관련 없는 정보 삭제
+
+- 삭제 게이트
+  - 기억 삭제를 위한 게이트
+  - 현재 시점의 입력 $x_t$와 이전 은닉상태 $h_{t-1}$이 시그모이드 함수를 거쳐 0과 1 사이의 값 출력
+    - 위의 값이 셀 상태에서 삭제를 결정하는 값
+    - 0에 가까울 경우 : 저장된 정보 다수 삭제
+    - 1에 가까울 경우 : 저장된 정보 다수 생존
+   
+![DM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/DM.PNG)
+
+##### 업데이트 연산
+
+- 선택적으로 셀 상태 값 업데이트
+
+- 셀 상태($c_t$) : LSTM에서 장기 기억이 저장되는 장소
+- 셀 상태를 계산
+- 1) 셀 상태에 삭제 게이트를 통해 들어온 값을 곱해 일부 기억 삭제
+  2) 입력 게이트를 통한 값 합산
+  3) 즉, 입력 게이트에서 선택된 기억 추기
+ 
+ - 삭제 게이트 : 이전 시점의 입력을 얼마나 기억할지 결정
+ - 입력 게이트 : 현재 시점의 입력을 얼마나 기억할지 결정
+
+![UM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/UM.PNG)
+
+##### 출력 연산
+
+- 출력 게이트
+  - 현재 시점의 입력값과 이전 시점의 은닉 상태에 시그모이드 함수 적용
+    - 위의 결과값은 다음 시점의 은닉 상태 결정
+   
+![OM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OM.PNG)
+
+#### 그래디언트 소실 문제 해결
+
