@@ -242,12 +242,12 @@ print(model.predict(X_test))
 # [[0.98860174]]
 ```
 
-![VRNNOP1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRRNOP1.PNG)
+![VRNNOP1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRNNOP1.PNG)
 
 - 파라미터 아웃값 * (파라미터 아웃값 + 1(차원 수 1) + 1(바이어스)) + 덴스(Dense) 값
 - $50 * (50 + 1 + 1) + 51 = 2651$
 
-![VRNNOP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRRNOP.PNG)
+![VRNNOP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRNNOP.PNG)
 
 ## 3절. 순환 신경망 유형
 
@@ -264,7 +264,7 @@ print(model.predict(X_test))
 - 다수의 머신 러닝 문제에 사용
 - Vanilla Neural Network
 
-![OtO](htps://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OtO.PNG)
+![OtO](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OtO.PNG)
 
 ##### 일대다(One to Many)
 
@@ -272,7 +272,7 @@ print(model.predict(X_test))
 - 이미지 캡션을 생성하는 RNN에서 사용
 - 하나의 이미지가 입력되면 이미지를 가장 잘 설명하는 캡션들 생성
 
-![OtM](htps://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OtM.PNG)
+![OtM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OtM.PNG)
 
 ##### 다대일(Many to One)
 
@@ -280,26 +280,20 @@ print(model.predict(X_test))
 - 감정(Sentiment) 분석 신경망에 사용
   - 주어진 문장들이 긍정적 OR 부정적 감정인지 분류
  
-![MtO](htps://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/MtO.PNG)
+![MtO](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/MtO.PNG)
 
 ##### 다대다(Many to Many)
 
 - 다수 입력으로 다수 출력 생성의 신경망
 - 기계 번역에서 사용되며 단어들이 계속 다른 단어들로 출력
  
-![MtM](htps://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/MtM.PNG)
+![MtM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/MtM.PNG)
 
 ## 4절. 역전파 방향과 그래디언트
 
 #### 순환 신경망 순방향 패스
 
 ![RNNPass](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNPass.PNG)
-
-![RNNPass1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNPass1.PNG)
-
-##### 다대일(Many to One) 방식 : 맨 끝 하나의 출력 생성
-
-![RNNPass2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNPass2.PNG)
 
 #### 순방향 패스 알고리즘(Ideal)
 
