@@ -4,9 +4,7 @@
 >
 > 2절. 트랜잭션(Transactions)
 >
-> 3절.
->
-> 4절.
+> 3절. 블록체인과 채굴(BlockChain & Mining)
 
 ## 1절. 비트코인
 
@@ -96,3 +94,5 @@
 #### 일반적인 트랜잭션 형태
 
 ![CTF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/CTF.PNG)
+
+####
