@@ -8,7 +8,9 @@
 >
 > 4절. 역전파 방향과 그래디언트
 >
-> 5절. 
+> 5절. LSTM
+>
+> 6절. 
 
 
 ## 1절. 순환 데이터
@@ -242,12 +244,12 @@ print(model.predict(X_test))
 # [[0.98860174]]
 ```
 
-![VRNNOP1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRRNOP1.PNG)
+![VRNNOP1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRNNOP1.PNG)
 
 - 파라미터 아웃값 * (파라미터 아웃값 + 1(차원 수 1) + 1(바이어스)) + 덴스(Dense) 값
 - $50 * (50 + 1 + 1) + 51 = 2651$
 
-![VRNNOP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRRNOP.PNG)
+![VRNNOP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRNNOP.PNG)
 
 ## 3절. 순환 신경망 유형
 
@@ -264,7 +266,7 @@ print(model.predict(X_test))
 - 다수의 머신 러닝 문제에 사용
 - Vanilla Neural Network
 
-![OtO](htps://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OtO.PNG)
+![OtO](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OtO.PNG)
 
 ##### 일대다(One to Many)
 
@@ -272,7 +274,7 @@ print(model.predict(X_test))
 - 이미지 캡션을 생성하는 RNN에서 사용
 - 하나의 이미지가 입력되면 이미지를 가장 잘 설명하는 캡션들 생성
 
-![OtM](htps://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OtM.PNG)
+![OtM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OtM.PNG)
 
 ##### 다대일(Many to One)
 
@@ -280,26 +282,20 @@ print(model.predict(X_test))
 - 감정(Sentiment) 분석 신경망에 사용
   - 주어진 문장들이 긍정적 OR 부정적 감정인지 분류
  
-![MtO](htps://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/MtO.PNG)
+![MtO](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/MtO.PNG)
 
 ##### 다대다(Many to Many)
 
 - 다수 입력으로 다수 출력 생성의 신경망
 - 기계 번역에서 사용되며 단어들이 계속 다른 단어들로 출력
  
-![MtM](htps://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/MtM.PNG)
+![MtM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/MtM.PNG)
 
 ## 4절. 역전파 방향과 그래디언트
 
 #### 순환 신경망 순방향 패스
 
 ![RNNPass](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNPass.PNG)
-
-![RNNPass1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNPass1.PNG)
-
-##### 다대일(Many to One) 방식 : 맨 끝 하나의 출력 생성
-
-![RNNPass2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNPass2.PNG)
 
 #### 순방향 패스 알고리즘(Ideal)
 
@@ -320,23 +316,192 @@ print(prediction)
 
 ```Python
 inputs = np.random.random([32, 10, 8]).astype(np.float32)
-simple_rnn = tf.keras.layers.SimpleRNN(4) # 4개의 셀
-output = simple_rnn(inputs) # output은 최종 은닉 상태로 `[32, 4]` 형상이다.
+# 32개 샘플 / 각 샘플 당 10개의 시계열 데이터 / 하나의 데이터는 8개의 실수 형태
+simple_rnn = tf.keras.layers.SimpleRNN(4)   # 4개의 셀
+output = simple_rnn(inputs)                 # 최종 은닉 상태로 [32, 4] 형상
 ```
+
 - SimpleRNN(4)
   - 셀이 4개인 RNN 레이어 생성
   - 입력 : [batch, timesteps, feature]의 형상을 갖는 3차원 텐서
+
+#### RNN에서의 입력 형상
+
+![RNNINPUT](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNINPUT.PNG)
+
+#### 메모리 셀의 각 시점에서 모든 은닉 상태값 반환
+
+```Python
+simple_rnn = tf.keras.layers.SimpleRNN(4, return_sequences=True, return_state=True)
+whole_sequence_output, final_state = simple_rnn(inputs)
+
+# whole_sequence_output의 형상 : [32, 10, 4]
+# final_state의 형상 : [32, 4]
+```
+
+#### 시간에 따른 역전파(BPTT : Backpropagation Through Time)
+
+- 계층을 통해 오류를 역전파하는 대신 시간을 거슬러 올라가면서 그래디언트 역전파
+- 즉 현재의 역전파를 진행하고 싶다면 과거의 역전파 값을 알아야 하는 형태
+
+![BPTT](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/BPTT.PNG)
+
+#### 그래디언트 문제
+
+- 1보다 작은 값이 여러 번 곱해지는 경우 : 그래디언트가 점점 감소(소멸)
+- 1보다 큰 값이 여러 번 곱해지는 경우 : 그래디언트가 폭발적 증가(폭증)
+
+![PE](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/PE.PNG)
+
+##### 그래디언트 소실
+
+![GD](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/GD.PNG)
+
+- 문제
+  - 학습이 진행될 때 먼 거리의 의존 관계를 파악하지 못하고 근거리의 의존 관계만 중시하는 문제
+
+- 방안
+  - 활성화 함수를 ReLU로 변환
+  - 가중치를 단위 행렬로 초기화(바이어스를 0으로 초기화)
+  - 복잡한 순환 유닛인 LSTM, GRU같은 Gated Cell 사용
+=> 게이트들이 어떤 정보를 지나가게 할 것인지의 제어로 장기적 기억 가능
+
+##### 그래디언트 폭증
+
+![GI](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/GI.PNG)
+
+- 문제
+  - 그래디언트가 너무 커지는 문제
+
+- 방안
+  - 그래디언트를 일정 크기 이상 커지지 못하도록 제한
+
+#### 예제) 사인파 예측 프로그램 - 1
+
+```Python
+import numpyas np
+from tensorflow.keras.modelsimport Sequential
+from tensorflow.keras.layersimport SimpleRNN
+from tensorflow.keras.layersimport Dense
+import matplotlib.pyplotas plt
+
+def make_sample(data, window):
+  train = [] # 공백 리스트
+  target = []
+  for i in range(len(data)-window):         # 데이터의 길이만큼 반복
+    train.append(data[i:i+window])          # i부터 (i+window-1) 까지를 저장
+    target.append(data[i+window])           # (i+window) 번째 요소는 정답
+  return np.array(train), np.array(target)  # 파이썬 리스트를 넘파이로 변환
+
+seq_data= []
+for i in np.arange(0, 1000):
+  seq_data+= [[np.sin( np.pi* i* 0.01 )]]
+X, y = make_sample(seq_data, 10)            # 윈도우 크기=10
+
+model = Sequential()
+model.add(SimpleRNN(10, activation='tanh', input_shape=(10,1)))
+model.add(Dense(1, activation='tanh'))
+model.compile(optimizer='adam', loss='mse')
+
+history = model.fit(X, y, epochs=100, verbose=1)
+plt.plot(history.history['loss'], label="loss")
+plt.show()
+
+# 출력
+# ...
+# Epoch 100/100
+# 31/31 [==============================] - 0s 3ms/step - loss: 5.4923e-04
+```
+
+- 출력
+
+![GOP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/GOP.PNG)
+
+#### 예제) 사인파 예측 프로그램 - 2
+
+```Python
+seq_data = []
+for i in np.arange(0, 1000):                    # 테스트 샘플 생성
+  seq_data += [[np.cos(np.pi * i * 0.01)]]
+X, y = make_sample(seq_data, 10)                # 윈도우 크기 = 10
+
+y_pred = model.predict(X, verbose=0)            # 테스트 예측값
+plt.plot(np.pi * np.arange(0, 990)*0.01, y_pred )
+plt.plot(np.pi * np.arange(0, 990)*0.01, y)
+plt.show()
+```
+
+- 출력
+
+![GOP2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/GOP2.PNG)
+
+## 5절. LSTM(Long Short-Term Memory)
+
+#### LSTM 신경망
+- RNN은 그래디언트 소실 현상으로 초반의 입력이 뒤로 갈수록 점차 소실
+- 즉, 다음 단어를 엉뚱하게 예측하는 장기 의존성 문제 발생
+
+#### LSTM(Long Short-Term Memory)
+
+- 개발 배경
+  - RNN은 그래디언트 소실 현상으로 초반의 입력이 뒤로 갈수록 점차 소실
+  - 즉, 다음 단어를 엉뚱하게 예측하는 장기 의존성 문제 발생
+
+- 기존 RNN을 훈련할 때 발생할 수 있는 그래디언트 소실 문제 해결을 위해 개발
+- 셀, 입력 게이트, 출력 게이트, 삭제 게이트의 구성
+  - 셀 : 임의의 시점에 대한 값을 기억
+  - 게이트(입력, 망각, 출력) : 셀로 출입하는 정보의 흐름 조절
  
-  
+![LSTM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/LSTM.PNG)
 
+##### 게이트
 
+- LSTM의 주된 빌딩 블록
+- 정보는 게이트를 통하여 추가 or 삭제
 
+![Gate](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/Gate.PNG)
 
+##### 저장 연산
 
+- 셀 상태에 관련있는 새로운 정보 저장
+ 
+![SM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/SM.PNG)
 
-#### 정리(11/19)
-- 퍼셉트론 : weight값, 입력값 각각 2개씩 존재하고 bias를 더해준 값(ex : $X_1*W_1 + X_2*W_2 + b$)
-- 다층 퍼셉트론 : 퍼셉트론에서 은닉층이 추가된 값으로, 은닉층의 값들은 여러 개가 될 수 있음. 은닉층의 값마다 bias가 추가됨
-- 다층 퍼셉트론 최적화 : 끝쪽을 미분하면 0으로 수렴했기에, 조금 더 자세한 값이 필요하게 됨 => Sigmoid, ReLU, tanh, softmax, UnitStep의 활성화 함수 / He, Xaiver과 같은 방법으로도 가능
-- 컨볼루션 신경망 : 영상, 이미지에서의 값을 계산할 경우 여러 개의 커널로 엣지, 색깔, 원 등 다양한 입력에 따른 결과를 추출 / 출력값이 늘어날수록 고수준 / pooling이나 데이터 증강 등의 방법으로 OverFitting(과적합) 방지
-- 심층 신경망과 컨볼루션 신경망 : 사용 환경에 따라 성능 차이가 존재 = 둘 다 좋은 방법이나 환경, 계산 형식에 맞는 신경망을 사용하는 것이 중요
+##### 삭제 연산
+
+- 예전 상태 중 일부 관련 없는 정보 삭제
+
+- 삭제 게이트
+  - 기억 삭제를 위한 게이트
+  - 현재 시점의 입력 $x_t$와 이전 은닉상태 $h_{t-1}$이 시그모이드 함수를 거쳐 0과 1 사이의 값 출력
+    - 위의 값이 셀 상태에서 삭제를 결정하는 값
+    - 0에 가까울 경우 : 저장된 정보 다수 삭제
+    - 1에 가까울 경우 : 저장된 정보 다수 생존
+   
+![DM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/DM.PNG)
+
+##### 업데이트 연산
+
+- 선택적으로 셀 상태 값 업데이트
+
+- 셀 상태($c_t$) : LSTM에서 장기 기억이 저장되는 장소
+- 셀 상태를 계산
+- 1) 셀 상태에 삭제 게이트를 통해 들어온 값을 곱해 일부 기억 삭제
+  2) 입력 게이트를 통한 값 합산
+  3) 즉, 입력 게이트에서 선택된 기억 추기
+ 
+ - 삭제 게이트 : 이전 시점의 입력을 얼마나 기억할지 결정
+ - 입력 게이트 : 현재 시점의 입력을 얼마나 기억할지 결정
+
+![UM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/UM.PNG)
+
+##### 출력 연산
+
+- 출력 게이트
+  - 현재 시점의 입력값과 이전 시점의 은닉 상태에 시그모이드 함수 적용
+    - 위의 결과값은 다음 시점의 은닉 상태 결정
+   
+![OM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OM.PNG)
+
+#### 그래디언트 소실 문제 해결
+
