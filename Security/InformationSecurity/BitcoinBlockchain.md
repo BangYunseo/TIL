@@ -95,4 +95,106 @@
 
 ![CTF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/CTF.PNG)
 
+#### 트랜잭션 입-출력
+
+- Input
+
+![TIP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/TIP.PNG)
+
+- Output
+
+![TOP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/TOP.PNG)
+
+#### 스트립트 구성(Lock + Unlock)
+
+- 비트코인의 트랜잭션 검증 엔진 스크립트
+  - 잠금 스크립트
+  - 잠금 해제 스크립트
+
+![LUL](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/LUL.PNG)
+
+#### 스크립트 언어(Script Language)
+
+![SL](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/SL.PNG)
+
+![SL2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/SL2.PNG)
+
+#### 개인 키 저장 방법
+
+1. 브레인 월렛(Brain Wallet)
+
+- 사용자가 기억하는 암호문구로 키 암호화
+
+2. 위변조 방지 장치(Tamperproof Device)
+
+- 장치는 키를 공개하지 않고 서명 대신 수행
+
+3. 페이퍼 월렛(Paper Wallet)
+
+- 키를 종이에 출력하여 보관
+
+#### 맞춤형 주소 (Vanity Addresses)
+
+- 사람이 읽을 수 있는 메시지를 포함하는 주소
+  - 예시 : 1LoveBPzzD72PUXLzCkYAtGFYmK5vYNR33
+  - "1Kids"로 시작하는 맞춤형 주소의 범위
+    - 시작 : 1Kids11111111111111111111111111111
+    - 끝 : 1Kidszzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+
+![VA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/VA.PNG)
+
+- 맞춤형 풀 (Vanity Pool)
+
+  - 맞춤형 마이너 풀에 작업 위임
+
+- 보안
+  - 보안 조치를 강화하거나 무력화하는 데 사용
+  - 진정한 양날의 검
+
+## 3절. 블록체인과 채굴(BlockChain & Mining)
+
+#### 비트코인 채굴(Bitcoin Mining)
+
+- 트랜잭션은 비트코인 네트워크에 전파되며 채굴을 통해 확인
+- 블록에 포함되기 전까지 공유 원장(블록체인)의 일부 X
+
+- 채굴의 두 가지 목적
+  - 새로운 비트코인을 생성 => 중앙은행의 새 돈 발행
+  - 해당 블록에 충분한 계산 능력이 투입된 경우만 트랜잭션 확인 보장 => 신뢰 형성
+
+#### 블록체인(Blockchain)
+
+![BlockChain](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/BlockChain.PNG)
+
+#### 블록 보상(Block Reward)
+
+- 블록을 성공적으로 채굴할 경우 받는 비트코인의 수
+- 보상
+  => 50 BTC (2009), …, 3.125 BTC (2024),
+  1.5625 BTC (2028), 0.78125 BTC (2032), 0.390625 BTC (2036), …
+
+- 목표 : 10분 블록 간격
+- 보상은 매 210,000 블록, 즉 약 4년마다 반감
+- 총 발행될 비트코인의 양 : 21,000,000 BTC
+- 약 2140년경에 0에 도달할 것으로 예상
+
+#### 채굴(Mining)
+
+- 작업 증명(Proof of Work)
+  - 생성하기 어렵고(비용 및 시간 소모) 다른 사람이 검증하기는 쉬움
+  - 특정 요구 사항을 충족하는 데이터
+  - 작업 증명 생성은 확률이 낮은 무작위 과정
+  - 유효한 작업 증명 생성을 위해 평균적으로 많은 시행착오 필요
+  - 비트코인은 Hashcash 작업 증명 시스템 사용
+  - 블록이 유효하려면 해당 블록의 해시 값이 현재 목표값보다 작아야 함
+    - 예 : 0000000000000000029AB900000…0000000000000000
+
+#### 난이도 목표(Difficulty Target)
+
+- 난이도 목표와 재조정(Retargeting)
+  - 블록을 찾는 난이도
+    - 네트워크 전체가 처리하는 데 약 10분 소요
+    - 2,016블록(약 2주)마다 조정
+  - 새로운 목표 = 이전 목표 × (마지막 2,016블록 처리 시간 / 20,160분)
+
 ####
