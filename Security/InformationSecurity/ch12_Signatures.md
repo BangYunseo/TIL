@@ -1,16 +1,14 @@
-# Chapter 11. 메시지 인증 코드(MAC : Message Authentication Code)
+# Chapter 12. 서명(Signatures)
 
-> 1절. 메시지 인증 코드
+> 1절. 디지털 서명(Digital Signatures)
 >
-> 2절. 길이 확장 공격
+> 2절. RSA 서명
 >
-> 3절. HMAC
+> 3절. DSS / DSA
 >
-> 4절. CBC-MAC
+> 4절. 0-지식 증명(Zero-Knowledge Proof)
 >
-> 5절. CMAC
->
-> 6절. 인증 암호(Authenticated Encryption)
+> 5절. Schnorr 인증
 
 ## 1절. 메시지 인증 코드
 
@@ -83,13 +81,12 @@
 
 > $HMAC(K, M) = H ( (K′ ⊕ opad) || H ((K′ ⊕ ipad) || M) )$
 
-- $H$ : 암호학적 해쉬 함수
-- $K′$ = {$K$ : 해쉬 함수의 입력 블록 크기에 맞게 $0$으로 패딩}
-  = {$H(K)$ : 블록 크기보다 길 경우 $H(K)$ 해쉬로의 대체}
-
-- $M$ : 인증할 메시지
-- $||$ : 연결(concatenation)
-- $⊕$ : 배타적 논리합(XOR)
+- H : 암호학적 해쉬 함수
+- K′ = {K : 해쉬 함수의 입력 블록 크기에 맞게 0으로 패딩}
+  = {H(K) : 블록 크기보다 길 경우 H(K) 해쉬로의 대체}
+- M : 인증할 메시지
+- || : 연결(concatenation)
+- ⊕ : 배타적 논리합(XOR)
 - opad : 외부 패딩(0x5c5c5c…5c5c, 하나의 블록 크기 길이의 16진수 상수)
 - ipad : 내부 패딩(0x363636…3636, 하나의 블록 크기 길이의 16진수 상수)
 - Example : MD5, SHA-1, SHA-224, SHA-256 해쉬 함수 = 블록 크기가 64바이트(512비트)
@@ -110,8 +107,7 @@
 ![CBCMAC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/CBCMAC.PNG)
 
 - 메시지 M의 CBC-MAC을 계산하려면, 제로 IV(초기 벡터)로 CBC 모드에서 M을 암호화합니다.
-- 고정 길이 메시지 : 안전
-- 가변 길이 메시지 : 불안전
+  – 사용된 블록 암호가 안전하다면(즉, 그것이 의사 난수 치환인 경우), CBC-MAC은 고정 길이 메시지에 대해서는 안전합니다. 그러나 가변 길이 메시지에 대해서는 안전하지 않습니다.
 
 ## 5절. CMAC
 

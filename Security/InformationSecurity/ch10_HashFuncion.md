@@ -133,7 +133,7 @@
 
 - Keccak으로 불렸던 해시 함수
 - 2012년 공개 경쟁 이후 선택
-- 가변 출력 길이(224, 256, 384, 512)를 지원
+- 가변 출력 길이(224, 256, 384, 512) 지원
 - 내부 구조는 기존 SHA 계열과 상이
 
 ![SHA3](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch10/SHA3.PNG)
