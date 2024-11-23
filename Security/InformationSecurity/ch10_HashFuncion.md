@@ -1,60 +1,66 @@
-# Chapter 9. 공개 키 암호 시스템(Public Key Cryptosystems)
+# Chapter 10. 해쉬 암호(Hash Function)
 
-> 1절. Diffie-Hellman Key
+> 1절. Hash Function
 >
 > 2절. ElGamal Encryption
 >
 > 3절. Man-in-the-Middle Attack
 
-## 1절. Diffie-Hellman Key
+## 1절. Hash Function
 
-#### 디피-헬먼 키 교환(Diffie-Hellman Key Exchange)
+#### 해쉬 함수(Hash Function)
 
-##### 역사
+##### 정의
 
-- 1976년 Whitfield Diffie와 Martin Hellman에 의해 처음 발표
+- H(⋅)는 가변 길이 데이터 세트를 고정 길이 데이터 세트로 매핑하는 알고리즘
+- 해시 함수 반환 값
+  - 해시 값(hash values)
+  - 해시 코드(hash codes)
+  - 체크섬(checksums)
+  - 해시(hashes)
+- 메시지 : 암호화하려는 데이터
+- (메시지)다이제스트(message digest) : 생성된 해시 값
+- 가변 길이 데이터를 고정 크기의 정수로 해시
 
-- 몇 년 전 영국 정부 통신 본부(GCHQ)에서 별도로 개발되었으나 기밀로 유지
+##### 주요 응용 분야
 
-##### 키 교환
+- 해시 테이블(Hash Tables)
 
-- 사전 정보가 없는 두 당사자가 안전하지 않은 통신 채널에서 공동으로 공유 비밀 키를 설정
+##### 특성
 
-##### 디피-헬만 문제 계산
+- 전상 이미지 저항성(Pre-image resistance)
 
-- $g$를 어떤 그룹 $G$의 생성자로 설정
-- 임의로 선택된 정수
-  $x$와 $y$에 대해, DHP는 아래처럼 정의
+  - 해시 값 $h$가 주어졌을 때, $h = H(m)$을 만족하는 임의의 메시지 $m$을 찾을 수 없어야 함
 
-  - 주어진 요소
-    $g$와 값 $g^x$, $g^y$ 로부터
-    $g^{xy}$ 의 값 계산
+- 두 번째 전상 이미지 저항성 (Second pre-image resistance)
 
-- 이산 로그 문제(DLP)만큼 어려운 난이도
+  - 약한 충돌 저항성 (Weak collision resistance)
+  - 특정 입력 $m_1$ 이 주어졌을 때, m_1 ≠ m_2 이면서 H(m_1)=H(m_2)을 만족하는 또 다른 입력 m_2를 찾을 수 없어야 함
 
-##### 공식(Scheme)
+- 충돌 저항성 (Collision resistance)
 
-1. 앨리스와 밥은 순환 그룹 소수 차수 $q$의 $G$와 생성자 $g∈G$에 합의  
-   (소수 차수의 순환 그룹이 권장)
+서로 다른 두 메시지
 
-2. 앨리스는 $1 ≤ a < q$ 범위의 랜덤 정수 $a$ 선택 후 $pk_A = g^a$를 밥에게 전송
+m
+1
+​
+과
 
-3. 밥은 $1 ≤ b < q$ 범위의 랜덤 정수 $b$ 선택 후 $pk_B=g^b$를 앨리스에게 전송
+m
+2
+​
+에 대해
 
-4. 앨리스는 $(pk_B)^a = (g^b)^a=g^{ab}$ 계산
-5. 밥은 $(pk_A)^b = (g^a)^b=g^{ab}$ 계산
+H(m
+1
+​
+)=H(m
+2
+​
+)를 만족하는 경우를 찾는 것이 어려워야 합니다. 이와 같은 메시지 쌍을 **암호학적 해시 충돌 (Cryptographic hash collision)**이라고 합니다.
+이 속성은 종종 **강한 충돌 저항성 (Strong collision resistance)**이라고도 불리며, 충돌 저항성을 보장하려면 해시 값의 길이가 전상 이미지 저항성을 보장하는 데 필요한 길이의 두 배 이상이어야 합니다. 그렇지 않으면 **생일 공격 (Birthday attack)**에 의해 충돌이 발견될 수 있습니다.
 
-##### 예시
-
-1. 앨리스와 밥은 $G=Z_{23}^∗$ $(p=23, q=22)$및 $g=5$에 동의
-
-2. 앨리스는 $a = 6$을 선택하고 $pk_A = 5^6$ $mod$ $23$ $=$ $8$을 밥에게 전송
-
-3. 밥은 $b = 15$를 선택하고 $pk_B = 5^{15}$ $mod$ $23 = 19$를 앨리스에게 전송
-
-4. 앨리스는 $(pk_B)^a = 19^6$ $mod$ $23 = 2$를 계산
-
-5. 밥은 $(pk_A)^b = 8^{15}$ $mod$ $23 = 2$를 계산
+![HF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch10/HF.PNG)
 
 ## 2절. ElGamal Encryption
 
