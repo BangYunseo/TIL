@@ -164,7 +164,8 @@ def load_mnist() :
   digits = load_digits()
   x_data = digits.data
   y_data = digits.target
-  x_trainf, x_test, y_trainf, y_test = train_test_split(x_data, y_data, test_size = 0.3)
+  x_trainf, x_test, y_trainf, y_test
+  = train_test_split(x_data, y_data, test_size = 0.3)
 
   X_valid, X_train = x_trainf[:50] , x_trainf[50:]
   y_valid, y_train = y_trainf[:50], y_trainf[50:]
