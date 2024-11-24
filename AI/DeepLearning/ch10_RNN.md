@@ -9,9 +9,6 @@
 > 4절. 역전파 방향과 그래디언트
 >
 > 5절. LSTM
->
-> 6절. 
-
 
 ## 1절. 순환 데이터
 
@@ -130,6 +127,7 @@ print(X[0], y[0])                              # 첫 번째 샘플 출력
 ```
 
 ## 2절. 순환 신경망(RNN)
+
 #### 순환 신경망의 구조
 
 ![RNNStructure](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNStructure.PNG)
@@ -138,7 +136,7 @@ print(X[0], y[0])                              # 첫 번째 샘플 출력
 - 은닉 상태(은닉층)이 순환 엣지(Recurrent Edge) 보유
   - 시간성, 가변 길이, 문맥 의존성 모두 처리 가능
   - 순환 엣지는 $t - 1$ 순간에 발생한 정보를 $t$ 지점으로 전달하는 역할
- 
+
 ![RNNS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNS.PNG)
 
 #### 피드-포워드 신경망(Feed-Forward Neural Network)과 RNN
@@ -246,7 +244,7 @@ print(model.predict(X_test))
 
 ![VRNNOP1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRNNOP1.PNG)
 
-- 파라미터 아웃값 * (파라미터 아웃값 + 1(차원 수 1) + 1(바이어스)) + 덴스(Dense) 값
+- 파라미터 아웃값 \* (파라미터 아웃값 + 1(차원 수 1) + 1(바이어스)) + 덴스(Dense) 값
 - $50 * (50 + 1 + 1) + 51 = 2651$
 
 ![VRNNOP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/VRNNOP.PNG)
@@ -281,14 +279,14 @@ print(model.predict(X_test))
 - 다수 입력으로 단일 출력 생성의 신경망
 - 감정(Sentiment) 분석 신경망에 사용
   - 주어진 문장들이 긍정적 OR 부정적 감정인지 분류
- 
+
 ![MtO](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/MtO.PNG)
 
 ##### 다대다(Many to Many)
 
 - 다수 입력으로 다수 출력 생성의 신경망
 - 기계 번역에서 사용되며 단어들이 계속 다른 단어들로 출력
- 
+
 ![MtM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/MtM.PNG)
 
 ## 4절. 역전파 방향과 그래디언트
@@ -358,19 +356,21 @@ whole_sequence_output, final_state = simple_rnn(inputs)
 ![GD](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/GD.PNG)
 
 - 문제
+
   - 학습이 진행될 때 먼 거리의 의존 관계를 파악하지 못하고 근거리의 의존 관계만 중시하는 문제
 
 - 방안
   - 활성화 함수를 ReLU로 변환
   - 가중치를 단위 행렬로 초기화(바이어스를 0으로 초기화)
   - 복잡한 순환 유닛인 LSTM, GRU같은 Gated Cell 사용
-=> 게이트들이 어떤 정보를 지나가게 할 것인지의 제어로 장기적 기억 가능
+    => 게이트들이 어떤 정보를 지나가게 할 것인지의 제어로 장기적 기억 가능
 
 ##### 그래디언트 폭증
 
 ![GI](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/GI.PNG)
 
 - 문제
+
   - 그래디언트가 너무 커지는 문제
 
 - 방안
@@ -438,12 +438,14 @@ plt.show()
 ## 5절. LSTM(Long Short-Term Memory)
 
 #### LSTM 신경망
+
 - RNN은 그래디언트 소실 현상으로 초반의 입력이 뒤로 갈수록 점차 소실
 - 즉, 다음 단어를 엉뚱하게 예측하는 장기 의존성 문제 발생
 
 #### LSTM(Long Short-Term Memory)
 
 - 개발 배경
+
   - RNN은 그래디언트 소실 현상으로 초반의 입력이 뒤로 갈수록 점차 소실
   - 즉, 다음 단어를 엉뚱하게 예측하는 장기 의존성 문제 발생
 
@@ -451,7 +453,7 @@ plt.show()
 - 셀, 입력 게이트, 출력 게이트, 삭제 게이트의 구성
   - 셀 : 임의의 시점에 대한 값을 기억
   - 게이트(입력, 망각, 출력) : 셀로 출입하는 정보의 흐름 조절
- 
+
 ![LSTM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/LSTM.PNG)
 
 ##### 게이트
@@ -464,7 +466,7 @@ plt.show()
 ##### 저장 연산
 
 - 셀 상태에 관련있는 새로운 정보 저장
- 
+
 ![SM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/SM.PNG)
 
 ##### 삭제 연산
@@ -477,7 +479,7 @@ plt.show()
     - 위의 값이 셀 상태에서 삭제를 결정하는 값
     - 0에 가까울 경우 : 저장된 정보 다수 삭제
     - 1에 가까울 경우 : 저장된 정보 다수 생존
-   
+
 ![DM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/DM.PNG)
 
 ##### 업데이트 연산
@@ -486,12 +488,12 @@ plt.show()
 
 - 셀 상태($c_t$) : LSTM에서 장기 기억이 저장되는 장소
 - 셀 상태를 계산
-- 1) 셀 상태에 삭제 게이트를 통해 들어온 값을 곱해 일부 기억 삭제
-  2) 입력 게이트를 통한 값 합산
-  3) 즉, 입력 게이트에서 선택된 기억 추기
- 
- - 삭제 게이트 : 이전 시점의 입력을 얼마나 기억할지 결정
- - 입력 게이트 : 현재 시점의 입력을 얼마나 기억할지 결정
+- 1. 셀 상태에 삭제 게이트를 통해 들어온 값을 곱해 일부 기억 삭제
+  2. 입력 게이트를 통한 값 합산
+  3. 즉, 입력 게이트에서 선택된 기억 추기
+
+- 삭제 게이트 : 이전 시점의 입력을 얼마나 기억할지 결정
+- 입력 게이트 : 현재 시점의 입력을 얼마나 기억할지 결정
 
 ![UM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/UM.PNG)
 
@@ -500,8 +502,88 @@ plt.show()
 - 출력 게이트
   - 현재 시점의 입력값과 이전 시점의 은닉 상태에 시그모이드 함수 적용
     - 위의 결과값은 다음 시점의 은닉 상태 결정
-   
+
 ![OM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/OM.PNG)
 
 #### 그래디언트 소실 문제 해결
 
+![PS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/PS.PNG)
+
+#### 케라스에서의 LSTM
+
+```Python
+inputs = tf.random.normal([32, 10, 8])
+lstm = tf.keras.layers.LSTM(4)            # 4개의 셀
+output = lstm(inputs)
+
+print(output.shape)
+print(output)
+
+# 출력
+# (32, 4)
+```
+
+#### 예제 : Keras를 활용한 주가 예측
+
+![Keras1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/Keras1.PNG)
+
+![Keras2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/Keras2.PNG)
+
+```Python
+import FinanceDataReader as fdr
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+samsung = fdr.DataReader('005930', '2016')
+print(samsung)
+
+openValues = samsung[['Open']]
+
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler(feature_range = (0, 1))
+scaled = scaler.fit_transform(openValues)
+
+TEST_SIZE = 200
+train_data = scaled[:-TEST_SIZE]
+test_data = scaled[-TEST_SIZE:]
+
+def make_sample(data, window):
+    train = []
+    target = []
+    for i in range(len(data)-window):
+        train.append(data[i:i+window])
+        target.append(data[i+window])
+    return np.array(train), np.array(target)
+
+X_train, y_train = make_sample(train_data, 30)
+
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import LSTM
+
+model = Sequential()
+model.add(LSTM(16,
+          input_shape = (X_train.shape[1], 1),
+          activation='tanh',
+          return_sequences=False) )
+model.add(Dense(1))
+
+model.compile(optimizer = 'adam', loss = 'mean_squared_error')
+model.fit(X_train, y_train, epochs = 100, batch_size = 16)
+
+X_test, y_test = make_sample(test_data, 30)
+pred = model.predict(X_test)
+
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(12, 9))
+plt.plot(y_test, label='stock price')
+plt.plot(pred, label='predicted stock price')
+plt.legend()
+plt.show()
+```
+
+- 출력 결과
+
+![Output1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/Output1.PNG)
