@@ -310,6 +310,16 @@ BOINC (Berkeley Open Infrastructure for Network Computing): 자원봉사자가 �
 
 #### 암호화 히터
 
+![CH](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/CH.PNG)
+
+#### 작업 증명과 지분 증명(Proof of Work vs Proof of Stake)
+
+![PWPS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/PWPS.PNG)
+
+#### 암호화폐(Cryptocurrencies)
+
+![Cc](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/Cc.PNG)
+
 #### 추가 전용 로그(Append-only Log)
 
 ##### 연결된 타임스탬프
@@ -318,6 +328,8 @@ BOINC (Berkeley Open Infrastructure for Network Computing): 자원봉사자가 �
   - ISO 18014
   - ANSI ASC X9.95
   - IETF RFC 4998
+
+![AOL](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/AOL.PNG)
 
 #### 스마트 자산(Smart Property)
 
