@@ -55,7 +55,7 @@
 
 ##### 특징맵(Feature Map)
 
-![FM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CFM.PNG)
+![FM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/FM.PNG)
 
 - 컨볼루션을 수행한 결과
 
