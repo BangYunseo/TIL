@@ -126,8 +126,8 @@
 
 ![OAEP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch08/OAEP.PNG)
 
-- 이론 : $G$와 $H$는
-- 실제 :
+- 이론 : $G$와 $H$는 랜덤 오라클
+- 실제 : $G$와 $H$는 암호학의 해쉬 함수들
 
 ## 4절. Hybrid Encryption
 
