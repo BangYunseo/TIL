@@ -93,28 +93,61 @@
 
 #### DSA(Digital Signature Algorithm)
 
-##### 디지털 서명 알고리즘(DSA) 정의(여기부터 작성)
-
-- DSA는 1991년 NIST(국립 표준 기술 연구소)에 의해 DSS에서 사용하기 위해 제안되었으며, 1993년 FIPS 186으로 채택되었습니다.
-  – DSA는 1991년 7월 26일에 제출된 미국 특허 5,231,668에 의해 보호되며, 이는 전 NSA 직원인 David W. Kravitz에 의해 발명되었습니다. NIST는 이 특허를 전 세계적으로 로열티 없이 제공하고 있습니다.
-
 ##### 디지털 서명 알고리즘(DSA) 알고리즘
 
-- 매개변수 : (p, q, g)
-  • 키 생성 알고리즘
-  – 0 < x < q인 범위에서 무작위 방법으로 비밀 키 x를 선택합니다.
-  – 공개 키 y = g^x mod p를 계산합니다.
+- 매개변수 : $(p, q, g)$
 
-• 서명 알고리즘
-– 0 < k < q인 범위에서 메시지별 무작위 값 k를 생성합니다.
-– r = (g^k mod p) mod q와 s = k^−1(H(m) + xr) mod q를 계산합니다.
-– 메시지 m에 대한 서명은 (r, s)입니다.
+- 키 생성 알고리즘
 
-• 검증 알고리즘
-– w = s^−1 mod q, u1 = H(m)w mod q, u2 = rw mod q를 계산합니다.
-– v = (g^u1 \* y^u2 mod p) mod q를 계산합니다.
-– 서명이 유효하려면 v = r이어야 합니다.
+  - $0 < x < q$ 범위에서 무작위 방법으로 비밀 키 $x$ 선택
+  - 공개 키 $y = g^x$ $mod$ $p$ 계산
+
+- 서명 알고리즘
+
+  - $0 < k < q$ 범위에서 메시지 별 무작위 값 $k$ 생성
+  - $r = (g^k mod$ $p)$ $mod$ $q$와 $s = k^−1(H(m) + xr)$ $mod$ $q$ 계산
+  - 메시지 $m$에 대한 서명 : $(r, s)$
+
+- 검증 알고리즘
+  - $w = s^{−1}$ $mod$ $q, u_1 = H(m)w$ $mod$ $q, u_2 = rw$ $mod$ $q$ 계산
+  - $v = (g^{u_1} y^{u_2}$ $mod$ $p)$ $mod$ $q$ 계산
+  - 서명 유효성 : $v = r$
 
 ## 4절. 0-지식 증명(Zero-Knowledge Proof)
+
+#### ZKP
+
+- 제로-지식 증명(Zero-Knowledge Proof)
+- 제로-지식 프로토콜
+- 한 당사자(증명자 Peggy)가 다른 당사자(검증자 Victor)에게 특정 값 $x$를 알고 있음 증명
+- 해당 값 $x$를 알고 있다는 사실 외 어떠한 정보도 전달하지 않는 방법
+
+#### 속성
+
+- 완전성(Completeness)
+
+  - 명제가 참일 경우
+    - 정직한 증명자가 정직한 검증자에게 사실 납득
+
+- 건전성(Soundness)
+  - 명제가 거짓일 경우
+    - 부정직한 증명자가 정직한 검증자에게 그것이 참이라고 납득시킬 수 있는 확률은 매우 작습니다.
+- 제로-지식(Zero-knowledge)
+  - 명제가 참일 경우
+    - 검증자는 명제가 참이라는 사실 외에 아무것도 알 수 없습니다.
+
+#### 예시
+
+- 루빅 큐브(Rubik Cube)
+
+![RC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/RC.PNG)
+
+- 할로윈 사탕(Halloween Candy)
+
+![HC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/HC.PNG)
+
+- 알리바바 동굴(AliBaba Cave)
+
+![AC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/AC.PNG)
 
 ## 5절. Schnorr 인증
