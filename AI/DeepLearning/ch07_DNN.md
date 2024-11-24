@@ -202,9 +202,14 @@ def makemodel(X_train, y_train, X_valid, y_valid, weight_init,):
 ##### 정확도, 손실 함수 비교
 
 ```Python
-model_xavier,hist_xavier = makemodel(X_train, y_train, X_valid, y_valid,'glorot_uniform')
-model_RandomNormal,hist_RandomNormal = makemodel(X_train, y_train, X_valid, y_valid,'RandomNormal')
-model_he,hist_he= makemodel(X_train, y_train, X_valid, y_valid,'he_normal')
+model_xavier, hist_xavier
+= makemodel(X_train, y_train, X_valid, y_valid,'glorot_uniform')
+
+model_RandomNormal, hist_RandomNormal
+= makemodel(X_train, y_train, X_valid, y_valid,'RandomNormal')
+
+model_he, hist_he
+= makemodel(X_train, y_train, X_valid, y_valid,'he_normal')
 ```
 
 ![HX](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch07/HX.PNG)
@@ -220,9 +225,9 @@ model_he,hist_he= makemodel(X_train, y_train, X_valid, y_valid,'he_normal')
 ```Python
 for ix in train.index:
   if train.loc[ix, 'Sex']=="male":
-    train.loc[ix, 'Sex']=1
+    train.loc[ix, 'Sex'] = 1
   else:
-    train.loc[ix, 'Sex']=0
+    train.loc[ix, 'Sex'] = 0
 ```
 
 #### 범주형 데이터 변환 방법
@@ -374,7 +379,8 @@ import tensorflowas tf
 import matplotlib.pyplotas plt
 
 # 데이터 다운로드
-(train_data, train_labels), (test_data, test_labels) = tf.keras.datasets.imdb.load_data(num_words=1000)
+(train_data, train_labels), (test_data, test_labels)
+= tf.keras.datasets.imdb.load_data(num_words=1000)
 # imdb를 활용하여 많이 사용되는 단어 1000개 추출
 
 # 원-핫 인코딩 변환 함수
@@ -390,7 +396,8 @@ test_data= one_hot_sequences(test_data)
 # 신경망 모델 구축
 model = tf.keras.Sequential()
 
-model.add(tf.keras.layers.Dense(16, activation='relu', input_shape=(1000,)))
+model.add(tf.keras.layers.Dense(16, activation='relu',
+                                input_shape=(1000,)))
 model.add(tf.keras.layers.Dense(16, activation='relu'))
 model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 
@@ -399,17 +406,25 @@ model.compile(loss = 'binary_crossentropy',
               metrics = ['accuracy'])
 
 # 신경망 훈련
-history = model.fit(train_data, train_labels, epochs = 20, batch_size = 512,
-
-# 검증 데이터 전달
-validation_data = (test_data, test_labels), verbose = 2)
+history = model.fit(train_data, train_labels,
+                   epochs = 20, batch_size = 512,
+                   validation_data = (test_data, test_labels),
+                   verbose = 2)
 
 # 훈련 데이터의 손실값과 검증 데이터의 손실값 출력
 history_dict= history.history
-loss_values= history_dict['loss']           # 훈련데이터 손실 값
-val_loss_values= history_dict['val_loss']   # 검증데이터 손실 값
-acc = history_dict['accuracy']              # 정확도
-epochs = range(1, len(acc) + 1)             # 에포크수
+loss_values= history_dict['loss']
+# 훈련데이터 손실 값
+
+val_loss_values= history_dict['val_loss']
+# 검증데이터 손실 값
+
+acc = history_dict['accuracy']
+# 정확도
+
+epochs = range(1, len(acc) + 1)
+# 에포크수
+
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
 plt.title('Loss Plot')
@@ -444,8 +459,14 @@ plt.show()
 
 ```Python
 model = tf.keras.Sequential()
-model.add(tf.keras.layers.Dense(16, kernel_regularizer=tf.keras.regularizers.l2(0.001), activation='relu', input_shape=(1000,)))
-model.add(tf.keras.layers.Dense(16, kernel_regularizer=tf.keras.regularizers.l2(0.001), activation='relu'))
+model.add(tf.keras.layers.Dense(16,
+kernel_regularizer = tf.keras.regularizers.l2(0.001),
+activation='relu', input_shape=(1000,)))
+
+model.add(tf.keras.layers.Dense(16,
+kernel_regularizer=tf.keras.regularizers.l2(0.001),
+activation='relu'))
+
 model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 ```
 
@@ -457,7 +478,9 @@ model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 
 ```Python
 model = tf.keras.Sequential()
-model.add(tf.keras.layers.Dense(16, activation='relu', input_shape=(10000,)))
+model.add(tf.keras.layers.Dense(16,
+activation='relu', input_shape=(10000,)))
+
 model.add(tf.keras.layers.Dropout(0.5))
 model.add(tf.keras.layers.Dense(16, activation='relu'))
 model.add(tf.keras.layers.Dropout(0.5))
@@ -478,7 +501,9 @@ model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 
 ```Python
 model = tf.keras.models.Sequential()
-model.add(tf.keras.layers.Dense(16, activation='relu', input_shape=(2,)))
+model.add(tf.keras.layers.Dense(16, activation='relu',
+input_shape=(2,)))
+
 model.add(tf.keras.layers.Dense(8, activation='relu'))
 model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 # 0 ~ 1 바이너리의 출력을 위해 sigmoid 함수 사용
