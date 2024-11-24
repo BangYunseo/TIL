@@ -10,125 +10,111 @@
 >
 > 5절. Schnorr 인증
 
-## 1절. 메시지 인증 코드
+## 1절. 디지털 서명(Digital Signatures)
 
-#### MAC
+#### 디지털 서명(Digital Signatures) 정의
 
-![MAC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/MAC.PNG)
+- 디지털 메시지나 문서의 진위를 증명하는 수학적 방식
+- 인증 및 부인 방지
+  - 유효한 디지털 서명에 대한 수신자와 발신자의 정보
+    - 수신자 : 메시지가 발신자에 의해 생성되었음을 믿을 수 있는 이유 제공
+    - 발신자 : 메시지를 보낸 사실을 부인 불가
+- 무결성
+  - 메시지가 전송 중에 변경되지 않음을 보장
 
-- 메시지를 인증하고 메시지의 무결성과 진위성(정확성)을 보장하는 데 사용되는 짧은 정보
+#### 디지털 서명(Digital Signatures) 알고리즘
 
-- 무결성 보장 : 우발적이거나 의도적인 메시지 변경 탐지
+##### 키 생성 알고리즘(Key Generation Algorithm)
 
-- 진위 보장 : 메시지의 출처 확인
+- 무작위 알고리즘
+- $(pk, sk)$ 출력
 
-#### 기능
+##### 서명 알고리즘(Signing Algorithm)
 
-- 키 기반 암호학적 해시 함수(keyed(cryptographic) hash function)
-  - 암호학적 해시 함수는 MAC을 생성하는 방법 중 하나
-- 입력값 : 비밀 키와 인증할 임의 길이의 메시지
-- 출력값 : MAC(태그)
-- MAC 값
-  - 메시지의 데이터 무결성과 진위 보호
-  - 검증자가(비밀 키를 소유한) 메시지 내용의 변경 여부를 확인 가능
+- 개인 키와 메시지를 받아 서명 출력
+- $s = Sign(sk, m)$
 
-#### 알고리즘
+##### 검증 알고리즘(Verification Algorithm)
 
-- 키 생성 알고리즘
-- 태그 생성 알고리즘 : $T = Mac(K, M)$
-- 검증 알고리즘 : $Vrfy(K, M, T) = 1/0$
+- 공개 키, 메시지, 서명 입력
+- 메시지의 진위 주장에 수락 or 거부
+- $Vrfy(pk, m, s) = Y/N$
 
-#### 보안
+#### 일반적인 디지털 서명 과정
 
-- 선택 평문 공격에 대해 존재적 위조를 저항해야 안전
-  - 공격자가 비밀 키를 가지고 있고, 공격자가 선택한 메시지에 대해 MAC을 생성하는 오라클에 접근가능할 경우
-  - 공격자가 오라클을 쿼리하는 데 사용되지 않은 다른 메시지의 MAC을 추측할 수 없음
-  - 불가능할 정도의 계산을 수행 필요
+![DSP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/DSP.PNG)
 
-#### 구현
+## 2절. RSA 서명
 
-- 암호학적 원시 함수에서 구성
-  - 암호학적 해시 함수(HMAC의 경우)
-  - 블록 암호 알고리즘(CMAC의 경우)
+#### RSA 서명 (해쉬된 RSA 또는 FDH-RSA) 알고리즘
 
-## 2절. 길이 확장 공격
+##### 키 생성 알고리즘
 
-#### 길이 확장 공격(Length Extension Attack)
+- RSA 암호화와 동일
+- 공개 키 = $(e, n)$
+- 개인 키 = $(d, n)$
 
-![LEA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/LEA.PNG)
+##### 서명 알고리즘
 
-- 공격자가 $H(m_1)$과 $m_1$의 길이를 사용하여 $m_1$의 내용은 알 필요 없이 공격자가 제어하는 $m_2$에 대해 $H(m_1 ‖ m_2)$를 계산할 수 있는 공격의 일종
-- MD5, SHA-1, SHA-2와 같이 Merkle–Damgård 구조를 기반으로 한 알고리즘은 이러한 종류의 공격에 취약
-- SHA-3 알고리즘 제외(안취약함)
+- 입력
+  - 개인 키 = $(d, n)$
+  - 메시지 = $m$
+- 서명 $s = H(m)^d$ $mod$ $n$ 계산
+- $H : {0, 1}^* → Z_n^*$는 암호학적 해쉬 함수
 
-## 3절. HMAC
+##### 검증 알고리즘
 
-#### HMAC (키 기반 해쉬 메시지 인증 코드 또는 해쉬 기반 메시지 인증 코드)
+- 입력
+  - 공개 키 = $(e, n)$
+  - 메시지 = $m$
+  - 서명 = $s$
+- $H(m) = s^e$ $mod$ $n$ 확인
 
-- SHA-2 또는 SHA-3와 같은 암호학적 해쉬 함수는 HMAC 계산에 사용
-- HMAC-X(X : 사용된 해쉬 함수)
+##### 번외) RSA 서명에만 해당되는 조건
 
-  - HMAC-SHA256
-  - HMAC-SHA3-256
+- 서명(Sign) = 개인 키로 암호화
+- 검증(Vrfy) = 공개 키로 복호화
 
-- 두 번의 해쉬 계산을 사용
-- 비밀 키 : 먼저 두 개의 키(내부 키와 외부 키)를 유도할 때 사용
-- 첫 번째 패스 : 메시지와 내부 키에서 유도된 내부 해쉬 생성
-- 두 번째 패스 : 내부 해쉬 결과와 외부 키에서 유도된 최종 HMAC 코드 생성
-- 길이 확장 공격에 대해 더 나은 면역력을 제공
+#### RSA-PSS(Probabilistic Signature Scheme)
 
-#### 정의(RFC 2104)
+![PSS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/PSS.PNG)
 
-> $HMAC(K, M) = H ( (K′ ⊕ opad) || H ((K′ ⊕ ipad) || M) )$
+## 3절. DSS / DSA
 
-- H : 암호학적 해쉬 함수
-- K′ = {K : 해쉬 함수의 입력 블록 크기에 맞게 0으로 패딩}
-  = {H(K) : 블록 크기보다 길 경우 H(K) 해쉬로의 대체}
-- M : 인증할 메시지
-- || : 연결(concatenation)
-- ⊕ : 배타적 논리합(XOR)
-- opad : 외부 패딩(0x5c5c5c…5c5c, 하나의 블록 크기 길이의 16진수 상수)
-- ipad : 내부 패딩(0x363636…3636, 하나의 블록 크기 길이의 16진수 상수)
-- Example : MD5, SHA-1, SHA-224, SHA-256 해쉬 함수 = 블록 크기가 64바이트(512비트)
+#### 디지털 서명 표준(DSS : Digital Signature Standard)
 
-![HSHA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/HSHA.PNG)
+- 디지털 서명을 생성하기 위한 암호화 알고리즘을 설명하는 미국 정부의 FIPS(연방 정보 처리 표준) 186
+- 총 네 번의 개정판
+  - FIPS 186-1 (1996)
+  - FIPS 186-2 (2000)
+  - FIPS 186-3 (2009)
+    - DSA, RSA 및 EC-DSA 포함
+  - FIPS 186-4 (2013)
 
-#### SHA-3 vs HMAC
+#### DSA(Digital Signature Algorithm)
 
-- Keccak 해시 함수
-  - NIST가 SHA-3 경쟁의 승자로 선택
-  - 중첩된 접근 방식이 불필요
-  - 키를 메시지 앞에 추가하여 MAC을 생성
+##### 디지털 서명 알고리즘(DSA) 정의(여기부터 작성)
 
-## 4절. CBC-MAC
+- DSA는 1991년 NIST(국립 표준 기술 연구소)에 의해 DSS에서 사용하기 위해 제안되었으며, 1993년 FIPS 186으로 채택되었습니다.
+  – DSA는 1991년 7월 26일에 제출된 미국 특허 5,231,668에 의해 보호되며, 이는 전 NSA 직원인 David W. Kravitz에 의해 발명되었습니다. NIST는 이 특허를 전 세계적으로 로열티 없이 제공하고 있습니다.
 
-#### CBC-MAC(암호 블록 연결 MAC)
+##### 디지털 서명 알고리즘(DSA) 알고리즘
 
-![CBCMAC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/CBCMAC.PNG)
+- 매개변수 : (p, q, g)
+  • 키 생성 알고리즘
+  – 0 < x < q인 범위에서 무작위 방법으로 비밀 키 x를 선택합니다.
+  – 공개 키 y = g^x mod p를 계산합니다.
 
-- 메시지 M의 CBC-MAC을 계산하려면, 제로 IV(초기 벡터)로 CBC 모드에서 M을 암호화합니다.
-  – 사용된 블록 암호가 안전하다면(즉, 그것이 의사 난수 치환인 경우), CBC-MAC은 고정 길이 메시지에 대해서는 안전합니다. 그러나 가변 길이 메시지에 대해서는 안전하지 않습니다.
+• 서명 알고리즘
+– 0 < k < q인 범위에서 메시지별 무작위 값 k를 생성합니다.
+– r = (g^k mod p) mod q와 s = k^−1(H(m) + xr) mod q를 계산합니다.
+– 메시지 m에 대한 서명은 (r, s)입니다.
 
-## 5절. CMAC
+• 검증 알고리즘
+– w = s^−1 mod q, u1 = H(m)w mod q, u2 = rw mod q를 계산합니다.
+– v = (g^u1 \* y^u2 mod p) mod q를 계산합니다.
+– 서명이 유효하려면 v = r이어야 합니다.
 
-#### CMAC (암호 기반 MAC)
+## 4절. 0-지식 증명(Zero-Knowledge Proof)
 
-- 알고리즘
-  - Black과 Rogaway가 제안
-  - XCBC라는 이름으로 분석하여 NIST에 제출한 CBC-MAC의 변형
-- 운영 모드
-  - CBC-MAC의 보안 결함 수정
-  - 고정 길이 메시지에 대해서만 안전
-
-![CMAC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/CMAC.PNG)
-
-![CMAC2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/CMAC2.PNG)
-
-![CMAC3](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/CMAC3.PNG)
-
-## 6절. 인증 암호(Authenticated Encryption)
-
-#### 인증 암호(Authenticated Encryption)
-
-- 통신의 기밀성과 진위성(무결성)을 동시에 보호하는 암호화 시스템
-- 작동 모드 : CCM & GCM
+## 5절. Schnorr 인증
