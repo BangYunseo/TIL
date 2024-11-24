@@ -8,7 +8,7 @@
 >
 > 4절. 0-지식 증명(Zero-Knowledge Proof)
 >
-> 5절. Schnorr 인증
+> 5절. Schnorr
 
 ## 1절. 디지털 서명(Digital Signatures)
 
@@ -130,11 +130,14 @@
     - 정직한 증명자가 정직한 검증자에게 사실 납득
 
 - 건전성(Soundness)
+
   - 명제가 거짓일 경우
-    - 부정직한 증명자가 정직한 검증자에게 그것이 참이라고 납득시킬 수 있는 확률은 매우 작습니다.
+    - 부정직한 증명자가 정직한 검증자에게 그것이 참이라고 납득시킬 확률 매우 낮음
+
 - 제로-지식(Zero-knowledge)
+
   - 명제가 참일 경우
-    - 검증자는 명제가 참이라는 사실 외에 아무것도 알 수 없습니다.
+    - 검증자는 명제가 참이라는 사실 외에 아무것도 알 수 없음
 
 #### 예시
 
@@ -150,4 +153,34 @@
 
 ![AC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/AC.PNG)
 
-## 5절. Schnorr 인증
+## 5절. Schnorr
+
+#### 슈노르 식별(Schnorr Identification)
+
+![SA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/SA.PNG)
+
+- 특별 정직-검증자 제로-지식
+
+  - $(r, e, s)$는 $x$를 알지 않고도 시뮬레이션 가능
+
+- 특별 건전성
+  – $e1 ≠ e2$일 때, $(r, e_1, s_1)$과 $(r, e_2, s_2)$로부터 $x$ 계산 가능
+
+#### 슈노르 서명(Schnorr Signature)
+
+- 매개변수 : $(p, q, g)$
+
+- 키 생성 알고리즘
+
+  - $0 < x < q$ 범위에서 무작위 방법으로 비밀키 $x$ 선택
+  - 공개키 $y$를 $y = g^x$ $mod$ $p$로 계산
+
+- 서명 알고리즘
+
+  - 메시지마다 고유한 무작위 값 $k$를 $0 < k < q$ 범위에서 생성
+  - $r = g^k$ $mod$ $p,$ $e = H(r,m), s=k−xe$ $mod$ $q$ 계산
+  - 메시지 $m$에 대한 서명 : $(s, e)$
+
+- 검증 알고리즘
+  - $𝑟̂ = g^sy^e$ $mod$ $p$ 과 $𝑒̂ = H(𝑟̂, m)$ 계산
+  - 서명은 $𝑒̂ = e$일 때 유효
