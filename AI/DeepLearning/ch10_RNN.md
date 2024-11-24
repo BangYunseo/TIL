@@ -103,16 +103,24 @@ plt.show()
 
 seq_data = (samsung[['Open']]).to_numpy()
 def make_sample(data, window):
-  train = []                                   # 공백 리스트 생성
+  train = []     # 공백 리스트 생성
   target = []
-  for i in range(len(data) - window):          # 데이터의 길이만큼 반복(0 ~ len(data) - window)
-    train.append(data[i : i + window])         # i부터 (i+window-1) 까지를 저장
-    target.append(data[i + window])            # (i+window) 번째 요소는 정답
-  return np.array(train), np.array(target)     # 훈련 샘플과 정답 레이블을 반환
+  for i in range(len(data) - window):
+    # 데이터의 길이만큼 반복(0 ~ len(data) - window)
+    train.append(data[i : i + window])
+    # i부터 (i+window-1) 까지를 저장
+    target.append(data[i + window])
+    # (i+window) 번째 요소는 정답
+  return np.array(train), np.array(target)
+  # 훈련 샘플과 정답 레이블 반환
 
-X, y = make_sample(seq_data, 7)                # 윈도우 크기 = 7
-print(X.shape, y.shape)                        # 넘파이 배열의 형상 출력
-print(X[0], y[0])                              # 첫 번째 샘플 출력
+X, y = make_sample(seq_data, 7)
+# 윈도우 크기 = 7
+
+print(X.shape, y.shape)
+# 넘파이 배열의 형상 출력
+print(X[0], y[0])
+# 첫 번째 샘플 출력
 
 # 출력 결과
 #
@@ -330,7 +338,9 @@ output = simple_rnn(inputs)                 # 최종 은닉 상태로 [32, 4] �
 #### 메모리 셀의 각 시점에서 모든 은닉 상태값 반환
 
 ```Python
-simple_rnn = tf.keras.layers.SimpleRNN(4, return_sequences=True, return_state=True)
+simple_rnn = tf.keras.layers.SimpleRNN(4,
+                                       return_sequences=True,
+                                       return_state=True)
 whole_sequence_output, final_state = simple_rnn(inputs)
 
 # whole_sequence_output의 형상 : [32, 10, 4]
@@ -388,15 +398,22 @@ import matplotlib.pyplotas plt
 def make_sample(data, window):
   train = [] # 공백 리스트
   target = []
-  for i in range(len(data)-window):         # 데이터의 길이만큼 반복
-    train.append(data[i:i+window])          # i부터 (i+window-1) 까지를 저장
-    target.append(data[i+window])           # (i+window) 번째 요소는 정답
-  return np.array(train), np.array(target)  # 파이썬 리스트를 넘파이로 변환
+  for i in range(len(data)-window):
+    # 데이터의 길이만큼 반복
+    train.append(data[i:i+window])
+    # i부터 (i+window-1) 까지를 저장
+
+    target.append(data[i+window])
+    # (i+window) 번째 요소는 정답
+
+  return np.array(train), np.array(target)
+  # 파이썬 리스트를 넘파이로 변환
 
 seq_data= []
 for i in np.arange(0, 1000):
   seq_data+= [[np.sin( np.pi* i* 0.01 )]]
-X, y = make_sample(seq_data, 10)            # 윈도우 크기=10
+X, y = make_sample(seq_data, 10)
+# 윈도우 크기=10
 
 model = Sequential()
 model.add(SimpleRNN(10, activation='tanh', input_shape=(10,1)))
@@ -410,7 +427,8 @@ plt.show()
 # 출력
 # ...
 # Epoch 100/100
-# 31/31 [==============================] - 0s 3ms/step - loss: 5.4923e-04
+# 31/31 [==============================] - 0s 3ms/step
+# - loss: 5.4923e-04
 ```
 
 - 출력
@@ -421,11 +439,14 @@ plt.show()
 
 ```Python
 seq_data = []
-for i in np.arange(0, 1000):                    # 테스트 샘플 생성
+for i in np.arange(0, 1000):
+  # 테스트 샘플 생성
   seq_data += [[np.cos(np.pi * i * 0.01)]]
-X, y = make_sample(seq_data, 10)                # 윈도우 크기 = 10
+X, y = make_sample(seq_data, 10)
+# 윈도우 크기 = 10
 
-y_pred = model.predict(X, verbose=0)            # 테스트 예측값
+y_pred = model.predict(X, verbose=0)
+# 테스트 예측값
 plt.plot(np.pi * np.arange(0, 990)*0.01, y_pred )
 plt.plot(np.pi * np.arange(0, 990)*0.01, y)
 plt.show()
@@ -513,7 +534,9 @@ plt.show()
 
 ```Python
 inputs = tf.random.normal([32, 10, 8])
-lstm = tf.keras.layers.LSTM(4)            # 4개의 셀
+lstm = tf.keras.layers.LSTM(4)
+# 4개의 셀
+
 output = lstm(inputs)
 
 print(output.shape)
