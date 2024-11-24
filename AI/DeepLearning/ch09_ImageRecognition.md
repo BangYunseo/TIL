@@ -67,10 +67,14 @@ sample = expand_dims(array, axis=0)
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 datagen = ImageDataGenerator(rescale = 1./255,
-                             rotation_range = 90,                      # 회전 한도
-                             brightness_range = [0.8, 1.0],            # 밝기 변형 비율
-                             width_shift_range = 0.2,                  # 좌우 이동 한도
-                             zoom_range = [0.8, 1.2],                  # 확대 한도
+                             rotation_range = 90,
+                             # 회전 한도
+                             brightness_range = [0.8, 1.0],
+                             # 밝기 변형 비율
+                             width_shift_range = 0.2,
+                             # 좌우 이동 한도
+                             zoom_range = [0.8, 1.2],
+                             # 확대 한도
                              height_shift_range = 0.2)
 
 # 변형 영상 표시
@@ -199,7 +203,9 @@ preds = model.predict(x)
 print('예측:', decode_predictions(preds, top=3)[0])
 
 # 출력
-# 예측: [('n02111889', 'Samoyed', 0.9557966), ('n02114548', 'white_wolf', 0.01857086), ('n02112018', 'Pomeranian', 0.00947881)]
+# 예측: [('n02111889', 'Samoyed', 0.9557966),
+# ('n02114548', 'white_wolf', 0.01857086),
+# ('n02112018', 'Pomeranian', 0.00947881)]
 ```
 
 ##### 예제 2)
@@ -243,7 +249,8 @@ target_size=(128,128),
  class_mode='categorical',
  shuffle=True)
 
-model.compile(optimizer = 'Adam',loss='categorical_crossentropy',metrics=['accuracy'])
+model.compile(optimizer = 'Adam',loss='categorical_crossentropy',
+              metrics=['accuracy'])
 
 step_size_train=train_generator.n//train_generator.batch_size
 model.fit_generator(generator = train_generator,
@@ -253,5 +260,6 @@ model.fit_generator(generator = train_generator,
 # 출력
 # ...
 # Epoch 5/5
-# 68/68 [==============================] -29s 431ms/step - loss: 0.1646 - accuracy: 0.9470
+# 68/68 [==============================] -29s 431ms/step
+# - loss: 0.1646 - accuracy: 0.9470
 ```
