@@ -172,3 +172,5 @@
 - 컴퓨터가 쉽게 생성 가능
 - 해결하기 어려운 방식으로 설계
 - 정답이 제출되면 그것이 인간에 의해 입력되었음을 추정 가능
+
+![CAPTURE](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/CAPTURE.PNG)
