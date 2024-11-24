@@ -235,8 +235,9 @@
 
 ```Python
 import tensorflow as tf
-tf.keras.layers.Conv2D(filters, kernel_size, strides=(1, 1),
-                       activation=None, input_shape, padding='valid')
+tf.keras.layers.Conv2D(filters, kernel_size,
+                       strides=(1, 1), activation=None,
+                       input_shape, padding='valid')
 ```
 
 - filters : 필터 개수
@@ -249,7 +250,9 @@ tf.keras.layers.Conv2D(filters, kernel_size, strides=(1, 1),
 ```Python
 shape = (4, 28, 28, 3)
 x = tf.random.normal(shape)
-y = tf.keras.layers.Conv2D(2, 3, activation='relu', input_shape = shape[1:])(x)
+y = tf.keras.layers.Conv2D(2, 3,
+                          activation='relu',
+                          input_shape = shape[1:])(x)
 print(y.shape)
 
 # 출력
@@ -259,7 +262,9 @@ print(y.shape)
 ##### MaxPooling2D()
 
 ```Python
-tf.keras.layers.MaxPooling2D(pool_size=(2, 2), strides = None, padding = "valid")
+tf.keras.layers.MaxPooling2D(pool_size=(2, 2),
+                             strides = None,
+                            padding = "valid")
 ```
 
 - pool_size : 풀링 윈도우의 크기로 정수 또는 2개 정수의 튜플
@@ -272,7 +277,8 @@ tf.keras.layers.MaxPooling2D(pool_size=(2, 2), strides = None, padding = "valid"
 ```Python
 x = tf.constant([[1., 2., 3.], [4., 5., 6.], [7., 8., 9.]])
 x = tf.reshape(x, [1, 3, 3, 1])
-max_pool_2d = tf.keras.layers.MaxPooling2D(pool_size = (2, 2), strides = (1, 1), padding = 'valid')
+max_pool_2d = tf.keras.layers.MaxPooling2D(pool_size = (2, 2),
+                           strides = (1, 1), padding = 'valid')
 print(max_pool_2d(x))
 ```
 
@@ -286,7 +292,9 @@ print(max_pool_2d(x))
 import tensorflow as tf
 from tensorflow.keras import datasets, layers, models
 
-(train_images, train_labels), (test_images, test_labels) = datasets.mnist.load_data()
+(train_images, train_labels), (test_images, test_labels)
+= datasets.mnist.load_data()
+
 train_images = train_images.reshape((60000, 28, 28, 1))
 test_images = test_images.reshape((10000, 28, 28, 1))
 
@@ -317,7 +325,8 @@ model.fit(train_images, train_labels, epochs = 5)
 # 출력
 #  ...
 #  Epoch 5/5
-#  1875/1875 [==============================] - 14s 7ms/step - loss: 0.0194 - accuracy: 0.9940
+#  1875/1875 [==============================] - 14s 7ms/step
+# - loss: 0.0194 - accuracy: 0.9940
 ```
 
 - 결과 출력 과정
