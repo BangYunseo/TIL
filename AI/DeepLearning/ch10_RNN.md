@@ -322,9 +322,14 @@ print(prediction)
 
 ```Python
 inputs = np.random.random([32, 10, 8]).astype(np.float32)
-# 32개 샘플 / 각 샘플 당 10개의 시계열 데이터 / 하나의 데이터는 8개의 실수 형태
-simple_rnn = tf.keras.layers.SimpleRNN(4)   # 4개의 셀
-output = simple_rnn(inputs)                 # 최종 은닉 상태로 [32, 4] 형상
+# 32개 샘플
+# 각 샘플 당 10개의 시계열 데이터
+# 하나의 데이터는 8개의 실수 형태
+
+simple_rnn = tf.keras.layers.SimpleRNN(4)
+# 4개의 셀
+output = simple_rnn(inputs)
+# 최종 은닉 상태로 [32, 4] 형상
 ```
 
 - SimpleRNN(4)
