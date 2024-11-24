@@ -241,6 +241,7 @@ for layer in model.layers[:20]:
   layer.trainable=False
 for layer in model.layers[20:]:
   layer.trainable=True
+
 train_datagen
 = ImageDataGenerator(preprocessing_function = preprocess_input)
 
