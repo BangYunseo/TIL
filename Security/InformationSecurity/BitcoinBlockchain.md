@@ -197,4 +197,148 @@
     - 2,016블록(약 2주)마다 조정
   - 새로운 목표 = 이전 목표 × (마지막 2,016블록 처리 시간 / 20,160분)
 
-####
+#### 블록체인 포크(Blockchain Forks)
+
+![BF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/BF.PNG)
+
+#### 트랜잭션 수수료(Transaction Fees)
+
+![TF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/TF.PNG)
+
+- 입력 값의 합에서 출력 값의 합을 뺀 나머지
+- 수수료 = Sum(Inputs) – Sum(Outputs)
+- 해당 트랜잭션을 블록체인에 기록하는 블록을 채굴한 마이너가 수집
+
+##### 두 가지 주요 목적
+
+- 거래를 다음 블록에 포함/채굴하는 인센티브
+- 모든 거래에 소액의 비용을 부과함으로써 "스팸" 거래 또는 시스템 남용을 방지
+
+#### 발행 코인 vs 트랜잭션 수수료(Minted Coins vs Transaction Fee)
+
+- 트랜잭션 수수료기 더 중요한 요소
+- 현재 블록 보상은 대부분 마이너 수익의 대부분을 차지
+- 트랜잭션 수수료가 지배적인 역할
+
+![MCTF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/MCTF.PNG)
+
+#### 채굴 하드웨어 비교
+
+- 가격당 해시와 전기 효율성을 기준 비교
+
+![MHC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/MHC.PNG)
+
+#### 채굴 풀(Mining Pools)
+
+- 아이디어
+
+  - 근사 유효 블록"을 통한 작업 증명
+
+- 장점(Pros)
+
+  - 채굴을 예측 가능하도록 만듦
+  - 작은 마이너들의 참여할 수 있도록 만듦
+  - 더 많은 마이너들이 업데이트된 검증 소프트웨어를 사용하도록 유도
+
+- 단점(Cons)
+
+  - 중앙화로 이어짐
+  - 마이너들의 전체 노드 운영을 방해
+
+- 공격(Attacks)
+  - 51% 공격, 포크 공격, 블랙리스트 및 처벌적 포킹
+  - 블록 폐기 공격
+
+##### 해시레이트 분포(Hashrate Distribution)
+
+![MP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/MP.PNG)
+
+#### ASIC-저항 퍼즐 (ASIC-Resistant Puzzles)
+
+##### ASIC-저항 (ASIC-resistance)
+
+- 비트코인 선언문 : ONE CPU ONE VOTE
+
+- 목표 : 맞춤형 하드웨어를 사용한 채굴 억제 목적
+
+- 현실 : 가장 비용 효율적인 맞춤형 하드웨어와 일반 목적 컴퓨터가 할 수 있는 작업 간의 격차를 줄이는 퍼즐 개발
+
+- ASIC-저항에 대한 반론 (Arguments against ASIC-resistance)
+  - SHA-256 채굴 : 네트워크에 가장 큰 안정성 제공
+  - 많은 수의 ASIC을 사용하는 것보다 일반적인 컴퓨팅 파워를 임시로 대여하는 것이 더 효율적
+
+##### 메모리-하드 퍼즐 (Memory-hard puzzles)
+
+- 가장 널리 사용되는 ASIC-저항 퍼즐
+- 많은 메모리를 필요로 하는 퍼즐
+
+- 스크립트(Scrypt)
+
+  - 라이트코인과 다양한 다른 알트코인에서 이미 사용되고 있는 가장 인기 있는 메모리-하드 퍼즐
+
+![MHPS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/MHPS.PNG)
+
+- 현실 응용
+
+![MHPS2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/MHPS2.PNG)
+
+#### 유용한 작업 증명(Proof of “Useful” Work)
+
+##### 자원봉사 컴퓨팅 프로젝트 (Volunteer computing project)
+
+SETI@home, Folding@home, 등
+BOINC (Berkeley Open Infrastructure for Network Computing): 자원봉사자가 자신의 컴퓨터 자원을 제공하여 다양한 과학적 계산을 수행하는 시스템
+
+##### Primecoin 도전 과제 (Challenge of Primecoin)
+
+- Cunningham 체인 (Cunningham chain)을 찾는 것
+- $k$개의 소수 $p_1, p_2, ..., p_k$로 구성
+- 각 소수는 $p_i = 2p_{i-1} + 1$ 만족
+- Primecoin의 퍼즐은 Cunningham 체인에서 가장 큰 소수를 찾는 것
+- 여러 $k$ 값에 대해 가장 큰 소수들 생성
+- 현재 Cunningham 체인에는 알려진 실용적인 응용 프로그램 없음
+
+#### 비트코인 채굴의 전력 소비 현황
+
+- 아일랜드를 포함한 159개국보다 더 많은 전력 소비(2017/11/20)
+
+![BMC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/BMC.PNG)
+
+#### 비트코인 채굴과 지속 가능성
+
+![BMS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/BMS.PNG)
+
+#### 암호화 히터
+
+#### 추가 전용 로그(Append-only Log)
+
+##### 연결된 타임스탬프
+
+- 인증된 데이터 구조(예: 해시 체인)에 얽혀 서로 의존하는 타임스탬프 토큰 생성
+  - ISO 18014
+  - ANSI ASC X9.95
+  - IETF RFC 4998
+
+#### 스마트 자산(Smart Property)
+
+- 물리적 및 지적 자산은 블록체인에 등록
+- 블록체인은 재고, 추적 및 교환 메커니즘
+- 컬러 코인은 블록체인 위에서 자산을 표현하고 관리하는 방법의 클래스
+
+#### 스마트 계약(Smart Contact)
+
+- 계약 조건을 실행하는 컴퓨터화된 거래 프로토콜
+- 일반적인 목표
+  - 공통 계약 조건 충족
+  - 악의적이거나 우발적인 예외를 최소화
+  - 신뢰할 수 있는 중개자의 필요성 최소화
+
+#### 이더리움(Ethereum)
+
+- 스마트 계약(스크립팅) 기능을 갖춘 오픈 소스, 공개, 블록체인 기반 분산 컴퓨팅 플랫폼
+- 2013년 비탈릭 부테린 작성
+- 프로그래밍 언어가 내장된 블록체인
+- 합의 기반 전역적으로 실행되는 가상 머신
+  - 튜링 완전성
+  - 에테르
+  - 가스
