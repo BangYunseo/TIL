@@ -241,13 +241,16 @@ for layer in model.layers[:20]:
   layer.trainable=False
 for layer in model.layers[20:]:
   layer.trainable=True
-train_datagen=ImageDataGenerator(preprocessing_function=preprocess_input)
-train_generator=train_datagen.flow_from_directory('./Petimages/',
-target_size=(128,128),
- color_mode='rgb',
- batch_size=32,
- class_mode='categorical',
- shuffle=True)
+train_datagen
+= ImageDataGenerator(preprocessing_function = preprocess_input)
+
+train_generator
+= train_datagen.flow_from_directory('./Petimages/',
+                                    target_size=(128,128),
+                                    color_mode='rgb',
+                                    batch_size=32,
+                                    class_mode='categorical',
+                                    shuffle=True)
 
 model.compile(optimizer = 'Adam',loss='categorical_crossentropy',
               metrics=['accuracy'])
