@@ -33,7 +33,9 @@
 
 ```Python
 import numpy as np
-x = np.random.randint(5, size = (2, 4, 3, 3))     # 3차원 = (4, 3, 3) / 4차원 = (2, 4, 3, 3)
+x = np.random.randint(5, size = (2, 4, 3, 3))
+# 3차원 = (4, 3, 3) / 4차원 = (2, 4, 3, 3)
+
 x
 
 # array([[[0, 4],
@@ -58,7 +60,12 @@ x
 ```Python
 import numpy as np
 
-x = np.array([[[0, 1, 2, 3, 4], [5, 6, 7, 8, 9]], [[10, 11, 12, 13, 14], [15, 16, 17, 18, 19]], [[20, 21, 22, 23, 24], [25, 26, 27, 28, 29]],])
+x = np.array([[[0, 1, 2, 3, 4],
+             [5, 6, 7, 8, 9]],
+             [[10, 11, 12, 13, 14],
+             [15, 16, 17, 18, 19]],
+             [[20, 21, 22, 23, 24],
+             [25, 26, 27, 28, 29]]])
 
 x.ndim
 # 3
@@ -138,15 +145,21 @@ x.shape
 model = tf.keras.models.Sequential()
 # Sequential 모델 생성
 
-model.add(tf.keras.layers.Dense(units = 2, input_shape = (2,), activation = 'sigmoid'))  # 유닛 1 : 은닉층
+model.add(tf.keras.layers.Dense(units = 2,
+          input_shape = (2,),
+          activation = 'sigmoid'))
+# 유닛 1 : 은닉층
 
 # 은닉층이 하나 더 생겼을 경우 아래 코드 작성
 # model.add(tf.keras.layers.Dense(units = 2, activation = 'sigmoid'))
 
-model.add(tf.keras.layers.Dense(units = 1, activation='sigmoid'))                        # 유닛 2 : 출력층
+
+model.add(tf.keras.layers.Dense(units = 1, activation='sigmoid'))
+# 유닛 2 : 출력층
 # Sequential 모델에 add() 함수를 이용하여 필요한 레이어 추가
 
-model.compile(loss='mean_squared_error', optimizer=keras.optimizers.SGD(lr = 0.3))
+model.compile(loss='mean_squared_error',
+              optimizer=keras.optimizers.SGD(lr = 0.3))
 # compile() 함수 호출을 통한 Sequential 모델 컴파일
 # 사용 학습법에 따라 성능 차이 존재
 ```
@@ -217,13 +230,14 @@ model.fit(...)
 
 ##### 숫자 데이터 불러오기
 
-- 28 \* 28로 60000개의 이미지 존재
+- 28 * 28로 60000개의 이미지 존재
 
 ```Python
 import matplotlib.pyplot as plt
 import tensorflow as tf
 
-(train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.mnist.load_data()
+(train_images, train_labels), (test_images, test_labels)
+= tf.keras.datasets.mnist.load_data()
 ```
 
 ##### 숫자 데이터 표시
@@ -248,11 +262,12 @@ plt.imshow(train_images[0], cmap="Greys")
 ```Python
 model = tf.keras.models.Sequential()
 
-model.add(tf.keras.layers.Dense(512, activation = 'relu', input_size = (784, )))
+model.add(tf.keras.layers.Dense(512, activation = 'relu',
+                                input_size = (784, )))
 model.add(tf.keras.layers.Dense(10, activation = 'sigmoid'))
 ```
 
-![MNISTmodel](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/MNISTmodel.png)
+![MNISTmodel](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch06/MNISTmodel.PNG)
 
 #### 컴파일 단계
 
@@ -295,13 +310,10 @@ test_labels = tf.keras.utils.to_categorical(test_labels)
 ```Python
 model.fit(train_images, train_labels, epochs = 5, batch_size = 128)
 
-# Epoch 1/5
-# 469/469 [==============================] - 2s 3ms/step - loss: 0.0158 - accuracy:
-# 0.9168
 # ...
 # Epoch 5/5
-# 469/469 [==============================] - 2s 3ms/step - loss: 0.0027 - accuracy:
-# 0.9867
+# 469/469 [==============================] - 2s 3ms/step
+# - loss: 0.0027 - accuracy : 0.9867
 ```
 
 - Loss값은 감소, accuracy는 증가
@@ -312,8 +324,8 @@ model.fit(train_images, train_labels, epochs = 5, batch_size = 128)
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 print('테스트 정확도 : ', test_acc)
 
-# 313/313 [==============================] - 0s 892us/step - loss: 0.0039 -
-# accuracy: 0.9788
+# 313/313 [==============================] - 0s 892us/step
+# - loss : 0.0039 - accuracy : 0.9788
 # 테스트 정확도: 0.9787999987602234
 ```
 
