@@ -301,7 +301,7 @@ print(model.predict(X_test))
 
 #### 순환 신경망 순방향 패스
 
-![RNNPass](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNPass.PNG)
+![RNNPASS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch10/RNNPASS.PNG)
 
 #### 순방향 패스 알고리즘(Ideal)
 
