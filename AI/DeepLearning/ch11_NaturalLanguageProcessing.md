@@ -2,11 +2,11 @@
 
 > 1절. 자연어 처리
 >
-> 2절. 워드 임베딩
+> 2절. 예제 : 스팸 메일 분류
 >
-> 3절. 자연어 처리 시스템의 구조
+> 3절. 
 >
-> 4절. 예제
+> 4절. 
 
 
 ## 1절. 자연어 처리
@@ -240,7 +240,121 @@ print("text=", one_hot_encode)
 
 ![sp1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/sp1.PNG)
 
-## 2절. 
+![sp2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/sp2.PNG)
+
+#### 전처리와 토큰화
+```Python
+from tensorflow.keras.preprocessing.text import Tokenizer
+
+t = Tokenizer()
+text = """Deep learning is part of a broader family of machine learning methods
+based on artificial neural networks with representation learning."""
+
+t.fit_on_texts([text])
+print("단어집합 : ", t.word_index)
+
+# 출력
+# 단어집합 : {'learning': 1, 'of': 2, 'deep': 3, 'is': 4, 'part': 5, 'a': 6, 'broader': 7,
+# 'family': 8, 'machine': 9, 'methods': 10, 'based': 11, 'on': 12, 'artificial': 13,
+# 'neural': 14, 'networks': 15, 'with': 16, 'representation': 17}
+```
+
+#### 텍스트의 정수 인코딩
+```Python
+seq = t.texts_to_sequences([text])[0]
+print(text,"->", seq)
+
+# 출력
+# Deep learning is part of a broader family of machine learning methods
+# based on artificial neural networks with representation learning. -> [3, 1, 4,
+# 5, 2, 6, 7, 8, 2, 9, 1, 10, 11, 12, 13, 14, 15, 16, 17, 1]
+```
+
+#### 샘플의 패딩
+- 샘플의 길이가 상이할 수 있음
+- 텍스트를 문장 단위로 분리하여 신경망 훈련할 경우 많이 발생
+- 패딩(padding) : 보통 숫자 0을 넣어 길이가 다른 샘플들의 길이를 맞추는 것
+
+
+#### pad_sequence()
+
+```Python
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+X = pad_sequences([[7, 8, 9], [1, 2, 3, 4, 5], [7]], maxlen=3, padding='pre')
+print(X)
+
+# 출력
+# [[7 8 9]
+# [3 4 5]
+# [0 0 7]]
+```
+
+##### 매개 변수
+
+```Python
+pad_sequences(sequences, maxlen=None, padding='pre’, truncating='pre', value=0.0)
+```
+
+- sequences = 패딩이 수행되는 시퀀스 데이터
+- maxlen = 샘플의 최대 길이
+- padding = 'pre'이면 앞에 0을 채우고 'post'이면 뒤에 0 채움
+
+#### 케라스 Embedding 레이어
+
+- 케라스는 텍스트 데이터를 처리하는 신경망에 사용 가능한 Embedding 레이어 제공
+- Embedding 레이어의 입력 데이터는 정수 인코딩되어 각 단어가 고유한 정수로 표현
+
+```Python
+e = Embedding(input_dim, output_dim, input_length=100)
+```
+- input_dim
+  - 텍스트 데이터의 어휘 크기
+  - ex) 데이터가 0~9 사이의 값으로 정수 인코딩된 경우 어휘의 크기는 10 단어
+
+- output_dim
+  - 단어가 표현되는 벡터 공간의 크기
+  - 각 단어에 대해 레이어의 출력 벡터 크기 정의
+  - ex) 32 또는 100 이상
+
+- input_length
+  - 입력 시퀀스의 길이
+  - ex) 모든 입력 문서가 100개의 단어로 구성되어 있을 경우 100
+
+- 입력 형태
+  - 2D 텐서 (batch_size, sequence_length)의 형태
+  - 정수 인코딩 형태이어야 하는 정수의 시퀀스
+
+- 출력 형태
+  - 3D 텐서 (batch_size, sequence_length, output_dim)의 형태
+
+##### 예제
+
+```Python
+import numpy as np
+from tensorflow.keras.layers import Embedding
+from tensorflow.keras.models import Sequential
+
+# 입력 형태: (batch_size, input_length)=(32, 3)
+# 출력 형태: (None, 3, 4)
+
+model = Sequential()
+model.add(Embedding(100, 4, input_length=3))
+
+input_array = np.random.randint(100, size=(32, 3))
+model.compile('rmsprop', 'mse')
+output_array = model.predict(input_array)
+print(output_array.shape)
+
+# 출력
+# (32, 3, 4)
+```
+
+- 출력 결과
+
+![EXOP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/EXOP.PNG)
+
+## 2절. 예제 : 스팸 메일 분류
 
 ## 3절. 
 
