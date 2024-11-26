@@ -2,11 +2,9 @@
 
 > 1절. 자연어 처리
 >
-> 2절. 예제 : 스팸 메일 분류
+> 2절. 예제
 >
 > 3절. 
->
-> 4절. 
 
 
 ## 1절. 자연어 처리
@@ -354,7 +352,89 @@ print(output_array.shape)
 
 ![EXOP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/EXOP.PNG)
 
-## 2절. 예제 : 스팸 메일 분류
+## 2절. 예제
+
+#### 스팸 메일 분류
+
+![SPP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/SPP.PNG)
+
+```Python
+import numpyas np
+from tensorflow.keras.layersimport Embedding, Flatten, Dense
+from tensorflow.keras.modelsimport Sequential
+from tensorflow.keras.preprocessing.textimport one_hot
+from tensorflow.keras.preprocessing.sequenceimport pad_sequences
+
+docs = [ 'additional income',
+         'best price',
+         'big bucks',
+         'cash bonus',
+         'earn extra cash',
+         'spring savings certificate',
+         'valerogas marketing',
+         'all domestic employees',
+         'nominations for oct',
+         'confirmation from spinner']
+
+# 원-핫 인코딩
+labels = np.array([1,1,1,1,1,0,0,0,0,0])
+
+vocab_size = 50
+encoded_docs = [one_hot(d, vocab_size) for d in docs]
+print(encoded_docs)
+
+# 출력
+#  [[30, 24], [30, 29], [1, 9], [49, 46], [29, 47, 49], [23, 39, 47], [14, 20, 31], [17,
+#  22, 3], [42, 25, 37], [41, 5, 9]]
+
+
+
+# 패딩 과정 : 4개 패딩(post : 마지막)
+max_length = 4
+padded_docs = pad_sequences(encoded_docs, maxlen=max_length, padding='post')
+print(padded_docs)
+
+# 출력
+#  [[30 24 0 0]
+#  [30 29 0 0]
+#  [ 1 9 0 0]
+#  [49 46 0 0]
+#  [29 47 49 0]
+#  [23 39 47 0]
+#  [14 20 31 0]
+#  [17 22 3 0]
+#  [42 25 37 0]
+#  [41 5 9 0]]
+
+
+
+model = Sequential()
+model.add(Embedding(vocab_size, 8, input_length=max_length))
+model.add(Flatten())
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+model.fit(padded_docs, labels, epochs=50, verbose=0)
+
+loss, accuracy = model.evaluate(padded_docs, labels, verbose=0)
+print('정확도=', accuracy)
+
+# 출력
+# 정확도 = 1.0
+
+
+
+# 테스트
+test_doc = ['big income']
+encoded_docs = [one_hot(d, vocab_size) for d in test_doc]
+padded_docs = pad_sequences(encoded_docs, maxlen=max_length, padding='post’)
+
+print(model.predict(padded_docs))
+
+# 출력
+#  [[0.5746514]]
+```
 
 ## 3절. 
 
