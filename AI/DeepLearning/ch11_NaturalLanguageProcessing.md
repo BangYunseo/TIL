@@ -80,7 +80,6 @@ tokens = word_tokenize("Hello World!, This is a dog.")
 # 문자나 숫자인 경우에만 단어를 리스트에 추가
 words = [word for word in tokens if word.isalpha()]
 print(words)
-
 # 출력
 # ['Hello', 'World', 'This', 'is', 'a', 'dog']
 ```
@@ -93,11 +92,10 @@ print(words)
 ```Python
 import nltk
 nltk.download('punkt')
-nltk.download('stopwords’)
+nltk.download('stopwords')
 
 from nltk.corpus import stopwords
 print(stopwords.words('english')[:20])
-
 # 출력
 # ['i', 'me', 'my', 'myself', 'we', 'our', 'ours',
 # 'ourselves', 'you', "you're", "you've", "you'll",
@@ -117,7 +115,6 @@ from nltk.tokenize import word_tokenize  # 2
 
 text = "This is a dog."                  # 3
 print(word_tokenize(text))
-
 # 출력
 # ['This', 'is', 'a', 'dog', '.']
 ```
@@ -129,7 +126,6 @@ from nltk.tokenize import sent_tokenize    # 1
 
 text = "This is a house. This is a dog."
 print(sent_tokenize(text))                 # 2
-
 # 출력
 # ['This is a house.', 'This is a dog.']
 ```
@@ -144,7 +140,6 @@ print(sent_tokenize(text))                 # 2
 from tensorflow.keras.preprocessing.text import *
 
 print(text_to_word_sequence("This is a dog."))
-
 # 출력
 # ['this', 'is', 'a', 'dog']
 ```
@@ -199,7 +194,6 @@ print("text=", text)
 # 순차적인 정수 인덱스를 원-핫 인코딩으로 변환
 one_hot_encode = to_categorical(text)
 print("text=", one_hot_encode)
-
 # 출력
 # text= ['cat', 'dog', 'cat', 'bird']
 # {'cat': 0, 'dog': 1, 'turtle': 2, 'fish': 3, 'bird': 4}
@@ -266,7 +260,6 @@ based on artificial neural networks with representation learning."""
 
 t.fit_on_texts([text])
 print("단어집합 : ", t.word_index)
-
 # 출력
 # 단어집합 : {'learning': 1, 'of': 2, 'deep': 3, 'is': 4, 'part': 5,
 # 'a': 6, 'broader': 7, 'family': 8, 'machine': 9, 'methods': 10,
@@ -279,7 +272,6 @@ print("단어집합 : ", t.word_index)
 ```Python
 seq = t.texts_to_sequences([text])[0]
 print(text,"->", seq)
-
 # 출력
 # Deep learning is part of a broader family of
 # machine learning methods based on artificial neural networks
@@ -300,7 +292,6 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 X = pad_sequences([[7, 8, 9], [1, 2, 3, 4, 5], [7]], maxlen=3, padding='pre')
 print(X)
-
 # 출력
 # [[7 8 9]
 # [3 4 5]
@@ -310,7 +301,8 @@ print(X)
 ##### 매개 변수
 
 ```Python
-pad_sequences(sequences, maxlen=None, padding='pre’, truncating='pre', value=0.0)
+pad_sequences(sequences, maxlen=None, padding='pre',
+              truncating ='pre', value=0.0)
 ```
 
 - sequences = 패딩이 수행되는 시퀀스 데이터
@@ -367,7 +359,6 @@ input_array = np.random.randint(100, size=(32, 3))
 model.compile('rmsprop', 'mse')
 output_array = model.predict(input_array)
 print(output_array.shape)
-
 # 출력
 # (32, 3, 4)
 ```
@@ -399,6 +390,7 @@ docs = [ 'additional income',
          'all domestic employees',
          'nominations for oct',
          'confirmation from spinner']
+# 앞의 5개 : 스팸 / 뒤의 5개 : 정상
 
 # 원-핫 인코딩
 labels = np.array([1,1,1,1,1,0,0,0,0,0])
@@ -406,19 +398,15 @@ labels = np.array([1,1,1,1,1,0,0,0,0,0])
 vocab_size = 50
 encoded_docs = [one_hot(d, vocab_size) for d in docs]
 print(encoded_docs)
-
 # 출력
 # [[30, 24], [30, 29], [1, 9], [49, 46], [29, 47, 49],
 # [23, 39, 47], [14, 20, 31], [17,22, 3],
 # [42, 25, 37], [41, 5, 9]]
 
-
-
 # 패딩 과정 : 4개 패딩(post : 마지막)
 max_length = 4
 padded_docs = pad_sequences(encoded_docs, maxlen=max_length, padding='post')
 print(padded_docs)
-
 # 출력
 # [[30 24 0 0]
 # [30 29 0 0]
@@ -431,32 +419,25 @@ print(padded_docs)
 # [42 25 37 0]
 # [41 5 9 0]]
 
-
-
 model = Sequential()
 model.add(Embedding(vocab_size, 8, input_length=max_length))
 model.add(Flatten())
 model.add(Dense(1, activation='sigmoid'))
-
-model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
-
+model.compile(optimizer='adam',
+              loss='binary_crossentropy',
+              metrics=['accuracy'])
 model.fit(padded_docs, labels, epochs=50, verbose=0)
-
 loss, accuracy = model.evaluate(padded_docs, labels, verbose=0)
 print('정확도=', accuracy)
-
 # 출력
 # 정확도 = 1.0
-
-
 
 # 테스트
 test_doc = ['big income']
 encoded_docs = [one_hot(d, vocab_size) for d in test_doc]
 padded_docs = pad_sequences(encoded_docs,
-              maxlen=max_length, padding='post')
+              maxlen = max_length, padding = 'post')
 print(model.predict(padded_docs))
-
 # 출력
 #  [[0.5746514]]
 ```
@@ -490,13 +471,13 @@ tokenizer = Tokenizer()
 tokenizer.fit_on_texts([text_data])
 encoded = tokenizer.texts_to_sequences([text_data])[0]
 print(encoded)
-# 출력
+# 출력(숫자 인덱스로의 변환)
 # [7, 8, 1, 9, 10, 11, 12, 13, 2, 14, 15, 3,
 # 16, 2, 17, 18, 19, 20, 21, 22, 4, 5, 1, 23,
 # 6, 24, 4, 5, 1, 25, 6, 26, 3, 27, 28, 29, 30, 1, 31]
 
 print(tokenizer.word_index)
-# 츨력
+# 츨력(딕셔너리로의 변환)
 # {'the': 1, 'a': 2, 'hope': 3, 'wait': 4, 'till': 5,
 # 'is': 6, 'soft': 7, 'as': 8, 'voice': 9, 'of': 10,  'an': 11,
 # 'angel': 12, 'breathing': 13, 'lesson': 14, 'unhead': 15,
@@ -516,7 +497,7 @@ for i in range(1, len(encoded)):
   sequences.append(sequence)
 print(sequences)
 print('총 시퀀스 개수 : %d' % len(sequences))
-# 출력
+# 출력(다음부분의 시퀀스)
 # [[7, 8], [8, 1], [1, 9], [9, 10], [10, 11], [11, 12],
 # [12, 13], [13, 2], [2, 14], [14, 15], [15, 3], [3, 16],
 # [16, 2], [2, 17], [17, 18], [18, 19], [19, 20], [20, 21],
@@ -585,7 +566,7 @@ for word, index in tokenizer.word_index.items():
 # Wait => till
 ```
 
-#### 영화 리뷰 감성 판별 예제
+#### 영화 리뷰 감성 판별 예제(분류 문제)
 
 - 데이터를 imdb.load_data() 함수를 통해 바로 다운로드
 
@@ -601,7 +582,7 @@ imdb = keras.datasets.imdb
 (x_train, y_train), (x_test, y_test) =
 imdb.load_data(num_words=10000)
 print(x_train[0])
-# 출력
+# 출력(각 25000개의 데이터)
 # [1, 14, 22, 16, 43, 530, 973, 1622, 1385, 65, 458,
 # 4468, 66, 3941, 4, 173, 36, 256, ... ,32]
 
@@ -634,13 +615,14 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import *
 
-x_train = pad_sequences(x_train, maxlen=100)
-x_test = pad_sequences(x_test, maxlen=100)
+x_train = pad_sequences(x_train, maxlen = 100)
+x_test = pad_sequences(x_test, maxlen = 100)
 vocab_size = 10000
 
 # 신경망 구축
 model = Sequential()
-model.add(Embedding(vocab_size, 64, input_length=100))
+model.add(Embedding(vocab_size, output_dim = 64,
+          input_length = 100))
 model.add(Flatten())
 model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
@@ -648,23 +630,15 @@ model.add(Dense(1, activation='sigmoid'))
 model.summary()
 
 # 출력
-# Model: "sequential_3"
-# _________________________________________________________________
-# Layer (type) Output Shape Param #
-# =================================================================
+# ...
 # embedding_3 (Embedding) (None, 100, 64) 640000
-# _________________________________________________________________
+# vocab_size * output_dim = 640000
+# ...
 # flatten_2 (Flatten) (None, 6400) 0
-# _________________________________________________________________
-# dense_3 (Dense) (None, 64) 409664
-# _________________________________________________________________
-# dropout (Dropout) (None, 64) 0
-# _________________________________________________________________
+# dense_3 (Dense) (None, 64) 409664(64 * 6400 + 64)
 # dense_4 (Dense) (None, 1) 65
-# =================================================================
-# Total params: 1,049,729
-# Trainable params: 1,049,729 Non-trainable params: 0
-# _________________________________________________________________
+# ...
+# Total params: 1,049,729(640000 + 409664 + 65)
 
 # 모델 컴파일
 model.compile(loss='binary_crossentropy',
@@ -674,8 +648,7 @@ history = model.fit(x_train, y_train, batch_size=64,
 epochs=20, verbose=1, validation_data=(x_test, y_test))
 # 출력
 # ...
-# Epoch 20/20 391/391 [==============================] - 2s
-# 6ms/step - loss: 0.0417 - accuracy: 0.9924
+# - loss: 0.0417 - accuracy: 0.9924
 # - val_loss: 0.9395 - val_accuracy: 0.8077
 
 # 모델 평가
