@@ -3,8 +3,6 @@
 > 1절. 자연어 처리
 >
 > 2절. 예제
->
-> 3절.
 
 ## 1절. 자연어 처리
 
@@ -455,8 +453,8 @@ print('정확도=', accuracy)
 # 테스트
 test_doc = ['big income']
 encoded_docs = [one_hot(d, vocab_size) for d in test_doc]
-padded_docs = pad_sequences(encoded_docs, maxlen=max_length, padding='post’)
-
+padded_docs = pad_sequences(encoded_docs,
+              maxlen=max_length, padding='post')
 print(model.predict(padded_docs))
 
 # 출력
@@ -492,14 +490,12 @@ tokenizer = Tokenizer()
 tokenizer.fit_on_texts([text_data])
 encoded = tokenizer.texts_to_sequences([text_data])[0]
 print(encoded)
-
 # 출력
 # [7, 8, 1, 9, 10, 11, 12, 13, 2, 14, 15, 3,
 # 16, 2, 17, 18, 19, 20, 21, 22, 4, 5, 1, 23,
 # 6, 24, 4, 5, 1, 25, 6, 26, 3, 27, 28, 29, 30, 1, 31]
 
 print(tokenizer.word_index)
-
 # 츨력
 # {'the': 1, 'a': 2, 'hope': 3, 'wait': 4, 'till': 5,
 # 'is': 6, 'soft': 7, 'as': 8, 'voice': 9, 'of': 10,  'an': 11,
@@ -511,12 +507,181 @@ print(tokenizer.word_index)
 
 vocab_size = len(tokenizer.word_index) + 1
 print('어휘 크기: %d' % vocab_size)
-
 # 출력
 # 어휘 크기 : 32
 
+sequences = list()
+for i in range(1, len(encoded)):
+  sequence = encoded[i-1:i+1]
+  sequences.append(sequence)
+print(sequences)
+print('총 시퀀스 개수 : %d' % len(sequences))
+# 출력
+# [[7, 8], [8, 1], [1, 9], [9, 10], [10, 11], [11, 12],
+# [12, 13], [13, 2], [2, 14], [14, 15], [15, 3], [3, 16],
+# [16, 2], [2, 17], [17, 18], [18, 19], [19, 20], [20, 21],
+# [21, 22], [22, 4], [4, 5], [5, 1], [1, 23], [23, 6], [6, 24],
+# [24, 4], [4, 5], [5, 1], [1, 25], [25, 6], [6, 26], [26, 3],
+# [3, 27], [27, 28], [28, 29], [29, 30], [30, 1], [1, 31]]
+# 총 시퀀스 개수 : 38
+
+sequences = np.array(sequences)
+X, y = sequences[:,0],sequences[:,1]
+print("X=", X)
+print("y=", y)
+# 출력
+# X= [ 7 8 1 9 10 11 12 13 2 14 15 3 16 2 17 18 19
+# 20 21 22 4 5 1 23 6 24 4 5 1 25 6 26 3 27 28 29 30 1]
+# y= [ 8 1 9 10 11 12 13 2 14 15 3 16 2 17 18 19 20
+# 21 22 4 5 1 23 6 24 4 5 1 25 6 26 3 27 28 29 30 1 31]
+
+# 신경망 모델 정의
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Embedding, Dense, SimpleRNN, LSTM
+
+model = Sequential()
+model.add(Embedding(vocab_size, 10, input_length=1))
+model.add(LSTM(50))
+model.add(Dense(vocab_size, activation='softmax'))
+model.compile(loss='sparse_categorical_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+model.fit(X, y, epochs=500, verbose=2)
+# 출력
+# ...
+# Epoch 500/500 2/2 - 0s - loss: 0.3053 - accuracy: 0.8421
+
+# 테스트 단어 정수 인코딩
+test_text = 'Wait'
+encoded = tokenizer.texts_to_sequences([test_text])[0]
+encoded = np.array(encoded)
+
+# 신경망의 예측값 출력
+onehot_output = model.predict(encoded)
+print('onehot_output=', onehot_output)
+# 출력
+# onehot_output= [[5.6587060e-06 4.0273936e-03 6.2348531e-03
+# 8.6066285e-03 1.5018744e-05 9.7867030e-01 6.0064325e-05
+# 5.6844797e-06 1.7885073e-05 8.7188082e-06 3.1823198e-05
+# 2.8105886e-04 3.3933269e-05 1.3699831e-06 3.2279258e-06
+# 7.1233828e-08 2.3057231e-05 3.4311252e-06 1.0358917e-05
+# 7.9929187e-08 1.4642384e-04 1.2234473e-06 1.0129405e-04
+# 1.5086286e-05 8.9766763e-06 8.6069404e-06 9.3199278e-06
+# 3.4068940e-05 2.0460826e-08 1.5851222e-03 3.8524475e-05
+# 1.0519097e-05]]
+
+# 가장 높은 출력 유닛
+output = np.argmax(onehot_output)
+print('output =', output)
+# 출력
+# output = [5]
+
+# 출력층 유닛 번호의 단어화
+print(test_text, "=>", end=" ")
+for word, index in tokenizer.word_index.items():
+  if index == output:
+    print(word)
+# 출력
+# Wait => till
 ```
 
-## 3절.
+#### 영화 리뷰 감성 판별 예제
 
-## 4절.
+- 데이터를 imdb.load_data() 함수를 통해 바로 다운로드
+
+```Python
+# 라이브러리
+import numpy as np
+import tensorflow as tf
+from tensorflow import keras
+import matplotlib.pyplot as plt
+
+# 데이터 다운로드
+imdb = keras.datasets.imdb
+(x_train, y_train), (x_test, y_test) =
+imdb.load_data(num_words=10000)
+print(x_train[0])
+# 출력
+# [1, 14, 22, 16, 43, 530, 973, 1622, 1385, 65, 458,
+# 4468, 66, 3941, 4, 173, 36, 256, ... ,32]
+
+# 리뷰 복원
+# 단어 -> 정수 인덱스 딕셔너리
+word_to_index = imdb.get_word_index()
+
+# 처음 몇 개의 인덱스는 특수 용도로 사용
+word_to_index = {k:(v+3) for k,v in word_to_index.items()}
+word_to_index["<PAD>"] = 0         # 문장 채우는 기호
+word_to_index["<START>"] = 1       # 시작 표시
+word_to_index["<UNK>"] = 2         # 알려지지  않은  토큰
+word_to_index["<UNUSED>"] = 3
+
+index_to_word = dict([(value, key) for (key, value)
+in word_to_index.items()])
+
+print(' '.join([index_to_word[index] for index in x_train[0]]))
+# 출력
+# START this film was just brilliant casting
+# location scenery story direction everyone's
+# really suited the part they played and you could
+# just imagine being there robert redford's is an
+# amazing actor and ... the whole story was so lovely
+# because it was true and was someone's life after all
+# that was shared with us all
+
+# 전처리
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import *
+
+x_train = pad_sequences(x_train, maxlen=100)
+x_test = pad_sequences(x_test, maxlen=100)
+vocab_size = 10000
+
+# 신경망 구축
+model = Sequential()
+model.add(Embedding(vocab_size, 64, input_length=100))
+model.add(Flatten())
+model.add(Dense(64, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(1, activation='sigmoid'))
+model.summary()
+
+# 출력
+# Model: "sequential_3"
+# _________________________________________________________________
+# Layer (type) Output Shape Param #
+# =================================================================
+# embedding_3 (Embedding) (None, 100, 64) 640000
+# _________________________________________________________________
+# flatten_2 (Flatten) (None, 6400) 0
+# _________________________________________________________________
+# dense_3 (Dense) (None, 64) 409664
+# _________________________________________________________________
+# dropout (Dropout) (None, 64) 0
+# _________________________________________________________________
+# dense_4 (Dense) (None, 1) 65
+# =================================================================
+# Total params: 1,049,729
+# Trainable params: 1,049,729 Non-trainable params: 0
+# _________________________________________________________________
+
+# 모델 컴파일
+model.compile(loss='binary_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+history = model.fit(x_train, y_train, batch_size=64,
+epochs=20, verbose=1, validation_data=(x_test, y_test))
+# 출력
+# ...
+# Epoch 20/20 391/391 [==============================] - 2s
+# 6ms/step - loss: 0.0417 - accuracy: 0.9924
+# - val_loss: 0.9395 - val_accuracy: 0.8077
+
+# 모델 평가
+results = model.evaluate(x_test, y_test, verbose=2)
+print(results)
+# 출력
+# 782/782 - 1s - loss: 0.9395 - accuracy: 0.8077
+# [0.93949955701828, 0.8076800107955933]
+```
