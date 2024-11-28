@@ -94,9 +94,10 @@ from nltk.corpus import stopwords
 print(stopwords.words('english')[:20])
 
 # 출력
-# ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're",
-# "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him',
-# 'his']
+# ['i', 'me', 'my', 'myself', 'we', 'our', 'ours',
+# 'ourselves', 'you', "you're", "you've", "you'll",
+# "you'd", 'your', 'yours', 'yourself', 'yourselves',
+# 'he', 'him', 'his']
 ```
 
 #### NLTK를 이용한 전처리
@@ -252,9 +253,10 @@ t.fit_on_texts([text])
 print("단어집합 : ", t.word_index)
 
 # 출력
-# 단어집합 : {'learning': 1, 'of': 2, 'deep': 3, 'is': 4, 'part': 5, 'a': 6, 'broader': 7,
-# 'family': 8, 'machine': 9, 'methods': 10, 'based': 11, 'on': 12, 'artificial': 13,
-# 'neural': 14, 'networks': 15, 'with': 16, 'representation': 17}
+# 단어집합 : {'learning': 1, 'of': 2, 'deep': 3, 'is': 4, 'part': 5,
+# 'a': 6, 'broader': 7, 'family': 8, 'machine': 9, 'methods': 10,
+# 'based': 11, 'on': 12, 'artificial': 13, 'neural': 14,
+# 'networks': 15, 'with': 16, 'representation': 17}
 ```
 
 #### 텍스트의 정수 인코딩
@@ -263,9 +265,10 @@ seq = t.texts_to_sequences([text])[0]
 print(text,"->", seq)
 
 # 출력
-# Deep learning is part of a broader family of machine learning methods
-# based on artificial neural networks with representation learning. -> [3, 1, 4,
-# 5, 2, 6, 7, 8, 2, 9, 1, 10, 11, 12, 13, 14, 15, 16, 17, 1]
+# Deep learning is part of a broader family of
+# machine learning methods based on artificial neural networks
+# with representation learning. -> [3, 1, 4, 5, 2, 6, 7, 8, 2, 9,
+# 1, 10, 11, 12, 13, 14, 15, 16, 17, 1]
 ```
 
 #### 샘플의 패딩
@@ -384,8 +387,9 @@ encoded_docs = [one_hot(d, vocab_size) for d in docs]
 print(encoded_docs)
 
 # 출력
-#  [[30, 24], [30, 29], [1, 9], [49, 46], [29, 47, 49], [23, 39, 47], [14, 20, 31], [17,
-#  22, 3], [42, 25, 37], [41, 5, 9]]
+#  [[30, 24], [30, 29], [1, 9], [49, 46], [29, 47, 49],
+# [23, 39, 47], [14, 20, 31], [17,22, 3],
+# [42, 25, 37], [41, 5, 9]]
 
 
 
