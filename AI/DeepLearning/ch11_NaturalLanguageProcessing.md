@@ -4,15 +4,16 @@
 >
 > 2절. 예제
 >
-> 3절. 
-
+> 3절.
 
 ## 1절. 자연어 처리
 
 #### 자연어 처리
+
 - 컴퓨터의 인간의 대화 방식(자연어)를 이해
 
 ##### 응용 분야
+
 - 챗봇(ChatBot)
 - 정보 검색(Information Retrieval)
 - 감정 분석(Sentiment analysis)
@@ -20,6 +21,7 @@
 - 기계 번역(Machine Translation)
 
 ##### 역사
+
 - 1950년대부터 시작되어 많은 연구 진행
 - 단어 간의 통계적인 유사성에 바탕을 둔 방법으로 연구
 - 최근, 딥러닝을 이용한 방법인 RNN(순환 신경망)을 활용하여 연구 진행
@@ -30,10 +32,11 @@
 - 음성 인식(Speech Recognition)
   - 음성의 입력
   - 컴퓨터를 통해 음성을 텍스트로 변환하는 방법론과 기술 개발 분야
- 
+
 ![SRP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/SRP.PNG)
 
 ##### NLTK
+
 ```Python
 C > pip install nltk
 
@@ -52,19 +55,22 @@ nltk.download()
 ![TP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/TP.PNG)
 
 ##### 토큰화(tokenization)
+
 - 말뭉치에 포함된 텍스트를 꺼내 토큰(token)이라 불리는 단위로 나누는 직업
 - 한국어는 파생어가 많이 존재하기에(ex : 했고, 해서, 했으니, 했으므로 등) 토큰화에 어려움
 
 ![Token](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/TP.PNG)
 
 ##### 소문자 변환
+
 - 영문에서 대문자를 소문자로 통합
 - 대문자 단어를 소문자로 변경할 경우 단어의 개수 압축 가능
   - 검색 시 "dog"와 "Dog"가 들어간 문서 모두 검색 가능
 - 무조건 대문자를 소문자로 만들 수는 없음
   - 미국을 나타내는 US != 우리라는 의미의 us
- 
+
 ##### 구두점 제거(정제)
+
 - 토큰화의 결과에 구두점이 포함되어 있다면 삭제
 - 일반적으로 구두점들은 자연어 처리에 도움 X
 
@@ -82,6 +88,7 @@ print(words)
 ```
 
 ##### 불용어(StopWord)
+
 - 자연어 처리 전 말뭉치에서 자연어 분석에 도움 되지 않는 토큰들 제거
 - 문장에 많이 등장하지만 큰 의미 X
 
@@ -132,7 +139,7 @@ print(sent_tokenize(text))                 # 2
 #### Keras를 이용한 전처리
 
 - 공백으로 단어 분할(split = " ")
-- 구두점 필터링 (filters = ‘!”# $ % & () * +,-. / :; <=>? @ [\\] ^ _`{|} ~ \ t\ n’)
+- 구두점 필터링 (filters = ‘!”# $ % & () \* +,-. / :; <=>? @ [\\] ^ \_`{|} ~ \ t\ n’)
 - 텍스트를 소문자로 변환(lower = True)
 
 ```Python
@@ -145,19 +152,22 @@ print(text_to_word_sequence("This is a dog."))
 ```
 
 #### 단어의 표현
+
 - 심층 신경망이 텍스트(언어)를 처리할 때 소화할 수 있는 방식
 - 단어를 신경망에 제공
 
 ##### 정수 인코딩
+
 - 고유한 숫자를 사용하여 각 단어 인코딩
 - 일반적으로 단어를 빈도순으로 정렬 후 빈도가 높은 단어부터 차례대로 번호 부여
 - 예시
   - 말뭉치에 단어 1000개가 있을 경우
   - 각 단어에 1번 ~ 1000번까지의 번호(정수) 매핑
- 
+
 ![NE](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/NE.PNG)
 
 ##### 원-핫 인코딩(One-Hot Encoding)
+
 - 원-핫(One-Hot) : 이진 벡터 중 하나만 1이고 나머지는 모두 0인 것
 
 ![OHE](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/OHE.PNG)
@@ -203,15 +213,18 @@ print("text=", one_hot_encode)
 ```
 
 - 원-핫 인코딩의 약점
+
   - 비효율성
+
     - 원-핫 인코딩된 벡터는 희소
     - 즉 벡터의 대부분이 0
     - ex)단어 집합에 10,000개의 단어가 있다고 가정하고 각 단어를 원-핫 인코딩할 경우
     - 99.99%가 0인 벡터가 10,000개 생성
-   
+
   - 각 벡터들은 단어들 간의 유사도 표현 불가
 
 ##### 워드 임베딩(Word Embedding)
+
 - 하나의 밀집 벡터(dense vector)로 표현 방법
 - 일반적으로 단어 표현 벡터들은 단어의 개수보다 차원이 작음
   - 벡터들은 효율적이며 조밀함
@@ -220,12 +233,14 @@ print("text=", one_hot_encode)
 ![WE](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/WE.PNG)
 
 ##### Word2vec
+
 - 단어 임베딩의 일종
 - 아래 다이어그램처럼 텍스트 말뭉치를 입력으로 받아들인 후 각 단어에 대한 벡터 표현 출력 알고리즘
 
 ![WV](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/WV.PNG)
 
 ##### CBOW(Continuous Bag of Words) 모델
+
 - 주변의 단어들을 통해 중간 단어 예측
 
 ![CBOW1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/CBOW1.PNG)
@@ -235,6 +250,7 @@ print("text=", one_hot_encode)
 ![CBOW3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/CBOW3.PNG)
 
 ##### skipgram
+
 - 중간의 단어로 주변 단어 예측
 
 ![sp1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/sp1.PNG)
@@ -242,6 +258,7 @@ print("text=", one_hot_encode)
 ![sp2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/sp2.PNG)
 
 #### 전처리와 토큰화
+
 ```Python
 from tensorflow.keras.preprocessing.text import Tokenizer
 
@@ -260,6 +277,7 @@ print("단어집합 : ", t.word_index)
 ```
 
 #### 텍스트의 정수 인코딩
+
 ```Python
 seq = t.texts_to_sequences([text])[0]
 print(text,"->", seq)
@@ -272,10 +290,10 @@ print(text,"->", seq)
 ```
 
 #### 샘플의 패딩
+
 - 샘플의 길이가 상이할 수 있음
 - 텍스트를 문장 단위로 분리하여 신경망 훈련할 경우 많이 발생
 - 패딩(padding) : 보통 숫자 0을 넣어 길이가 다른 샘플들의 길이를 맞추는 것
-
 
 #### pad_sequence()
 
@@ -309,20 +327,25 @@ pad_sequences(sequences, maxlen=None, padding='pre’, truncating='pre', value=0
 ```Python
 e = Embedding(input_dim, output_dim, input_length=100)
 ```
+
 - input_dim
+
   - 텍스트 데이터의 어휘 크기
   - ex) 데이터가 0~9 사이의 값으로 정수 인코딩된 경우 어휘의 크기는 10 단어
 
 - output_dim
+
   - 단어가 표현되는 벡터 공간의 크기
   - 각 단어에 대해 레이어의 출력 벡터 크기 정의
   - ex) 32 또는 100 이상
 
 - input_length
+
   - 입력 시퀀스의 길이
   - ex) 모든 입력 문서가 100개의 단어로 구성되어 있을 경우 100
 
 - 입력 형태
+
   - 2D 텐서 (batch_size, sequence_length)의 형태
   - 정수 인코딩 형태이어야 하는 정수의 시퀀스
 
@@ -357,7 +380,7 @@ print(output_array.shape)
 
 ## 2절. 예제
 
-#### 스팸 메일 분류
+#### 스팸 메일 분류 예제
 
 ![SPP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/SPP.PNG)
 
@@ -387,7 +410,7 @@ encoded_docs = [one_hot(d, vocab_size) for d in docs]
 print(encoded_docs)
 
 # 출력
-#  [[30, 24], [30, 29], [1, 9], [49, 46], [29, 47, 49],
+# [[30, 24], [30, 29], [1, 9], [49, 46], [29, 47, 49],
 # [23, 39, 47], [14, 20, 31], [17,22, 3],
 # [42, 25, 37], [41, 5, 9]]
 
@@ -399,16 +422,16 @@ padded_docs = pad_sequences(encoded_docs, maxlen=max_length, padding='post')
 print(padded_docs)
 
 # 출력
-#  [[30 24 0 0]
-#  [30 29 0 0]
-#  [ 1 9 0 0]
-#  [49 46 0 0]
-#  [29 47 49 0]
-#  [23 39 47 0]
-#  [14 20 31 0]
-#  [17 22 3 0]
-#  [42 25 37 0]
-#  [41 5 9 0]]
+# [[30 24 0 0]
+# [30 29 0 0]
+# [ 1 9 0 0]
+# [49 46 0 0]
+# [29 47 49 0]
+# [23 39 47 0]
+# [14 20 31 0]
+# [17 22 3 0]
+# [42 25 37 0]
+# [41 5 9 0]]
 
 
 
@@ -440,6 +463,60 @@ print(model.predict(padded_docs))
 #  [[0.5746514]]
 ```
 
-## 3절. 
+#### 다음 단어 예측 예제
 
-## 4절. 
+![NW](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/NW.PNG)
+
+- 구글 or 네이버 검색 시 사용
+- 노래 가사의 짧은 단어 시퀀스로부터 추출하며 학습 후 예측 확인
+
+```Python
+import numpy as np
+from tensorflow.keras.layers import Embedding, Flatten, Dense
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.preprocessing.text import one_hot
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.utils import to_categorical
+
+text_data = """Soft as the voice of an angel\n
+Breathing a lesson unhead\n
+Hope with a gentle persuasion\n
+Whispers her comforting word\n
+Wait till the darkness is over\n
+Wait till the tempest is done\n
+Hope for sunshine tomorrow\n
+After the shower"""
+
+tokenizer = Tokenizer()
+tokenizer.fit_on_texts([text_data])
+encoded = tokenizer.texts_to_sequences([text_data])[0]
+print(encoded)
+
+# 출력
+# [7, 8, 1, 9, 10, 11, 12, 13, 2, 14, 15, 3,
+# 16, 2, 17, 18, 19, 20, 21, 22, 4, 5, 1, 23,
+# 6, 24, 4, 5, 1, 25, 6, 26, 3, 27, 28, 29, 30, 1, 31]
+
+print(tokenizer.word_index)
+
+# 츨력
+# {'the': 1, 'a': 2, 'hope': 3, 'wait': 4, 'till': 5,
+# 'is': 6, 'soft': 7, 'as': 8, 'voice': 9, 'of': 10,  'an': 11,
+# 'angel': 12, 'breathing': 13, 'lesson': 14, 'unhead': 15,
+# 'with': 16, 'gentle': 17, 'persuasion': 18, 'whispers': 19,
+# 'her': 20,'comforting': 21, 'word': 22, 'darkness': 23,
+# 'over': 24, 'tempest': 25, 'done': 26, 'for': 27,
+# 'sunshine': 28, 'tomorrow': 29, 'after': 30, 'shower': 31}
+
+vocab_size = len(tokenizer.word_index) + 1
+print('어휘 크기: %d' % vocab_size)
+
+# 출력
+# 어휘 크기 : 32
+
+```
+
+## 3절.
+
+## 4절.
