@@ -237,10 +237,6 @@
   - 암호 스위트(CipherSuite) : 클라이언트가 지원하는 암호화 알고리즘 조합을 포함한 목록(선호도 순서대로 나열)
   - 압축 방법(Compression Method) : 클라이언트가 지원하는 압축 방법 목록
 
-#### CipherSuiteKey : 교환 방법 알고리즘(Exchange Method Algorithms)
-
-![CSK](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/CSK.PNG)
-
 #### SSL Pulse(https://www.ssllabs.com/ssl-pulse/)
 
 - 웹 사이트(Web Site)
@@ -253,3 +249,7 @@
 - 현재 2048비트의 최소 예상 강도
 
 ![KES](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/KES.PNG)
+
+#### CipherSuiteKey : 교환 방법 알고리즘(Exchange Method Algorithms)
+
+![CSK](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/CSK.PNG)
