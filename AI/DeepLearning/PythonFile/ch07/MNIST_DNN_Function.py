@@ -1,10 +1,5 @@
-import sys
 from tensorflow import keras
-import sklearn
 import tensorflow as tf
-import numpy as np
-import os
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 import pandas as pd
 import time

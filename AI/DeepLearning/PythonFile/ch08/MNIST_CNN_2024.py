@@ -7,6 +7,7 @@ from tensorflow.keras.datasets import mnist
 import matplotlib.pyplot as plt
 import numpy as np
 import time
+import random
 
 def load_data():
 
@@ -64,9 +65,6 @@ def makemodel(X_train, y_train, X_valid, y_valid, weight_init):
     print("time :", time.time() - start)
     return model, history
 
-
-    return model
-
 def plot_history(histories, key='accuracy'):
     plt.figure(figsize=(16,10))
 
@@ -82,8 +80,6 @@ def plot_history(histories, key='accuracy'):
 
     plt.xlim([0,max(history.epoch)])
     plt.show()
-import random
-
 
 def draw_prediction(pred, k,X_test,y_test,yhat):
     samples = random.choices(population=pred, k=16)
