@@ -3,170 +3,253 @@
 > 1절. 타원 곡선 암호학(Elliptic Curve Cryptography)
 >
 > 2절. 네트워크 보안(SSL / TLS)
+>
+> 3절. TLS의 프로토콜 유형
 
 ## 1절. 타원 곡선 암호학(Elliptic Curve Cryptography)
 
-#### 인증 보안 목표
+#### 타원 곡선(Elliptic Curves)
 
-![At](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/At.PNG)
+![EC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/EC.PNG)
 
-- 기밀성(Confidentiality)
+#### 실수 상의 타원 곡선(Elliptic Curves over R)
 
-  - 오직 Bob만 메시지 확인 가능
+- 실수(Real Numbers) 집합에 대한 정의
+- 일반적으로 방정식 $y^2 = x^3 + ax + b$ 의 형태
+- 특정 조건 만족
+  - ex) $4a^3 + 27b^2 != 0$
 
-- 무결성(Integrity)
+![EC1](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/EC1.PNG)
 
-  - 메시지 전송 중 변경 X
+#### 군 연산(Group Law)
 
-- 부인 방지(Non-repudiation)
+![GL](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/GL.PNG)
 
-  - Alice가 자신이 메시지를 작성했다는 사실 부인 불가
+![GL1](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/GL1.PNG)
 
-- 인증(Authentication)
-  - Alice는 통신 상대방이 실제로 Bob임을 확인 가능
+#### 유한 필드 상의 타원 곡선(Elliptic Curves over Finite Fields)
 
-#### 인증 보안 목표
+![ECFF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/ECFF.PNG)
 
-![At2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/At2.PNG)
+##### $E_{23}(1, 1) : y^2 = x^3 + x + 1$ over $F_{23}$
 
-- 그리스어 αὐθεντικός("진짜의" 또는 "진본의")와 αὐθέντης("작성자")에서 유래
-- 데이터나 개체의 속성의 진위를 확인하는 행위
+![E23](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/E23.PNG)
 
-- 일상생활 응용
-  - 신분증을 확인하여 개인의 신원 검증
-  - 디지털 인증서를 통해 웹사이트의 유효성 확인
-  - 방사성 탄소 연대를 측정하여 유물의 연령을 추적
-  - 제품의 포장과 라벨이 주장하는 내용이 실제로 제품에 부합하는지 확인
+![E231](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/E231.PNG)
 
-## 2절. 인증 요소(Authentication Factor)
+#### 타원 곡선 상의 점 덧셈/배수 계산(Elliptic Curve Point Addition/Doubling)
 
-#### 인증 요소(Authentication Factors)
+![AD](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/AD.PNG)
 
-##### 분류
+##### $E _{61}(1,−1) : y^2 = x^3 − x$ over $F_{61}$
 
-- 사용자가 소유한 것(Has)
-- 사용자가 알고 있는 것(Know)
-- 사용자 자신(is)
+![E61](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/E61.PNG)
 
-##### 신원 인증 시점
+#### 디피-헬만 타원 곡선(ECDH : Elliptic-Curve Diffie-Hellman)
 
-- 접근 권한 부여하기 전
-- 거래 요청 승인하기 전
-- 문서나 기타 작업 결과물을 서명하기 전
-- 타인에게 권한을 부여하거나 권한 체계 설정하기 전
+##### 스키마(Scheme)
 
-#### 인증 요소 종류
+1. Alice와 Bob은 큰 유한 필드 $F$ 위에 정의된 타원 곡선 $E$와 $E$ 상의 점 $P$에 합의
 
-##### 소유 요소(Ownership Factors)
+2. Alice는 임의의 정수 $a$ 선택 후 $pk_A = aP$ 를 Bob에게 전송
 
-- 사용자가 소유하는 것
-- 예시
-  - 손목 밴드
-  - 신분증(ID 카드)
-  - 보안 토큰
+3. Bob은 임의의 정수 $b$ 선택 후 $pk_B = bP$ 를 Alice에게 전송
 
-![OF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/OF.PNG)
+4. Alice는 $a(pk_B) = a(bP) = abP$ 계산
 
-##### 지식 요소(Knowledge Factors)
+5. Bob은 $b(pk_A) = b(aP) = abP$ 계산
 
-- 사용자가 아는 것
-- 예시
-  - 비밀번호
-  - 암호문
-  - 개인 식별 번호(PIN)
+## 2절. 네트워크 보안(SSL / TLS)
 
-![KF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/KF.PNG)
+#### TCP/IP 프로토콜 스택 내 보안 기능의 상대적 위치(Relative Location of Security Facilities in the TCP/IP Protocol Stack)
 
-##### 그래픽 비밀번호
+![PS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/PS.PNG)
 
-- 인식 기반 기술(Recognition-based Techniques)
-- 많은 선택지 중에서 여러 이미지를 선택 후 인증 시 나중에 식별하는 방식
+#### SSL 과 TLS
 
-![Ps](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/Ps.PNG)
+- 컴퓨터 네트워크를 통해 통신 보안을 제공하도록 설계된 암호화 프로토콜
+- 버전 응용
+  - 웹 브라우징
+  - 이메일
+  - 인스턴트 메시징
+  - VoIP(Voice over IP)
 
-- N : 전체 그림의 수
-- K : 비밀번호로 선택된 그림의 수
+##### 보안 소켓 계층(SSL : Secure Sockets Layer)
 
-##### 패턴 비밀번호(Pattern Lock)
+- 더 이상 사용되지 않는 선구자격 프로토콜
+- 넷스케이프(Netscape)의 초기 SSL 프로토콜 개발
+- 1995년 ~ 1998년 넷스케이프 커뮤니케이션의 수석 과학자 타헤르 엘가말(Taher Elgamal)은 "SSL의 아버지" 취급
+- SSL 1.0 버전은 프로토콜의 심각한 보안 결함으로 미공개
+- 1995년 2월 출시된 SSL 2.0 버전은 여러 보안 문제 포함
+- 1996년에 출시된 SSL 3.0 버전은 프로토콜의 완전한 재설계
 
-- 규칙
+| 프로토콜 | 출시일 |      상태       |
+| :------: | :----: | :-------------: |
+| SSL 1.0  |   -    |        -        |
+| SSL 2.0  |  1995  | 지원 중단(2011) |
+| SSL 3.0  |  1996  | 지원 중단(2015) |
 
-  - 최소한 네 개의 점 선택
-  - 동일한 점은 두 번 사용 불가
-  - 직선만 허용
-  - 이전에 방문하지 않은 점을 건너뛰는 것 불가능
+##### 전송 계층 보안(TLS : Transport Layer Security)
 
-- 경우의 수
+- TLS 1.0은 SSL 3.0의 업그레이드 버전
+- 1999년 1월 RFC 2246에 처음 정의
+- RFC의 의견
 
-| 크기  |  패턴 경우의 수   |
-| :---: | :---------------: |
-| 3 x 3 |      389,112      |
-| 4 x 4 | 4,350,069,823,024 |
-| 5 x 5 |         ?         |
+  - TLS 1.0과 SSL 3.0의 차이는 크지 않음
+  - 하지만 TLS 1.0과 SSL 3.0 간 상호운용성을 방해할 정도로 중요한 차이점이 존재
 
-##### 내재 요소(Inherence Factors)
+- TLS 1.1은 2006년 4월 RFC 4346에 정의
+- TLS 1.2는 2008년 8월 RFC 5246에 정의
+- TLS 1.3은 2018년 8월 RFC 8446에 정의
+- PCI 위원회
+  - 조직들에게 2018년 6월 30일까지 TLS 1.0에서 TLS 1.1 이상으로 전환 권고
+- 2018년 10월
+  - 애플, 구글, 마이크로소프트, 모질라
+    - 2020년 3월부터 TLS 1.0과 TLS 1.1을 지원하지 않을 것을 공동 발표
+- 웹 사이트는 TLS로 서버와 웹 브라우저 간 모든 통신 보호 가능
+- 목적(두 개 이상의 통신 어플리케이션 간)
+  1. 개인정보 보호
+  2. 데이터 무결성 제공
 
-- 사용자가 소유한 것이 아닌 사용자 자신
-- 사용자가 하는 일
+| 프로토콜 | 출시일 |      상태       |
+| :------: | :----: | :-------------: |
+| TLS 1.0  |  1999  | 지원 중단(2021) |
+| TLS 1.1  |  2006  | 지원 중단(2021) |
+| TLS 1.2  |  2008  |                 |
+| TLS 1.3  |  2018  |                 |
 
-- 예시
+#### TLS 프로토콜
 
-  - 지문
-  - 홍채/망막
-  - 얼굴
-  - 음성
-  - 기타 생체 인식 식별자
+![TLS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/TLS.PNG)
 
-- 생체 인식 : 문제점과 우려
+- 데이터를 특정 형식으로 캡슐화하여 교환하는 레코드 주고받음
+- 레코드의 연결 상태
+  - 압축
+  - 패딩 추가
+  - 메시지 인증 코드(MAC) 추가
+  - 암호화
+- 레코드의 구성
 
-  - 프라이버시와 차별
+  - 내용 유형(Content type) 필드 : 캡슐화된 데이터의 유형
+  - 길이 필드 : 데이터의 길이
+  - 버전 필드 : TLS 버전
 
-    - 생체 인식 등록 과정에서 얻어진 데이터가 등록된 개인이 동의하지 않은 방식으로 사용될 가능성 존재
+- TLS 핸드셰이크(TLS handshake)
+  - 데이터를 요청하는 클라이언트와 요청에 응답하는 서버 간 관계
+  - 암호 스위트 : 애플리케이션 데이터를 교환 시 필요
+  - 사양 : 키 등
 
-  - 보안된 아이템의 소유자에게 미치는 위험
+#### TLS 기록 프로토콜(TLS Record Protocol)
 
-    - 2005년, 말레이시아의 자동차 절도범들이 메르세데스-벤츠 S클래스의 소유자의 손가락을 잘라 차를 절도하려 함
+- 핸드셰이크 프로토콜에서 정의된 공유 비밀 키로 두 가지 서비스 제공
 
-##### 이중 인증
+1. 기밀성(Confidentiality)
 
-- 다단계 인증 (Multi-factor authentication)
+   - TLS 페이로드를 일반적인 방식으로 암호화
 
-  - 세 가지 인증 요소 중 두 가지 이상을 요구하는 인증 방식
-  - 각 요소는 인증을 위해 상대방에 의해 검증
+2. 메시지 무결성(Message Integrity)
+   - 메시지 인증 코드(MAC) 생성
 
-- 예시
-  - 자동화된 현금 인출기(ATM)
-    - 일반적으로 이중 인증 요구
-    - 사용자가 주장하는 사람이 맞음을 증명하기 위해 두 가지 항목을 요구
-      - ATM 스마트 카드(소유 요소 적용)
-      - 개인 식별 번호(PIN)(지식 요소 적용)
-    - ATM 카드를 분실한 경우에도 사용자의 계좌는 안전
-    - 카드를 찾은 사람이 PIN을 모르기 때문에 현금 인출 불가
-    - 만약 공격자가 PIN만 알고 카드를 가지고 있지 않아도 현금 인출 불가
+- 전체 동작
+  - 전송할 애플리케이션 메시지를 가져와 데이터를 관리 가능한 크기의 블록으로 분할
+  - 선택적 데이터를 압축
+  - MAC을 적용 후 암호화한 뒤 헤더 추가
+  - 최종적으로 데이터를 TCP 세그먼트로 전송
 
-## 3절. Turing Test
+##### 구조(Operation)
 
-#### 튜링 테스트 (Turing Test)
+![TRPO](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/TRPO.PNG)
 
-- 기계가 인간과 동등하거나 구별할 수 없는 지능적인 행동을 나타낼 수 있는 능력 테스트 방법
-- 인간 심판이 인간과 기계와 자연어 대화를 나누며, 기계는 인간과 구별할 수 없는 성능을 생성하도록 설계
-- 앨런 튜링(Alan Turing)이 1950년 논문 "Computing Machinery and Intelligence"에서 소개
-- 1950년대부터 매우 영향력 있으면서도 널리 비판받고 있는 개념
-- 인공지능 철학에서 중요한 개념
+#### 형식(Format)
 
-![TT](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/TT.PNG)
+- 내용 유형(Content type) : 8비트
+- 주 버전(Major version) : 8비트
+- 부 버전(Minor version) : 8비트
+- 압축된 길이(Compressed length) : 16비트
 
-## 4절. 사람 인증(Human Authentication)
+![TRPF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/TRPF.PNG)
 
-#### 인간 인증 (Human Authentication)
+## 3절. TLS의 프로토콜 유형
 
-##### CAPTCHA
+#### 변경 암호 사양 프로토콜(Change Cipher Spec Protocol)
 
-- Completely Automated Public Turing test to tell Computers and Humans Apart
-- 완전 자동화 공공 튜링 테스트
-- 컴퓨터와 인간을 구별하기 위해 사용되는 도전-응답형 테스트
-- 컴퓨터가 쉽게 생성 가능
-- 해결하기 어려운 방식으로 설계
-- 정답이 제출되면 그것이 인간에 의해 입력되었음을 추정 가능
+![CCSP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/CCSP.PNG)
 
-![CAPTURE](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/CAPTURE.PNG)
+- TLS 레코드 프로토콜을 사용하는 네 가지 TLS 전용 프로토콜 중 하나
+- 가장 간단한 프로토콜
+
+- 구성
+  - 단일 메시지로 구성
+  - 메시지는 값 1을 가진 한 바이트
+  - 메시지 목적
+    - 대기 상태(pending state)를 현재 상태(current state)로 복사
+    - 연결에서 사용할 암호 스위트를 업데이트
+
+#### 경고 프로토콜(Alert Protocol)
+
+![AP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/AP.PNG)
+
+- 형식(Format)
+
+  - 각 메시지는 두 바이트로 구성
+    - 첫 번째 바이트 : 메시지의 심각도 전달을 위한 값 존재
+      - 경고(warning, 1)
+      - 치명적(fatal, 2)
+        - 치명적(fatal) 수준 : TLS 즉시 연결 종료
+
+- 주요 경고 메시지 예시(Example)
+  - 예상치 못한 메시지(unexpected_message)
+  - 잘못된 레코드 MAC(bad_record_mac)
+  - 압축 실패(decompression_failure)
+  - 핸드셰이크 실패(handshake_failure)
+  - 잘못된 매개변수(illegal_parameter)
+  - 암호 해독 실패(decryption_failed)
+
+#### 핸드셰이크 프로토콜 (Handshake Protocol)
+
+![HP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/HP.PNG)
+
+- 기능(Overview)
+
+  - 서버와 클라이언트 간 인증
+  - TLS 레코드에서 전송되는 데이터 보호를 위해 사용할 암호화 알고리즘
+  - MAC 알고리즘 및 암호 키 협상하는 기능
+
+- 메시지 구조 : 세 가지 필드
+  - 유형(Type, 1바이트) : 10가지 메시지 유형 중 하나
+  - 길이(Length, 3바이트) : 메시지의 길이를 바이트 단위로 표현
+  - 내용(Content, 0바이트 이상) : 메시지의 실제 내용 포함
+
+##### TLS 핸드셰이크 프로토콜 메세지 타입
+
+![THPMT](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/THPMT.PNG)
+
+![THPMT2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/THPMT2.PNG)
+
+#### Hello Messages
+
+- 클라이언트\_hello or 서버\_hello의 매개 변수들
+  - 버전(Version): 클라이언트가 이해하는 가장 높은 TLS 버전
+  - 랜덤(Random)
+    - 클라이언트가 생성한 랜덤 구조체
+    - 32비트 타임스탬프와 보안 랜덤 번호 생성기에서 생성된 28바이트로 구성
+  - 세션 ID(Session ID): 가변 길이의 세션 식별자
+  - 암호 스위트(CipherSuite) : 클라이언트가 지원하는 암호화 알고리즘 조합을 포함한 목록(선호도 순서대로 나열)
+  - 압축 방법(Compression Method) : 클라이언트가 지원하는 압축 방법 목록
+
+#### CipherSuiteKey : 교환 방법 알고리즘(Exchange Method Algorithms)
+
+![CSK](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/CSK.PNG)
+
+#### SSL Pulse(https://www.ssllabs.com/ssl-pulse/)
+
+- 웹 사이트(Web Site)
+  - TLS의 주요 용도 : 웹사이트와 HTTP 프로토콜로 인코딩된 웹 브라우저 간의 월드 와이드 웹 트래픽 보호
+  - HTTPS 프로토콜 구성 == HTTP 트래픽을 보호하기 위해 TLS를 사용하는 것
+
+![SP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/SP.PNG)
+
+- 서버 SSL Pulse 모니터가 지원하는 가장 취약한 키 교환
+- 현재 2048비트의 최소 예상 강도
+
+![KES](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/KES.PNG)
