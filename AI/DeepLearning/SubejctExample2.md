@@ -1,289 +1,483 @@
 # Subject Example
 
-> 1절.
+> 1절. 7장 과제
+>
+> 2절. 8장 과제
+>
+> 3절. 10장 과제
+>
+> 4절. 11장 과제
 
-## 1절. Numpy_1장 과제
+## 1절. 7장 과제
 
-#### 사용 모듈(라이브러리)
+#### keras : MNIST
+
+```Python
+import matplotlib.pyplot as plt
+import tensorflow as tf
+import cv2 as cv
+
+(train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.mnist.load_data()
+
+print(train_images.shape)
+
+print(train_labels)
+print(test_images.shape)
+
+plt.imshow(train_images[0], cmap = "Greys")
+
+model = tf.keras.models.Sequential()
+
+model.add(tf.keras.layers.Dense(512, activation = 'relu', input_shape=(784,)))
+model.add(tf.keras.layers.Dense(10, activation = 'sigmoid'))
+
+model.compile(optimizer = 'rmsprop',
+                loss = 'mse',
+                metrics=['accuracy'])
+
+train_images = train_images.reshape((60000, 784))
+train_images = train_images.astype('float32') / 255.0
+test_images = test_images.reshape((10000, 784))
+test_images = test_images.astype('float32') / 255.0
+
+train_labels = tf.keras.utils.to_categorical(train_labels)
+test_labels = tf.keras.utils.to_categorical(test_labels)
+
+model.fit(train_images, train_labels, epochs=5, batch_size=128)
+
+test_loss, test_acc = model.evaluate(test_images, test_labels)
+print('테스트 정확도 : ', test_acc)
+
+history = model.fit(train_images, train_labels, epochs=5, batch_size=128)
+loss = history.history['loss']
+acc = history.history['accuracy']
+epochs = range(1, len(loss)+1)
+
+plt.plot(epochs, loss, 'b', label='Training Loss')
+plt.plot(epochs, acc, 'r', label='Accuracy')
+plt.xlabel('epochs')
+plt.ylabel('loss/acc')
+plt.show()
+
+image = cv.imread('test.png', cv.IMREAD_GRAYSCALE)
+image = cv.resize(image, (28, 28))
+image = image.astype('float32')
+image = image.reshape(1, 784)
+image = 255-image
+image /= 255.0
+
+plt.imshow(image.reshape(28, 28),cmap='Greys')
+plt.show()
+
+pred = model.predict(image.reshape(1, 784), batch_size = 1)
+print("추정 숫자 = ", pred.argmax())
+```
+
+#### DNN : MNIST
+
+```Python
+from tensorflow import keras
+import tensorflow as tf
+import matplotlib.pyplot as plt
+import pandas as pd
+import time
+
+
+class_names = ["T-shirt/top", "Trouser", "Pullover", "Dress", "Coat", "Sandal", "Shirt", "Sneaker", "Bag", "Ankle boot"]
+
+def load_data():
+
+    (X_train_full, y_train_full), (X_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
+    # 훈련 세트는 60,000개의 흑백 이미지
+    # 각 이미지의 크기는 28x28 픽셀
+
+    return X_train_full, y_train_full, X_test, y_test
+
+
+def data_normalization(X_train_full, y_train_full, X_test):
+
+    X_valid, X_train = X_train_full[:5000] / 255., X_train_full[5000:] / 255.
+    y_valid, y_train = y_train_full[:5000], y_train_full[5000:]
+    X_test = X_test / 255.
+
+    return X_valid, X_train, y_valid, y_train, X_test
+
+
+def show_oneimg(X_train):
+    plt.figure()
+    plt.imshow(X_train[0], cmap = "binary")
+    plt.axis('off')
+
+
+def show_40images(X_train, y_train):
+    n_rows = 4
+    n_cols = 10
+    plt.figure(figsize=(n_cols * 1.2, n_rows * 1.2))
+    for row in range(n_rows):
+        for col in range(n_cols):
+            index = n_cols * row + col
+            plt.subplot(n_rows, n_cols, index + 1) # figure 안의 figure를 사용하는 함수
+            plt.imshow(X_train[index], cmap = "binary", interpolation = "nearest")
+            plt.axis('off')
+            plt.title(class_names[y_train[index]], fontsize=12)
+    plt.subplots_adjust(wspace=0.2, hspace=0.5)
+    plt.show()
+
+
+def makemodel(X_train, y_train, X_valid, y_valid):
+    model = keras.models.Sequential()
+    model.add(keras.layers.Flatten(input_shape = [28, 28]))
+    # 입력층 (28 * 28 = 784)
+    model.add(keras.layers.Dense(300, activation = "relu"))
+    # 은닉층 1 : 300개
+    model.add(keras.layers.Dense(100, activation = "relu"))
+    # 은닉층 2 : 100개
+    model.add(keras.layers.Dense(10, activation = "softmax"))
+    # 출력층 : 10개
+
+    # (784 * 300 + 300) + (300 * 100 + 100) + (100 * 10 + 10) = 266,610
+    # 학습 필요 데이터
+
+    model.summary()
+
+    model.compile(loss = "sparse_categorical_crossentropy",
+                  optimizer = "sgd",
+                  metrics = ["accuracy"])
+
+    # 시간 측정
+    tb_hist = keras.callbacks.TensorBoard(log_dir = './graph',
+                                          histogram_freq = 0,
+                                          write_graph = True,
+                                          write_images = True)
+    start = time.time()
+    history = model.fit(X_train, y_train, epochs = 10,
+                        validation_data = (X_valid, y_valid),
+                        callbacks = [tb_hist])
+    print("time : ", time.time() - start)
+    return model, history
+
+
+def evalmodel(model, history, X_test, y_test):
+    model.evaluate(X_test, y_test)
+
+    X_new = X_test[:3]
+    # 3개만 보여지는 데이터셋
+    y_proba = model.predict(X_new).round(2)
+
+    plt.figure(figsize = (7.2, 2.4))
+    for index, image in enumerate(X_new):
+        plt.subplot(1, 3, index + 1)
+        plt.imshow(image, cmap = "binary", interpolation = "nearest")
+        plt.axis('off')
+        plt.title(class_names[y_test[index]], fontsize = 12)
+    plt.subplots_adjust(wspace = 0.2, hspace = 0.5)
+
+    pd.DataFrame(history.history).plot(figsize = (8, 5))
+    plt.grid(True)
+    plt.gca().set_ylim(0, 1)
+
+def main():
+    X_train_full, y_train_full, X_test, y_test = load_data()
+
+    X_valid, X_train, y_valid, y_train, X_test = data_normalization(X_train_full, y_train_full, X_test)
+    show_oneimg(X_train)
+    show_40images(X_train, y_train)
+    model, history = makemodel(X_train, y_train, X_valid, y_valid)
+    evalmodel(model, history, X_test, y_test)
+    plt.show()
+
+main()
+```
+
+## 2절. 8장 과제
+
+#### CNN : MNIST
+
+```Python
+from tensorflow.keras import Model
+from tensorflow import keras
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, Flatten
+from tensorflow.keras.layers import Conv2D, MaxPooling2D
+from tensorflow.keras.datasets import mnist
+import matplotlib.pyplot as plt
+import numpy as np
+import time
+import random
+
+def load_data():
+
+    (X_train_full, y_train_full), (X_test, y_test) = mnist.load_data()
+    X_train_full = X_train_full.astype(np.float32)
+    X_test = X_test.astype(np.float32)
+
+    return X_train_full, y_train_full, X_test, y_test
+
+def data_normalization(X_train_full, X_test):
+    X_train_full = X_train_full / 255.
+
+    X_test = X_test / 255.
+    train_feature = np.expand_dims(X_train_full, axis=3)
+    test_feature = np.expand_dims(X_test, axis=3)
+
+    print(train_feature.shape, train_feature.shape)
+    print(test_feature.shape, test_feature.shape)
+
+    return train_feature,  test_feature
+
+
+def draw_digit(num):
+    for i in num:
+        for j in i:
+            if j == 0:
+                print('0', end='')
+            else :
+                print('1', end='')
+        print()
+
+
+def makemodel(X_train, y_train, X_valid, y_valid, weight_init):
+    model = Sequential()
+    model.add(Conv2D(32, kernel_size=(3, 3), input_shape=(28, 28, 1), activation='relu'))
+    # n1 = 32
+    model.add(MaxPooling2D(pool_size=2))
+    model.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
+    # n2 = 64 = bias
+    # 즉, 32 * 3 * 3 * 64 + 64
+    model.add(MaxPooling2D(pool_size=2))
+    model.add(Dropout(0.25))
+    model.add(Flatten())
+    model.add(Dense(128, activation = 'relu'))
+    model.add(Dense(10, activation = 'softmax'))
+
+    model.compile(loss = 'sparse_categorical_crossentropy',
+                  optimizer = 'adam',
+                  metrics = ['accuracy'])
+
+    #tb_hist = keras.callbacks.TensorBoard(log_dir='./graph', histogram_freq=0, write_graph=True, write_images=True)
+    start = time.time()
+    history = model.fit(X_train, y_train, epochs = 10,
+                        validation_data=(X_valid, y_valid)) #callbacks=[tb_hist])
+    print("time :", time.time() - start)
+    return model, history
+
+def plot_history(histories, key='accuracy'):
+    plt.figure(figsize=(16,10))
+
+    for name, history in histories:
+        val = plt.plot(history.epoch, history.history['val_'+key],
+                       '--', label=name.title()+' Val')
+        plt.plot(history.epoch, history.history[key], color=val[0].get_color(),
+                 label=name.title()+' Train')
+
+    plt.xlabel('Epochs')
+    plt.ylabel(key.replace('_',' ').title())
+    plt.legend()
+
+    plt.xlim([0,max(history.epoch)])
+    plt.show()
+
+def draw_prediction(pred, k,X_test,y_test,yhat):
+    samples = random.choices(population=pred, k=16)
+
+    count = 0
+    nrows = ncols = 4
+    plt.figure(figsize=(12,8))
+
+    for n in samples:
+        count += 1
+        plt.subplot(nrows, ncols, count)
+        plt.imshow(X_test[n].reshape(28, 28), cmap='Greys', interpolation='nearest')
+        tmp = "Label:" + str(y_test[n]) + ", Prediction:" + str(yhat[n])
+        plt.title(tmp)
+
+    plt.tight_layout()
+    plt.show()
+
+def evalmodel(X_test,y_test,model):
+    yhat = model.predict(X_test)
+    yhat = yhat.argmax(axis=1)
+
+    print(yhat.shape)
+    answer_list = []
+
+    for n in range(0, len(y_test)):
+        if yhat[n] == y_test[n]:
+            answer_list.append(n)
+
+    draw_prediction(answer_list, 16,X_test,y_test,yhat)
+
+    answer_list = []
+
+    for n in range(0, len(y_test)):
+        if yhat[n] != y_test[n]:
+            answer_list.append(n)
+
+    draw_prediction(answer_list, 16,X_test,y_test,yhat)
+
+def main():
+    X_train, y_train, X_test, y_test = load_data()
+    X_train, X_test = data_normalization(X_train,  X_test)
+
+    #show_oneimg(X_train)
+    #show_40images(X_train, y_train)
+
+    model, history= makemodel(X_train, y_train, X_test, y_test,'glorot_uniform')
+
+    evalmodel(X_test, y_test, model)
+    plot_history([('baseline', history)])
+
+main()
+```
+
+## 3절. 10장 과제
+
+#### Simple RNN
 
 ```Python
 import numpy as np
+import tensorflow as tf
+from keras.models import Sequential
+from keras.layers import Dense, SimpleRNN, Activation
+
+X = []
+Y = []
+for i in range(6):
+    lst = list(range(i,i+4))
+    X.append(list(map(lambda c: [c/10], lst)))
+    Y.append((i+4)/10)
+X = np.array(X)
+Y = np.array(Y)
+print(X)
+print(Y)
+
+
+
+model = Sequential()
+#model.add(SimpleRNN(50,  return_sequences=False, input_shape=(4,1)))
+model.add(SimpleRNN(20,  return_sequences = False, input_shape=(4,1)))
+model.add(Dense(1))
+model.summary()
+model.compile(loss='mse',
+              optimizer='adam',
+              metrics=['accuracy'])
+model.fit(X,Y,epochs=200,  verbose=2)
+print(model.predict(X))
+
+X_test = np.array([[[0.8],[0.9],[1.0],[1.1]]])
+print(model.predict(X_test))
 ```
 
-#### Q1) 0 ~ 10 사이로 이루어진 정수를 랜덤하게 36개로 만들어라. 참고 : 사이즈 (36,)
+## 4절. 11장 과제
+
+#### Compare RNN LSTM
 
 ```Python
-res = np.random.randint(0, 11, size = 36)
-res
-
-# array([ 6, 8, 4, 2, 0, 6, 1, 7, 0, 7, 0, 7, 4, 7, 8, 7, 7, 9, 4, 4, 5, 3, 0, 10, 3, 6, 6, 10, 4, 9, 0, 5, 2, 8, 2, 3])
-```
-
-#### Q2) Q1에서 만들어진 배열을 2 _ 3 _ 6으로 shape 변경해라.
-
-```Python
-res_mod1 = res.reshape(2, 3, 6)
-res_mod1
-
-# array([[[6, 8, 4, 2, 0, 6],
-# [1, 7, 0, 7, 0, 7],
-# [4, 7, 8, 7, 7, 9]],
-#
-# [[4, 4, 5, 3, 0, 10],
-# [3, 6, 6, 10, 4, 9],
-# [0, 5, 2, 8, 2, 3]]])
-```
-
-#### Q3) Q1에서 만들어진 배열을 4 \* 9로 변경해라.
-
-```Python
-res_mod2 = res.reshape(4, 9)
-res_mod2
-
-# array([[ 6,  8,  4,  2,  0,  6,  1,  7,  0],
-# [ 7,  0,  7,  4,  7,  8,  7,  7,  9],
-# [ 4,  4,  5,  3,  0, 10,  3,  6,  6],
-# [10,  4,  9,  0,  5,  2,  8,  2,  3]])
-```
-
-#### Q4) 각 원소에 +4를 한 후 transpose를 이용하여 9 \* 4로 변경해라.
-
-```Python
-res_plus4 = res_mod2 + 4
-res_plus4 = res_plus4.T
-res_plus4
-
-# array([[10, 11,  8, 14],
-# [12,  4,  8,  8],
-# [ 8, 11,  9, 13],
-# [ 6,  8,  7,  4],
-# [ 4, 11,  4,  9],
-# [10, 12, 14,  6],
-# [ 5, 11,  7, 12],
-# [11, 11, 10,  6],
-# [ 4, 13, 10,  7]])
-```
-
-#### Q5) Q3, Q4의 내적을 구해라.
-
-```Python
-res = res_mod2 @ res_plus4
-res
-
-# array([[342, 318, 323, 298],
-# [406, 630, 496, 505],
-# [351, 436, 411, 339],
-# [334, 453, 347, 475]])
-```
-
-#### Q6) Q3의 원소 중 다음 색을 칠해진 부분만 배열 슬라이싱하여 4 \* 4 행렬로 만들어라.
-
-![Q6](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/Q6.PNG)
-
-```Python
-temp1 = res_mod2[0, :8:2]
-temp2 = res_mod2[1, 1:9:2]
-temp3 = res_mod2[2, :8:2]
-temp4 = res_mod2[3, 1:9:2]
-np.vstack((temp1, temp2, temp3, temp4))
-```
-
-## 2절. 머신러닝 기초\_2장 과제
-
-#### Iris 데이터를 이용하여 머신러닝 방법의 예측 비교
-
-- 베이즈 정리 (from sklearn.naive_bayes import GaussianNB)
-- 결정 트리(from sklearn.tree import DecisionTreeClassifier)
-- 아다부스터 (from sklearn.ensemble import AdaBoostClassifier)
-
-#### 사용 데이터 셋 라이브러리
-
-```Python
-from sklearn import datasets
-iris = datasets.load_iris()
-```
-
-#### 방법 1 - Class 활용
-
-```Python
-from sklearn import datasets, metrics
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import GaussianNB
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import AdaBoostClassifier
+import numpy as np
+import tensorflow as tf
+from keras.models import Sequential
+from keras.layers import Dense, SimpleRNN, Activation, LSTM
 import matplotlib.pyplot as plt
-
-class ModelComparator:
-    model = [GaussianNB(), DecisionTreeClassifier(), AdaBoostClassifier()]
-
-    def __init__(self, X, y):
-        self.X_train, self.X_test, self.y_train,self.y_test = train_test_split(X,y,test_size=0.2,random_state=4)
-
-    def compare_model(self):
-
-        for m in self.model:
-            m.fit(self.X_train, self.y_train)
-            print("Model: ", m, ", Score:", metrics.accuracy_score(self.y_test, m.predict(self.X_test)))
-
-# iris data
-iris = datasets.load_iris()
-
-X = iris.data
-y = iris.target
-
-irisCompare = ModelComparator(X, y)
-irisCompare.compare_model()
-
-
-# digit  data
-digit = datasets.load_digits()
-X = digit.data
-y = digit.target
-
-digitCompare = ModelComparator(X, y)
-digitCompare.compare_model()
-```
-
-#### 방법 2 - 함수 활용
-
-```Python
-# 데이터 분할
-def load_data():
-    iris = datasets.load_iris()
-    X = iris.data
-    y = iris.target
-    return train_test_split(X, y, test_size=0.2, random_state=4)
-
-# 모델 생성 및 학습
-def model_prediction(model, X_train, X_test, y_train, y_test, title):
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
-    score = metrics.accuracy_score(y_test, y_pred)
-    print(title, score)
-
-def main():
-    X_train,X_test,y_train,y_test = load_data()
-
-    model = KNeighborsClassifier(n_neighbors = 6)
-    model_prediction(model, X_train,X_test,y_train,y_test, "Result Of KNeighborsClassifier():")
-
-    model = GaussianNB()
-    model_prediction(model, X_train,X_test,y_train,y_test, "Result Of GaussianNB():")
-
-    model = DecisionTreeClassifier()
-    model_prediction(model, X_train,X_test,y_train,y_test, "Result Of DecisionTreeClassifier():")
-
-    model = AdaBoostClassifier(algorithm = 'SAMME')
-    model_prediction(model, X_train,X_test,y_train,y_test, "Result Of AdaBoost():")
-
-if __name__ == "__main__":
-    main()
-```
-
-## 3절. 회귀\_3장 과제
-
-#### 선형 회귀 문제
-
-#### 사용 라이브러리
-
-```Python
 import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
-```
 
-#### 남 / 여 데이터 분리
+def make_data_increase_linear():
+  trainX = []
+  trainY = []
+  testX= []
+  testY = []
+  for i in range(4):
+      lst = list(range(i,i+4))
+      trainX.append(list(map(lambda c: [c/10], lst)))
+      trainY.append((i+4)/10)
+  trainX = np.array(trainX)
+  trainY = np.array(trainY)
+  lst = list(range(i,i+4))
+  testX.append(list(map(lambda c: [c/10], lst)))
+  testY.append((i+4)/10)
 
-```Python
-# 남 / 여 데이터 분리
-insurance = pd.read_csv("insurance.csv")
-female_data = insurance[insurance['sex'] == 'female']
-male_data = insurance[insurance['sex'] == 'male']
-```
+  return trainX,trainY,testX,testY
 
-#### Q1 - 나이 vs 요금 회귀 분석
+# convert into dataset matrix
+def convertToMatrix(data, step):
+    X, Y = [], []
+    for i in range(len(data) - step):
+        d = i + step
+        X.append(data[i:d, ])
+        Y.append(data[d, ])
+    return np.array(X), np.array(Y)
 
-```Python
-# 여자의 나이와 요금
-female_age = female_data[['age']]
-female_charges = female_data['charges']
-model_female_AC = LinearRegression().fit(female_age, female_charges)
+def make_data_random_sin():
+  # 데이터 생성
+  N = 1000
+  Tp = 800
+  step = 4
+  t = np.arange(0, N)
+  x = np.sin(0.2*t) + 0.5 * np.random.rand(N)  # 노이즈 추가된 SIN 파
+  df = pd.DataFrame(x)
 
-# 남자의 나이와 요금
-male_age = male_data[['age']]
-male_charges = male_data['charges']
-model_male_AC = LinearRegression().fit(male_age, male_charges)
+  # Train/Test 데이터 분리
+  values = df.values
+  train, test = values[:Tp], values[Tp:]
 
-# 여자
-print("그래프 기울기(W)_여자 : ", model_female_AC.coef_[0])
-print("그래프 절편(b):_여자 : ", model_female_AC.intercept_)
+  # 데이터 자르기
+  train = np.append(train, np.repeat(train[-1], step))
+  test = np.append(test, np.repeat(test[-1], step))
+  trainX, trainY = convertToMatrix(train, step)
+  testX, testY = convertToMatrix(test, step)
 
-# 그래프 기울기(W)_여자 :  257.0114899339647
-# 그래프 절편(b):_여자 :  2416.8485216856316
+  # 데이터 Reshape
+  trainX = np.reshape(trainX, (trainX.shape[0], trainX.shape[1],1))
+  testX = np.reshape(testX, (testX.shape[0], testX.shape[1], 1))
+  return trainX, trainY, testX,testY
 
-# 남자
-print("그래프 기울기(W)_남자 : ", model_male_AC.coef_[0])
-print("그래프 절편(b)_남자 : ", model_male_AC.intercept_)
+def plot_history(histories):
+  plt.figure(figsize=(16,10))
 
-# 그래프 기울기(W)_남자 :  260.68133921066124
-# 그래프 절편(b)_남자 :  3811.773852346043
-```
 
-#### Q2 - 체질량 vs 요금 회귀 분석
+  for name, history in histories:
+    plt.plot(history.epoch, history.history['loss'],label=name.title())
 
-```Python
-# 여자의 나이와 요금
-female_bmi = female_data[['bmi']]
-female_charges = female_data['charges']
-model_female_BC = LinearRegression().fit(female_bmi, female_charges)
+  plt.xlabel('Epochs')
+  plt.legend()
 
-# 남자의 나이와 요금
-male_bmi = male_data[['bmi']]
-male_charges = male_data['charges']
-model_male_BC = LinearRegression().fit(male_bmi, male_charges)
+  plt.xlim([0,max(history.epoch)])
+  plt.show()
 
-# 여자
-print("그래프 기울기(W)_여자 : ", model_female_BC.coef_[0])
-print("그래프 절편(b):_여자 : ", model_female_BC.intercept_)
 
-# 그래프 기울기(W)_여자 :  297.11767929902027
-# 그래프 절편(b):_여자 :  3543.8124859186573
+def makemodel(model_name,trainX, trainY, stacked_size):
 
-# 남자
-print("그래프 기울기(W)_남자 : ", model_male_BC.coef_[0])
-print("그래프 절편(b)_남자 : ", model_male_BC.intercept_)
+  model = Sequential()
+  #model.add(SimpleRNN(50,  return_sequences=False, input_shape=(4,1)))
+  if stacked_size > 1 :
+     for i in range(stacked_size) :
+         model.add(model_name(20,  return_sequences=True, input_shape=(4,1)))
+  model.add(model_name(20,  return_sequences=False, input_shape=(4,1)))
+  model.add(Dense(1))
+  model.summary()
+  model.compile(loss='mse',
+                optimizer='adam',
+                metrics=['accuracy'])
+  hist = model.fit(trainX,trainY,epochs=100)
+  return model, hist
 
-# 그래프 기울기(W)_남자 :  477.07833577154895
-# 그래프 절편(b)_남자 :  -805.5451651920757
-```
+#단순히 0.1씩 증가 하는 데이터
+#trainX, trainY, testX, testY =  make_data_increase_linear()
 
-#### 로지스틱 회귀 문제
+#sin 함수에 랜덤 값을 추가한 데이터
+trainX, trainY, testX, testY =  make_data_random_sin()
 
-#### 사용 라이브러리
+model_simpleRNN, hist_simpleRNN = makemodel(SimpleRNN, trainX,  trainY, 1)
 
-```Python
-from sklearn.model_selection import cross_val_predict
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LogisticRegression
-import pandas as pd
-```
+model_LSTM, hist_LSTM = makemodel(LSTM, trainX, trainY, 1)
 
-#### Q1 - 혼동행렬 생성 및 교차 검증 문제
+model_stackeRNN, hist_stackeRNN = makemodel(SimpleRNN, trainX, trainY, 3)
 
-```Python
-col_names = ['pregnant', 'glucose', 'bp', 'skin', 'insulin', 'bmi', 'pedigree', 'age', 'label']
-pima = pd.read_csv("diabetes.csv", header = 0, names = col_names)
-feature_cols = ['pregnant', 'insulin', 'bmi', 'age', 'glucose', 'bp', 'pedigree']
-X = pima[feature_cols]
-y = pima.label
+X_test = np.array([[[0.8],[0.9],[1.0],[1.1]]])
 
-# cross validation 테스트 + 5-fold 교차 검증(80 : 20)
-LR = LogisticRegression(max_iter = 200)
-y_pred = cross_val_predict(LR, X, y, cv = 5)
-cm = confusion_matrix(y, y_pred)
-ConfusionMatrixDisplay(cm).plot()
+print(model_simpleRNN.predict(X_test))
+print(model_LSTM.predict(X_test))
+print(model_stackeRNN.predict(X_test))
 
-tn, fp, fn, tp = cm.ravel()
-print("TP = {}\nFN = {}\nFP = {}\nTN = {}".format(tp, fn, fp, tn))
+
+plot_history([('SimpleRNN', hist_simpleRNN),('SimpleLSTM', hist_LSTM),('StackedRNN', hist_stackeRNN)])
 ```
