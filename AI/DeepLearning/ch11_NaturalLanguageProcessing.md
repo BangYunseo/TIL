@@ -274,9 +274,9 @@ seq = t.texts_to_sequences([text])[0]
 print(text,"->", seq)
 # 출력
 # Deep learning is part of a broader family of
-# machine learning methods based on artificial neural networks
-# with representation learning. -> [3, 1, 4, 5, 2, 6, 7, 8, 2, 9,
-# 1, 10, 11, 12, 13, 14, 15, 16, 17, 1]
+# machine learning methods based on artificial neural
+# networks with representation learning. -> [3, 1, 4, 5,
+# 2, 6, 7, 8, 2, 9, 1, 10, 11, 12, 13, 14, 15, 16, 17, 1]
 ```
 
 #### 샘플의 패딩
@@ -290,7 +290,8 @@ print(text,"->", seq)
 ```Python
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-X = pad_sequences([[7, 8, 9], [1, 2, 3, 4, 5], [7]], maxlen=3, padding='pre')
+X = pad_sequences([[7, 8, 9], [1, 2, 3, 4, 5], [7]],
+                  maxlen=3, padding='pre')
 print(X)
 # 출력
 # [[7 8 9]
@@ -405,7 +406,8 @@ print(encoded_docs)
 
 # 패딩 과정 : 4개 패딩(post : 마지막)
 max_length = 4
-padded_docs = pad_sequences(encoded_docs, maxlen=max_length, padding='post')
+padded_docs = pad_sequences(encoded_docs, maxlen=max_length,
+                            padding='post')
 print(padded_docs)
 # 출력
 # [[30 24 0 0]
