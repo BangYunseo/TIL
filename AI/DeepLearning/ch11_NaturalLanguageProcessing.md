@@ -57,7 +57,7 @@ nltk.download()
 - 말뭉치에 포함된 텍스트를 꺼내 토큰(token)이라 불리는 단위로 나누는 직업
 - 한국어는 파생어가 많이 존재하기에(ex : 했고, 해서, 했으니, 했으므로 등) 토큰화에 어려움
 
-![Token](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/TP.PNG)
+![Token](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch11/Token.PNG)
 
 ##### 소문자 변환
 
