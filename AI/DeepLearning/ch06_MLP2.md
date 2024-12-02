@@ -29,7 +29,6 @@
 #### 차원 별 텐서 생성
 
 - 차원 수가 증가하면 차원(size)의 앞에 숫자 추가
--
 
 ```Python
 import numpy as np
