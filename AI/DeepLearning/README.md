@@ -7,7 +7,7 @@
 
 ## When?
 
-- 마지막 수정일 : 2024.11.24
+- 마지막 수정일 : 2024.12.03
 
 ## Learning List
 
@@ -22,3 +22,5 @@
 - ch08 [CNN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch08_CNN.md)
 - ch09 [ImageRecognition](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch09_ImageRecognition.md)
 - ch10 [RNN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch10_RNN.md)
+- ch11 [NaturalLanguageProcessing](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch11_NaturalLanguageProcessing.md)
+- ch12 [GenerativeModel](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/ch12_GenerativeModel.md)
