@@ -248,3 +248,51 @@ plt.show()
 ## 3절. GAN(Generative Adversarial Network)
 
 #### 생성적 적대 신경망(GAN : Generative Adversarial Network)
+
+- Goodfellow(2014) 등이 설계한 신경망 모델
+- 생성자 신경망과 판별자 신경망이 서로 적대적으로 경쟁
+- 훈련을 통하여 자신의 작업을 점점 정교하게 수행
+
+- GAN 결과물
+
+![GAN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/GAN.PNG)
+
+##### 구조
+
+![GANS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/GANS.PNG)
+
+- 생성자(generator)
+- 가짜 데이터를 생성을 학습
+- 생성된 데이터는 판별자를 위한 학습 예제로 사용
+- 판별자(discriminator) : 생성자의 가짜 데이터를 진짜 데이터와 구분하는 방법 학습
+- 생성자가 유사하지 않은 데이터를 생성하면 불이익
+
+##### 목표
+
+![GANG](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/GANG.PNG)
+
+#### 훈련 과정
+
+- 판별자 훈련과 생성자 훈련을 번갈아 가며 수행
+- GAN 훈련의 시작
+  - 생성자는 아직 무엇을 만들어야 하는지 모름
+  - 입력으로 임의의 노이즈가 공급되면 출력으로 임의의 노이즈 이미지 생성
+
+- 저품질 가짜 이미지는 진짜 이미지와 극명한 대조 : 판별자는 처음에 진짜 여부 판별 시 문제 없음
+  - 그러나 생성자가 훈련되면서 진짜 이미지의 일부 구조를 복제하는 방법을 점차적 학습
+
+##### 사진 생성 GAN
+
+![GANIG](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/GANIG.PNG)
+
+#### 판별자 훈련 과정
+
+![DTS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/DTS.PNG)
+
+
+
+
+
+
+
+
