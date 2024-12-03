@@ -96,6 +96,11 @@ test_scores = model.evaluate(x_test, y_test, verbose=2)
 
 ![SA](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/SA.PNG)
 
+- 함수형 API의 필요 이유
+  - 통합된 레이어로의 표현을 원하기 떄문
+  - 서로 다른 특징(그림, 텍스트, 숫자)들의 다양한 정보들을 하나로 연결
+  - 분류 모델의 경우 Sequential이 유용했으나 서로 다른 특징을 합칠 경우 함수형 API 필요
+ 
 ## 2절. 오토 인코더(Auto Encorder)
 
 ## 3절. GAN(Generative 
