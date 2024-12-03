@@ -103,4 +103,148 @@ test_scores = model.evaluate(x_test, y_test, verbose=2)
  
 ## 2절. 오토 인코더(Auto Encorder)
 
-## 3절. GAN(Generative 
+#### 기본형 오토 인코더(Auto Encorder)
+
+![AES](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/AES.PNG)
+
+- 입력과 동일한 출력을 만드는 것을 목적으로 하는 신경망
+- 사이즈가 줄어들었다가 커지는 마름모꼴 형태의 구조
+- 특징 학습, 차원 축소, 표현 학습 등 사용
+
+##### 오토 인코더의 요소
+
+- 인코더(encoder) : 입력을 잠재 표현으로 인코딩(입력)
+- 디코더(decoder) : 잠재 표현을 풀어 입력 복원(출력)
+- 손실 함수 : 입력 이미지와 출력 이미지의 MSE 사용
+
+![AEP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/AEP.PNG)
+
+#### 예제_필기체 숫자 압축 오토 인코더
+
+```Python
+import matplotlib.pyplot as plt
+import numpy as np
+import tensorflow as tf
+
+encoding_dim = 32 # 32 픽셀로 압출
+
+# 함수형 API로 신경망 구성
+input_img = tf.keras.layers.Input(shape=(784,))
+encoded = tf.keras.layers.Dense(encoding_dim, activation='relu')(input_img)
+decoded = tf.keras.layers.Dense(784, activation='sigmoid')(encoded)
+autoencoder = tf.keras.models.Model(input_img, decoded)
+
+autoencoder.compile(optimizer='adam', loss=tf.keras.losses.MeanSquaredError())
+# 손실 함수로 MSE 사용, 픽셀 간 차이 계산
+
+mnist = tf.keras.datasets.mnist
+(x_train, _), (x_test, _) = mnist.load_data()
+
+x_train = x_train.astype('float32') / 255.                                # 28 x 28 사이즈
+x_test = x_test.astype('float32') / 255.                                  # 28 x 28 사이즈
+x_train = x_train.reshape((len(x_train), np.prod(x_train.shape[1:])))     # 28 x 28 = 784 사이즈
+x_test = x_test.reshape((len(x_test), np.prod(x_test.shape[1:])))         # 28 x 28 = 784 사이즈
+# 1차원 평탄화
+
+autoencoder.fit(x_train, x_train,
+                epochs=50,
+                batch_size=256,
+                shuffle=True,
+                validation_data=(x_test, x_test))
+
+decoded_imgs = autoencoder.predict(x_test)
+n = 10
+plt.figure(figsize=(20, 6))
+for i in range(1, n + 1):
+  ax = plt.subplot(2, n, i)
+  plt.imshow(x_test[i].reshape(28, 28), cmap='gray')
+
+  ax = plt.subplot(2, n, i + n)
+  plt.imshow(decoded_imgs[i].reshape(28, 28), cmap='gray')
+plt.show()
+```
+
+- 실행 결과
+
+![EX2res](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/EX2res.PNG)
+
+- 기존(위 쪽) 데이터보다 약간 흐리멍텅 + 뭉개진 느낌
+
+#### 노이즈 제거 오토 인코더
+
+- 노이즈(noise)가 있는 이미지에서 노이즈 제거 용도로 사용 가능
+
+![NAE](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/NAE.PNG)
+
+![NAE2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/NAE2.PNG)
+
+#### 예제_잡음이 들어간 필기체 숫자 복원 오토 인코더
+
+```Python
+import matplotlib.pyplot as plt
+import numpy as np
+import tensorflow as tf
+
+encoding_dim = 32
+input_img = tf.keras.layers.Input(shape=(784,))
+encoded = tf.keras.layers.Dense(encoding_dim, activation='relu')(input_img)
+decoded = tf.keras.layers.Dense(784, activation='sigmoid')(encoded)
+autoencoder = tf.keras.models.Model(input_img, decoded)
+
+mnist = tf.keras.datasets.mnist
+
+# MNIST 데이터 처리리
+(x_train, _), (x_test, _) = mnist.load_data()
+x_train = x_train.astype('float32') / 255.
+x_test = x_test.astype('float32') / 255.
+x_train = x_train.reshape((len(x_train), np.prod(x_train.shape[1:])))
+x_test = x_test.reshape((len(x_test), np.prod(x_test.shape[1:])))
+
+
+noise_factor = 0.55
+
+original_train = x_train
+original_test = x_test
+
+# 넘파이 연산을 통한 영상 노이즈 추가
+noise_train = np.random.normal(0, 1, original_train.shape)
+noise_test = np.random.normal(0, 1, original_test.shape)
+noisy_train = original_train + noise_factor * noise_train
+noisy_test = original_test + noise_factor * noise_test
+
+# 학습 및 예측
+autoencoder.compile(optimizer='adam', loss='mse')
+autoencoder.fit(noisy_train, original_train,
+                epochs=50,
+                batch_size=256,
+                shuffle=True,
+                validation_data=(noisy_test, original_test))
+
+denoised_images = autoencoder.predict(noisy_test)
+
+n = 10
+plt.figure(figsize=(20, 6))
+for i in range(1, n + 1):
+  ax = plt.subplot(3, n, i)
+  plt.imshow(noisy_test[i].reshape(28, 28), cmap='gray')
+  plt.gray()
+
+  ax = plt.subplot(3, n, i + n)
+  plt.imshow(denoised_images[i].reshape(28, 28), cmap='gray')
+  plt.gray()
+
+  ax = plt.subplot(3, n, i + 2*n)
+  plt.imshow(original_test[i].reshape(28, 28), cmap='gray')
+  plt.gray()
+
+plt.show()
+
+```
+
+- 실행 결과
+
+![EX3res](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/EX3res.PNG)
+
+## 3절. GAN(Generative Adversarial Network)
+
+#### 생성적 적대 신경망(GAN : Generative Adversarial Network)
