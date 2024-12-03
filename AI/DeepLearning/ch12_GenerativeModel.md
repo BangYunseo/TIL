@@ -250,7 +250,7 @@ plt.show()
 #### 생성적 적대 신경망(GAN : Generative Adversarial Network)
 
 - Goodfellow(2014) 등이 설계한 신경망 모델
-- 생성자 신경망과 판별자 신경망이 서로 적대적으로 경쟁
+- 생성자 신경망과 판별자 신경망이 서로 적대적(반대 행동)으로 경쟁
 - 훈련을 통하여 자신의 작업을 점점 정교하게 수행
 
 - GAN 결과물
@@ -262,14 +262,22 @@ plt.show()
 ![GANS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/GANS.PNG)
 
 - 생성자(generator)
-- 가짜 데이터를 생성을 학습
-- 생성된 데이터는 판별자를 위한 학습 예제로 사용
-- 판별자(discriminator) : 생성자의 가짜 데이터를 진짜 데이터와 구분하는 방법 학습
-- 생성자가 유사하지 않은 데이터를 생성하면 불이익
+  - 가짜 데이터를 생성을 학습
+  - 생성된 데이터는 판별자를 위한 학습 예제로 사용
+
+- 판별자(discriminator)
+  - 생성자의 가짜 데이터를 진짜 데이터와 구분하는 방법 학습
+  - 생성자가 유사하지 않은 데이터를 생성하면 불이익
 
 ##### 목표
 
 ![GANG](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/GANG.PNG)
+
+- z ~ p(z) : 확률 분포 값
+- sigmoid 함수를 통해 1과 0으로 확실한 분류의 목적
+- 생성자는 속일 수 있는 가짜 데이터의 정확도 상승
+- 판별자는 가짜 데이터와 진짜 데이터의 확실한 구분
+- 1과 0의 큰 차이를 벌리는 것이 궁극적인 목표(출력값)
 
 #### 훈련 과정
 
@@ -285,14 +293,165 @@ plt.show()
 
 ![GANIG](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/GANIG.PNG)
 
-#### 판별자 훈련 과정
+#### 훈련 과정
+
+##### 판별자
 
 ![DTS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/DTS.PNG)
 
+##### 생성자
 
+![GTS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/GTS.PNG)
 
+#### 예제_GAN 숫자 이미지 생성
 
+![EXI](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/EXI.PNG)
 
+```Python
+import numpy as np
+import tensorflow as tf
+from matplotlib import pyplot as plt
 
+# 학습 데이터와 테스트 데이터 분리
+(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
+# 이미지를 [0, 1] 범위로 스케일링
+x_train = x_train.astype("float32") / 255
+x_test = x_test.astype("float32") / 255
+
+# 입력 데이터 평탄화
+BATCH_SIZE = 128
+EPOCHS = 2000
+Z_DIMENSIONS = 32
+data = np.reshape(x_train, (x_train.shape[0], 28, 28, 1))
+
+# 판별자 신경망 구축
+def make_discriminator():
+  model = tf.keras.Sequential()
+  model.add(tf.keras.layers.Conv2D(64, (5, 5), strides=(2, 2), padding='same',
+            activation='relu', input_shape=[28, 28, 1]))
+  model.add(tf.keras.layers.Dropout(0.4))
+
+  model.add(tf.keras.layers.Conv2D(128, (5, 5), strides=(2, 2), padding='same',
+            activation='relu'))
+  model.add(tf.keras.layers.Dropout(0.4))
+
+  model.add(tf.keras.layers.Conv2D(256, (5, 5), strides=(2, 2), padding='same',
+            activation='relu'))
+  model.add(tf.keras.layers.Dropout(0.4))
+  model.add(tf.keras.layers.Flatten())
+  model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
+
+  return model
+
+discriminator = make_discriminator()
+
+discriminator.compile(loss='binary_crossentropy',
+                    optimizer=tf.keras.optimizers.Adam(lr=0.0004),
+                    metrics=['accuracy'])
+
+# 생성자 신경망 구축
+def make_generator():
+  model = tf.keras.Sequential()
+
+  model.add(tf.keras.layers.Dense(7*7*64, input_shape=(Z_DIMENSIONS,)))
+  model.add(tf.keras.layers.BatchNormalization(momentum=0.9))
+  model.add(tf.keras.layers.LeakyReLU())
+  model.add(tf.keras.layers.Reshape((7, 7, 64)))
+  model.add(tf.keras.layers.Dropout(0.4))
+
+  model.add(tf.keras.layers.UpSampling2D())
+  model.add(tf.keras.layers.Conv2DTranspose(32,
+            kernel_size=5, padding='same',
+            activation=None,))
+  model.add(tf.keras.layers.BatchNormalization(momentum=0.9))
+  model.add(tf.keras.layers.LeakyReLU())
+  model.add(tf.keras.layers.UpSampling2D())
+  model.add(tf.keras.layers.Conv2DTranspose(16,
+            kernel_size=5, padding='same',
+            activation=None,))
+  model.add(tf.keras.layers.BatchNormalization(momentum=0.9))
+  model.add(tf.keras.layers.LeakyReLU())
+
+  model.add(tf.keras.layers.Conv2D(1, kernel_size=5, padding='same',
+            activation='sigmoid'))
+  return model
+
+# 생성자 생성 및 테스트 : 완전한 노이즈만 출력되어야 함
+generator = make_generator()
+
+noise = tf.random.normal([1, Z_DIMENSIONS])
+generated_image = generator(noise, training=False)
+plt.imshow(generated_image[0, :, :, 0], cmap='gray')
+
+# 생성적 적대 신경망 구축
+z = tf.keras.layers.Input(shape=(Z_DIMENSIONS,))
+fake_image = generator(z)
+discriminator.trainable = False
+prediction = discriminator(fake_image)
+gan_model = tf.keras.models.Model(z, prediction)
+
+gan_model.compile(loss='binary_crossentropy',
+                  optimizer=tf.keras.optimizers.Adam(lr=0.0004),
+                  metrics=['accuracy'])
+
+# GAN 학습
+def train_gan():
+  for i in range(EPOCHS):
+    real_images = np.reshape(
+      data[np.random.choice(data.shape[0],
+                      BATCH_SIZE,
+                      replace=False)], (BATCH_SIZE,28,28,1))
+    fake_images = generator.predict(
+      np.random.uniform(-1.0, 1.0,
+                  size=[BATCH_SIZE, Z_DIMENSIONS]))
+
+    # 진짜 이미지와 가짜 이미지 붙임
+    x = np.concatenate((real_images,fake_images))
+
+    # 정답 레이블 생성
+    y = np.ones([2*BATCH_SIZE,1])
+    y[BATCH_SIZE:,:] = 0
+
+    # 판별자 훈련
+    discriminator.train_on_batch(x, y)
+
+    noise = np.random.uniform(-1.0, 1.0, size=[BATCH_SIZE, Z_DIMENSIONS])
+    y = np.ones([BATCH_SIZE,1])
+
+    # 노이즈 입력으로 생성자 훈련
+    gan_model.train_on_batch(noise, y)
+
+    if i%100 == 0:
+      noise = np.random.uniform(-1.0, 1.0,
+                      size=[5, Z_DIMENSIONS])
+      generated_image = generator.predict(noise)
+      plt.figure(figsize=(10,10))
+
+      # 중간 결과 출
+      for i in range(generated_image.shape[0]):
+        plt.subplot(1, 5, i+1)
+        plt.imshow(generated_image[i, :, :, 0],
+            cmap='gray')
+      plt.show()
+train_gan()
+```
+
+- 실행 결과
+
+![EX4res](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/EX4res.PNG)
+
+##### 판별자
+
+![D](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/D.PNG)
+
+##### 생성자
+
+- 생성자 신경망 구축
+  - 생성자는 일반적인 컨볼루션 레이어의 반대 기능을 수행
+  - 일반적인 컨벌루션 레이어는 입력 이미지로부터 특징을 추출하여서 활성화 맵을 출력
+  - GAN 생성자는 활성화 맵으로 이미지를 구성
+ 
+
+![G](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch12/G.PNG)
 
