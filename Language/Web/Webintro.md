@@ -1,12 +1,10 @@
-# Chapter 0. 인터넷과 웹
+# Web Introduce
 
 > '쉽게 배우는 HTML5 & CSS & JavaScript' 2장 내용
 >
 > 1절. 인터넷과 웹
 >
 > 2절. 인터넷 주소
->
-> 3절. 이동 통신의 변화
 
 ## 1절. 인터넷과 웹
 
@@ -267,4 +265,32 @@
 - 한국 : KRNIC
 - 일본 : JPNIC
 
-## 3절. 이동 통신의 변화
+- 대표적인 도메인 등록 사이트
+
+  - http://www.mireene.com/
+  - http://www.gabia.com/
+  - http://www.dothome.co.kr/
+
+#### KRNIC(Korea Network Information Center, 한국인터넷정보센터)
+
+- 대한민국의 인터넷 발전을 위한 기능 유지와 이용 활성화를 위해 설립된 비영리 기관
+
+- 수행 역할
+
+  - 인터넷 주소 관리 체제의 정립
+
+  - 주소의 원활한 할당 및 관리
+
+  - 인터넷 관련 국익 보호 활동
+
+  - 기타 인터넷 이용 촉진을 위한 활동
+
+  - IP 주소 및 도메인 등록서비스의 수행
+
+  - 주요 정보 서비스 제공
+
+  - ICANN, APTLD, APNIC 등과의 정보 교환
+
+  - 업무협력
+
+  - 기술교류
