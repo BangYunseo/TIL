@@ -250,11 +250,11 @@
 
 - 특정 컴퓨터 또는 사으트의 주소 탐색을 위해 사람이 이해하기 쉬운 도메인 이름을 숫자 주소인 IP 주소로 변환해주는 역할
 
-![DNS]()
+![DNS](https://github.com/BangYunseo/TIL/blob/main/Language/Web/Image/Intro/DNS.PNG)
 
 #### 도메인 체계
 
-![DNSsys]()
+![DNSsys](https://github.com/BangYunseo/TIL/blob/main/Language/Web/Image/Intro/DNSsys.PNG)
 
 #### NIC(Network Information Center)
 
