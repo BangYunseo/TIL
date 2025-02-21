@@ -70,6 +70,7 @@
 #### HTTP(HyperText Transfer Protocol)
 
 - 인터넷 상에서 웹 서버와 클라이언트 간의 문서 전송을 위한 통신 규약
+
 - 인터넷 상의 하이퍼텍스트(hypertext) 문서 교환을 위해 사용
 
 ##### 하이퍼텍스트(HyperText)
@@ -169,16 +170,23 @@
 - URL 프로토콜
 
   - 웹 자원
+
     - HTTP(HyperText Transfer Protocol)
     - HTTPS(HTTP Secure)
+
   - 전자 메일 주소
+
     - "mailto"
     - FTP(File Transfer Protocol)
+
   - 서버의 파일
     - "ftp"
     - 원격 컴퓨터에 엑세스하기 위한 세션의 텔넷
 
-- 자원 이름은 서버 또는 웹 서비스를 식별하는 IP 주소 또는 도메인 이름, 프로그램 이름 또는 서버의 파일 경로와 이메일 주소 등
+- 자원 이름
+
+  - 서버 또는 웹 서비스를 식별하는 IP 주소 또는 도메인 이름
+  - 프로그램 이름 또는 서버의 파일 경로와 이메일 주소
 
 - 웹 사이트 주소뿐만 아니라 컴퓨터 네트워크 상의 자원을 모두 표현 가능
 
