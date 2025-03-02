@@ -1,10 +1,14 @@
-# HTML Introduce
+# Chapter 2. 여러 가지 태그
 
-> '쉽게 배우는 HTML5 & CSS & JavaScript' 4장 내용
+> '쉽게 배우는 HTML5 & CSS & JavaScript' 5장 내용
 >
-> 1절. 구조
+> 1절. 이미지 삽입 태그
 >
-> 2절. 태그
+> 2절. 목록 관련 태그
+>
+> 3절. 특정 문서 연결 태그
+>
+> 4절. 프레임(FRAME) 관련 태그
 
 ## 1절. 구조
 
