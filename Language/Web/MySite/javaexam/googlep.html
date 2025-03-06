@@ -1,0 +1,31 @@
+<!doctype html>
+<HTML lang="ko-kr">
+<head>
+<meta charset="utf-8" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+
+    function getLocation()
+    {
+    if (navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(showPosition1);
+        }
+        else
+        {
+            $("#setPosition").html("Webbrowser x.");
+        }
+    }
+    function showPosition1(position)
+    {
+        $("#setPosition").html("latitue: " + position.coords.latitude + "<br /> longitude: " + position.coords.longitude);
+    }
+
+
+</script>
+</head>
+<body>
+<p id="setPosition"></p>
+<button onclick="getLocation()"> Location for latitue, longitude</button>
+</body>
+</html>

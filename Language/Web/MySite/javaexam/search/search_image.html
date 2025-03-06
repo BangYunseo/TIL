@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="mystyle.css">
+    <title>이미지 검색</title>
+</head>
+
+<body>
+
+	<h1><span>이미지</span><span>검</span><span>색</span><span>기</span></h1>
+	 <div style="text-align:center">
+		<a href="https://api.jquery.com/jquery.ajax/" target=_new>jQuery AJAX</a> + <a href="https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide" target=_new>카카오 개발자 이미지 검색 API</a>
+	 </div>
+        <div class="mx-auto mt-5 bar input-group mb-3">
+            <input id="imgName" type="text" class="border border-primary rounded form-control rounded-fill" placeholder="검색하고자 하는 이미지 입력" aria-label="Recipient's username" aria-describedby="basic-addon2">
+			<button id="search">검색</button>
+        </div>
+
+    </form>
+
+    <p id="t1"></p>
+    <p id="t2"></p>
+    <p id="t3"></p>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#search").click(function () {
+                $.ajax({
+                    method: "GET",
+                    url: "https://dapi.kakao.com/v2/search/image?target=title",
+                    data: { query: $("#imgName").val() },
+                    headers: { Authorization: "KakaoAK a5da5d5d4b64a556284b9249df850ddb" }
+                })
+                    .done(function (msg) {
+                        $("#t1").html("<center><p><strong>" + $("#imgName").val() + " 검색결과: 카테고리 - " + msg.documents[0].collection + " </strong></center>");
+                      //  $("#t2").html("<center><a href="+msg.documents[0].doc_url+">"+"<img width = '" + 100 + "'height = '" + msg.documents[0].height + "'src='" + msg.documents[0].thumbnail_url + "'/></a></center>");
+                        $("#t2").html("<center><a href="+msg.documents[0].doc_url+">"+"<img src='" + msg.documents[0].thumbnail_url + "'/></a></center>");
+                        $("#t3").html("<center>상세정보를 보고 싶으면 => <a href="+msg.documents[0].doc_url+">"+"여기를 클릭 </a></center>");
+                    });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

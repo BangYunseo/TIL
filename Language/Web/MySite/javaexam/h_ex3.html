@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko-kr">
+<head>
+ <meta charset="UTF-8">
+ <script type="text/javascript">
+	function change_image()
+	{
+		// 코드 작성
+	}
+
+	function bull_on()
+	{
+		document.getElementById('myimage').src='images/on.gif';
+	}
+
+	function bull_off()
+	{
+		document.getElementById('myimage').src='images/off.gif';
+	}
+	</script>
+</head>
+<body>
+<h1> Javascript 이미지 변경</h1>
+<img src="images/off.gif" id="myimage" width="100" height="180" border="0" alt="전구off" onclick="change_image();">
+<input type="button" value="전구 On" onclick="bull_on();">
+<input type="button" value="전구 Off" onclick="bull_off();">
+<input type="button" value="전구 On/Off" onclick="change_image();">
+</body>
+</html>

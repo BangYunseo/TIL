@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#map{
+ width:200px;
+ height:300px;
+ border:1px solid black;
+}
+</style>
+
+<script src="http://code.jquery.com/jquery-1.7.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script>
+ $(document).ready(function(){
+	navigator.geolocation.getCurrentPosition(LoadMap)
+ });
+ 
+ function LoadMap(pos){
+	var lat = pos.coords.latitude;
+	var lng = pos.coords.longitude;
+
+  var center = new google.maps.LatLng(lat, lng);
+
+  var park = new google.maps.LatLng(37.548527, 127.080783);
+
+  var mapArea = document.querySelector('#map'); //google map은 jQuery사용안됨.
+
+  var map = new google.maps.Map(mapArea, {
+
+   mapTypeId:google.maps.MapTypeId.ROADMAP,
+
+   zoom:17,
+
+   center:center
+
+  }); //(어디에 지도를 뿌릴 것인지, 옵션)
+
+  
+
+  var marker = new google.maps.Marker({
+
+     position: center,
+
+     title:"Hello World!"
+
+  });
+
+ 
+
+  marker.setMap(map);
+    
+
+  // 공원 찍기
+   var marker = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: park,
+    visible: true
+   });
+ 
+ }
+ 
+ 
+ 
+ 
+
+</script>
+
+</head>
+
+<body>
+
+<div id="map"></div>
+
+</body>
+
+</html>

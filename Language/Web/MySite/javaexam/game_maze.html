@@ -1,0 +1,200 @@
+<HTML lang="ko-kr">
+<meta charset="UTF-8">
+  <head>
+    <title>Inside Dynamic HTML - A-Maze 10K Demo</title>
+    <link REL="stylesheet" href="/_res/css/tone.css" type="text/css">
+    <meta Name="description" Content="DHTML Maze Game in under 10K. For Internet Explorer 4.0 Only.">
+    <meta Name="keywords" Content="developers, microsoft, web, internet, explorer, 4.0, dynamic, html, document, object, model, jscripts, javascripts, VBScripts, programming">
+  <style TYPE="text/css">
+    #board TD {width: 15pt; height: 15pt; font-size: 2pt; }
+    TD.foot {font-size: 10pt;}
+    #board TD.start {font-size: 8pt; border-left: 2px black solid; background:#FCB805; border-top: 2px black solid;text-align: center; color: red}
+    #board TD.end {font-size: 8pt; text-align: center; color: green}
+    #message {margin: 0pt; padding: 0pt; text-align: center}
+  </style>
+  <script LANGUAGE="JavaScript">
+    var maze = new Array()
+    var sides = new Array("Border-Top", "Border-Right")
+    for (var rows=0; rows<13; rows++)
+      maze[rows] = new Array()
+    maze[0][0] = new Array(1,1,1,1,1,1,1,1,1,1,1,1)
+    maze[0][1] = new Array(0,0,1,0,1,0,0,0,0,1,0,1)
+    maze[1][0] = new Array(1,0,0,0,1,0,1,1,1,0,1,1)
+    maze[1][1] = new Array(0,1,1,0,0,1,1,0,0,1,0,1)
+    maze[2][0] = new Array(1,0,1,0,1,0,0,1,1,0,1,1)
+    maze[2][1] = new Array(0,0,0,0,1,1,1,0,0,0,0,1)
+    maze[3][0] = new Array(0,1,1,1,1,1,0,0,0,0,1,1)
+    maze[3][1] = new Array(1,0,0,1,0,0,0,1,1,0,0,1)
+    maze[4][0] = new Array(0,0,0,0,0,0,1,1,1,1,1,1)
+    maze[4][1] = new Array(1,1,1,1,1,0,0,0,0,0,1,1)
+    maze[5][0] = new Array(0,0,0,0,1,0,1,1,1,1,0,0)
+    maze[5][1] = new Array(1,1,1,1,1,1,0,0,0,1,0,1)
+    maze[6][0] = new Array(0,0,0,0,0,0,1,1,0,1,0,1)
+    maze[6][1] = new Array(1,1,1,1,1,1,0,0,0,1,0,1)
+    maze[7][0] = new Array(1,0,1,0,0,0,1,0,1,1,0,1)
+    maze[7][1] = new Array(1,1,1,0,1,0,0,1,0,1,1,1)
+    maze[8][0] = new Array(0,0,0,1,0,0,1,1,0,0,0,0)
+    maze[8][1] = new Array(0,1,0,1,1,0,0,0,1,1,0,1)
+    maze[9][0] = new Array(0,0,0,0,0,1,1,1,1,0,1,1)
+    maze[9][1] = new Array(1,1,1,1,0,0,0,0,0,1,1,1)
+    maze[10][0] = new Array(0,0,0,0,0,1,1,1,1,1,0,0)
+    maze[10][1] = new Array(1,1,1,0,1,0,0,0,0,1,0,1)
+    maze[11][0] = new Array(0,0,1,1,1,1,1,1,1,0,0,0)
+    maze[11][1] = new Array(1,0,1,0,0,0,0,0,0,0,1,1)
+    maze[12][0] = new Array(0,0,0,0,0,1,1,1,1,0,1,0)
+    maze[12][1] = new Array(1,1,0,1,0,0,0,1,0,0,1,1)
+
+    function testNext(nxt) {
+      if ((board.rows[start.rows].cells[start.cols].style.backgroundColor=="#FCB805") && (nxt.style.backgroundColor=='#FCB805')) {
+        message.innerText="I see you changed your mind."
+        board.rows[start.rows].cells[start.cols].style.backgroundColor=""
+        return false
+      }
+      return true
+    }    
+
+    function moveIt() {
+      if (!progress) return
+      switch (event.keyCode) {
+        case 37: // left
+          if (maze[start.rows][1][start.cols-1]==0) {
+            if (testNext(board.rows[start.rows].cells[start.cols-1]))
+              message.innerText="왼쪽으로 가고 있습니다."
+            start.cols--
+            document.all.board.rows[start.rows].cells[start.cols].style.backgroundColor="#FCB805"
+          } else
+          message.innerText="앗! 왼쪽으론 못가요."
+
+          break;
+        case 38: // up
+          if (maze[start.rows][0][start.cols]==0) {
+            if (testNext(board.rows[start.rows-1].cells[start.cols]))
+              message.innerText="북쪽으로 가고 있습니다."
+            start.rows--
+            document.all.board.rows[start.rows].cells[start.cols].style.backgroundColor="#FCB805"
+          } else
+          message.innerText="앗! 북쪽으론 못가요."
+
+          break;
+        case 39: // right
+          
+          if (maze[start.rows][1][start.cols]==0) {
+            if (testNext(board.rows[start.rows].cells[start.cols+1]))
+              message.innerText="동쪽으로 가고 있습니다."
+            start.cols++
+            document.all.board.rows[start.rows].cells[start.cols].style.backgroundColor="#FCB805"
+          }
+          else
+          message.innerText="앗! 동쪽으론 못가요."
+
+          break;
+        case 40: //down
+          if (maze[start.rows+1]==null) return
+          if (maze[start.rows+1][0][start.cols]==0) {
+            if (testNext(board.rows[start.rows+1].cells[start.cols]))
+              message.innerText="남쪽으로 가고 있습니다."
+            start.rows++
+            document.all.board.rows[start.rows].cells[start.cols].style.backgroundColor="#FCB805"
+          } else
+          message.innerText="앗! 남쪽으론 못가요."
+
+          break;
+      }
+      if (document.all.board.rows[start.rows].cells[start.cols].innerText=="end") {
+        message.innerText="만세! 드디어 해냈다!"
+        progress=false
+      }
+    }
+  </script>
+
+    <script LANGUAGE="Javascript">
+     var MS=navigator.appVersion.indexOf("MSIE");
+     window.isIE4 =(MS>0) && ((parseInt(navigator.appVersion.substring(MS+5,MS+6)) >= 4) && (navigator.appVersion.indexOf("MSIE"))>0 && (navigator.appVersion.indexOf("B1"))==-1) ;
+     var curShow = null
+     var curItem = null
+
+ 
+    var fRunning=0
+    function fixSize() {
+        var newWidth = document.body.clientWidth - document.all.why.offsetLeft -10
+        if (newWidth>=wWidth) 
+          document.all.why.style.pixelWidth = newWidth
+        else
+          document.all.why.style.pixelWidth = wWidth
+    }
+    </script>
+     <script LANGUAGE="JavaScript" FOR="jumpbar" EVENT="onscriptletevent(name, eventData)">
+       switch (name) {
+         case "onnavigate":
+           window.location.href = eventData
+           break; 
+         case "oncnavigate":
+           eval(eventData)
+           break;
+       }
+       
+     </script>
+
+  <meta name="Microsoft Theme" content="bars 011, default"></head>
+  <body background="../../../_themes/bars/barbkgde.gif" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#999933" alink="#993300">
+    <div CLASS="header">
+
+      <div ID="navbar"><object ID="jumpbar" STYLE="width: 0; height: 0" DATA="/jumpbar2.htm" TYPE="text/x-scriptlet"></object>
+      </div>
+    </div>
+     <div class="menu" onselectstart="return false"><center>
+      <h2 child="whatsnew" ID="f1"><span ID="pwhatsnew" CLASS="current" style="visibility: visible;"></span>미로찾기</h2></center>
+    </div>
+
+    <div CLASS="why" ID="why" STYLE="display: none">
+        <script>
+          var wWidth = document.all.why.style.pixelWidth
+          var newWidth = document.body.clientWidth - document.all.why.offsetLeft - 10
+          if (newWidth>=wWidth) 
+            document.all.why.style.pixelWidth = newWidth
+          document.all.why.style.display = ""
+          window.onresize = fixSize
+        </script>
+        <div ID="whatsnew" CLASS="new">
+  <p ALIGN="center">방향키를 사용하여 미로를 찾아보세요.</p><br>
+  <p><table ID="board" ALIGN="CENTER" CELLSPACING="0" CELLPADDING="0">
+  <script LANGUAGE="JavaScript">
+    for (var row = 0; row<maze.length; row++) {
+      document.write("<TR>") 
+
+      for (var col = 0; col<maze[row][0].length; col++) {
+        document.write("<TD STYLE='")
+        for (var cell = 0; cell<2; cell++) {
+          if (maze[row][cell][col]==1) 
+            document.write(sides[cell]+": 2px black solid;")
+        }
+        if ((0==col) && (0!=row))
+          document.write("border-left: 2px black solid;")
+        if (row==maze.length-1)
+          document.write("border-bottom: 2px black solid;")
+        if ((0==row) && (0==col)) 
+          document.write(" background-color:#FCB805;' class=start>start</TD>")
+        else
+         if ((row==maze.length-1) && (col==maze[row][0].length-1))
+           document.write("' class=end>end</TD>")
+         else
+          document.write("'>&nbsp;</TD>")
+      }
+      document.write("</TR>")
+    }
+    var start = new Object
+    start.rows = 0
+    start.cols = 0
+    progress=true
+    document.onkeydown = moveIt;
+  </script>
+  </table>
+  <p ID="message">&nbsp;</p>
+  
+
+        </div>
+
+        
+    </div>
+  </body>
+</html>
