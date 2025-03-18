@@ -38,7 +38,7 @@
     - 장면(Scene)
     - 인스펙터(Inspector)
 
-![ch00-04-projectObject](https://github.com/BangYunseo/TIL/blob/main/GameEngine/Unity/Image/ch00/ch00-03-projectObject.PNG)
+![ch00-04-projectObject](https://github.com/BangYunseo/TIL/blob/main/GameEngine/Unity/Image/ch00/ch00-04-projectObject.PNG)
 
 - 계층구조에서 오른쪽 마우스 클릭으로 오브젝트 생성 가능
 
