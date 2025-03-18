@@ -1,20 +1,21 @@
-# Chapter 3. DBS, DBMS의 구성과 데이터 언어
+# Chapter 3. 데이터베이스 시스템
 
-> 1절. DB 시스템이란?
+> 1절. 데이터베이스 시스템 정의
 >
-> 2절. 데이터 언어
+> 2절. 데이터베이스 구조
 >
-> 3절. DB 관리자와 사용자
+> 3절. 데이터베이스 사용자
 >
-> 4절. DB 컴퓨터
+> 4절. 데이터 언어
 >
-> 5절. DBMS의 DB 연산 처리 방법
->
-> 6절. DBMS의 구성 요소
+> 5절. 
 
-## 1절. DB 시스템이란?
-#### DB 시스템(DBS : DataBase System)이란?
-* 데이터를 DB에 저장하고 DBMS를 사용해서 필요한 정보를 생성하는 컴퓨터 중심의 시스템
+## 1절. 데이터베이스 시스템 정의
+
+#### 데이터베이스 시스템(DBS : DataBase System)
+- 데이터베이스에 데이터를 저장하고 이를 관리하여 조직에 필요한 정보를 생성하는 시스템
+
+![Image](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/NU.PNG)
 
 #### DBS의 구성 요소
 |구성 요소|영어|특성|
