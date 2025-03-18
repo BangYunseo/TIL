@@ -1,6 +1,6 @@
-# Chapter 5. ER 모델(Entity-Relationship Modeling)
+# Chapter 5. 관계 데이터 모델
 
-> 1절. ER 모델
+> 1절. 관계 데이터 모델의 개념
 >
 > 2절. 개체
 >
@@ -8,9 +8,23 @@
 >
 > 4절. 관계
 
-## 1절. ER 모델
-#### ER 모델이란?
-* '개체 집합'과 '관계 집합'을 이용해서 현실 세계의 데이터를 개념적으로 표현하는 모델
+## 1절. 관계 데이터 모델의 개념
+#### 관계 데이터 모델
+- 개념적 구조를 논리적 구조로 표현하는 논리적 데이터 모델
+- 하나의 개체에 대한 데이터를 하나의 릴레이션에 저장
+
+![ch05-01-](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ch05-01.PNG)
+
+
+#### 기본 용어
+
+##### 릴레이션(relation)
+- 하나의 개체에 관한 데이터를 2차원 테이블의 구조로 저장한 것
+- 행과 열로 구성된 테이블
+- 파일 관리 시스템 관점에서 파일(file)에 대응
+- 릴레이션 내에서 생성되는 관계 : 릴레이션 내 데이터들의 관계
+- 릴레이션 간에 생성되는 관계 : 릴레이션 간의 관계
+
 
 ![ERmodel](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ERmodel.PNG)
 
