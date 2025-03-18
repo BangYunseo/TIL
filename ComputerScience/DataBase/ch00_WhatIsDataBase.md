@@ -22,7 +22,7 @@
 
 - Required Skills
 
-![ch00-02-RS](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/ch00-01-RS.PNG)
+![ch00-02-RS](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/ch00-02-RS.PNG)
 
 #### Responsibilities, Skills, Tools
 
