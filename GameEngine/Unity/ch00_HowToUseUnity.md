@@ -2,7 +2,7 @@
 
 > 1절. 프로젝트 생성
 >
-> 2절. 데이터베이스 관련 직업
+> 2절. 인터페이스
 >
 > 3절. 데이터와 데이터베이스
 
@@ -12,17 +12,29 @@
 
 #### Unity Hub
 
-- 유니티 
+- 유니티 허브 설치 후
 
-![ch00-01-DB](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/ch00-01-DB.PNG)
+![ch00-01-UnityHub](https://github.com/BangYunseo/TIL/blob/main/GameEngine/Unity/Image/ch00/ch00-01-UnityHub.PNG)
 
-## 2절. 데이터베이스 관련 직업
+- 프로젝트 템플릿 선택 후 생성
 
-#### Data Analyst VS Data Scientist VS Data Engineer
+![ch00-02-myProject](https://github.com/BangYunseo/TIL/blob/main/GameEngine/Unity/Image/ch00/ch00-02-myProject.PNG)
 
-- Required Skills
+## 2절. 인터페이스 
 
-![ch00-02-RS](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/ch00-02-RS.PNG)
+#### 기본 인터페이스
+
+![ch00-03-projectInterface](https://github.com/BangYunseo/TIL/blob/main/GameEngine/Unity/Image/ch00/ch00-03-projectInterface.PNG)
+
+- 4개의 창으로 구성
+    - 프로젝트(Project)
+    - 계층구조(Hierachy)
+    - 장면(Scene)
+    - 인스펙터(Inspector)
+
+- 계층구조에서 오른쪽 마우스 클릭으로 오브젝트 생성 가능
+
+
 
 #### Responsibilities, Skills, Tools
 
