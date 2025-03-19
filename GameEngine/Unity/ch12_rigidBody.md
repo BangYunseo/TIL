@@ -73,7 +73,7 @@
 
 - 특정 컴포넌트가 필요할 경우 RequireComponent를 사용해 null 오류 방지
 
-###### 2) FixedUpdate에서 물리 연산 수행
+##### 2) FixedUpdate에서 물리 연산 수행
 
 - Update()가 아닌 FixedUpdate()에서 물리 연산 수행
 - Unity 물리 업데이트는 0.02초(50Hz) 간격
