@@ -63,84 +63,64 @@
 |Discrete(기본값)|매 물리 프레임마다 충돌 감지(Basic Way)|
 |Continuous(연속)|빠른 오브젝트의 충돌 감지에 사용(ex : bullet, 대신 부하가 큼|
 |Continuous Dynamic|동적 오브젝트간 충돌 감지(가장 비용이 큼)|
-|Continuous Speculative: 충돌을 예측하는 방식으로 비용이 적지만 한계 존재|
+|Continuous Speculative|충돌을 예측하는 방식으로 비용이 적지만 한계 존재|
 
 
 
-4. Rigidbody 사용 팁
+#### 사용 팁
 
-1. RequireComponent 사용:
+##### 1) RequireComponent 사용
 
-특정 컴포넌트가 필요할 경우 RequireComponent를 사용해 null 오류 방지.
+- 특정 컴포넌트가 필요할 경우 RequireComponent를 사용해 null 오류 방지
 
+###### 2) FixedUpdate에서 물리 연산 수행
 
+- Update()가 아닌 FixedUpdate()에서 물리 연산 수행
+- Unity 물리 업데이트는 0.02초(50Hz) 간격
 
-2. FixedUpdate에서 물리 연산 수행:
+##### 3) AddForce 방식
 
-Update()가 아니라 FixedUpdate()에서 물리 연산을 수행해야 함.
-
-Unity의 물리 업데이트는 기본적으로 0.02초(50Hz) 간격으로 실행됨.
-
-
-
-3. 힘 추가 방식 (AddForce)
-
+```C#
 rigidbody.AddForce(Vector3 direction * force, ForceMode.Force);
 
 rigidbody.AddRelativeForce(Vector3 direction * force, ForceMode.Force);
+```
 
-ForceMode.Force: 지속적인 힘 적용 (일반 이동).
-
-ForceMode.Impulse: 순간적인 힘 적용 (넉백, 점프).
-
-ForceMode.Acceleration: 질량을 무시하고 가속력 적용.
-
-ForceMode.VelocityChange: 즉각적인 속도 변화 (부스트, 브레이크 등).
-
-
-
-4. Transform을 직접 변경하지 말 것
-
-Rigidbody의 물리 연산과 충돌할 수 있으므로 Transform을 직접 수정하지 말고 AddForce 등을 사용할 것.
+|함수|내용|
+|:--:|:--|
+|ForceMode.Force|지속적인 힘(일반 이동)|
+|ForceMode.Impulse|순간적인 힘(넉백, 점프)|
+|ForceMode.Acceleration|질량을 무시하고 가속력 적용|
+|ForceMode.VelocityChange|즉각적인 속도 변화 (부스트, 브레이크 등)|
 
 
+##### 4) Transform을 직접 변경하지 금지
 
-5. Kinematic Rigidbody 활용
-
-벽에 붙거나 특정 위치에 고정시키고 싶을 때 Kinematic을 사용.
-
-
-
-6. 플랫폼 게임에서 점프와 낙하 조정
-
-Rigidbody2D에서는 Gravity Scale을 조절하면 점프 높이와 낙하 속도를 조절할 수 있음.
-
-3D에서는 추가적인 아래쪽 힘을 적용해야 자연스러운 낙하 구현 가능.
+- Rigidbody의 물리 연산과 충돌 가능성 존재
+- Transform을 직접 수정하지 말고 AddForce 사용
 
 
+##### 5) Kinematic Rigidbody 활용
 
-7. Velocity 직접 설정 가능하지만 권장되지 않음
+- 벽에 붙거나 특정 위치에 고정시키고 싶은 경우
 
+
+##### 6) 플랫폼 게임에서 점프 및 낙하 조정
+
+- Rigidbody2D
+    - Gravity Scale로 점프 높이, 낙하 속도 조절 가능
+
+- Rigidbody3D
+    - 추가적인 아래쪽 힘을 적용해야 자연스러운 낙하 구현 가능
+
+
+
+##### 7) Velocity 직접 설정 금지
+
+```C#
 rigidbody.velocity = new Vector3(x, y, z);
+```
 
-직접 설정하면 현실적인 물리 연산이 적용되지 않을 수 있음.
+- 직접 설정 시 현실적인 물리 연산이 적용 불가 가능성 존재
 
 
-
-
-5. 게임 디자인 팁
-
-현실적인 물리 법칙을 고집하지 말 것!
-
-예를 들어, Hollow Knight 같은 게임에서의 점프는 현실적이지 않지만 재미있음.
-
-Gravity Scale 조정 및 속도 조절로 원하는 감각을 만들어야 함.
-#### rigidbody with 2D
-
-- Unity 3D는 Nvidia Physx 사용
-- Box2D는 2D 물리 엔진 사용
-- 구현 방식의 차이 존재
-
-#### Scene에서의 구현
-
-- Speed, Velocity, Tensors 존재
