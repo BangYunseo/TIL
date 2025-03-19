@@ -22,7 +22,7 @@
 - 유니티의 물리 엔진에 해당
 - 유니티 Transform 조작 가능
 
-![ch12-01-interface](https://github.com/BangYunseo/TIL/blob/main/GameEngine/Unity/Image/ch00/ch12-01-interface.PNG)
+![ch12-01-interface](https://github.com/BangYunseo/TIL/blob/main/GameEngine/Unity/Image/ch12/ch12-01-interface.PNG)
 
 - 아래에 바닥을 두고 실행시킬 경우, 물리 엔진 적용 모습 확인 가능
 
