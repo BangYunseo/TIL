@@ -82,7 +82,6 @@
 
 ```C#
 rigidbody.AddForce(Vector3 direction * force, ForceMode.Force);
-
 rigidbody.AddRelativeForce(Vector3 direction * force, ForceMode.Force);
 ```
 
