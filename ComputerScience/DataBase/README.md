@@ -4,10 +4,6 @@
 * 데이터베이스 기초 정리 
 * 참고 서적 : 데이터베이스 개론 (개정 3판)
 
-[참고 강의](https://www.step.or.kr/home/ncs)
-<br>
-[참고 강의 2](http://www.youtube.com/playlist?list=PLcXyemr8ZeoREWGhhZi5FZs6cvymjIBVe)
-
 ## When?
 * 2025.03 ~ 2025.06 학습 완료
 * 마지막 수정일 : 2025.03.18
