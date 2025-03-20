@@ -17,6 +17,7 @@
 #### 정보 처리(Information Processing)
 - 데이터에서 정보를 추출하는 과정 및 방법
 
+(이미지 수정 필요)
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-02-DI.PNG"  width="30%" height="30%"/>
 
 #### 정보 시스템과 데이터베이스
