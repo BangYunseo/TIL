@@ -1,4 +1,4 @@
-# Chapter 1. 데이터베이스 관리 시스템(DBMS)
+# Chapter 1. 데이터베이스 기본 개념
 
 > 1절. 데이터베이스의 필요성
 >
@@ -6,12 +6,14 @@
 >
 > 3절. 데이터와 데이터베이스
 
-## 1절. DBMS의 개념
-#### 데이터베이스 관리 시스템(DBMS)이란?
-* DBMS(DataBase Management System)
-* 데이터베이스 관리 시스템
+## 1절. 데이터베이스의 필요성
 
-![DBMS](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/DBMS.PNG)
+#### 데이터와 정보
+- 데이터(Data) : 현실 시계에서 단순히 관찰하거나 측정하여 수집한 사실 혹은 값
+- 정보(Information) : 의사 결정에 유용하게 활용할 수 있도록 데이터를 처리한 결과물
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/DBMS.PNG"  width="60%" height="60%"/>
+
 
 * DB의 정의와 조작, 제어 기능 제공
 * 여러 사용자와 응용 프로그램이 DB를 공용할 수 있도록 관리
