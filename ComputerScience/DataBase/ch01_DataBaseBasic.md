@@ -4,124 +4,126 @@
 >
 > 2절. 데이터베이스의 정의 및 특성
 >
-> 3절. 데이터와 데이터베이스
+> 3절. 데이터 과학 시대의 데이터
+
+
 
 ## 1절. 데이터베이스의 필요성
 
 #### 데이터와 정보
+
 - 데이터(Data) : 현실 시계에서 단순히 관찰하거나 측정하여 수집한 사실 혹은 값
 - 정보(Information) : 의사 결정에 유용하게 활용할 수 있도록 데이터를 처리한 결과물
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-01-DI.PNG"  width="30%" height="30%"/>
 
 #### 정보 처리(Information Processing)
+
 - 데이터에서 정보를 추출하는 과정 및 방법
 
-(이미지 수정 필요)
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-02-DI.PNG"  width="30%" height="30%"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-02-IP.PNG"  width="60%" height="60%"/>
 
 #### 정보 시스템과 데이터베이스
+
 - 정보 시스템(Information System) : 조직 운영에 필요한 데이터를 수집하여 저장 후 필요 시 유용한 정보를 만드는 수단
 - 데이터베이스 : 정보 시스템 안에서 데이터를 저장하고 있다가 필요 시 제공하는 역할
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-03-DI.PNG"  width="30%" height="30%"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-03-IS.PNG"  width="50%" height="50%"/>
 
-## 2절. DBMS의 발전 배경
-#### 사회적 요구
+## 2절. 데이터베이스의 정의 및 특성
 
-![SocialDBMS](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/SocialDBMS.PNG)
+#### 데이터베이스(DB; DataBase)
 
-#### 기술적 발전
-* 저렴한 고속 자기디스크(Magnetic Disk)의 실용화
-* 대량 정보 저장 및 빠른 검색 지원 가능
-* 데이터 통신 기술의 발전으로 빠른 정보 전송 가능
-* 데이터의 동시 공유 가능
+- 특정 조직의 여러 사용자가 공유하여 사용할 수 있도록 통합해서 저장한 운영 데이터의 집합
 
-#### 파일 처리 시스템이란?
-* 각 응용 프로그램이 자신의 데이터를 별도의 파일 형태로 관리하는 파일 중심의 데이터 처리 시스템
+|종류|내용|
+|:--:|:---|
+|통합 데이터(Integrated Data)|최소의 중복과 통제가 가능한 중복만 허용하는 데이터|
+|공유 데이터(Shared Data)|특정 조직의 여러 사용자가 함께 소유하고 이용할 수 있는 공용의 데이터|
+|저장 데이터(Stored Data)|컴퓨터가 접근할 수 있는 매체에 저장된 데이터|
+|운영 데이터(Operational Data)|조직의 주요 기능을 수행하기 위해 지속적으로 필요한 데이터|
 
-![FMS](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/FMS.PNG)
+#### 데이터베이스 특징
 
-#### 파일 처리 시스템의 특징
-* 응용 프로그램과 데이터 간의 상호 의존성
-* 대부분 응용 프로그램과 데이터 파일이 일대일 대응
-* 이로 인해 데이터 종속성과 데이터 중복성 유발
+|특징|내용|
+|:--:|:---|
+|실시간 접근(Real-Time Accessibility)|사용자의 데이터 요구에 실시간 응답|
+|계속 변화(Continuous Evolution)|데이터의 계속적인 삽입, 삭제, 수정을 통해 현재의 정확한 데이터 유지|
+|동시 공유(Concurrent Sharing)|서로 다른 데이터의 동시 사용뿐만 아니라 같은 데이터의 동시 사용도 지원|
+|내용 기반 참조(Content Reference)|데이터가 저장된 주소나 위치가 아닌 내용으로 참조(ex : 재고량이 1,000개 이상인 제품의 이름 검색)|
 
-|종류|영어|개념|
-|:---:|:---:|:---|
-|데이터 종속성|Data Denpendency|데이터 파일의 구성 방법이나 접근 방법을 변경하면 관련 응용 프로그램도 변경해야 하는 성질|
-|데이터 중복성|Data Redundanty|내용이 같은 데이터가 한 시스템 내에 중복해서 저장 및 관리되는 성질|
+## 3절. 데이터 과학 시대의 데이터
 
-#### 파일 처리 시스템의 단점
-* 일관성(Consistency) 유지의 어려움
-  * 데이터의 중복으로 인해 데이터의 동일성 유지 어려움
-  * 중복된 데이터의 변경 시점에 따라 동일한 데이터의 값이 일치하지 않을 가능성 존재
+#### 형태 별 데이터 분류
 
-* 보안(Security) 유지의 어려움
-  * 데이터의 중복 관리로 인해 동일한 수준의 보안 유지 어려움
+- 정형 데이터
+- 반정형 데이터
+- 비정형 데이터
 
-* 경제성 저하
-  * 중복된 저장 및 갱신 작업으로 인해 저장 공간 및 갱신 비용 상승
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-04-DataType.PNG"  width="50%" height="50%"/>
 
-* 데이터 무결성(Integrity) 유지의 어려움
-  * 중복 저장에 따른 관리 분산으로 데이터의 정확성 유지 어려움
+##### 정형 데이터(Structured Data)
 
-* 동시 공용(Concurrent Sharing)의 어려움
-  * 하나의 데이터 파일을 여러 응용 프로그램이 공용하더라도 한 프로그램이 데이터 파일을 사용하는 동안 다른 응용 프로그램이 그 데이터 파일에 접근 불가능
+- 구조화된 데이터
+- 미리 정해진 구조에 따라 저장된 데이터
+  - 데이터 구조에 대한 설명 및 데이터 내용은 별도 유지
+- ex) 엑셀의 스프레드시트, 관계 데이터베이스의 테이블
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-05-SD.PNG"  width="50%" height="50%"/>
 
-## 3절. DBMS의 필수 기능과 장단점
-#### DBMS의 필수 기능
-* 데이터 정의(Definition) 기능
-  * 다양한 응용 프로그램과 DB가 서로 인터페이스할 수 있는 수단 제공
-  * 하나의 저장된 DB를 기초로 여러 사용자와 응용 프로그램의 다양한 데이터 요구를 지원할 수 있도록 DB 구조를 정의하는 기능 제공
+##### 반정형 데이터(Semi-Structured Data)
 
-* 데이터 조작(Manipulation) 기능
-  * 사용자와 DB간의 인터페이스를 위한 수단 제공
-  * DB에 저장된 데이터의 검색, 삽입, 삭제, 갱신 등과 같은 DB 연산을 처리하는 기능 제공
+- 구조에 따라 저장된 데이터
+- 데이터 내용 안에 구조에 대한 설명이 함께 존재
+- 구조를 파악하는 파싱(Parsing) 과정 필요
+- 보통 파일 형태로 저장
+- ex) 웹에서 데이터를 교환하기 위해 작성하는 HTML/XML/JSON 문서 및 웹 로그, 센서 데이터
 
-* 데이터 제어(Control) 기능
-  * 공용으로 관리되는 DB의 내용을 정확하고 안전하게 유지할 수 있도록 3가지 제어기능 제공
-    * 데이터의 무결성 및 일관성 유지 기능
-    * 접근 권한 검사 기능
-    * 동시성(Concurrency) 제어 기능
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-06-SSD.PNG"  width="50%" height="50%"/>
 
-#### DBMS의 장단점
-* 장점
-  * 데이터의 동시 공유 가능
-  * 데이터 중복 최소화
-  * 데이터의 무결성 유지 용이
-  * 데이터의 일관성 유지 용이
-  * 프로그램과 데이터 간의 독립성 유지
-  * 데이터의 보안 보장
-  * 데이터의 표준화 달성 가능
+##### 비정형 데이터(Unstructured Data)
 
-* 단점
-  * 운영비 증가
-  * 데이터 처리의 복잡성
-  * 백업(Backup)과 복구(Recovery)의 복잡성
-  * 시스템 장애에 취약
+- 정해진 구조가 없이 저장된 데이터
+- ex) 소셜 데이터의 텍스트, 영상, 이미지, 워드 및 PDF 문서와 같은 멀티미디어 데이ㅌ
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-07-UD.PNG"  width="30%" height="30%"/>
 
-## 4절. DBMS의 역사
-#### 1세대 DBMS
-* 60년대 초반 ~ 70년대 중반
-* 네트워크 데이터 모델과 계층 데이터 모델 기반 DBMS
+#### 특성에 따른 데이터 분류
 
-![DBMS1](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/DBMS1.PNG)
+- 통계적 관점에서 데이터 특성에 따라 적합한 분석 방법을 선택하기 위해 데이터 분석 분야에서 주로 활용
+  - 범주형 데이터
+  - 수치형 데이터
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-08-SD.PNG"  width="50%" height="50%"/>
 
-#### 2세대 DBMS
-* 70년대 후반 ~ 80년대 주류
-* 관계 데이터 모델(Relation Data Model) 기반 DBMS
+##### 범주형 데이터(Categorical Data)
 
-![DBMS2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/DBMS2.PNG)
+- 범주로 구분할 수 있는 값
+- 종류를 나타내는 값을 가진 데이터
+- 크기 비교와 산술적인 연산이 불가능한 질적 데이터
 
-#### 3세대 DBMS
-* 80년대 후반 ~ 현
-* 객체 DBMS OR 객체-관계 DBMS
+|종류|내용|예시|
+|:--:|:---|:--|
+|명목형 데이터(Nominal Data)|순서, 서열이 없는 값을 가지는 데이터|성별, 혈액형, 학과명, 거주 지역, 음식 메뉴, MBTI 검사 결과|
+|순서형 데이터(Ordinal Data)|순서, 서열이 있는 값을 가지는 데이터|학년, 학점, 회원 등급|
 
-![DBMS3](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/DBMS3.PNG)
+##### 수치형 데이터(Numerical Data)
 
-#### 현재
-* 제 2세대 DBMS와 제 3세대 DBMS의 공존
-* 4세대 기술 개발 중
+- 크기 비교와 산술적인 연산이 가능한 숫자 값을 가진 데이터
+- 양적 데이터
+
+|종류|내용|예시|
+|:--:|:---|:--|
+|이산형 데이터(Discrete Data)|개수를 셀 수 있는 단절된 숫자 값을 가지는 데이터|고객 수, 판매량, 합격자 수|
+|연속형 데이터(Continuous Data)|측정을 통해 얻는 연속적으로 이어진 숫자 값을 가지는 데이터|키, 몸무게, 온도, 점수|
+
+##### 정성적 데이터(Qualitative Data)
+
+- 좁은 의미로는 범주형 데이터
+- 사람의 주관적인 생각과 평가를 기술한 비정형 데이터
+- 정량적 데이터에 비해 저장 및 처리 측면에서 큰 비용이 드는 경우가 다수
+
+##### 정량적 데이터(Quantitative Data)
+
+- 좁은 의미로는 수치형 데이터
+- 객관적 측정을 통해 수치, 도형, 기호 등으로 표현한 정형 데이터
+  
