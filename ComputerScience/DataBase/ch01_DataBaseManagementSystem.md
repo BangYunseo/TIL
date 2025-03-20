@@ -12,17 +12,18 @@
 - 데이터(Data) : 현실 시계에서 단순히 관찰하거나 측정하여 수집한 사실 혹은 값
 - 정보(Information) : 의사 결정에 유용하게 활용할 수 있도록 데이터를 처리한 결과물
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/DBMS.PNG"  width="60%" height="60%"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-01-DI.PNG"  width="30%" height="30%"/>
 
+#### 정보 처리(Information Processing)
+- 데이터에서 정보를 추출하는 과정 및 방법
 
-* DB의 정의와 조작, 제어 기능 제공
-* 여러 사용자와 응용 프로그램이 DB를 공용할 수 있도록 관리
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-02-DI.PNG"  width="30%" height="30%"/>
 
-#### DBMS의 목적
-* 응용 프로그램이 데이터에 종속되지 않는 데이터 독립성(Data Independency)의 제공
-  * 데이터 독립성 : 응용 프로그램에 영향을 주지 않고 DB의 구조 변경
-* DB의 구조를 변경해도 응용프로그램에 영향이 없도록 설계
-* 응용 프로그램을 변경해도 DB에 영향이 없도록 설계
+#### 정보 시스템과 데이터베이스
+- 정보 시스템(Information System) : 조직 운영에 필요한 데이터를 수집하여 저장 후 필요 시 유용한 정보를 만드는 수단
+- 데이터베이스 : 정보 시스템 안에서 데이터를 저장하고 있다가 필요 시 제공하는 역할
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-03-DI.PNG"  width="30%" height="30%"/>
 
 ## 2절. DBMS의 발전 배경
 #### 사회적 요구
