@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<script>
+    function makeAdder(x) {
+        return function (y) {
+            // return x * y;
+            return 10 + x + y;
+        };
+    }
+    const add5 = makeAdder(5);
+    const add10 = makeAdder(6);
+
+    document.write(add5(3), "<br>");        // 15   // 18
+    document.write(add5(2), "<br>");        // 10   // 17
+    document.write(add10(3), "<br>");       // 18   // 19
+    document.write(add10(2));               // 12   // 18
+
+</script>
+
+</html>
+
+<head>
+
+<body>
+
+</body>
+</head>
