@@ -133,6 +133,8 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Language/Image/ch00/ch00-01-CI.PNG"  width="100%" height="100%"/>
 
+[이미지주소](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcbuQ2l%2FbtrNkCdZRhx%2FlQKdM8hORIAyJeFqMkk3Y0%2Fimg.png)
+
 #### 정리
 
 - 컴파일러(Compiler)
