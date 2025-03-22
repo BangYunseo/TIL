@@ -131,7 +131,7 @@
 
 #### 그림으로 보기
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Image/ch00/ch00-01-CI.PNG"  width="50%" height="50%"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Image/ch00/ch00-01-CI.PNG"  width="100%" height="100%"/>
 
 #### 정리
 
