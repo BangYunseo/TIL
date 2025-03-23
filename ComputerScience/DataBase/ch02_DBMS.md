@@ -167,3 +167,5 @@
 - 네트워크 데이터 모델
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-07-UsingPointer.PNG"  width="80%" height="80%"/>
+
+(수정 필요)
