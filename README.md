@@ -2,11 +2,19 @@
 
 # TIL - Today I Learned
 
-- pdf 저장
+## pdf 저장
 
-  > ctrl + shift + P
+- ctrl + shift + P
 
-## Tips for TIL
+## 이미지 저장 양식
+
+```html
+<img src="./link" width="100%" height="100%" />
+```
+
+- 기본 크기는 100%로 저장 후 이미지가 클 경우에만 조절
+
+## Tips for Markdown Language
 
 - [Markdown 작성법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
 - [Github README.md](https://lsh424.tistory.com/37)
@@ -26,6 +34,7 @@
  
 * [C](https://github.com/BangYunseo/TIL/tree/main/Language/C)
 * [C++](https://github.com/BangYunseo/TIL/tree/main/Language/Cpp)
+* [C#](https://github.com/BangYunseo/TIL/tree/main/Language/C%23)
 * [Java](https://github.com/BangYunseo/TIL/tree/main/Language/Java)
 * [Python](https://github.com/BangYunseo/TIL/tree/main/Language/Python)
 * [Kotlin](https://github.com/BangYunseo/TIL/tree/main/Language/Kotlin)
@@ -57,7 +66,6 @@
 * [InformationSecurity](https://github.com/BangYunseo/TIL/tree/main/Security/InformationSecurity)
 
 </details>
-
 
 ## Lecture
 
