@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/dcc3cc7e-4ae5-4c39-90b5-16e3488cc978)# Chapter 3. 데이터베이스 시스템
+# Chapter 3. 데이터베이스 시스템
 
 > 1절. 데이터베이스 시스템 정의
 >
