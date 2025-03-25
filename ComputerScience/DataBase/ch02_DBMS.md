@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/fd3549a7-6a40-47ca-b826-042513c8e1b3)# Chapter 2. 데이터베이스 관리 시스템(DBMS)
+# Chapter 2. 데이터베이스 관리 시스템(DBMS)
 
 > 1절. DBMS 등장 배경
 >
@@ -193,19 +193,19 @@
 - 네트워크 DBMS : 데이터베이스를 그래프 형태로 구성
   - ex) IDS(Integrated Data Store)
  
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-13-NDBMS.PNG"  width="80%" height="80%"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-13-NDBMS.PNG"  width="50%" height="50%"/>
 
 - 계층 DBMS : 데이터베이스를 트리 형태로 구성
   - ex) IMS(Information Management System)
  
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-14-HDBMS.PNG"  width="80%" height="80%"/>  
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-14-HDBMS.PNG"  width="50%" height="50%"/>  
 
 ### 2세대 : 관계 DBMS
 
 - 관계 DBMS : 데이터베이스를 테이블 형태로 구성
   - ex) 오라클(Oracle), MSSQL 서버, 엑세스(Access), 인포믹스(Informix), MySQL
  
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-15-RDBMS.PNG"  width="80%" height="80%"/>  
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-15-RDBMS.PNG"  width="70%" height="70%"/>  
 
 ### 3세대 : 객체지향 DBMS, 객체관계 DBMS
 
@@ -215,15 +215,13 @@
 - 객체관계 DBMS : 객체지향 DBMS + 관계 DBMS
   - ex) 관계 DBMS 제품들이 객체지향 기능을 지원하면서 객체관계 DBMS로 분류되기도 함(예시 : 오라클(Oracle))
 
- <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-16-ORD.PNG"  width="80%" height="80%"/>  
+ <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-16-ORD.PNG"  width="60%" height="60%"/>  
 
 #### 객체 지향 Data VS 관계 Data
 
- <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-17-RvsOODM.PNG"  width="80%" height="80%"/>  
+ <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-17-RvsOODM.PNG"  width="60%" height="auto"/>  
  
- <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-18-RvsOODM.PNG"  width="80%" height="80%"/>  
-
-(수정 필요)
+ <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-18-RvsOODM.PNG"  width="60%" height="auto"/>  
 
 ### 4세대 : NoSQL / NewSQL DBMS
 
@@ -235,4 +233,31 @@
 
 - NewSQL DBMS: 관계 DBMS의 장점 + NoSQL의 확장성 및 유연성
   - 정형 및 비정형 데이터를 안정적이고 빠르게 처리 가능
-  - ex) 구글 스패너(Spanner), 볼트DB(VoltDB), 누오DB(NuoDB)
+  - ex) 구글 스패너(Spanner), 볼트DB(VoltDB), 누오DB(NuoDB) 등
+
+#### SQL vs NoSQL
+
+- NoSQL은 확장성이 뛰어나 여러 대의 서버 컴퓨터에 데이터를 분산하여 저장하고 처리하는 환경에서 주로 사용
+
+ <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-19-NoSQL.PNG"  width="60%" height="auto"/>  
+ 
+#### NoSQL 성능
+
+- 유연성
+  - NoSQL 데이터베이스는 일반적으로 유연한 스키마를 제공하여 보다 빠르고 반복적인 개발을 가능하게 해줌
+  - 이같은 유연한 데이터 모델은 NoSQL 데이터베이스를 반정형 및 비정형 데이터에 이상적으로 만듦
+
+- 확장성
+  - NoSQL 데이터베이스는 일반적으로 고가의 강력한 서버를 추가하는 대신 분산형 하드웨어 클러스터를 이용해 확장하도록 설계
+  - 일부 클라우드 제공자들은 완전관리형 서비스로서 이런 운영 작업을 보이지 않게 처리
+ 
+- 고성능
+  - NoSQL 데이터베이스는 특정 데이터 모델 및 액세스 패턴에 대해 최적화
+  - 관계형 데이터베이스를 통해 유사한 기능을 충족하려 할 때보다 뛰어난 성능
+
+- 고기능성
+  - NoSQL 데이터베이스는 각 데이터 모델에 맞춰 특별히 구축된 뛰어난 기능의 API와 데이터 유형을 제공
+
+### 발전 과정의 총 정리
+
+ <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-20-SQL.PNG"  width="60%" height="auto"/>  
