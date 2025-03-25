@@ -1,4 +1,4 @@
-# Chapter 2. 데이터베이스 관리 시스템(DBMS)
+![image](https://github.com/user-attachments/assets/fd3549a7-6a40-47ca-b826-042513c8e1b3)# Chapter 2. 데이터베이스 관리 시스템(DBMS)
 
 > 1절. DBMS 등장 배경
 >
@@ -21,16 +21,16 @@
 
 ## 1절. DBMS 등장 배경
 
-#### 파일 시스템(File System)
+### 파일 시스템(File System)
 
 - 데이터를 파일로 관리하기 위해 파일을 생성, 삭제, 수정, 검색하는 기능을 제공하는 소프트웨어
 - 응용 프로그램마다 필요한 데이터를 별도의 파일로 관리
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-01-FS.PNG"  width="70%" height="70%"/>
 
-#### 파일 시스템 주요 문제점
+### 파일 시스템 주요 문제점
 
-##### 데이터 중복성
+#### 데이터 중복성
 
 - 같은 내용의 데이터가 여러 파일에 중복 저장
   - 저장 공간 낭비 및 데이터 일관성, 데이터 무결성 유지에 어려움
@@ -38,7 +38,7 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-02-Sol1.PNG"  width="40%" height="40%"/>
 
-##### 데이터 종속성
+#### 데이터 종속성
 
 - 응용 프로그램이 데이터 파일에 종속적
   - 데이터 구성 방법과 물리적인 저장 구조에 맞는 저장 필요
@@ -47,21 +47,21 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-03-Sol2.PNG"  width="100%" height="100%"/>
 
-##### 동시 공유, 보안, 회복 기능
+#### 동시 공유, 보안, 회복 기능
 
 - 데이터 파일에 대한 동시 공유, 보안, 회복 기능이 부족
   - 데이터의 중복 가능성 문제 발생
   - 파일 수정 중 장애 발생 시 회복 불가능
   - 파일 단위로 읽기, 쓰기, 실행 권한을 부여하여 데이터 접근 통제
 
-##### 응용 프로그램 개발
+#### 응용 프로그램 개발
 
 - 응용 프로그램 개발이 쉽지 않음
   - 새로운 응용 프로그램 개발 시 파일에서 데이터 읽기, 삽입, 삭제 등의 데이터 관리 기능 모두 포함 필요
 
 ## 2절. DBMS 정의
 
-#### 데이터베이스 관리 시스템
+### 데이터베이스 관리 시스템
 
 - DBMS : DataBase Management System
 - 파일 시스템의 문제 해결을 위해 제시된 소프트웨어
@@ -69,17 +69,17 @@
 - 데이터를 통합 관리하는 시스템
 - 데이터의 중복을 줄이고 표준화하며 무결성 유지
 
-##### 서버와 클라이언트
+#### 서버와 클라이언트
 
 - 서버(Server) : DBMS가 설치되어 데이터를 가진 쪽
 - 클라이언트(Client) : 외부에서 데이터를 요청하는 쪽
 - 서버가 파일을 다루며 데이터 일관성 유지, 복구, 동시 접근 제어 등의 기능 수행
 
-#### DBMS에서의 데이터 관리
+### DBMS에서의 데이터 관리
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-04-DBMS.PNG"  width="40%" height="40%"/>
 
-#### DBMS의 주요 기능
+### DBMS의 주요 기능
 
 |   기능    | 내용                                          |
 | :-------: | :-------------------------------------------- |
@@ -89,7 +89,7 @@
 
 ## 3절. 파일시스템 vs DBMS
 
-#### 비교
+### 비교
 
 - 파일 시스템과 DBMS
 
@@ -102,7 +102,7 @@
 |      사용 언어      | Java, C, C++ 등                                          | Java, C, C++ 등과 SQL                            |
 |  CPU / 주기억장치   | 사용 적음                                                | 사용 많음                                        |
 
-#### DBMS 장점
+### DBMS 장점
 
 |         구분         | 파일 시스템                                  | DBMS                                                     |
 | :------------------: | :------------------------------------------- | :------------------------------------------------------- |
@@ -113,7 +113,7 @@
 | 프로그램 개발 생산성 | 나쁨                                         | 짧은 시간에 프로그램을 개발 가능                         |
 |      기타 장점       | 별도의 소프트웨어 설치 불필요(운영체제 지원) | 데이터 무결성 유지, 데이터 표준 준수 용이                |
 
-#### DBMS 단점
+### DBMS 단점
 
 | 단점                              | 내용                                                                                                                                      |
 | :-------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -123,7 +123,7 @@
 
 ## 4절. DBMS 기능
 
-#### 데이터베이스 시스템 구성
+### 데이터베이스 시스템 구성
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-06-DBS.PNG"  width="70%" height="70%"/>
 
@@ -134,13 +134,13 @@
 | SQL 사용자                                       | 1. SQL을 통해 업무를 처리하는 IT 부서의 담당자<br><br>2. 응용 프로그램으로 구현되어 있지 않은 업무를 SQL을 통해 처리                                                                                                               |
 | 데이터베이스 관리자(DBA, Database Administrator) | 1. 데이터베이스 운영 조직의 데이터베이스 시스템 총괄자<br><br>2. 데이터 설계, 구현, 유지보수 전 과정 담당<br><br>3. 데이터베이스 사용자 통제, 보안, 성능 모니터링, 데이터 전체 파악 및 관리, 데이터 이동 및 복사 등 제반 업무 수행 |
 
-#### SQL
+### SQL
 
 - 데이터 정의어(DDL, Data Definition Language)
 - 데이터 조작어(DML, Data Manipulation Language)
 - 데이터 제어어(DCL, Data Control Language)
 
-#### DBMS 기능
+### DBMS 기능
 
 |           기능            | 설명                                                                                              |
 | :-----------------------: | :------------------------------------------------------------------------------------------------ |
@@ -151,7 +151,7 @@
 
 ## 5절. 데이터 모델
 
-#### 종류
+### 종류
 
 - 계층 데이터 모델(Hierarchical Data Model)
 - 네트워크 데이터 모델(Network Data Model)
@@ -163,9 +163,76 @@
 
 #### 1. 포인터 사용
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-07-UsingPointer.PNG"  width="80%" height="80%"/>
+
 - 계층 데이터 모델
 - 네트워크 데이터 모델
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-07-UsingPointer.PNG"  width="80%" height="80%"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-10-UsingInModel.PNG"  width="80%" height="80%"/>
+
+#### 2. 속성 값 사용
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-08-UsingAttribute.PNG"  width="80%" height="80%"/>
+
+- 관계 데이터 모델
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-11-UsingInRModel.PNG"  width="80%" height="80%"/>
+
+#### 3. 객체 식별자 사용
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-09-UsingOI.PNG"  width="80%" height="80%"/>
+
+- 객체 데이터 모델
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-12-UsingInOModel.PNG"  width="80%" height="80%"/>
+
+## 6절. 데이터베이스 관리 시스템 발전 과정
+
+### 1세대 : 네트워크 DBMS, 계층 DBMS
+
+- 네트워크 DBMS : 데이터베이스를 그래프 형태로 구성
+  - ex) IDS(Integrated Data Store)
+ 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-13-NDBMS.PNG"  width="80%" height="80%"/>
+
+- 계층 DBMS : 데이터베이스를 트리 형태로 구성
+  - ex) IMS(Information Management System)
+ 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-14-HDBMS.PNG"  width="80%" height="80%"/>  
+
+### 2세대 : 관계 DBMS
+
+- 관계 DBMS : 데이터베이스를 테이블 형태로 구성
+  - ex) 오라클(Oracle), MSSQL 서버, 엑세스(Access), 인포믹스(Informix), MySQL
+ 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-15-RDBMS.PNG"  width="80%" height="80%"/>  
+
+### 3세대 : 객체지향 DBMS, 객체관계 DBMS
+
+- 객체지향 DBMS : 객체를 이용해 데이터베이스를 구성
+  - ex) 오투(O2), 온투스(ONTOS), 젬스톤(GemStone)
+ 
+- 객체관계 DBMS : 객체지향 DBMS + 관계 DBMS
+  - ex) 관계 DBMS 제품들이 객체지향 기능을 지원하면서 객체관계 DBMS로 분류되기도 함(예시 : 오라클(Oracle))
+
+ <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-16-ORD.PNG"  width="80%" height="80%"/>  
+
+#### 객체 지향 Data VS 관계 Data
+
+ <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-17-RvsOODM.PNG"  width="80%" height="80%"/>  
+ 
+ <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-18-RvsOODM.PNG"  width="80%" height="80%"/>  
 
 (수정 필요)
+
+### 4세대 : NoSQL / NewSQL DBMS
+
+- NoSQL DBMS : 비정형 데이터를 처리하는데 적합하고 확장성이 뛰어남
+  - 안정성과 일관성 유지를 위한 복잡한 기능 포기
+  - 데이터 구조를 미리 정해두지 않는 유연성을 가짐
+  - 여러 대의 컴퓨터에 데이터를 분산하여 저장하고 처리하는 환경에서 주로 사용
+  - ex) 몽고디비(MongoDB), H베이스(HBase), 카산드라(Cassandra), 레디스(Redis), 네오포제이(Neo4j), 오리엔트DB(OrientDB) 등
+
+- NewSQL DBMS: 관계 DBMS의 장점 + NoSQL의 확장성 및 유연성
+  - 정형 및 비정형 데이터를 안정적이고 빠르게 처리 가능
+  - ex) 구글 스패너(Spanner), 볼트DB(VoltDB), 누오DB(NuoDB)
