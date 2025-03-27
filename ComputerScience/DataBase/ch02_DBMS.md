@@ -260,4 +260,4 @@
 
 ### 발전 과정의 총 정리
 
- <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-20-SQL.PNG"  width="60%" height="auto"/>  
+ <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-20-SQL.PNG"  width="100%" height="auto"/>  
