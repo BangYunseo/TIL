@@ -139,7 +139,7 @@
 - 데이터베이스를 이용하기 위해 접근하는 모든 사람
 - 이용 목적에 따라 데이터베이스 관리자, 최종 사용자, 응용 프로그래머로의 구분
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-10-DBuser.PNG" width="60%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-10-DBuser.PNG" width="70%" height="auto" />
 
 ### 데이터베이스 관리자
 
@@ -177,7 +177,7 @@
 - 사용자와 데이터베이스 관리 시스템 간의 통신 수단
 - 사용 목적에 따라 데이터 정의어, 데이터 조작어, 데이터 제어어로 구분
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-11-DataLanguage.PNG" width="60%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-11-DataLanguage.PNG" width="80%" height="auto" />
 
 
 #### 데이터 정의어
@@ -191,15 +191,15 @@
 - 데이터의 삽입·삭제·수정·검색 등의 처리를 요구하기 위해 사용
 - 절차적 데이터 조작어와 비절차적 데이터 조작어로 구분
   - 절차적 데이터 조작어(procedural DML)
-    > 사용자가 어떤(what) 데이터를 원하고 그 데이터를 얻기 위해 어떻게(how) 처리해야 하는지 설명<br>
-    > 데이터베이스로부터 한번에 레코드 하나(one-record-at-a-time)씩 검색해서 호스트 언어와 함께 처리<br>
-    > 독자적으로 사용되지 못하고 호스트 프로그래밍 언어로 작성된 응용 프로그램 속에 삽입(embedded)되어 사용
+    - 사용자가 어떤(what) 데이터를 원하고 그 데이터를 얻기 위해 어떻게(how) 처리해야 하는지 설명
+    - 데이터베이스로부터 한번에 레코드 하나(one-record-at-a-time)씩 검색해서 호스트 언어와 함께 처리
+    - 독자적으로 사용되지 못하고 호스트 프로그래밍 언어로 작성된 응용 프로그램 속에 삽입(embedded)되어 사용
   - 비절차적 데이터 조작어(nonprocedural DML)
-    > 사용자가 어떤(what) 데이터를 원하는지 설명<br>
-    > 그것을 어떻게(how) 접근할 것인가에 대해서는 명세할 필요가 없음<br>
-    > 데이터베이스로부터 보통 한 번에 여러 개의 레코드(set-of-record-at-a-time)를 검색해서 처리<br>
-    > 그 데이터들을 검색하는지는 DBMS가 알아서 처리하므로 독자적으로 사용<br>
-    > 선언적 언어(declarative language)
+    - 사용자가 어떤(what) 데이터를 원하는지 설명
+    - 그것을 어떻게(how) 접근할 것인가에 대해서는 명세할 필요가 없음
+    - 데이터베이스로부터 보통 한 번에 여러 개의 레코드(set-of-record-at-a-time)를 검색해서 처리
+    - 그 데이터들을 검색하는지는 DBMS가 알아서 처리하므로 독자적으로 사용
+    - 선언적 언어(declarative language)
     
 #### 데이터 제어어
 
@@ -218,12 +218,12 @@
 - 데이터베이스 관리와 사용자의 데이터 처리 요구 수행
 - 주요 구성 요소
   - 질의 처리기(query processor)
-    > 사용자의 데이터 처리 요구를 해석하여 처리
-    > DDL 컴파일러, DML 프리 컴파일러, DML 컴파일러, 런타임 데이터베이스 처리기, 트랜잭션 관리자 등 포함
+    - 사용자의 데이터 처리 요구를 해석하여 처리
+    - DDL 컴파일러, DML 프리 컴파일러, DML 컴파일러, 런타임 데이터베이스 처리기, 트랜잭션 관리자 등 포함
   - 저장 데이터 관리자(stored data manager)
-    > 디스크에 저장된 데이터베이스와 데이터 사전을 관리하고 접근함
+    - 디스크에 저장된 데이터베이스와 데이터 사전을 관리하고 접근함
     
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-12-DBMS.PNG" width="60%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-12-DBMS.PNG" width="90%" height="auto" />
 
 #### DDL 컴파일러
 - 데이터 정의어로 작성된 스키마 정의를 해석, 새로운 데이터베이스 구축, 스키마 정의를 데이터 사전에 저장
