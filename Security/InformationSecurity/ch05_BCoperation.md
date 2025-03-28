@@ -1,4 +1,4 @@
-# Chapter 5. 블록 암호 운용 방식(Block Cipher Operation)
+# Chapter 5. 블록 암호 운영 방식(Block Cipher Operation)
 
 > 1절. 블록 암호의 모드들(Modes of Block Cipher)
 
