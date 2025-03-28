@@ -1,24 +1,54 @@
 # Chapter 0. 알고리즘(Algorithm)
 
-> 1절. 데이터베이스 정의
+> 1절. 알고리즘 정의
 >
-> 2절. 데이터베이스 관련 직업
+> 2절. 알고리즘 효율성
 >
 > 3절. 데이터와 데이터베이스
 
-## 1절. 데이터베이스 정의
+## 1절. 알고리즘 정의
 
-#### 데이터베이스(DB : DataBase)
+### 알고리즘(Algorithm) 이란 ?
 
-- 여러 사람이 공유하여 사용할 목적으로 체계화해 통합, 관리하는 데이터의 집합
-- 작성된 목록으로써 여러 응용 시스템들의 통합된 정보들을 저장하여 운영할 수 있는 공용 데이터들의 묶음
+- 문제 해결, 연산 수행을 위해 필요한 일련의 단계적 절차나 규칙
+- 알고리즘에서 해결하려는 문제는 입력과 출력의 명시 필요
+  - 문제의 입력이 알고리즘을 거치면 출력 생성
+ 
+#### 알고리즘 요소
 
-![ch00-01-DB](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/ch00-01-DB.PNG)
+- 입력
+- 출력
+ 
+ #### 알고리즘 특성
 
-## 2절. 데이터베이스 관련 직업
+- 유한성
+- 명확성
+- 효율성
+ 
+## 2절. 알고리즘 효율성
 
-#### Data Analyst VS Data Scientist VS Data Engineer
+### 효율성(Efficiency)
 
+- 입력 크기가 커질수록 효율성의 중요성 증가
+- 효율적인(efficient) 알고리즘 작성 시 고려할 점
+  - 수행 시간
+  - 메모리
+- 알고리즘의 수행시간은 입력 크기를 기반으로 특정 비율로 소요
+  - N : 입력 크기
+  - 수행 시간 예시
+    - 1(상수)
+    - $N$
+    - $N^2$
+    - $N^3$
+    - $log N$
+    - $N log N$
+    - $log 2^n$ 
+
+## 3절. 알고리즘 수행시간
+
+### 알고리즘 특정 비율 별 수행 시간
+
+<img src = />
 - Required Skills
 
 ![ch00-02-RS](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/ch00-02-RS.PNG)
