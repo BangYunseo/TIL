@@ -1,6 +1,6 @@
 # Programming Language
 
-### [컴파일러와 인터프리터](https://github.com/BangYunseo/TIL/blob/main/Language/ch00_CompilerInterpreter.md)
+### [컴파일러와 인터프리터](https://github.com/BangYunseo/TIL/blob/main/Language/CompilerInterpreter.md)
 
 <details>
     <summary>
