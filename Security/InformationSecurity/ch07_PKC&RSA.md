@@ -1,4 +1,4 @@
-# Chapter 8. 공개 키 암호와 RSA(Public Key Cryptography and RSA)
+# Chapter 7. 공개 키 암호와 RSA(Public Key Cryptography and RSA)
 
 > 1절. 공개 키 암호
 >
@@ -12,7 +12,7 @@
 
 ## 1절. 공개 키 암호
 
-#### 공개 키 암호(Public Key Cryptography) == 비대칭형 암호(Asymmetric Cryptography)
+### 공개 키 암호(Public Key Cryptography) == 비대칭형 암호(Asymmetric Cryptography)
 
 (Alice : 암호 소유자 / Bob : 암호 해독자)
 
