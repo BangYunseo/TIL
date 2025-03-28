@@ -1,4 +1,4 @@
-# Chapter 16. 추가 암호(Seleted Topics)
+# Chapter 16. 암호학(Cryptography)
 
 > 1절. 타원 곡선 암호학(Elliptic Curve Cryptography)
 >
