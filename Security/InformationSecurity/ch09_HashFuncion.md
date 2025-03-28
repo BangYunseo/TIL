@@ -1,4 +1,4 @@
-# Chapter 10. 해쉬 암호(Hash Function)
+# Chapter 9. 해쉬 함수(Hash Function)
 
 > 1절. Hash Function
 >
