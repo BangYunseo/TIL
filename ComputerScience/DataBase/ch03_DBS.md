@@ -33,11 +33,15 @@
 
 - 미국 표준화 기관인 ANSI/SPARC에서 제안
 - 데이터베이스를 쉽게 이해하고 이용할 수 있도록 하나의 데이터베이스를 관점에 따라 세 단계로 나눈 것
-  - 외부 단계(External Level) : 개별 사용자 관점
-  - 개념 단계(Conceptual Level) : 조직 전체의 관점
-  - 내부 단계(Internal Lever) : 물리적인 저장 장치의 관점
 - 각 단계별 다른 추상화(Abstraction) 제공
   - 내부 단계에서 외부 단계로 갈수록 추상화 레벨 상승
+ 
+
+|단계|영어|설명|
+|:--:|:--:|:---|
+|외부 단계|External Level|개별 사용자 관점|
+|개념 단계|Conceptual Level|조직 전체 관점|
+|내부 단계|Internal Level|물리적인 저장 장치 관점|
  
 <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-04-Structual3.PNG" width="60%" height="auto" />
 
