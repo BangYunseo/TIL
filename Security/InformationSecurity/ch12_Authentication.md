@@ -1,4 +1,4 @@
-# Chapter 14. 인증(Authentication)
+# Chapter 12. 인증(Authentication)
 
 > 1절. 인증(Authentication)
 >
@@ -10,26 +10,18 @@
 
 ## 1절. 인증(Authentication)
 
-#### 인증 보안 목표
+### 인증 보안 목표
 
 ![At](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/At.PNG)
 
-- 기밀성(Confidentiality)
+|목표|설명|
+|:---:|:---|
+|기밀성(Confidentiality)|오직 Bob만 메세지 확인 가능|
+|무결성(Integrity)|메세지 전송 중 변경 불가|
+|부인 방지(Non-Repudiation)|Alice가 자신이 메세지를 작성했다는 사실 부인 불가|
+|인증(Authentication)|Alice는 통신 상대방이 실제로 Bob임을 확인 가능|
 
-  - 오직 Bob만 메시지 확인 가능
-
-- 무결성(Integrity)
-
-  - 메시지 전송 중 변경 X
-
-- 부인 방지(Non-repudiation)
-
-  - Alice가 자신이 메시지를 작성했다는 사실 부인 불가
-
-- 인증(Authentication)
-  - Alice는 통신 상대방이 실제로 Bob임을 확인 가능
-
-#### 인증 보안 목표
+### 인증 보안 목표
 
 ![At2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/At2.PNG)
 
