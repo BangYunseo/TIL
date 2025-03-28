@@ -1,4 +1,4 @@
-# Chapter 4. 고급 암호화 표준(AES : Advanced Encryption Standard)
+# Chapter 4. AES(Advanced Encryption Standard)
 
 > 1절. AES의 구조
 >
