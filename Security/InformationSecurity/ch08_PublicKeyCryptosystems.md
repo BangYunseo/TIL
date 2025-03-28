@@ -1,4 +1,4 @@
-# Chapter 9. 공개 키 암호 시스템(Public Key Cryptosystems)
+# Chapter 8. 공개 키 암호 시스템(Public Key Cryptosystems)
 
 > 1절. Diffie-Hellman Key
 >
