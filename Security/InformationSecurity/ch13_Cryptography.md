@@ -1,4 +1,4 @@
-# Chapter 16. 암호학(Cryptography)
+# Chapter 13. 암호학(Cryptography)
 
 > 1절. 타원 곡선 암호학(Elliptic Curve Cryptography)
 >
