@@ -1,4 +1,4 @@
-# Chapter 3. 정수론의 기초 개념(Number Theory)
+# Chapter 3. 정수론(Number Theory)
 
 > 1절. 나눗셈 알고리즘
 >
