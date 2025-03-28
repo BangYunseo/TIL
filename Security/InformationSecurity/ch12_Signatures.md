@@ -1,4 +1,4 @@
-# Chapter 12. 서명(Signatures)
+# Chapter 11. 서명(Signatures)
 
 > 1절. 디지털 서명(Digital Signatures)
 >
