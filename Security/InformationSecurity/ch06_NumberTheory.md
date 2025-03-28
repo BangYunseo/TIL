@@ -1,4 +1,4 @@
-# Chapter 7. 정수론 정리(Number Theory)
+# Chapter 6. 정수론 정리(Number Theory)
 
 > 1절. 페르마의 정리(Fermat's Theorem)
 >
