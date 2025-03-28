@@ -1,4 +1,5 @@
-#  Chapter 2. 블럭 암호 및 데이터 표준 암호화
+#  Chapter 2. 블록 암호
+
 > 1절. Block and Stream Ciphers
 > 
 > 2절. Ideal Block Cipher
