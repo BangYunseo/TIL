@@ -1,4 +1,4 @@
-# Chapter 11. 메시지 인증 코드(MAC : Message Authentication Code)
+# Chapter 10. 메시지 인증 코드(MAC : Message Authentication Code)
 
 > 1절. 메시지 인증 코드
 >
@@ -14,7 +14,7 @@
 
 ## 1절. 메시지 인증 코드
 
-#### MAC
+### MAC
 
 ![MAC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/MAC.PNG)
 
