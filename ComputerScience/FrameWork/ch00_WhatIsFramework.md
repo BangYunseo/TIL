@@ -84,9 +84,34 @@
  
 ## 3절. 프레임워크 종류 및 동작 방식
 
-### React
+### React : Frontend Framework
 
-
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/FrameWork/Image/ch00/ch00-02-React.PNG" width="100%" height="auto" />
 
 - State 변경에 따라 Virtual DOM을 변경하여 HTML을 랜더링하는 프론트엔드 프레임워크
-- 
+- 동작 방식
+> Rendering 요소인 React Component가 Mounting되고, state가 Updating되고, Unmounting될 경우 각 상황에 맞는 함수(componentDidMount, componentDidUpdate, componentWillUnmount)를 실행하고 Rendering 하는 방식
+
+- 단계별 동작 함수는 (1) Override, (2) react hook의 useEffect를 사용하여 정의
+- Updating은 state 변경 혹은 새로운 props 주입을 통해 실행
+- Rendering 시 보이는 부분은 JSX 언어로 정의
+[JSX 언어란?](https://ko.legacy.reactjs.org/docs/introducing-jsx.html)
+
+- 결론
+> component의 LifeCycle과 state 갱신, Rendering 부분 정의 시 Mounting 및 state Updating을 감지하고 다시 Rendering(DOM Updating)은 React에서 처리<br>
+
+### Redux
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/FrameWork/Image/ch00/ch00-02-React.PNG" width="100%" height="auto" />
+
+- State 변경에 따라 Virtual DOM을 변경하여 HTML을 랜더링하는 프론트엔드 프레임워크
+- 동작 방식
+> Rendering 요소인 React Component가 Mounting되고, state가 Updating되고, Unmounting될 경우 각 상황에 맞는 함수(componentDidMount, componentDidUpdate, componentWillUnmount)를 실행하고 Rendering 하는 방식
+
+- 단계별 동작 함수는 (1) Override, (2) react hook의 useEffect를 사용하여 정의
+- Updating은 state 변경 혹은 새로운 props 주입을 통해 실행
+- Rendering 시 보이는 부분은 JSX 언어로 정의
+[JSX 언어란?](https://ko.legacy.reactjs.org/docs/introducing-jsx.html)
+
+- 결론
+> component의 LifeCycle과 state 갱신, Rendering 부분 정의 시 Mounting 및 state Updating을 감지하고 다시 Rendering(DOM Updating)은 React에서 처리<br>
