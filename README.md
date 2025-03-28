@@ -9,7 +9,7 @@
 ## 이미지 저장 양식
 
 ```html
-<img src="./link" width="100%" height="100%" />
+<img src="./link" width="100%" height="auto" />
 ```
 
 - 기본 크기는 100%로 저장 후 이미지가 클 경우에만 조절
