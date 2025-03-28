@@ -48,15 +48,35 @@
 
 ### 알고리즘 특정 비율 별 수행 시간
 
-<img src = />
-- Required Skills
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch00/ch00-01-TimeGraph.PNG" width="100%" height="auto" />
 
-![ch00-02-RS](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/ch00-02-RS.PNG)
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch00/ch00-02-TimeTable.PNG" width="100%" height="auto" />
 
-#### Responsibilities, Skills, Tools
 
-|      직업      | 책임                                                                     | 기술                                       | 도구                                      |
-| :------------: | :----------------------------------------------------------------------- | :----------------------------------------- | :---------------------------------------- |
-|  Data Analyst  | Accurate data / Visualize & report data                                  | Analytics / Communication & Visualization  | SQL / Excel / Tableau                     |
-| Data Scientist | Source data / Analze data / Run experiments                              | Analytics / Model building / Math & Coding | Python / Machine learning / Tableau & SQL |
-| Data Engineer  | Build data pipelines and warehouse / Manage scalability of data products | Coding / Model implementation              | Java / C++ & Python / Hadoop & Spark      |
+#### 상수 시간 소요 : O(1)
+
+- n에 관계 없이 상수 시간 소요
+
+```python
+sample1(A[], n)
+{
+  k = floor(n / 2);
+  // 내림수 사용
+
+  return A[k];
+}
+```
+
+#### n에 비례하는 시간 소요 : O(N)
+
+- n의 값에 비례하는 시간 소요
+
+```python
+sample2(A[], n)
+{
+  sum = 0
+  for i in range(1, n):
+    sum += A[i]
+  return sum;
+}
+```
