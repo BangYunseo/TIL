@@ -17,7 +17,7 @@
 
 ### 보안 목적
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch00/CIA.PNG" width="100%" height="auto"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch00/ch00-01-CIA.PNG" width="50%" height="auto"/>
 
 ### 보안의 3요소 + 추가 요소
 
@@ -33,7 +33,7 @@
 
 ### Passive attacks
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch00/PA.PNG" width="100%" height="auto"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch00/ch00-02-PassitiveAttack.PNG" width="70%" height="auto"/>
 
 - 수동적 / 소극적 공격
 - 정보를 변경하지 않는 공격으로 자신이 공격받고 있는지 확인 불가능
@@ -51,7 +51,7 @@
 
 ### Active attacks
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch00/AA.PNG" width="100%" height="auto"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch00/ch00-03-ActiveAttack.PNG" width="80%" height="auto"/>
 
 - 능동적 / 적극적 공격
 - 정보를 변경하는 공격으로 자신이 공격 당하는 상황 확인 가능
