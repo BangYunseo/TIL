@@ -48,11 +48,11 @@
 
 ### 알고리즘 특정 비율 별 수행 시간
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch00/ch00-01-TimeGraph.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch00/ch00-01-TimeGraph.PNG" width="60%" height="auto" />
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch00/ch00-02-TimeTable.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch00/ch00-02-TimeTable.PNG" width="60%" height="auto" />
 
-#### 상수 시간 소요 : O(1)
+### 상수 시간 소요 : O(1)
 
 - n에 관계 없이 상수 시간 소요
 
@@ -66,7 +66,7 @@ sample1(A[], n)
 }
 ```
 
-#### n에 비례하는 시간 소요 : O(N)
+### n에 비례하는 시간 소요 : O(N)
 
 - n의 값에 비례하는 시간 소요
 
@@ -79,3 +79,5 @@ sample2(A[], n)
   return sum;
 }
 ```
+
+### 
