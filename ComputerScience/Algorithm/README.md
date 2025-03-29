@@ -4,7 +4,8 @@
 
 - 알고리즘 학습 및 정리 내용
 - 참고 도서 : 쉽게 배우는 알고리즘 (문병로 지음)
-- 
+-
+
 ## When?
 
 - 학습 기간 : 2025.03 ~ 2025.06
@@ -16,6 +17,6 @@
     <summary>list
     </summary>
 
-- [알고리즘 개요]()
+- ch00 [알고리즘 개요](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/ch00_WhatIsAlgorithm.md)
 
 </details>
