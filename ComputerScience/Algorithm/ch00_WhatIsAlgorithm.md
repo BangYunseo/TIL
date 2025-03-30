@@ -52,37 +52,32 @@
 
 <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch00/ch00-02-TimeTable.PNG" width="60%" height="auto" />
 
-### 상수 시간 소요 : O(1)
+### 상수 시간 소요 : $O(1)$
 
-- n에 관계 없이 상수 시간 소요
+- $n$에 관계 없이 상수 시간 소요
 
 ```python
-sample1(A[], n)
-{
-  k = floor(n / 2);
+def sample1(A[], n):
+  k = floor(n / 2)
   // 내림수 사용
-
   return A[k]
-}
 ```
 
-### n에 비례하는 시간 소요 : O(N)
+### $n$에 비례하는 시간 소요 : $O(N)$
 
-- n의 값에 비례하는 시간 소요
+- $n$의 값에 비례하는 시간 소요
 
 ```python
-sample2(A[], n)
-{
+def sample2(A, n):
   sum = 0
   for i in range(1, n):
     sum += A[i]
   return sum
-}
 ```
 
-### $n^2$에 비례하는 시간 소요 : O(N)
+### $n^2$에 비례하는 시간 소요 : $O(N^2)$
 
-- n의 값에 비례하는 시간 소요
+- $n^2$ 의 값에 비례하는 시간 소요
 
 ```python
 def sample3(A, n):
@@ -90,6 +85,26 @@ def sample3(A, n):
   for i in range(1, n):
     for j in range(1, n):
       sum += (A[i] * A[j])
+  return sum
+
+# 예시
+print(sample3([1, 2, 3, 4, 5], 4))
+
+# 출력
+81
+```
+
+### $n^3$에 비례하는 시간 소요 : $O(N^3)$
+
+- $n^3$ 의 값에 비례하는 시간 소요
+
+```python
+def sample4(A, n):
+  sum = 0
+  for i in range(1, n):
+    for j in range(1, n):
+      k <- A[1...n]에서 임의로 floor(n/2)개를 뽑을 경우 이들 중 최댓값
+      sum += k
   return sum
 
 # 예시
