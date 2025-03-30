@@ -1,6 +1,10 @@
 # Chapter 0. 데이터 통신 개요
 
 > 1절. 데이터 통신
+>
+> 2절. 네트워크
+>
+> 3절. 
 
 ## 1절. 데이터 통신
 
@@ -166,7 +170,7 @@
 - 물리적인 구조, 접속형태
 - 네트워크에서 컴퓨터의 위치나 컴퓨터의 케이블 연결 등의 물리적인 혹은 논리적인 배치 방식
 
-#### 그물형(Mesh) 접속 형태
+### 그물형(Mesh) 접속 형태
 
 <img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-09-Mesh.PNG" width="80%" height="auto"/>
 
@@ -183,7 +187,7 @@
    - 설치와 재구성에 어려움
    - 큰 설치 공간 및 높은 비용 필요
   
-#### 성형(Star) 접속 형태
+### 성형(Star) 접속 형태
 
 <img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-10-Star.PNG" width="80%" height="auto"/>
 
@@ -199,3 +203,24 @@
 2) 단점
    - 허브가 고장날 경우 전체 시스템 고장
    - 링형, 버스형보다 많은 케이블 연결 필요
+
+### 버스(Bus) 접속 형태
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-12-Bus.PNG" width="80%" height="auto"/>
+
+- 다중점 형태
+- 하나의 긴 테이블이 모든 장치를 연결하는 백본 또는 중추 네트워크 역할
+- 탭(Tap)과 유도선(Drop Line)에 의해 버스에 연결
+
+1) 장점
+   - 쉬운 설치
+   - 가장 적은 양의 케이블 사용
+  
+2) 단점
+   - 재구성이나 결함 분리의 어려움
+   - 중추 케이블 결함 시 다수의 장치에 영향
+
+  (여기부터 수정 필요)
+### 버스(Bus) 접속 형태
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-12-Bus.PNG" width="80%" height="auto"/>
