@@ -78,7 +78,7 @@ T(n) &= 2T(n / 2) + n\\
     &= 2(2T(n / 2^2) + n / 2) + n = 2^2T(n / 2^2) + 2n\\
     &= 2^2(2T(n / 2^3) + n / 2^2) + 2n = 2^3T(n / 2^3) + 3n\\
     &···\\
-    &2^kT(n / 2^k) + kn\\
+    &= 2^kT(n / 2^k) + kn\\
     &= n + n log n\\
     &= O(n log n)\\
 \end{aligned}
@@ -155,9 +155,11 @@ $$
 
 - $T(n) = aT(\frac {n}  {b}) + f(n)$, $h(n) = n^{log_b a}$
 
-1. $ \displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)} $ 의 값이 0으로 수렴할 때 $T(n) = \Theta(h(n))$
-2. $ \displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)} $ 의 값이 무한대로 발산할 때 $af(\frac{n}{b}) \leq f(n)$ 이라면 $T(n) = \Theta (f(n))$
-3. $ \displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)} $ 의 값이 $\Theta(1)$ 일 때 $\\Theta(h(n)log n)$
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch02/ch02-02-lim.PNG" width="10%" height="auto" />
+
+1. 위 식의 값이 0으로 수렴할 때 $T(n) = \Theta(h(n))$
+2. 위 식의 값이 무한대로 발산할 때 $af(\frac{n}{b}) \leq f(n)$ 이라면 $T(n) = \Theta (f(n))$
+3. 위 식의 값이 $\Theta(1)$ 일 때 $\Theta(h(n)log n)$
 
 #### ex 1 : $T(n) = 2(\frac{n}{3}) + c$
 
