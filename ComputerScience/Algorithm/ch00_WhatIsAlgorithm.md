@@ -62,7 +62,7 @@ sample1(A[], n)
   k = floor(n / 2);
   // 내림수 사용
 
-  return A[k];
+  return A[k]
 }
 ```
 
@@ -76,8 +76,29 @@ sample2(A[], n)
   sum = 0
   for i in range(1, n):
     sum += A[i]
-  return sum;
+  return sum
 }
 ```
 
+<<<<<<< Updated upstream
 ### 
+=======
+### $n^2$에 비례하는 시간 소요 : O(N)
+
+- n의 값에 비례하는 시간 소요
+
+```python
+def sample3(A, n):
+  sum = 0
+  for i in range(1, n):
+    for j in range(1, n):
+      sum += (A[i] * A[j])
+  return sum
+
+# 예시
+print(sample3([1, 2, 3, 4, 5], 4))
+
+# 출력
+81
+```
+>>>>>>> Stashed changes
