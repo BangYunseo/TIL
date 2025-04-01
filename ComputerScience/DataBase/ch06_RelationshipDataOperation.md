@@ -1,12 +1,12 @@
-# Chapter 6. ER 다이어그램(Entity-Relationship Diagram)
+# Chapter 6. 관계 데이터 연산(Relationship Data Operation)
 
-> 1절. ER 다이어그램
+> 1절. 
 >
-> 2절. 강한 개체 타입과 약한 개체 타입
+> 2절. 
 >
-> 3절. 부분 참여와 전체 참여
+> 3절. 
 >
-> 4절. EER 모델
+> 4절. 
 
 ## 1절. ER 다이어그램
 #### ER 다이어그램(Diagram)
