@@ -1,4 +1,4 @@
-# Chapter 7. 관계 데이터 모델링(Relationship Data Modeling)
+# Chapter 7. SQL 질의어
 
 > 1절. 관계 데이터 모델
 >
