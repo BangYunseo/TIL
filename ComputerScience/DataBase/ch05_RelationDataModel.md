@@ -24,7 +24,7 @@
 
 ### 기본 용어
 
-1) 릴레이션(Relation)
+#### 1) 릴레이션(Relation)
 
   - 하나의 개체에 관한 데이터를 2차원 테이블의 구조로 저장
   - 행과 열로 구성된 테이블
@@ -37,31 +37,31 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ch05-03-RR.PNG" width="70%" height="auto" />
 
-2) 속성(Attribute)
+#### 2) 속성(Attribute)
 
   - 릴레이션의 열
   - 파일 관리 시스템 관점에서 필드(field)에 대응
 
-3) 튜플(Tuple)
+#### 3) 튜플(Tuple)
 
   - 릴레이션의 행
   - 파일 관리 시스템 관점에서 레코드(record)에 대응
 
-4) 도메인(Domain)
+#### 4) 도메인(Domain)
 
   - 하나의 속성이 가질 수 있는 모든 값의 집합
   - 속성값을 입력 및 수정할 때 적합성 판단의 기준
   - 일반적으로 속성의 특성을 고려한 데이터 타입으로 정의
 
-5) 널(NULL)
+#### 5) 널(NULL)
 
   - 속성값을 아직 모르거나 해당되는 값이 없음
 
-6) 차수(Degree)
+#### 6) 차수(Degree)
 
   - 하나의 릴레이션에서 속성의 전체 개수
 
-7) 카디널리트(Cardinality)
+#### 7) 카디널리트(Cardinality)
 
   - 하나의 릴레이션에서 튜플의 전체 개수
 
@@ -73,7 +73,7 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ch05-05-SchemaInstance.PNG" width="100%" height="auto" />
 
-1) 릴레이션 스키마(Relation Schema)
+#### 1) 릴레이션 스키마(Relation Schema)
 
   - 릴레이션의 논리적 구조
     - 속성(Attribute) : 릴레이션 스키마 열
@@ -85,7 +85,7 @@
   - 릴레이션 내포(Relation Intension)라고도 함
   - 정적인 특징
 
-2) 릴레이션 인스턴스(Relation Instance)
+#### 2) 릴레이션 인스턴스(Relation Instance)
   - 어느 한 시점에 릴레이션에 존재하는 튜플들의 집합
     - 튜플(Tuple) : 릴레이션의 행
     - 카디널리티(Cardinality) : 튜플의 수
@@ -95,7 +95,7 @@
 
 #### 다중 값 속성, 동일한 튜플
 
-1) 다중 값 속성을 포함하는 릴레이션
+##### 1) 다중 값 속성을 포함하는 릴레이션
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ch05-06-ManyValues.PNG" width="100%" height="auto" />
 
@@ -103,7 +103,7 @@
   - 관계 데이터 모델의 릴레이션으로 적합하지 않음
 
 
-2) 동일한 튜플이 중복되는 릴레이션
+##### 2) 동일한 튜플이 중복되는 릴레이션
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ch05-07-SameTuple.PNG" width="100%" height="auto" />
 
@@ -118,12 +118,12 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ch05-08-DBSchemaInstance.PNG" width="100%" height="auto" />
 
-1) 데이터베이스 스키마(DataBase Schema)
+#### 1) 데이터베이스 스키마(DataBase Schema)
 
    - 데이터베이스 전체 구조
    - 데이터베이스를 구성하는 릴레이션 스키마 모음
   
-2) 데이터베이스 인스턴스(DataBase Instance)
+#### 2) 데이터베이스 인스턴스(DataBase Instance)
 
    - 데이터베이스를 구성하는 릴레이션 인스턴스의 모음
 
