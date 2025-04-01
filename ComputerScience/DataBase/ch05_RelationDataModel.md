@@ -1,6 +1,6 @@
 # Chapter 5. 관계 데이터 모델
 
-> 1절. 관계 데이터 모델의 개념
+> 1절. 관계 데이터 모델 개념
 >
 > 2절. 개체
 >
@@ -9,27 +9,82 @@
 > 4절. 관계
 
 ## 1절. 관계 데이터 모델의 개념
-#### 관계 데이터 모델
+
+### 관계 데이터 모델
 - 개념적 구조를 논리적 구조로 표현하는 논리적 데이터 모델
 - 하나의 개체에 대한 데이터를 하나의 릴레이션에 저장
 
-![ch05-01-](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ch05-01.PNG)
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ch05-01-Relation.PNG" width="100%" height="auto" />
 
+- 고객 릴레이션
+  - 차수(Degree) : 6
+  - 카디널리티(Cardinality) : 4
 
-#### 기본 용어
+### 기본 용어
 
-##### 릴레이션(relation)
-- 하나의 개체에 관한 데이터를 2차원 테이블의 구조로 저장한 것
+1) 릴레이션(Relation)
+
+- 하나의 개체에 관한 데이터를 2차원 테이블의 구조로 저장
 - 행과 열로 구성된 테이블
 - 파일 관리 시스템 관점에서 파일(file)에 대응
 - 릴레이션 내에서 생성되는 관계 : 릴레이션 내 데이터들의 관계
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ch05-02-DataTable.PNG" width="100%" height="auto" />
+
 - 릴레이션 간에 생성되는 관계 : 릴레이션 간의 관계
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ch05-03-RR.PNG" width="100%" height="auto" />
 
-![ERmodel](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ERmodel.PNG)
+2) 속성(Attribute)
 
-#### ER 모델의 주요 구성 요소
+- 릴레이션의 열
+- 파일 관리 시스템 관점에서 필드(field)에 대응
 
+3) 튜플(Tuple)
+
+- 릴레이션의 행
+- 파일 관리 시스템 관점에서 레코드(record)에 대응
+
+4) 도메인(Domain)
+
+- 하나의 속성이 가질 수 있는 모든 값의 집합
+- 속성값을 입력 및 수정할 때 적합성 판단의 기준
+- 일반적으로 속성의 특성을 고려한 데이터 타입으로 정의
+
+5) 널(NULL)
+
+- 속성값을 아직 모르거나 해당되는 값이 없음
+
+6) 차수(Degree)
+
+- 하나의 릴레이션에서 속성의 전체 개수
+
+7) 카디널리트(Cardinality)
+
+- 하나의 릴레이션에서 튜플의 전체 개수
+
+### 릴레이션 구성
+
+1) 릴레이션 스키마(Relation Schema)
+
+- 릴레이션의 논리적 구조
+  - 속성(Attribute) : 릴레이션 스키마 열
+  - 도메인(Domain) : 속성이 가질 수 있는 값의 집합
+  - 차수(Degree) : 속성의 개수
+ 
+- m/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/AttributeExpression.PNG)
+
+#### 속성 특징
+* 파일 시스템에서 '데이터 항목(Data Item)' 혹은 '필드(Field)'에 대응
+* 단독으로 존재할 경우 대개 무의미
+
+##### 도메인(Domain)
+* 각 속성마다 가질 수 있는 값의 범위
+* 예시
+    * 학번의 도메인은 정수 10자리
+    * 주소의 도메인은 문자 30자리
+
+#### 속성 종류
 |구분|영어|정의|
 |:--:|:--:|:--|
 |개체|Entity|DB가 표현하려고 하는 유형으로 무형 정보 대상이며 "존재"하면서 서로 구별될 수 있는 요소|
@@ -90,19 +145,7 @@
 #### 속성 표현
 * 개체 집합을 나타내는 직사각형에 실선으로 연결된 타원형
 
-![AttributeExpression](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/AttributeExpression.PNG)
-
-#### 속성 특징
-* 파일 시스템에서 '데이터 항목(Data Item)' 혹은 '필드(Field)'에 대응
-* 단독으로 존재할 경우 대개 무의미
-
-##### 도메인(Domain)
-* 각 속성마다 가질 수 있는 값의 범위
-* 예시
-    * 학번의 도메인은 정수 10자리
-    * 주소의 도메인은 문자 30자리
-
-#### 속성 종류
+![AttributeExpression](https://github.co
 |종류|영어|특성|예시|
 |:--:|:--:|:---|:---|
 |상수 속성|Constant Attribute|시간이 지나도 값이 변하지 않는 속성|학생의 주민등록번호|
