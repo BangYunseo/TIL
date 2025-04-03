@@ -36,7 +36,7 @@
 - 관계 대수, 관계 해석
    - 기능과 표현력 측면에서 동등한 능력
  
-<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-02-TypeOfRDO.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-02-TypeOfRDO.PNG" width="70%" height="auto" />
 
 ### 관계 대수와 관계 해석 역할
 
@@ -59,7 +59,7 @@
 
 ### 관계 대수 연산자
 
-<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-03-RA.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-03-RA.PNG" width="70%" height="auto" />
 
 #### 일반 집합 연산자(Set Operation)
 
@@ -72,7 +72,7 @@
 |차집합|-|R - S|릴레이션 R과 S의 차집합 반환|
 |카티션 프로덕트|||릴레이션 R의 각 튜플과 릴레이션 S의 각 튜플을 모두 연결하여 만든 새로운 튜플 반환|
 
-<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-04-NSO.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-04-NSO.PNG" width="70%" height="auto" />
 
 - 특성
   - 2개의 피연산자 필요 : 2개의 릴레이션을 대상으로 연산 수행
@@ -81,7 +81,7 @@
       - 두 릴레이션의 동등한 차수
       - 두 릴레이션에서 서로 대응되는 속성의 도메인 일치
      
-<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-05-UnionCompatible.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-05-UnionCompatible.PNG" width="70%" height="auto" />
 
 1) 합집합(Union)
 
@@ -94,7 +94,7 @@
 - 교환적 특징 : R∪S = S∪R
 - 결합적 특징 : (R∪S)∪T = R∪(S∪T)
 
-<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-06-UnionEX.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-06-UnionEX.PNG" width="70%" height="auto" />
 
 2) 교집합(Intersection)
 
@@ -107,7 +107,7 @@
 - 교환적 특징 : R∩S = S∩R
 - 결합적 특징 : (R∩S)∩T = R∩(S∩T)
 
-<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-07-IntersectionEX.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-07-IntersectionEX.PNG" width="70%" height="auto" />
 
 3) 차집합(Difference)
 
@@ -120,6 +120,6 @@
    - S–R의 카디널리티는 릴레이션 S의 카디널리티와 같거나 적음
 - 교환적, 결합적 특징 없음
 
-<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-08-DifferenceEX.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-08-DifferenceEX.PNG" width="70%" height="auto" />
 
 (pdf 18쪽)
