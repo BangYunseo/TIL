@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/fca9d6ab-9d8a-4306-b111-c703286b099f)# Chapter 6. 관계 데이터 연산(Relationship Data Operation)
+# Chapter 6. 관계 데이터 연산(Relationship Data Operation)
 
 > 1절. 관계 데이터 연산 개념
 >
@@ -23,7 +23,7 @@
 
 ### 데이터 모델 = 데이터 구조 + 연산 + 제약조건
 
-<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-01-DataModel.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-01-DataModel.PNG" width="70%" height="auto" />
 
 1) 개념적 구조 : 현실세계를 개념 세계로 추상화 했을 때 어떤 요소로 이루어 있는지 표현하는 개념적구조
 
