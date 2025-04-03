@@ -1,6 +1,6 @@
-# Chapter 6. 관계 데이터 연산(Relationship Data Operation)
+![image](https://github.com/user-attachments/assets/fca9d6ab-9d8a-4306-b111-c703286b099f)# Chapter 6. 관계 데이터 연산(Relationship Data Operation)
 
-> 1절. 
+> 1절. 관계 데이터 연산 개념
 >
 > 2절. 
 >
@@ -8,186 +8,118 @@
 >
 > 4절. 
 
-## 1절. ER 다이어그램
-#### ER 다이어그램(Diagram)
-* 개념적 데이터 모델인 ER 모델을 표현하는 그래픽 방식의 표현 방법
+## 1절. 관계 데이터 연산 개념
 
-![ERD](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ERD.PNG)
+### 데이터 모델(Data Model)
 
-#### ER 다이어그램 작성 지침
-* 개체 타입은 키(Key) 속성 이외의 개체 타입을 설명하는 속성들 보유
-* 다중값 속성은 별도의 개체 타입으로 분류
-* 개체 타입을 직접적으로 설명하는 속성들을 개체 타입과 연결
-* 관계 타입은 독자적인 존재 불가능
-* 키 속성(또는 속성 집합)에는 밑줄 표현
+- 데이터 모델링의 결과물을 표현하는 도구
+- 개념적 데이터 모델 
+  - 사람의 머리로 이해 가능하도록 현실 세계를 모델링하여 데이터베이스의 개념적 구조로 표현하는 도구
+  - ex ) 개체-관계 모델(Entity-Relationship Model)
+ 
+- 논리적 데이터 모델
+  - 개념적 구조를 논리적 모델링하여 데이터베이스의 논리적 구조로 표현하는 도구
+  - ex ) 관계 데이터 모델
 
-#### ER 다이어그램 표현 기호
+### 데이터 모델 = 데이터 구조 + 연산 + 제약조건
 
-![ERDexpression](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ERDexpression.PNG)
+<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-01-DataModel.PNG" width="70%" height="auto" />
 
-#### ER 다이어그램 예제
+1) 개념적 구조 : 현실세계를 개념 세계로 추상화 했을 때 어떤 요소로 이루어 있는지 표현하는 개념적구조
 
-![ERDex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ERDex.PNG)
+2) 논리적 구조 : 데이터를 어떤 모습으로 저장할 것인지 표현하는 구조
+   
+### 관계 데이터 연산(Relational Data Operation)
 
-## 2절. 강한 개체 타입과 약한 개체 타입
-#### 정의 및 표현
-* 강한 개체 타입(String Entity Type)
-    * 정의
-        * 독자적으로 존재
-        * 개체 타입 내에서 자신의 키(Key) 속성을 사용하여 고유하게 개체를 식별할 수 있는 개체 타입
-    * 표현
-        * 일반 직사각형
+- 관계 데이터 모델의 연산
+- 원하는 데이터를 얻기 위해 릴레이션에 필요한 처리 요구 수행
+- 관계 대수, 관계 해석
+   - 기능과 표현력 측면에서 동등한 능력
+ 
+<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-02-TypeOfRDO.PNG" width="70%" height="auto" />
 
-* 약한 개체 타입(Weak Entity Type)
-    * 정의
-        * 개체를 식별할 수 있는 키를 형성하기에 충분한 속성을 갖지 못한 개체 타입
-        * 약한 개체 타입의 존재를 위해서는 반드시 소유 개체 타입(Owner Entity Type)의 존재 필요
-        * 약한 개체 타입의 구별자(부분 키)와 소유 개체 타입의 키 속성을 결합해야 약한 개체를 고유하게 식별 가능
-    * 표현
-        * 이중선(겹줄) 직사각형 표현
+### 관계 대수와 관계 해석 역할
 
-* 약한 개체 타입 표현 예시 - 부양가족 개체
+- 데이터 언어의 유용성 검증 기준
+- 관계 대수나 관계 해석으로 기술 가능한 모든 질의를 기술하는 데이터 언어를 관계적으로 완전(relationally complete)하다고 판단
+  - 질의(query) : 데이터에 대한 처리 요구
+ 
+## 2절. 관계 대수
 
-![WETex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/WETex.PNG)
+### 관계 대수(Relational Algebra) 개념
 
-#### 존재 종속(Existence-Dependence)
-* 한 개체 타입(a)의 존재가 다른 개체 타입(b)의 존재에 영향을 받는 경우 a는 b에 '존재 종속'이라 표현
-    * a : 종속 개체 타입(Subordinate Entity)
-    * b : 주 개체 타입(Dominant Entity) 또는 소유 개체 타입
+- 원하는 결과를 얻기 위해 릴레이션의 처리 과정을 순서대로 기술하는 언어
+   - 절차 언어(procedural language)
+- 릴레이션을 처리하는 연산자들의 모임
+   - 대표 연산자 8개
+   - 일반 집합 연산자와 순수 관계 연산자로 분류
+- 폐쇄 특성(closure property) 존재
+   - 피연산자도 연산의 결과도 모두 릴레이션
+ 
 
-* 존재 종속 ER 다이어그램 표현 예시 : 대출(주 개체 타입)과 상환(종속 개체 타입)간의 대출상환 관계
+### 관계 대수 연산자
 
-![EDex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/EDex.PNG)
+<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-03-RA.PNG" width="70%" height="auto" />
 
-#### 구별자(Discriminator)
-* 하나의 강한 개체 타입과 연관된 약한 개체 집합 안에서만 서로 구별할 수 있는 속성
-* 부분 키(Partial Key)
-* 점선 밑줄 표현
+#### 일반 집합 연산자(Set Operation)
 
-#### 식별 관계 타입(Identifying Relationship Type)
-* 약한 개체 타입을 강한 개체 타입과 연관시켜 약한 개체를 유일하게 식별하도록 하는 관계
-* 겹줄 마름모 표현
+- 릴레이션이 튜플의 집합이라는 개념을 이용하는 연산자
 
+|연산자|기호|표현|의미|
+|:---|:---:|:--|:---|
+|합집합|∪|R ∪ S|릴레이션 R과 S의 합집합 반환|
+|교집합|∩|R ∩ S|릴레이션 R과 S의 교집합 반환|
+|차집합|-|R - S|릴레이션 R과 S의 차집합 반환|
+|카티션 프로덕트|||릴레이션 R의 각 튜플과 릴레이션 S의 각 튜플을 모두 연결하여 만든 새로운 튜플 반환|
 
+<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-04-NSO.PNG" width="70%" height="auto" />
 
-#### 부양 관계 타입
-* 부양 관계 이해하기
+- 특성
+  - 2개의 피연산자 필요 : 2개의 릴레이션을 대상으로 연산 수행
+  - 합집합, 교집합, 차집합은 피연산자인 두 릴레이션이 합병 가능해야 함
+    - 합병 가능 (union-compatible) 조건
+      - 두 릴레이션의 동등한 차수
+      - 두 릴레이션에서 서로 대응되는 속성의 도메인 일치
+     
+<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-05-UnionCompatible.PNG" width="70%" height="auto" />
 
-![IRTex2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/IRTex2.PNG)
+1) 합집합(Union)
 
-* 부양 관계 타입 ER 다이어그램 - 부양가족 개체를 사원 개체와 연관한 예시
+: R∪S
+- 합병 가능한 두 릴레이션 R과 S의 합집합
+   - 릴레이션 R에 속하거나 릴레이션 S에 속하는 모든 튜플들로 결과 릴레이션 구성
+- 결과 릴레이션 특징
+   - 차수는 릴레이션 R과 S의 차수와 동일
+   - 카디널리티는 릴레이션 R과 S의 카디널리티를 더한 것과 같거나 적음
+- 교환적 특징 : R∪S = S∪R
+- 결합적 특징 : (R∪S)∪T = R∪(S∪T)
 
-![IRTex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/IRTex.PNG)
+<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-06-UnionEX.PNG" width="70%" height="auto" />
 
+2) 교집합(Intersection)
 
-## 3절. 부분 참여와 전체 참여
-#### 정의 및 표현
-* 부분 참여(Partial Participation)
-    * 정의
-        * 어떤 개체 타입의 일부 개체만이 관계를 이루는 다른 개체 타입의 개체와 연관
-        * 예시
-            * 학생 - 교과목 간의 수강 관계
-    * 특징
-        * 관계의 참여 제약조건(Participation Constraint) 가운데 선택적(Optional) 참여에 해당
-        * 대응 개체 수(min, max)로 표현하는 경우 min의 값은 '0'
-    * 표현 
-        * 실선 표현
+: R∩S
+- 합병 가능한 두 릴레이션 R과 S의 교집합
+   - 릴레이션 R과 S에 공통으로 속하는 튜플로 결과 릴레이션 구성
+- 결과 릴레이션 특징
+   - 차수는 릴레이션 R과 S의 차수와 동일
+   - 카디널리티는 릴레이션 R과 S의 어떤 카디널리티보다 크지 않음
+- 교환적 특징 : R∩S = S∩R
+- 결합적 특징 : (R∩S)∩T = R∩(S∩T)
 
-* 전체 참여(Total Participation)
-    * 정의
-        * 어떤 개체 타입의 모든 개체가 반드시 관계를 이루는 다른 개체 타입의 개체와 연관
-        * 예시
-            * 회원 - 국가 간의 국적 관계
-    * 특징
-        * 관계의 참여 제약조건(Participation Constraint) 가운데 의무적(Mandatory) 참여에 해당
-        * 대응 개체 수(min, max)로도 표현하는 경우 min의 값은 '1'
-    * 표현
-        * 이중 실선 표현
+<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-07-IntersectionEX.PNG" width="70%" height="auto" />
 
-#### 표현 예시 다이어그램
+3) 차집합(Difference)
 
-![TPPPex](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/TPPPex.PNG)
+: R-S
+- 합병 가능한 두 릴레이션 R과 S의 차집합
+   - 릴레이션 R에는 존재하지만 릴레이션 S에는 존재하지 않는 튜플로 결과 릴레이션 구성
+- 결과 릴레이션 특성
+   - 차수는 릴레이션 R과 S의 차수와 같음
+   - R–S의 카디널리티는 릴레이션 R의 카디널리티와 같거나 적음
+   - S–R의 카디널리티는 릴레이션 S의 카디널리티와 같거나 적음
+- 교환적, 결합적 특징 없음
 
-## 4절. EER 모델
-#### ERR(Enhanced ER, 확장된 ER)
-* 기본적인 ER 모델에 몇 가지 새로운 개념이 추가된 형태
-* Extended ER(E2R, EER, 확장된 ER) 모델이라고 칭함
+<img src="https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase/Image/ch06/ch06-08-DifferenceEX.PNG" width="70%" height="auto" />
 
-![EER](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/EER.PNG)
-
-#### 서브 타입 개체(Subtype Entity)
-* 한 개체 타입에 속하는 개체들을 어떤 기준에 의해 몇 개의 소규모 그룹으로 나눈 것
-* 원래 개체 타입의 하위 개체 타입이며 부분 집합
-* 원래 개체의 서브 타입 개체라고 칭함
-
-##### 서브 타입 개체의 예시
-* 예시 1 : 개체 타입 - 학생
-    * 서브 타입 개체 : 학부생, 대학원생
-    * 학생은 학부생과 대학원생의 슈퍼 타입 개체
-
-* 예시 2 : 개체 타입 - 학부생
-    * 서브 타입 개체 : 여학생, 남학생
-
-* 예시 3 : 개체 타입 - 남학생
-    * 서브 타입 개체 : 군필 남학생, 미필 남학생
-
-#### 슈퍼 타입 개체(Supertype Entity)
-* 여러 개체 타입이 속하는 상위 개체 타입
-
-##### 슈퍼 타입 개체의 예시
-* 예시 1 : 개체 타입 - 교수, 조교, 직원
-    * 슈퍼 타입 개체 : 교직원
-    * 교직원은 교수, 직원, 조교의 슈퍼 타입이면서 사람의 서브 타입
-        * 즉, 슈퍼 타입인지 서브 타입인지는 상대적인 결정
-
-* 예시 2 : 개체 타입 - 교직원, 재학생, 졸업생
-    * 슈퍼 타입 개체 : 사람
-
-#### 슈퍼 - 서브 관계(IS-A 관계) 표현
-
-![ISAR](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ISAR.PNG)
-
-#### 속성 상속(Ingeritance)
-* 서브 타입 개체는 슈퍼 타입 개체의 모든 속성을 상속받음
-* 예시
-    * 교수 개체의 속성
-        * 직급 : 고유 속성
-        * 주민등록번호, 이름, 연락처, 소속, 입사일, 급여 : 기본 속성
-            * 위의 속성을 모두 2개의 슈퍼 타입 개체로부터 상속받아 포함
-
-#### 세분화(Specialization)
-* 한 개체 타입에 속하는 서브 타입을 결정하는 작업
-* 일정한 기준에 따라 몇 가지 서브 타입으로 분리
-* 각 서브 타입의 이름과 고유 속성 결정(Top-down 방식의 모델링)
-    * 예시 : {교수, 조교, 직원}은 업무 유형에 따라 교직원의 세분화
-
-![Spec](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/Spec.PNG)
-
-* 현실 세계를 보다 정교하게 모델링
-* 널(NULL) 값을 갖는 속성 최소화
-* 하나의 개체 타입에 대해 필요에 따라 여러 가지 세분화 가능
-    * 예시 : {정규직, 계약직} 은 계약 유형에 따른 교직원의 세분화
-* 세분화에 따라 서브 타입 개체는 다른 서브 타입 개체가 갖고 있지 않은 고유한 속성을 가져야 함
-    * 예시 : 교수는 직급 속성, 조교는 지원 과목 속성, 직원은 담당 업무라는 고유 속성 보유
-
-#### 일반화(Generalization)
-* 세분화와 반대 개념
-* 여러 개체 타입들의 슈퍼 타입 결정 작업
-* 여러 개체 타입의 공통점만 수집
-* 공통점에 근거한 새로운 슈퍼 타입 생성
-* 모델링 단순화(Bottom-up 방식의 모델링)
-    * 예시 : 승용차, 트럭, 버스 개체 타입은 '운송수단'으로 일반화
-
-![Gene](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/Gene.PNG)
-
-#### 카테고리(Category)
-* 별개의 개체 타입 집합
-* 합집합(Union) 타입이라고도 함
-    * 예시 : 차량 소유주 카테고리 - {사람, 회사, 은행}
-* 하나 이상의 슈퍼 타입 개체와 단 하나의 서브 타입 개체가 슈퍼-서브 관계를 갖는 상황을 모델링할 때 유용
-* 카테고리에 속하는 멤버(member)는 슈퍼 타입 개체 가운데 하나에 속함
-
-#### 카테고리 표현
-* 작은 삼각형 혹은 원 안에 Union 첫 자인 'U'자를 표시
-
-![Category](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/Category.PNG)
+(pdf 18쪽)
