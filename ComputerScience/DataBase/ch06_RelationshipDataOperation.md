@@ -2,7 +2,7 @@
 
 > 1절. 관계 데이터 연산 개념
 >
-> 2절. 
+> 2절. 관계 대수
 >
 > 3절. 
 >
@@ -70,7 +70,7 @@
 |합집합|∪|R ∪ S|릴레이션 R과 S의 합집합 반환|
 |교집합|∩|R ∩ S|릴레이션 R과 S의 교집합 반환|
 |차집합|-|R - S|릴레이션 R과 S의 차집합 반환|
-|카티션 프로덕트|||릴레이션 R의 각 튜플과 릴레이션 S의 각 튜플을 모두 연결하여 만든 새로운 튜플 반환|
+|카티션 프로덕트|✕|R ✕ S|릴레이션 R의 각 튜플과 릴레이션 S의 각 튜플을 모두 연결하여 만든 새로운 튜플 반환|
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-04-NSO.PNG" width="70%" height="auto" />
 
@@ -114,7 +114,7 @@
 : R-S
 - 합병 가능한 두 릴레이션 R과 S의 차집합
    - 릴레이션 R에는 존재하지만 릴레이션 S에는 존재하지 않는 튜플로 결과 릴레이션 구성
-- 결과 릴레이션 특성
+- 결과 릴레이션 특징
    - 차수는 릴레이션 R과 S의 차수와 같음
    - R–S의 카디널리티는 릴레이션 R의 카디널리티와 같거나 적음
    - S–R의 카디널리티는 릴레이션 S의 카디널리티와 같거나 적음
@@ -122,4 +122,84 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-08-DifferenceEX.PNG" width="70%" height="auto" />
 
-(pdf 18쪽)
+4) 카티션 프로덕트(Cartesian Product)
+
+: R✕S
+- 두 릴레이션 R과 S의 카티션 프로덕트
+  - 릴레이션 R에 속한 각 튜플과 릴레이션 S에 속한 각 튜플을 모두 연결하여 만들어진 새로운 튜플로 결과 릴레이션 구성
+- 결과 릴레이션 특징
+  - 차수는 릴레이션 R과 S의 차수를 더한 것과 동일
+  - 카디널리티는 릴레이션 R과 S의 카디널리티를 곱한 것과 동일
+- 교환적 특징 : R✕S, S✕R
+- 결합적 특징 : (R✕S)✕T = R✕(S✕T)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-09-CartesianProduct.PNG" width="70%" height="auto" />
+
+#### 순수 관계 연산자(Relational Operation)
+
+- 릴레이션의 구조와 특성을 이용하는 연산자
+
+|연산자|기호|표현|의미|
+|:---|:---:|:--|:---|
+|셀렉트|σ|$σ_{조건식}(R)$|릴레이션 R에서 조건을 만족하는 튜플들 반환|
+|프로젝트|π|$π_{속성리스트}(R)$|릴레이션 R에서 주어진 속성들의 값으로만 구성된 튜플들을 반환|
+|조인|-|R ▷◁ S|공통 속성을 이용해 릴레이션 R과 S의 튜플들을 연결하여 만든 새로운 튜플들 반환|
+|디비전|÷|R ÷ S|릴레이션 S의 모든 튜플과 관련이 있는 릴레이션 R의 튜플들 반환|
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-10-RO.PNG" width="70%" height="auto" />
+
+1) 셀렉트(Select) 또는 셀렉션(Selection)
+
+- 릴레이션에서 조건을 만족하는 튜플만 선택하여 결과 릴레이션 구성
+- 하나의 릴레이션을 대상으로 연산 수행 : 단항 연산자
+- 수학적 표현법 : $σ_{조건식}(릴레이션)$
+- 데이터 언어적 표현법 : 릴레이션 where 조건식
+- 조건식
+  - 비교식, 프레디킷(predicate : 조건)
+  - 속성과 상수의 비교나 속성들 간의 비교로 표현
+  - 비교 연산자(>, ≥, <, ≤, =, ≠)와 논리 연산자(∧(and), ∨(or), ¬(not))를 이용해 작성
+- 결과 릴레이션은 연산 대상 릴레이션의 수평적 부분 집합
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-14-OperationRelation.PNG" width="70%" height="auto" />
+
+- 교환적 특징 : $σ_{조건식1}(σ_{조건식2}(릴레이션)) = σ_{조건식2}(σ_{조건식1}(릴레이션)) = σ_{조건식1 ∧조건식2}(릴레이션)$
+- ex) 도서 릴레이션에서 가격이 8,000원 이하이고 도서번호가 3 이상인 책 검색
+  - σ_{가격 <= 8000 ∧ 도서번호 >= 3}(도서)
+
+#### 고객 릴레이션에서 셀렉션 연산 예제
+
+- 고객 릴레이션
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-11-CustomRelation.PNG" width="70%" height="auto" />
+
+- ex 1) 등급이 gold인 튜플 검색
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-12-SelectEX1.PNG" width="70%" height="auto" />
+
+- ex 2) 등급이 gold이고 적립금이 2000 이상인 튜플 검색
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-13-SelectEX2.PNG" width="70%" height="auto" />
+
+2) 프로젝트(Project) 또는 프로젝션(Projection)
+
+- 릴레이션에서 선택한 속성 값으로 결과 릴레이션 구성
+  - 수직적 연산자 : 결과 릴레이션은 연산 대상 릴레이션의 수직적 부분집합
+- 하나의 릴레이션 대상 연산 수행 : 단항 연산자
+- 수학적 표현법 : $π_{속성리스트}(릴레이션)$
+- 데이터 언어적 표현법 : 릴레이션\[속성리스트\]
+
+(수정필요)
+
+#### 고객 릴레이션에서 프로젝션 연산 예제
+
+- 고객 릴레이션
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-11-CustomRelation.PNG" width="70%" height="auto" />
+
+- ex 1) 등급이 gold인 튜플 검색
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-12-SelectEX1.PNG" width="70%" height="auto" />
+
+- ex 2) 등급이 gold이고 적립금이 2000 이상인 튜플 검색
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-13-SelectEX2.PNG" width="70%" height="auto" />
