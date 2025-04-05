@@ -57,7 +57,7 @@
 - $n$에 관계 없이 상수 시간 소요
 
 ```python
-def sample1(A[], n):
+def sample1(A, n):
   k = floor(n / 2)
   // 내림수 사용
   return A[k]
@@ -160,7 +160,7 @@ def factorial(n):
 
 ```Python
 # A[p ... r]을 정렬
-def mergeSort(A[ ], p, r):
+def mergeSort(A, p, r):
   if (p < r):
     q = floor((p + r)/2)
     # p, r의 중간 지점 계산
@@ -174,7 +174,7 @@ def mergeSort(A[ ], p, r):
     merge(A, p, q, r)
     # 병합
 
-def merge(A[ ], p, q, r) {
+def merge(A, p, q, r) {
   # 정렬되어 있는 두 배열 A[p ... q]와 A[q+1 ... r]을 합하여 정렬된 하나의 배열 A[p ... r] 생성
 }
 ```
