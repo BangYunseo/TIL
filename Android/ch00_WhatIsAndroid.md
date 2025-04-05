@@ -1,16 +1,13 @@
 # Chapter 0. Android 개요
 
 > 1절. 프로젝트 생성
->
-> 2절. 
->
-> 3절. 
+ 
 
 ## 1절. 프로젝트 생성
 
 ### 초기 화면 설정
 
-<img src="ch00-01-startPage.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-01-startPage.PNG" width="100%" height="auto" />
 
 1) Name : 프로젝트 명
 
@@ -34,6 +31,21 @@
 
 ### 화면 구성
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-02-logCat.PNG" width="100%" height="auto" />
+
 1) 로그캣(Logcat)
 - 앱이 실행중일 때 발생하는 로그 출력
 - 앱에서 출력한 로그나 오류 메시지 등을 확인할 때 이용
+
+### SDK 설정
+
+|이름|용도|설치 여부|
+|:---:|:---|:---|
+|Android SDK Build-Tools 34|앱 빌드 시 필요 도구|필수 설치|
+|Android Emulator|앱 실행 시 필요 도구|필수 설치|
+|Android ASK Platform-Tools|안드로이드 플랫폼과 연동되는 adb, fastboot, systrace와 같은 도구 모음|필수 설치|
+|Android Emulator hypervisor driver(installer)|AMD용 하이퍼바이저 드라이버|AMD CPU일 경우 설치|
+|Intel x86 Emulator Accelerator(HAXM installer)|인텔 에뮬레이터 가속기|인텔 CPU라면 설치|
+
+- AMD의 하이퍼바이저 드라이버나 인텔의 가속기인 HAXM 설치를 위해서 CPU가 가상화 기술을 지원하고 이를 활성화(BIOS)할 필요 존재
+
