@@ -425,3 +425,306 @@ fun main(){
 
 - 기초 타입 배열
     - 기초 타입인 경우 Array를 사용하지 않고 클래스 이용
+    - 클래스 예시 : BooleanArray, ByteArray, CharArray, DoubleArray, FloatArray, IntArray, LongArray, ShortArray 클래스 제공
+
+```kt
+// 기초 타입 배열 선언
+
+val data1: IntArray = IntArray(3, { 0 })
+val data2: BooleanArray(3, { false })
+```
+
+- arrayOf() : 배열 선언 시 값 할당 가능
+    - 클래스 예시 : booleanArrayOf(), byteArrayOf(), charArrayOf(), doubleArrayOf(), floatArrayOf(), intArrayOf(), longArrayOf(), shortArrayOf() 함수 제공
+
+```kt
+// 기초 타입 arrayOf() 함수
+
+val data1 = intArrayOf(10, 20, 30)
+val data2 = booleanArrayOf(true, false, true)
+```
+
+```kt
+// 배열 선언과 동시에 값 할당
+
+fun main(){
+    val data1 = arrayOf<Int>(10, 20, 30)
+    // 크기가 3인 int 배열을 선언하고 각각 10, 20, 30 으로 할당
+
+    println("""
+    array size : ${data1.size}
+    array data : ${data1[0]}, ${data1[1]}, ${data1.get(2)}
+    """)
+}
+
+// 실행 결과
+//  array size : 3
+//  array data : 10, 20, 30
+```
+
+#### List, Set, Map
+
+- List : 순서가 있는 데이터 집합으로 데이터 중복 허용
+- Set : 순서가 없는 데이터 집합으로 데이터 중복 비허용
+- Map : 키와 값으로 이루어진 데이터 집합으로 순서가 없으며 키의 중복 비허용
+
+- Collection 타입의 클래스 : 가변 클래스 or 불변 클래스
+    - 가변 클래스 : 초깃값 대입 이후 데이터를 추가하거나 변경 가능
+    - 불변 클래스 : 초기에 데이터 대입 시 더 이상 변경 불가능한 타입
+
+|구분|타입|함수|특징|
+|:---:|:---|:---|:---:|
+|List|1. List<br><br>2. MutableList|1. listOf()<br><br>2. mutableListOf()|1. 불변<br><br>2. 가변|
+|Set|1. Set<br><br>2. MutableSet|1. setOf()<br><br>2. mutableSetOf()|1. 불변<br><br>2. 가변|
+|Map|1. Map<br><br>2. MutableMap|1. mapOf()<br><br>2. mutableMapOf()|1. 불변<br><br>2. 가변|
+
+```kt
+// 리스트 사용 예
+
+fun main(){
+    var list = listOf<Int>(10, 20, 30)
+
+    println("""
+    list size : ${list.size}
+    list data : ${list[0]}, ${list[1]}, ${list.get(2)}
+    """)
+}
+
+// 실행 결과
+//  list size : 3
+//  list data : 10, 20, 30
+```
+
+```kt
+// 가변 리스트 사용 예
+
+fun main(){
+    var mutableList = mutableListOf<Int>(10, 20, 30)
+    mutableList.add(3, 40)
+    mutableList.set(0, 50)
+    println("""
+    list size : ${mutableList.size}
+    list data : ${mutableList[0]}, ${mutableList.get(1)},
+                ${mutableList.get(2)}, ${mutableList.get(3)}
+    """)
+}
+
+// 실행 결과
+//  list size : 3
+//  list data : 50, 20, 30, 40
+```
+
+    - Map 객체 : 키와 값으로 이루어진 데이터 집합
+    - Map 객체의 키와 값은 Pair 객체를 이용할 수도 있고 '키 to 값'형태로 이용 가능
+
+
+```kt
+// 집합 사용 예
+
+fun main() {
+    var map = mapOf<String, String>(Pair("one", "hello"), "two" to "world")
+    println("""
+    map size : ${map.size}
+    map data : ${map.get("one")}, ${map.get("two")}
+    """)
+}
+
+// 실행 결과
+//  map size : 2
+//  map data : hello, world
+```
+
+## 3절. 조건문과 반복문
+
+### 조건문 if ~ else와 표현식
+
+- if문의 명시된 조건 만족 시 if문 실행, 그렇지 않으면 else 문 실행
+
+```kt
+// if ~ else 문의 조건이 여러 개 나열된 예
+
+fun main(){
+    var data = 10
+    if(data > 10) { println("data > 10") }
+    else if(data > 0 && data <= 10) { println("data > 0 && data <= 10") }
+    else { println("data <= 0") }
+}
+
+// 실행 결과
+// data > 0 && data <= 10
+```
+
+    - 코틀린에서 if~else는 표현식으로 사용 가능
+    - 표현식 : 결괏값을 반환하는 계산식
+
+```kt
+// if ~ else 문의 조건이 여러 개 나열된 예
+
+fun main(){
+    var data = 10
+    var res = if(data > 0){
+        println("data > 0")
+        true
+    } else {
+        println("data <= 0")
+        false
+    }
+    println(res)
+}
+
+// 실행 결과
+// data > 0
+// true
+```
+
+### 조건문 when
+
+```kt
+// when문 사용 예시
+
+fun main(){
+    var data = 10
+    when(data){
+        10 -> println("data is 10")
+        20 -> println("data is 20")
+        else -> {
+            println("data is not valid data")
+        }
+    }
+}
+
+// 실행 결과
+// data is 10
+```
+
+    - when 문의 조건으로 정수가 아닌 다른 타입의 데이터 지정 가능
+
+```kt
+// 문자열 타입 조건 사용 예시
+
+fun main(){
+    var data = "hello"
+    when(data){
+        "hello" -> println("data is hello")
+        "world" -> println("data is world")
+        else -> {
+            println("data is not valid data")
+        }
+    }
+}
+
+// 실행 결과
+// data is hello
+```
+
+    - when 문에서는 조건을 데이터 타입, 범위 등으로 다양하게 명시 가능
+    - is : 타입 확인 연산자
+    - in : 범위 지정 연산자
+
+
+```kt
+// 다양한 유형의 조건 제시
+
+fun main(){
+    var data: Any = 10
+    when(data){
+        is String -> println("data is String")
+        20, 30 -> println("data is 20 or 30")
+        in 1..10 -> println("data is 1..10")
+        else -> println("data is not valid")
+    }
+}
+
+// 실행 결과
+// data is 1..10
+```
+
+    - when은 if문과 마찬가지로 표현식으로도 사용 가능
+
+```kt
+// when 문을 표현식으로 사용
+
+fun main(){
+    var data = 10
+    var res = when{
+        data <= 0 -> "data is <= 0"
+        data > 100 -> "data is > 100"
+        else -> "data is valid"
+    }
+    println(res)
+}
+
+// 실행 결과
+// data is valid
+```
+
+### 반복문 for과 while
+
+- for문
+    - 제어 변숫값을 증감하며 특정 조건이 참일 때까지 구문 반복 수행
+    - 조건에는 주로 범위 연산자인 in 사용
+        - for(i in 1..10) {...} : 1 ~ 10까지 1씩 증가
+        - for(i in 1 until 10) {...} : 1 ~ 9까지 1씩 증가(10 미포함)
+        - for(i in 2..10 step 2) {...} : 2 ~ 10까지 2씩 증가
+        - for(i in 10 downTo 1) {...} : 10부터 1까지 1씩 감소
+
+```kt
+// for ~ in 반복문
+
+fun main(){ 
+    var sum: Int = 10
+    for(i in 1..10) { sum += i }
+    println(sum)
+}
+
+// 실행 결과
+// 55
+```
+
+    - 컬렉션 타입의 데이터 개수만큼 반복
+    - indices : 컬렉션 타입의 인덱스 값 의미
+    - withIndex() : 인덱스와 실제 데이터를 함께 가져오는 함수
+
+```kt
+// 반복 조건에 컬렉션 타입 활용
+
+fun main(){
+    var data = arrayOf<Int>(10, 20, 30)
+    for(i in data.indices){
+        print(data[i])
+        if(i !== data.size - 1) print(", ")
+    }
+}
+
+// 실행 결과 
+// 10, 20, 30
+```
+
+```kt
+// 인덱스와 데이터를 가져오는 withIndex() 함수
+
+fun main(){
+    var data = arrayOf<Int>(10, 20, 30)
+    for((index, value) in data.withIndex()){
+        print(value)
+        if(i !== data.size - 1) print(", ")
+    }
+}
+
+// 실행 결과 
+// 10, 20, 30
+```
+
+    - while문 : 조건이 참일 경우 중괄호({ })로 지정한 영역 반복 실행
+
+```kt
+fun main(args: Array<String>){
+    var x = 0
+    var sum = 0
+    while(x < 10) { sum += ++x }
+    println(sum)
+}
+
+// 실행 결과
+// 55
+```
