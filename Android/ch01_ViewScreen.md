@@ -422,16 +422,61 @@ invisibleBtn.setOnClickListener{
     - 그룹으로 묶은 라디오 버튼 중 하나만 선택할 수 있게 설정
 
 ```xml
-<!-->이미지 크기에 뷰 맞추기<!-->
+<!-->버튼 예시 사용<!-->
 
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:maxWidth="100dp"
-    android:maxHeight="100dp"
-    android:adjustViewBounds="true"
-    android:src="@drawable/lake_1"
-    android:background="#0000ff"/>
+<Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUTTON1"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="check1" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="check2"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="radio1"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="radio2"/>
+    </RadioGroup>
 ```
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-12-Buttons.PNG" width="70%" height="auto" /> 
+
+
+### 에디트 텍스트
+
+- 글을 입력할 수 있는 뷰
+    - android:lines : 처음부터 여러 줄 입력 크기로 나오게 하는 속성
+    - android:maxLines : 처음에는 한 줄 입력 크기로 출력, 이후 지정 크기로 늘어나는 속성
+    - android:inputType 속성
+        - 글을 입력할 때 올라오는 키보드를 지정하는 속성
+            - android:inputType="phone"
+
+```xml
+<!-->키보드 지정 속성 사용<!-->
+
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:inputType="phone" />
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-13-keyboards.PNG" width="70%" height="auto" /> 
+
+|속성값|설명|
+|:---|:----|
+|none|입력 유형을 지정하지 않은 상태<br>모든 문자 입력 가능하며 줄바꿈 가능|
+|text|문자열 한 줄 입력|
+|textCaoCharacters|대문자 입력 모드|
+|textCapWords|
 (여기부터 작성)
