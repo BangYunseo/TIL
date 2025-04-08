@@ -1,4 +1,4 @@
-# Chapter 9. 리소스 퐐용하기
+# Chapter 9. 리소스 활용
 
 > '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 9장 학습 내용
 >
@@ -39,7 +39,7 @@
   - XML 작성 이미지도 가능
 
 ```xml
-<--!>XML로 작성한 이미지<!-->
+<!-->XML로 작성한 이미지<!-->
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
   android:shape="rectangle">
@@ -52,7 +52,7 @@
 ```
 
 ```xml
-<--!>XML 이미지를 사용하는 예시<!-->
+<!-->XML 이미지를 사용하는 예시<!-->
 
 <ImageView
   android:layout_width="300dp"
@@ -75,7 +75,7 @@
 - values 디렉토리의 리소스 파일은 파일명이 R인 파일에 식별자로 등록되지 않고 리소스 파일에 값을 지정한 태그의 name 속성값이 등록
 
 ```xml
-<--!>문자열 리소스 등록<!-->
+<!-->문자열 리소스 등록<!-->
 
 <resources>
   <string name="app_name">TestCh09</string>
@@ -85,7 +85,7 @@
 ```
 
 ```xml
-<--!>XML에서 문자열 리소스 사용<!-->
+<!-->XML에서 문자열 리소스 사용<!-->
 
 <TextView
   android:id="@+id/textView"
@@ -101,7 +101,7 @@ binding.textView.text = getString(R.string.text_data2)
 ```
 
 ```xml
-<--!>색상 리소스 등록<!-->
+<!-->색상 리소스 등록<!-->
 
 <resources>
   <color name="text_color">#FFFF00</color>
@@ -110,7 +110,7 @@ binding.textView.text = getString(R.string.text_data2)
 ```
 
 ```xml
-<--!>크기 리소스 등록<!-->
+<!-->크기 리소스 등록<!-->
 
 <resources>
   <dimen name="text_size">20sp</dimen>
@@ -118,7 +118,7 @@ binding.textView.text = getString(R.string.text_data2)
 ```
 
 ```xml
-<--!>XML에서 색상, 크기 리소스 사용<!-->
+<!-->XML에서 색상, 크기 리소스 사용<!-->
 
 <TextView
   android:id="@+id/textView"
@@ -142,7 +142,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
    - 뷰에 설정되는 여러 속성을 스타일에 적용하여 한꺼번에 적용
 
 ```xml
-<--!>스타일 등록<!-->
+<!-->스타일 등록<!-->
 
 <resources>
   <style name="MyTextStyle">
@@ -157,7 +157,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 ```
 
 ```xml
-<--!>스타일 리소스 사용<!-->
+<!-->스타일 리소스 사용<!-->
 
 <TextView
   android:layout_width="match_parent"
@@ -170,10 +170,10 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
   - 특정 뷰의 상태를 표현하고 그 상태에 적용되는 색상을 등록
  
 ```xml
-<--!>색상 리소스 등록<!-->
+<!-->색상 리소스 등록<!-->
 
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
   <item android:state_pressed="true"
         android:color="#ffff0000" />
   <item android:state_focused="true"
@@ -183,7 +183,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 ```
 
 ```xml
-<--!>색상 리소스 사용<!-->
+<!-->색상 리소스 사용<!-->
 
 <Button
   android:layout_width="match_parent"
@@ -195,7 +195,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 - font 디렉토리 : 글꼴 리소스
 
 ```xml
-<--!>글꼴 리소스 사용<!-->
+<!-->글꼴 리소스 사용<!-->
 
 <TextView
   android:layout_width="wrap_content"
@@ -246,9 +246,104 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 |이용 가능 높이|h720dp|화면 높이에 대한 조건<br>h720dp일 경우 높이가 720인 기기|
 |화면 크기|small, normal, large, xlarge|화면 크기를 small, normal, large, xlarge로 판단해 조건 명시<br>small은 320 * 428, normal은 320 * 470, large는 480 * 640, xlarge는 720 * 960 정도의 크기|
 |화면 비율|long, notlong|화면의 종횡비 조건<br>long은 WQVGA, WVGA, FWVGA 등 긴 화면, notlong은 QVGA, HVGA, VGA 등 길지 않은 화면|
-|원형 화면|round, notround|원형화면인지 판단
+|원형 화면|round, notround|원형화면인지 판단<br>round는 웨어러블 기기처럼 둥근 화면을 가지는 기기<br>notround는 폰이나 태블릿처럼 사각형  화면의 기기|
+|화면 방향|port, land|화면의 방향에 대한 조건<br>port는 세로 방향, land는 가로 방향|
+|UI 모드|car, dest, television, application, watch, vrheadset|기기가 도크에 삽입되거나 제거될 때 대응하기 위한 조건<br>car는 자동차, desk는 데스크, television은 TV, application은 표시되지 않은 제품|
+|야간 모드|night, notnight|야간 모드에 대응하기 위한 조건<br>night는 야간, notnight는 주간|
+|화면 픽셀 밀도|ldpi, mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi, nodpi, tvdpi, anydpi, nnndpi|화면 밀도에 대한 조건<br>ldpi는 120dpi, mdpi는 160dpi, hdpi는 240dpi, xhdpi는 320dpi, xhdpi는 320dpi, xxhdpi는 480dpi, xxxdpi는 640dpi, nodpi는 크기를 조정하지 않을 리소스에 사용|
+|터치 스크린 유형|notouch, finger|터치 스크린을 제공하는지 판단<br>notouch는 터치 스크린이 없는 기기|
+|키보드 가용성|keysexposed, keyshidden, keyssoft|키보드의 유형<br>keyssoft는 소프트 키보드, keysexposed는 키보드가 노출되어 있는 기기, keyshidden은 키보드가 있으나 숨길 수 있는 기기|
+|기본 텍스트 입력방법|nokeys, qwerty, 12key|nokeys는 하드웨어 키보드가 없는 경우, qwerty는 하드웨어 쿼티 키보드가 있는 경우, 12key는 하드웨어 12키가 있는 경우|
+|탐색 키 가용성|navexposed, navhidden|탐색 키 사용 가능 조건<br>navexposed는 탐색 키 사용 가능, navhidden은 탐색 키 사용 불가|
+|기본 비터치 탐색 방법|nanav, dpad, trackball, wheel|터치하지 않고 탐색이 가능한 기기가 있는지 판단|
+|플랫폼 버전|v21|기기의 API 레벨|
 
-(여기부터 작성)
+### 화면 회전에 대응
+
+- 방향에 따라 화면을 다르게 제공 (land)
+- 리소스 조건으로 설정하여 처리
+
+### 국제 언어 제공
+
+- 리소스 문자열을 각국 언어로 제공
+- 파일을 여러 개 생성하여 각 언어에 맞는 리소스 문자열을 담고 어느 XML 파일을 저굥ㅇ해야 하는지를 리소스 디렉토리명으로 지정
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-04-languageResources.PNG" width="100%" height="auto" />
+
+```xml
+<!-->영어 문자열 리소스 예시<!-->
+
+<resources>
+  <string name="app_name">test9</string>
+  <string name="intro">Hello</string>
+</resources>
+```
+
+```xml
+<!-->한국어 문자열 리소스 예시<!-->
+
+<resources>
+  <string name="app_name">테스트9</string>
+  <string name="intro">안녕!</string>
+</resources>
+```
+
+## 3절. 폰 크기의 호환성
+
+### 논리적인 단위
+
+- dpi (dots per inch의 줄임말)
+  - 1인치 안에 있는 도트의 개수
+  - 크기 지정에 사용할 수 있는 단위
+
+- dp (dip : density-independent pixels)  : 스크린의 물리적 밀도에 기반을 둔 단위
+- sp (sip : scale-independent pixels) : dp와 유사하며 글꼴 크기에 적용
+- pt (points) : 스크린 크기의 1 / 72을 1pt로 함
+- px : 픽셀 (물리적 밀도와 관계 X)
+- mm : 밀리미터
+- in : 인치
+
+|크기|설명|
+|:---:|:---|
+|ldpi|저밀도 화면<br>~120dpi|
+|mdpi|중밀도 화면<br>~160dpi|
+|hdpi|고밀도 화면<br>~240dpi|
+|xhdpi|초고밀도 화면<br>~320dpi|
+|xxhdpi|초초고밀도 화면<br>~480dpi|
+|xxxhdpi|초초초고밀도 화면<br>~640dpi|
+
+- mdpi 폰에서 1dp = 1px
+- xxhdpi 폰은 개발자가 지정한 크기보다 3배 크게 출력
+
+|크기|배율|
+|:---:|:---:|
+|ldpi|0.75|
+|mdpi|1.0|
+|hdpi|1.5|
+|xhdpi|2.0|
+|xxhdpi|3.0|
+|xxxhdpi|4.0|
+
+### 화면 정보 가져오기
+
+- 30 이전 버전에서는 DisplayMetrics로 크기 정보 활용
+- 30 버전부터는 (deprecation), WindowMetrics 활용
+
+```kotlin
+// 기기의 가로, 세로 크기 가져오기
+
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
+  val windowMetrics: WindowMetrics = windowManager.currentWindowMetrics
+  binding.textView.text = "width : ${windowMetrics.bounds.width()}, 
+                          height : ${windowMetrics.bounds.height()}"
+} else {
+  val display = windowManager.defaultDisplay
+  val displayMetrics = DisplayMetrics()
+  display?.getRealMetrics(displayMetrics)
+  binding.textView.text = "width : ${displayMetrics.widthPixels},
+                          height : ${displayMetrics.heightPixels}"
+}
+```
 
 ### scope 함수
 
@@ -264,3 +359,6 @@ with(a)
 
 it 사용
 
+## 4절. 메신저 앱 인트로 화면 만들기
+
+### 1) 새 모듈 생성
