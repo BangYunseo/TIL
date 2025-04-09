@@ -21,3 +21,14 @@
 - []()
 
 </details>
+
+<details>
+    <summary> Kotlin list
+    </summary>
+  
+- []()
+- []()
+- []()
+- []()
+
+</details>
