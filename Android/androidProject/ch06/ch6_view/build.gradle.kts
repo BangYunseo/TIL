@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.yunseo_33.ch06"
+    namespace = "com.yunseo_33.ch6_view"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.yunseo_33.ch06"
+        applicationId = "com.yunseo_33.ch6_view"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -33,7 +33,6 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    viewBinding.isEnabled = true
 }
 
 dependencies {
