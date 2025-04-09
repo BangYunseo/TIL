@@ -1,4 +1,4 @@
-# Chapter 9. 리소스 활용
+# Chapter 4. 리소스 활용
 
 > '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 9장 학습 내용
 >
@@ -9,7 +9,6 @@
 > 3절. 폰 크기의 호환성
 >
 > 4절. 메신저 앱 인트로 화면
-
 
 ## 1절. 리소스 종류와 특징
 
@@ -207,7 +206,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 
 ### 플랫폼 리소스 사용
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-01-package.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-01-package.PNG" width="100%" height="auto" />
 
 - 안드로이드 플랫폼이 제공하는 리소스
 - android.R이라는 플랫폼 라이브러리의 R 파일에 등록
@@ -218,7 +217,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 
 ### 리소스 조건 설정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-02-icon1.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-02-icon1.PNG" width="100%" height="auto" />
 
 - 리소스를 특정 환경에서만 적용되도록 설정
 - 기기 별 실행 아이콘 크기
@@ -231,7 +230,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 |HDPI|72 * 72|
 |MDPI|48 * 48|
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-03-icon2.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-03-icon2.PNG" width="100%" height="auto" />
 
 - 리소스 디렉터리 이름에서 붙임표(-) 뒤의 단어가 리소스의 조건
 - mipmap-mdpi 디렉터리 : mdpi 조건
@@ -268,7 +267,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 - 리소스 문자열을 각국 언어로 제공
 - 파일을 여러 개 생성하여 각 언어에 맞는 리소스 문자열을 담고 어느 XML 파일을 저굥ㅇ해야 하는지를 리소스 디렉토리명으로 지정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-04-languageResources.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-04-languageResources.PNG" width="100%" height="auto" />
 
 ```xml
 <!-->영어 문자열 리소스 예시<!-->
