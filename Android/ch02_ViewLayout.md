@@ -1,0 +1,270 @@
+# Chapter 2. 뷰 배치 레이아웃
+
+> '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 7장 학습 내용
+>
+> 1절. LinearLayout : 선형 배치
+>
+> 2절. RelativeLayout : 상대 위치 배치
+> 
+> 3절. FrameLayout :  겹쳐서 배치
+>
+> 4절. GridLayout : 표 형태 배치
+> 
+> 5절. ConstraintLayout : 계층 구조 배치
+>
+> 6절. 전화 앱 키배드 화면 만들기    
+> [프로젝트 바로가기]()
+
+## 1절. LinearLayout : 선형 배치
+
+### LinearLayout 배치 규칙
+
+- 뷰를 가로나 세로 방향으로 나열하는 레이아웃
+- orientation 속성 : horizontal / vertical 값으로 방향 지정
+
+```XML
+<!-->LinearLayout의 방향 속성 설정<!-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUTTON1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUTTON2"/>
+</LinearLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-01-Buttons.PNG" width="70%" height="auto" />
+
+- LinearLayout 중첩
+- 레이아웃 클래스도 뷰이므로 다른 레이아웃 클래스에 포함 가능
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-02-LinearLayouts.PNG" width="70%" height="auto" />
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-03-LinearLayouts2.PNG" width="70%" height="auto" />
+
+### 여백을 채우는 layout_weight 속성
+
+- 여백을 뷰로 채우고자 할 경우 사용 : 뷰 1개로 전체 여백 채우기
+
+```XML
+<!-->여백 없이 채우는 weight 속성<!-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUTTON1"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUTTON2"/>
+</LinearLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-04-Layoutweight.PNG" width="70%" height="auto" />
+
+- 뷰 여러 개로 여백 나누어 채우기
+    - layout_weight 속성에 지정한 숫자 : 가중치
+
+```XML
+<!-->layout_weight값을 각각 1과 3으로 선언<!-->
+<!-->가로 여백을 각각 1/4만큼, 3/4만큼 나누어 차지<!-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUTTON1"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUTTON2"
+        android:layout_weight="3"/>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-05-Layoutweight2.PNG" width="70%" height="auto" />
+
+- 중첩된 레이아웃에서 여백 채우기
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-06-Layoutweight3.PNG" width="70%" height="auto" />
+
+```XML
+<!-->중첩된 레이아웃에서 여백 채우기<!-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BUTTON1"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BUTTON2"
+            android:layout_weight="3"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BUTTON3"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BUTTON4" />
+</LinearLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-07-Layoutweight4.PNG" width="70%" height="auto" />
+
+- 여백 채우기로 뷰의 크기 설정
+
+```XML
+<!-->layout_weight값으로 뷰의 크기 설정<!-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="BUTTON1"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="BUTTON2"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="BUTTON3"
+        android:layout_weight="1" />
+</LinearLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-08-Layoutweight5.PNG" width="70%" height="auto" />
+
+### 뷰를 정렬하는 gravity, layout_gravity 속성
+
+- 뷰에 gravity와 layout_gravity 속성 적용 
+    - gravity 속성 : 정렬 대상은 콘텐츠
+    - layout_gravity : 뷰 자체를 정렬하는 속성
+
+```XML
+<!-->뷰 정렬<!-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="#FF0000"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:text="Hello, World"
+        android:gravity="right|bottom"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-09-gravity.PNG" width="70%" height="auto" />
+
+- 레이아웃에 gravity 속성 적용
+
+```XML
+<!-->화면 가운데 정렬<!-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="#FF0000"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:text="Hello, World"
+        android:gravity="right|bottom"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-10-gravity2.PNG" width="70%" height="auto" />
+
+## 2절. RelativeLayout : 상대 위치 배치
+
+### RelativeLayout 배치 규칙
+
+- 상대 뷰의 위치를 기준으로 정렬하는 레이아웃 
+    - android:layout_above : 기준 뷰의 위쪽에 배치
+    - android:layout_below : 기준 뷰의 아래쪽에 배치      
+    - android:layout_toLeftOf : 기준 뷰의 왼쪽에 배치 
+    - android:layout_toRightOf : 기준 뷰의 오른쪽에 배치
+
+```xml
+<!-->상대 뷰의 오른쪽에 배치<!-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/testImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello!"
+        android:layout_toRightOf="@id/testImage" />
+</RelativeLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-11-toRightOf.PNG" width="70%" height="auto" />
+
+(여기부터 수정)
+
+### align 속성
+
+- 상대 뷰의 어느 쪽에 맞춰서 정렬할지를 정하는 속성
+    - android:layout_alignTop : 기준 뷰와 위쪽을 맞춤
+    - android:layout_alignBottom : 기준 뷰와 아래쪽을 맞춤
+    - android:layout_alignLeft : 기준 뷰와 왼쪽을 맞춤
+    - android:layout_alignRight : 기준 뷰와 오른쪽을 맞춤
+    - android:layout_alignBaseline : 기준 뷰와 텍스트 기준선을 맞춤
+
+### Parent / Center
+
+-      상위 레이아웃을 기준으로 맞춤 정렬하는 속성
+-       android:layout_alignParentTop: 부모의 위쪽에 맞춤
+      android:layout_alignParentBottom: 부모의 아래쪽에 맞춤
+      android:layout_alignParentLeft: 부모의 왼쪽에 맞춤
+      android:layout_alignParentRight: 부모의 오른쪽에 맞춤
+      android:layout_centerHorizontal: 부모의 가로 방향 중앙에 맞춤       android:layout_centerVertical: 부모의 세로 방향 중앙에 맞춤       android:layout_centerInParent: 부모의 가로·세로 중앙에 맞춤
