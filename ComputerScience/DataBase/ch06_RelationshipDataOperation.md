@@ -189,11 +189,11 @@
 - 데이터 언어적 표현법 : 릴레이션\[속성리스트\]
 
 - 프로젝션 예시
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-14-ProjectionEX.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-15-ProjectionEX.PNG" width="70%" height="auto" />
 
 - 결과 릴레이션은 연산 대상 릴레이션의 수직적 부분 집합
  
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-17-ProjectionVertical.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-18-ProjectionVertical.PNG" width="70%" height="auto" />
 
 #### 고객 릴레이션에서 프로젝션 연산 예제
 
@@ -203,11 +203,11 @@
 
 - ex 1) 고객이름, 등급, 적립금 검색
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-15-ProjectionEX2.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-16-ProjectionEX2.PNG" width="70%" height="auto" />
 
 - ex 2) 등급 검색
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-16-ProjectionEX3.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-17-ProjectionEX3.PNG" width="70%" height="auto" />
 
 > 동일한 튜플은 중복 없이 한 번만 출력
 
@@ -223,7 +223,7 @@
 
 > 정소화 고객이 주문한제품을 검색하고자 할 경우 조인 연산 필요
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-18-JoinEX.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-19-JoinEX.PNG" width="70%" height="auto" />
 
 ## 여기부터 수정 필요!!!
 
