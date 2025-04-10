@@ -188,7 +188,12 @@
 - 수학적 표현법 : $π_{속성리스트}(릴레이션)$
 - 데이터 언어적 표현법 : 릴레이션\[속성리스트\]
 
-(수정필요)
+- 프로젝션 예시
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-14-ProjectionEX.PNG" width="70%" height="auto" />
+
+- 결과 릴레이션은 연산 대상 릴레이션의 수직적 부분 집합
+ 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-17-ProjectionVertical.PNG" width="70%" height="auto" />
 
 #### 고객 릴레이션에서 프로젝션 연산 예제
 
@@ -196,10 +201,50 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-11-CustomRelation.PNG" width="70%" height="auto" />
 
-- ex 1) 등급이 gold인 튜플 검색
+- ex 1) 고객이름, 등급, 적립금 검색
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-12-SelectEX1.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-15-ProjectionEX2.PNG" width="70%" height="auto" />
 
-- ex 2) 등급이 gold이고 적립금이 2000 이상인 튜플 검색
+- ex 2) 등급 검색
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-13-SelectEX2.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-16-ProjectionEX3.PNG" width="70%" height="auto" />
+
+> 동일한 튜플은 중복 없이 한 번만 출력
+
+3) 조인(Join)
+
+- 두 릴레이션을 조합하여 결과 릴레이션 구성
+- 조인 속성의 값이 같은 튜플만 연결하여 생성된 투플을 결과 릴레이션에 포함
+  - 조인 속성 : 두 릴레이션의 공통 속성
+- 수학적 표현법 : 릴레이션1 ⋈ 릴레이션2
+- 동등 조인(equi-join)이라고도 함
+
+- 조인 예시 (조인 속성 : 고객 릴레이션의 고객아이디, 주문 릴레이션의 주문 고객)
+
+> 정소화 고객이 주문한제품을 검색하고자 할 경우 조인 연산 필요
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-18-JoinEX.PNG" width="70%" height="auto" />
+
+## 여기부터 수정 필요!!!
+
+- 결과 릴레이션은 연산 대상 릴레이션의 수직적 부분 집합
+ 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-17-ProjectionVertical.PNG" width="70%" height="auto" />
+
+#### 고객 릴레이션에서 프로젝션 연산 예제
+
+- 고객 릴레이션
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-11-CustomRelation.PNG" width="70%" height="auto" />
+
+- ex 1) 고객이름, 등급, 적립금 검색
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-15-ProjectionEX2.PNG" width="70%" height="auto" />
+
+- ex 2) 등급 검색
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-16-ProjectionEX3.PNG" width="70%" height="auto" />
+
+> 동일한 튜플은 중복 없이 한 번만 출력
+> 
+(수정필요)
