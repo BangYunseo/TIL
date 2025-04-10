@@ -249,8 +249,6 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-11-toRightOf.PNG" width="70%" height="auto" />
 
-(여기부터 수정)
-
 ### align 속성
 
 - 상대 뷰의 어느 쪽에 맞춰서 정렬할지를 정하는 속성
@@ -260,11 +258,257 @@
     - android:layout_alignRight : 기준 뷰와 오른쪽을 맞춤
     - android:layout_alignBaseline : 기준 뷰와 텍스트 기준선을 맞춤
 
+```xml
+<!-->기준 뷰와 아래쪽을 맞춰 정렬<!-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/testImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello!"
+        android:layout_toRightOf="@id/testImage"
+        android:layout_alignBottom="@id/testImage" />
+</RelativeLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-12-alignbottom.PNG" width="70%" height="auto" />
+
 ### Parent / Center
 
--      상위 레이아웃을 기준으로 맞춤 정렬하는 속성
--       android:layout_alignParentTop: 부모의 위쪽에 맞춤
-      android:layout_alignParentBottom: 부모의 아래쪽에 맞춤
-      android:layout_alignParentLeft: 부모의 왼쪽에 맞춤
-      android:layout_alignParentRight: 부모의 오른쪽에 맞춤
-      android:layout_centerHorizontal: 부모의 가로 방향 중앙에 맞춤       android:layout_centerVertical: 부모의 세로 방향 중앙에 맞춤       android:layout_centerInParent: 부모의 가로·세로 중앙에 맞춤
+- 상위 레이아웃을 기준으로 맞춤 정렬하는 속성
+    - android:layout_alignParentTop : 부모의 위쪽에 맞춤
+    - android:layout_alignParentBottom : 부모의 아래쪽에 맞춤
+    - android:layout_alignParentLeft : 부모의 왼쪽에 맞춤
+    - android:layout_alignParentRight : 부모의 오른쪽에 맞춤
+    - android:layout_centerHorizontal : 부모의 가로 방향 중앙에 맞춤
+    - android:layout_centerVertical : 부모의 세로 방향 중앙에 맞춤
+    - android:layout_centerInParent : 부모의 가로·세로 중앙에 맞춤
+ 
+```xml
+<!-->부모의 오른쪽에 맞춰 정렬<!-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/testImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello!"
+        android:layout_alignBottom="@id/testImage"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-13-parentright.PNG" width="70%" height="auto" />
+
+## 3절. FrameLayout :  겹쳐서 배치
+
+### FrameLayout
+
+- 카드를 쌓듯이 뷰를 추가한 순서대로 위에 겹쳐서 계속 출력하는 레이아웃
+- visibility 속성 : 대부분 뷰의 표시 여부를 설정
+
+```xml
+<!-->FrameLayout에 버튼과 이미지 추가<!-->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BUTTON1" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher" />
+</FrameLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-14-framelayout.PNG" width="70%" height="auto" />
+
+```kt
+// visibility 속성값을 바꾸는 액티비티 코드
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.button.setOnClickListener{
+            binding.button.visibility = View.INVISIBLE
+            binding.imageView.visibility = View.VISIBLE
+            // 버튼은 숨기고 이미지는 보이도록 설정
+        }
+        binding.imageView.setOnClickListener{
+            binding.button.visibility = View.VISIBLE
+            binding.imageView.visibility = View.INVISIBLE
+            // 버튼은 보이고 이미지는 숨기도록 설정
+        }
+    }
+}
+```
+
+## 4절. GridLayout : 표 형태 배치
+
+### GridLayout 배치 규칙
+
+- 테이블 화면을 만드는 레이아웃
+- 줄바꿈 자동 설정
+- orientation : 가로나 세로 방향으로 뷰를 나열 설정
+- rowCount : 세로로 나열할 뷰 개수
+- columnCount : 가로로 나열할 뷰 개수
+
+```xml
+<!-->열 개수 지정<!-->
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:columnCount="3" >
+    <Button android:text="A" />
+    <Button android:text="B" />
+    <Button android:text="C" />
+    <Button android:text="D" />
+    <Button android:text="E" />
+</GridLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-15-gridlayout.PNG" width="70%" height="auto" />
+
+```xml
+<!-->행 개수 지정<!-->
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:columnCount="3" >
+    <Button android:text="A" />
+    <Button android:text="B" />
+    <Button android:text="C" />
+    <Button android:text="D" />
+    <Button android:text="E" />
+</GridLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-16-gridlayout2.PNG" width="70%" height="auto" />
+
+### GridLayout 속성
+
+- 특정 뷰의 위치 조정
+    - layout_row : 뷰가 위치하는 세로 방향 인덱스
+    - layout_column : 뷰가 위치하는 가로 방향 인덱스
+
+```xml
+<!-->뷰 위치 조정<!-->
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="hotizontal"
+    android:columnCount="3" >
+    <Button android:text="A" />
+    <Button android:text="B" />
+    <Button android:text="C"
+        android:layout_row="1"
+        android:layout_column="1" />
+    <Button android:text="D" />
+    <Button android:text="E" />
+</GridLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-17-gridlayout3.PNG" width="70%" height="auto" />
+
+- layout_gravity 속성 : 특정 뷰의 크기 확장
+
+```xml
+<!-->뷰 위치 조정<!-->
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="hotizontal"
+    android:columnCount="3" >
+    <Button android:text="A" />
+    <Button android:text="HELLO, WORLD! HELLO, WORLD!" />
+    <Button android:text="C" />
+    <Button android:text="D" />
+    <Button android:text="E"
+        android:layout_gravity="fill_horizontal"/>
+    <Button android:text="F" />
+</GridLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-18-gridlayout4.PNG" width="70%" height="auto" />
+
+- 한 칸에 여러 뷰 표시
+
+```xml
+<!-->여백에 다음 뷰 넣기<!-->
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="hotizontal"
+    android:columnCount="3" >
+    <Button android:text="A" />
+    <Button android:text="HELLO, WORLD! HELLO, WORLD!" />
+    <Button android:text="C" />
+    <Button android:text="D" />
+    <Button android:text="E" />
+    <Button android:text="F"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:layout_gravity="right" />
+</GridLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-19-gridlayout5.PNG" width="70%" height="auto" />
+
+- 열이나 행 병합
+    - layout_columnSpan : 가로로 열 병합
+    - layout_rowSpan : 세로로 행 병합
+
+```xml
+<!-->여백에 다음 뷰 넣기<!-->
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="hotizontal"
+    android:columnCount="3" >
+    <Button android:text="A"
+        android:layout_columnSpan="2"
+        android:layout_rowSpan="2"
+        android:layout_gravity="fill" />
+    <Button android:text="B" />
+    <Button android:text="C" />
+    <Button android:text="D" />
+    <Button android:text="E" />
+    <Button android:text="F" />
+</GridLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-20-gridlayout6.PNG" width="70%" height="auto" />
+
+## 5절. ConstraintLayout : 계층 구조 배치
+
+(여기부터 수정)
+
+###
+## 6절. 전화 앱 키배드 화면 만들기 
