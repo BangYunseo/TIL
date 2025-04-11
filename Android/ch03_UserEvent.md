@@ -150,13 +150,12 @@ override fun onBackPressed(){
 
 ```Kotlin
 // 뒤로 가기 버튼 이벤트 처리
-
-onBackPressedDispatcher.addCallback
-(this, object : OnBackPressedCallback(true) {
-    override fun handleOnBackPressed(){
-
+val callback = object : OnBackPressedCallback(true) {
+    override fun handleOnBackPressed() {
+        Log.d("Yunseo", "뒤로가기 눌림!!")
     }
-})
+}
+onBackPressedDispatcher.addCallback(this, callback)
 ```
 
 ## 3절. 뷰 이벤트
@@ -187,7 +186,7 @@ binding.checkbox.setOnCheckedChangeListener
 ```Kotlin
 // 액티비티에서 인터페이스 구현 예시
 
-Class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener{
+class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener{
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
@@ -203,12 +202,12 @@ Class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener
 ```Kotlin
 // 이벤트 핸들러를 별도의 클래스로 생성한 예시
 
-Class MyEventHandler : CompoundButton.OnCheckedChangeListener{
+class MyEventHandler : CompoundButton.OnCheckedChangeListener{
     override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean){
         Log.d("Yunseo", "체크박스 클릭")
     }
 }
-Class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
@@ -222,7 +221,7 @@ Class MainActivity : AppCompatActivity() {
 ```Kotlin
 // SAM 기법으로 구현한 예시
 
-Class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
 
@@ -270,10 +269,132 @@ android{
 }
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-24-drawable.PNG" width="70%" height="auto" />
-
 ### 3단계) 앱 화면 구성
+
+```XML
+<!-->activity_main.xml 파일<!-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal"
+        android:textSize="60dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="START"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:enabled="false"
+            android:text="STOP"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:enabled="false"
+            android:text="STOP"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>
+```
 
 ### 4단계) 메인 액티비티 구성
 
+```Kotlin
+// MainActivity.kt 구현
+
+package com.yunseo_33.ch08_event
+
+import android.os.Bundle
+import android.os.SystemClock
+import android.view.KeyEvent
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.yunseo_33.ch08_event.databinding.ActivityMainBinding
+
+class MainActivity : AppCompatActivity() {
+    var initTime = 0L
+    var pauseTime = 0L
+
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.startButton.setOnClickListener{
+            binding.chronometer.base = SystemClock.elapsedRealtime() + pauseTime
+            binding.chronometer.start()
+
+            binding.stopButton.isEnabled = true
+            binding.resetButton.isEnabled = true
+            binding.startButton.isEnabled = false
+        }
+
+        binding.stopButton.setOnClickListener{
+            pauseTime = binding.chronometer.base - SystemClock.elapsedRealtime()
+            binding.chronometer.stop()
+
+            binding.stopButton.isEnabled = false
+            binding.resetButton.isEnabled = true
+            binding.startButton.isEnabled = true
+        }
+
+        binding.resetButton.setOnClickListener{
+            pauseTime = 0L
+            binding.chronometer.base = SystemClock.elapsedRealtime()
+            binding.chronometer.stop()
+
+            binding.stopButton.isEnabled = false
+            binding.resetButton.isEnabled = false
+            binding.startButton.isEnabled = true
+        }
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if(keyCode == KeyEvent.KEYCODE_BACK){
+            if(System.currentTimeMillis() - initTime > 3000){
+                Toast.makeText(this, "종료하려면 한 번 더 누르세요", Toast.LENGTH_SHORT)
+                    .show()
+                initTime = System.currentTimeMillis()
+                return true
+            }
+
+        }
+        return super.onKeyDown(keyCode, event)
+    }
+}
+```
+
 ### 5단계) 앱 실행
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-05-ex.PNG" width="70%" height="auto" />
