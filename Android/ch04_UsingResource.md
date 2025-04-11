@@ -352,13 +352,243 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
 1) apply & also : 객체 자체 return
 2) run(==with)& let : 실행 결과 return
 
-a.run {}
-// 람다함수 형태
+```kt
+// scope 함수 사용 예시
 
-with(a)
+package com.yunseo_33.ch09
 
-it 사용
+fun main(){
+    // 1) 만들 때부터 할인 중임을 알리며 가격을 깎은 경우
+    var a = Book("걸리버의 모험", 10000).apply{
+        name = "[폭탄 세일 중!]" + name
+        discount()
+    }
+    // => apply 함수 : 생성과 동시에 클래스의 매개 변수 값을 바꾸고자 할 때 사용
+    // println("상품명 : ${a.name}, 가격 : ${a.price}")
+
+    // 2) 객체를 활용하여 마지막 값(price + 2000)만 리턴할 경우
+    var bookCost = a.run {
+        println("상품명 : ${name}, 가격 : ${price}")
+        price + 2000
+    }
+
+    // => run 함수 : 마지막 값을 통해 매개 변수 값을 바꾸고자 할 때 사용
+    println("원가 : $bookCost ")
+
+    // 3) 객체를 활용하여 마지막 값(price + 2000)만 리턴할 경우
+    var bookCost2 = with(a) {
+        println("상품명 : ${name}, 가격 : ${price}")
+        price + 2000
+    }
+
+    // => with 함수 : 마지막 값을 통해 매개 변수 값을 바꾸고자 할 때 사용
+    // run 함수와 리턴이 같으며 함수 꼴로 표현하는 점만 다름
+    println("원가 : $bookCost2 ")
+
+    // 4) 같은 변수가 함수 안에서 충돌이 날 경우 사용
+    var price = 999999999
+
+    a.let {
+        println("상품명 : ${it.name}, 가격 : ${it.price}")
+    }
+    // let 함수 안에 멤버 변수를 활용할 경우 it을 사용하여 안의 멤버 변수 지정
+    // this와 같은 사용법
+}
+
+class Book(var name: String, var price: Int){
+    fun discount() {
+        price -= 2000
+    }
+}
+```
 
 ## 4절. 메신저 앱 인트로 화면 만들기
 
 ### 1) 새 모듈 생성
+
+- Ch09_resource 모듈 생성
+
+### 2) 리소스 파일 준비
+
+- round_button.xml 파일과 intro.png 파일 drawable 디렉터리에 복사
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-05-drawable.PNG" width="100%" height="auto" />
+
+### 3) 언어 별 문자열 리소스 작성
+
+- strings.xml 파일 작성
+
+```XML
+<!-->strings.xml<!-->
+
+<resources>
+    <string name="app_name">Ch09_resource</string>
+    <string name="intro_main">
+        Find your phone contacts on Messenger.
+    </string>
+    <string name="intro_detail">
+        Continuously uploading your contacts helps Facebook and Messenger
+        suggest connections and provide and improve ads for you and others,
+        and offer a better service.
+    </string>
+    <string name="intro_more">Learn More ?</string>
+    <string name="intro_button">TURN ON</string>
+    <string name="intro_delay">NOT NOW</string>
+</resources>
+```
+
+- values-ko-rKR/strings.xml 파일 생성 후 작성
+
+```XML
+<!-->strings.xml<!-->
+
+<resources>
+    <string name = "app_name">ch09</string>
+    <string name="intro_main">
+        메신저에서 휴대폰 연락처에 있는 사람들을 찾아보세요.
+    </string>
+    <string name = "intro_detail">
+        연락처를 계속 업로드하면 Facebook 및 Messenger에서 연결된 연락처를 추천하고 회원님과 다른 사람들에게 더욱 관련성 높은 광고를 표시하여 더 나은 서비스를 제공하는데 도움이 됩니다.
+    </string>
+    <string name = "intro_more">더 알아볼까요 ?</string>
+    <string name = "intro_button">설정</string>
+    <string name = "intro_delay">나중에 하기</string>
+</resources>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-06-values.PNG" width="100%" height="auto" />
+
+
+### 4) 세로 방향 화면 구성
+
+- activity_main.xml 파일 작성
+
+```XML
+<!-->activity_main.xml<!-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/intro" />
+
+    <TextView
+        android:id="@+id/mainTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/intro_main"
+        android:textStyle="bold"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/detailTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/intro_detail" />
+
+    <TextView
+        android:id="@+id/delayTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/intro_delay" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/delayTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="@string/intro_button"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/round_button"
+        android:padding="10dp"/>
+
+</RelativeLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-07-landout.PNG" width="100%" height="auto" />
+
+
+### 5) 가로 방향 화면 구성
+
+- layout-land/activity_main.xml 파일 생성 후 작성
+
+```XML
+<!-->layout-land/activity_main.xml<!-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/mainTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/intro_main"
+        android:textStyle="bold"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/detailTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/intro_detail" />
+
+    <TextView
+        android:id="@+id/delayTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/intro_delay" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/delayTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="@string/intro_button"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/round_button" />
+
+</RelativeLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-08-land.PNG" width="100%" height="auto" />
