@@ -177,7 +177,7 @@ onBackPressedDispatcher.addCallback
 binding.checkbox.setOnCheckedChangeListener
 (object : CompoundButton.OnCheckedChangeListener {
     override fun onCheckedCHanged(p0: CompoundButton?, p1: Boolean){
-        Log.d("Yunseo", "체크 박스 클릭")
+        Log.d("Yunseo", "체크박스 클릭")
     }
 })
 ```
@@ -185,14 +185,95 @@ binding.checkbox.setOnCheckedChangeListener
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-04-CheckBox.PNG" width="70%" height="auto" />
 
 ```Kotlin
-// 체크박스 이벤트 처리
+// 액티비티에서 인터페이스 구현 예시
 
-binding.checkbox.setOnCheckedChangeListener
-(object : CompoundButton.OnCheckedChangeListener {
-    override fun onCheckedCHanged(p0: CompoundButton?, p1: Boolean){
-        Log.d("Yunseo", "체크 박스 클릭")
+Class MainActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener{
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.checkbox.setOnCheckedChangeListener(this)
     }
-})
+    override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean){
+        Log.d("Yunseo", "체크박스 클릭")
+    }
+}
+```
+
+```Kotlin
+// 이벤트 핸들러를 별도의 클래스로 생성한 예시
+
+Class MyEventHandler : CompoundButton.OnCheckedChangeListener{
+    override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean){
+        Log.d("Yunseo", "체크박스 클릭")
+    }
+}
+Class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.checkbox.setOnCheckedChangeListener(MyEventHandler())
+    }
+}
+```
+
+```Kotlin
+// SAM 기법으로 구현한 예시
+
+Class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.checkbox.setOnCheckedChangeListener{
+            compoundButton, b -> Log.d("Yunseo", "체크박스 클릭")
+        }
+    }
+}
+```
+
+### 클릭과 롱클릭 이벤트 처리
+
+- ClickEvent, LongClickEvent는 뷰의 최상위 클래스인 View에 정의된 이벤트 
+    - open fun setOnClickListener(l: View.OnClickListener?) : Unit
+    - open fun setOnLongClickListener(l: View.OnLongClickListener?) : Unit
+
+```Kotlin
+// 버튼의 클릭, 롱클릭 이벤트 처리
+
+binding.button.setOnClickListener{
+    Log.d("Yunseo", "클릭 이벤트")
+}
+binding.button.setOnLongClickListener{
+    Log.d("Yunseo", "롱클릭 이벤트")
+    true
+}
 ```
 
 ## 4절. 시계 앱 스톱워치 기능 만들기
+
+### 1단계) 새로운 모듈 생성
+
+- Ch08_Event 모듈 생성
+
+### 2단계) 그래들 설정
+
+```Kotlin
+// build.gradle.kts(Module : ch08_event)
+
+android{
+    viewBinding.isEnabled = true
+}
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-24-drawable.PNG" width="70%" height="auto" />
+
+### 3단계) 앱 화면 구성
+
+### 4단계) 메인 액티비티 구성
+
+### 5단계) 앱 실행
