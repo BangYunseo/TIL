@@ -11,7 +11,7 @@
 > 4절. 뷰 바인딩
 > 
 > 5절. 카카오톡 비밀번호 확인 화면 프로젝트   
-> [프로젝트 바로가기](https://github.com/BangYunseo/TIL/tree/main/Android/androidProject/ch01/ch6_view)
+> [프로젝트 바로가기](https://github.com/BangYunseo/TIL/tree/main/Android/androidProject/ch01/)
 
 
 ## 1절. 화면을 구성하는 방법

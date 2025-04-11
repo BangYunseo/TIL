@@ -1,6 +1,6 @@
-# Chapter 2. 뷰 배치 레이아웃
+# Chapter 3. 사용자 이벤트 처리
 
-> '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 7장 학습 내용
+> '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 8장 학습 내용
 >
 > 1절. LinearLayout : 선형 배치
 >
@@ -13,7 +13,7 @@
 > 5절. ConstraintLayout : 계층 구조 배치
 >
 > 6절. 전화 앱 키배드 화면 만들기    
-> [프로젝트 바로가기]()
+> [프로젝트 바로가기](https://github.com/BangYunseo/TIL/tree/main/Android/androidProject/ch02/)
 
 ## 1절. LinearLayout : 선형 배치
 
@@ -508,7 +508,218 @@ class MainActivity : AppCompatActivity() {
 
 ## 5절. ConstraintLayout : 계층 구조 배치
 
-(여기부터 수정)
+- androidx에서 제공하는 라이브러리
 
-###
+```kt
+constraintlayout 사용을 위한 빌드 설정
+
+implemetation(Libs.androidx.constraintlayout)
+```
+
+### 레이아웃 편집기에서 레이아웃 구성
+
+- 상대 위치로 배치하는 RelativeLayout과 비슷하지만 더 많은 속성을 제공 
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-21-constraint.PNG" width="70%" height="auto" />
+
+1. 팔레트(Palette)
+2. 컴포넌트 트리(Component Tree) 
+3. 툴바(Toolbar)
+4. 디자인 편집기(Design editor) 
+5. 속성(Attributes)
+6. 보기 모드(View mode)
+
+- 이미지 추가
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-22-Image.PNG" width="70%" height="auto" />
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-23-Image2.PNG" width="70%" height="auto" />
+
 ## 6절. 전화 앱 키배드 화면 만들기 
+
+### 1단계) 새로운 모듈 생성
+
+- Ch07_Layout 모듈 생성
+
+### 2단계) 실습 파일 복사
+
+- add.png, back.png, call.png, video.png 파일을 res/drawable 디렉터리에 복사
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-24-drawable.PNG" width="70%" height="auto" />
+
+### 3단계) 메인 액티비티 작성
+
+```XML
+<!-->activity_main.xml 파일 작성<!-->
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/add"
+            app:tint="#00FF00" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="연락처 추가"
+            android:textColor="#00FF00"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="02-120"
+        android:textSize="40dp"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:columnCount="3"
+        android:orientation="horizontal">
+        <TextView
+            android:paddingLeft="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:text="1"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <TextView
+            android:paddingLeft="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:text="2"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <TextView
+            android:paddingLeft="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:text="3"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <TextView
+            android:paddingLeft="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:text="4"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <TextView
+            android:paddingLeft="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:text="5"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <TextView
+            android:paddingLeft="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:text="6"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <TextView
+            android:paddingLeft="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:text="7"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <TextView
+            android:paddingLeft="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:text="8"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <TextView
+            android:paddingLeft="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:text="9"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <TextView
+            android:paddingLeft="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:text="*"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <TextView
+            android:paddingLeft="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+        <TextView
+            android:paddingLeft="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="40dp"
+            android:text="#"
+            android:textStyle="bold"
+            android:textSize="30dp"/>
+    </GridLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/icon_video"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/video"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/icon_call"
+            android:layout_toRightOf="@+id/icon_video"
+            android:src="@drawable/call"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/icon_call"
+            android:src="@drawable/back"/>
+    </RelativeLayout>
+</LinearLayout>
+```
+
+### 4단계) 앱 실행
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-25-ex.PNG" width="70%" height="auto" />
