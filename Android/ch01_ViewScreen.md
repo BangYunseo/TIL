@@ -144,12 +144,12 @@ class MainActivity : AppCompatActivity() {
 </LinearLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-04-LinearLayout.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-04-LinearLayout.PNG" width="20%" height="auto" />
 
 - 레이아웃 중첩
     - 뷰의 계층 구조 : 레이아웃 객체로 중첩해서 복잡한 구성 가능
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-05-LinearLayout2.PNG" width="70%" height="auto" />  
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-05-LinearLayout2.PNG" width="60%" height="auto" />  
 
 ```xml
 <!--> 레이아웃 중첩<!-->
@@ -245,7 +245,7 @@ val textView1 = findViewById<TextView>(R.id.text1)
 
 ### 뷰의 간격 설정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-06-MarginPadding.PNG" width="70%" height="auto" />  
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-06-MarginPadding.PNG" width="30%" height="auto" />  
 
 -  margin, padding 속성
     - 4 방향이 모두 같은 크기로 설정 가능
@@ -353,11 +353,14 @@ invisibleBtn.setOnClickListener{
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="방윤서 블로그 - 깃허브 : http://github.com/BangYunseo, 전화 : 010-0000-0000, 이메일 : email@gmail.com"
+    android:text="방윤서 블로그 -
+                깃허브 : http://github.com/BangYunseo,
+                전화 : 010-0000-0000,
+                이메일 : email@gmail.com"
     android:autoLink="web|email|phone"/>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-09-autoLink.PNG" width="70%" height="auto" /> 
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-09-autoLink.PNG" width="50%" height="auto" /> 
 
 - android:maxLines 속성 : 문자열이 특정 줄까지만 출력하는 속성
     - android:maxLines="3"
@@ -410,13 +413,13 @@ invisibleBtn.setOnClickListener{
     android:background="#0000ff"/>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-11-Lake.PNG" width="70%" height="auto" /> 
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-11-Lake.PNG" width="60%" height="auto" /> 
 
 ### 체크박스, 라디오 버튼
 
 - Button : 사용자 이벤트를 처리
 - CheckBox : 다중 선택 제공 뷰
-- RadioButton  : 단일 선택 제공 뷰
+- RadioButton : 단일 선택 제공 뷰
     - RadioGroup과 함께 사용
     - 그룹으로 묶은 라디오 버튼 중 하나만 선택할 수 있게 설정
 
@@ -449,7 +452,7 @@ invisibleBtn.setOnClickListener{
     </RadioGroup>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-12-Buttons.PNG" width="70%" height="auto" /> 
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-12-Buttons.PNG" width="50%" height="auto" /> 
 
 
 ### 에디트 텍스트
@@ -470,7 +473,7 @@ invisibleBtn.setOnClickListener{
     android:inputType="phone" />
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-13-keyboards.PNG" width="70%" height="auto" /> 
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-13-keyboards.PNG" width="60%" height="auto" /> 
 
 |속성값|설명|
 |:---|:----|
