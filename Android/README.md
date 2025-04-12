@@ -33,9 +33,9 @@
     <summary> Kotlin list
     </summary>
   
-- ch00 [코틀린 개요]()
-- ch01 [객체지향 프로그래밍의 코틀린]()
-- ch02 [유용한 기법]()
+- ch00 [코틀린 개요](https://github.com/BangYunseo/TIL/blob/main/Language/Kotlin/ch00_WhatIsKotlin.md)
+- ch01 [객체지향 프로그래밍의 코틀린](https://github.com/BangYunseo/TIL/blob/main/Language/Kotlin/ch01_Constructor.md)
+- ch02 [유용한 기법](https://github.com/BangYunseo/TIL/blob/main/Language/Kotlin/ch02_UsefulTips.md)
 - ch03 []()
 
 </details>
