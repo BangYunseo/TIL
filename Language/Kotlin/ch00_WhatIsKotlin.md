@@ -13,7 +13,7 @@
 ### 배경
 
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-01-progress.PNG" width="50%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Kotlin/Image/ch00/ch00-01-progress.PNG" width="50%" height="auto" />
 
 - 젯브레인스(JetBrains)에서 오픈소스 그룹을 만들어 개발한 프로그래밍 언어
 - 2017년 구글에서 안드로이드 공식 언어로 지정
