@@ -13,24 +13,19 @@
 
 ### 초기 화면 설정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-01-startPage.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-01-startPage.PNG" width="auto"/>
 
 1) Name : 프로젝트 명
-
 2) Package name : 패키지명, 프로젝트 명
     - 앱의 식별값
-
 3) Save location : 저장 위치
     - 프로젝트의 파일들이 저장되는 루트 디렉토리
-
 4) Language : 사용 언어
     - 개발할 안드로이드의 사용 언어
         - Kotlin
         - Java
-
 5) Minimum SDK : 최소 SDK
     - 앱이 설치되는 최소 SDK 버전
-
 6) Build configuration Language : 빌드 파일 종류
     - build.gradle 파일의 타입 선택 부분
     - 안드로이드 앱은 Gradle 툴에 의해 빌드
@@ -39,7 +34,7 @@
 
 ### 화면 구성
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-02-logCat.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-02-logCat.PNG" width="70%" height="auto" />
 
 1) 로그캣(Logcat)
     - 앱이 실행중일 때 발생하는 로그 출력
@@ -71,7 +66,7 @@
 
 ### 구조
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-03-androidStructure.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-03-androidStructure.PNG" width="70%" height="auto" />
 
 - 리눅스 커널(Linux Kernel) : 안드로이드는 리눅스에 기반을 둔 오픈소스 소프트웨어 스택
 - 안드로이드 런타임(Android Runtime) : ART라고 불리며 앱 실행 역할
@@ -79,7 +74,7 @@
 
 ### 실행 과정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-04-dex.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-04-dex.PNG" width="60%" height="auto" />
 
 - 안드로이드는 자바 클래스를 런타임 때 그대로 실행 X
 - DEX 파일로 컴파일
@@ -105,7 +100,7 @@
 
 ### 안드로이드의 컴포넌트
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-05-component.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-05-component.PNG" width="60%" height="auto" />
 
 - 컴포넌트는 애플리케이션의 구성 요소
 - 안드로이드 개발 진행 시 클래스로 컴포넌트 개발
@@ -127,30 +122,30 @@
 
 1) 앱의 기능, 화면 등을 고려해 필요한 만큼 구성
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-07-howComponent.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-07-howComponent.PNG" width="60%" height="auto" />
 
 2) 컴포넌트는 앱 안에서 독립된 실행 단위
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-08-componentSeparate.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-08-componentSeparate.PNG" width="60%" height="auto" />
 
-    - 컴포넌트끼리 서로 종속되지 않아 코드 결합 발생 X
+- 컴포넌트끼리 서로 종속되지 않아 코드 결합 발생 X
 
 3) 앱 실행 시점의 다양성
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-09-manyView.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-09-manyView.PNG" width="60%" height="auto" />
 
-    - 컴포넌트가 앱 내에서 독립해서 실행되는 특징으로 실행 시점이 다양
-    - 안드로이드 앱에는 <bold>메인 함수(main function)</bold>의 개념이 존재 X
+- 컴포넌트가 앱 내에서 독립해서 실행되는 특징으로 실행 시점이 다양
+- 안드로이드 앱에는 <bold>메인 함수(main function)</bold>의 개념이 존재 X
 
 4) 애플리케이션 라이브러리 사용 가능
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-10-appLibrary.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-10-appLibrary.PNG" width="60%" height="auto" />
 
-    - 다른 애플리케이션을 라이브러리처럼 이용 가능
+- 다른 애플리케이션을 라이브러리처럼 이용 가능
 
 ### 안드로이드 앱의 클래스
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-06-classComponent.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-06-classComponent.PNG" width="60%" height="auto" />
 
 - 앱은 컴포넌트 클래스와 일반 클래스로 구분
     - 일반 클래스 : 클래스의 객체 생성 ~ 소멸까지 생명 주기 관리를 개발자 코드에서 진행
@@ -179,7 +174,7 @@ textView.text = resources.getString(R.string.mytxt)
 
 ### 프로젝트 폴더 구성
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-11-projectFolder.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-11-projectFolder.PNG" width="60%" height="auto" />
 
 - 프로젝트 폴더 : [모듈명 -> src -> main]
 
@@ -195,10 +190,10 @@ textView.text = resources.getString(R.string.mytxt)
 
 1) gradle(그래들) 빌드 설정 파일
 
-    - 안드로이드 앱의 빌드 도구
-    - gradle 설정 파일 : build.gradle.kts
-        - 프로젝트 수준의 build.gradle.kts(Project : AndroidLab)
-        - 모듈 수준의 build.gradle.kts(Module : AndroidLab.app)
+- 안드로이드 앱의 빌드 도구
+- gradle 설정 파일 : build.gradle.kts
+    - 프로젝트 수준의 build.gradle.kts(Project : AndroidLab)
+    - 모듈 수준의 build.gradle.kts(Module : AndroidLab.app)
 
 ```kts
 // 플러그인 선언
@@ -247,8 +242,8 @@ dependencies {
 
 2) 메인 환경 파일
 
-    - 안드로이드 앱의 메인 환경 파일 : AndroidManifest.xml
-    - URL이 http://schemas.android.com/apk/res/android 로 선언되었다면 안드로이드 표준 네임 스페이스
+- 안드로이드 앱의 메인 환경 파일 : AndroidManifest.xml
+- URL이 http://schemas.android.com/apk/res/android 로 선언되었다면 안드로이드 표준 네임 스페이스
 
 ```xml
 <!--> 네임 스페이스 선언<!-->
@@ -300,14 +295,14 @@ dependencies {
 
 3) 리소스 폴더
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-12-res.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-12-res.PNG" width="60%" height="auto" />
 
 - drawble : 이미지 리소스
 - layout : UI 구성에 필요한 XML 리소스
 - mipmap : 앱 아이콘 이미지
 - values : 문자열 등의 값으로 이용되는 리소스
 
- - 리소스를 식별하기 위한 int형 변수가 R.java 파일에 등록
+- 리소스를 식별하기 위한 int형 변수가 R.java 파일에 등록
 - res/layout/test.xml 파일인 경우, R.layout.test
 
 - res 하위의 폴더명은 지정된 폴더명 사용 필수
@@ -318,7 +313,7 @@ dependencies {
 
 4) 레이아웃 XML 파일
 
-    - 화면을 구성하는 레이아웃 XML 파일
+- 화면을 구성하는 레이아웃 XML 파일
 
 ```XML
 <!-->레이아웃 XML 파일<!-->
