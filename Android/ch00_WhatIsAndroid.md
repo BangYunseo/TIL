@@ -278,7 +278,7 @@ dependencies {
 - 콘텐츠 프로바이더 : <provider> 태그
 - name 속성 : 클래스 이름 등록
     
-- <intent-filter> 가 선언되고 안에 <action> 태그의 name 속성값이 android.intent.action.MAIN 문자열로, <category> 태그의 name 속성값이 android.intent.category.LAUNCHER로 선언되었으므로 이 액티비티는 앱 아이콘 클릭 시 실행되는 액티비티
+- \<intent-filter\> 가 선언되고 안에 \<action\> 태그의 name 속성값이 android.intent.action.MAIN 문자열로, \<category\> 태그의 name 속성값이 android.intent.category.LAUNCHER로 선언되었으므로 이 액티비티는 앱 아이콘 클릭 시 실행되는 액티비티
 
 
 ```xml
