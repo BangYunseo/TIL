@@ -24,7 +24,9 @@
     - 프로젝트의 파일들이 저장되는 루트 디렉토리
 
 4) Language : 사용 언어
-    - 개발할 안드로이드의 사용 언어(Kotlin / Java 2가지 지원)
+    - 개발할 안드로이드의 사용 언어
+        - Kotlin
+        - Java
 
 5) Minimum SDK : 최소 SDK
     - 앱이 설치되는 최소 SDK 버전
@@ -211,8 +213,8 @@ plugins {
 applicationId = "com.example.androidlab"
 ```
     
-    - targetSdk : 개발할 때 적용되는 SDK 버전
-    - minSdk : 앱을 설치할 수 있는 기기의 최소 SDK 버전
+- targetSdk : 개발할 때 적용되는 SDK 버전
+- minSdk : 앱을 설치할 수 있는 기기의 최소 SDK 버전
 
 ```kts
 // SDK 버전 설정
@@ -226,8 +228,8 @@ versionCode = 1
 versionName = "1.0"
 ```
 
-    - targetSdkk에 명시한 안드로이드 SDK는 기본으로 적용
-    - 개발자가 추가하는 오픈소스 라이브러리나 androidx 라이브러리 등 SDK 라이브러리가 아닌 것들은 모두 dependencies에 선언
+- targetSdkk에 명시한 안드로이드 SDK는 기본으로 적용
+- 개발자가 추가하는 오픈소스 라이브러리나 androidx 라이브러리 등 SDK 라이브러리가 아닌 것들은 모두 dependencies에 선언
 
 ```kts
 // 라이브러리 설정
@@ -275,13 +277,13 @@ dependencies {
 </application>
 ```
 
-    - 액티비티 : <activity> 태그
-    - 서비스 : <service> 태그
-    - 브로드캐스트 리시버 : <receiver> 태그
-    - 콘텐츠 프로바이더 : <provider> 태그
-    - name 속성 : 클래스 이름 등록
+- 액티비티 : <activity> 태그
+- 서비스 : <service> 태그
+- 브로드캐스트 리시버 : <receiver> 태그
+- 콘텐츠 프로바이더 : <provider> 태그
+- name 속성 : 클래스 이름 등록
     
-    - <intent-filter> 가 선언되고 안에 <action> 태그의 name 속성값이 android.intent.action.MAIN 문자열로, <category> 태그의 name 속성값이 android.intent.category.LAUNCHER로 선언되었으므로 이 액티비티는 앱 아이콘 클릭 시 실행되는 액티비티
+- <intent-filter> 가 선언되고 안에 <action> 태그의 name 속성값이 android.intent.action.MAIN 문자열로, <category> 태그의 name 속성값이 android.intent.category.LAUNCHER로 선언되었으므로 이 액티비티는 앱 아이콘 클릭 시 실행되는 액티비티
 
 
 ```xml
@@ -300,19 +302,19 @@ dependencies {
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch00/ch00-12-res.PNG" width="100%" height="auto" />
 
-    - drawble : 이미지 리소스
-    - layout : UI 구성에 필요한 XML 리소스
-    - mipmap : 앱 아이콘 이미지
-    - values : 문자열 등의 값으로 이용되는 리소스
+- drawble : 이미지 리소스
+- layout : UI 구성에 필요한 XML 리소스
+- mipmap : 앱 아이콘 이미지
+- values : 문자열 등의 값으로 이용되는 리소스
 
-    - 리소스를 식별하기 위한 int형 변수가 R.java 파일에 등록
-    - res/layout/test.xml 파일인 경우, R.layout.test
+ - 리소스를 식별하기 위한 int형 변수가 R.java 파일에 등록
+- res/layout/test.xml 파일인 경우, R.layout.test
 
-    - res 하위의 폴더명은 지정된 폴더명 사용 필수
-    - 각 리소스 폴더에 다시 하위 폴더 정의 불가
-    - 리소스 파일명
-        - 자바의 이름 규칙 위배 불가
-        - 알파벳 대문자 이용 불가 
+- res 하위의 폴더명은 지정된 폴더명 사용 필수
+- 각 리소스 폴더에 다시 하위 폴더 정의 불가
+- 리소스 파일명
+    - 자바의 이름 규칙 위배 불가
+    - 알파벳 대문자 이용 불가 
 
 4) 레이아웃 XML 파일
 
