@@ -251,7 +251,7 @@ dependencies {
     xmlns:tools="http://schemas.android.com/tools">
 ```
 
-    - <application> 태그는 앱 전체를 대상으로 한 설정
+- <application> 태그는 앱 전체를 대상으로 한 설정
     - icon 속성 : 지정한 이미지가 앱을 설치한 사용자의 폰에 보이는 실행 아이콘
     - lable 속성 : 앱의 이름 등록
     - theme 속성 : 앱에 적용하는 테마 설정
@@ -341,10 +341,10 @@ dependencies {
 
 5) 메인 액티비티 파일
 
-    - setContentView() 함수 : 매개 변수에 지정한 내용을 액티비티 화면에 출력
-    - R.layout.activity_main 지정 : res/layout/activity_main.xml 파일의 구성 내용 화면에 출력
-    - enableEdgeToEdge() : 액티비티 화면이 상단의 배터리 표시가 있는 영역(Status Bar)과 하단의 안드로이드 버튼이 있는 영역(Navigation Bar)까지 나오게 하는 설정
-    - setOnApplyWindowInsetsListener() : 액티비티에 출력되는 내용이 Navigation Bar 등과 겹치지 않게 하기 위한 설정
+- setContentView() 함수 : 매개 변수에 지정한 내용을 액티비티 화면에 출력
+- R.layout.activity_main 지정 : res/layout/activity_main.xml 파일의 구성 내용 화면에 출력
+- enableEdgeToEdge() : 액티비티 화면이 상단의 배터리 표시가 있는 영역(Status Bar)과 하단의 안드로이드 버튼이 있는 영역(Navigation Bar)까지 나오게 하는 설정
+- setOnApplyWindowInsetsListener() : 액티비티에 출력되는 내용이 Navigation Bar 등과 겹치지 않게 하기 위한 설정
 
 ```kotlin
 class MainActivity : AppCompatActivity() {
