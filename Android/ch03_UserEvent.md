@@ -55,10 +55,9 @@ override fun onTouchEvent(event: MotionEvent?): Boolean{
 ### 좌표 얻기
 
 - onTouchEvent() 함수의 매개변수인 MotionEvent 객체로 획득 
-    - x : 이벤트가 발생한 뷰의 X 좌표
-    - y : 이벤트가 발생한 뷰의 Y 좌표 
-    - rawX : 화면의 X 좌표
-    - rawY : 화면의 Y 좌표
+
+|<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-01-MotionEvent.PNG" height="auto" />|1) x : 이벤트가 발생한 뷰의 X 좌표<br>2) y : 이벤트가 발생한 뷰의 Y 좌표<br>3) rawX : 화면의 X 좌표<br>4) rawY : 화면의 Y 좌표|
+|---|:---|
 
 ```Kotlin
 // 터치 이벤트 발생 좌표 얻기
@@ -73,8 +72,6 @@ override fun onTouchEvent(event: MotionEvent?): Boolean{
     return super.onTouchEvent(event)
 }
 ```
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-01-MotionEvent.PNG" width="70%" height="auto" />
 
 ## 2절. 키 이벤트
 
@@ -122,7 +119,7 @@ override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean{
 - 뒤로가기 버튼 이벤트
     - onKeyDown(), onKeyUp(), onBackPressed() 함수 사용
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-02-KeyButton.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-02-KeyButton.PNG" width="30%" height="auto" />
 
 ```Kotlin
 // 뒤로 가기 버튼과 볼륨 조절 버튼 이벤트 처리
@@ -168,7 +165,7 @@ onBackPressedDispatcher.addCallback(this, callback)
     - 이벤트 핸들러 : 이벤트 발생 시 실행할 로직이 구현된 객체 
     - 리스너 : 이벤트 소스와 이벤트 핸들러를 연결해 주는 함수
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-03-ViewConnection.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-03-ViewConnection.PNG" width="50%" height="auto" />
 
 ```Kotlin
 // 체크박스 이벤트 처리
@@ -181,7 +178,7 @@ binding.checkbox.setOnCheckedChangeListener
 })
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-04-CheckBox.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-04-CheckBox.PNG" width="60%" height="auto" />
 
 ```Kotlin
 // 액티비티에서 인터페이스 구현 예시
@@ -397,4 +394,4 @@ class MainActivity : AppCompatActivity() {
 
 ### 5단계) 앱 실행
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-05-ex.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-05-ex.PNG" width="30%" height="auto" />
