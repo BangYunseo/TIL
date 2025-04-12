@@ -21,9 +21,9 @@
 - 액티비티 : 화면을 출력하는 컴포넌트
 - 화면에 내용을 표시할 경우 뷰 클래스 이용
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-01-viewScreen.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-01-viewScreen.PNG" width="auto" height="auto" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-02-viewScreen2.PNG" width="auto" height="auto" />
+---|---|
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-02-viewScreen2.PNG" width="70%" height="auto" />
 
 ```kt
 class MainActivity : AppCompatActivity() {
