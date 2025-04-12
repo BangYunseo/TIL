@@ -340,7 +340,7 @@ invisibleBtn.setOnClickListener{
     android:textStyle="bold"/>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-08-TextView.PNG" width="70%" height="auto" />  
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-08-TextView.PNG" width="40%" height="auto" />  
 
 
 - android:autoLink 속성 : 출력할 문자열 분석 후 특정 형태의 문자열에 자동 링크 추가
@@ -452,7 +452,7 @@ invisibleBtn.setOnClickListener{
     </RadioGroup>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-12-Buttons.PNG" width="50%" height="auto" /> 
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-12-Buttons.PNG" width="30%" height="auto" /> 
 
 
 ### 에디트 텍스트
