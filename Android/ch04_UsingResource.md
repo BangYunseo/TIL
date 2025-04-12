@@ -8,7 +8,7 @@
 >
 > 3절. 폰 크기의 호환성
 >
-> 4절. 메신저 앱 인트로 화면
+> 4절. 메신저 앱 인트로 화면   
 > [프로젝트 바로가기](https://github.com/BangYunseo/TIL/tree/main/Android/androidProject/ch04/)
 
 ## 1절. 리소스 종류와 특징
