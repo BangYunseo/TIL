@@ -358,8 +358,6 @@ fun main(){
 
 - 데이터 클래스를 사용하면서 객체가 가지는 값을 확인할 때 이용
 
-(여기부터 작성) 
-
 ```Kotlin
 fun main(){
   class NonDataClass(val name: String, val email: String, val age: Int)
@@ -396,7 +394,7 @@ fun main(){
 }
 ```
 
--object 뒤에 콜론(:)을 입력하고 그 뒤에 클래스의 상위 또는 인터페이스 입력
+- object 뒤에 콜론(:)을 입력하고 그 뒤에 클래스의 상위 또는 인터페이스 입력
 
 ```Kotlin
 open class Super{

@@ -304,10 +304,10 @@ val textView1 = findViewById<TextView>(R.id.text1)
 // visibility 속성값 변경
 
 visibleBtn.setOnClickListener{
-    targetBiew.visibility = View.VISIBLE
+    targetView.visibility = View.VISIBLE
 }
 invisibleBtn.setOnClickListener{
-    targetBiew.visibility = View.INVISIBLE
+    targetView.visibility = View.INVISIBLE
 }
 ```
 
@@ -357,7 +357,7 @@ invisibleBtn.setOnClickListener{
                 깃허브 : http://github.com/BangYunseo,
                 전화 : 010-0000-0000,
                 이메일 : email@gmail.com"
-    android:autoLink="web|email|phone"/>
+    android:autoLink="web|phone|email"/>
 ```
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-09-autoLink.PNG" width="50%" height="auto" /> 
@@ -427,29 +427,29 @@ invisibleBtn.setOnClickListener{
 <!-->버튼 예시 사용<!-->
 
 <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="BUTTON1"/>
+<CheckBox
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="check1" />
+<CheckBox
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="check2"/>
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BUTTON1"/>
-    <CheckBox
+        android:text="radio1"/>
+    <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="check1" />
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="check2"/>
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="radio1"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="radio2"/>
-    </RadioGroup>
+        android:text="radio2"/>
+</RadioGroup>
 ```
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-12-Buttons.PNG" width="30%" height="auto" /> 
@@ -535,8 +535,6 @@ android{
 ### 3단계) 레이아웃 XML 파일 작성
 
 - activity_main.xml 파일 수정
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-15-strings.PNG" width="70%" height="auto" /> 
 
 ```xml
 <!-->activity_main.xml 파일 수정<!-->

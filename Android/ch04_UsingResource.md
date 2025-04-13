@@ -266,7 +266,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 ### 국제 언어 제공
 
 - 리소스 문자열을 각국 언어로 제공
-- 파일을 여러 개 생성하여 각 언어에 맞는 리소스 문자열을 담고 어느 XML 파일을 저굥ㅇ해야 하는지를 리소스 디렉토리명으로 지정
+- 파일을 여러 개 생성하여 각 언어에 맞는 리소스 문자열을 담고 어느 XML 파일을 적용해야 하는지 리소스 디렉토리명으로 지정
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-04-languageResources.PNG" width="100%" height="auto" />
 
@@ -348,7 +348,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
 ### scope 함수
 
 : 범위 함수
-- 라이브러리가 제공하는 클래스 or 프로그래머가 생성한 클래스의 매개 변수나 안의
+- 라이브러리가 제공하는 클래스 or 프로그래머가 생성한 클래스의 매개 변수
 1) apply & also : 객체 자체 return
 2) run(==with)& let : 실행 결과 return
 
