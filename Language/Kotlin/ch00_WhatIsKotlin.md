@@ -10,25 +10,11 @@
 
 ## 1절. 코틀린 등장 배경
 
-### 배경
+### 배경 및 장점
 
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Kotlin/Image/ch00/ch00-01-progress.PNG" width="50%" height="auto" />
-
-- 젯브레인스(JetBrains)에서 오픈소스 그룹을 만들어 개발한 프로그래밍 언어
-- 2017년 구글에서 안드로이드 공식 언어로 지정
-- JVM에 기반을 둔 언어
-- 코틀린 컴파일러(kotlinc)가 .kt 파일을 컴파일하면 자바 바이트 코드 생성
-
-### 장점
-
-1) 최신 언어 기법을 사용할 경우 훨씬 간결한 구문으로 프로그램 작성 가능
-
-2) 널 안전성(Null Safety)를 지원하는 언어
-
-3) 자바와 100% 호환하는 언어
-
-4) 코루틴(corutines)이라는 기법을 이용할 경우 비동기 프로그래밍 간소화 가능
+|<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Kotlin/Image/ch00/ch00-01-progress.PNG" height="auto" />|배경<br>- 젯브레인스(JetBrains)에서 오픈소스 그룹을 만들어 개발한 프로그래밍 언어<br>- 2017년 구글에서 안드로이드 공식 언어로 지정<br>- JVM에 기반을 둔 언어<br>- 코틀린 컴파일러(kotlinc)가 .kt 파일을 컴파일하면 자바 바이트 코드 생성<br><br>장점<br>- 최신 언어 기법을 사용할 경우 훨씬 간결한 구문으로 프로그램 작성 가능<br>- 널 안전성(Null Safety)를 지원하는 언어<br>- 자바와 100% 호환하는 언어<br>- 코루틴(corutines)이라는 기법을 이용할 경우 비동기 프로그래밍 간소화 가능|
+|---|:---|
 
 ### 파일 구성
 

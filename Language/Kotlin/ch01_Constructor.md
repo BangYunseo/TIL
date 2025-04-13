@@ -426,7 +426,7 @@ fun main(){
 - 멤버 변수나 함수를 클래스 이름으로 접근하고자 할 경우 사용
 - companion의 키워드로 선언
 
-```Kotiln
+```Kotlin
 class MyClass {
   companion object {
     var data = 10

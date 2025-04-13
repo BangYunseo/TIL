@@ -62,12 +62,12 @@
 
 |태그|설명|
 |:---:|:---|
-|<shape>|도형을 의미<br><br>android:shape="rectangle"처럼 shape 속성을 이용해 도형의 타입 지정<br><br>shape 값은 rectangle, oval, line, ring 중 선택 가능|
-|<corners>|둥근 모서리를 그릴 경우 사용하며 shape 값이 rectangle인 경우에만 적용|
-|<gradient>|그라데이션 색상 지정|
-|<size>|도형의 크기 지정|
-|<solid>|도형의 색상 지정|
-|<stroke>|도형의 윤곽선 지정|
+|\<shape\>|도형을 의미<br>android:shape="rectangle"처럼 shape 속성을 이용해 도형의 타입 지정<br>shape 값은 rectangle, oval, line, ring 중 선택 가능|
+|\<corners\>|둥근 모서리를 그릴 경우 사용하며 shape 값이 rectangle인 경우에만 적용|
+|\<gradient\>|그라데이션 색상 지정|
+|\<size\>|도형의 크기 지정|
+|\<solid\>|도형의 색상 지정|
+|\<stroke\>|도형의 윤곽선 지정|
 
 - mipmap 디렉토리 : 실행 아이콘 리소스
 - valus 디렉토리 : 값 리소스
@@ -207,18 +207,16 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 
 ### 플랫폼 리소스 사용
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-01-package.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-01-package.PNG" width="60%" height="auto" />
 
 - 안드로이드 플랫폼이 제공하는 리소스
 - android.R이라는 플랫폼 라이브러리의 R 파일에 등록
-
-
 
 ## 2절. 리소스 조건 설정
 
 ### 리소스 조건 설정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-02-icon1.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-02-icon1.PNG" width="50%" height="auto" />
 
 - 리소스를 특정 환경에서만 적용되도록 설정
 - 기기 별 실행 아이콘 크기
@@ -268,7 +266,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 - 리소스 문자열을 각국 언어로 제공
 - 파일을 여러 개 생성하여 각 언어에 맞는 리소스 문자열을 담고 어느 XML 파일을 적용해야 하는지 리소스 디렉토리명으로 지정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-04-languageResources.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-04-languageResources.PNG" width="30%" height="auto" />
 
 ```xml
 <!-->영어 문자열 리소스 예시<!-->
@@ -412,7 +410,7 @@ class Book(var name: String, var price: Int){
 
 - round_button.xml 파일과 intro.png 파일 drawable 디렉터리에 복사
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-05-drawable.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-05-drawable.PNG" width="30%" height="auto" />
 
 ### 3) 언어 별 문자열 리소스 작성
 
@@ -456,8 +454,7 @@ class Book(var name: String, var price: Int){
 </resources>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-06-values.PNG" width="100%" height="auto" />
-
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-06-values.PNG" width="30%" />
 
 ### 4) 세로 방향 화면 구성
 
@@ -528,7 +525,7 @@ class Book(var name: String, var price: Int){
 </RelativeLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-07-landout.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-07-landout.PNG" width="30%" height="auto" />
 
 
 ### 5) 가로 방향 화면 구성
@@ -591,4 +588,4 @@ class Book(var name: String, var price: Int){
 </RelativeLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-08-land.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-08-land.PNG" width="30%" height="auto" />
