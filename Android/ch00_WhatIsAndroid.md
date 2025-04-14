@@ -223,7 +223,7 @@ versionCode = 1
 versionName = "1.0"
 ```
 
-- targetSdkk에 명시한 안드로이드 SDK는 기본으로 적용
+- targetSdk에 명시한 안드로이드 SDK는 기본으로 적용
 - 개발자가 추가하는 오픈소스 라이브러리나 androidx 라이브러리 등 SDK 라이브러리가 아닌 것들은 모두 dependencies에 선언
 
 ```kts
