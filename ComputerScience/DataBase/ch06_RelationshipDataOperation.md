@@ -83,9 +83,8 @@
      
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-05-UnionCompatible.PNG" width="70%" height="auto" />
 
-1) 합집합(Union)
+1) 합집합(Union) : R∪S
 
-: R∪S
 - 합병 가능한 두 릴레이션 R과 S의 합집합
    - 릴레이션 R에 속하거나 릴레이션 S에 속하는 모든 튜플들로 결과 릴레이션 구성
 - 결과 릴레이션 특징
@@ -96,9 +95,8 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-06-UnionEX.PNG" width="70%" height="auto" />
 
-2) 교집합(Intersection)
+2) 교집합(Intersection) : R∩S
 
-: R∩S
 - 합병 가능한 두 릴레이션 R과 S의 교집합
    - 릴레이션 R과 S에 공통으로 속하는 튜플로 결과 릴레이션 구성
 - 결과 릴레이션 특징
@@ -109,9 +107,8 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-07-IntersectionEX.PNG" width="70%" height="auto" />
 
-3) 차집합(Difference)
+3) 차집합(Difference) : R-S
 
-: R-S
 - 합병 가능한 두 릴레이션 R과 S의 차집합
    - 릴레이션 R에는 존재하지만 릴레이션 S에는 존재하지 않는 튜플로 결과 릴레이션 구성
 - 결과 릴레이션 특징
@@ -122,9 +119,8 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-08-DifferenceEX.PNG" width="70%" height="auto" />
 
-4) 카티션 프로덕트(Cartesian Product)
+4) 카티션 프로덕트(Cartesian Product) : R✕S
 
-: R✕S
 - 두 릴레이션 R과 S의 카티션 프로덕트
   - 릴레이션 R에 속한 각 튜플과 릴레이션 S에 속한 각 튜플을 모두 연결하여 만들어진 새로운 튜플로 결과 릴레이션 구성
 - 결과 릴레이션 특징
