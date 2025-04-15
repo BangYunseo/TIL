@@ -263,6 +263,28 @@
 - 릴레이션 2의 모든 튜플과 관련이 있는 릴레이션 1의 튜플로 결과 릴레이션 구성
   - 단, 릴레이션 1이 릴레이션 2의 모든 속성을 포함해야 연산 가능
   - 도메인이 같아야 함
+- 릴레이션의 속성 값 집합으로 연산 수행 : R ÷ S
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-25-Division.PNG" width="70%" height="auto" />
 
+##### 디비전 예시
 
+1) 고객과 우수등급 릴레이션
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-26-DivisionEx1.PNG" width="70%" height="auto" />
+
+2) 주문내역, 제품1, 제품2 릴레이션
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-27-DivisionEx2.PNG" width="70%" height="auto" />
+
+## 수정필요!!!!!!!!!!!!
+
+### 관계 대수를 이용한 질의 표현 예시
+
+1) 고객과 주문 릴레이션
+
+2) 등급이 gold인 고객의 이름과 나이
+
+3) 고객이름이 원유선인 고객의 등급과 원유선 고객이 주문한 주문제품, 수량
+
+4) 
