@@ -1,12 +1,10 @@
-![image](https://github.com/user-attachments/assets/54989e26-0830-4513-91cc-8dfdd7e9bc50)# Chapter 6. 관계 데이터 연산(Relationship Data Operation)
+# Chapter 6. 관계 데이터 연산(Relationship Data Operation)
 
 > 1절. 관계 데이터 연산 개념
 >
 > 2절. 관계 대수
 >
-> 3절. 
->
-> 4절. 
+> 3절. 관계 해석
 
 ## 1절. 관계 데이터 연산 개념
 
