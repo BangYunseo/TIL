@@ -1,4 +1,4 @@
-# Chapter 6. 관계 데이터 연산(Relationship Data Operation)
+![image](https://github.com/user-attachments/assets/54989e26-0830-4513-91cc-8dfdd7e9bc50)# Chapter 6. 관계 데이터 연산(Relationship Data Operation)
 
 > 1절. 관계 데이터 연산 개념
 >
@@ -144,7 +144,7 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-10-RO.PNG" width="70%" height="auto" />
 
-1) 셀렉트(Select) 또는 셀렉션(Selection)
+### 1. 셀렉트(Select) 또는 셀렉션(Selection)
 
 - 릴레이션에서 조건을 만족하는 튜플만 선택하여 결과 릴레이션 구성
 - 하나의 릴레이션을 대상으로 연산 수행 : 단항 연산자
@@ -176,7 +176,7 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-13-SelectEX2.PNG" width="70%" height="auto" />
 
-2) 프로젝트(Project) 또는 프로젝션(Projection)
+### 2. 프로젝트(Project) 또는 프로젝션(Projection)
 
 - 릴레이션에서 선택한 속성 값으로 결과 릴레이션 구성
   - 수직적 연산자 : 결과 릴레이션은 연산 대상 릴레이션의 수직적 부분집합
@@ -207,7 +207,7 @@
 
 > 동일한 튜플은 중복 없이 한 번만 출력
 
-3) 조인(Join)
+### 3. 조인(Join)
 
 - 두 릴레이션을 조합하여 결과 릴레이션 구성
 - 조인 속성의 값이 같은 튜플만 연결하여 생성된 투플을 결과 릴레이션에 포함
@@ -217,30 +217,54 @@
 
 - 조인 예시 (조인 속성 : 고객 릴레이션의 고객아이디, 주문 릴레이션의 주문 고객)
 
-> 정소화 고객이 주문한제품을 검색하고자 할 경우 조인 연산 필요
-
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-19-JoinEX.PNG" width="70%" height="auto" />
 
-## 여기부터 수정 필요!!!
+> 정소화 고객이 주문한제품을 검색하고자 할 경우 조인 연산 필요
 
-- 결과 릴레이션은 연산 대상 릴레이션의 수직적 부분 집합
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-20-JoinEX2.PNG" width="70%" height="auto" />
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-21-JoinEX3.PNG" width="70%" height="auto" />
+
+> 어느 릴레이션 소속인지 구분을 위해 '릴레이션.속성이름'형식의 표기
+
+### 조인 종류
+
+#### 세타 조인(theta-join, θ-join)
+
+- 동등 조인에 비해 더 일반화
+- 주어진 조인 조건을 만족하는 두 릴레이션의 모든 튜플을 연결하여 생성된 새로운 튜플로 결과 릴레이션 구성
+- 결과 릴레이션의 차수(Degree) = 두 릴레이션 차수의 합
+- 수학적 표현법 : 릴레이션1 $⋈_{A θ B}$ 릴레이션2
+  - θ : 비교 연산자($>, ≥, <, ≤, =, ≠$)
  
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-17-ProjectionVertical.PNG" width="70%" height="auto" />
+#### 동등 조인(equi-join)
 
-#### 고객 릴레이션에서 프로젝션 연산 예제
+- θ 연산자가 "=" 인 세타 조인을 의미
+- 수학적 표현법 : 릴레이션1 $⋈_{A = B}$ 릴레이션2
+  - ex) 고객 $⋈_{고객.고객아이디 = 주문.주문아이디}$ 주문
+ 
+#### 자연 조인(Natural Join)
+- 동등 조인의 결과 릴레이션에서 조인 속성이 한 번만 나타나게 하는 연산
+- 수학적 표현법 : 릴레이션1 $⋈_N$ 릴레이션2
 
-- 고객 릴레이션
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-22-Join.PNG" width="70%" height="auto" />
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-11-CustomRelation.PNG" width="70%" height="auto" />
+##### 자연 조인 예시
 
-- ex 1) 고객이름, 등급, 적립금 검색
+1) 고객과 주문 릴레이션
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-15-ProjectionEX2.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-23-NJex.PNG" width="70%" height="auto" />
 
-- ex 2) 등급 검색
+2) 2개의 속성으로 이루어진 조인 속성 이용
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-16-ProjectionEX3.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-24-NJex2.PNG" width="70%" height="auto" />
 
-> 동일한 튜플은 중복 없이 한 번만 출력
-> 
-(수정필요)
+### 4. 디비전(Division)
+
+- 수학적 표현법 : 릴레이션1 ÷ 릴레이션2
+- 릴레이션 2의 모든 튜플과 관련이 있는 릴레이션 1의 튜플로 결과 릴레이션 구성
+  - 단, 릴레이션 1이 릴레이션 2의 모든 속성을 포함해야 연산 가능
+  - 도메인이 같아야 함
+
+
+
