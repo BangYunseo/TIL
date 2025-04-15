@@ -277,14 +277,23 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-27-DivisionEx2.PNG" width="70%" height="auto" />
 
-## 수정필요!!!!!!!!!!!!
-
 ### 관계 대수를 이용한 질의 표현 예시
 
 1) 고객과 주문 릴레이션
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-28-JoinEx1.PNG" width="70%" height="auto" />
+
 2) 등급이 gold인 고객의 이름과 나이
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-29-JoinEx2.PNG" width="70%" height="auto" />
 
 3) 고객이름이 원유선인 고객의 등급과 원유선 고객이 주문한 주문제품, 수량
 
-4) 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-30-JoinEx3.PNG" width="70%" height="auto" />
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-31-JoinEx3Res.PNG" width="70%" height="auto" />
+
+
+## 수정필요!!!!!!!!!!!!
+
+4) 주문 수량이 10개 미만인 주문 내역을 제외한 검색
