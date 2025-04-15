@@ -293,7 +293,41 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-31-JoinEx3Res.PNG" width="70%" height="auto" />
 
-
-## 수정필요!!!!!!!!!!!!
-
 4) 주문 수량이 10개 미만인 주문 내역을 제외한 검색
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-32-JoinEx4.PNG" width="70%" height="auto" />
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-33-JoinEx4Res.PNG" width="70%" height="auto" />
+
+#### 세미 조인(Semi Join)
+
+- 프로젝트 연산을 수행한 릴레이션을 이용하는 조인
+- 수학적 표현법 : 릴레이션 1 ⋉ 릴레이션 2
+- 릴레이션 2를 조인 속성으로 프로젝트 연산 후, 릴레이션 1에 자연 조인하여 결과 릴레이션 구성
+- 불필요한 속성을 미리 제거하여 조인 연산 비용을 줄이는 장점
+- 교환적 특징이 없음
+  - R ⋉ S ≠ S ⋉ R
+ 
+##### 세미 조인 예시
+
+1) 고객과 주문 릴레이션의 세미 조인
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-34-SemiJoinEx1.PNG" width="70%" height="auto" />
+
+2) 왼쪽이 닫힌 세미 조인
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-35-SemiJoinEx2.PNG" width="70%" height="auto" />
+
+## 수정이필요해요ㅛㅛㅛㅛㅛㅛㅛㅛㅛㅛㅛㅛ
+
+#### 외부 조인(Outer Join)
+
+- 자연 조인 연산에서 제외되는 투플도 결과 릴레이션에 포함시키는 조인
+• 두 릴레이션에 있는 모든 투플을 결과 릴레이션에 포함시킴
+§ 표현법 : 릴레이션1 ⋈+ 릴레이션2
+§ 자연조인 시 조인에 실패한 투플을 모두 보여주되 값이 없는 대응 속성에는 NULL 값을 채워서 반환
+§ 모든 속성을 보여주는 기준 릴레이션 위치에 따라 왼쪽(left) 외부조인, 오른쪽(right) 외부조인, 완전(full, 양
+쪽) 외부조인으로 나뉨
+§ 형식 : 왼쪽(left) 외부조인 – R (r, s) S (릴레이션1 ⋈+ 릴레이션2)
+완전(full) 외부조인 – R (r, s) S
+오른쪽(right) 외부조인 - R (r, s) S
