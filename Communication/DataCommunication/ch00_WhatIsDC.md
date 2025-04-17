@@ -4,7 +4,9 @@
 >
 > 2절. 네트워크
 >
-> 3절. 
+> 3절. 네트워크 유형
+>
+> 4절. 
 
 ## 1절. 데이터 통신
 
@@ -206,7 +208,7 @@
 
 ### 버스(Bus) 접속 형태
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-12-Bus.PNG" width="80%" height="auto"/>
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-11-Bus.PNG" width="80%" height="auto"/>
 
 - 다중점 형태
 - 하나의 긴 테이블이 모든 장치를 연결하는 백본 또는 중추 네트워크 역할
@@ -220,7 +222,42 @@
    - 재구성이나 결함 분리의 어려움
    - 중추 케이블 결함 시 다수의 장치에 영향
 
-  (여기부터 수정 필요)
-### 버스(Bus) 접속 형태
+### 링(Ring) 접속 형태
 
 <img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-12-Bus.PNG" width="80%" height="auto"/>
+
+- 자신 양쪽 장치와 전용 점-대-점(Point to Point) 연결
+- 각 장치는 중계기(repeater) 포함
+
+1) 장점
+   - 쉬운 설치와 재구성
+   - 신호의 항상 순환으로 만약 한 장치가 특정한 시간 내에 신호를 못받을 경우 경보 발생
+  
+2) 단점
+   - 단방향 전송
+   - 링의 결함은 전체 네트워크 마비
+      - 이중 링 또는 결함이 있는 지점을 단절시킬 수 있는 교환기를 사용하여 해결해야 함
+    
+### 혼합형(Hybrid) 접속 형태
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-13-Hybrid.PNG" width="80%" height="auto"/>
+
+> 다수의 접속 형태인 경우 여러 개의 topology를 혼합해 사용
+> 버스(Bus)형 + 성(Star)형
+
+## 3절. 네트워크 유형
+
+### 네트워크 종류 유형
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-14-NetworkType.PNG" width="80%" height="auto"/>
+
+### 근거리 통신망(LAN)
+
+- Local Area Network
+- 개인 소유, 단일 사무실, 건물, 학교 등에 있는 호스트들을 연결
+
+## 수정 필요!!
+
+
+1) 공유 케이블 LAN(과거)
+2) 교환기 LAN(현재)
