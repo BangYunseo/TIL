@@ -6,7 +6,7 @@
 
 ## When?
 
-- 마지막 수정일 : 2025.01.11
+- 마지막 수정일 : 2025.04.18
 
 ## Ref
 
@@ -23,10 +23,10 @@
 - [DataStructure](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataStructure)
 - [DataBase](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase)
 - [NetworkProtocol](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/NetworkProtocol)
-- [OperatingSystem](<(https://github.com/BangYunseo/TIL/tree/main/ComputerScience/OperatingSystem)>)
+- [OperatingSystem](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/OperatingSystem)
 - SoftwareEngineering
-- Algorithm
-- DesignPattern
+- [Algorithm](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/Algorithm)
+- [DesignPattern]
 
 ## Game CS
 

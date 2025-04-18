@@ -8,7 +8,7 @@
 >
 > 3절. 폰 크기의 호환성
 >
-> 4절. 메신저 앱 인트로 화면   
+> 4절. 메신저 앱 인트로 화면  
 > [프로젝트 바로가기](https://github.com/BangYunseo/TIL/tree/main/Android/androidProject/ch04/)
 
 ## 1절. 리소스 종류와 특징
@@ -19,19 +19,19 @@
 - 리소스 파일명 : values에 추가하는 파일 제외 자바의 이름 작성 규칙 준수
 - 알파벳 대문자 사용 불가
 
-|디렉토리 명|리소스 종류|
-|:---:|:---|
-|animator|속성 애니메이션 XML|
-|anim|트윈 애니메이션 XML|
-|color|색상 상태 목록 정의 XML|
-|drawble|이미지 리소스|
-|mipmap|앱 실행 아이콘 리소스|
-|layout|레이아웃 XML|
-|menu|메뉴 구성 XML|
-|raw|원시 형태로 이용되는 리소스 파일|
-|values|단순 값으로 이용되는 리소스|
-|xml|특정 디렉토리가 정의되지 않은 나머지 XML 파일|
-|font|글꼴 리소스|
+| 디렉토리 명 | 리소스 종류                                   |
+| :---------: | :-------------------------------------------- |
+|  animator   | 속성 애니메이션 XML                           |
+|    anim     | 트윈 애니메이션 XML                           |
+|    color    | 색상 상태 목록 정의 XML                       |
+|   drawble   | 이미지 리소스                                 |
+|   mipmap    | 앱 실행 아이콘 리소스                         |
+|   layout    | 레이아웃 XML                                  |
+|    menu     | 메뉴 구성 XML                                 |
+|     raw     | 원시 형태로 이용되는 리소스 파일              |
+|   values    | 단순 값으로 이용되는 리소스                   |
+|     xml     | 특정 디렉토리가 정의되지 않은 나머지 XML 파일 |
+|    font     | 글꼴 리소스                                   |
 
 - layout 디렉토리 : 레이아웃 리소스
 - drawble 디렉토리 : 이미지 리소스
@@ -60,14 +60,14 @@
   android:src="@drawble/gradient_box"/>
 ```
 
-|태그|설명|
-|:---:|:---|
-|\<shape\>|도형을 의미<br>android:shape="rectangle"처럼 shape 속성을 이용해 도형의 타입 지정<br>shape 값은 rectangle, oval, line, ring 중 선택 가능|
-|\<corners\>|둥근 모서리를 그릴 경우 사용하며 shape 값이 rectangle인 경우에만 적용|
-|\<gradient\>|그라데이션 색상 지정|
-|\<size\>|도형의 크기 지정|
-|\<solid\>|도형의 색상 지정|
-|\<stroke\>|도형의 윤곽선 지정|
+|     태그     | 설명                                                                                                                                     |
+| :----------: | :--------------------------------------------------------------------------------------------------------------------------------------- |
+|  \<shape\>   | 도형을 의미<br>android:shape="rectangle"처럼 shape 속성을 이용해 도형의 타입 지정<br>shape 값은 rectangle, oval, line, ring 중 선택 가능 |
+| \<corners\>  | 둥근 모서리를 그릴 경우 사용하며 shape 값이 rectangle인 경우에만 적용                                                                    |
+| \<gradient\> | 그라데이션 색상 지정                                                                                                                     |
+|   \<size\>   | 도형의 크기 지정                                                                                                                         |
+|  \<solid\>   | 도형의 색상 지정                                                                                                                         |
+|  \<stroke\>  | 도형의 윤곽선 지정                                                                                                                       |
 
 - mipmap 디렉토리 : 실행 아이콘 리소스
 - valus 디렉토리 : 값 리소스
@@ -139,7 +139,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 ```
 
 - style 태그 : 스타일 리소스
-   - 뷰에 설정되는 여러 속성을 스타일에 적용하여 한꺼번에 적용
+  - 뷰에 설정되는 여러 속성을 스타일에 적용하여 한꺼번에 적용
 
 ```xml
 <!-->스타일 등록<!-->
@@ -168,7 +168,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 
 - color 디렉토리 : 색상 리소스
   - 특정 뷰의 상태를 표현하고 그 상태에 적용되는 색상을 등록
- 
+
 ```xml
 <!-->색상 리소스 등록<!-->
 
@@ -220,41 +220,41 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 
 - 리소스를 특정 환경에서만 적용되도록 설정
 - 기기 별 실행 아이콘 크기
-  
-|화면 밀도|크기|
-|:---:|:---|
-|XXXHDPI|192 * 192|
-|XXHDPI|144 * 144|
-|XHDPI|96 * 96|
-|HDPI|72 * 72|
-|MDPI|48 * 48|
+
+| 화면 밀도 | 크기       |
+| :-------: | :--------- |
+|  XXXHDPI  | 192 \* 192 |
+|  XXHDPI   | 144 \* 144 |
+|   XHDPI   | 96 \* 96   |
+|   HDPI    | 72 \* 72   |
+|   MDPI    | 48 \* 48   |
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-03-icon2.PNG" width="100%" height="auto" />
 
 - 리소스 디렉터리 이름에서 붙임표(-) 뒤의 단어가 리소스의 조건
 - mipmap-mdpi 디렉터리 : mdpi 조건
 
-|조건|예시|설명|
-|:---:|:---|:---|
-|MCC 및 MNC|mcc310<br>mcc310-mnc004|이동통신 국가 코드(MCC)와 선택적으로 이동통신 네트워크 코드(MNC) 추가 가능<br>mcc310은 미국이며 mcc310-mnc004는 버라이즌을 이용하는 미국을 의미|
-|언어 및 지역|en<br>ko-rKR|ISO639-1 언어 코드이며 선택적으로 뒤에 소문자 r을 추가해 ISO3166-1-alpha-2의 지역코드가 나올 수 있음|
-|레이아웃 방향|ldrtl<br>ldltr|히브리어처럼 오른쪽에서 왼쪽으로 쓰는 언어의 레이아웃에서 유용하게 이용 가능<br>ldrtl은 오른쪽 -> 왼쪽<br>ldltr은 왼쪽 -> 오른쪽 방향 레이아웃|
-|더 작은 쪽|sw320dp|화면 크기 중 더 작은 쪽에 대한 조건<br>화면 방향과 상관없이 화면의 높이와 너비 중 작은 쪽에 대한 조건 의미<br>sw320dp이면 너비든 높이든 상관없이 작은 쪽의 치수가 320dp인 경우 의미|
-|이용 가능 너비|w720dp|화면 너비에 대한 조건<br>w720dp일 경우 너비가 720인 기기|
-|이용 가능 높이|h720dp|화면 높이에 대한 조건<br>h720dp일 경우 높이가 720인 기기|
-|화면 크기|small, normal, large, xlarge|화면 크기를 small, normal, large, xlarge로 판단해 조건 명시<br>small은 320 * 428, normal은 320 * 470, large는 480 * 640, xlarge는 720 * 960 정도의 크기|
-|화면 비율|long, notlong|화면의 종횡비 조건<br>long은 WQVGA, WVGA, FWVGA 등 긴 화면, notlong은 QVGA, HVGA, VGA 등 길지 않은 화면|
-|원형 화면|round, notround|원형화면인지 판단<br>round는 웨어러블 기기처럼 둥근 화면을 가지는 기기<br>notround는 폰이나 태블릿처럼 사각형  화면의 기기|
-|화면 방향|port, land|화면의 방향에 대한 조건<br>port는 세로 방향, land는 가로 방향|
-|UI 모드|car, dest, television, application, watch, vrheadset|기기가 도크에 삽입되거나 제거될 때 대응하기 위한 조건<br>car는 자동차, desk는 데스크, television은 TV, application은 표시되지 않은 제품|
-|야간 모드|night, notnight|야간 모드에 대응하기 위한 조건<br>night는 야간, notnight는 주간|
-|화면 픽셀 밀도|ldpi, mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi, nodpi, tvdpi, anydpi, nnndpi|화면 밀도에 대한 조건<br>ldpi는 120dpi, mdpi는 160dpi, hdpi는 240dpi, xhdpi는 320dpi, xhdpi는 320dpi, xxhdpi는 480dpi, xxxdpi는 640dpi, nodpi는 크기를 조정하지 않을 리소스에 사용|
-|터치 스크린 유형|notouch, finger|터치 스크린을 제공하는지 판단<br>notouch는 터치 스크린이 없는 기기|
-|키보드 가용성|keysexposed, keyshidden, keyssoft|키보드의 유형<br>keyssoft는 소프트 키보드, keysexposed는 키보드가 노출되어 있는 기기, keyshidden은 키보드가 있으나 숨길 수 있는 기기|
-|기본 텍스트 입력방법|nokeys, qwerty, 12key|nokeys는 하드웨어 키보드가 없는 경우, qwerty는 하드웨어 쿼티 키보드가 있는 경우, 12key는 하드웨어 12키가 있는 경우|
-|탐색 키 가용성|navexposed, navhidden|탐색 키 사용 가능 조건<br>navexposed는 탐색 키 사용 가능, navhidden은 탐색 키 사용 불가|
-|기본 비터치 탐색 방법|nanav, dpad, trackball, wheel|터치하지 않고 탐색이 가능한 기기가 있는지 판단|
-|플랫폼 버전|v21|기기의 API 레벨|
+|         조건          | 예시                                                                   | 설명                                                                                                                                                                                |
+| :-------------------: | :--------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      MCC 및 MNC       | mcc310<br>mcc310-mnc004                                                | 이동통신 국가 코드(MCC)와 선택적으로 이동통신 네트워크 코드(MNC) 추가 가능<br>mcc310은 미국이며 mcc310-mnc004는 버라이즌을 이용하는 미국을 의미                                     |
+|     언어 및 지역      | en<br>ko-rKR                                                           | ISO639-1 언어 코드이며 선택적으로 뒤에 소문자 r을 추가해 ISO3166-1-alpha-2의 지역코드가 나올 수 있음                                                                                |
+|     레이아웃 방향     | ldrtl<br>ldltr                                                         | 히브리어처럼 오른쪽에서 왼쪽으로 쓰는 언어의 레이아웃에서 유용하게 이용 가능<br>ldrtl은 오른쪽 -> 왼쪽<br>ldltr은 왼쪽 -> 오른쪽 방향 레이아웃                                      |
+|      더 작은 쪽       | sw320dp                                                                | 화면 크기 중 더 작은 쪽에 대한 조건<br>화면 방향과 상관없이 화면의 높이와 너비 중 작은 쪽에 대한 조건 의미<br>sw320dp이면 너비든 높이든 상관없이 작은 쪽의 치수가 320dp인 경우 의미 |
+|    이용 가능 너비     | w720dp                                                                 | 화면 너비에 대한 조건<br>w720dp일 경우 너비가 720인 기기                                                                                                                            |
+|    이용 가능 높이     | h720dp                                                                 | 화면 높이에 대한 조건<br>h720dp일 경우 높이가 720인 기기                                                                                                                            |
+|       화면 크기       | small, normal, large, xlarge                                           | 화면 크기를 small, normal, large, xlarge로 판단해 조건 명시<br>small은 320 _ 428, normal은 320 _ 470, large는 480 _ 640, xlarge는 720 _ 960 정도의 크기                             |
+|       화면 비율       | long, notlong                                                          | 화면의 종횡비 조건<br>long은 WQVGA, WVGA, FWVGA 등 긴 화면, notlong은 QVGA, HVGA, VGA 등 길지 않은 화면                                                                             |
+|       원형 화면       | round, notround                                                        | 원형화면인지 판단<br>round는 웨어러블 기기처럼 둥근 화면을 가지는 기기<br>notround는 폰이나 태블릿처럼 사각형 화면의 기기                                                           |
+|       화면 방향       | port, land                                                             | 화면의 방향에 대한 조건<br>port는 세로 방향, land는 가로 방향                                                                                                                       |
+|        UI 모드        | car, dest, television, application, watch, vrheadset                   | 기기가 도크에 삽입되거나 제거될 때 대응하기 위한 조건<br>car는 자동차, desk는 데스크, television은 TV, application은 표시되지 않은 제품                                             |
+|       야간 모드       | night, notnight                                                        | 야간 모드에 대응하기 위한 조건<br>night는 야간, notnight는 주간                                                                                                                     |
+|    화면 픽셀 밀도     | ldpi, mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi, nodpi, tvdpi, anydpi, nnndpi | 화면 밀도에 대한 조건<br>ldpi는 120dpi, mdpi는 160dpi, hdpi는 240dpi, xhdpi는 320dpi, xhdpi는 320dpi, xxhdpi는 480dpi, xxxdpi는 640dpi, nodpi는 크기를 조정하지 않을 리소스에 사용  |
+|   터치 스크린 유형    | notouch, finger                                                        | 터치 스크린을 제공하는지 판단<br>notouch는 터치 스크린이 없는 기기                                                                                                                  |
+|     키보드 가용성     | keysexposed, keyshidden, keyssoft                                      | 키보드의 유형<br>keyssoft는 소프트 키보드, keysexposed는 키보드가 노출되어 있는 기기, keyshidden은 키보드가 있으나 숨길 수 있는 기기                                                |
+| 기본 텍스트 입력방법  | nokeys, qwerty, 12key                                                  | nokeys는 하드웨어 키보드가 없는 경우, qwerty는 하드웨어 쿼티 키보드가 있는 경우, 12key는 하드웨어 12키가 있는 경우                                                                  |
+|    탐색 키 가용성     | navexposed, navhidden                                                  | 탐색 키 사용 가능 조건<br>navexposed는 탐색 키 사용 가능, navhidden은 탐색 키 사용 불가                                                                                             |
+| 기본 비터치 탐색 방법 | nanav, dpad, trackball, wheel                                          | 터치하지 않고 탐색이 가능한 기기가 있는지 판단                                                                                                                                      |
+|      플랫폼 버전      | v21                                                                    | 기기의 API 레벨                                                                                                                                                                     |
 
 ### 화면 회전에 대응
 
@@ -291,36 +291,37 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 ### 논리적인 단위
 
 - dpi (dots per inch의 줄임말)
+
   - 1인치 안에 있는 도트의 개수
   - 크기 지정에 사용할 수 있는 단위
 
-- dp (dip : density-independent pixels)  : 스크린의 물리적 밀도에 기반을 둔 단위
+- dp (dip : density-independent pixels) : 스크린의 물리적 밀도에 기반을 둔 단위
 - sp (sip : scale-independent pixels) : dp와 유사하며 글꼴 크기에 적용
 - pt (points) : 스크린 크기의 1 / 72을 1pt로 함
 - px : 픽셀 (물리적 밀도와 관계 X)
 - mm : 밀리미터
 - in : 인치
 
-|크기|설명|
-|:---:|:---|
-|ldpi|저밀도 화면<br>~120dpi|
-|mdpi|중밀도 화면<br>~160dpi|
-|hdpi|고밀도 화면<br>~240dpi|
-|xhdpi|초고밀도 화면<br>~320dpi|
-|xxhdpi|초초고밀도 화면<br>~480dpi|
-|xxxhdpi|초초초고밀도 화면<br>~640dpi|
+|  크기   | 설명                         |
+| :-----: | :--------------------------- |
+|  ldpi   | 저밀도 화면<br>~120dpi       |
+|  mdpi   | 중밀도 화면<br>~160dpi       |
+|  hdpi   | 고밀도 화면<br>~240dpi       |
+|  xhdpi  | 초고밀도 화면<br>~320dpi     |
+| xxhdpi  | 초초고밀도 화면<br>~480dpi   |
+| xxxhdpi | 초초초고밀도 화면<br>~640dpi |
 
 - mdpi 폰에서 1dp = 1px
 - xxhdpi 폰은 개발자가 지정한 크기보다 3배 크게 출력
 
-|크기|배율|
-|:---:|:---:|
-|ldpi|0.75|
-|mdpi|1.0|
-|hdpi|1.5|
-|xhdpi|2.0|
-|xxhdpi|3.0|
-|xxxhdpi|4.0|
+|  크기   | 배율 |
+| :-----: | :--: |
+|  ldpi   | 0.75 |
+|  mdpi   | 1.0  |
+|  hdpi   | 1.5  |
+|  xhdpi  | 2.0  |
+| xxhdpi  | 3.0  |
+| xxxhdpi | 4.0  |
 
 ### 화면 정보 가져오기
 
@@ -332,7 +333,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
   val windowMetrics: WindowMetrics = windowManager.currentWindowMetrics
-  binding.textView.text = "width : ${windowMetrics.bounds.width()}, 
+  binding.textView.text = "width : ${windowMetrics.bounds.width()},
                           height : ${windowMetrics.bounds.height()}"
 } else {
   val display = windowManager.defaultDisplay
@@ -346,9 +347,11 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
 ### scope 함수
 
 : 범위 함수
+
 - 라이브러리가 제공하는 클래스 or 프로그래머가 생성한 클래스의 매개 변수
-1) apply & also : 객체 자체 return
-2) run(==with)& let : 실행 결과 return
+
+1. apply & also : 객체 자체 return
+2. run(==with)& let : 실행 결과 return
 
 ```kt
 // scope 함수 사용 예시
@@ -526,7 +529,6 @@ class Book(var name: String, var price: Int){
 ```
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-07-landout.PNG" width="30%" height="auto" />
-
 
 ### 5) 가로 방향 화면 구성
 

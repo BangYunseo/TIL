@@ -120,9 +120,9 @@ $$
 
 - 방법
 
-1. 우리가 찾고자 하는 식 $T(n) \leq c$ $n$ $log$ $n$ 을 증명에 적용하니 맞았음
-2. 따라서 우리가 제시한 추정이 맞는 것 같다는 논리
-3. 만약 식 $T(n) \leq c$ $n$ $log$ $n$ 가 틀리면 추정과 같은 결로에 도달 불가
+  1. 우리가 찾고자 하는 식 $T(n) \leq c$ $n$ $log$ $n$ 을 증명에 적용하니 맞았음
+  2. 따라서 우리가 제시한 추정이 맞는 것 같다는 논리
+  3. 만약 식 $T(n) \leq c$ $n$ $log$ $n$ 가 틀리면 추정과 같은 결로에 도달 불가
 
 - 증명식
 
@@ -143,11 +143,11 @@ $$
 - $T(n) = aT(\frac {n}  {b}) + f(n)$ 으로 표현된 경우 정리를 통해 복잡도 계산 가능
 - $h(n) = n^{log_b a}$
 
-- $ \displaystyle \lim_{n \to \infin} \frac{f(n)}{h(n)} $ 이 0으로
+- $\displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)}$ 이 0으로
 
-1. 수렴하거나
-2. 무한대로 발산하거나
-3. 어떤 상수로 수렴하는가
+  1. 수렴하거나
+  2. 무한대로 발산하거나
+  3. 어떤 상수로 수렴하는가
 
 - 위의 3가지 경우에 따라 점근적 복잡도 결정
 
@@ -155,34 +155,29 @@ $$
 
 - $T(n) = aT(\frac {n}  {b}) + f(n)$, $h(n) = n^{log_b a}$
 
-1. $ \displaystyle \lim_{n \to \infin} \frac{f(n)}{h(n)} $ 의 값이 0으로 수렴할 때 $T(n) = \Theta(h(n))$
-2. $ \displaystyle \lim_{n \to \infin} \frac{f(n)}{h(n)} $ 의 값이 무한대로 발산할 때 $af(\frac{n}{b}) \leq f(n)$ 이라면 $T(n) = \Theta (f(n))$
-3. $ \displaystyle \lim_{n \to \infin} \frac{f(n)}{h(n)} $ 의 값이 $\Theta(1)$ 일 때 $\\Theta(h(n)log n)$
+  1. $ \displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)} $ 의 값이 0으로 수렴할 때 $T(n) = \Theta(h(n))$
+  2. $ \displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)} $ 의 값이 무한대로 발산할 때 $af(\frac{n}{b}) \leq f(n)$ 이라면 $T(n) = \Theta (f(n))$
+  3. $ \displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)} $ 의 값이 $\Theta(1)$ 일 때 $\\Theta(h(n)log n)$
 
-#### ex 1 : $T(n) = 2(\frac{n}{3}) + c$
+### ex 1) $T(n) = 2(\frac{n}{3}) + c$
 
 - a = 2, b = 3, h(n) = $n^{log_32}$, f(n) = c
-
 - h(n)과 f(n)을 비교하면 h(n)의 차수가 높으므로 1번 정리에 해당
-
 - h(n)이 수행 시간 결정
 
 - 수행 시간 : $T(n) = \Theta(h(n)) = \Theta(n^{log_32})$
 
-#### ex 2 : $T(n) = 2(\frac{n}{4}) + n$
+### ex 2) $T(n) = 2(\frac{n}{4}) + n$
 
 - a = 2, b = 4, h(n) = $n^{log_42}$, f(n) = n
-
 - h(n)과 f(n)을 비교하면 f(n)의 차수가 높으므로 2번 정리에 해당
-
 - f(n)이 수행 시간 결정
 
 - 수행 시간 : $T(n) = \Theta(f(n)) = \Theta(n)$
 
-#### ex 3 : $T(n) = 2(\frac{n}{2}) + n$
+### ex 3) $T(n) = 2(\frac{n}{2}) + n$
 
 - a = 2, b = 2, h(n) = $n^{log_22}$, f(n) = n
-
 - h(n)과 f(n)을 비교하면 차수가 동일하므로 3번 정리에 해당
 
 - 수행 시간 : $T(n) = \Theta(n log n)$
