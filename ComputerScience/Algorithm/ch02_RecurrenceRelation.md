@@ -155,9 +155,9 @@ $$
 
 - $T(n) = aT(\frac {n}  {b}) + f(n)$, $h(n) = n^{log_b a}$
 
-  1. $ \displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)} $ 의 값이 0으로 수렴할 때 $T(n) = \Theta(h(n))$
-  2. $ \displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)} $ 의 값이 무한대로 발산할 때 $af(\frac{n}{b}) \leq f(n)$ 이라면 $T(n) = \Theta (f(n))$
-  3. $ \displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)} $ 의 값이 $\Theta(1)$ 일 때 $\\Theta(h(n)log n)$
+  1. $\displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)}$ 의 값이 0으로 수렴할 때 $T(n) = \Theta(h(n))$
+  2. $\displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)}$ 의 값이 무한대로 발산할 때 $af(\frac{n}{b}) \leq f(n)$ 이라면 $T(n) = \Theta (f(n))$
+  3. $\displaystyle \lim\_{n \to \infin} \frac{f(n)}{h(n)}$ 의 값이 $\Theta(1)$ 일 때 $\\Theta(h(n)log n)$
 
 ### ex 1) $T(n) = 2(\frac{n}{3}) + c$
 
