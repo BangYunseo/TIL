@@ -1,4 +1,4 @@
-# Chapter 2. 뷰 배치 레이아웃
+/ 1# Chapter 2. 뷰 배치 레이아웃
 
 > '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 8장 학습 내용
 >
@@ -387,6 +387,8 @@ class MainActivity : AppCompatActivity() {
 </GridLayout>
 ```
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-16-gridlayout2.PNG" width="30%" height="auto" />
+
 ```xml
 <!-->행 개수 지정<!-->
 
@@ -394,7 +396,7 @@ class MainActivity : AppCompatActivity() {
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:columnCount="3" >
+    android:rowCount="3" >
     <Button android:text="A" />
     <Button android:text="B" />
     <Button android:text="C" />
@@ -403,7 +405,6 @@ class MainActivity : AppCompatActivity() {
 </GridLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-16-gridlayout2.PNG" width="30%" height="auto" />
 
 ### GridLayout 속성
 
