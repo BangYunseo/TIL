@@ -10,19 +10,18 @@
 >
 > 4절. 소리와 진동 알림
 >
-> 5절. 알림 띄우기
+> 5절. 알림
 >
-> 6절. 카카오톡 알림 만들기
+> 6절. 카카오톡 알림
 
-(사진은 전부 다시 올리기)
+(사진은 전부 다시 올리기 & 처음부터 재작성하기!!)
 
 ## 1절. API 레벨 호환성 고려
 
 ### API 레벨 호환성
 
-- 앱은 34 버전의 API로 개발
-- 24 버전 기기에서도 오류가 발생하지 않고 동작해야 함
-  - minSdk 설정값보다 상위 버전에서 제공하는 API를 사용할 경우 호환성을 고려
+- 34 버전의 API에서 개발 시 24 버전 기기에서도 오류가 발생하지 않고 동작 필수
+- minSdk 설정값보다 상위 버전에서 제공하는 API를 사용할 경우 호환성 고려
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-01-package.PNG" width="100%" height="auto" />
 
@@ -181,3 +180,386 @@ val requestPermissionLauncher = launch("android.permission.ACCESS_FINE_LOCATION"
 ## 3절. 다양한 다이얼로그
 
 ### 토스트 메시지 띄우기
+
+### 다중 선택을 위한 체크박스
+
+```kt
+setMultiChoiceItems(items, booleanArrayOf(true, false, true, false),
+object : DialogInterface.OnMultiChoiceClickListener {
+  override fun onClick(dialog: DialogInterface?, which: Int, isChecked: Boolean) {
+    Log.d("Yunseo", "${items[which]} 이 ${if(isChecked) " 선택되었습니다." else "선택 해제되었습니다."}")
+  }
+})
+```
+
+### 단일 선택을 위한 라디오 버튼
+
+```kt
+setSingleChoiceItems(items, 1, object : DialogInterface.OnClickListener{
+  override fun onClick(dialog: DialogInterface?, which: Int) {
+    Log.d("Yunseo", "${items[which]} 이 선택되었습니다.")
+  }
+})
+```
+
+### setCancelable() /  setCanceledOnTouchOutside() 함수
+
+- setCancelable() : 사용자가 기기의 뒤로가기 버튼을 눌렀을 경우
+- setCanceledOnTouchOutside() : 알림 바깥 영역을 터치했을 경우
+
+|bool 값|행동|
+|:---:|:---:|
+|true|창 닫기|
+|false|창 닫지 않기|
+
+```kt
+// 알림 창을 닫는 설정(뒤로가기, 바깥 영역 터치)
+
+AlertDialog.Builder(this).run {
+  setTitle("item test")
+  setIcon(android.R.drawable.ic_dialog_info)
+  setItems(items, object : DialogInterface.OnClickListener{
+    override fun onClick(dialog: DialogInterface?, which: Int) {
+      Log.d("Yunseo", "${items[which]} 이 선택되었습니다.")
+    }
+  })
+  setCancelable(false)
+  setPositiveButton("OK", eventHandler)
+  setNegativeButton("Cancel", eventHandler)
+  setNeutralButton("More", null)
+  show()
+}.setCanceledOnTouchOutside(false)
+```
+
+## 4절. 소리와 진동 알림
+
+### 소리 알림 : RingtonManager
+
+- 알림(Notification), 알람(Alarm), 벨소리(Ringtone) 등
+
+```kt
+// 소리 얻기
+
+val notification: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+val ringtone = RingtoneManager.getRingtone(applicationContext, notification)
+ringtone.play()
+```
+
+- 앱 자체 음원 준비 후 재생
+- 음원 리소스 디렉토리 : res/raw
+
+```kt
+// 음원 재생
+
+val player: MediaPlayer = MediaPlayer.create(this, R.raw.fallbackring)
+player.start()
+```
+
+### 진동 알림 : VibratorManager
+
+- Manifest 파일에 <uses-permission>의 퍼미션 선언
+- 진동은 Vibrator 클래스 이용
+- 버전 별 이용 방법
+
+|버전|이용 방법|
+|:--:|:----|
+|31 이전 버전|VIBRATOR_SERVICE로 식별되는 시스템 서비스 이용|
+|31 이후 버전|VIBRATOR_MANAGER_SERVICE로 식별되는 VibratorManager 시스템 서비스 획득 후 이 서비스에서 Vibrator 이용|
+
+```kt
+// 진동 객체 얻기
+
+val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
+  val vibratorManager = this.getSystemService(Context.VIBRATOR_MANAGER_SERVICE)
+                        as VibratorManager
+  vibratorManager.defaultVibrator;
+} else {
+  getSystemService(VIBRATOR_SERVICE) as Vibrator
+}
+```
+
+### 시간과 배턴 지정
+
+|API 레벨 1부터 제공|
+|:---|
+|open fun vibrate(milliseconds: Long): Unit|
+|open fun vibrate(pattern: LongArray!, repeat: Int): Unit|
+
+### 진동의 세기 지정 후 진동
+
+|API 레벨 26부터 제공|설명|
+|:---|:---|
+|open fun vibrate(vibe: VibrationEffect!): Unit|VibrationEffect 객체로는 진동이 울리는 시간 이외에 진동의 세기까지 제어|
+|open static fun createOneShot(milliseconds: Long, amplitude: Int): VibrationEffect!||
+
+```kt
+// 기본 세기로 진동
+
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+  vibrator.vibrate(
+    VibrationEffect.createOneShot(500,
+    VibrationEffect.DEFAULT_AMPLITUDE))
+} else {
+  vibrator.vibrate(500)
+}
+```
+
+```kt
+// 패턴대로 반복 진동
+
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+  vibrator.vibrate(VibrationEffect.createWaveform(longArrayOf(500, 1000, 500, 2000),
+  intArrayOf(0, 50, 0, 200), -1))
+} else {
+  vibrator.vibrate(longArrayOf(500, 1000, 500, 2000), -1)
+}
+```
+
+## 5절. 알림
+
+### 알림 채널
+
+- 알림(notification) : 상태 바에 앱의 정보를 출력하는 것
+- API 레벨 33버전부터는 앱에서 알림을 띄우기 위해 사용자에게 퍼미션(허가) 요청 필요
+
+```kt
+// Manifest 파일
+
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+```
+
+- Notification : NotificationCompatBuilder 필요
+- 앱의 알림을 채널로 구분
+- 버전 별 이용 방법
+
+|버전|이용 방법|
+|:--:|:----|
+|26버전 이전|빌더 생성 시 NotificationChannel 정보 필요 X|
+|26버전 이후|빌더 생성 시 NotificationChannel 생성 후 채널의 식별값을 빌더의 생성자 매개변수에 지정 필요|
+
+- 알림의 중요도(구글찾아서써보기```kt
+// 음원 재생
+
+val player: MediaPlayer = MediaPlayer.create(this, R.raw.fallbackring)
+player.start()
+```
+
+### 진동 알림 : VibratorManager
+
+- Manifest 파일에 <uses-permission>의 퍼미션 선언
+- 진동은 Vibrator 클래스 이용
+- 버전 별 이용 방법
+
+|버전|이용 방법|
+|:--:|:----|
+|31 이전 버전|VIBRATOR_SERVICE로 식별되는 시스템 서비스 이용|
+|31 이후 버전|VIBRATOR_MANAGER_SERVICE로 식별되는 VibratorManager 시스템 서비스 획득 후 이 서비스에서 Vibrator 이용|
+
+```kt
+// 진동 객체 얻기
+
+val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
+  val vibratorManager = this.getSystemService(Context.VIBRATOR_MANAGER_SERVICE)
+                        as VibratorManager
+  vibratorManager.defaultVibrator;
+} else {
+  getSystemService(VIBRATOR_SERVICE) as Vibrator
+}
+```
+
+### 시간과 배턴 지정
+
+|API 레벨 1부터 제공|
+|:---|
+|open fun vibrate(milliseconds: Long): Unit|
+|open fun vibrate(pattern: LongArray!, repeat: Int): Unit|
+
+### 진동의 세기 지정 후 진동
+
+|API 레벨 26부터 제공|설명|
+|:---|:---|
+|open fun vibrate(vibe: VibrationEffect!): Unit|VibrationEffect 객체로는 진동이 울리는 시간 이외에 진동의 세기까지 제어|
+|open static fun createOneShot(milliseconds: Long, amplitude: Int): VibrationEffect!||
+
+```kt
+// 기본 세기로 진동
+
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+  vibrator.vibrate(
+    VibrationEffect.createOneShot(500,
+    VibrationEffect.DEFAULT_AMPLITUDE))
+} else {
+  vibrator.vibrate(500)
+}
+```
+
+```kt
+// 패턴대로 반복 진동
+
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+  vibrator.vibrate(VibrationEffect.createWaveform(longArrayOf(500, 1000, 500, 2000),
+  intArrayOf(0, 50, 0, 200), -1))
+} else {
+  vibrator.vibrate(longArrayOf(500, 1000, 500, 2000), -1)
+}
+```
+
+## 5절. 알림
+
+### 알림 채널
+
+- 알림(notification) : 상태 바에 앱의 정보를 출력하는 것
+- API 레벨 33버전부터는 앱에서 알림을 띄우기 위해 사용자에게 퍼미션(허가) 요청 필요
+
+```kt
+// Manifest 파일
+
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+```
+
+- Notification : NotificationCompatBuilder 필요
+- 앱의 알림을 채널로 구분
+- 버전 별 이용 방법
+
+|버전|이용 방법|
+|:--:|:----|
+|26버전 이전|빌더 생성 시 NotificationChannel 정보 필요 X|
+|26버전 이후|빌더 생성 시 NotificationChannel 생성 후 채널의 식별값을 빌더의 생성자 매개변수에 지정 필요|
+
+- 알림의 중요도(구글찾아서써보기)
+- 함수 별 설명
+
+|함수(function)|설명|
+|:--|:--|
+|fun setDescription(description: String!): Unit|채널의 설명 문자열|
+|fun setShowBadge(showBadge: Boolean): Unit|홈 화면의 아이콘에 배지 아이콘 출력 여부|
+|fun setSound(sound: Uri!, audioAttributes: AudioAttributes!): Unit|알림음 재생|
+|fun enableLights(lights: Boolean): Unit|불빛 표시 여부|
+|fun setLightColor(argb: Int): Unit|불빛이 표시된다면 불빛의 색상|
+|fun enableVibration(vibration: Boolean): Unit|진동을 울릴지 여부|
+|fun setVibrationPattern(vibrationPattern: LongArray!): Unit|진동을 울린다면 진동의 패턴|
+
+```kt
+// 알림 빌더 작성
+
+val manager:NotificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+val builder: NotificationCompat.Builder
+
+if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+  val channelId = "one-channel"
+  val channelName = "My Channel One"
+  val channel = NotificationChannel(
+      channelId,
+      channelName,
+      NotificationManager.IMPORTANCE_HIGH
+  )
+
+  channel.description = "My Channel One Description!"
+  channel.setShowBadge(true)
+  val uri: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+  val audioAttributes = AudioAttributes.Builder()
+        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+        .setUsage(AudioAttributes.USAGE_ALARM)
+        .build()
+
+  channel.setSound(uri, audioAttributes)
+  channel.enableLights(true)
+  channel.lightColor = Color.RED
+  channel.enableVibration(true)
+  channel.vibrationPattern = longArrayOf(100, 200, 100, 200)
+
+  manager.createNotificationChannel(channel)
+  // 채널을 NotificationManager 에 등록
+            
+  builder = NotificationCompat.Builder(this, channelId)
+  // 채널을 이용해 빌더 생성
+} else {
+  builder = NotificationCompat.Builder(this)
+}
+```
+
+### 알림 객체
+
+```kt
+// 알림 객체 설정
+
+builder.run{
+  setSmallIcon(android.R.drawable.ic_notification_overlay)
+  setWhen(System.currentTimeMillis())
+  setContentTitle("Content Title")
+  setContentText("Content Message")
+}
+```
+
+```kt
+// 알림 발생
+
+manager.notify(11, builder.build())
+```
+
+```kt
+// 알림 취소
+
+manager.cancel(11)
+```
+
+```kt
+// 알림 취소 방지
+
+builder.run{
+  setAutoCancel(false)
+  setOngoing(true)
+}
+```
+
+### 알림 구성
+
+- 알림 터치 이벤트 : 인텐트 준비 후 Notification 객체에 담고 이벤트 발생 시 인텐트 실행을 시스템에 의뢰
+  - 인텐트(Intent) : 액티비티가 있을 경우 
+  - static fun getActivity(context: Context!, requestCode: Int, intent: Intent!, flags: Int): PendingIntent!
+  - static fun getBroadcast(context: Context!, requestCode: Int, intent: Intent!, flags: Int): PendingIntent!
+  - static fun getService(context: Context!, requestCode: Int, intent: Intent, flags: Int): PendingIntent!
+ 
+```kt
+// 알림 객체에 액티비티 실행 정보 등록
+
+// DetailActivity 클래스 파일 MainActivity가 있는 폴더에 생성
+val intent = Intent(this, DetailActivity::class.java)
+val pendingIntent = Pending.getActivity(this, 10, intent, PendingIntent.FLAG_IMMUTABLE)
+
+// 터치 이벤트 등록
+builder.setContentIntent(PendingIntent)
+```
+
+### 액션
+
+- 최대 3개까지 추가
+
+```kt
+// 액션 등록
+
+// DetailActivity가 아닌 OneReceiver 클래스 생성
+val actionIntent = Intent(this, OneReceiver::class.java)
+
+val actionPendingIntent = PendingIntent.getBroadcast(this, 20, actionIntent,
+  PendingIntent.FLAG_IMMUTABLE)
+builder.addAction(
+  NotificationCompat.Action.Builder(
+      android.R.drawable.stat_notify_more,
+      "Action",
+      actionPendingIntent
+  ).build()
+)
+```
+
+### 원격 입력
+
+- 알림에서 사용자 입력을 직접 받는 기법
+- PendingIntent 준비 필요
+
+```kt
+// 원격 입력
+
+val KEY_TEXT_REPLY = "key_text_reply"
+```
+## 6절. 카카오톡 알림
