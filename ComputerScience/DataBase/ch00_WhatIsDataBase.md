@@ -10,8 +10,8 @@
 
 #### 데이터베이스(DB : DataBase)
 
-- 여러 사람이 공유하여 사용할 목적으로 체계화해 통합, 관리하는 데이터의 집합
-- 작성된 목록으로써 여러 응용 시스템들의 통합된 정보들을 저장하여 운영할 수 있는 공용 데이터들의 묶음
+- 여러 사람이 공유하여 사용하는 데이터의 집합
+- 데이터를 체계화하여 작성된 목록으로 응용 시스템들을 통합ㆍ관리ㆍ운영
 
 ![ch00-01-DB](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/ch00-01-DB.PNG)
 
@@ -19,7 +19,7 @@
 
 #### Data Analyst VS Data Scientist VS Data Engineer
 
-- Required Skills
+- 요구 기술
 
 ![ch00-02-RS](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch00/ch00-02-RS.PNG)
 

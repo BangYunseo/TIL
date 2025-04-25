@@ -8,23 +8,26 @@
 
 ## 1절. 데이터베이스의 필요성
 
-#### 데이터와 정보
+### 데이터와 정보
 
-- 데이터(Data) : 현실 시계에서 단순히 관찰하거나 측정하여 수집한 사실 혹은 값
-- 정보(Information) : 의사 결정에 유용하게 활용할 수 있도록 데이터를 처리한 결과물
+| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-01-DI.PNG"  width="30%" height="30%"/> | - 데이터(Data) : 현실 세계에서 단순히 관찰·측정하여 수집한 사실·값<br>- 정보(Information) : 의사 결정에 유용하게 활용하는 데이터를 처리한 결과물 |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-01-DI.PNG"  width="30%" height="30%"/>
+### 정보 처리(Information Processing)
 
-#### 정보 처리(Information Processing)
-
-- 데이터에서 정보를 추출하는 과정 및 방법
+- 데이터 정보 추출 과정
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-02-IP.PNG"  width="60%" height="60%"/>
 
-#### 정보 시스템과 데이터베이스
+### 정보 시스템(Information System)
 
-- 정보 시스템(Information System) : 조직 운영에 필요한 데이터를 수집하여 저장 후 필요 시 유용한 정보를 만드는 수단
-- 데이터베이스 : 정보 시스템 안에서 데이터를 저장하고 있다가 필요 시 제공하는 역할
+- 조직 운영에 필요한 데이터를 수집하여 저장
+- 필요 시 유용한 정보를 만드는 수단
+
+### 데이터베이스(DataBase)
+
+- 정보 시스템 안에서 데이터를 저장
+- 필요 시 데이터 제공
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-03-IS.PNG"  width="50%" height="50%"/>
 
