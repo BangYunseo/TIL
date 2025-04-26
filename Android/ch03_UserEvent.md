@@ -5,11 +5,11 @@
 > 1절. 터치 이벤트
 >
 > 2절. 키 이벤트
-> 
+>
 > 3절. 뷰 이벤트
 >
-> 4절. 시계 앱 스톱워치 기능 만들기    
-> [프로젝트 바로가기](https://github.com/BangYunseo/TIL/tree/main/Android/androidProject/ch03/)
+> 4절. 시계 앱 스톱워치 기능 만들기  
+> [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch03)
 
 ## 1절. 터치 이벤트
 
@@ -17,7 +17,7 @@
 
 - onTouchEvent() : 터치 이벤트의 콜백 함수로 선언
 - 매개변수는 MotionEvent 객체이며
-    - 객체에 터치의 종류와 발생 지점(좌푯값) 포함
+  - 객체에 터치의 종류와 발생 지점(좌푯값) 포함
 
 ```Kotlin
 // 터치 이벤트 처리
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
 ### 터치 이벤트 종류
 
-- ACTION_DOWN : 화면을 손가락으로 누른 순간의 이벤트 
+- ACTION_DOWN : 화면을 손가락으로 누른 순간의 이벤트
 - ACTION_UP : 화면에서 손가락을 떼는 순간의 이벤트
 - ACTION_MOVE : 화면을 손가락으로 누른 채로 이동하는 순간의 이벤트
 
@@ -54,10 +54,10 @@ override fun onTouchEvent(event: MotionEvent?): Boolean{
 
 ### 좌표 얻기
 
-- onTouchEvent() 함수의 매개변수인 MotionEvent 객체로 획득 
+- onTouchEvent() 함수의 매개변수인 MotionEvent 객체로 획득
 
-|<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-01-MotionEvent.PNG" height="auto" />|1) x : 이벤트가 발생한 뷰의 X 좌표<br>2) y : 이벤트가 발생한 뷰의 Y 좌표<br>3) rawX : 화면의 X 좌표<br>4) rawY : 화면의 Y 좌표|
-|---|:---|
+| <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-01-MotionEvent.PNG" height="auto" /> | 1) x : 이벤트가 발생한 뷰의 X 좌표<br>2) y : 이벤트가 발생한 뷰의 Y 좌표<br>3) rawX : 화면의 X 좌표<br>4) rawY : 화면의 Y 좌표 |
+| ------------------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------- |
 
 ```Kotlin
 // 터치 이벤트 발생 좌표 얻기
@@ -65,7 +65,7 @@ override fun onTouchEvent(event: MotionEvent?): Boolean{
 override fun onTouchEvent(event: MotionEvent?): Boolean{
     when (event?.action){
         MotionEvent.ACTION_DOWN -> {
-            Log.d("Yunseo", 
+            Log.d("Yunseo",
                   "Touch Down Event x : ${event.x}, rawX : ${event.rawX}")
         }
     }
@@ -77,12 +77,11 @@ override fun onTouchEvent(event: MotionEvent?): Boolean{
 
 ### 키 이벤트
 
-- 사용자가 폰의 키를 누르는 순간에 발생 
+- 사용자가 폰의 키를 누르는 순간에 발생
 - 콜백 함수
-    - onKeyDown : 키를 누른 순간의 이벤트
-    - onKeyUp : 키를 떼는 순간의 이벤트
-    - onKeyLongPress : 키를 오래 누르는 순간의 이벤트
-
+  - onKeyDown : 키를 누른 순간의 이벤트
+  - onKeyUp : 키를 떼는 순간의 이벤트
+  - onKeyLongPress : 키를 오래 누르는 순간의 이벤트
 
 ```Kotlin
 // 키 이벤트 처리
@@ -117,7 +116,7 @@ override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean{
 - 키 이벤트 발생 키 : 폰에서 제공하는 소프트 키보드의 키가 아님
 - 안드로이드 시스템 버튼도 키로 취급하므로 이 버튼의 이벤트를 처리
 - 뒤로가기 버튼 이벤트
-    - onKeyDown(), onKeyUp(), onBackPressed() 함수 사용
+  - onKeyDown(), onKeyUp(), onBackPressed() 함수 사용
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-02-KeyButton.PNG" width="30%" height="auto" />
 
@@ -161,9 +160,9 @@ onBackPressedDispatcher.addCallback(this, callback)
 
 - 이벤트 소스와 이벤트 핸들러로 역할 분할
 - 둘을 리스너로 연결 시 이벤트 처리 가능
-    - 이벤트 소스 : 이벤트 발생 객체
-    - 이벤트 핸들러 : 이벤트 발생 시 실행할 로직이 구현된 객체 
-    - 리스너 : 이벤트 소스와 이벤트 핸들러를 연결해 주는 함수
+  - 이벤트 소스 : 이벤트 발생 객체
+  - 이벤트 핸들러 : 이벤트 발생 시 실행할 로직이 구현된 객체
+  - 리스너 : 이벤트 소스와 이벤트 핸들러를 연결해 주는 함수
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch03/ch03-03-ViewConnection.PNG" width="50%" height="auto" />
 
@@ -234,9 +233,9 @@ class MainActivity : AppCompatActivity() {
 
 ### 클릭과 롱클릭 이벤트 처리
 
-- ClickEvent, LongClickEvent는 뷰의 최상위 클래스인 View에 정의된 이벤트 
-    - open fun setOnClickListener(l: View.OnClickListener?) : Unit
-    - open fun setOnLongClickListener(l: View.OnLongClickListener?) : Unit
+- ClickEvent, LongClickEvent는 뷰의 최상위 클래스인 View에 정의된 이벤트
+  - open fun setOnClickListener(l: View.OnClickListener?) : Unit
+  - open fun setOnLongClickListener(l: View.OnLongClickListener?) : Unit
 
 ```Kotlin
 // 버튼의 클릭, 롱클릭 이벤트 처리

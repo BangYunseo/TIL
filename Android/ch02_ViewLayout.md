@@ -5,15 +5,15 @@
 > 1절. LinearLayout : 선형 배치
 >
 > 2절. RelativeLayout : 상대 위치 배치
-> 
-> 3절. FrameLayout :  겹쳐서 배치
+>
+> 3절. FrameLayout : 겹쳐서 배치
 >
 > 4절. GridLayout : 표 형태 배치
-> 
+>
 > 5절. ConstraintLayout : 계층 구조 배치
 >
-> 6절. 전화 앱 키배드 화면 만들기    
-> [프로젝트 바로가기](https://github.com/BangYunseo/TIL/tree/main/Android/androidProject/ch02/)
+> 6절. 전화 앱 키배드 화면 만들기  
+> [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch02)
 
 ## 1절. LinearLayout : 선형 배치
 
@@ -46,8 +46,8 @@
 - LinearLayout 중첩
 - 레이아웃 클래스도 뷰이므로 다른 레이아웃 클래스에 포함 가능
 
-|<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-02-LinearLayouts.PNG" height="auto" />|<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-03-LinearLayouts2.PNG" height="auto" />|
-|---|---|
+| <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-02-LinearLayouts.PNG" height="auto" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-03-LinearLayouts2.PNG" height="auto" /> |
+| -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 
 ### 여백을 채우는 layout_weight 속성
 
@@ -75,7 +75,7 @@
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-04-Layoutweight.PNG" width="40%" height="auto" />
 
 - 뷰 여러 개로 여백 나누어 채우기
-    - layout_weight 속성에 지정한 숫자 : 가중치
+  - layout_weight 속성에 지정한 숫자 : 가중치
 
 ```XML
 <!-->layout_weight값을 각각 1과 3으로 선언<!-->
@@ -97,8 +97,8 @@
 
 - 중첩된 레이아웃에서 여백 채우기
 
-|<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-06-Layoutweight3.PNG" height="40%" />|<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-07-Layoutweight4.PNG" height="20%" />|
-|---|---|
+| <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-06-Layoutweight3.PNG" height="40%" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-07-Layoutweight4.PNG" height="20%" /> |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 
 ```XML
 <!-->중첩된 레이아웃에서 여백 채우기<!-->
@@ -165,10 +165,10 @@
 
 ### 뷰를 정렬하는 gravity, layout_gravity 속성
 
-- 뷰에 gravity와 layout_gravity 속성 적용 
-    - gravity 속성 : 정렬 대상은 콘텐츠
-    - layout_gravity : 뷰 자체를 정렬하는 속성
- 
+- 뷰에 gravity와 layout_gravity 속성 적용
+  - gravity 속성 : 정렬 대상은 콘텐츠
+  - layout_gravity : 뷰 자체를 정렬하는 속성
+
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-09-gravity.PNG" width="30%" height="auto" />
 
 ```XML
@@ -220,11 +220,11 @@
 
 ### RelativeLayout 배치 규칙
 
-- 상대 뷰의 위치를 기준으로 정렬하는 레이아웃 
-    - android:layout_above : 기준 뷰의 위쪽에 배치
-    - android:layout_below : 기준 뷰의 아래쪽에 배치      
-    - android:layout_toLeftOf : 기준 뷰의 왼쪽에 배치 
-    - android:layout_toRightOf : 기준 뷰의 오른쪽에 배치
+- 상대 뷰의 위치를 기준으로 정렬하는 레이아웃
+  - android:layout_above : 기준 뷰의 위쪽에 배치
+  - android:layout_below : 기준 뷰의 아래쪽에 배치
+  - android:layout_toLeftOf : 기준 뷰의 왼쪽에 배치
+  - android:layout_toRightOf : 기준 뷰의 오른쪽에 배치
 
 ```xml
 <!-->상대 뷰의 오른쪽에 배치<!-->
@@ -250,11 +250,11 @@
 ### align 속성
 
 - 상대 뷰의 어느 쪽에 맞춰서 정렬할지를 정하는 속성
-    - android:layout_alignTop : 기준 뷰와 위쪽을 맞춤
-    - android:layout_alignBottom : 기준 뷰와 아래쪽을 맞춤
-    - android:layout_alignLeft : 기준 뷰와 왼쪽을 맞춤
-    - android:layout_alignRight : 기준 뷰와 오른쪽을 맞춤
-    - android:layout_alignBaseline : 기준 뷰와 텍스트 기준선을 맞춤
+  - android:layout_alignTop : 기준 뷰와 위쪽을 맞춤
+  - android:layout_alignBottom : 기준 뷰와 아래쪽을 맞춤
+  - android:layout_alignLeft : 기준 뷰와 왼쪽을 맞춤
+  - android:layout_alignRight : 기준 뷰와 오른쪽을 맞춤
+  - android:layout_alignBaseline : 기준 뷰와 텍스트 기준선을 맞춤
 
 ```xml
 <!-->기준 뷰와 아래쪽을 맞춰 정렬<!-->
@@ -281,14 +281,14 @@
 ### Parent / Center
 
 - 상위 레이아웃을 기준으로 맞춤 정렬하는 속성
-    - android:layout_alignParentTop : 부모의 위쪽에 맞춤
-    - android:layout_alignParentBottom : 부모의 아래쪽에 맞춤
-    - android:layout_alignParentLeft : 부모의 왼쪽에 맞춤
-    - android:layout_alignParentRight : 부모의 오른쪽에 맞춤
-    - android:layout_centerHorizontal : 부모의 가로 방향 중앙에 맞춤
-    - android:layout_centerVertical : 부모의 세로 방향 중앙에 맞춤
-    - android:layout_centerInParent : 부모의 가로·세로 중앙에 맞춤
- 
+  - android:layout_alignParentTop : 부모의 위쪽에 맞춤
+  - android:layout_alignParentBottom : 부모의 아래쪽에 맞춤
+  - android:layout_alignParentLeft : 부모의 왼쪽에 맞춤
+  - android:layout_alignParentRight : 부모의 오른쪽에 맞춤
+  - android:layout_centerHorizontal : 부모의 가로 방향 중앙에 맞춤
+  - android:layout_centerVertical : 부모의 세로 방향 중앙에 맞춤
+  - android:layout_centerInParent : 부모의 가로·세로 중앙에 맞춤
+
 ```xml
 <!-->부모의 오른쪽에 맞춰 정렬<!-->
 
@@ -311,7 +311,7 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-13-parentright.PNG" width="30%" height="auto" />
 
-## 3절. FrameLayout :  겹쳐서 배치
+## 3절. FrameLayout : 겹쳐서 배치
 
 ### FrameLayout
 
@@ -365,9 +365,9 @@ class MainActivity : AppCompatActivity() {
 ### GridLayout 배치 규칙
 
 - 테이블 화면을 만드는 레이아웃이며 줄바꿈 자동 설정
-    - orientation : 가로나 세로 방향으로 뷰를 나열 설정
-    - rowCount : 세로로 나열할 뷰 개수
-    - columnCount : 가로로 나열할 뷰 개수
+  - orientation : 가로나 세로 방향으로 뷰를 나열 설정
+  - rowCount : 세로로 나열할 뷰 개수
+  - columnCount : 가로로 나열할 뷰 개수
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-15-gridlayout.PNG" width="30%" height="auto" />
 
@@ -405,12 +405,11 @@ class MainActivity : AppCompatActivity() {
 </GridLayout>
 ```
 
-
 ### GridLayout 속성
 
 - 특정 뷰의 위치 조정
-    - layout_row : 뷰가 위치하는 세로 방향 인덱스
-    - layout_column : 뷰가 위치하는 가로 방향 인덱스
+  - layout_row : 뷰가 위치하는 세로 방향 인덱스
+  - layout_column : 뷰가 위치하는 가로 방향 인덱스
 
 ```xml
 <!-->뷰 위치 조정<!-->
@@ -479,8 +478,8 @@ class MainActivity : AppCompatActivity() {
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-19-gridlayout5.PNG" width="30%" height="auto" />
 
 - 열이나 행 병합
-    - layout_columnSpan : 가로로 열 병합
-    - layout_rowSpan : 세로로 행 병합
+  - layout_columnSpan : 가로로 열 병합
+  - layout_rowSpan : 세로로 행 병합
 
 ```xml
 <!-->여백에 다음 뷰 넣기<!-->
@@ -516,23 +515,23 @@ implemetation(Libs.androidx.constraintlayout)
 
 ### 레이아웃 편집기에서 레이아웃 구성
 
-- 상대 위치로 배치하는 RelativeLayout과 비슷하지만 더 많은 속성을 제공 
+- 상대 위치로 배치하는 RelativeLayout과 비슷하지만 더 많은 속성을 제공
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-21-constraint.PNG" width="70%" height="auto" />
 
 1. 팔레트(Palette)
-2. 컴포넌트 트리(Component Tree) 
+2. 컴포넌트 트리(Component Tree)
 3. 툴바(Toolbar)
-4. 디자인 편집기(Design editor) 
+4. 디자인 편집기(Design editor)
 5. 속성(Attributes)
 6. 보기 모드(View mode)
 
 - 이미지 추가
 
-|<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-22-Image.PNG" height="auto" />|<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-23-Image2.PNG" height="auto" />|
-|---|---|
+| <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-22-Image.PNG" height="auto" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-23-Image2.PNG" height="auto" /> |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
 
-## 6절. 전화 앱 키배드 화면 만들기 
+## 6절. 전화 앱 키배드 화면 만들기
 
 ### 1단계) 새로운 모듈 생성
 
