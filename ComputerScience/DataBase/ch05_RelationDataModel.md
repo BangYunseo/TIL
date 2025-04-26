@@ -132,7 +132,7 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ch05-09-DBR.PNG" width="100%" height="auto" />
 
-1. 수퍼키
+#### 1. 수퍼키
 
 - 고객 릴레이션의 슈퍼키
 
@@ -150,7 +150,7 @@
 |   주소   | 가족끼리 동일한 정보 사용 => 튜플 식별 불가능                             |
 |  핸드폰  | 한 사람이 여러 개의 핸드폰 사용, 핸드폰 미사용자 존재 => 튜플 식별 불가능 |
 
-2. 후보키(Candidate Key)
+#### 2. 후보키(Candidate Key)
 
 - 고객 릴레이션의 후보키
 
@@ -163,7 +163,7 @@
   |고객번호|한 명의 고객이 여러 권의 도서 구입 가능 => 튜플 식별 불가능|
   |도서번호|도서번호가 같더라도 여러 번의 주문 기록 존재 가능 => 튜플 식별 불가능|
 
-3. 기본키(Primary Key)
+#### 3. 기본키(Primary Key)
 
 - 고객 릴레이션의 기본키
 
@@ -177,12 +177,12 @@
 | 최대한 적은 수의 속성                       |
 | 레이션 스키마 표현 시 기본키는 밑줄 표시    |
 
-4. 대체키(Alternate Key)
+#### 4. 대체키(Alternate Key)
 
 - 고객 릴레이션의 대체키
   - (고객이름, 주소)
 
-5. 외래키(Foreign Key)
+#### 5. 외래키(Foreign Key)
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch05/ch05-11-FK.PNG" width="80%" height="auto" />
 
@@ -218,7 +218,7 @@
 
 |                       제약 조건 종류                       | 설명                                                                                                                                                                                                                                                                                              |
 | :--------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|                   도메인 무결성 제약조건                   | 1. 도메인 제약(Domain Constraint)<br>2. 릴레이션 내 튜플들이 각 속성 도메인에 지정된 값만 가지는 조건<br>3. SQL 문에서 데이터 형식(type)·널(NULL / NOT NULL)·기본값(default)·체크(check) 등으로 지정                                                                                              |
+|  도메인 무결성 제약조건<br>(Domain Integrity Constraint)   | 1. 도메인 제약(Domain Constraint)<br>2. 릴레이션 내 튜플들이 각 속성 도메인에 지정된 값만 가지는 조건<br>3. SQL 문에서 데이터 형식(type)·널(NULL / NOT NULL)·기본값(default)·체크(check) 등으로 지정                                                                                              |
 |   개체 무결성 제약조건<br>(Entity Integrity Constraint)    | 1. 기본키 제약(Primary Key Constraint)<br>2. 릴레이션은 기본키를 지정· 기본키는 NULL 값 보유 불가<br>3. 릴레이션 내 하나의 값만 존재                                                                                                                                                              |
 | 참조 무결성 제약조건<br>(Referential Integrity Constraint) | 1. 외래키 제약(Foreign Key Constraint)<br>2. 외래키는 참조할 수 없는 값은 가질 수 없는 조건<br> 3. 릴레이션 간 참조 관계 선언<br>4. 자식 릴레이션의 외래키는 부모 릴레이션의 기본키와 도메인 동일<br>5. 자식 릴레이션의 값 변경 시 부모 릴레이션의 제약 존재<br>6. 외래키 속성은 NULL값 보유 가능 |
 
