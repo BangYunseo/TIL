@@ -14,36 +14,36 @@
 
 ### 데이터베이스 시스템(DBS : DataBase System)
 
-- 데이터베이스에 데이터를 저장하고 이를 관리하여 조직에 필요한 정보를 생성하는 시스템
-
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-01-DBS.PNG" width="30%" height="auto" />
+| <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-01-DBS.PNG" width="30%" height="auto" /> | - 데이터베이스에 데이터를 저장·관리하여 조직에 필요한 정보를 생성하는 시스템 |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 
 ## 2절. 데이터베이스 구조
 
-### 스키마와 인스턴스
+### 스키마(Schema)
 
-- 스키마(schema) : 데이터베이스에 저장되는 데이터 구조와 제약조건의 정의
-- 인스턴스(instance) : 스키마에 따라 데이터베이스에 실제 저장된 값
+- 데이터베이스에 저장된 데이터 구조·제약조건 정의
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-02-Schema.PNG" width="30%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-02-Schema.PNG" height="auto" />
+
+### 인스턴스(Instance)
+
+- 스키마에 따라 데이터베이스에 실제 저장된 값
 
 ### 3단계 데이터베이스 구조
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-03-DataBaseStructual.PNG" width="60%" height="auto" />
+| <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-03-DataBaseStructual.PNG" height="auto" /> | <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-04-Structual3.PNG" height="auto" /> |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 
-- 미국 표준화 기관인 ANSI/SPARC에서 제안
-- 데이터베이스를 쉽게 이해하고 이용할 수 있도록 하나의 데이터베이스를 관점에 따라 세 단계로 나눈 것
+- 미국 표준화 기관 ANSI/SPARC에서 제안
+- 데이터베이스를 관점에 따라 세 단계로 나눈 것
 - 각 단계별 다른 추상화(Abstraction) 제공
-  - 내부 단계에서 외부 단계로 갈수록 추상화 레벨 상승
- 
+  - 내부에서 외부로 갈수록 추상화 레벨 상승
 
-|단계|영어|설명|
-|:--:|:--:|:---|
-|외부 단계|External Level|개별 사용자 관점|
-|개념 단계|Conceptual Level|조직 전체 관점|
-|내부 단계|Internal Level|물리적인 저장 장치 관점|
- 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-04-Structual3.PNG" width="60%" height="auto" />
+|   단계    |       영어       | 설명                    |
+| :-------: | :--------------: | :---------------------- |
+| 외부 단계 |  External Level  | 개별 사용자 관점        |
+| 개념 단계 | Conceptual Level | 조직 전체 관점          |
+| 내부 단계 |  Internal Level  | 물리적인 저장 장치 관점 |
 
 #### 외부 단계
 
@@ -53,7 +53,7 @@
     - 외부 단계에서 사용자에게 필요한 데이터베이스 정의한 것
     - 각 사용자가 생각하는 데이터베이스의 모습, 논리적 구조가 사용자마다 상이
     - 서브 스키마(Sub Schema)
-   
+
 #### 개념 단계
 
 - 데이터베이스를 조직 전체의 관점에서 이해하고 표현하는 단계
@@ -79,27 +79,26 @@
 
 - 스키마 사이의 대응 관계
   - 외부/개념 사상 : 외부 스키마와 개념 스키마의 대응 관계
-      - 응용 인터페이스(Application Interface)
+    - 응용 인터페이스(Application Interface)
   - 개념/내부 사상 : 개념 스키마와 내부 스키마의 대응 관계
-      - 저장 인터페이스(Storage Interface)
-   
+    - 저장 인터페이스(Storage Interface)
 - 미리 정의된 사상 정보를 통해 사용자가 원하는 데이터에 접근
 - 데이터베이스를 3단계 구조로 나누고 단계별로 스키마를 유지하며 스키마 사이의 대응 관계를 정의하는 궁극적인 목적
   - 데이터 독립성 실현
 
 ### 데이터베이스 구조 예시 : 수강신청 데이터베이스 구조
 
-- 외부 스키마 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-06-EL.PNG" width="60%" height="auto" />
+- 외부 스키마
+  <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-06-EL.PNG" width="60%" height="auto" />
 
-- 개념 스키마 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-07-CL.PNG" width="60%" height="auto" />
+- 개념 스키마
+  <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-07-CL.PNG" width="60%" height="auto" />
 
-- 내부 스키마 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-08-IL.PNG" width="60%" height="auto" />
+- 내부 스키마
+  <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-08-IL.PNG" width="60%" height="auto" />
 
 - 전체적인 관점
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-09-WL.PNG" width="60%" height="auto" />
+  <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-09-WL.PNG" width="60%" height="auto" />
 
 ### 데이터 독립성(Data Independency)
 
@@ -160,7 +159,7 @@
   - 시스템 데이터베이스 관리
   - 시스템 성능 감시 및 성능 분석
   - 데이터베이스 재구성
- 
+
 ### 최종 사용자
 
 - End User
@@ -183,7 +182,6 @@
 
 <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-11-DataLanguage.PNG" width="80%" height="auto" />
 
-
 #### 데이터 정의어
 
 - DDL : Data Definition Language
@@ -204,7 +202,7 @@
     - 데이터베이스로부터 보통 한 번에 여러 개의 레코드(set-of-record-at-a-time)를 검색해서 처리
     - 그 데이터들을 검색하는지는 DBMS가 알아서 처리하므로 독자적으로 사용
     - 선언적 언어(declarative language)
-    
+
 #### 데이터 제어어
 
 - DCL : Data Control Language
@@ -214,11 +212,11 @@
   - 보안 : 허가받지 않은 사용자의 데이터 접근 차단, 허가된 사용자에 권한 부여
   - 회복 : 장애가 발생해도 데이터 일관성 유지
   - 동시성 제어 : 동시 공유 지원
- 
 
 ## 5절. 데이터베이스 관리 시스템의 구성
 
 ### 데이터베이스 관리 시스템
+
 - 데이터베이스 관리와 사용자의 데이터 처리 요구 수행
 - 주요 구성 요소
   - 질의 처리기(query processor)
@@ -226,21 +224,26 @@
     - DDL 컴파일러, DML 프리 컴파일러, DML 컴파일러, 런타임 데이터베이스 처리기, 트랜잭션 관리자 등 포함
   - 저장 데이터 관리자(stored data manager)
     - 디스크에 저장된 데이터베이스와 데이터 사전을 관리하고 접근함
-    
+
 <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-12-DBMS.PNG" width="90%" height="auto" />
 
 #### DDL 컴파일러
+
 - 데이터 정의어로 작성된 스키마 정의를 해석, 새로운 데이터베이스 구축, 스키마 정의를 데이터 사전에 저장
 
 #### DML프리 컴파일러 :
+
 - 응용 프로그램에 삽입된 데이터 조작어를 추출하여 DML 컴파일러 전달
 
 #### DML 컴파일러
+
 - 데이터 조작어로 작성된 데이터의 처리 요구를 분석하여 런타임 데이터 베이스 처리기가 이해할 수 있도록 해석
 
-#### 런타임 데이터 베이스 처리기 
+#### 런타임 데이터 베이스 처리기
+
 - 저장된 데이터 관리자를 통해 데이터베이스에 접근
 - DML 컴파일러로 부터 전달 받은 데이터 처리 요구
 
 #### 트랜잭션 관리자
+
 - 사용자의 접근 권한이 유효한지 검사 , 데이터 베이스 무결성 유지를 위한 제약조건 위반 여부 확인
