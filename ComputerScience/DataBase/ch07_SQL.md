@@ -59,7 +59,8 @@ CREATE TABLE 테이블_이름(
     1. 속성_이름 데이터_타입 [NOT NULL] [DEFAULT 기본_값]
     2. [PRIMARY KEY (속성_리스트)]
     3. [UNIQUE (속성_리스트)]
-    4. [FOREIGN KEY (속성_리스트) REFERENCES 테이블_이름(속성_리스트)] [ON DELETE 옵션] [ON UPDATE 옵션]
+    4. [FOREIGN KEY (속성_리스트) REFERENCES 테이블_이름(속성_리스트)]
+       [ON DELETE 옵션] [ON UPDATE 옵션]
     5. [CONSTRAINT 이름] [CHECK(조건)]
 );
 ```
@@ -88,6 +89,14 @@ CREATE TABLE 테이블_이름(
 
 - 문자열·날짜 데이터는 작은 따옴표로 묶어서 표현
   - 작은 따옴표로 묶인 문자열은 대소문자 구분 필수
+
+|    속성 데이터 타입    | 의미                        |
+| :--------------------: | :-------------------------- |
+|     INT · INTEGER      | 정수                        |
+|        SMALLINT        | INT보다 작은 정수           |
+| CHAR(n) · CHARACTER(n) | 길이가 n인 고정 길이 문자열 |
+
+|VARCHAR(n) · CHARACTER VARYING
 
 #### 키 정의
 
