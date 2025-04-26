@@ -12,7 +12,7 @@
 >
 > 5절. ConstraintLayout : 계층 구조 배치
 >
-> 6절. 전화 앱 키배드 화면 만들기  
+> 6절. 전화 앱 키패드 화면 만들기  
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch02)
 
 ## 1절. LinearLayout : 선형 배치
