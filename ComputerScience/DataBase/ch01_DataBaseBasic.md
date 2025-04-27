@@ -88,10 +88,9 @@
 
 ### 데이터 분류 특성
 
-- 통계적 관점에서 사용
-- 데이터 분석 분야에서 사용
+- 통계적 관점 & 데이터 분석 분야에서 사용
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-08-SD.PNG"  width="50%" height="50%"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-08-SD.PNG"  width="auto"/>
 
 #### 범주형 데이터(Categorical Data)
 
