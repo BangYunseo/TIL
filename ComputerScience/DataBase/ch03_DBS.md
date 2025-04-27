@@ -23,7 +23,7 @@
 
 - 데이터베이스에 저장된 데이터 구조·제약조건 정의
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-02-Schema.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-02-Schema.PNG" height="40%" />
 
 ### 인스턴스(Instance)
 
