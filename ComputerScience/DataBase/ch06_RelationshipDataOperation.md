@@ -19,7 +19,7 @@
 
 ### 데이터 모델 구성
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-01-DataModel.PNG" width="70%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch06/ch06-01-DataModel.PNG"  height="auto" />
 
 | 데이터 구조 종류 | 설명                                                                            |
 | :--------------: | :------------------------------------------------------------------------------ |
