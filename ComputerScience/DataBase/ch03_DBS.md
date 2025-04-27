@@ -14,8 +14,9 @@
 
 ### 데이터베이스 시스템(DBS : DataBase System)
 
-| <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-01-DBS.PNG" height="auto" /> | - 데이터베이스에 데이터를 저장·관리하여 조직에 필요한 정보를 생성하는 시스템 |
-| ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+- 데이터베이스에 데이터를 저장·관리하여 조직에 필요한 정보를 생성하는 시스템
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-01-DBS.PNG" height="60%" />
 
 ## 2절. 데이터베이스 구조
 
