@@ -797,7 +797,8 @@ GROUP BY 주문제품, 주문고객;
 ```SQL
 SELECT 제품.제품명
 FROM 주문, 제품
-WHERE 주문.주문고객 = 'banana' AND 제품.제품번호 = 주문.주문제품;
+WHERE 주문.주문고객 = 'banana'
+AND 제품.제품번호 = 주문.주문제품;
 ```
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch07/ch07-41-SelectData28.PNG"  height="auto" />
@@ -807,7 +808,8 @@ WHERE 주문.주문고객 = 'banana' AND 제품.제품번호 = 주문.주문제�
 ```SQL
 SELECT 제품번호, 주문일자
 FROM 고객, 주문
-WHERE 고객.나이 >= 30 AND 고객.고객아이디 = 주문.주문고객;
+WHERE 고객.나이 >= 30
+AND 고객.고객아이디 = 주문.주문고객;
 ```
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch07/ch07-42-SelectData29.PNG"  height="auto" />
@@ -819,7 +821,8 @@ WHERE 고객.나이 >= 30 AND 고객.고객아이디 = 주문.주문고객;
 
 SELECT 주문제품, 주문일자
 FROM 고객 A, 주문 B
-WHERE A.나이 >= 30 AND A.고객아이디 = B.주문고객;
+WHERE A.나이 >= 30
+AND A.고객아이디 = B.주문고객;
 
 /* 테이블 이름 별칭 가능 */
 ```
@@ -829,7 +832,9 @@ WHERE A.나이 >= 30 AND A.고객아이디 = B.주문고객;
 ```SQL
 SELECT 제품.제품명
 FROM 제품, 고객, 주문
-WHERE 고객.고객아이디 = '고명석' AND 주문.주문고객 = 고객.고객아이디 AND 제품.제품번호 = 주문.주문제품;
+WHERE 고객.고객아이디 = '고명석'
+AND 주문.주문고객 = 고객.고객아이디
+AND 제품.제품번호 = 주문.주문제품;
 ```
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch07/ch07-43-SelectData30.PNG"  height="auto" />
@@ -991,7 +996,8 @@ SELECT 고객이름
 FROM 고객
 WHERE EXISTS (SELECT *
               FROM 주문
-              WHERE 주문일자 = '2022-03-15' AND 고객.고객아이디 = 주문.주문고객);
+              WHERE 주문일자 = '2022-03-15'
+              AND 고객.고객아이디 = 주문.주문고객);
 ```
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch07/ch07-50-SelectData37.PNG"  height="auto" />
@@ -1003,7 +1009,8 @@ SELECT 고객이름
 FROM 고객
 WHERE NOT EXISTS (SELECT *
               FROM 주문
-              WHERE 주문일자 = '2022-03-15' AND 고객.고객아이디 = 주문.주문고객);
+              WHERE 주문일자 = '2022-03-15'
+              AND 고객.고객아이디 = 주문.주문고객);
 ```
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch07/ch07-51-SelectData38.PNG"  height="auto" />
