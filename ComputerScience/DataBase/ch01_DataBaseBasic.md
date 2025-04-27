@@ -17,8 +17,6 @@
 
 - 데이터 정보 추출 과정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-02-IP.PNG"  width="60%" height="60%"/>
-
 ### 정보 시스템(Information System)
 
 - 조직 운영에 필요한 데이터를 수집하여 저장
