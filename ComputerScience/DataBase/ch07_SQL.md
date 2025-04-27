@@ -1288,7 +1288,8 @@ FROM 고객;
 - 주문일로부터 10일 후 입금이 들어온다면 각 주문의 입금일자를 구해라
 
 ```SQL
-SELECT 주문번호, 주문고객, 주문일자, ADDDATE(주문일자, INTERVAL 10 DAY) AS '입금일자'
+SELECT 주문번호, 주문고객, 주문일자,
+      ADDDATE(주문일자, INTERVAL 10 DAY) AS '입금일자'
 FROM 주문;
 ```
 
