@@ -84,7 +84,7 @@
 - 정해진 구조 없이 저장된 데이터
 - ex) 소셜 데이터의 텍스트, 영상, 이미지, 워드 및 PDF 문서와 같은 멀티미디어 데이터
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-07-UD.PNG"  width="30%" height="30%"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-07-UD.PNG"  width="auto"/>
 
 ### 데이터 분류 특성
 
