@@ -167,7 +167,8 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 ```
 
 - color 디렉토리 : 색상 리소스
-  - 특정 뷰의 상태를 표현하고 그 상태에 적용되는 색상을 등록
+  - 특정 뷰의 상태 표현
+  - 상태 적용 색상 등록
 
 ```xml
 <!-->색상 리소스 등록<!-->

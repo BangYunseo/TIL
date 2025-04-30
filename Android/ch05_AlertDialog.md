@@ -15,30 +15,34 @@
 > 6절. 카카오톡 알림
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch05)
 
-(사진은 전부 다시 올리기 & 처음부터 재작성하기!!)
-
 ## 1절. API 레벨 호환성 고려
 
 ### API 레벨 호환성
 
-- 34 버전의 API에서 개발 시 24 버전 기기에서도 오류가 발생하지 않고 동작 필수
-- minSdk 설정값보다 상위 버전에서 제공하는 API를 사용할 경우 호환성 고려
+- 34 버전의 API에서 개발 시 24 버전 기기에서도 오류가 발생하지 않는 동작 필요
+- minSdk 설정값보다 상위 버전에서 제공하는 API를 사용 시 호환성 고려
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-01-package.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-01-API.PNG" height="auto" />
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-01-package.PNG" width="100%" height="auto" />
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-01-package.PNG" width="100%" height="auto" />
-
-- @RequiresApi 애너테이션, @TargetApi 애너테이션을 이용
-
-  - 안드로이드 스튜디오에서 오류를 무시 설정
-  - 단순히 무시만 하는 것이므로 코드로의 설정 필요
-
-- API 레벨 호환성 문제를 막으려면 직접 코드로 처리
+- @RequiresApi · @TargetApi 애너테이션 이용
+- 안드로이드 스튜디오에서 오류 무시 설정
 
 ```kt
-// API 레벨 30 이상에서만 addCallback() 함수 실행
+@RequiresApi(Build.VERSION_CODES.S)
+fun noti() {
+  // (... 생략 ...)
+  val builder: Notification.Builder = Notification.Builder(this, "1")
+    .setStyle(
+      Notification.CallStyle.forIncomingCall(caller, declineIntent, answerIntent)
+    )
+  // (... 생략 ...)
+}
+```
+
+- API 레벨 호환성 문제 방지를 위한 코드 처리
+
+```kt
+// API 레벨 >= 30인 경우에 실행되는 addCallback() 함수
 
 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
   val builder: Notification.Builder = Notification.Builder(this, "1")
@@ -46,7 +50,7 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
       Notification.CallStyle.forIncomingCall(caller, delineIntent, answerIntent)
     )
 } else {
-  // 이전 버전 그대로 처리한다는 코드 필요
+  // 이전 버전 그대로 처리하는 코드 필요
 }
 ```
 
@@ -54,28 +58,30 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 
 ### 퍼미션 설정과 사용 설정
 
-- A 앱의 컴포넌트를 B 앱에서 사용하는 상황
-  - 만약 A 앱의 컴포넌트에 Permission 설정 시 B 앱에서 연동할 때 문제 발생
+- A 앱의 컴포넌트를 B 앱에서 사용
+- 만약 A 앱의 컴포넌트에 Permission 설정 시 B 앱 연동에서 문제 발생
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-01-package.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-02-Permission.PNG" width="100%" height="auto" />
 
-- <permission> 태그 : 기능을 보호하려는 앱의 매니페스트 파일에 설정
-- <uses-permission> 태그 : 퍼미션으로 보호된 기능을 사용하려는 앱의 매니페스트 파일에 설정
+- <permission> 태그 : 기능을 보호하려는 앱의 매니페스트(AndroidManifest.xml) 파일에 설정
+- <uses-permission> 태그 : 퍼미션으로 보호된 기능을 사용하려는 앱의 매니페스트(AndroidManifest.xml) 파일에 설정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-01-package.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-03-Permission2.PNG" width="100%" height="auto" />
 
-#### <permission> 속성
+### <permission> 태그 · 속성
 
-- name : permission의 이름
-- label, description : permission 설명
-- protectionLevel : 보호 수준
+|        속성         | 설명            |
+| :-----------------: | :-------------- |
+|        name         | permission 이름 |
+| label · description | permission 설명 |
+|   protectionLevel   | 보호 수준       |
 
-|  보호 수준 종류   | 보호 수준 설명                                           |
-| :---------------: | :------------------------------------------------------- |
-|      normal       | 낮은 수준의 보호<br>사용자에게 권한 허용을 요청할 필요 X |
-|     dangerous     | 높은 수준의 보호<br>사용자에게 권한 허용을 요청 필요     |
-|     signature     | 같은 키로 인증한 앱만 실행                               |
-| signatureOrSystem | 안드로이드 시스템 앱이거나 같은 키로 인증한 앱만 실행    |
+|  보호 수준 종류   | 보호 수준 설명                                    |
+| :---------------: | :------------------------------------------------ |
+|      normal       | 낮은 수준 보호<br>사용자에게 권한 허용 요청 X     |
+|     dangerous     | 높은 수준 보호<br>사용자에게 권한 허용 요청 필요  |
+|     signature     | 같은 키로 인증한 앱만 실행                        |
+| signatureOrSystem | 안드로이드 시스템 앱 · 같은 키로 인증한 앱만 실행 |
 
 ```xml
 <!-->퍼미션 설정<!-->
@@ -86,7 +92,7 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
   android:protextionLevel="dangerous" />
 ```
 
-- <uses-permission>을 2개 설정했다고 가정
+- <uses-permission> 2개 설정
 
 ```xml
 <!-->퍼미션 사용 설정<!-->
@@ -95,9 +101,11 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 <uses-permission android:name="com.example.permission.ACCESS_FINE_LOCATION" />
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-01-package.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-04-Permission3.PNG" width="100%" height="auto" />
 
 - <permission> 설정 후 보호할 컴포넌트에 적용
+
+(여기부터 작성)
 
 ```xml
 <!-->컴포넌트에 퍼미션 적용<!-->

@@ -158,6 +158,8 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-10-SACA.PNG" height="auto" />
 
+(여기부터 재작성)
+
 #### 유도 속성(Derived Attribute)
 
 #### 널 속성(NULL Attribute)
