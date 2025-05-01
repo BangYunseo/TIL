@@ -17,14 +17,8 @@
 
 ### CSS3 : CSS Level 3
 
-- 현재 CSS 버전
-
-|CSS 버전|
-|:---:|
-|CSS1|
-|CSS2|
-|CSS3|
-|CSS4(현재 표준화 작업 진행 중)|
+- 현재 CSS 버전 : CSS3
+    - CSS1 -> CSS2 -> CSS3 -> CSS4(현재 표준화 작업 진행)
 
 - CSS3 기능
 
