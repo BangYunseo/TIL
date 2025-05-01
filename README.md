@@ -5,6 +5,7 @@
 ## pdf 저장
 
 - ctrl + shift + P
+- Chrome에서 인쇄 기능 활용
 
 ## 이미지 저장 양식
 
