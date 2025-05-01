@@ -9,10 +9,8 @@
 ## 이미지 저장 양식
 
 ```html
-<img src="./link" width="100%" height="auto" />
+<img src="./link" height="auto" />
 ```
-
-- 기본 크기는 100%로 저장 후 이미지가 클 경우에만 조절
 
 ## Tips for Markdown Language
 
@@ -66,19 +64,6 @@
     <summary>Security</summary>
  
 * [InformationSecurity](https://github.com/BangYunseo/TIL/tree/main/Security/InformationSecurity)
-
-</details>
-
-## Lecture
-
-<details>
-    <summary>Unity</summary>
- 
-* C# 강의 자료
-- [C# 인프런 강의](https://www.inflearn.com/course/c-sharp-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%EB%B0%B0%EC%9A%B0%EA%B8%B0)
-
-- Unity 강의 자료
-  [Unity](https://www.inflearn.com/course/%EC%9C%A0%EB%8B%88%ED%8B%B0-%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C-%ED%8C%8C%ED%8A%B81-2/dashboard)
 
 </details>
 
