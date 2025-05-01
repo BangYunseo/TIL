@@ -55,7 +55,7 @@
 </html>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/tree/main/Language/Web/CSS/Image/ch00/ch00-01-HtmlWeb.PNG" width="auto"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Web/CSS/Image/ch00/ch00-01-HtmlWeb.PNG" width="auto"/>
 
 - 스타일 시트로 꾸민 웹 페이지
 
@@ -96,13 +96,13 @@
 </html>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/tree/main/Language/Web/CSS/Image/ch00/ch00-02-StyleSheetWeb.PNG" width="auto"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Web/CSS/Image/ch00/ch00-02-StyleSheetWeb.PNG" width="auto"/>
 
 ### CSS3 스타일 시트 구성
 
 - ex) <span> 텍스트를 20px blue로 출력하는 CSS3 StyleSheet
 
-<img src="https://github.com/BangYunseo/TIL/tree/main/Language/Web/CSS/Image/ch00/ch00-03-StyleSheet.PNG" width="auto"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Web/CSS/Image/ch00/ch00-03-StyleSheet.PNG" width="auto"/>
 
 |구성 요소|설명|
 |:---:|:---|
