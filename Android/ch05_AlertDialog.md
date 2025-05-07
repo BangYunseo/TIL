@@ -50,7 +50,7 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
       Notification.CallStyle.forIncomingCall(caller, delineIntent, answerIntent)
     )
 } else {
-  // 이전 버전 그대로 처리하는 코드 필요
+  // 이전 버전 그대로 처리 코드 필요
 }
 ```
 
@@ -61,12 +61,12 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 - A 앱의 컴포넌트를 B 앱에서 사용
 - 만약 A 앱의 컴포넌트에 Permission 설정 시 B 앱 연동에서 문제 발생
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-02-Permission.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-02-Permission.PNG" height="auto" />
 
 - <permission> 태그 : 기능을 보호하려는 앱의 매니페스트(AndroidManifest.xml) 파일에 설정
 - <uses-permission> 태그 : 퍼미션으로 보호된 기능을 사용하려는 앱의 매니페스트(AndroidManifest.xml) 파일에 설정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-03-Permission2.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-03-Permission2.PNG" height="auto" />
 
 ### <permission> 태그 · 속성
 
@@ -76,7 +76,11 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 | label · description | permission 설명 |
 |   protectionLevel   | 보호 수준       |
 
-|  보호 수준 종류   | 보호 수준 설명                                    |
+### Protection Level 속성값
+
+- 보호 수준
+
+|       종류        | 설명                                              |
 | :---------------: | :------------------------------------------------ |
 |      normal       | 낮은 수준 보호<br>사용자에게 권한 허용 요청 X     |
 |     dangerous     | 높은 수준 보호<br>사용자에게 권한 허용 요청 필요  |
@@ -87,10 +91,12 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 <!-->퍼미션 설정<!-->
 
 <permission android:name="com.example.permission.TEST_PERMISSION"
-  android:lavel="Permission 테스트 중 입니다"
-  android:description="testing!!"
+  android:lavel="Permission TESTING"
+  android:description="@string/permission_desc"
   android:protextionLevel="dangerous" />
 ```
+
+### permission 설정 과정
 
 - <uses-permission> 2개 설정
 
@@ -101,82 +107,105 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 <uses-permission android:name="com.example.permission.ACCESS_FINE_LOCATION" />
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-04-Permission3.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-04-Permission3.PNG" height="auto" />
 
 - <permission> 설정 후 보호할 컴포넌트에 적용
 
-(여기부터 작성)
+(여기부터 확인)
 
 ```xml
-<!-->컴포넌트에 퍼미션 적용<!-->
+<!--컴포넌트에 퍼미션 적용-->
 
-<activity android:name=".MainActivity" android:permission="com.example.permission.TEST_PERMISSION"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+<activity android:name="OneActivity"
+          android:permission="com.example.TEST_PERMISSION">
+  <intent-filter>
+    <action android:name="android.intent.action.PICK" />
+  </intent-filter>
+</activity>
 ```
 
-- 컴포넌트를 이용하는 곳에서 Manifest 파일에 <uses-permission>을 선언해야 정상적 실행 가능
+- 컴포넌트 이용 Manifest 파일에 <uses-permission>을 선언
 
-|          종류          | 설명                            |
-| :--------------------: | :------------------------------ |
-|  ACCESS_FINE_LOCATION  | 위치 정보 접근                  |
-|  ACCESS_NETWORK_STATE  | 네트워크 정보 접근              |
-|   ACCESS_WIFI_STATE    | 와이파이 네트워크 정보 접근     |
-|     BATTERY_STATS      | 배터리 정보 접근                |
-|       BLUETOOTH        | 블루투스 장치에 연결            |
-|    BLUETOOTH_ADMIN     | 블루투스 장치를 검색하고 페어링 |
-|         CAMERA         | 카메라 장치에 접근              |
-|        INTERNET        | 네트워크 연결                   |
-| READ_EXTERNAL_STORAGE  | 외부 저장소에서 파일 읽기       |
-| WRITE_EXTERNAL_STORAGE | 외부 저장소에 파일 쓰기         |
-|    READ_PHONE_STATE    | 전화기 정보 접근                |
-|        SEND_SMS        | 문자 메시지 발신                |
-|      RECEIVE_SMS       | 문자 메시지 수신                |
-| RECEIVE_BOOT_COMPLETED | 부팅 완료 시 실행               |
-|        VIBRATE         | 진동 울리기                     |
+```xml
+<!-- 퍼미션 사용 설정 -->
+
+<uses-permission android:name="com.example.permission.TEST_PERMISSION" />
+```
+
+### 퍼미션 사용 설정 종류
+
+|          종류          | 설명                         |
+| :--------------------: | :--------------------------- |
+|  ACCESS_FINE_LOCATION  | 위치 정보 접근               |
+|  ACCESS_NETWORK_STATE  | 네트워크 정보 접근           |
+|   ACCESS_WIFI_STATE    | 와이파이 네트워크 정보 접근  |
+|     BATTERY_STATS      | 배터리 정보 접근             |
+|       BLUETOOTH        | 블루투스 장치 연결           |
+|    BLUETOOTH_ADMIN     | 블루투스 장치 검색 후 페어링 |
+|         CAMERA         | 카메라 장치 접근             |
+|        INTERNET        | 네트워크 연결                |
+| READ_EXTERNAL_STORAGE  | 외부 저장소 파일 읽기        |
+| WRITE_EXTERNAL_STORAGE | 외부 저장소 파일 쓰기        |
+|    READ_PHONE_STATE    | 전화기 정보 접근             |
+|        SEND_SMS        | 문자 메시지 발신             |
+|      RECEIVE_SMS       | 문자 메시지 수신             |
+| RECEIVE_BOOT_COMPLETED | 부팅 완료 시 실행            |
+|        VIBRATE         | 진동 울리기                  |
 
 ### 퍼미션 허용 확인
 
 - API 레벨 23 버전부터 허가제로 변경
-- <uses-permission>으로 선언했더라도 사용자가 권한 화면에서 거부 가능
-- 앱을 실행할 때 사용자가 퍼미션을 거부했는지 확인
-- 거부했으면 다시 퍼미션을 허용해 달라고 요청
+- <uses-permission> 선언 후 사용자 권한 화면에서 거부 가능
+- 앱 실행 시 사용자 퍼미션 거부 여부 확인
+  - 거부한 경우 다시 퍼미션 허용 요청
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-01-package.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-05-PermissionAcception.PNG" height="auto" />
 
 - checkSelfPer mission() 함수 : permission 허용 여부 확인
-- 결괏값은 하나의 상수로 전달
-  - PackageManager.PERMISSION_GRANTED : 권한을 허용한 경우
-  - PackageManager.PERMISSION_DENIED: 권한을 거부한 경우
+- 결괏값 : 하나의 상수
+
+|               함수                | 설명      |
+| :-------------------------------: | :-------- |
+| PackageManager.PERMISSION_GRANTED | 권한 허용 |
+| PackageManager.PERMISSION_DENIED  | 권한 거부 |
 
 ```kt
 // 퍼미션 허용 확인 예시
 
-val status = ContextCompat.checkSelfPermission(this, "android.permission.ACCESS_FINE_LOCATION")
-if(status == PackageManager.PERMISSION_GRANTED) { log.d("Yunseo", "permission granted") }
-else { log.d("Yunseo", "permission denied") }
+val status = ContextCompat.checkSelfPermission(this,
+            "android.permission.ACCESS_FINE_LOCATION")
+
+if(status == PackageManager.PERMISSION_GRANTED) {
+  log.d("Yunseo", "permission granted")
+} else {
+  log.d("Yunseo", "permission denied")
+}
 ```
 
-- 거부한 상태라면 사용자에게 해당 퍼미션 허용 요청
-- ActivityResultLauncher 객체 : registerForActivityResult() 함수를 호출해서 생성
+### 퍼미션 요청
+
+- 거부 상태 : 사용자에게 해당 퍼미션 허용 요청
+- ActivityResultLauncher 객체
+  - registerForActivityResult() 함수 호출 후 생성
   - 첫 번째 매개변수 : 어떤 요청인지를 나타내는 ActivityResultContract 타입 객체
   - 두 번째 매개변수 : 결과를 받았을 때 호출되는 콜백
-- ActivityResultLauncher 객체의 launch() 함수를 호출하여 요청을 실행
+- ActivityResultLauncher 객체 launch() 함수 호출 후 요청 실행
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-01-package.PNG" width="100%" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-06-PermissionRequest.PNG" height="auto" />
 
 ```kt
 // 퍼미션 허용 요청 확인
 
 val requestPermissionLauncher = registerForActivityResult(
-            ActivityResultContracts.RequestPermission()
-        ) { isGranted -> if(isGranted) { Log.d("Yunseo", "callback, granted...") }
-            else { Log.d("Yunseo", "callback, denied...") }
-        }
+ActivityResultContracts.RequestPermission()
+) { isGranted ->
+  if(isGranted) {
+    Log.d("Yunseo", "callback, granted...")
+  }
+  else {
+    Log.d("Yunseo", "callback, denied...")
+  }
+}
 ```
 
 ```kt
@@ -185,11 +214,84 @@ val requestPermissionLauncher = registerForActivityResult(
 val requestPermissionLauncher = launch("android.permission.ACCESS_FINE_LOCATION")
 ```
 
-(4/9)
-
 ## 3절. 다양한 다이얼로그
 
-### 토스트 메시지 띄우기
+### 토스트 메시지
+
+- 토스트 : 화면 아래쪽에 잠깐 보였다가 사라지는 문자열(일시적)
+- Toast의 makeText() 함수
+
+  - open static fun makeText(context: Context!, text: CharSequence!, duration: Int): Toast!
+  - open static fun makeText(context: Context!, resId: Int, duration: Int): Toast!
+
+- 세 번째 매개변수 : 토스트가 화면에 출력되는 시간
+
+  - val LENGTH_LONG: Int
+  - val LENGTH_SHORT: Int
+
+```kt
+// 토스트 출력 예시
+
+val toast = Toast.makeTest(this, "종료하려면 한 번 더 누르세요", Toast.LENGTH_SHORT)
+toast.show()
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-07-Toast.PNG" height="auto" />
+
+### 토스트 로직
+
+- 토스트가 화면에 보이거나 사라지는 순간을 콜백으로 감지 후 특정 로직 수행
+- 콜백 기능 : API 레벨 30버전
+
+```kt
+// 콜백 기능
+
+@RequiresApi(Build.VERSION_CODES.R)
+fun showToast(){
+  val toast = Toast.makeText(this, "종료하려면 한 번 더 누르세요", Toast.LENGTH_SHORT)
+  toast.addCallback(
+    object : Toast.Callback(){
+      override fun onToastHidden() {
+        super.onToastHidden()
+        Log.d("yunseo", "toast hidden")
+      }
+
+      override fun onToastShown() {
+        super.onToastShown()
+        Log.d("yunseo", "toast shown")
+      }
+    })
+  toast.show()
+}
+```
+
+### 날짜 · 시간 입력받기
+
+- DatePickerDialog : 날짜 입력
+- TimerPickerDialog : 시간 입력
+- 콜백 함수 : 사용자가 설정한 날짜 반환
+
+```kt
+// 데이트 피커 다이얼로그 사용
+
+DatePickerDialog(this, object: DatePickerDialog.OnDateSetListener{
+  override fun onDateSet(p0: DatePicker?, p1: Int, p2: Int, p3: Int){
+    Log.d("yunseo", "year : $p1, month : ${p2 + 1}, dayOfMonth : $p3")
+  }
+}, 2024, 4, 6).show()
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-08-DatePicker.PNG" height="auto" />
+
+```kt
+// 타임 피커 다이얼로그 사용
+
+TimePickerDialog(this, object: TimePickerDialog.OnTimeSetListener{
+  override fun onTimeSet(p0: TimePicker?, p1: Int, p2: Int, p3: Int){
+    Log.d("yunseo", "year : $p1, month : ${p2 + 1}, dayOfMonth : $p3")
+  }
+}, 2024, 4, 6).show()
+```
 
 ### 다중 선택을 위한 체크박스
 
