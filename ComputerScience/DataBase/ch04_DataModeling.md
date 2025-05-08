@@ -38,10 +38,10 @@
 
 - 데이터 모델링 결과물 표현 도구
 
-|        종류        | 설명                                                                                     | 예시             |
-| :----------------: | :--------------------------------------------------------------------------------------- | :--------------- |
-| 개념적 데이터 모델 | 사람이 이해하도록 현실 세계를 개념적 모델링하여 데이터베이스 개념적 구조로 표현하는 도구 | 개체-관계 모델   |
-| 논리적 데이터 모델 | 개념적 구조를 논리적 모델링하여 데이터베이스의 논리적 구조로 표현하는 도구               | 관계 데이터 모델 |
+|        종류  | 설명  | 예시|
+| :--: | :--------------------------------------------------------------------------------------- | :--------------- |
+|개념적<br>데이터 모델| 사람이 이해하도록 현실 세계를 개념적 모델링하여 데이터베이스 개념적 구조로 표현하는 도구 | 개체-관계 모델   |
+|논리적<br>데이터 모델| 개념적 구조를 논리적 모델링하여 데이터베이스의 논리적 구조로 표현하는 도구   | 관계 데이터 모델 |
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-04-DMconsist.PNG" height="auto" />
 
@@ -111,7 +111,7 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-08-AttributeType.PNG" height="auto" />
 
-#### 단일 값 속성(Single-Valued Attribute)
+### 단일 값 속성(Single-Valued Attribute)
 
 - 하나의 값만 가지는 속성
 
@@ -120,7 +120,7 @@
 | 고객 개체 이름 |
 |  적립금 속성   |
 
-#### 다중 값 속성(Multi-Valued Attribute)
+### 다중 값 속성(Multi-Valued Attribute)
 
 - 여러 개의 값을 가지는 속성
 - E-R 다이어그램에서 이중 타원 표현
@@ -134,7 +134,7 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-09-SVMV.PNG" height="auto" />
 
-#### 단순 속성(simple attribute)
+### 단순 속성(simple attribute)
 
 - 의미를 더 분해할 수 없는 속성
 
@@ -145,7 +145,7 @@
 |         ISBN          |
 |       가격 속성       |
 
-#### 복합 속성(composite attribute)
+### 복합 속성(composite attribute)
 
 - 의미를 분해할 수 있는 속성
 
@@ -158,11 +158,81 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-10-SACA.PNG" height="auto" />
 
-(여기부터 재작성)
+### 유도 속성(Derived Attribute)
 
-#### 유도 속성(Derived Attribute)
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-11-DA.PNG" height="auto" />
 
-#### 널 속성(NULL Attribute)
+- 기존의 다른 속성 값에서 유도되어 결정된 속성
+- 값이 별도로 저장 X
+- E-R 다이어그램에서 점선 타원 표현
+
+|         예시          |
+| :-------------------: |
+| 책 개체의 가격과 할인율 속성으로 계산되는 판매가격 속성|
+|고객 개체의 출생연도 속성으로 계산되는 나이 속성|
+
+### 널 속성(NULL Attribute)
+
+- 널(NULL) 값이 허용되는 속성
+
+#### 널(NULL) 값
+
+- 아직 결정되지 않은 값
+- 모르는 값
+- 존재하지 않는 값
+- 공백이나 0과는 상이
+
+|         예시          |
+| :-------------------: |
+| 등급 속성이 널(NULL) 값 -> 등급 미결정|
+
+### 키 속성(Key Attribute)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-12-KA.PNG" height="auto" />
+
+- 각 개체 인스턴스 식별 시 사용되는 속성
+- 모든 개체 인스턴스의 키 속성 값은 상이
+- 둘 이상의 속성들로도 구성
+- E-R 다이어그램에서 밑줄 표현
+
+|         예시          |
+| :-------------------: |
+| 고객 개체의 고객아이디 속성|
+
+### 관계(Relationship)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-13-RS.PNG" height="auto" />
+
+- 개체와 개체가 맺는 의미 있는 연관성
+- 개체 집합들 사이의 대응 관계, 매핑(mapping)
+- E-R 다이어그램에서 마름모 표현
+
+|         예시          |
+| :-------------------: |
+| 고객 개체와 책 개체 간의 구매 관계 : "고객은 책을 구매한다"|
+
+#### 관계 유형 : 관계 참여 개체 타입 수 기준
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-14-RT.PNG" height="auto" />
+
+|관계 유형|설명|
+|:---:|:---|
+|이항 관계|개체 타입 두 개가 맺는 관계|
+|삼항 관계|개체 타입 세 개가 맺는 관계|
+|순환 관계|개체 타입 하나가 자기 자신과 맺는 관계|
+
+#### 관계 대응 수(Cardinality)
+
+- 두 개체 타입 관계에 실제로 참여하는 개별 개체 수
+
+|타입 유형|설명|
+|:---:|:----|
+|일대일 관계|하나의 개체가 하나의 개체에 대응|
+|일대다 관계|하나의 개체가 다수의 개체에 대응|
+|다대일 관계|다수의 개체가 하나의 개체에 대응|
+|다대다 관계|다수의 개체가 다수의 개체에 대응|
+
+#### 관계 유형 : 매핑 카디널리티 기준
 
 ## 4절. 논리적 데이터 모델
 
