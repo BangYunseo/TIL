@@ -7,8 +7,7 @@
 > 3절. 개체-관계 모델
 >
 > 4절. 논리적 데이터 모델
->
-> 5절. MySQL WorkBench 모델링
+
 
 ## 1절. 데이터 모델링
 
@@ -211,7 +210,7 @@
 | :-------------------: |
 | 고객 개체와 책 개체 간의 구매 관계 : "고객은 책을 구매한다"|
 
-#### 관계 유형 : 관계 참여 개체 타입 수 기준
+### 관계 유형 : 관계 참여 개체 타입 수 기준
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-14-RT.PNG" height="auto" />
 
@@ -221,7 +220,7 @@
 |삼항 관계|개체 타입 세 개가 맺는 관계|
 |순환 관계|개체 타입 하나가 자기 자신과 맺는 관계|
 
-#### 관계 대응 수(Cardinality)
+### 관계 대응 수(Cardinality)
 
 - 두 개체 타입 관계에 실제로 참여하는 개별 개체 수
 
@@ -232,8 +231,124 @@
 |다대일 관계|다수의 개체가 하나의 개체에 대응|
 |다대다 관계|다수의 개체가 다수의 개체에 대응|
 
-#### 관계 유형 : 매핑 카디널리티 기준
+### 관계 유형 : 매핑 카디널리티 기준
+
+#### 일대일(1 : 1) 관계
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-15-OneOne.PNG" height="auto" />
+
+- 개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 하나와 관계 가능
+- 개체 B의 각 개체 인스턴스가 개체 A의 개체 인스턴스 하나와 관계 가능
+
+
+#### 일대다(1 : N) 관계
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-16-OneN.PNG" height="auto" />
+
+- 개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 다수와 관계 가능
+- 개체 B의 각 개체 인스턴스가 개체 A의 개체 인스턴스 하나와 관계 가능
+
+#### 다대다(N : M) 관계
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-17-NM.PNG" height="auto" />
+
+- 개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 다수와 관계 가능
+- 개체 B의 각 개체 인스턴스가 개체 A의 개체 인스턴스 다수와 관계 가능
+
+#### 매핑 카디널리티(Mapping Cardinality)
+
+- 관계를 맺는 두 개체 집합에서 각 개체 인스턴스가 연관성을 맺는 상대 개체 집합의 인스턴스 개수
+
+### 관계 참여 특성
+
+|종류|설명|예시|ERD|
+|:---:|:---|:---|:---:|
+|필수적(전체) 참여|모든 개체 인스턴스가 반드시 참여|고객 개체가 책 개체와의 구매 관계에 필수적 참여 : 모든 고객은 책을 반드시 구매|이중선|
+|선택적(부분) 참여|개체 인스턴스 중 일부만 관계에 참여 가능|책 개체가 고객 개체와의 구매 관계에 선택적 참여 : 고객에 구매하지 않은 책 존재|단일선|
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-18-PR.PNG" height="auto" />
+
+### 관계 종속성
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-19-SW.PNG" height="auto" />
+
+|종류|영문|설명|
+|:---:|:---:|:---|
+|강한 개체|Strong Entity|다른 개체의 존재 여부를 결정하는 개체|
+|약한 개체|Weak Entity|다른 개체의 존재 여부에 의존적인 개체|
+
+- 특징
+  - 강한 개체와 일반 개체는 대부분 일대다의 관계
+  - 약한 개체는 강한 개체와의 관계에 필수적 참여
+  - 약한 개체는 강한 개체의 키를 포함하여 키 구성
+  - ERD에서 약한 개체는 이중 사각형 표현
+  - 약한 개체가 강한 개체와 맺는 관계는 이중 마름모 표현
+ 
+#### 관계 종속성 예시 
+
+- 직원 개체와 부양가족 개체 사이의 부양 관계
+  - 직원 개체 : 강한 개체
+  - 부양가족 개체 : 약한 개체
+ 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-20-SWex.PNG" height="auto" />
+
+### E-R 다이어그램
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-21-ERD.PNG" height="auto" />
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-22-ERD2.PNG" height="auto" />
+
+|요소|설명|
+|:---:|:----|
+|사각형|개체|
+|마름모|관계|
+|타원|속성|
+|링크(연결선)|각 요소 연결|
+|레이블|일대일, 일대다, 다대다 관계|
+
+### IE 표기법
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-23-IE.PNG" height="auto" />
+
+### IE 표기법 관계
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-24-IE2.PNG" height="auto" />
 
 ## 4절. 논리적 데이터 모델
 
-## 5절. MySQL WorkBench 모델링
+### 논리적 데이터 모델 개념
+
+- ERD로 표현된 개념적 구조를 데이터베이스에 저장할 형태로 표현한 논리적 구조
+  - 데이터베이스의 논리적 구조 == 데이터베이스 스키마(Schema)
+- 사용자가 생각하는 데이터베이스의 모습 또는 구조
+- 관계 데이터 모델, 계층 데이터 모델, 네트워크 데이터 모델 등
+
+### 관계 데이터 모델(Relational Data Model)
+
+- 일반적으로 많이 사용되는 논리적 데이터 모델
+- 데이터베이스의 논리적 구조가 2차원 테이블 형태
+
+### 계층 데이터 모델(Hierarchical Data Model)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-25-HMex.PNG" height="auto" />
+
+- 데이터베이스의 논리적 구조 : 트리(tree) 형태
+- 루트 역할을 하는 개체가 존재하고 사이클은 미존재
+- 개체 간 상하 관계 성립 : 일대다(1 : N) 관계만 허용
+  - 부모 개체
+  - 자식 개체
+- 두 개체 사이 하나의 관계만 정의 가능
+- 다대다(n:m) 관계 직접 표현 불가
+- 구조가 복잡하며 데이터 삽입·삭제·수정·검색이 어려움
+
+### 네트워크 데이터 모델(Network Data Model)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch04/ch04-26-NMex.PNG" height="auto" />
+
+- 데이터베이스의 논리적 구조 : 네트워크, 그래프 형태
+- 개체 간 관계 : 일대다(1:n) 관계만 허용
+  - 오너(owner)
+  - 멤버(member) 
+- 두 개체 사이 여러 관계를 정의하여 이름으로 구별
+- 다대다(n:m) 관계 직접 표현 불가
+- 구조가 복잡하며 데이터 삽입·삭제·수정·검색이 어려움
