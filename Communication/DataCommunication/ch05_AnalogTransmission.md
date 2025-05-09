@@ -177,6 +177,90 @@
 - 매체가 특정 대역 통과 특성 보유
 - 특정 대역만이 사용 가능할 경우 변조 필요
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch05/ch05-13-DigitalAnalog.PNG" height="auto"/>
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch05/ch05-13-AnalogAnalog.PNG" height="auto"/>
 
-### 디지털 -> 아날로그 변환 유형
+### 아날로그 -> 아날로그 변환 유형
+
+|  변환 유형  | 영문 약어 | 영문                 |
+| :---------: | :-------: | :------------------- |
+|  진폭 변조  |    AM     | Amplitude Modulation |
+| 주파수 변조 |    FM     | Frequency Modulation |
+|  위상 변조  |    PM     | Phase Modulation     |
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch05/ch05-14-AnalogAnalogType.PNG" height="auto"/>
+
+### 진폭 변조(AM : Amplitude Modulation)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch05/ch05-15-AM.PNG" height="auto"/>
+
+- 변조 신호의 진폭 변화에 따라 반송파의 진폭이 같이 바뀌는 방식의 변조
+- 반송파 주파수, 위상은 유지
+- 변조 신호(Modulation Signal)은 반송파(Carrier)의 엔벨롭(Envelop)
+  - 엔벨롭(Envelop)
+    - 진동 신호의 상·하 극한점을 부드럽게 연결하는 곡선
+    - 순간 진폭의 변화를 일반화한 형태
+- AM에 필요한 총 대역폭은 변조 신호(음성 신호 : 오디오 등)의 대역폭에 따라 결정
+
+#### 진폭 변조의 대역폭(BandWidth)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch05/ch05-16-AMB.PNG" height="auto"/>
+
+- $B_{AM} = 2 × B$
+- 대역폭(BandWidth)는 반송파 신호(Carrier Signal)를 중심으로 변조 신호(Modulation Signal) 대역폭(BandWidth)의 2배
+
+#### AM 라디오의 표준 대역 할당
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch05/ch05-17-AMradio.PNG" height="auto"/>
+
+- 오디오 신호(음성 및 음악)의 대역폭은 5 kHz
+- AM 방송국은 10 kHz 마다 대역폭 할당
+
+### 주파수 변조(FM : Frequency Modulation)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch05/ch05-18-FM.PNG" height="auto"/>
+
+- 반송파 신호(Carrier Signal)의 주파수가 변조 신호의 전압 준위 변화를 따라가도록 변조
+- 최대 진폭과 위상은 유지
+- FM의 대역폭은 변조 신호(음성 신호 : 오디오 등)의 대역폭에 따라 결정
+
+#### 주파수 변조의 대역폭(BandWidth)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch05/ch05-19-FMB.PNG" height="auto"/>
+
+- $B_{FM} = 2(1 + β) × B$
+- $β$ : 변조 기술에 따라 상이하지만 일반적으로 4
+- $B_{FM} = 2(1 + β) × B = 2(1 + 4) × B = 10B$
+  - 즉, 변조 신호의 10배 대역폭
+- 스테레오 오디오(Stereo Audio : Speech, Music 등)의 대역폭(BandWidth)는 15 KHz
+- 따라서 FM 방송국의 최소 대역폭은 150 KHz
+- FCC(Federal Communications Commission)는 최소 200 KHz 요구
+  - FCC : 미국 연방 정부 산하의 독립 규제 기관
+
+#### AM 라디오의 표준 대역 할당
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch05/ch05-20-FMradio.PNG" height="auto"/>
+
+- 스테레오 오디오 신호 대역폭 : 15 kHz
+- 각 FM 방송국은 최소 150kHz 대역폭 필요
+- 각 방송국에 200kHz(0.2MHz) 할당
+- FM 방송국은 88 MHz ~ 108 MHz를 사용
+- 88 MHz ~ 108 MHz 사이에 100개의 station 설치 가능
+- 주변 주파수의 충돌 방지를 위해 50개씩 번갈아 사용
+
+### 위상 변조(PM : Phase Modulation)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch05/ch05-21-PM.PNG" height="auto"/>
+
+- 반송파 신호(Carrier Signal)의 위상이 변조 신호의 전압 준위의 변화에 따라 변조
+- 반송파 신호(Carrier Signal)의 약한 최대 진폭(Peak amplitude)과 주파수(Frequency)는 불변
+- 반송파 주파수(Carrier Frequency)의 변화는 신호 진폭(Amplitude)의 미분과 비례
+- PM의 전체 대역폭은 변조되는 신호의 대역폭과 최대 진폭에 따라 결정
+
+#### 위상 변조의 대역폭(BandWidth)
+
+- $B_{PM} = 2(1 + β) × B$
+
+|        $β$ 유형        | $β$ 값 |
+| :--------------------: | :----: |
+| 좁은 대역(Narrow Band) |   1    |
+|  넓은 대역(Wide Band)  |   3    |
