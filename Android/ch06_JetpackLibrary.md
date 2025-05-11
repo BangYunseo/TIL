@@ -19,7 +19,7 @@
 > 7절. 드로어 레이아웃
 >
 > 8장. 제트팩 화면 구성
-> [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch06)
+> [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch07)
 
 ## 0절. ART
 
@@ -35,7 +35,7 @@
 
 - 구글에서 안드로이드 앱 개발용으로 제공하는 다양한 라이브러리
 - androidx로 시작하는 패키지명
-  - 앱을 개발 시 필요한 권장 아키텍처 제공
+  - 앱을 개발 시 필요 권장 아키텍처 제공
   - API 레벨 호환성 문제 해결
   - 플랫폼 API에서 제공하지 않는 다양한 기능 제공
 
@@ -75,3 +75,19 @@ implementation(lib.androidx.appcompat)
 ## 7절. 드로어 레이아웃
 
 ## 8장. 제트팩 화면 구성
+
+### 1) 새 모듈 생성
+
+- Ch11_JetPack 이름의 새 모듈 생성
+
+### 2) 빌드 그래들 작성
+
+- 뷰 바인딩 설정
+
+### 3) 문자열 리소스 생성
+
+- res/values/strings.xml 파일에 ActionBarDrawerToggle 생성 시 지정할 문자열 리소스 추가
+
+```xml
+
+```
