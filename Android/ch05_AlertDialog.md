@@ -911,6 +911,144 @@ builder.setStyle(messageStyle)
 
 - drawable 디렉터리의 big.jpg, small.png, send.png 파일을 res/drawable 디렉터리에 복사 - layout/activity_main.xml 파일을 res/layout 디렉터리에 복사해 이전 파일을 대체
 
+```xml
+<!-- activity_main.xml 파일 -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:id="@+id/main">
+
+    <Button
+        android:id="@+id/notificationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="알림 발생"/>
+</LinearLayout>
 ```
 
+### 3) 퍼미션 선언
+
+```xml
+<!-- AndroidManifest.xml 파일에 추가한 퍼미션 -->
+
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 ```
+
+### 4) 브로드캐스트 리시버 작성
+
+```kt
+// ReplyReceiver.kt 파일
+
+class ReplyReceiver : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        val replyTxt = RemoteInput.getResultsFromIntent(intent)?.getCharSequence("key_text_reply")
+        Log.d("Yunseo", "replyText : $replyTxt")
+        val manager = context.getSystemService(AppCompatActivity.NOTIFICATION_SERVICE)
+            as NotificationManager
+        manager.cancel(11)
+    }
+}
+```
+
+### 5) 메인 액티비티 작성
+
+```kt
+// MainActivity.kt 파일
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val permissionLauncher = registerForActivityResult(
+            ActivityResultContracts.RequestMultiplePermissions()
+        ){
+            if(it.all { permission -> permission.value == true}){
+                noti()
+            } else {
+                Toast.makeText(this, "permission 거부!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        binding.notificationButton.setOnClickListener {
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+                if(ContextCompat.checkSelfPermission(
+                    this,
+                    "android.permission.POST_NOTIFICATION"
+                ) == PackageManager.PERMISSION_GRANTED){
+                    noti()
+                } else {
+                    permissionLauncher.launch(arrayOf("android.permission.POST_NOTIFICATIONS"))
+                }
+            } else {
+                noti()
+            }
+        }
+    }
+
+    fun noti(){
+        val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+        val builder: NotificationCompat.Builder
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            val channelId = "one-channel"
+            val channelName = "My Channel One"
+            val channel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_DEFAULT)
+                .apply {
+                    description = "My Channel One Description"
+                    setShowBadge(true)
+                    val uri : Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+                    val audioAttributes = AudioAttributes.Builder()
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .setUsage(AudioAttributes.USAGE_ALARM)
+                        .build()
+                    setSound(uri, audioAttributes)
+                    enableVibration(true)
+                }
+            manager.createNotificationChannel(channel)
+            builder = NotificationCompat.Builder(this, channelId)
+        } else {
+            builder = NotificationCompat.Builder(this)
+        }
+
+        builder.run {
+            setSmallIcon(R.drawable.small)
+            setWhen(System.currentTimeMillis())
+            setContentTitle("방윤서")
+            setContentText("야 모하냐!")
+            setLargeIcon(BitmapFactory.decodeResource(resources, R.drawable.big))
+        }
+
+        val KEY_TEXT_REPLY = "key_text_reply"
+        var replyLabel = "답장"
+        val remoteInput: RemoteInput = RemoteInput.Builder(KEY_TEXT_REPLY).run {
+            setLabel(replyLabel)
+            build()
+        }
+
+        val replyIntent = Intent(this, ReplyReceiver::class.java)
+        val replyPendingIntent = PendingIntent.getBroadcast(
+            this, 30, replyIntent, PendingIntent.FLAG_MUTABLE
+        )
+
+        builder.addAction(
+            NotificationCompat.Action.Builder(
+                R.drawable.send, "답장", replyPendingIntent
+            ).addRemoteInput(remoteInput).build()
+        )
+
+        manager.notify(11, builder.build())
+    }
+}
+```
+
+### 6) 앱 실행
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-31-ExApp.PNG" height="auto" />
+
+[프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch05)
