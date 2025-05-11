@@ -1,31 +1,32 @@
-# Chapter 6. 제트팩 라이브러리
+# Chapter 7. 머터리얼 라이브러리
 
-> '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 11장 학습 내용
+> '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 12장 학습 내용
 >
-> 0절. ART
+> 1절. 앱바
 >
-> 1절. 제트팩
+> 2절. 탭 레이아웃
 >
-> 2절. androidx
+> 3절. 내비게이션 뷰
 >
-> 3절. appcompat 라이브러리
+> 4절. 확장 플로팅 액션 버튼
 >
-> 4절. 프래그먼트
->
-> 5절. 리사이클러 뷰
->
-> 6절. 뷰 페이저2
->
-> 7절. 드로어 레이아웃
->
-> 8장. 제트팩 화면 구성
-> [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch07)
+> 5장. 머터리얼 화면 구성
+> [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch08)
 
-## 0절. ART
+## 1절. 앱바
 
-### 플랫폼 API
+### 머터리얼(Material)
 
-- ART에서 제공하는 안드로이드 라이브러리
+- 구글의 "머터리얼 디자인"
+- 모바일, 데스크톱, 그 밖의 당야한 장치를 아우르는 일관된 애플리케이션 디자인 지침
+
+```kt
+// 머터리얼 라이브러리 선언
+
+implementation(libs.material)
+```
+
+(여기부터 수정)
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-01-JavaAPI.PNG" height="auto" />
 

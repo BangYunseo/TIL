@@ -902,7 +902,7 @@ builder.setStyle(messageStyle)
 
 ## 6절. 카카오톡 알림
 
-### 1) 새 모듈 생성
+### 1) 새 모듈 생성 & 그래들 설정
 
 - Ch10_Notification 새 모듈 생성
 - 뷰 바인딩 기법 추가
