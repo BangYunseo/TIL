@@ -165,14 +165,56 @@ finish()
 </activity>
 ```
 
-(여기에 코드삽입 필요)
+```xml
+<!-- 외부 앱과 연동하는 인텐트 필터 설정(메인 액티비티 X)-->
 
+<activity
+  android:name=".TwoActivity"
+  android:exported="true" >
+  <intent-filter>
+    <action android:name="ACTION_EDIT" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <data android:scheme="http" />
+  </intent-filter>
+</activity>
+```
+
+```kt
+// 인텐트 프로퍼티 이용
+
+val intent = Intent()
+intent.action = "ACTION_EDIT"
+intent.data = Uri.parse("http://www.google.com")
+startActivity(intent)
+```
+
+```kt
+// 인텐트 생성자 이용 방법
+
+val intent = Intent("ACTION_EDIT", Uri.parse("http://www.google.com"))
+startActivity(intent)
+```
+
+```xml
+<!-- mineType 설정 -->
+
+<activity android:name=".TwoActivity>
+  <intent-filter>
+    <action android:name="ACTION_EDIT" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <data android:mineType="image/" />
+  </intent-filter>
+</activity>
+```
+
+```kt
+// 타입 정보 설정
+
+val intent = Intent("ACTION_EDIT")
+intent.type = "image/*"
+startActivity(intent)
+```
 - 실행할 컴포넌트 정보를 어떻게 설정하는가?
-
-|종류|설명|
-|:---:|:---|
-|명시적 인텐트|클래스 타입 레퍼런스 정보 활용 인텐트|
-|암시적 인텐트|인텐트 필터 정보를 활용한 인텐트<br>AndroidManifest.xml 파일에 선언된 인텐트 필터 사용|
 
 ```xml
 <!-- 암시적·명시적 인텐트 -->
@@ -190,16 +232,116 @@ finish()
 
 #### 명시적 인텐트(Explicit Intent)
 
+- 클래스 타입 레퍼런스 정보 활용 인텐트
+
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-05-EI.PNG" height="auto" />
 
 #### 암시적 인텐트(Implicit Intent)
 
+- 인텐트 필터 정보를 활용한 인텐트
+- AndroidManifest.xml 파일에 선언된 인텐트 필터 사용
+
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-06-II.PNG" height="auto" />
+
+### 액티비티 인텐트 동작 방식
+
+|액티비티 개수|시스템 처리|
+|:---:|:---|
+|0게|인텐트를 시작한 곳에 오류 발생|
+|1개|문제없이 실행|
+|n개|사용자 선택으로 하나만 실행|
+
+```kt
+// 해당 액티비티가 없는 경우 예외 처리
+val intent = Intent("ACTION_HELLO")
+try {
+  startActivity(intent)
+} catch (e: Exception) {
+  Toast.makeText(this, "no application", Toast.LENGHT_SHORT).show()
+}
+```
+
+```kt
+// 액티비티가 여러 개인 경우
+
+val intent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:38.7749, 127.4194"))
+startActivity(intent)
+```
+
+```kt
+// 패키지 지정
+
+val intent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:37.7749, 127.4194"))
+intent.setPackage("com.google.android.apps.maps")
+startActivity(intent)
+```
 
 ## 2절. 액티비티 생명주기
 
+### 액티비티 상태
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-08-ALC.PNG" height="auto" />
+
+- 생명 주기 : 액티비티의 생성 ~ 소멸 과정
+- 액티비티 종료 : onDestroy()까지의 호출을 의미
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-09-ALC2.PNG" height="auto" />
+
+#### 활성 상태
+
+- 액티비티가 실행되어 화면에 나오고 사용자 이벤트 처리 가능 상태
+- 처음 실행된 액티비티는 onCreate() → onStart() → onResume() 함수까지 호출
+
+#### 일시 정지 상태
+
+- 액티비티가 화면에 보이지만 포커스를 잃어 사용자 이벤트를 처리할 수 없는 상태
+- onPause() 함수까지 호출된 상태
+
+#### 비활성 상태
+
+- 액티비티가 종료되지 않고 화면에만 보이지 않는 상태
+- 활성 상태에서 비활성 상태가 되면 onPause() → onStop() 함수까지 호출
+
+### 액티비티 상태 저장
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-10-ASS.PNG" height="auto" />
+
+- 액티비티 종료 : 객체 소멸 -> 액티비티의 데이터 모두 소멸
+- 상태 저장 : 액티비티 종료로 메모리 데이터가 사라져도 재실행 시 사용자가 저장한 데이터로 액티비티의 상태를 복원하겠다는 의미
+- 화면 전환 : 액티비티 종료 후 출력 -> 즉, 액티비티의 데이터 초기화
+
+#### Bundle
+
+- 액티비티 종료 후 저장했다가 복원할 데이터가 있는 경우 이용하는 객체
+
+```kt
+// 번들 객체 사용 예시
+
+override fun onCreate(savedInstanceState: Bundle?){
+  super.onCreate(savedInstanceState)
+}
+
+override fun onRestoreInstanceState(savedInstanceState: Bundle){
+  super.onRestoreInstanceState(savedInstanceState)
+}
+
+override fun onSavedInstanceState(outState: Bundle?){
+  super.onSavedInstanceState(outState)
+}
+```
+
+(여기 부분 추가 필요 : 코드 부분 전부)
+
 ## 3절. 액티비티 ANR 문제
 
+### ANR 문제
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-11-Thread.PNG" height="auto" />
+
+- 액티비티가 응답하지 않는 오류 상황
+- 메인 스레드 : 시스템에서 액티비티를 실행하는 수행 흐름
+- UI 스레드 : 화면을 출력하는 수행 흐름
+  
 ## 4절. 코루틴
 
 ## 5장. ToDoList 앱 구현
