@@ -10,7 +10,7 @@
 >
 > 4절. 확장 플로팅 액션 버튼
 >
-> 5장. 머터리얼 화면 구성
+> 5장. 머터리얼 화면 구성   
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch08)
 
 ## 1절. 앱바
