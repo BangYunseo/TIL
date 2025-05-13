@@ -10,7 +10,7 @@
 >
 > 4절. 코루틴
 >
-> 5장. ToDoList 앱 구현   
+> 5장. ToDoList 앱 구현  
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch09)
 
 ## 1절. 인텐트
@@ -58,10 +58,10 @@ startActivity(intent)
 - 인텐트에 담는 부가 정보
 - 인텐트에 컴포넌트 실행 요청 시 데이터를 함께 전송하려고 할 경우 이용
 
-|함수 종류|설명|
-|:---:|:--|
-|putExtra()|인텐트에 엑스트라 데이터를 추가하는 함수|
-|getIntExtra()|데이터를 추가로 가져오는 인텐트 객체 함수|
+|   함수 종류   | 설명                                      |
+| :-----------: | :---------------------------------------- |
+|  putExtra()   | 인텐트에 엑스트라 데이터를 추가하는 함수  |
+| getIntExtra() | 데이터를 추가로 가져오는 인텐트 객체 함수 |
 
 ```kt
 // 엑스트라 데이터 추가
@@ -83,10 +83,10 @@ val data2 = intent.getIntExtra("data2", 0)
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-03-ARL.PNG" height="auto" />
 
-|인텐트로 액티비티 시작하는 방법|
-|:---:|
-|public void startActivity(Intent intent)|
-|ActivityResultLauncher(권장)|
+|     인텐트로 액티비티 시작하는 방법      |
+| :--------------------------------------: |
+| public void startActivity(Intent intent) |
+|       ActivityResultLauncher(권장)       |
 
 #### ActivityResultLauncher
 
@@ -98,19 +98,19 @@ val data2 = intent.getIntExtra("data2", 0)
 - Contract
   - ActivityResultLauncher로 실행될 요청을 처리하는 역할
   - ActivityResultContract를 상속받은 서브 클래스
- 
-|종류|설명|
-|:---:|:---|
-|PickContact|선택한 연락처 Uri 획득|
-|RequestPermission|권한 요청 · 허락 여부 파악|
-|RequestMultiplePermissions|여러 권한 동시 요청|
-|StartActivityForResult|인텐트 발생 · 액티비티 실행 결과 획득|
-|TakePicturePreview|사진 촬영 후 비트맵 획득|
-|TakePicture|사진 촬영·저장·비트맵 획득|
+
+|            종류            | 설명                                  |
+| :------------------------: | :------------------------------------ |
+|        PickContact         | 선택한 연락처 Uri 획득                |
+|     RequestPermission      | 권한 요청 · 허락 여부 파악            |
+| RequestMultiplePermissions | 여러 권한 동시 요청                   |
+|   StartActivityForResult   | 인텐트 발생 · 액티비티 실행 결과 획득 |
+|     TakePicturePreview     | 사진 촬영 후 비트맵 획득              |
+|        TakePicture         | 사진 촬영·저장·비트맵 획득            |
 
 - launch
   - 함수 호출 시 ActivityResultLauncher에 등록된 Contract 객체 실행
- 
+
 ```kt
 // ActivityResultLauncher 생성
 
@@ -147,16 +147,16 @@ finish()
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-07-BF.PNG" height="auto" />
 
-|태그 종류|설명|
-|:---:|:---|
-|<action>|컴포넌트의 기능 표현 문자열|
-|<category>|컴포넌트가 포함되는 범주 표현 문자열|
-|<data>|컴포넌트에 필요한 데이터 정보|
+| 태그 종류  | 설명                                 |
+| :--------: | :----------------------------------- |
+|  <action>  | 컴포넌트의 기능 표현 문자열          |
+| <category> | 컴포넌트가 포함되는 범주 표현 문자열 |
+|   <data>   | 컴포넌트에 필요한 데이터 정보        |
 
 ```xml
 <!-- 자동 생성 메인 액티비티 -->
 
-<activity android:name=".MainActivity" />
+<activity android:name=".MainActivity"
   android:exported="true" >
   <intent-filter>
     <action android:name="android.intent.action.MAIN" />
@@ -198,7 +198,7 @@ startActivity(intent)
 ```xml
 <!-- mineType 설정 -->
 
-<activity android:name=".TwoActivity>
+<activity android:name=".TwoActivity">
   <intent-filter>
     <action android:name="ACTION_EDIT" />
     <category android:name="android.intent.category.DEFAULT" />
@@ -214,6 +214,7 @@ val intent = Intent("ACTION_EDIT")
 intent.type = "image/*"
 startActivity(intent)
 ```
+
 - 실행할 컴포넌트 정보를 어떻게 설정하는가?
 
 ```xml
@@ -245,11 +246,11 @@ startActivity(intent)
 
 ### 액티비티 인텐트 동작 방식
 
-|액티비티 개수|시스템 처리|
-|:---:|:---|
-|0게|인텐트를 시작한 곳에 오류 발생|
-|1개|문제없이 실행|
-|n개|사용자 선택으로 하나만 실행|
+| 액티비티 개수 | 시스템 처리                    |
+| :-----------: | :----------------------------- |
+|      0게      | 인텐트를 시작한 곳에 오류 발생 |
+|      1개      | 문제없이 실행                  |
+|      n개      | 사용자 선택으로 하나만 실행    |
 
 ```kt
 // 해당 액티비티가 없는 경우 예외 처리
@@ -330,7 +331,29 @@ override fun onSavedInstanceState(outState: Bundle?){
 }
 ```
 
-(여기 부분 추가 필요 : 코드 부분 전부)
+- Bundle에 데이터를 담으면 자동으로 데이터를 파일로 저장
+
+```kt
+// 번들에 데이터 저장
+
+override fun onSaveInstanceState(outState: Bundle) {
+  super.onSaveInstanceState(outState)
+  outState.putSpring("data1", "hello")
+  outState.putInt("data2", 10)
+}
+```
+
+- 액티비티가 다시 생성되어 실행될 때 캐싱파일이 있으면 그 내용을 번들 객체에 담아 onCreate(), onRestoreInstanceState() 함수의 매개 변수로 전달
+
+```kt
+// 번들에 저장된 데이터 반환
+
+override fun onRestoreInstanceState(savedInstanceSttate: Bundle){
+  super.onRestoreInstanceState(savedInstanceSttate)
+  val data1 = savedInstanceState.getString("data1")
+  val data2 = savedInstanceState.getInt("data2")
+}
+```
 
 ## 3절. 액티비티 ANR 문제
 
@@ -341,11 +364,163 @@ override fun onSavedInstanceState(outState: Bundle?){
 - 액티비티가 응답하지 않는 오류 상황
 - 메인 스레드 : 시스템에서 액티비티를 실행하는 수행 흐름
 - UI 스레드 : 화면을 출력하는 수행 흐름
-  
+
+### 해결 방법 (1) : 개발자 스레드 분리
+
+- 액티비티를 실행한 메인 스레드 외의 실행 흐름(개발자 스레드)을 따로 생성 후 시간이 오래 걸리는 작업 담당
+- 이 방법으로 대체할 경우 ANR 오류는 해결되지만 화면을 변경할 수 없다는 문제 발생
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-12-Thread2.PNG" height="auto" />
+
 ## 4절. 코루틴
+
+### 해결 방법 (2) : 코루틴
+
+#### 코루틴
+
+- 비동기 경량 스레드
+- 프로그래밍 언어에서 제공하는 기능
+
+|              장점               |
+| :-----------------------------: |
+|              경량               |
+|        적은 메모리 누수         |
+|    취소 등 다양한 기능 지원     |
+| 많은 제트팩 라이브러리에서 적용 |
+
+### 안드로이드에서의 코루틴 이용
+
+```kt
+// 코루틴 등록
+
+implementation("org.jetbrains.kotlin:kotlinx-coroutines-android:1.7.3")
+```
+
+### ANR 오류 발생 코드
+
+```kt
+// 오랜 시간 소모 작업 예시
+
+var sum = 0L
+var time = measureTimeMillis{
+  for(i in 1..2_000_000_000){
+    sum += i
+  }
+}
+
+Log.d("Yunseo", "time : $time")
+binding.resultView.text = "sum : $sum"
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-13-Kolutine.PNG" height="auto" />
+
+- ANR 오류 해결을 위한 스레드-핸들러 구조
+
+```kt
+// 스레드 - 핸들러 구조 코드
+
+val handler = object:Handler() {
+  override fun handleMessage(msg: Message){
+    super.handleMessage(msg)
+    binding.resultView.text = "sum : ${msg.arg1}"
+  }
+}
+
+thread{
+  var sum = 0L
+  var time = measureTimeMillis {
+    for(i in 1..2_000_000_000) {
+      sum += i
+    }
+    val message = Message()
+    message.arg1 = sum.toInt()
+    handler.sendMessage(message)
+  }
+  Log.d("Yunseo", "time : $time")
+}
+```
+
+### 코드의 코루틴화
+
+- 코루틴 구등을 위해서 스코프 준비
+- 스코프에서 코루틴 구동
+
+#### 코루틴 스코프
+
+- CoroutineScope를 구현한 클래스 객체
+- 직접 구현 가능
+- 코틀린 언어 제공 스코프 이용
+
+| 코틀린 제공 스코프 종류 |
+| :---------------------: |
+|       GlobalScope       |
+|       ActorScope        |
+|      ProducerScope      |
+
+```kt
+// 코루틴 코드
+
+// 백그라운드에서 동작(시간이 오래 걸리는 작업)
+val channel = Channel<Int>()
+val backgroundScope = CoroutineScope(Dispatchers.Default + Job())
+backgroundScope.launch {
+  var sum = 0L
+  var time = measureTimeMillis {
+    for(i in 1..2_000_000_000) {
+      sum += i
+    }
+  }
+
+  Log.d("Yunseo", "time : $time")
+  channel.send(sum.toInt())
+}
+
+// 메인 스레드에서 동작(화면에 결괏값 표시)
+val mainScope = GlobalScope.launch(Dispatchers.Main) {
+  channel.consumeEach {
+    binding.resultView.text = "sum : $it"
+  }
+}
+```
+
+### Dispatcher
+
+- 스코프에서 구동한 코루틴이 어디에서 동작해야 하는지 표시
+
+|        종류         | 설명                                            |
+| :-----------------: | :---------------------------------------------- |
+|  Dispatchers.Main   | 액티비티의 메인 스레드에서 동작하는 코루틴 생성 |
+|   Dispatchers.IO    | 파일에 읽기·쓰기 또는 네트워크 작업 등에 최적화 |
+| Dispatchers.Default | CPU를 많이 사용하는 작업을 백그라운드에서 실행  |
 
 ## 5장. ToDoList 앱 구현
 
 ### 1) 모듈 생성 & 빌드 그래들 설정
+
+- Ch13_Activity 모듈 생성
+- 뷰 바인딩 사용 설정
+
+```kts
+viewBinding.isEnabled = true
+```
+
+### 2) 할 일 등록 액티비티 생성
+
+- New → Activity → Empty Activity → 액티비티 이름에 AddActivity 입력
+
+### 3) 리소스 & 소스 파일 복사
+
+- res 디렉터리 아래에 drawable, layout, menu 디렉터리를 현재 모듈의 res 디렉터리로 복사
+- 소스가 든 디렉터리에서 AddActivity.kt, Main Activity.kt, MyAdapter.kt 파일을 현재 모듈의 소스 영역에 복사
+
+### 4) 할 일 등록 액티비티 작성
+
+- AddActivity.kt 파일을 열어 내용을 추가
+
+### 5) 메인 액티비티 작성
+
+- MainActivity.kt 파일을 열고 내용을 추가
+
+### 6) 앱 실행
 
 [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch09)
