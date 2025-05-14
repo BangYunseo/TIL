@@ -23,7 +23,7 @@
   - 시스템에서 인텐트 정보 분석 후 맞춤형 컴포넌트 실행
   - 외부 앱 컴포넌트와 연동할 경우에도 마찬가지
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-01-Intent.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-01-Intent.PNG" height="auto" />
 
 - startActivity() : 인텐트를 시스템에 전달
 - Intent 생성자 매개변수 : 클래스 타입 레퍼런스 정보
@@ -53,7 +53,7 @@ startActivity(intent)
 
 ### 인텐트 엑스트라 데이터
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-02-IntentExtraData.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-02-IntentExtraData.PNG" height="auto" />
 
 - 인텐트에 담는 부가 정보
 - 인텐트에 컴포넌트 실행 요청 시 데이터를 함께 전송하려고 할 경우 이용
@@ -81,7 +81,7 @@ val data2 = intent.getIntExtra("data2", 0)
 
 ### 액티비티 화면 전환
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-03-ARL.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-03-ARL.PNG" height="auto" />
 
 |     인텐트로 액티비티 시작하는 방법      |
 | :--------------------------------------: |
@@ -90,7 +90,7 @@ val data2 = intent.getIntExtra("data2", 0)
 
 #### ActivityResultLauncher
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-04-ARL2.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-04-ARL2.PNG" height="auto" />
 
 - registerForActivityResult() 함수로 만드는 객체
 - 함수의 매개 변수에 실제 작업자 Contract 객체와 결과를 처리하는 Callback 객체 등록
@@ -145,7 +145,7 @@ finish()
 
 - 하위 태그 정보 설정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-07-BF.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-07-BF.PNG" height="auto" />
 
 | 태그 종류  | 설명                                 |
 | :--------: | :----------------------------------- |
@@ -235,14 +235,14 @@ startActivity(intent)
 
 - 클래스 타입 레퍼런스 정보 활용 인텐트
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-05-EI.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-05-EI.PNG" height="auto" />
 
 #### 암시적 인텐트(Implicit Intent)
 
 - 인텐트 필터 정보를 활용한 인텐트
 - AndroidManifest.xml 파일에 선언된 인텐트 필터 사용
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-06-II.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-06-II.PNG" height="auto" />
 
 ### 액티비티 인텐트 동작 방식
 
@@ -281,12 +281,12 @@ startActivity(intent)
 
 ### 액티비티 상태
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-08-ALC.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-08-ALC.PNG" height="auto" />
 
 - 생명 주기 : 액티비티의 생성 ~ 소멸 과정
 - 액티비티 종료 : onDestroy()까지의 호출을 의미
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-09-ALC2.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-09-ALC2.PNG" height="auto" />
 
 #### 활성 상태
 
@@ -305,7 +305,7 @@ startActivity(intent)
 
 ### 액티비티 상태 저장
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-10-ASS.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-10-ASS.PNG" height="auto" />
 
 - 액티비티 종료 : 객체 소멸 -> 액티비티의 데이터 모두 소멸
 - 상태 저장 : 액티비티 종료로 메모리 데이터가 사라져도 재실행 시 사용자가 저장한 데이터로 액티비티의 상태를 복원하겠다는 의미
@@ -359,7 +359,7 @@ override fun onRestoreInstanceState(savedInstanceSttate: Bundle){
 
 ### ANR 문제
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-11-Thread.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-11-Thread.PNG" height="auto" />
 
 - 액티비티가 응답하지 않는 오류 상황
 - 메인 스레드 : 시스템에서 액티비티를 실행하는 수행 흐름
@@ -370,7 +370,7 @@ override fun onRestoreInstanceState(savedInstanceSttate: Bundle){
 - 액티비티를 실행한 메인 스레드 외의 실행 흐름(개발자 스레드)을 따로 생성 후 시간이 오래 걸리는 작업 담당
 - 이 방법으로 대체할 경우 ANR 오류는 해결되지만 화면을 변경할 수 없다는 문제 발생
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-12-Thread2.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-12-Thread2.PNG" height="auto" />
 
 ## 4절. 코루틴
 
@@ -412,7 +412,7 @@ Log.d("Yunseo", "time : $time")
 binding.resultView.text = "sum : $sum"
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch08-13-Kolutine.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch08/ch08-13-Kolutine.PNG" height="auto" />
 
 - ANR 오류 해결을 위한 스레드-핸들러 구조
 
