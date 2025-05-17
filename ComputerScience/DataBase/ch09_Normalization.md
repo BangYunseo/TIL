@@ -1,4 +1,4 @@
-# Chapter 7. SQL 질의어
+# Chapter 9. 정규화(Normalization)
 
 > 1절. SQL 소개
 >
