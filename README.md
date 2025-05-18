@@ -3,7 +3,6 @@
 <html>
     <head>
         <title>TIL - Today I Learned</title>
-        <meta charset="utf-8">
     </head>
     
 <h1><Strong>TIL</Strong> - Today I Learned</h1>
