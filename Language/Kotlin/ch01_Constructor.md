@@ -2,8 +2,6 @@
 
 > '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 4장 학습 내용
 >
-> [소스코드]()
->
 > 1절. 클래스와 생성자
 >
 > 2절. 클래스를 재사용하는 상속
@@ -13,12 +11,18 @@
 
 ## 1절. 클래스와 생성자
 
-#### 클래스 선언
+### 클래스 선언
 
 - class 
-  - constructor 키워드로 클래스 선언
-  - 본문에 입력하는 내용이 없을 경우 {} 생략
-  - 멤버 구성 : 생성자, 변수, 함수, 클래스
+  - constructor로 선언
+  - 본문 입력 내용이 없을 경우 {} 생략
+
+|멤버 구성|
+|:---:|
+|생성자|
+|변수|
+|함수|
+|클래스|
 
 ```Kotlin
 class User {
@@ -35,7 +39,8 @@ class User {
 }
 ```
 
-  - 객체를 생성해 사용하며 객체로 클래스의 멤버에 접근
+  - 객체 생성 후 사용
+  - 객체 형태로 클래스의 멤버에 접근
   - new 키워드 미사용
 
 ```kt
@@ -47,9 +52,9 @@ user.someFun()
 
 ### 주 생성자
 
-- constructor 키워드로 클래스 선언부에 선언
-- 주 생성자 선언은 필수가 아니며 한 클래스에 하나만 가능
-- constructor 키워드 생략 가능
+- constructor 키워드로 선언
+  - 다만, 주 생성자 선언 생략 가능
+  - 한 클래스 당 하나의 클래스만 가능
 
 ```kt
 // 주 생성자 선언
@@ -74,8 +79,9 @@ class User{
 }
 ```
 
-- 주 생성자 본문 : init 영역
-  - init : 주 생성자의 본문을 구현하며 지정한 영역은 객체 생성 시 자동 실행
+- init 영역
+  - 주 생성자의 본문을 구현
+  - 지정 영역은 객체 생성 시 자동 실행
  
 ```Kotlin
 class User(name: String, count: Int){
@@ -92,11 +98,9 @@ fun main(){
 // i am init!!
 ```
 
-- 생성자의 매개변수를 클래스의 멤버 변수로 선언하는 방법
-    - 생성자의 매개 변수는 기본적으로 생성자에서만 사용할 수 있는 지역 변수
-    - 매개 변수를 var이나 val 키워드로 선언하여 클래스의 멤버 변수로 활용
-
 ```Kotlin
+// init 영역 오류 발생
+
 class User(name: String, count: Int){
   init{
     println("name : $name, count : $count")
@@ -108,7 +112,12 @@ class User(name: String, count: Int){
 }
 ```
 
-- 매개 변수를 var이나 val 키워드로 선언하여 클래스의 멤버 변수로 활용
+- 생성자의 매개변수를 클래스 멤버 변수로 선언
+    - 생성자의 매개 변수 : 생성자에서만 사용할 수 있는 <strong>지역 변수</strong> 
+    - 선언 방법(키워드)
+      - var
+      - val
+
 
 ```kt
 class User(val name: String, val count: Int){
@@ -118,17 +127,17 @@ class User(val name: String, val count: Int){
 }
 
 fun main(){
-  val user = User("Bang", 22)
+  val user = User("Bang", 2003)
   user.someFun()
 }
 
 // 실행 결과
-// name = Bang, count = 22
+// name = Bang, count = 2003
 ```
 
 ### 보조 생성자
 
-- 클래스의 본문에 constructor 키워드로 선언하는 함수
+- 클래스 본문에 constructor 키워드로 선언
 - 여러 개 추가 가능
 
 ```Kotlin
