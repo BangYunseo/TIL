@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+    <head>
+    </head>
 <h1><Strong>TIL</Strong> - Today I Learned</h1>
 
-## pdf 저장
+<body>
+<h2>PDF 저장</h2>
 
 - ctrl + shift + P
 - Chrome 인쇄 기능
@@ -69,3 +73,5 @@
 
 </details>
 
+</body>
+</html>
