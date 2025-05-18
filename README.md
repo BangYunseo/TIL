@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?xml version="1.0" encoding="UTF-8"?>
 <html>
-    <head>
-        <title>TIL - Today I Learned</title>
-    </head>
+<head>
+<!--<title>TIL - Today I Learned</title>-->
+</head>
     
 <h1><Strong>TIL</Strong> - Today I Learned</h1>
 
