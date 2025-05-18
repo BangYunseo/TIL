@@ -119,6 +119,16 @@
 
 <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-14-RBT.PNG" height="auto" />
 
+### 매우 긴 수선 예시
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-15-RBex1.PNG" height="auto" />
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-16-RBex2.PNG" height="auto" />
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-17-RBex3.PNG" height="auto" />
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-18-RBex4.PNG" height="auto" />
+
 ## 4절. 코드 구현
 
 ### AVL 트리 코드 구현(파이썬)
@@ -145,14 +155,43 @@ class AVLTree:
     self.NO_NEED = 0
     self.ILLEGAL = -1
 
+  # 높이 반환 함수
   def height(self, node):
     return node.height
 
-  def LeftRotation(t):
-  childR = t.right
-  childRL = childR.left
-  childR.left = t
-  t.right = childRL
-  childR.height = max(childR.right.height, childR.left.height) + 1
-  t.height = max(t.right.height, t.left.height) + 1
+  # 좌회전
+  def LeftRotation(self, t):
+    childR = t.right
+    childRL = childR.left
+    childR.left = t
+    t.right = childRL
+
+    childR.height = max(self.height(childR.right), self.height(childR.left)) + 1
+    t.height = max(self.height(t.right), self.height(t.left)) + 1
+    return childR
+
+  # 우회전
+  def RightRotation(self, t):
+    childL = t.left
+    childLR = childL.right
+    childL.right = t
+    t.left = childLR
+
+    childL.height = max(self.height(childL.right), self.height(childL.left)) + 1
+    t.height = max(self.height(t.right), self.height(t.left)) + 1
+    return childL
+
+  # 수선
+  def BalancingAVL(self, t, type):
+    if type == self.LL:
+      t = self.RightRotation(t)
+    elif type == self.LR:
+      t.left = self.LeftRotation(t.left)
+      t = self.RightRotation(t)
+    elif type == self.RR :
+      t = self.LeftRotation(t)
+    elif type == self.RL :
+      t.right = self.RightRotation(t.right)
+      t = self.LeftRotation(t)
+    return t
 ```
