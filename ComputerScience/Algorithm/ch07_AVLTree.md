@@ -2,7 +2,7 @@
 
 > 0절. 개요
 >
-> 1절. 재귀적 해법
+> 1절. AVL 트리
 >
 > 2절.
 >
@@ -15,20 +15,26 @@
 - 러시아 수학자 Adelson, Velskii, Landis에 의해 제안(1962년)
 - 모든 노드의 왼쪽 서브 트리 높이(깊이)와 오른쪽 서브 트리 높이 차가 1 이하
 
-### 트리의 깊이와 높이
+## 1절. AVL 트리
 
-- 이진 트리 한 노드 N에 대한 깊이(Depth)와 높이(Height)
+### 깊이(Depth), 높이(Height)
+
+- 이진 트리 한 노드 N에 대한 깊이(Depth)와 높이(Height) 정의
 
 <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-01-AVL.PNG" height="auto" />
 
-|     종류     | 설명                                         | 영문                                          |
-| :----------: | :------------------------------------------- | :-------------------------------------------- |
-| 깊이(Depth)  | 루트 노드에서 노드 N까지의 간선 수           | of edges from the root to the node N          |
-| 높이(Height) | 노드 N에서 가장 깊은 리프 노드까지의 간선 수 |  of edges from the node N to the deepest leaf |
+|     종류     | 설명                                         |
+| :----------: | :------------------------------------------- |
+| 깊이(Depth)  | 루트 노드에서 노드 N까지의 간선 수           |
+| 높이(Height) | 노드 N에서 가장 깊은 리프 노드까지의 간선 수 |
 
-- 임의 그래프 두 정점 s, t간 최단 경로 계산
-  - s => t에 이르기 직전 방문하는 정점을 x라고 가정
-  - 즉, s => x => t의 경로 계산
-  - s와 t 간 최단 경로는 s와 x 간 최단 경로 포함
+### 균형 인수(Balance Factor)
 
-## 1절. 재귀적 해법
+- 이진 트리 한 노드 N에 대한 균형 인수(Balance Factor) 정의
+
+| <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-02-BF1.PNG" height="auto" /> | <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-03-BF2.PNG" height="auto" /> |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+
+> Balance Factor(N)  
+> = Height(RightSubtree(N))- Height(LeftSubtree(N))  
+> = Height(LeftSubtree(N))- Height(RightSubtree(N))

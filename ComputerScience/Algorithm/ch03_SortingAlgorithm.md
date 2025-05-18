@@ -67,7 +67,7 @@ def SelectionSort(A):
 
 ### 선택 정렬 예시
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/03-01-SelectionSort.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch03-01-SelectionSort.PNG" height="auto" />
 
 1. 배열에서 가장 작은 항목 탐색 후 첫 번째 항목과 교환
 2. 다음으로 작은 항목을 찾아 두 번째 항목과 교환
@@ -75,7 +75,7 @@ def SelectionSort(A):
 
 ### 선택 정렬 과정
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/03-02-SelectionSortEx.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch03-02-SelectionSortEx.PNG" height="auto" />
 
 ### 선택 정렬 문제
 
@@ -118,7 +118,7 @@ def BubbleSort(A):
 
 ### 버블 정렬 예시
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/03-03-BubbleSort.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch03-03-BubbleSort.PNG" height="auto" />
 
 1. 정렬할 배열이 주어짐
 2. 왼쪽부터 시작해 이웃한 쌍 비교
@@ -127,7 +127,7 @@ def BubbleSort(A):
 
 ### 버블 정렬 과정
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/03-04-BubbleSortEx.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch03-04-BubbleSortEx.PNG" height="auto" />
 
 ### 버블 정렬 문제
 
@@ -148,7 +148,7 @@ def BubbleSort(A):
 
 ### 삽입 정렬 과정
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/03-05-InsertionSort.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch03-05-InsertionSort.PNG" height="auto" />
 
 ### 삽입 정렬 코드 구현(Python)
 
