@@ -4,9 +4,9 @@
 >
 > 1절. 레드 블랙 트리
 >
-> 2절.
+> 2절. 삽입
 >
-> 3절.
+> 3절. 삭제
 >
 > 4절. 코드 구현
 
@@ -14,188 +14,166 @@
 
 ### Red - Black 트리
 
-|                                        조건                                        |
-| :--------------------------------------------------------------------------------: |
-|                                  루트 노드는 블랙                                  |
-|                             모든 리프(NIL) 노드는 블랙                             |
-|                            레드 노드의 자식은 블랙 노드                            |
-| 루트 노드에서 임의의 리프 노드에 이르는 경로에서 만나는 블랙 노드의 수는 모두 동일 |
+|                       조건                        |
+| :-----------------------------------------------: |
+|           모든 노드는 블랙 or 레드 노드           |
+|                 루트 노드는 블랙                  |
+|               리프 노드(NIL)는 블랙               |
+|            레드 노드 자식은 블랙 노드             |
+| 루트 노드 -> 리프 노드 경로의 블랙 노드 수는 동일 |
 
-## 1절. AVL 트리
+## 1절. 레드 블랙 트리
 
-### 깊이(Depth), 높이(Height)
+### 레드 블랙 트리 구현
 
-- 이진 트리 한 노드 N에 대한 깊이(Depth)와 높이(Height) 정의
+- NIL 노드 처리
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-01-AVL.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-01-RBT.PNG" height="auto" />
 
-|     종류     | 설명                                         |
-| :----------: | :------------------------------------------- |
-| 깊이(Depth)  | 루트 노드에서 노드 N까지의 간선 수           |
-| 높이(Height) | 노드 N에서 가장 깊은 리프 노드까지의 간선 수 |
+### 레드 블랙 트리 요구사항
 
-### 균형 인수(Balance Factor)
+1. 각 노드는 색 저장을 위한 한 비트의 저장소 필요
+2. 가장 긴 PATH(root에서 가장 먼 NIL)의 길이는 가장 짧은 PATH(root에서 가장 가까운 NIL)의 길이 2배를 넘지 못함
 
-- 이진 트리 한 노드 N에 대한 균형 인수(Balance Factor) 정의
+> 가장 짧은 PATH : 모든 블랙 노드  
+> 가장 긴 PATH : 레드 노드와 블랙 노드가 번갈아 나옴
 
-| <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-02-BF1.PNG" height="auto" /> | <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-03-BF2.PNG" height="auto" /> |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+### 동작
 
-> Balance Factor(N)  
-> = Height(RightSubtree(N))- Height(LeftSubtree(N))  
-> = Height(LeftSubtree(N))- Height(RightSubtree(N))
+- 레드 블랙 트리의 특성이 깨질 수 있는 동작의 경우 회전(rotation)을 통한 레드 블랙 트리 특성 유지 필요
+- 공간 복잡도 : $O(log$ $n)$
 
-> 노드 1의 경우  
-> Height(3) = 1  
-> Height(6) = 3  
-> Balance Factor(1) = Height(6) - Height(3) = 3 - 1 = 2
+|     종류     | rotation 여부 |  수행 시간   |
+| :----------: | :-----------: | :----------: |
+| 검색(Search) |       X       | $O(log$ $n)$ |
+| 삽입(Insert) |       O       | $O(log$ $n)$ |
+| 삭제(Delete) |       O       | $O(log$ $n)$ |
 
-### 개념도
+### 회전(Rotation)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-04-AVLT.PNG" height="auto" />
+- 서브 트리 위치 조정으로 트리 구조 변경
+- 키의 순서에 영향 X
+- 목표 : 트리 높이 감소
+  - 최대 높이 : $O(log$ $n)$
+  - 큰 서브 트리 : 위
+  - 작은 서브 트리 : 아래
 
-### What is AVL Tree?
+### 레드 블랙 트리 간 관계
 
-| <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-05-AVL1.PNG" height="auto" /> | <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-06-AVL2.PNG" height="auto" /> |
-| ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-02-RBR.PNG" height="auto" />
 
-## 2절. 수선
+- Z 노드 기준 관계
+  - Parent
+  - Uncle
+  - Grandparent
 
-### 수선 ?
+## 2절. 삽입
 
-- 삽입, 삭제 연산 후 트리의 균형이 깨질 때 트리의 균형을 다시 맞추는 과정
-- 회전(rotation) 연산 이용
+### 삽입 전략(Insert Strategy)
 
-### 수선 예시
+| 전략                                                      |
+| :-------------------------------------------------------- |
+| 노드 삽입 시 레드 노드                                    |
+| 규칙 위반 시 노드 색상 변경(Recoloring) or 회전(Rotation) |
 
-- 균형이 깨진 서브 트리 중 가장 낮은 곳부터 수선
+### 삽입 시나리오
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-07-RB.PNG" height="auto" />
+|       시나리오 종류       | 설명                                            |
+| :-----------------------: | :---------------------------------------------- |
+|         Z = root          | 노드가 루트 노드인 경우                         |
+|       Z.uncle = red       | 노드.uncle이 레드 노드인 경우                   |
+| Z.uncle = black(Triangle) | 노드.uncle이 블랙 노드이며 Triangle 형태인 경우 |
+|   Z.uncle = black(Line)   | 노드.uncle이 블랙 노드이며 Line 형태인 경우     |
 
-#### 좌회전 수선 : 불균형 1개
+### Z = root
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-08-RBP1.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-03-Z.PNG" height="auto" />
 
-#### 좌회전 수선 : 불균형 2개
+1. 삽입된 Z는 레드 노드
+2. Z를 블랙 노드로 교체
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-09-RBP2.PNG" height="auto" />
+### Z.uncle = red
 
-## 3절. 표준화 : 4가지 수선
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-04-Zred.PNG" height="auto" />
 
-### 표준화
+1. 삽입된 Z는 레드 노드
+2. Z의 Parent, Uncle, Grandparent 모두 Recoloring
+   - Parent : red -> black
+   - Uncle : red -> black
+   - Grandparent : black -> red
 
-- t = root
-  - t의 4가지 서브 트리 유형에 따른 수선
+### Z.uncle = black(Triangle)
 
-| 유형 | 설명                           |
-| :--: | :----------------------------- |
-|  LL  | t.left.left가 가장 깊은 경우   |
-|  LR  | t.left.right가 가장 깊은 경우  |
-|  RR  | t.right.right가 가장 깊은 경우 |
-|  RL  | t.right.left가 가장 깊은 경우  |
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-05-ZblackT.PNG" height="auto" />
 
-### LL
+1. 삽입된 Z는 레드 노드
+2. Z의 Parent와 Rotation
 
-- 우회전(Right Rotation)
+### Z.uncle black(Line)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-10-LL.PNG" height="auto" />
+| <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-06-ZblackL.PNG" height="auto" /> | <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-07-ZblackL2.PNG" height="auto" /> |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 
-### LR
+1. 삽입된 Z는 레드 노드
+2. Z의 Parent 기준 Rotation
+3. Z의 Parent, Uncle 모두 Recoloring
+   - Parent : red -> black
+   - Uncle : black -> red
 
-- 좌회전 후 우회전(Left Rotation and Right Rotation)
-- 타입 LL로의 변환
+### 시나리오 결과 요약
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-11-LR.PNG" height="auto" />
+|       시나리오 종류       | 결과                           |
+| :-----------------------: | :----------------------------- |
+|         Z = root          | Color Black                    |
+|       Z.uncle = red       | Recoloring                     |
+| Z.uncle = black(Triangle) | Rotate Z.parent                |
+|   Z.uncle = black(Line)   | Rotate Z.grandparent & recolor |
 
-### RR
+#### ex 1 : 기본 삽입
 
-- 좌회전(Left Rotation)
+- 15, 5, 1 삽입
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-12-RR.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-08-Insert1.PNG" height="auto" />
 
-### RL
+#### ex 2 : 심화 삽입 (1)
 
-- 우회전 후 좌회전(Right Rotation and Left Rotation)
+- 10 삽입
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-13-RL.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-09-Insert2.PNG" height="auto" />
 
-### 4가지 유형 수선 요약
+#### ex 3 : 심화 삽입 (2)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-14-RBT.PNG" height="auto" />
+- 3, 1, 5, 7, 6, 8, 9, 10 순서의 삽입
 
-### 매우 긴 수선 예시
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-10-Insert3.PNG" height="auto" />
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-15-RBex1.PNG" height="auto" />
+## 3절. 삭제
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-16-RBex2.PNG" height="auto" />
+### 삭제 전략(Delete Strategy)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-17-RBex3.PNG" height="auto" />
+| 전략                                                                                     |
+| :--------------------------------------------------------------------------------------- |
+| 노드 삭제 후 주변의 레드 블랙 특성 위반 여부 확인                                        |
+| 두 개의 자식을 가진 노드 삭제 작업의 경우 자식이 없거나 하나인 노드의 삭제 작업으로 변환 |
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-18-RBex4.PNG" height="auto" />
+### 단순 삭제
 
-## 4절. 코드 구현
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-11-SD1.PNG" height="auto" />
 
-### AVL 트리 코드 구현(파이썬)
+- 삭제 노드가 레드 노드인 경우
 
-- NIL 노드를 활용한 구현
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-12-SD2.PNG" height="auto" />
 
-```Py
-# t = 회전 중심 노드
+- 삭제 노드가 블랙 노드이면서 자식 노드가 레드 노드인 경우
 
-# AVL 노드 구현
-class AVLNode:
-  def __init__(self, newItem, left, right, h):
-    self.item = newItem
-    self.left = left
-    self.right = right
-    self.height = h
+### 심화 삭제
 
-# AVL 트리 구현
-class AVLTree:
-  def __init__(self):
-    self.NIL = AVLNode(None, None, None, 0)
-    self.__root = self.NIL
-    self.LL = 1; self.LR = 2; self.RR = 3; self.RL = 4
-    self.NO_NEED = 0
-    self.ILLEGAL = -1
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-13-Delete1.PNG" height="auto" />
 
-  # 높이 반환 함수
-  def height(self, node):
-    return node.height
+- 블랙 노드 제거 시 x에서 리프 노드로 이르는 블랙 노드의 수가 상이
+  - 레드 블랙 특성 위반 가능성 존재
 
-  # 좌회전
-  def LeftRotation(self, t):
-    childR = t.right
-    childRL = childR.left
-    childR.left = t
-    t.right = childRL
+### 심화 삭제 종류
 
-    childR.height = max(self.height(childR.right), self.height(childR.left)) + 1
-    t.height = max(self.height(t.right), self.height(t.left)) + 1
-    return childR
-
-  # 우회전
-  def RightRotation(self, t):
-    childL = t.left
-    childLR = childL.right
-    childL.right = t
-    t.left = childLR
-
-    childL.height = max(self.height(childL.right), self.height(childL.left)) + 1
-    t.height = max(self.height(t.right), self.height(t.left)) + 1
-    return childL
-
-  # 수선
-  def BalancingAVL(self, t, type):
-    if type == self.LL:
-      t = self.RightRotation(t)
-    elif type == self.LR:
-      t.left = self.LeftRotation(t.left)
-      t = self.RightRotation(t)
-    elif type == self.RR :
-      t = self.LeftRotation(t)
-    elif type == self.RL :
-      t.right = self.RightRotation(t.right)
-      t = self.LeftRotation(t)
-    return t
-```
+1. 루트 노드가 레드 노드인 경우
+2. 루트 노드가 블랙 노드인 경우
