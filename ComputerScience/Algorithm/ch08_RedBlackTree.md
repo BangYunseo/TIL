@@ -173,7 +173,23 @@
 - 블랙 노드 제거 시 x에서 리프 노드로 이르는 블랙 노드의 수가 상이
   - 레드 블랙 특성 위반 가능성 존재
 
-### 심화 삭제 종류
+### 심화 삭제 5가지
+
+| <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-14-DT1.PNG" height="auto" /> | <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-15-DT2.PNG" height="auto" /> |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
 
 1. 루트 노드가 레드 노드인 경우
-2. 루트 노드가 블랙 노드인 경우
+2. 루트 노드가 레드 / 블랙 노드 여부가 상관 없는 경우
+3. 루트 노드가 블랙 노드인 경우
+
+### 루트 노드가 레드 노드인 경우
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-16-rootRed.PNG" height="auto" />
+
+### 루트 노드가 레드 / 블랙 노드 여부가 상관 없는 경우
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-17-rootWhat.PNG" height="auto" />
+
+### 루트 노드가 레드 / 블랙 노드 여부가 상관 없는 경우
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch08/ch08-18-rootBlack.PNG" height="auto" />

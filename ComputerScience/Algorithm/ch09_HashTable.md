@@ -1,0 +1,240 @@
+# Chapter 9. 해시 테이블(Hash Table)
+
+> 0절. 개요
+>
+> 1절. 해시 테이블
+>
+> 2절. 충돌
+>
+> 3절. 체이닝
+>
+> 4절. 개방 주소
+>
+> 5절. 검색
+
+## 0절. 개요
+
+### Hash Table
+
+- Unordered Collection of Key-Value pairs
+- 원소의 저장자리가 원소 값에 무관하게 결정되는 자료구조
+- 평균 상수 시간$(O(1))$에 삽입 · 삭제 · 검색 가능
+- 매우 빠른 응답이 필요한 응용
+- 최솟값(최댓값) 검색 미지원
+
+## 1절. 해시 테이블
+
+### 해시 테이블
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-01-HT.PNG" height="auto" />
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-02-HT2.PNG" height="auto" />
+
+### 해시 테이블 예시
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-03-HTex.PNG" height="auto" />
+
+- 크기가 13인 해시 테이블에 5개 원소가 들어간 예시
+- 입력 : 25, 13, 16, 15, 7
+- 해시 함수 : h(x) = x mod 13
+
+  - h(25) = 25 mod 13 = 12
+  - h(13) = 13 mod 13 = 0
+  - h(16) = 16 mod 13 = 3
+  - h(15) = 15 mod 13 = 2
+  - h(7) = 7 mod 13 = 7
+
+- 적재율(Load Factor) = 저장된 원소 / 해시 테이블 크기 = 5 / 13
+- 데이터 입력이 증가하면 적재율도 증가, 충돌(Collision) 발생 확률 증가
+
+### 해시 함수(Hash Function)
+
+| 성질                                         |
+| :------------------------------------------- |
+| 입력되는 원소를 해시 테이블 전체에 고루 저장 |
+| 충돌 가능성이 작은 방향                      |
+| 계산 간단                                    |
+
+### 해시 함수 : 나누기(Division) 방법
+
+1. h(x) = x mod m
+2. m : 해시 테이블 크기, 대개 소수(prime)
+3. 해시 테이블 크기는 $2^k$에 가깝지 않은 소수 선택
+4. 해시 값은 입력 원소의 모든 비트를 이용 => 함수 값이 고루 퍼지도록 설정
+
+### 해시 함수 : 곱하기(Multiplication) 방법
+
+1. h(x) = m(xA mod 1) : 올림
+2. A : 0 < A < 1 인 상수
+   - Knuth는 $(\sqrt{5} - 1)/2$ 제안
+3. m이 소수일 필요가 없고 보통 $2^p$(p는 정수)
+
+- ex : m = 65,536, A = 0.6180339887인 경우
+  - x = 1,025,390의 해시값은 xA = 633,725.871673093
+  - (xA mod 1) = 0.871673093
+  - m을 곱하면 57,125.967
+  - 곱하기 방법 올림수 57,125
+
+### 곱하기(Multiplication) 방법 작동
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-04-MM.PNG" height="auto" />
+
+## 2절. 충돌
+
+### 충돌(Collision)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-05-Collision.PNG" height="auto" />
+
+- 해시 테이블의 한 주소를 두 개 이상의 원소가 경쟁하는 경우
+
+### 충돌 해결(Collision Resolution)
+
+1. 체이닝(Chaining)
+
+   - 같은 주소로 해싱되는 원소를 모두 하나의 연결 리스트(Linked List)로 관리
+   - 추가적인 연결 리스트 필요
+
+2. 개방 주소 방법(Open Addressing)
+
+   - 충돌이 일어나도 주어진 테이블에서 해결
+   - 추가적 공간 미사용
+
+## 3절. 체이닝
+
+### 체이닝
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-06-Chaining.PNG" height="auto" />
+
+- 적재율이 1을 넘어도 사용 가능
+
+## 4절. 개방 주소
+
+### 개방 주소
+
+- 빈자리가 생길 때까지 해시값 생성
+  - $h_{0}(x), h_{1}(x), h_{2}(x), h_{3}(x), ···$
+
+### 개방 주소 3가지 방법
+
+1. 선형 조사(Linear Probing)
+2. 이차원 조사(Quadratic Probing)
+3. 더블 해싱(Double Hashing)
+
+### 선형 조사(Linear Probing)
+
+- $h_i(x)$ = $(h(x) + i)$ $mod$ $m$
+
+#### 선형 조사 예시
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-07-LP.PNG" height="auto" />
+
+- 입력 순서 : 25, 13, 16, 15, 7, 28, 31, 20, 1, 38
+- 해시 함수 : $h_i(x)$ = $(h(x) + i)$ $mod$ $13$
+
+#### 선형 조사 문제점 : 1차 군집
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-08-PC.PNG" height="auto" />
+
+- Primary Clulstering(1차 군집)
+  - 특정 영역에 원소가 몰리는 현상
+  - 성능 저하 요인
+
+### 이차원 조사(Quadratic Probing)
+
+- $h_i(x)$ = $(h(x) + c_{1}i^{2} + c_{2}i)$ $mod$ $m$
+
+#### 이차원 조사 예시
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-09-QP.PNG" height="auto" />
+
+- 입력 순서 : 15, 18, 43, 37, 45, 30
+- 해시 함수 : $h_i(x)$ = $(h(x) + i^{2})$ $mod$ $13$
+
+#### 이차원 조사 문제점 : 2차 군집
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-10-SC.PNG" height="auto" />
+
+- Secondary Clulstering(2차 군집)
+  - 여러 원소가 동일한 초기 해시 함수값을 갖는 현상
+  - 성능 저하 요인
+
+### 더블 해싱(Double Hashing)
+
+- $h_i(x)$ = $(h(x) + if(x))$ $mod$ $m$
+- $f(x)$ = 1 + ($x$ $mod$ $n$)
+
+#### 더블 해싱 예시
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-11-DH.PNG" height="auto" />
+
+- 입력 순서 : 15, 19, 28, 41, 67
+- 첫 번째 해시 함수 : $h_i(x)$ = $(h(x) + if(x))$ $mod$ $13$
+- 두 번째 해시 함수 : $f(x)$ = $x$ $mod$ $11$
+- n과 m, 11과 13이 서로소
+- 적재율이 높아질 경우 효율 급속 저하
+- 임계점을 지정하고 넘을 경우 테이블 크기를 두 배로 설정
+
+#### 더블 해싱 문제점 : 삭제 진행
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-12-DHP.PNG" height="auto" />
+
+## 5절. 검색
+
+### 해시 테이블 검색 시간
+
+- 적재율($α$)
+  - 해시 테이블 전체의 원소 비율
+  - m 크기의 테이블에 n 개의 원소가 있을 경우
+  - $α = \frac{n}{m}$
+  - 검색 효율과의 관련성 존재
+
+### 정리 1, 2 : 체이닝
+
+- 적재율이 $α$인 경우
+
+|   검색 종류   |         조사 횟수 기대치         |
+| :-----------: | :------------------------------: |
+| 실패하는 검색 |               $α$                |
+| 성공하는 검색 | $1 + \frac{α}{2} - \frac{α}{2n}$ |
+
+#### 정리 2 : 성공하는 검색 조사 횟수 기대치
+
+- 검색하는 원소 x가 i번째 저장된 경우
+- 원소 x 검색을 위해 필요한 조사 횟수
+  - $1 + \Sigma^{n}_{j=i+1}\frac{1}{m}$
+  - n : 원소 수
+  - m : 테이블 크기
+- 모든 원소에 진행하므로 평균 계산
+  - $\frac{1}{n}\Sigma^{n}_{i = 1}(1 + \Sigma^{n}_{j=i+1}\frac{1}{m})$
+
+### 정리 3, 4 : 개방 주소
+
+- 가정
+
+  - 조사 순서 $h_{0}(x), h_{1}(x), h_{2}(x), ···, h_{m - 1}(x)$ 가 0부터 m - 1 사이의 수로 이루어진 순열
+  - 모든 순열은 같은 확률로 발생
+
+- 적재율이 $α = \frac{n}{m}$인 경우
+
+|   검색 종류   |           조사 횟수 기대치            |
+| :-----------: | :-----------------------------------: |
+| 실패하는 검색 |        최대 $\frac{1}{(1-α)}$         |
+| 성공하는 검색 | 최대 $\frac{1}{α}log\frac{1}{(1- α)}$ |
+
+#### 정리 3 : 성공하는 검색 조사 횟수 최대 기대치
+
+- $p_i$
+
+  - 빈자리 검색 전 이미 점유된 주소를 "정확히" i번 조사할 확률
+  - 이미 점유된 주소를 조사한 경우는 실패한 검색
+
+- $q_i$
+
+  - 빈자리 검색 전 이미 점유된 주소를 "적어도" i번 조사할 확률
+  - $q_{1} = \frac{n}{m}, q_{2} = \frac{n(n - 1)}{m(m - 1), ···}$
+
+- 조사횟수의 기대값 :
+
+#### 정리 4 : 실패하는 검색 조사 횟수 최대 기대치
+
+## 6절. Hashing 확률
