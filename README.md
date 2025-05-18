@@ -15,8 +15,9 @@
 
 ## Tips for Markdown Language
 
-- [Markdown 작성법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
-- [Github README.md](https://lsh424.tistory.com/37)
+<h4><a href="https://gist.github.com/ihoneymon/652be052a0727ad59601">Markdow 파일 작성 양식</a></h4>
+
+<h4><a href="https://lsh424.tistory.com/37">README.md는 뭘까?</a></h4>
 
 ## Learning List
 
