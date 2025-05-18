@@ -19,7 +19,7 @@
 
 - 이진 트리 한 노드 N에 대한 깊이(Depth)와 높이(Height)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch07-01-AVL.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch07/ch07-01-AVL.PNG" height="auto" />
 
 |     종류     | 설명                                         | 영문                                          |
 | :----------: | :------------------------------------------- | :-------------------------------------------- |
