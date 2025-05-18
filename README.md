@@ -2,7 +2,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html>
     <head>
+        <title>TIL - Today I Learned</title>
+        <meta charset="utf-8">
     </head>
+    
 <h1><Strong>TIL</Strong> - Today I Learned</h1>
 
 <body>
