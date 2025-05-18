@@ -19,6 +19,8 @@
 
 - 이진 트리 한 노드 N에 대한 깊이(Depth)와 높이(Height)
 
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch07-01-AVL.PNG" height="auto" />
+
 |     종류     | 설명                                         | 영문                                          |
 | :----------: | :------------------------------------------- | :-------------------------------------------- |
 | 깊이(Depth)  | 루트 노드에서 노드 N까지의 간선 수           | of edges from the root to the node N          |
@@ -30,5 +32,3 @@
   - s와 t 간 최단 경로는 s와 x 간 최단 경로 포함
 
 ## 1절. 재귀적 해법
-
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/03-01-SelectionSort.PNG" width="100%" height="auto" />
