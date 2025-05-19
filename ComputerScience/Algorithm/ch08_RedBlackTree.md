@@ -41,13 +41,13 @@
 ### 동작
 
 - 레드 블랙 트리의 특성이 깨질 수 있는 동작의 경우 회전(rotation)을 통한 레드 블랙 트리 특성 유지 필요
-- 공간 복잡도 : $O(log$ $n)$
+- 공간 복잡도 : $O(log n)$
 
 |     종류     | rotation 여부 |  수행 시간   |
 | :----------: | :-----------: | :----------: |
-| 검색(Search) |       X       | $O(log$ $n)$ |
-| 삽입(Insert) |       O       | $O(log$ $n)$ |
-| 삭제(Delete) |       O       | $O(log$ $n)$ |
+| 검색(Search) |       X       | $O(log n)$ |
+| 삽입(Insert) |       O       | $O(log n)$ |
+| 삭제(Delete) |       O       | $O(log n)$ |
 
 ### 회전(Rotation)
 
