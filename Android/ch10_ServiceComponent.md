@@ -289,3 +289,40 @@ class MainActivity : AppCompatActivity(){
 ## 4절. 잡 스케줄러
 
 ## 5절. MP3 앱 구현
+
+### 1) 모듈 생성 & 빌드 그래들 작성
+
+- Ch15_Outer : 음악 재생 앱
+- Ch15_Service : 프로세스 간 통신으로 Ch15_Outer앱 조종 리모컨 역할
+
+```kts
+// 빌드 그래들 작성
+
+viewBinding.isEnabled = true
+
+buildFeatures{
+    aidl = true
+}
+
+```
+
+### 2) 실습 파일 복사
+
+- res의 drawable, layout 디렉터리를 Ch15_Service 모듈의 같은 위치에 복사
+- 코틀린 파일이 있는 디렉터리에서 MainActivity.kt 파일 복사 후 Ch15_Service 모듈의 소스 영역에 덮어쓰기
+
+### 3) 재생 음원 파일 준비
+
+- res/raw 디렉터리를 Ch15_outer 모듈 res 에 복사
+
+### 4) AIDL 서비스 작성
+
+- 파일이 있는 패키지에서 마우스 오른쪽 버튼 클릭
+- [New - AIDL - AIDL File - 파일 명 입력 - finish]
+- 자동으로 패키지까지 잡혀서 aidl 파일 생성
+
+### 5) AndroidManifest.xml에 패키지 공개 등록
+
+###
+
+### 6) 앱 실행
