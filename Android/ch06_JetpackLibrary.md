@@ -18,7 +18,7 @@
 >
 > 7절. 드로어 레이아웃
 >
-> 8장. 제트팩 화면 구성  
+> 8절. 제트팩 화면 구성  
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch07)
 
 ## 0절. ART

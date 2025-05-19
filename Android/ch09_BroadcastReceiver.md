@@ -6,7 +6,7 @@
 >
 > 2절. 시스템 상태 파악
 > 
-> 3절. 배터리 정보 앱 구현  
+> 3절. 배터리 정보 앱 구현   
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch10)
 
 ## 1절. 브로드캐스트 리시버

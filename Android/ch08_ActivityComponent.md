@@ -10,7 +10,7 @@
 >
 > 4절. 코루틴
 >
-> 5장. ToDoList 앱 구현  
+> 5절. ToDoList 앱 구현  
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch09)
 
 ## 1절. 인텐트
