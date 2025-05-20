@@ -180,8 +180,115 @@
     - 필수적 참여
     - 선택적 참여
 
-#### (일단 19p부터 작성)
+#### 관계 : 주문
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-11-relationshipO.PNG"  height="auto" />
+
+- 관계 : 주문
+  - "회원" 개체와 "상품" 개체가 맺는 관계
+    - "회원" 개체 : 선택적 참여
+    - "상품" 개체 : 선택적 참여
+  - 다대다(n:m) 관계
+- 속성 : 주문번호, 주문수량, 배송지, 주문일자
+
+
+#### 관계 : 공급
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-12-relationshipP.PNG"  height="auto" />
+
+- 관계 : 공급
+  - "상품" 개체와 "제조업체" 개체가 맺는 관계
+    - "상품" 개체 : 필수적 참여
+    - "제조업체" 개체 : 선택적 참여
+  - 일대다(1:m) 관계
+- 속성 : 공급일자, 공급량
+
+#### 관계 : 공급
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-13-relationshipW.PNG"  height="auto" />
+
+- 관계 : 작성
+  - "회원" 개체와 "게시글" 개체가 맺는 관계
+    - "회원" 개체 : 선택적 참여
+    - "게시글" 개체 : 필수적 참여
+  - 일대다(1:m) 관계
+
+#### 관계 추출 결과
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-14-R.PNG"  height="auto" />
+
+#### 주문 관계 다이어그램
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-15-rdO.PNG"  height="auto" />
+
+#### 공급 관계 다이어그램
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-16-rdP.PNG"  height="auto" />
+
+#### 작성 관계 다이어그램
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-17-rdW.PNG"  height="auto" />
+
+#### 전체적인 다이어그램
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-18-relationDiagram.PNG"  height="auto" />
 
 ## 4절. 논리적 설계
 
+### 목적
+
+- DBMS에 적합한 논리적 스키마 설계
+- 개념적 스키마를 논리적 데이터 모델을 이용해 논리적 구조로 표현
+  => 논리적(데이터) 모델링
+    - 일반적으로 관계 데이터 모델을 많이 이용
+
+### 결과물
+
+- 논리적 스키마
+  - 릴레이션 스키마
+
+### 주요 작업
+
+- E-R 다이어그램을 릴레이션 스키마로 변환
+- 속성의 데이터타입, 길이, NULL 값 허용 여부, 기본값, 제약조건 등을 세부사항으로 결정
+- 결과 문서화
+
+### 규칙
+
+- 릴레이션 스키마로의 변환 규칙
+- 변환 규칙은 순서대로 적용
+- 해당하지 않는 규칙은 제외
+
+1. 모든 개체는 릴레이션으로 변환
+2. 다대다(n:m) 관계는 릴레이션으로 변환
+3. 일대다(1:n) 관계는 외래키로 표현
+4. 일대일(1:1) 관계는 외래키로 표현
+5. 다중 값 속성은 릴레이션으로 변환
+
+### 1. 모든 개체는 릴레이션으로 변환
+
+- E-R 다이어그램의 각 개체를 하나의 릴레이션으로 변환
+  - 개체 속성이 복합 속성인 경우
+    - 복합 속성을 구성하는 단순 속성만 릴레이션의 속성으로 변환
+  - 개체 이름 => 릴레이션 이름
+  - 개체 속성 => 릴레이션 속성
+  - 개체 키 속성 => 릴레이션 기본키
+
+#### 상품 릴레이션 예시
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-19-ERex1.PNG"  height="auto" />
+
+#### 고객 릴레이션 예시
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-20-ERex2.PNG"  height="auto" />
+
+### 2. 다대다(n:m) 관계는 릴레이션으로 변환
+
+- E-R 다이어그램의 다대다 관계를 하나의 릴레이션으로 변환
+  - 관계에 참여하는 개체를 규칙 1에 따라 릴레이션으로 변환
+  - 이 릴레이션의 기본키를 관계 릴레이션에 포함시켜 외래키로 지정
+  - 외래키들을 조합하여 관계 릴레이션의 기본키로 지정
+  - 관계 이름 => 릴레이션 이름
+  - 관계 속성 => 릴레이션 속성
+  
 ## 5절. 물리적 설계
