@@ -191,7 +191,6 @@
   - 다대다(n:m) 관계
 - 속성 : 주문번호, 주문수량, 배송지, 주문일자
 
-
 #### 관계 : 공급
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-12-relationshipP.PNG"  height="auto" />
@@ -240,7 +239,7 @@
 - DBMS에 적합한 논리적 스키마 설계
 - 개념적 스키마를 논리적 데이터 모델을 이용해 논리적 구조로 표현
   => 논리적(데이터) 모델링
-    - 일반적으로 관계 데이터 모델을 많이 이용
+  - 일반적으로 관계 데이터 모델을 많이 이용
 
 ### 결과물
 
@@ -274,11 +273,11 @@
   - 개체 속성 => 릴레이션 속성
   - 개체 키 속성 => 릴레이션 기본키
 
-#### 상품 릴레이션 예시
+#### 개체 : 상품 릴레이션 예시
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-19-ERex1.PNG"  height="auto" />
 
-#### 고객 릴레이션 예시
+#### 개체 : 고객 릴레이션 예시
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-20-ERex2.PNG"  height="auto" />
 
@@ -290,5 +289,97 @@
   - 외래키들을 조합하여 관계 릴레이션의 기본키로 지정
   - 관계 이름 => 릴레이션 이름
   - 관계 속성 => 릴레이션 속성
-  
+
+#### 관계 : 주문 릴레이션 예시
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-21-RRex3.PNG"  height="auto" />
+
+### 3. 일대다(1:n) 관계는 외래키로 표현
+
+- E-R 다이어그램의 일대다 관계는 외래키로만 표현
+  - 3-1. 일반적인 일대다 관계는 외래키로 표현
+  - 3-2. 약한 개체가 참여하는 일대다 관계는 외래키를 포함해서 기본키로 지정
+
+#### 3-1. 일반적인 일대다 관계는 외래키로 표현
+
+- 일대다(1:n) 관계에서 1측 개체 릴레이션의 기본키를 n측 개체 릴레이션에 포함시켜 외래키로 지정
+- 관계의 속성들도 n측 개체 릴레이션에 포함
+
+#### 관계 : 공급 릴레이션 예시
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-22-RRex4.PNG"  height="auto" />
+
+#### 3-2. 약한 개체가 참여하는 일대다 관계는 외래키를 포함해서 기본키로 지정
+
+- 일대다(1:n) 관계에서 1측 개체 릴레이션의 기본키를 n측 개체 릴레이션에 포함시켜 외래키로 지정
+- 관계의 속성들도 n측 개체 릴레이션에 포함
+- n측 개체 릴레이션은 외래키를 포함하여 기본키를 지정
+  - 약한 개체는 강한 개체에 따라 존재 여부가 결정
+  - 강한 개체의 기본키로 식별
+
+#### 관계 : 존재 릴레이션 예시
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-23-RRex5.PNG"  height="auto" />
+
+### 4. 일대일(1:1) 관계는 외래키로 표현
+
+- E-R 다이어그램의 일대일 관계는 외래키로만 표현
+  - 4-1. 일반적인 일대일 관계는 외래키를 서로 주고받음
+  - 4-2. 일대일 관계에 필수적으로 참여하는 개체의 릴레이션만 외래키를 받음
+  - 4-3. 모든 개체가 일대일 관계에 필수적으로 참여하면 릴레이션 하나로 합침
+
+#### 4-1. 일반적인 일대일 관계는 외래키를 서로 주고받음
+
+- 관계에 참여하는 개체 릴레이션들이 서로의 기본키를 주고받아 외래키로 지정
+- 관계의 속성들도 모든 개체 릴레이션에 포함
+- 불필요한 데이터 중복 발생 가능성 존재
+
+#### 혼인 관계 예시 : 일대일(1:1)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-24-RRex6.PNG"  height="auto" />
+
+#### 4-2. 필수적으로 참여하는 개체 릴레이션만 외래키를 받음
+
+- 관계에 필수적으로 참여하는 개체 릴레이션에만 외래키 포함
+- 관계의 속성들은 관계에 필수적으로 참여하는 개체 릴레이션에 포함
+
+#### 혼인 관계 예시 : 일대일(1:1) - 필수 / 선택
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-25-RRex7.PNG"  height="auto" />
+
+#### 4-3. 모든 개체가 필수적 참여 시 릴레이션 하나로 합침
+
+- 관계 참여 개체 릴레이션들을 하나의 릴레이션으로 합쳐 표현
+- 관계의 이름을 릴레이션 이름으로 사용
+- 관계에 참여하는 두 개체의 속성들을 관계 릴레이션에 포함
+- 두 개체 릴레이션의 키 속성을 조합하여 관계 릴레이션의 기본키로 지정
+
+#### 혼인 관계 예시 : 일대일(1:1) - 필수 / 필수
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-26-RRex8.PNG"  height="auto" />
+
+### 5. 다중 값 속성은 릴레이션으로 변환
+
+- E-R 다이어그램의 다중 값 속성은 독립적인 릴레이션으로 변환
+  - 다중 값 속성과 함께 그 속성을 가진 개체 릴레이션의 기본키를 외래키로 가져와 새로운 릴레이션에 포함
+  - 새로운 릴레이션의 기본키는 다중 값 속성과 외래키를 조합하여 지정
+
+#### 사원 개체 릴레이션
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-27-ERex9.PNG"  height="auto" />
+
+#### 부하직원 속성
+
+(여기부터 재작성 필요)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-28-ERex9-1.PNG"  height="auto" />
+
+- 사원 릴레이션은 "속성에 다중값을 저장할 수 없다"는 릴레이션 특성을 위반
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-29-ERex9-2.PNG"  height="auto" />
+
+- 사원 릴레이션은 "속성에 다중값을 저장할 수 없다"는 릴레이션 특성을 위반
+
+### 기타 고려 사항
+
 ## 5절. 물리적 설계
