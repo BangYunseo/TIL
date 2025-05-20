@@ -9,10 +9,6 @@
 > 4절. 논리적 설계
 >
 > 5절. 물리적 설계
->
-> 6절.
->
-> 7절.
 
 ## 1절. 데이터베이스 설계 단계
 
@@ -381,6 +377,74 @@
 - 사원 릴레이션은 릴레이션의 특성을 위반하지 않음
 - 하지만 사원번호, 사원명, 직위 속성의 값이 불필요하게 중복 저장되는 문제 발생
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-30-rt.PNG"  height="auto" />
+
+- 규칙 5에 따라 다중값 속성을 독립적인 릴레이션으로 변환 시 불필요한 중복을 제거하며 릴레이션 특성 만족 가능
+
 ### 기타 고려 사항
 
-## 5절. 물리적 설계
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-31-dr.PNG"  height="auto" />
+
+- 모든 관계를 독립적인 릴레이션으로 변환 가능
+  - 속성이 많은 관계 : 유형에 상관 없이 릴레이션으로의 변환 가능
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-32-dr2.PNG"  height="auto" />
+
+- 개체가 자기 자신과 관계를 맺는 순환 관계도 기본 규칙을 그대로 적용
+
+### 규칙 1 : 다이어그램 & 스키마
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-33-rule1-1.PNG"  height="auto" />
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-34-rule1-2.PNG"  height="auto" />
+
+### 규칙 2 : 다이어그램 & 스키마
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-35-rule2-1.PNG"  height="auto" />
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-36-rule2-2.PNG"  height="auto" />
+
+### 규칙 3 : 다이어그램 & 스키마
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-37-rule3-1.PNG"  height="auto" />
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-38-rule3-2.PNG"  height="auto" />
+
+### 테이블 명세서
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-39-table.PNG"  height="auto" />
+
+- 릴레이션 스키마에 대한 설계 정보를 기술한 문서
+- 릴레이션 스키마 변환 후 속성 데이터 타입, 길이, NULL 값 허용 여부, 기본값, 제약조건 등을 세부적으로 결정하고 문서화
+
+## 5절. 물리적 설계 및 구현
+
+### 물리적 설계
+
+- 설계 4 단계
+- 하드웨어 및 운영체제 특성 고려
+- 필요한 인덱스 구조나 내부 저장 구조 등에 대한 물리적 구조 설계
+
+### 구현
+
+- 설계 5 단계
+- SQL로 작성한 명령문을 DBMS에서 실행하여 데이터베이스 실제 생성
+
+#### SQL 작성 예시
+
+- SQL 작성 전 테이블 명세서 확인
+
+```SQL
+CREATE TABLE 회원(
+  회원아이디 VARCHAR(20) NOT NULL,
+  비밀번호 VARCHAR(20) NOT NULL,
+  이름 VARCHAR(10) NOT NULL,
+  나이 INT,
+  직업 VARCHAR(20),
+  등급 VARCHAR(10) NOT NULL DEFAULT 'silver',
+  적립금 INT NOT NULL DEFAULT 0,
+  PRIMARY KEY(회원아이디),
+  CHECK (나이 >= 0),
+  CHECK (등급 in ('silver', 'gold', 'vip'))
+);
+```
