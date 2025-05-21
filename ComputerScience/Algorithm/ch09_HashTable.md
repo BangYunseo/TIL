@@ -297,8 +297,8 @@
 
 $$
 Y_i = \begin{cases}
-    \text{1}item i 가 slot 1으로 mapping \\
-    \text{0}그렇지 않은 경우
+    1 & \quad \text{item i 가 slot 1으로 mapping} \\
+    0 & \quad \text{그렇지 않은 경우}
 \end{cases}
 $$
 ### 비어 있는 저장소 평균값(Expected Number of Empty Slots)
