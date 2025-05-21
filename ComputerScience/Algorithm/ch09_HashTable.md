@@ -286,7 +286,7 @@
 - $P(A)$
   - $1-P(A')$
   - $=\frac{365 * 364 * 363 * ... * (365-n+1)}{365}$
-  - $=\frac{ \Big(\begin{array}{c} 365 \\ n \end{array}\Big) n!}{365^n}$
+  - <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-13-BP.PNG" height="auto" />
 - n = 30인 경우 $P(A) = 70.6$%
   - 30명 중 적어도 2명의 생일이 같을 확률 70.6%
 - n = 10인 경우 $P(A) = 11.7$%
