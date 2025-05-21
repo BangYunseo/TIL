@@ -301,4 +301,57 @@ Y_i = \begin{cases}
     0 & \quad \text{그렇지 않은 경우}
 \end{cases}
 $$
+
+- $P(Y_i = 1) = \frac{1}{k}$
+- 즉, $E(Y_i) = \frac{1}{k}$
+- $Y = Y_1 + Y_2 + ... + Y_n$
+- $E(Y) = \frac{n}{k}$
+- 평균 $\frac{n}{k}$ 개 저장
+
 ### 비어 있는 저장소 평균값(Expected Number of Empty Slots)
+
+- 어떤 특정 저장소 j가 n개의 item이 주어진 후에도 비어있을 확률
+  - $(1-\frac{1}{k})^n$
+
+$$
+X_i = \begin{cases}
+    1 & \quad \text{slot j가 비어있을 때} \\
+    0 & \quad \text{그 외}
+\end{cases}
+$$
+
+- $E[X_j] = (1-\frac{1}{k})^n$
+- $X = X_1 + X_2 + ... + X_n$
+- $E[X] = k(1-\frac{1}{k})^n$
+
+### 충돌 횟수 평균값
+
+- 충돌 횟수(Z)는 비어 있는 저장소의 수로 계산
+- X = 비어 있는 저장소 수
+  - k - X는 비어 있지 않은 저장소의 수
+  - item n개가 k - X개 저장소에 존재
+  - 충돌 횟수 = n - k + X 번 발생
+- 충돌 횟수 평균값
+  - $E[Z]$ 
+    - $= n-k+E[X]$
+    - $=n-k+k(1-\frac{1}{k})^n$
+
+### 저장소를 모두 채울 때 필요한 item 수
+
+
+- $X_j$ = $j$번 slot을 채우는 데 필요한 item 수
+- ($j-1$)까지 채워졌을 때 빈 slot
+  - ($k - j + 1$)
+- item이 비어 있는 slot으로 갈 확률 p
+  - $\frac{(k-j+1)}{k}$
+- 성공 확률이 p인 경우
+  - 성공하기 위한 기댓값 = $\frac{1}{p}$
+- $E(X_j)=\frac{k}{(k-j+1)}$
+- $X = X_1 + X_2 + ... + X_n$
+- $E[X]$
+  - $=\Sigma_{j=1}^kE(X_j)$
+  - $=\Sigma_{j=1}^k\frac{k}{k-j+1}$
+  - = $k\Sigma_{j=1}^k\frac{1}{j}$
+  - $kH_k$
+
+- $ln(k+1) ≤ H_k ≤ (1 + ln(k))$
