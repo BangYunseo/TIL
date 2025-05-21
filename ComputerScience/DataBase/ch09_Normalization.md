@@ -76,6 +76,59 @@
 
 #### 함수 종속 관계 판단 예시(1)
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-05-UR.PNG" height="auto" />
+
+- 고객아이디에 대응되는 고객이름 속성과 등급 속성이 단 하나
+
+|   결정자   | ->  | 종속자           |
+| :--------: | :-: | :--------------- |
+| 고객아이디 | ->  | 고객이름         |
+| 고객아이디 | ->  | 등급             |
+| 고객아이디 | ->  | (고객이름, 등급) |
+
+- 종속 다이어그램
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-06-diagramU.PNG" height="auto" />
+
+### 함수 종속 관계 판단 유의 사항
+
+- 속성 자체의 특성과 의미 기반 함수 종속성 판단
+  - 속성값은 계속 변화
+  - 현재 릴레이션에 포함된 속성값으로만 판단 X
+- 기본키와 후보키는 릴레이션의 다른 모든 속성들을 함수적으로 결정
+- 기본키나 후보키가 아니라도 다른 속성을 유일하게 결정하는 속성은 함수 종속 관계에서 결정자
+
+#### 함수 종속 관계 판단 예시(1)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-07-ER.PNG" height="auto" />
+
+|          결정자          | ->  | 종속자   |
+| :----------------------: | :-: | :------- |
+|        고객아이디        | ->  | 고객이름 |
+| {고객아이디, 이벤트번호} | ->  | 당첨여부 |
+| {고객아이디, 이벤트번호} | ->  | 고객이름 |
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-08-diagramUN.PNG" height="auto" />
+
+- 종속 다이어그램
+
+### 함수 종속성 다이어그램(Functional Dependency Diagram)
+
+- 함수 종속성을 나타내는 표기법
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-09-FDD.PNG" height="auto" />
+
+|        종류         |    표기법     |
+| :-----------------: | :-----------: |
+|    릴레이션 속성    |   직사각형    |
+| 속성 간 함수 종속성 |    화살표     |
+|      복합 속성      | 직사각형 묶음 |
+
+### 완전 함수 종속(FFD : Full Functional Dependency)
+
+- 릴레이션에서 속성 집합 Y가 속성 집합 X에 함수적으로 종속
+
+
 ## 3절. 기본 정규형
 
 ### 정규형
