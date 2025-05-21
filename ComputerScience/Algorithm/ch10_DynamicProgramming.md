@@ -48,15 +48,84 @@
 
 ## 2절. 동적 프로그래밍
 
-### DP(1) : 피보나치 수 계산
+### 재귀 함수 : 피보나치 수 계산
 
 - 피보나치 수 계산 공식
   - $f(n)=f(n-1)+f(n-2)$
   - $f(1)=f(2)=1$
-- 재귀 알고리즘
 
 ```python
+# 재귀 알고리즘 코드 구현
 
+def fib(n):
+  if(n == 1 or n == 2):
+      return 1
+  else:
+    return (fib(n - 1) + fib(n - 2))
 ```
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/03-01-SelectionSort.PNG" width="100%" height="auto" />
+- ex) fib(7)을 재귀적으로 구현한 경우
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch10/10-01-fibex.PNG" height="auto" />
+
+- fib() 문제 크기에 의한 fib(2) 중복 호출
+
+|  fib()  | fib(2) 중복 호출 횟수 |
+| :-----: | :-------------------: |
+| fib(4)  |           2           |
+| fib(5)  |           3           |
+| fib(6)  |           5           |
+| fib(7)  |           8           |
+| fib(8)  |          13           |
+| fib(9)  |          21           |
+| fib(10) |          34           |
+
+### 동적 프로그래밍 사용 조건
+
+#### 1. 최적 부분 구조(Optimal Substructure)
+
+- 문제의 해답에 그보다 작은 문제의 해답이 포함된 경우
+
+#### 2. 중복 호출
+
+- 재귀적 구현 시 중복 호출로 심각한 비효율이 발생한 경우
+
+### DP : 피보나치 수 계산
+
+- DP 알고리즘의 피보나치 수
+
+```Python
+# 동적 프로그래밍 알고리즘 코드 구현
+
+def fib(n):
+  if(n <= 0):
+    return 0
+  elif(n == 1 or n == 2):
+    return 1
+
+  f = [0] * (n + 1)
+
+  f[1] = 1
+  f[2] = 1
+
+  for i in range(3, n + 1):
+    f[i] = f[i - 1] + f[i - 2]
+
+  return f[n]
+```
+
+### Memoization
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch10/10-02-Memo.PNG" height="auto" />
+
+- Memo(메모, 쪽지) + ization(화) => 메모 기법
+- Top-Down Code
+- 이미 계산된 결과를 저장하고 재사용하는 기법
+- 중복 계산 방지
+- 같은 입력에 대해 한 번만 계산 후 저장
+
+### Tabulation
+
+(여기부터 작성)
+
+- 중복 재귀 호출을 피하는 방법
