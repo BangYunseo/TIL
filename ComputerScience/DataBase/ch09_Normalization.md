@@ -174,7 +174,117 @@
 - 릴레이션에 속한 모든 속성의 도메인이 원자 값(Atomic Value)으로만 구성된 경우
 - 제 1 정규형을 만족해야 관계 데이터베이스의 릴레이션 가능
 
-#### 제 1 정규형 구별
+#### 제 1 정규형 예시
 
-| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-10-NF1.PNG" height="auto" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-11-NF2.PNG" height="auto" /> |
-| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-12-1NF1.PNG" height="auto" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-13-1NF2.PNG" height="auto" /> |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+
+|                                            함수 종속 관계                                            |                                                     함수 종속 다이어그램                                                     |
+| :--------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
+| 고객아이디 -> 등급<br>고객아이디 -> 할인율<br>등급 -> 할인율<br>{고객아이디, 이벤트번호} -> 당첨여부 | <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-14-1NFD.PNG" height="auto" /> |
+
+- 이상 현상 발생 형태
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-15-1NFA.PNG" height="auto" />
+
+#### 이상 현상 발생 이유
+
+- 기본키인 {고객아이디, 이벤트번호}에 완전 함수 종속되지 못함
+- 일부분인 고객아이디에 종속되는 등급과 할인율 속성이 존재
+
+#### 문제해결 방법
+
+- 부분 함수 종속 제거를 위해 이벤트참여 릴레이션 분해
+  - 분해된 릴레이션들은 제 2 정규형에 속함
+
+### 제 2 정규형(2NF : Second Normal Form)
+
+- 릴레이션이 제 1 정규형에 속하고 기본키가 아닌 모든 속성이 기본키에 완전 함수 종속
+
+#### 제 1 정규형 릴레이션의 제 2 정규형 만족 조건
+
+- 부분 함수 종속을 제거
+- 모든 속성이 기본키에 완전 함수 종속되도록 분해
+
+#### 제 2 정규형 예시
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-16-2NF1.PNG" height="auto" />
+
+|                                                     함수 종속 다이어그램                                                     |                                                      릴레이션 분해 결과                                                      |
+| :--------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-17-2NFD.PNG" height="auto" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-18-2NFR.PNG" height="auto" /> |
+
+#### 고객 릴레이션 이상 현상
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-19-2NFA.PNG" height="auto" />
+
+#### 이상 현상 발생 이유
+
+- 이행적 함수 종속의 존재
+
+#### 문제 해결 방법
+
+- 이행적 함수 종속 제거를 위한 고객 릴레이션 분해
+  - 분해된 릴레이션들은 제 3 정규형에 속함
+
+### 이행적 함수 종속(Transitive FD)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-20-TFD.PNG" height="auto" />
+
+- 릴레이션을 구성하는 속성 집합 X, Y, Z에 대해 함수 종속 관계 X -> Y와 Y -> Z가 존재하면 논리적으로 X -> Z 성립
+  - Z가 X에 이행적으로 함수 종속
+
+### 제 3 정규형(3NF : Third Normal Form)
+
+- 릴레이션이 제 2 정규형에 속하고 기본키가 아닌 모든 속성이 기본키에 이행적 함수 종속이 아님
+
+#### 제 2 정규형 릴레이션의 제 3 정규형 만족 조건
+
+- 모든 속성이 기본키에 이행적 함수 종속이 되지 않도록 분해
+
+#### 제 3 정규형 예시
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-21-3NF1.PNG" height="auto" />
+
+|                                                     함수 종속 다이어그램                                                     |
+| :--------------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-22-3NFD.PNG" height="auto" /> |
+
+### 보이스/코드 정규형(BCNF : Boyce Codd Normal Form)
+
+- 강한 제 3 정규형(Strong 3NF)
+  - 후보키를 여럿 가진 릴레이션에서 발생할 수 있는 이상 현상을 해결하기 위해 제 3 정규형보다 엄격한 제약조건 제시
+  - 보이스/코드 정규형에 속하는 모든 릴레이션은 제 3 정규형에 속함
+  - 제 3 정규형에 속하는 모든 릴레이션이 보이스/코드 정규형에 속하지 않음
+- 릴레이션의 함수 종속 관계에서 모든 결정자가 후보키일 경우
+
+#### 보이스/코드 정규형 예시
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-23-BCNF.PNG" height="auto" />
+
+- 강좌신청 릴레이션 후보키
+  - {고객아이디, 인터넷강좌} : 기본키
+  - {고객아이디, 담당강사번호}
+
+|                                                     함수 종속 다이어그램                                                      |                                                           이상 현상                                                           |
+| :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-24-BCNFD.PNG" height="auto" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-25-BCNFA.PNG" height="auto" /> |
+
+### 기본 정규화 과정
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-26-ALLNF.PNG" height="auto" />
+
+### 제 4 정규형
+
+- 릴레이션이 보이스/코드 정규형을 만족하며 함수 종속이 아닌 다치 종속(MVD : Multi Valued Dependency) 제거
+
+### 제 5 정규형
+
+- 릴레이션이 제 4 정규형을 만족하며 후보키를 통하지 않는 조인 종속 (JD : Join Dependency) 제거
+
+### 정규화 시 주의사항
+
+- 모든 릴레이션이 제 5 정규형에 속해야 하는 것은 X
+- 일반적으로 제 3 정규형 or 보이스/코드 정규형에 속하도록 릴레이션을 분해
+  - 데이터 중복 감소
+  - 이상 현상 해결
