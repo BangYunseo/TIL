@@ -323,14 +323,49 @@ def moveMax(m, n):
 
 <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch10/ch10-17-PPP.PNG" height="auto" />
 
-- i 열이 패턴 2로 놓여있는 경우 : 최고점 계산
+- i 열이 패턴 2로 놓여있는 경우의 최고점 계산
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch10/ch10-18-PPS.PNG" height="auto" />
+
+- 문제 해결 경우의 수 3가지
+  - (i - 1)열이 패턴 1인 경우
+  - (i - 1)열이 패턴 3인 경우
+  - (i - 1)열이 패턴 4인 경우
 
 #### 계산 방식
 
 - $c_{i2}$ : i 열이 패턴 2로 놓일 때의 최고점
 - $w_{i2}$ : i 열 패턴 2에 놓은 돌의 값
 - $c_{i2} = w_{i2} + max(c_{i-1, 1}, c_{i-1, 3}, c_{i-1, 4})$
-- 돌 놓기 문제에서 최종적으로 계산하는 값 : $c_{i1}, c_{i2}, c_{i3}, c_{i4}$ 중 가장 큰 값
+
+#### 최종 목표
+
+- 돌 놓기 문제에서 최종적으로 계산하는 값
+  - {$c_{i1}, c_{i2}, c_{i3}, c_{i4}$} 중 가장 큰 값
+
+### 재귀적 관계
+
+- $c_{ip}$ 의 재귀적 관계
+
+$$
+c_{ip} = \begin{cases} w_{1p} & \text{if } i = 1 \\ \max_q{ c_{i-1 ,q} } + w_{ip} & \text{if } i > 1 \end{cases}
+$$
+
+- 최적 부분 구조(Optimal Substructure)
+  - 자신보다 크기가 1 작은 문제의 최적해를 자신의 최적해 구성에 사용
+
+### 응용 분야
+
+- 격자 형태의 그래프에서 인접하지 않은 노드들 중 최대 개수 선택
+  - WiFi 안테나 설치
+  - 센서 배치
+  - 자원 분산
+- 논리 회로 배치 및 VLSI 설계
+- 게임 이론 및 AI 전략 수립
+- 작업 스케줄링 및 자원 할당
+  - 회의실 예약
+  - 학교 시간표
+  - CPU 스케줄링
 
 ## 5절. DP : 행렬 곱셈 순서 문제
 
