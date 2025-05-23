@@ -348,7 +348,8 @@ def moveMax(m, n):
 - $c_{ip}$ 의 재귀적 관계
 
 $$
-c_{ip} = \begin{cases} w_{1p} & \text{if } i = 1 \\ \max_q{ c_{i-1 ,q} } + w_{ip} & \text{if } i > 1 \end{cases}
+c_{ip} = \begin{cases} w_{1p} & \text{if } i = 1 \\ 
+\max_q{ c_{i-1 ,q} } + w_{ip} & \text{if } i > 1 \end{cases}
 $$
 
 - 최적 부분 구조(Optimal Substructure)
