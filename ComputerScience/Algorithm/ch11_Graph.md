@@ -2,28 +2,54 @@
 
 > 0절. 개요
 >
-> 1절. 재귀적 해법
+> 1절. 너비 우선 탐색
 >
-> 2절.
+> 2절. 깊이 우선 탐색
 >
 > 3절.
 
 ## 0절. 개요
 
-### n!(n의 팩토리얼 계산)
+### 그래프(Graph)
 
-1. n! = 1 × 2 × ··· × n
-2. n! = n(n - 1)!
+- 현상이나 사물을 정점과 간선으로 표현
+- $Graph$ $G$ = $(V,E)$
+  - $V$ : vertex set
+  - $E$ : edge set
+- 정점(Vertex) : 대상 or 개체
+- 간선(Edge) : 정점 간 관계
+- 인접(Adjacent) : 두 정점이 간선으로 연결된 경우
 
-=> 크기가 n인 문제는 크기가 하나 작은 문제 포함
+### 예시
 
-### 그래프 최단 경로 계산
+- 친분 관계 그래프
 
-- 임의 그래프 두 정점 s, t간 최단 경로 계산
-  - s => t에 이르기 직전 방문하는 정점을 x라고 가정
-  - 즉, s => x => t의 경로 계산
-  - s와 t 간 최단 경로는 s와 x 간 최단 경로 포함
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch11-01-BG.PNG" width="100%" height="auto" />
 
-## 1절. 재귀적 해법
+- 친분 관계 그래프 + 가중치
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/03-01-SelectionSort.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch11-02-BGW.PNG" width="100%" height="auto" />
+
+- 친분 관계 그래프 + 방향
+  - 유향 그래프(Directed Graph)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch11-03-BGD.PNG" width="100%" height="auto" />
+
+- 친분 관계 그래프 + 가중치 + 방향
+  - 유향 그래프(Directed Graph)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch11-04-BGWD.PNG" width="100%" height="auto" />
+
+### 인접 행렬(Adjacent Matrix)
+
+(여기부터 작성!)
+
+- 정점
+
+## 1절. 너비 우선 탐색
+
+### 너비 우선 탐색(BFS : Breadth First Search)
+
+## 2절. 깊이 우선 탐색
+
+### 깊이 우선 탐색(DFS : Depth First Search)

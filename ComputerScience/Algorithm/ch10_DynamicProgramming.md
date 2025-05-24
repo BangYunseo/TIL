@@ -13,6 +13,8 @@
 > 5절. DP : 행렬 곱셈 순서 문제
 >
 > 6절. DP : 최장 공통 부분 순서 문제
+>
+> 7절. 응용 문제
 
 ## 0절. 개요
 
@@ -561,12 +563,86 @@ def matrixChain(p):
 
 ### 예시
 
-- 부분 순서 예시
+- \<bcdb\>
 
-  - \<bcdb\> 는 문자열 \<abcbdab\>의 부분 순서
+  - \<abcbdab\>의 부분 순서
 
-- 공통 부분 순서 예시
-  - \<bcdb\> 는 문자열 \<abcbdab\>의 공통 부분 순서
+- \<bca\>
+
+  - \<abcbdab\>의 공통 부분 순서
+  - \<bdcaba\>의 공통 부분 순서
+
+- 최장 공통 부분순서
+  - 공통 부분 순서 중 가장 긴 것
+  - ex) \<abcbdab\>와 \<bdcaba\>의 최장 공통 부분 순서(LCS)는 \<bcba\>
+
+### 최적 부분 구조(Optimal Substructure)
+
+- 최장 공통 부분순서(LCS) 문제에 존재
+
+- 두 문자열
+  - $X_m=<x_1 x_2 .... x_m>$
+  - $Y_n=<y_1 y_2 .... y_n>$
+
+#### $x_m = y_n$ : ①
+
+- $X_m$, $Y_n$의 LCS의 길이
+  - $X_{m-1}$, $Y_{n-1}$ 의 LCS 길이 + 1
+
+#### $x_m ≠ y_n$ : ②
+
+- $X_m$, $Y_n$의 LCS의 길이
+  - max($X_{m}$와 $Y_{n-1}$ 의 LCS 길이, $X_{m-1}$와 $Y_{n}$ 의 LCS 길이)
+
+#### 점화식 : ① + ②
+
+- $C_{ij}$ : 두 문자열 $X_i=<x_1 x_2 .... x_i>$ 와 $Y_j=<y_1 y_2 .... y_j>$ 의 LCS 길이
+
+$$
+C_{ij} =
+\begin{cases}
+0 \\
+C_{(i-1)(j-1)} + 1 & \text{if } x_i = y_j \\
+\max(C_{i(j-1)}, C_{(i-1)j}) & \text{if } x_i ≠ y_j
+\end{cases}
+$$
+
+### 재귀 알고리즘
+
+```python
+def LCS(X, Y, m, n):
+  if m == 0 or n == 0:
+    return 0
+  elif X[m-1] == Y[n-1]:
+    return LCS(X, Y, m - 1, n - 1) + 1
+  else:
+    return max(LCS(X, Y, m - 1, n), LCS(X, Y, m, n - 1))
+```
+
+### 중복 호출 문제 발생
+
+- 호출 트리에서의 문제 발생 : LCS(1, 1) 중복 횟수 = 9회
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch10/ch10-20-CallTree2.PNG" height="auto" />
+
+### 동적 프로그래밍 알고리즘
+
+```python
+def LCS(X, Y):
+
+  m = len(X)  # X 길이
+  n = len(Y)  # Y 길이
+
+  C = [[0] * (n + 1) for _ in range(m + 1)]
+
+  for i in range(1, m + 1):
+    for j in range(1, n + 1):
+      if X[i - 1] == Y[j - 1]:
+        C[i][j] = C[i - 1][j - 1] + 1
+      else:
+        C[i][j] = max(C[i - 1][j], C[i][j - 1])
+  return C[m][n]
+```
 
 ### 응용 분야
 
@@ -576,3 +652,33 @@ def matrixChain(p):
 4.  데이터 중복 제거 및 동기화
 5.  데이터 스트리밍 분석
 6.  파일/문서 비교 및 버전 관리
+
+## 7절. 응용 문제
+
+> 모든 문제는 "동적 프로그래밍(계획법)"을 사용한다.
+
+### 문제 1 : 도미노 채우기
+
+(여기부터 작성)
+
+- 도미노 채우기 문제
+- 도미노 크기
+  - 1 x 2 직사각형
+- 채울 사각형
+
+  - 가로 길이 : n
+  - 세로 길이 : 2
+
+- (1) 최적 부분 구조 ?
+- (2) 이를 실현하는 알고리즘 ?
+
+### 문제 2 : 이진 검색 트리 생성기
+
+- $1, 2, 3, … n$ 으로 생성된 이진 검색 트리의 총 갯수를 세는 동적 프로그래밍 알고리즘 ?
+  - $C_k$ : $1, 2, 3,.. k$ 로 만들 수 있는 이진 검색 트리의 총 수
+  - $C_n$
+    - 힌트: $C_1 = 1, C_2 = 2, C_3 = 5$ 이며 $C_4$를 구하는데 있어 $C_1, C_2, C_3$ 를 활용해라.
+
+### 문제 3 : 배낭 문제
+
+-
