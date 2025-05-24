@@ -230,7 +230,7 @@ def moveMax(m, i, j):
 
 ### 동적 프로그래밍 알고리즘
 
-- 수행시간
+- 시간 복잡도
   - $Θ(n^2)$
   - 행렬 원소 수 $(n^2)$ 에 대한 선형시간
 
@@ -348,12 +348,84 @@ def moveMax(m, n):
 - $c_{ip}$ 의 재귀적 관계
 
 $$
-c_{ip} = \begin{cases} w_{1p} & \text{if } i = 1 \\ 
-\max_q{ c_{i-1 ,q} } + w_{ip} & \text{if } i > 1 \end{cases}
+c_{ip} = \begin{cases} w_{1p} & \text{if } i = 1 \\
+\max_q{ c_{(i-1)q} } + w_{ip} & \text{if } i > 1 \end{cases}
 $$
 
 - 최적 부분 구조(Optimal Substructure)
   - 자신보다 크기가 1 작은 문제의 최적해를 자신의 최적해 구성에 사용
+
+### 재귀 알고리즘 구현
+
+```python
+def pebble(i, p, w, compare):
+  if i == 1:
+    return w[1][p]
+  else :
+    max_score = -math.inf
+    for q in range(1, 5):
+      if compare(q, p):
+        tmp = pebble(i - 1, q, w, compare)
+        if tmp > max_score:
+          max_score = tmp
+    return max_score + w[1][p]
+
+def compare(q, p):
+  # 패턴 양립 가정 함수
+  return True
+```
+
+### 중복 호출 문제
+
+- 재귀 알고리즘 구현 시 중복 호출 문제 발생
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch10/ch10-19-CallTree.PNG" height="auto" />
+
+| 문제 크기(n) | 부분 문제 총 수 | 함수 호출 횟수 |
+| :----------: | :-------------: | :------------: |
+|      1       |        4        |       4        |
+|      2       |        8        |       12       |
+|      3       |       12        |       30       |
+|      4       |       16        |       68       |
+|      5       |       20        |      152       |
+|      6       |       24        |      332       |
+|      7       |       28        |      726       |
+
+### 동적 프로그래밍 알고리즘
+
+- 최적 부분 구조와 재귀적 구현 시 중복 호출 문제 발생
+- 시간 복잡도
+  - $Θ(n)$
+
+```python
+def pebble(n, w, compare):
+  peb = [[0] * 5 for _ in range(n + 1)]
+
+  for p in range(1, 5):
+    peb[1][p] = w[1][p]
+
+  for i in range(2, n + 1):
+    for p in range(1, 5):
+      max_score = -math.inf
+      for q in range(1, 5):
+        if compare(q, p):
+          if peb[i - 1][q] > max_score:
+            max_score = peb[i - 1][q]
+    if max_score == -math.inf:
+      peb[i][p] = -math.inf
+    else:
+      peb[i][p] = max_score + w[i][p]
+
+  lastMax = -math.inf
+  for a in range(1, 5):
+    if peb[n][a] > lastMax:
+      lastMax = peb[n][a]
+  return lastMax
+
+def compare(q, p):
+  # 패턴 양립 가정 함수
+  return True
+```
 
 ### 응용 분야
 
@@ -369,5 +441,55 @@ $$
   - CPU 스케줄링
 
 ## 5절. DP : 행렬 곱셈 순서 문제
+
+### 문제 설명
+
+- 행렬 A, B, C의 곱 계산
+
+  - 행렬 A(10 × 100)
+  - 행렬 B(100 × 5)
+  - 행렬 C(5 × 50)
+
+### 문제 해결 예시 (1) : (AB)C
+
+- 행렬 A (10 × 100)와 행렬 B (100 × 5)의 곱
+  - 10 × 100 × 5 = 5000번 곱셈
+- ABC = (AB)C 로 계산한 경우
+  - 행렬 AB(10 × 5)와 행렬 C(5 × 50)의 곱
+    - 10 × 100 × 5 = 5000번 곱셈
+- 5000 + 2500 = 7500 번 곱셈
+
+### 문제 해결 예시 (2) : A(BC)
+
+- 행렬 B (100×5)와 행렬 C (5×50)의 곱
+  - 100 × 5 × 50 = 25000번 곱셈
+- ABC = A(BC) 로 계산한 경우
+  - 행렬 A(10 × 100)와 행렬 BC(100 × 50)의 곱
+    - 10 × 100 × 50 = 50000번 곱셈
+- 50000 + 25000 = 75000 번 곱셈
+
+### 해결 방법
+
+- $A_1, A_2, A_3, ..., A_n$ 계산 최적 순서 계산 필요
+  - 총 n - 1회의 행렬 곱셈을 어떤 순서로 할 것인가?
+  - n - 1개 경우의 수
+    - $A_1(A_2 ··· A_n)$
+    - $(A_1A_2)(A_3 ··· A_n)$
+    - ···
+    - $(A_1···A_{n-2})(A_{n-1}A_n)$
+    - $(A_1···A_{n-1})A_n$
+- $(A_1···A_{n-2})(A_{n-1}A_n)$ 는 i개 행렬 곱셈 문제 와 n - i개 행렬 곱셈 문제 를 포함
+- $C_{ij}$ : 행렬 곱 $A_i···A_j$ 를 계산하는 최소 비용
+
+### 응용 분야
+
+- 데이터 베이스 최적화
+  - SQL 질의에서 조인 연산 최적 순서 결정
+- 컴파일러 최적화
+  - 수식의 괄호 묶는 방식 최적화
+- 컴퓨터 그래픽스
+  - 변환 행렬 곱 연산 최적화
+- 과학 계산
+  - 대형 행렬 연산 성능 최적화
 
 ## 6절. DP : 최장 공통 부분 순서 문제
