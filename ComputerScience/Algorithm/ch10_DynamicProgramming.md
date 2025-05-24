@@ -355,7 +355,7 @@ $$
 - 최적 부분 구조(Optimal Substructure)
   - 자신보다 크기가 1 작은 문제의 최적해를 자신의 최적해 구성에 사용
 
-### 재귀 알고리즘 구현
+### 재귀 알고리즘
 
 ```python
 def pebble(i, p, w, compare):
@@ -481,6 +481,67 @@ def compare(q, p):
 - $(A_1···A_{n-2})(A_{n-1}A_n)$ 는 i개 행렬 곱셈 문제 와 n - i개 행렬 곱셈 문제 를 포함
 - $C_{ij}$ : 행렬 곱 $A_i···A_j$ 를 계산하는 최소 비용
 
+#### $C_{ij}$ 계산 최적 부분 구조
+
+- $(A_i···A_k)(A_{k + 1}A_j)$
+
+$$
+C_{ij} = \begin{cases} 0 & \text{if } i = j \\
+\min_{i≤k≤j-1}\{C_{ik}+C_{k+1, j}+P_{i-1}P_k P_j\} & \text{if } i < j \end{cases}
+$$
+
+### 재귀 알고리즘
+
+- 중복 호출 발생
+- 시간 복잡도
+  - $Ω(2^n)$
+
+```python
+def rMatrixChain(p, i, j):
+  if i == j:
+    return 0
+
+  # 무한대 초기화
+  minCost = float('inf')
+
+  # 분할 계산
+  for k in range(i, j):
+    cost = rMatrixChain(p, i, k) + rMatrixChain(p, k + 1, j) + p[i-1] * p[k] * p[j]
+
+    if cost < minCost:
+      minCost = cost
+
+    return minCost
+```
+
+### 동적 프로그래밍 알고리즘
+
+- 시간 복잡도
+  - $Θ(n^3)$
+
+```python
+def matrixChain(p):
+  # 행렬 개수
+  n = len(p) - 1
+  m = [[0] * (n + 1) for _ in range(n + 1)]
+
+  # 행렬이 하나인 경우 비용 0
+  for i in range(1, n + 1):
+    m[i][i] = 0
+
+  # 1부터 n-1까지
+  for r in range(1, n):
+    for i in range(1, n - r + 1):
+      # 부분 문제 끝 인덱스
+      j = i + r
+      m[i][j] = float('inf')
+      for k in range(i, j):
+        cost = m[i][k] + m[k + 1][j] + p[i - 1] * p[k] * p[j]
+        if cost < m[i][j]:
+          m[i][j] = cost
+    return m[1][n]
+```
+
 ### 응용 분야
 
 - 데이터 베이스 최적화
@@ -493,3 +554,25 @@ def compare(q, p):
   - 대형 행렬 연산 성능 최적화
 
 ## 6절. DP : 최장 공통 부분 순서 문제
+
+### 문제 설명
+
+- 두 문자열에 공통적으로 존재한 공통 부분 순서 중 가장 긴 문자열 탐색
+
+### 예시
+
+- 부분 순서 예시
+
+  - \<bcdb\> 는 문자열 \<abcbdab\>의 부분 순서
+
+- 공통 부분 순서 예시
+  - \<bcdb\> 는 문자열 \<abcbdab\>의 공통 부분 순서
+
+### 응용 분야
+
+1.  유전자 서열 분석
+2.  자연어 처리: 텍스트 유사도 측정
+3.  최소 편집 거리 알고리즘의 구성
+4.  데이터 중복 제거 및 동기화
+5.  데이터 스트리밍 분석
+6.  파일/문서 비교 및 버전 관리
