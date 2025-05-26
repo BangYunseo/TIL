@@ -17,182 +17,360 @@
 - 장애 발생 시 복구 작업이나 병행 제어 작업을 위한 중요한 단위로 사용
 - 데이터베이스의 무결성과 일관성을 보장하기 위해 작업 수행에 필요한 연산들을 하나의 트랜잭션으로 제대로 정의 및 관리
 
-### 트랜잭션 예시
+### 트랜잭션 예시 : (1)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-01-TSex.PNG"  height="auto" />
+
+- 처리 순서는 중요 X
+- 두 UPDATE 문이 모두 정상적인 실행 필요
+
+### 트랜잭션 예시 : (2)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-02-TSex2.PNG"  height="auto" />
+
+- 상품 주문 트랜잭션 수행 조건
+  - INSERT 문과 UPDATEE 문의 정상적 실행
 
 ### 트랜잭션 특성(ACID)
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-03-ACID.PNG"  height="auto" />
+
 #### 원자성(Atomicity)
+
+- ALL OR NOTHING
+- 트랜잭션 연산들이 모두 정상적으로 실행 or 하나도 실행 X
+- 트랜잭션 수행 중 장애 발생
+  - 지금까지 실행한 연산 모두 취소
+  - 데이터베이스를 트랜잭션 작업 전 상태로 되돌림
+- 장애 발생 시 회복 기능 필요
 
 #### 일관성(Consistency)
 
+- 트랜잭션이 성공적으로 수행된 후 데이터베이스는 일관된 상태를 유지
+- 모순된 데이터 존재 불가
+
 #### 격리성(Isolation)
+
+- 수행 중인 트랜잭션의 완료 전까지 다른 트랜잭션들이 중간 연산 결과에 접근 불가
+- 여러 트랜잭션 동시 수행 시 제어 기능 필요
 
 #### 지속성(Durability)
 
+- 트랜잭션이 성공적으로 완료된 후 데이터베이스에 수행한 결과는 영구적
+- 장애 발생 시 회복 기능 필요
+
+### ACID & DBMS 기능
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-04-ACIDDBMS.PNG"  height="auto" />
+
+### 트랜잭션 연산
+
+|   종류   | 설명                              |
+| :------: | :-------------------------------- |
+|  commit  | 트랜잭션의 성공적 수행(작업 완료) |
+| rollback | 트랜잭션 수행 실패(작업 취소)     |
+
+#### commit
+
+- 트랜잭션 수행의 성공
+- 트랜잭션 수행 결과가 데이터베이스에 반영되고 일관된 상태를 지속적 유지
+
+#### rollback
+
+- 트랜잭션 수행의 실패
+- 트랜잭션이 지금까지 실행한 연산 결과 취소 및 데이터베이스가 트랜잭션 수행 전의 일관된 상태로 돌아감
+
+### 트랜잭션 상태
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-05-TSstate.PNG"  height="auto" />
+
+#### 활동(Active) 상태
+
+- 트랜잭션이 수행되기 시작해서 현재 수행중인 상태
+
+#### 부분 완료(Partially Committed) 상태
+
+- 트랜잭션의 마지막 연산이 실행을 끝낸 직후 상태
+
+#### 완료(Committed) 상태
+
+- 트랜잭션이 성공적으로 완료되어 commit 연산을 실행한 상태
+- 트랜잭션이 수행한 최종 결과를 데이터베이스에 반영
+- 데이터베이스가 새로운 일관된 상태가 되며 트랜잭션 종료
+
+#### 실패(Failed) 상태
+
+- 장애가 발생해 트랜잭션 수행이 중단된 상태
+
+#### 철회(Aborted) 상태
+
+- 트랜잭션 수행 실패로 rollback 연산이 실행된 상태
+- 지금까지 실행한 트랜잭션 연산 모두 취소
+- 트랜잭션 수행 전의 데이터베이스 상태로 되돌린 후 트랜잭션 종료
+- 종료된 트랜잭션은 상황에 따라 재수행되거나 폐기
+
+### 트랜잭션 SQL 예시
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-06-TSSQLex1.PNG"  height="auto" />
+
+#### 수행 과정
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-07-TSSQLex2.PNG"  height="auto" />
+
+1. A 계좌(박지성) 값을 데이터베이스에서 주기억장치 버퍼로 읽음
+2. B 계좌(김연아) 값을 데이터베이스에서 주기억장치 버퍼로 읽음
+3. A 계좌(박지성)에서 10,000원 인출한 값 저장
+4. B 계좌(김연아)에 10,000원 입금한 값 저장
+5. A 계좌(박지성)의 값을 주기억장치 버퍼에서 데이터베이스에 기록
+6. B 계좌(김연아)의 값을 주기억장치 버퍼에서 데이터베이스에 기록
+
+#### 종료(COMMIT) 알림
+
+- DBMS는 사용자에게 빠른 응답성 보장을 위해 방법 1 사용
+- 방법 1 : 1 -> 2 -> 3 -> 4 -> COMMIT -> 5 -> 6
+- 방법 2 : 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> COMMIT
+
+### 트랜잭션 제어 명령어(TCL : Transaction Control Language)
+
+| 표준 명령어       | MySQL                         | 설명                                         |
+| :---------------- | :---------------------------- | -------------------------------------------- |
+| START TRANSACTION | SET TRANSACTION NAME \<이름\> | 트랜잭션 시작                                |
+| COMMIT            | COMMIT                        | 트랜잭션 종료                                |
+| ROLLBACK          | ROLLBACK {TO \<savepoint\>}   | 트랜잭션 전체 혹은 \<savepoint\> 까지 무효화 |
+| SAVEPOINT         | SAVEPOINT \<savepoint\>       | \<savepoint\> 생성                           |
+
 ## 2절. 장애와 회복
+
+### 장애(Failure)
+
+- 시스템이 제대로 동작하지 않는 상태
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-08-Failure.PNG"  height="auto" />
+
+### 데이터베이스 저장 장치 종류
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-09-Storage.PNG"  height="auto" />
+
+### 데이터 이동 연산
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-10-iorw.PNG"  height="auto" />
+
+#### 디스크 & 메인 메모리 간 데이터 이동 연산
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-11-io.PNG"  height="auto" />
+
+- input / output
+
+  - input(X)
+
+    - 디스크 블록에 저장된 데이터 X를 메인 메모리 버퍼 블록으로 이동시키는 연산
+
+  - output(X)
+
+    - 메인 메모리 버퍼 블록에 저장된 데이터 X를 디스크 블록으로 이동시키는 연산
+
+- 블록(block) 단위 수행
+
+  - 디스크 블록 : 디스크에 있는 블록
+  - 버퍼 블록 : 메인 메모리에 있는 블록
+
+- 필요성
+  - 데이터베이스는 비휘발성 저장 장치인 디스크에 상주
+  - 데이터를 디스크에서 메인 메모리로 가져와 처리 후 결과를 디스크로 보내는 작업 필요
+
+#### 메인 메모리 & 프로그램 변수 간 데이터 이동 연산
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-12-rw.PNG"  height="auto" />
+
+- read / write
+
+  - read(X)
+
+    - 메인 메모리 버퍼 블록에 저장된 데이터 X를 프로그램 변수로 읽어오는 연산
+
+  - write(X)
+
+    - 프로그램 변수 값을 메인 메모리 버퍼 블록에 저장된 데이터 X에 기록하는 연산
+
+- 필요성
+  - 메인 메모리 버퍼 블록의 데이터를 프로그램의 변수로 가져오고 데이터 처리 결과를 저장한 변수 값을 메인 메모리 버퍼 블록으로 옮기는 작업 필요
+
+### 회복(Recovery)
+
+- 장애 발생 시 데이터베이스를 장애가 발생하기 전 일관된 상태로 복구
+- 트랜잭션 특성 보장, 데이터베이스를 일관된 상태로 유지하는 필수 기능
+- 회복 관리자(Recovery Manager) 담당
+  - 장애 발생 탐지
+  - 장애 탐지 시 데이터베이스 복구 기능 제공
+
+### 데이터베이스 복사본 생성 방법
+
+- 회복 핵심 원리 : 데이터 중복
+
+|      종류      | 설명                                                                                           |
+| :------------: | :--------------------------------------------------------------------------------------------- |
+| 덤프<br>(dump) | 데이터베이스 전체를 다른 저장 장치에 주기적으로 복사                                           |
+| 로그<br>(log)  | 데이터베이스에서 변경 연산 실행 시 데이터를 변경하기 이전 값과 변경 이후 값을 별도 파일에 기록 |
+
+### 데이터 회복 기본 연산
+
+|       종류       | 설명                                                                                                                                                                                                         |
+| :--------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 재실행<br>(redo) | 가장 최근 저장한 데이터베이스 복사본을 가져온 후 로그를 통해 복사본이 만들어진 이후 실행된 모든 변경 연산을 재실행하여 장애가 발생하기 직전의 데이터베이스 상태로 복구<br>(전반적으로 손상된 경우 주로 사용) |
+|  취소<br>(undo)  | 로그를 통해 지금까지 실행된 모든 변경 연산을 취소해 데이터베이스를 원래 상태로 복구<br>(변경 중이거나 이미 변경된 내용만 신뢰성을 잃은 경우 주 사용)                                                         |
+
+### 로그 파일
+
+- 데이터 변경 이전 값과 변경 이후 값을 기록한 파일
+- 레코드 단위로 트랜잭션 수행과 함께 기록
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-13-logfile.PNG"  height="auto" />
+
+### 로그 기록 예시
+
+- 계좌 잔액이 10,000원인 성호가 계좌 잔액이 0원인 은경에게 5,000원 이체
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-14-logfileex.PNG"  height="auto" />
+
+### 회복 기법
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-15-RecoveryMethod.PNG"  height="auto" />
+
+### 로그 회복 기법 : 즉시 갱신(Immediate Update) 회복 기법
+
+- 트랜잭션 수행 중 데이터 변경 연산 결과를 데이터베이스에 즉시 반영
+- 장애 발생에 대비하기 위해 데이터 변경에 대한 내용을 로그 파일에 기록
+  - 데이터 변경 연산 실행 시 로그 파일에 로그 레코드 먼저 기록 후 데이터베이스에 변경 연산 반영
+- 장애 발생 시점에 따라 redo, undo 연산 실행 후 데이터베이스 복구
+
+#### 즉시 갱신 회복 기법 예시
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-16-IURex.PNG"  height="auto" />
+
+- 데이터베이스 회복 전략
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-17-RS.PNG"  height="auto" />
+
+- 장애 발생 시 반영 결과
+  - 1에서 장애 발생 : undo($T_1$)
+  - 2에서 장애 발생 : undo($T_2$), redo($T_1$)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-18-IURex2.PNG"  height="auto" />
+
+### 로그 회복 기법 – 지연 갱신(Deferred Update) 회복 기법
+
+- 트랜잭션 수행 중 데이터 변경 연산의 결과를 로그에만 기록
+- 트랜잭션 부분 완료 후 로그 기록 내용을 데이터베이스에 한 번에 반영
+- 트랜잭션 수행 중 장애 발생
+  - 로그에 기록된 내용을 버리면 데이터베이스가 원래 상태 그대로 유지
+    - undo 연산 사용 X
+    - redo 연산 사용
+    - 로그 레코드 : 변경 이후 값만 기록(\<T1, X, new_value\> 형식)
+
+#### 지연 갱신 회복 기법 예시
+
+- 데이터베이스 회복 전략
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-19-RS.PNG"  height="auto" />
+
+- 장애 발생 시 반영 결과
+  - 1에서 장애 발생 : 로그 기록 무시 후 별다른 회복 조치 X
+  - 2에서 장애 발생 : redo($T_1$)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-20-DURex.PNG"  height="auto" />
+
+### 검사 시점 회복 기법
+
+- 로그 기록을 이용하되, 일정 시간 간격의 검사 시점(checkpoint) 생성
+  - 검사 시점이 된 경우
+    - 모든 로그 레코드를 로그 파일에 기록
+    - 데이터 변경 내용을 데이터베이스에 반영
+    - \<checkpoint L\>
+      - L : 현재 실행되는 트랜잭션 리스트
+      - 검사 시점을 표시하는 로그 레코드
+      - 로그 레코드 부분을 로그 파일에 기록
+- 장애 발생
+  - 가장 최근의 \<checkpoint L\> 로그 레코드 이후 기록에 대해서만 회복 작업 수행
+    - 회복 작업 : 즉시 갱신 회복 기법 or 지연 갱신 회복 기법
+- 로그 전체 대상 회복 기법 적용 시 발생하는 비효율성 문제 해결
+  - 검사 시점으로 작업 범위가 결정
+  - 불필요한 회복 작업이 없어 시간이 단축
+
+#### 체크포인트(검사점)
+
+- 회복(Recovery) 시 많은 양의 로그 검색 및 갱신 시간을 줄일 필요 존재
+- 몇 십 분 단위로 데이터베이스와 트랜잭션 로그 파일 동기화 후 그 시점을 로그 파일에 기록하는 방법 혹은 그 시점
+
+#### 체크포인트 시점 작업
+
+- 주기억장치의 로그 레코드를 모두 하드디스크의 로그 파일에 저장
+- 버퍼에 있는 변경 내용을 하드디스크 데이터베이스에 저장
+- 체크포인트를 로그 파일에 표시
+
+#### 체크포인트가 있는 로그 이용 회복 기법
+
+- 체크포인트 이전 [COMMIT] 기록 존재
+
+  - 어느 작업도 필요 X
+  - 로그에 체크포인트가 나타나는 시점
+    - 이미 변경 내용이 데이터베이스에 모두 기록된 후
+
+- 체크포인트 이후 [COMMIT] 기록 존재
+
+  - REDO(T) 진행
+  - 체크포인트 이후 변경 내용이 데이터베이스에 미반영
+
+- 체크포인트 이후 [COMMIT] 기록 존재 X
+
+  - 즉시 갱신 방법
+
+    - UNDO(T)를 진행
+    - 버퍼의 내용이 반영됐을 수도 있기 때문에 원상 복구 필요
+
+  - 지연 갱신 방법
+    - 어느 작업도 필요 X
+    - [COMMIT] 이전에 버퍼의 내용을 데이터베이스에 반영하지 않음
+
+#### 검사 시점 회복 기법 예시
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-21-Rex.PNG"  height="auto" />
+
+- 즉시 갱신 방법
+  - T2, T3 : 어떤 작업도 필요 없음
+  - T4, T5 : REDO
+  - T1, T6 : UNDO
+- 지연 갱신 방법
+  - T2, T3 : 어떤 작업도 필요 없음
+  - T4, T5 : REDO
+  - T1, T6 : 어떤 작업도 필요 없음
+
+### 미디어 회복 기법
+
+- 디스크에 발생할 수 있는 장애에 대비
+- 덤프(복사본) 이용
+  - 전체 데이터베이스의 내용을 일정 주기마다 다른 안전 저장 장치에 복사
+- 디스크 장애 발생
+  - 가장 최근 복사한 덤프 이용
+  - 장애 발생 이전의 데이터베이스 상태로 복구
+  - 필요에 따라 redo 연산 수행
 
 ## 3절. 병행 제어
 
-|   종류    | 설명                                                             |
-| :-------: | :--------------------------------------------------------------- |
-| 삽입 이상 | 새 데이터를 삽입하고자 불필요한 데이터도 함께 삽입하는 문제      |
-| 갱신 이상 | 중복 튜플 중 일부만 변경하여 데이터가 불일치하게 되는 모순 문제  |
-| 삭제 이상 | 튜플 삭제 시 꼭 필요한 데이터까지 함께 삭제되는 데이터 손실 문제 |
+### 병행 수행(Concurrency)
 
-#### 삽입 이상(Insertion Anomaly) 예시
+- 여러 사용자가 데이터베이스를 동시 공유할 수 있도록 여러 트랜잭션을 동시에 수행
+- 여러 트랜잭션이 차례로 번갈아 수행되는 인터리빙(Interleaving) 방식
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-01-IA.PNG"  height="auto" />
+### 병행 제어(Concurrency Control)
 
-- 아직 이벤트에 참여하지 않은 고객아이디가 "melon", 이름이 "성원용", 등급이 "gold"인 신규 고객의 데이터는 이벤트참여 릴레이션에 삽입 불가
-- 삽입할 경우 임시 이벤트번호로 삽입 필수
+- 동시성 제어
+- 병행 수행 시 같은 데이터에 접근해 연산을 실행해도 문제 발생 X
+- 정확한 수행 결과를 얻도록 트랜잭션 수행 제어
 
-#### 갱신 이상(Update Anomaly) 예시
+### 병행 수행 시 문제점
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-02-UA.PNG"  height="auto" />
+#### 갱신 분실(Lost Update)
 
-- 아이디가 "apple"인 고객의 등급이 "gold"에서 "vip"로 변경 : 일부 튜플 등급만 수정
-- "apple" 고객이 서로 다른 등급을 가지는 모순 발생
-
-#### 삭제 이상(Deletion Anomaly) 예시
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-03-DA.PNG"  height="auto" />
-
-- 아이디가 "orange"인 고객이 이벤트참여를 취소해 관련 튜플 삭제 필요
-- 이벤트참여와 관련 없는 고객아이디, 고객이름, 등급 데이터까지 손실
-
-### 정규화(Normalization)
-
-- 이상 현상 방지
-- 릴레이션을 관련 속성들로만 구성  
-  => 릴레이션을 분해(decomposition)하는 과정
-- 함수적 종속성 판단 후 정규화
-
-### 함수적 종속성(FD : Functional Dependency)
-
-- 속성들 간 관련성
-
-## 2절. 함수 종속
-
-### 함수 종속
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-04-FD.PNG" height="auto" />
-
-> "X가 Y를 함수적으로 결정"  
-> "Y가 X에 함수적으로 종속"
-
-- 릴레이션의 모든 튜플에서 하나의 X 값에 대한 Y 값이 항상 하나
-- X와 Y는 하나의 릴레이션을 구성하는 속성들의 부분 집합
-- X → Y
-  - X : 결정자
-  - Y : 종속자
-
-#### 함수 종속 관계 판단 예시(1)
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-05-UR.PNG" height="auto" />
-
-- 고객아이디에 대응되는 고객이름 속성과 등급 속성이 단 하나
-
-|   결정자   | ->  | 종속자           |
-| :--------: | :-: | :--------------- |
-| 고객아이디 | ->  | 고객이름         |
-| 고객아이디 | ->  | 등급             |
-| 고객아이디 | ->  | (고객이름, 등급) |
-
-- 종속 다이어그램
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-06-diagramU.PNG" height="auto" />
-
-### 함수 종속 관계 판단 유의 사항
-
-- 속성 자체의 특성과 의미 기반 함수 종속성 판단
-  - 속성값은 계속 변화
-  - 현재 릴레이션에 포함된 속성값으로만 판단 X
-- 기본키와 후보키는 릴레이션의 다른 모든 속성들을 함수적으로 결정
-- 기본키나 후보키가 아니라도 다른 속성을 유일하게 결정하는 속성은 함수 종속 관계에서 결정자
-
-#### 함수 종속 관계 판단 예시(1)
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-07-ER.PNG" height="auto" />
-
-|          결정자          | ->  | 종속자   |
-| :----------------------: | :-: | :------- |
-|        고객아이디        | ->  | 고객이름 |
-| {고객아이디, 이벤트번호} | ->  | 당첨여부 |
-| {고객아이디, 이벤트번호} | ->  | 고객이름 |
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-08-diagramUN.PNG" height="auto" />
-
-- 종속 다이어그램
-
-### 함수 종속성 다이어그램(Functional Dependency Diagram)
-
-- 함수 종속성을 나타내는 표기법
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-09-FDD.PNG" height="auto" />
-
-|        종류         |    표기법     |
-| :-----------------: | :-----------: |
-|    릴레이션 속성    |   직사각형    |
-| 속성 간 함수 종속성 |    화살표     |
-|      복합 속성      | 직사각형 묶음 |
-
-### 완전 함수 종속(FFD : Full Functional Dependency)
-
-- 릴레이션에서 속성 집합 Y가 속성 집합 X에 함수적으로 종속됐지만 속성 집합 X의 전체가 아닌 일부분에는 종속 X
-- 일반적인 함수 종속 == 완전 함수 종속
-- ex) 당첨여부는 {고객아이디, 이벤트번호} 에 완전 함수 종속
-
-### 부분 함수 종속(PFD; Partial Functional Dependency)
-
-- 릴레이션에서 속성 집합 Y가 속성 집합 X의 전체가 아닌 일부분에 함수적 종속
-- ex) 고객이름은 {고객아이디, 이벤트번호} 에 부분 함수 종속
-
-### 고려할 필요 없는 함수 종속 관계
-
-|                  예시                  |
-| :------------------------------------: |
-|        고객아이디 -> 고객아이디        |
-| {고객아이디, 이벤트번호} -> 이벤트번호 |
-
-- 결정자 == 종속자
-- 결정자가 종속자 포함
-
-## 3절. 기본 정규형
-
-### 정규화(Normalization) 개념
-
-- 함수 종속성으로 릴레이션을 연관성이 있는 속성들로만 구성되도록 분해
-- 이상 현상이 발생하지 않는 올바른 릴레이션으로 만드는 과정
-
-### 정규화 기본 목표
-
-- 관련 없는 함수 종속성은 별개의 릴레이션으로 표현
-
-### 정규화 주의 사항
-
-- 정규화로 릴레이션은 무손실 분해(Nonless Decomposition) 필요
-  - 릴레이션이 의미상 동등한 릴레이션들로 분해
-  - 분해로 인한 정보 손실 미발생
-  - 분해된 릴레이션들을 자연 조인 시 분해 전의 릴레이션으로 복원 가능
-
-### 정규형(NF : Normal Form)
-
-| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-10-NF1.PNG" height="auto" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-11-NF2.PNG" height="auto" /> |
-| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-
-- 릴레이션 정규화 정도
-- 각 정규형마다 제약조건이 존재
-  - 정규형 차수 증가 시 요구 제약조건이 많아지고 엄격
-- 릴레이션의 특성을 고려한 적합한 정규형 선택
-
-## 4절. 정규화 과정
-
-### 제 1 정규형(1NF : First Normal Form)
-
-- 릴레이션에 속한 모든 속성의 도메인이 원자 값(Atomic Value)으로만 구성된 경우
-- 제 1 정규형을 만족해야 관계 데이터베이스의 릴레이션 가능
-
-#### 제 1 정규형 구별
-
-| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-10-NF1.PNG" height="auto" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch09/ch09-11-NF2.PNG" height="auto" /> |
-| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+- 하나의 트랜잭션이 수행한 데이터 변경 연산의 결과를 다른 트랜잭션이 덮어써 변경 연산이 무효 화되는 것
+  • 두 개의 트랜잭션이 한 개의 데이터를 동시에 갱신(update)할 때 발생하며, 데이터베이스에서 절 대 발생하면 안 되는 현상
+  • 여러 트랜잭션이 동시에 수행되더라도 갱신 분실 문제가 발생하지 않고 마치 트랜잭션들을 순차 적으로 수행한 것과 같은 결과 값을 얻을 수 있어야 함
