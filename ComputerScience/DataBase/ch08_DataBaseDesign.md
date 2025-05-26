@@ -87,7 +87,7 @@
 
 ### 작업 과정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-02-CDMstep.PNG.PNG"  height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-02-CDMstep.PNG"  height="auto" />
 
 1. 개체 추출, 각 개체의 주요 속성과 키 속성 선별
 2. 개체 간 관계 결정
