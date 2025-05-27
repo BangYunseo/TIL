@@ -5,8 +5,6 @@
 > 2절. 장애와 회복
 >
 > 3절. 병행 제어
->
-> 4절. 트랜잭션 스케줄
 
 ## 1절. 트랜잭션
 
@@ -428,29 +426,6 @@
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-27-CRex2.PNG"  height="auto" />
 
-### 병행 제어 기법
-
-#### 개념
-
-- 병행 수행하면서 직렬 가능성을 보장하기 위한 기법
-
-#### 방법
-
-- 모든 트랜잭션이 준수하면 직렬 가능성이 보장되는 규약 정의
-- 트랜잭션들의 규약 준수를 권장
-
-#### 대표적인 병행 제어 기법
-
-- 로킹(Locking) 기법
-
-##
-
-##
-
-##
-
-## 1절 트랜잭션에 삽입할 내용(마지막)
-
 ### 트랜잭션 스케줄
 
 - 트랜잭션에 포함된 연산들을 수행하는 순서
@@ -471,16 +446,16 @@
   - 병행 수행이 아님
   - 항상 모순이 없는 정확한 결과
 - 다양한 직렬 스케줄 생성
-- 직렬 스케줄마다 데이터베이스에 반영되는 최종 결과가 상이할 수 있음
+- 직렬 스케줄마다 데이터베이스에 반영되는 최종 결과가 상이
   - 직렬 스케줄의 결과는 모두 정확
 
 #### 예시
 
-- 트랜잭션 $T_1$, $T_2$ 대상의 첫 번째 직렬 스케줄
+- 트랜잭션 $T_1$, $T_2$ 대상 첫 번째 직렬 스케줄
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-29-SSex1.PNG"  height="auto" />
 
-- 트랜잭션 $T_1$, $T_2$ 대상의 두 번째 직렬 스케줄
+- 트랜잭션 $T_1$, $T_2$ 대상 두 번째 직렬 스케줄
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-30-SSex2.PNG"  height="auto" />
 
@@ -493,18 +468,77 @@
 #### 특징
 
 - 트랜잭션이 번갈아 연산 수행
-  - 병행 수행이 아님
-  - 항상 모순이 없는 정확한 결과
-- 다양한 직렬 스케줄 생성
-- 직렬 스케줄마다 데이터베이스에 반영되는 최종 결과가 상이할 수 있음
-  - 직렬 스케줄의 결과는 모두 정확
+  - 하나의 트랜잭션 완료 전 다른 트랜잭션 연산 실행 가능
+- 병행 수행 사 갱신 분실, 모순성, 연쇄 복귀 등의 문제 발생 가능
+  - 결과 정확성 보장 불가
+  - 잘못된 결과 생성 가능
 
 #### 예시
 
-- 트랜잭션 $T_1$, $T_2$ 대상의 첫 번째 직렬 스케줄
+- 트랜잭션 $T_1$, $T_2$ 대상 첫 번째 비직렬 스케줄 : 성공
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-29-SSex1.PNG"  height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-31-NSSex1.PNG"  height="auto" />
 
-- 트랜잭션 $T_1$, $T_2$ 대상의 두 번째 직렬 스케줄
+- 트랜잭션 $T_1$, $T_2$ 대상 두 번째 비직렬 스케줄 : 실패
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-30-SSex2.PNG"  height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-32-NSSex2.PNG"  height="auto" />
+
+### 직렬 가능 스케줄(Serializable Schedule)
+
+#### 의미
+
+- 직렬 스케줄에 따라 수행한 것처럼 정확한 결과를 생성하는 비직렬 스케줄
+- 비직렬 스케줄 중 수행 결과가 동일한 직렬 스케줄이 존재
+
+#### 특징
+
+- 인터리빙 방식으로 병행 수행하면서 정확한 결과
+- 직렬 가능 스케줄 여부 판단
+  - 직렬 가능성을 보장하는 병행 제어 기법 사용
+
+#### 예시
+
+- 트랜잭션 $T_1$, $T_2$ 대상 비직렬 스케줄이면서 정확한 수행 결과를 생성하므로 직렬 가능 스케줄
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-33-SSex.PNG"  height="auto" />
+
+### 병행 제어 기법
+
+#### 개념
+
+- 병행 수행하면서 직렬 가능성을 보장하기 위한 기법
+
+#### 방법
+
+- 모든 트랜잭션이 준수하면 직렬 가능성이 보장되는 규약 정의
+- 트랜잭션들의 규약 준수를 권장
+
+#### 대표적인 병행 제어 기법
+
+- 로킹(Locking) 기법
+
+### 로킹 기법
+
+#### 기본 원리
+
+- 한 트랜잭션이 먼저 접근한 데이터에 대한 연산을 끝내기 전까지 다른 트랜잭션이 접근하지 못하도록 상호 배제(Mutual Exclusion)
+
+#### 방법
+
+- lock / unlock 연산
+  - lock : 트랜잭션이 데이터에 대한 독점권을 요청하는 연산
+  - unlock : 트랜잭션이 데이터에 대한 독점권을 반환하는 연산
+
+#### 기본 로킹 규약
+
+- 트랜잭션은 데이터 접근을 위해 먼저 lock 연산 실행 후 독점권 획득
+  - read / write 연산 실행 전 lock 연산 실행
+- 다른 트랜잭션에 의해 이미 lock 연산이 실행된 데이터에는 다시 lock 연산을 실행할 수 없음
+- 독점권을 획득한 데이터에 대한 모든 연산의 수행이 끝나면 트랜잭션은 unlock 연산을 실행해서 독점권을 반납해야 함
+
+#### 로킹 단위
+
+- lock 연산을 실행하는 대상 데이터의 크기
+  • 전체 데이터베이스부터 릴레이션, 투플, 속성까지도 가능함
+  • 로킹 단위가 커질수록 병행성은 낮아지지만 제어가 쉬움
+  • 로킹 단위가 작아질수록 제어가 어렵지만 병행성은 높아짐
