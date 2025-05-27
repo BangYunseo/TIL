@@ -531,14 +531,63 @@
 
 #### 기본 로킹 규약
 
-- 트랜잭션은 데이터 접근을 위해 먼저 lock 연산 실행 후 독점권 획득
+- 트랜잭션은 데이터 접근을 위해 lock 연산 실행 후 독점권 획득
   - read / write 연산 실행 전 lock 연산 실행
-- 다른 트랜잭션에 의해 이미 lock 연산이 실행된 데이터에는 다시 lock 연산을 실행할 수 없음
-- 독점권을 획득한 데이터에 대한 모든 연산의 수행이 끝나면 트랜잭션은 unlock 연산을 실행해서 독점권을 반납해야 함
+- 다른 트랜잭션에 의해 lock 연산이 실행된 데이터에 다시 lock 연산 실행 불가
+- 독점권을 획득한 데이터에 대한 모든 연산 수행 후 트랜잭션은 unlock 연산 실행으로 독점권 반납 필요
 
 #### 로킹 단위
 
-- lock 연산을 실행하는 대상 데이터의 크기
-  • 전체 데이터베이스부터 릴레이션, 투플, 속성까지도 가능함
-  • 로킹 단위가 커질수록 병행성은 낮아지지만 제어가 쉬움
-  • 로킹 단위가 작아질수록 제어가 어렵지만 병행성은 높아짐
+- lock 연산 실행 대상 데이터의 크기
+- 전체 데이터베이스부터 릴레이션, 튜플, 속성까지 가능
+- 로킹 단위가 커질수록 병행성은 낮아지지만 제어가 쉬움
+- 로킹 단위가 작아질수록 제어가 어렵지만 병행성은 높아짐
+
+### 두 개의 트랜잭션 작업
+
+- 한 개의 데이터에 두 개의 트랜잭션이 접근해 갱신하는 작업
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-34-2TW.PNG"  height="auto" />
+
+### MySQL 실습
+
+- 다른 두 세션(세션은 데이터베이스 접속단위)에서 진행
+- MySQL 두 번 연결을 위해 MySQL Workbench에서 접속 2개 생성
+  - LAB1과 동일한 내용의 LAB2 생성
+  - 워크시트를 LAB1과 LAB2로 두 번 접속 후 진행
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-35-2TWex1.PNG"  height="auto" />
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-36-2TWex2.PNG"  height="auto" />
+
+#### 로킹 기법 예시
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-37-Lex1.PNG"  height="auto" />
+
+### 기본 로킹 규약 효율성 증가 방법
+
+- 트랜잭션들이 같은 데이터에 동시에 read 연산을 실행하도록 허용
+- lock 연산 2가지
+
+|      연산 종류       | 데이터에 해당 lock 연산을 수행한 경우                                                                                                               |
+| :------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  공용(Shared) lock   | read 연산 실행 가능 / write 연산 실행 불가능<br>다른 트랜잭션도 공용 lock 연산 동시 실행 가능<br>(데이터에 대한 사용권을 여러 트랜잭션이 함께 보유) |
+| 전용(Exclusive) lock | read 연산 / write 연산 실행 가능<br>다른 트랜잭션은 모든 lock 연산 실행 불가능<br>(전용 lock 연산 실행 트랜잭션만 해당 데이터에 대한 독점권 보유)   |
+
+#### 공유락(LS : Shared Lock)
+
+- 트랜잭션이 읽기를 할 때 사용하는 락
+
+#### 배타락(LX : Exclusive Lock)
+
+- 읽고 쓸 때 사용하는 락
+
+#### 공유락, 배타락 사용 규칙
+
+- 데이터에 락이 걸려있지 않으면 트랜잭션은 데이터에 락을 걸 수 있다.
+  § 트랜잭션이 데이터 X를 읽기만 할 경우 LS(X)를 요청하고, 읽거나 쓰기를 할 경우 LX(X)를 요
+  청한다.
+  § 다른 트랜잭션이 데이터에 LS(X)을 걸어둔 경우, LS(X)의 요청은 허용하고 LX(X)는 허용하지
+  않는다.
+  § 다른 트랜잭션이 데이터에 LX(X)을 걸어둔 경우, LS(X)와 LX(X) 모두 허용하지 않는다.
+  § 트랜잭션이 락을 허용받지 못하면 대기 상태가 된다.
