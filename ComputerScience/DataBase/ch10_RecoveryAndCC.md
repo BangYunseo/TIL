@@ -5,6 +5,8 @@
 > 2절. 장애와 회복
 >
 > 3절. 병행 제어
+>
+> 4절. 트랜잭션 스케줄
 
 ## 1절. 트랜잭션
 
@@ -369,8 +371,140 @@
 
 ### 병행 수행 시 문제점
 
-#### 갱신 분실(Lost Update)
+### 갱신 분실(Lost Update)
 
-- 하나의 트랜잭션이 수행한 데이터 변경 연산의 결과를 다른 트랜잭션이 덮어써 변경 연산이 무효 화되는 것
-  • 두 개의 트랜잭션이 한 개의 데이터를 동시에 갱신(update)할 때 발생하며, 데이터베이스에서 절 대 발생하면 안 되는 현상
-  • 여러 트랜잭션이 동시에 수행되더라도 갱신 분실 문제가 발생하지 않고 마치 트랜잭션들을 순차 적으로 수행한 것과 같은 결과 값을 얻을 수 있어야 함
+- 하나의 트랜잭션이 수행한 데이터 변경 연산 결과를 다른 트랜잭션이 덮어씀 => 변경 연산 무효화
+- 두 개의 트랜잭션이 한 개의 데이터를 동시에 갱신(update) 시 발생
+- 데이터베이스에서 절대 발생하면 안 되는 현상
+- 트랜잭션들을 순차적으로 수행한 것과 같은 결과 값 필요
+
+#### 갱신 분실 예시
+
+- 트랜잭션 $T_1$ 에 대한 갱신 분실 발생
+
+  - $T_1$ 의 변경 연산 결과가 데이터베이스에 반영 X
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-22-LUex.PNG"  height="auto" />
+
+- 해결 과정
+  - 트랜잭션을 순차적으로 수행해서 갱신 분실 문제 방지
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-23-LUex2.PNG"  height="auto" />
+
+### 모순성(Inconsistency)
+
+- 하나의 트랜잭션이 여러 개 데이터 변경 연산을 실행 시 발생
+  - 일관성 없는 상태의 데이터베이스에서 데이터를 가져와 연산함으로써 모순 결과 발생
+- 트랜잭션들을 순차적으로 수행한 것과 같은 결과 값 필요
+
+#### 모순성 예시
+
+- 트랜잭션 $T_1$ 에 대한 모순성 발생
+  - $T_1$ 이 데이터 X와 Y를 서로 다른 상태의 데이터베이스에서 가져와 실행하는 모순 발생
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-24-Iex.PNG"  height="auto" />
+
+- 해결 과정
+  - 트랜잭션을 순차적으로 수행해서 모순성 문제 방지
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-25-Iex2.PNG"  height="auto" />
+
+### 연쇄 복귀(Cascading Rollback)
+
+- 트랜잭션 완료 전에 장애 발생
+  - rollback 연산 수행 시 장애 발생 전에 이 트랜잭션이 변경한 데이터를 가져가서 변경 연산을 실행한 다른 트랜잭션에도 rollback 연산을 연쇄적으로 실행해야 하는 연쇄 복귀 발생
+- 트랜잭션들을 순차적으로 수행한 것과 같은 결과 값 필요
+
+#### 연쇄 복귀 예시
+
+- 트랜잭션 $T_2$ 에 대한 연쇄 복귀 발생
+  - $T_1$ 이 변경한 데이터 X를 가져가 연산을 수행한 $T_2$ 도 rollback 연산이 연쇄적으로 실행되어야 함
+  - 이미 완료된 상태라서 rollback 연산을 실행할 수 없는 문제
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-26-CRex.PNG"  height="auto" />
+
+- 해결 과정
+  - 트랜잭션을 순차적으로 수행해서 연쇄 복귀 문제 방지
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-27-CRex2.PNG"  height="auto" />
+
+### 병행 제어 기법
+
+#### 개념
+
+- 병행 수행하면서 직렬 가능성을 보장하기 위한 기법
+
+#### 방법
+
+- 모든 트랜잭션이 준수하면 직렬 가능성이 보장되는 규약 정의
+- 트랜잭션들의 규약 준수를 권장
+
+#### 대표적인 병행 제어 기법
+
+- 로킹(Locking) 기법
+
+##
+
+##
+
+##
+
+## 1절 트랜잭션에 삽입할 내용(마지막)
+
+### 트랜잭션 스케줄
+
+- 트랜잭션에 포함된 연산들을 수행하는 순서
+
+### 트랜잭션 스케줄 유형
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-28-TStype.PNG"  height="auto" />
+
+### 직렬 스케줄(Serial Schedule)
+
+#### 의미
+
+- 인터리빙 방식을 이용하지 않고 각 트랜잭션 별 연산들을 순차적으로 실행
+
+#### 특징
+
+- 다른 트랜잭션의 방해를 받지 않고 독립적으로 수행
+  - 병행 수행이 아님
+  - 항상 모순이 없는 정확한 결과
+- 다양한 직렬 스케줄 생성
+- 직렬 스케줄마다 데이터베이스에 반영되는 최종 결과가 상이할 수 있음
+  - 직렬 스케줄의 결과는 모두 정확
+
+#### 예시
+
+- 트랜잭션 $T_1$, $T_2$ 대상의 첫 번째 직렬 스케줄
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-29-SSex1.PNG"  height="auto" />
+
+- 트랜잭션 $T_1$, $T_2$ 대상의 두 번째 직렬 스케줄
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-30-SSex2.PNG"  height="auto" />
+
+### 비직렬 스케줄(Non-Serial Schedule)
+
+#### 의미
+
+- 인터리빙 방식으로 트랜션을 병행 수행
+
+#### 특징
+
+- 트랜잭션이 번갈아 연산 수행
+  - 병행 수행이 아님
+  - 항상 모순이 없는 정확한 결과
+- 다양한 직렬 스케줄 생성
+- 직렬 스케줄마다 데이터베이스에 반영되는 최종 결과가 상이할 수 있음
+  - 직렬 스케줄의 결과는 모두 정확
+
+#### 예시
+
+- 트랜잭션 $T_1$, $T_2$ 대상의 첫 번째 직렬 스케줄
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-29-SSex1.PNG"  height="auto" />
+
+- 트랜잭션 $T_1$, $T_2$ 대상의 두 번째 직렬 스케줄
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-30-SSex2.PNG"  height="auto" />
