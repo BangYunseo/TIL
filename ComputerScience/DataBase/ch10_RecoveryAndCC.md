@@ -584,10 +584,93 @@
 
 #### 공유락, 배타락 사용 규칙
 
-- 데이터에 락이 걸려있지 않으면 트랜잭션은 데이터에 락을 걸 수 있다.
-  § 트랜잭션이 데이터 X를 읽기만 할 경우 LS(X)를 요청하고, 읽거나 쓰기를 할 경우 LX(X)를 요
-  청한다.
-  § 다른 트랜잭션이 데이터에 LS(X)을 걸어둔 경우, LS(X)의 요청은 허용하고 LX(X)는 허용하지
-  않는다.
-  § 다른 트랜잭션이 데이터에 LX(X)을 걸어둔 경우, LS(X)와 LX(X) 모두 허용하지 않는다.
-  § 트랜잭션이 락을 허용받지 못하면 대기 상태가 된다.
+- 데이터에 락이 걸려있지 않으면 트랜잭션은 데이터에 락 가능
+- 데이터 X를 읽기만 할 경우
+  - LS(X) 요청
+- 데이터 X를 읽거나 쓸 경우
+  - LX(X) 요청
+- 다른 트랜잭션이 데이터에 LS(X)을 걸어둔 경우
+  - LS(X) 요청 : 허용
+  - LX(X) 요청 : 비허용
+- 다른 트랜잭션이 데이터에 LX(X)을 걸어둔 경우
+  - LS(X) & LX(X) : 비허용
+- 트랜잭션이 락을 허용받지 못하면 대기 상태
+
+### lock 연산 양립성
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-38-Lock1.PNG"  height="auto" />
+
+- 서로 다른 트랜잭션이 같은 데이터에 공용 lock 연산 동시 실행 가능
+- 다른 트랜잭션이 전용 lock 연산을 실행한 데이터에 공용 lock, 전용 lock 모두 실행 불가
+
+### 기본 로킹 규약으로 직렬 가능성이 보장되지 않는 스케줄 예시
+
+- 트랜잭션 $T_1$ 이 데이터 X에 너무 빨리 unlock 연산을 실행해 트랜잭션 $T_2$가 일관성 없는 데이터에 접근
+  - 2단계 로킹 규약 필요
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-39-Lockex1.PNG"  height="auto" />
+
+### 2단계 로킹 규약(2PLP : 2Phase Locking Protocol)
+
+#### 의미
+
+- 기본 로킹 규약의 문제를 해결하고 트랜잭션의 직렬 가능성을 보장을 위해 lock과 unlock 연산의 수행 시점에 대한 새로운 규약 추가
+
+#### 방법
+
+- lock / unlock 연산
+- 확장 단계 / 축소 단계
+
+|   단계    | 설명                                                                   |
+| :-------: | :--------------------------------------------------------------------- |
+| 확장 단계 | 트랜잭션이 lock 연산만 실행 가능하고 unlock 연산은 실행할 수 없는 단계 |
+| 축소 단계 | 트랜잭션이 unlock 연산만 실행 가능하고 lock 연산은 실행할 수 없는 단계 |
+
+- 트랜잭션이 처음 수행
+  - 확장 단계로 들어가 lock 연산만 실행 가능
+- unlock 연산 실행
+  - 축소 단계로 들어가 unlock 연산만 실행 가능
+- 트랜잭션은 첫 번째 unlock 연산 실행 전에 필요한 모든 lock 연산을 실행 필요
+
+#### 예시
+
+- 2단계 로킹 규약을 준수하며 직렬 가능성이 보장된 스케줄
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-40-2PLPex1.PNG"  height="auto" />
+
+### 교착 상태(Deadlock)
+
+- 트랜잭션들이 상대가 독점하는 데이터에 unlock 연산이 실행되기를 서로 기다리며 트랜잭션의 수행을 중단하는 상태
+- 교착 상태가 발생하지 않도록 예방
+- 발생 시 빨리 탐지 후 조치 필요
+
+## 4절. 트랜잭션 고립 수준
+
+### 트랜잭션 시나리오
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-41-TSS.PNG"  height="auto" />
+
+### 오손 읽기(Uncommitted Dependency)
+
+- 읽기 작업을 하는 트랜잭션 1이 쓰기 작업을 하는 트랜잭션 2가 작업한 중간 데이터를 읽기 때문에 생기는 문제
+- 작업 중인 트랜잭션 2가 어떤 이유에서 작업을 철회(Rollback)할 경우 트랜잭션 1은 무효가 된 데이터를 읽고 잘못된 결과를 도출하는 현상
+
+```SQL
+DROP TABLE USERS;
+CREATE TABLE USERS(
+  id INTEGER,
+  name VARCHAR2(20),
+  age NUMBER
+);
+
+INSERT INTO USERS VALUES(1, 'HONG GILDONG', 30);
+
+SELECT *
+FROM USERS;
+
+COMMIT;
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch10/ch10-42-Tableex1.PNG"  height="auto" />
+
+(38페이지부터 재작성!)
