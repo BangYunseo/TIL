@@ -12,7 +12,7 @@
 >
 > 5절. 알림
 >
-> 6절. 카카오톡 알림
+> 6절. 카카오톡 알림   
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch06)
 
 ## 1절. API 레벨 호환성 고려
