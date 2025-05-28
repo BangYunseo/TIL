@@ -114,6 +114,113 @@ val cursor = db.query("USER_TB", arrayOf<String>("name", "phone"). "phone = ?",
 
 ### 데이터베이스 관리
 
+- SQLiteOpenHelper
+  - 추상 클래스
+  - 상속 받아 하위 클래스 작성
+    - onCreate() : 앱 설치 후 SQLiteOpenHelper 클래스가 이용되는 순간 한 번 호출
+    - onUpgrade() : 생성자에 지정한 DB 버전 정보 변경 시마다 호출
+   
+```kt
+// SQLiteOpenHelper 하위 클래스 작성
+
+class DBHelper(context: Context): SQLiteOpenHelper(context, "testdb", null, 1){
+    override fun onCreate(db: SQLiteDatabase?){
+    }
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int){
+    }
+}
+```
+
+```kt
+// SQL 데이터베이스 객체 생성
+
+val db: SQLiteDatabase = DBHelper(this).writeDatabase
+```
+
+## 2절. 파일 보관
+
+### java.io
+
+- 안드로이드 앱에서 파일 보관 시 java.io 패키지에서 제공하는 클래스 이용
+  - File : 파일 및 디렉토리 지칭 클래스
+  - FileInputStream / FileOutputStream : 파일에서 바이트 스트림으로 데이터를 읽거나 쓰는 클래스
+  - FileReader / FileWriter : 파일에서 문자열 스트림으로 데이터를 읽거나 쓰는 클래스
+ 
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch12/ch12-01-file.PNG" height="auto" />
+
+### 내장 메모리 파일 이용
+
+- 앱의 패키지 명으로 디렉토리 생성
+  - 해당 디렉토리 == 앱의 내장 메모리 공간
+- 파일을 내장 메모리에 적용할 경우 java.io의 File 클래스 이용
+
+```kt
+// 파일 객체 생성 후 데이터 쓰기
+
+val file = File(filesDir, "test.txt")
+val writeStream: OutputStreamWriter = file.writer()
+writeStream.write("hello, World!")
+writeStream.flush()
+```
+
+```kt
+// 파일 데이터 읽기
+
+val readStream: BufferedReader = file.reader().buffered()
+readStream.forEachLine{
+    Log.d("yunseo", "$it")
+}
+```
+
+```kt
+// Context 객체 함수 사용
+
+openFileOutput("test.txt", Context.MODE_PRIVATE).use{
+    it.write("hello, World!".toByteArray())
+}
+openFileInput("test.txt").bufferedReader().forEachLine {
+    Log.d("yunseo", "$it")
+}
+```
+
+### 외장 메모리 파일 이용
+
+```kt
+// 외장 메모리 사용 가능 여부 판단
+
+if(Environment.getExternalStorageState() == Environment.MEDIZ_MOUNTED){
+    Log.d("yunseo", "ExternalStorageState MOUNTED")
+} else {
+    Log.d("yunseo", "ExternalStorageState UNMOUNTED")
+}
+```
+
+### 앱 별 저장소 이용
+
+- 개별 앱에 할당된 공간
+- 파일을 외부 앱에서 접근하기 위해 파일 프로바이더로 공개
+- getExternalFilesDir() 함수 사용
+   
+```kt
+// 앱 별 저장소 접근
+
+val file: File? = getExternalFilesDir(null)
+Log.d("yunseo", "$(file?.absolutePath)")
+```
+
 (여기부터 작성)
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch12/ch12-01-.PNG" height="auto" />
+
+### 공용 저장소 이용
+
+- 모든 앱이 이용할 수 있는 저장소
+ 안드로이드12(API Level 32)까지는공용공간을이용하기위해서는android.permission.READ_EXTERNAL_STORAGE와
+android.permission.WRITE_EXTERNAL_STORAGE를퍼미션으로추가장소
+ 안드로이드13(API Level 33)부터는공용공간의파일타입을구분해서이용하므로미디어파일도이미지인지비디오인지에따라다르
+게퍼미션을설정
+ 안드로이드14부터는사용자에게앱에서미디어파일에대한접근을다시선택할수있게하기위한
+android.permission.READ_MEDIA_VISUAL_USER_SELECTED 퍼미션이추가
+
+```xml
+<!-- AndroidManifest.xml 퍼미션 설정 -->
+```
 
