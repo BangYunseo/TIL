@@ -321,8 +321,13 @@ TimePickerDialog(this, object: TimePickerDialog.OnTimeSetListener{
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-10-AlertWindowing.PNG" height="auto" />
 
 - 다이얼로그의 기본 : AlertDialog
-- 구성요소 : 제목, 내용, 버튼 영역
-- AlertDialog.Builder를 통해 알림 창 생성
+- AlertDialog.Builder로 알림 창 생성
+
+| 구성요소 |
+| :------: |
+|   제목   |
+|   내용   |
+|   버튼   |
 
 ```kt
 // 아이콘 설정 빌더
@@ -339,13 +344,16 @@ open fun setMessage(message: CharSequence!): AlertDialog.Builder!
 
 ```kt
 // 알림 긍정(허용) 버튼 설정 빌더
-open fun setPositiveButton(text: CharSequence!, listener: DialogInterface.OnClick Listener!): AlertDialog.Builder!
+open fun setPositiveButton(text: CharSequence!, listener: DialogInterface.OnClickListener!):
+ AlertDialog.Builder!
 
 // 알림 부정(거부) 버튼 설정 빌더
-open fun setNegativeButton(text: CharSequence!, listener: DialogInterface.OnClick Listener!): AlertDialog.Builder!
+open fun setNegativeButton(text: CharSequence!, listener: DialogInterface.OnClickListener!):
+ AlertDialog.Builder!
 
 // 중립 역할(더 많은 정보 표현) 버튼 설정 빌더
-open fun setNeutralButton(text: CharSequence!, listener: DialogInterface.OnClick Listener!): AlertDialog.Builder!
+open fun setNeutralButton(text: CharSequence!, listener: DialogInterface.OnClickListener!):
+ AlertDialog.Builder!
 ```
 
 - 알림 창 띄우기 예시
