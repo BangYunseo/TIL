@@ -103,7 +103,7 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 1. \<uses-permission\> 2개 설정
 
 ```xml
-<!-->퍼미션 사용 설정<!-->
+<!-- 퍼미션 사용 설정 : 안드로이드 표준 권한 -->
 
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -111,7 +111,7 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-04-Permission3.PNG" height="auto" />
 
-- <permission> 설정 후 보호할 컴포넌트에 적용
+- \<permission\> 설정 후 보호할 컴포넌트에 적용
 
 ```xml
 <!--컴포넌트에 퍼미션 적용-->
@@ -124,7 +124,7 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 </activity>
 ```
 
-- 컴포넌트를 이용하는 AndroidManifest.xml 파일에 <uses-permission> 선언
+- 컴포넌트 이용 AndroidManifest.xml에 \<uses-permission\> 선언
 
 ```xml
 <!-- 퍼미션 사용 설정 -->
@@ -134,38 +134,40 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 
 ### 퍼미션 사용 설정 종류
 
-|          종류          | 설명                         |
-| :--------------------: | :--------------------------- |
-|  ACCESS_FINE_LOCATION  | 위치 정보 접근               |
-|  ACCESS_NETWORK_STATE  | 네트워크 정보 접근           |
+|          종류          |             설명             |
+| :--------------------: | :--------------------------: |
+|  ACCESS_FINE_LOCATION  |        위치 정보 접근        |
+|  ACCESS_NETWORK_STATE  |      네트워크 정보 접근      |
 |   ACCESS_WIFI_STATE    | 와이파이 네트워크 정보 접근  |
-|     BATTERY_STATS      | 배터리 정보 접근             |
-|       BLUETOOTH        | 블루투스 장치 연결           |
+|     BATTERY_STATS      |       배터리 정보 접근       |
+|       BLUETOOTH        |      블루투스 장치 연결      |
 |    BLUETOOTH_ADMIN     | 블루투스 장치 검색 후 페어링 |
-|         CAMERA         | 카메라 장치 접근             |
-|        INTERNET        | 네트워크 연결                |
-| READ_EXTERNAL_STORAGE  | 외부 저장소 파일 읽기        |
-| WRITE_EXTERNAL_STORAGE | 외부 저장소 파일 쓰기        |
-|    READ_PHONE_STATE    | 전화기 정보 접근             |
-|        SEND_SMS        | 문자 메시지 발신             |
-|      RECEIVE_SMS       | 문자 메시지 수신             |
-| RECEIVE_BOOT_COMPLETED | 부팅 완료 시 실행            |
-|        VIBRATE         | 진동 울리기                  |
+|         CAMERA         |       카메라 장치 접근       |
+|        INTERNET        |        네트워크 연결         |
+| READ_EXTERNAL_STORAGE  |    외부 저장소 파일 읽기     |
+| WRITE_EXTERNAL_STORAGE |    외부 저장소 파일 쓰기     |
+|    READ_PHONE_STATE    |       전화기 정보 접근       |
+|        SEND_SMS        |       문자 메시지 발신       |
+|      RECEIVE_SMS       |       문자 메시지 수신       |
+| RECEIVE_BOOT_COMPLETED |      부팅 완료 시 실행       |
+|        VIBRATE         |             진동             |
 
 ### 퍼미션 허용 확인
 
 - API 레벨 23 버전부터 허가제
-- <uses-permission> 선언 후 사용자 권한 화면에서 거부 가능
+- \<uses-permission\> 선언 후 사용자 권한 화면에서 거부 가능
 - 앱 실행 시 사용자 퍼미션 거부 여부 확인
   - 거부한 경우 퍼미션 허용 재요청
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-05-PermissionAcception.PNG" height="auto" />
 
-- checkSelfPer mission() 함수 : permission 허용 여부 확인
+### checkSelfPermission()
+
+- permission 허용 여부 확인
 - 결괏값 : 상수
 
-|               함수                | 설명      |
-| :-------------------------------: | :-------- |
+|               함수                |   설명    |
+| :-------------------------------: | :-------: |
 | PackageManager.PERMISSION_GRANTED | 권한 허용 |
 | PackageManager.PERMISSION_DENIED  | 권한 거부 |
 
@@ -184,12 +186,15 @@ if(status == PackageManager.PERMISSION_GRANTED) {
 
 ### 퍼미션 거부
 
-- 거부 상태 : 사용자에게 해당 퍼미션 허용 요청
-- ActivityResultLauncher 객체 이용
-  - registerForActivityResult() 함수 호출 후 생성
+- 거부한 상태인 경우
+  - 사용자에게 해당 퍼미션 허용 요청
+
+### ActivityResultLauncher 객체
+
+- registerForActivityResult() 함수 호출 후 생성
   - 첫 번째 매개변수 : 어떤 요청인지를 나타내는 ActivityResultContract 타입 객체
   - 두 번째 매개변수 : 결과를 받았을 때 호출되는 콜백
-- ActivityResultLauncher 객체 launch() 함수 호출 후 요청 실행
+- launch() 함수 호출 후 요청 실행
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-06-PermissionRequest.PNG" height="auto" />
 
@@ -211,14 +216,14 @@ ActivityResultContracts.RequestPermission()
 ```kt
 // 퍼미션 허용 요청 실행
 
-val requestPermissionLauncher = launch("android.permission.ACCESS_FINE_LOCATION")
+requestPermissionLauncher.launch("android.permission.ACCESS_FINE_LOCATION")
 ```
 
 ## 3절. 다양한 다이얼로그
 
 ### 토스트 메시지
 
-- 화면 아래쪽에 일시적으로 보여진 후 사라지는 문자열
+- 일시적으로 보여지고 사라지는 문자열
 - makeText() 함수
 
 ```kt
@@ -235,13 +240,13 @@ open static fun makeText(context: Context!, resId: Int, duration: Int): Toast!
 
 |         코드          |   구분    |
 | :-------------------: | :-------: |
-| val LENGTH_LONG: Int  |  긴 구간  |
-| val LENGTH_SHORT: Int | 짧은 구간 |
+| val LENGTH_LONG: Int  | 길게 출력 |
+| val LENGTH_SHORT: Int | 짧게 출력 |
 
 ```kt
 // 토스트 출력 예시
 
-val toast = Toast.makeTest(this, "종료하려면 한 번 더 누르세요", Toast.LENGTH_SHORT)
+val toast = Toast.makeText(this, "종료하려면 한 번 더 누르세요", Toast.LENGTH_SHORT)
 toast.show()
 ```
 
@@ -249,7 +254,8 @@ toast.show()
 
 ### 토스트 로직
 
-- 토스트가 화면에 보여진 후 사라지는 순간을 콜백으로 감지, 특정 로직 수행
+- 토스트가 화면에 보여진 후 사라지는 순간을 콜백으로 감지
+- 특정 로직 수행
 - 콜백 기능 : API 레벨 30버전
 
 ```kt
@@ -279,8 +285,7 @@ fun showToast(){
 ### 날짜 · 시간 입력받기
 
 - DatePickerDialog : 날짜 입력
-- TimerPickerDialog : 시간 입력
-- 사용자가 설정한 날짜 · 시간을 콜백 함수로 반환
+- 사용자가 설정한 날짜를 콜백 함수로 반환
 
 ```kt
 // 데이트 피커 다이얼로그 : 날짜
@@ -293,6 +298,11 @@ DatePickerDialog(this, object: DatePickerDialog.OnDateSetListener{
 ```
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-08-DatePicker.PNG" height="auto" />
+
+### 시간 입력받기
+
+- TimerPickerDialog : 시간 입력
+- 사용자가 설정한 시간을 콜백 함수로 반환
 
 ```kt
 // 타임 피커 다이얼로그 사용 : 시간
