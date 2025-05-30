@@ -12,20 +12,22 @@
 >
 > 5절. 알림
 >
-> 6절. 카카오톡 알림   
+> 6절. 카카오톡 알림  
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch06)
 
 ## 1절. API 레벨 호환성 고려
 
 ### API 레벨 호환성
 
-- 34 버전의 API에서 개발 시 24 버전 기기에서도 오류가 발생하지 않는 동작 필요
-- minSdk 설정값보다 상위 버전에서 제공하는 API를 사용 시 호환성 고려
+- 최소 24 버전 기기에서 오류가 발생하지 않는 동작 필요
+- minSdk보다 상위 버전에서 제공하는 API 호환성 고려
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-01-API.PNG" height="auto" />
 
+### 애너테이션 사용
+
 - @RequiresApi · @TargetApi 애너테이션 이용
-- 안드로이드 스튜디오에서 오류 무시 설정
+- 오류 무시 설정
 
 ```kt
 @RequiresApi(Build.VERSION_CODES.S)
@@ -47,7 +49,7 @@ fun noti() {
 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
   val builder: Notification.Builder = Notification.Builder(this, "1")
     .setStyle(
-      Notification.CallStyle.forIncomingCall(caller, delineIntent, answerIntent)
+      Notification.CallStyle.forIncomingCall(caller, declineIntent, answerIntent)
     )
 } else {
   // 이전 버전 그대로 처리 코드 필요
@@ -58,13 +60,13 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 
 ### 퍼미션 설정과 사용 설정
 
-- A 앱의 컴포넌트를 B 앱에서 사용
-- 만약 A 앱의 컴포넌트에 Permission 설정 시 B 앱 연동에서 문제 발생
+- A 앱 컴포넌트 => B 앱에서 사용
+- A 앱 컴포넌트에 Permission 설정 => B 앱 연동에서 문제 발생
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-02-Permission.PNG" height="auto" />
 
-- <permission> 태그 : 기능을 보호하려는 앱의 매니페스트(AndroidManifest.xml) 파일에 설정
-- <uses-permission> 태그 : 퍼미션으로 보호된 기능을 사용하려는 앱 매니페스트(AndroidManifest.xml) 파일 설정
+- \<permission\> 태그 : 기능을 보호하려는 앱 매니페스트(AndroidManifest.xml) 파일에 설정
+- \<uses-permission\> 태그 : 퍼미션으로 보호된 기능을 사용하려는 앱 매니페스트(AndroidManifest.xml) 파일에 설정
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-03-Permission2.PNG" height="auto" />
 
@@ -88,23 +90,23 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 | signatureOrSystem | 안드로이드 시스템 앱 · 같은 키로 인증한 앱만 실행 |
 
 ```xml
-<!-->퍼미션 설정<!-->
+<!-- 퍼미션 설정 -->
 
 <permission android:name="com.example.permission.TEST_PERMISSION"
-  android:lavel="Permission TESTING"
+  android:label="Permission TESTING"
   android:description="@string/permission_desc"
-  android:protextionLevel="dangerous" />
+  android:protectionLevel="dangerous" />
 ```
 
-### permission 설정 과정
+#### permission 설정 예시
 
-- <uses-permission> 설정
+1. \<uses-permission\> 2개 설정
 
 ```xml
 <!-->퍼미션 사용 설정<!-->
 
-<uses-permission android:name="com.example.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="com.example.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-04-Permission3.PNG" height="auto" />
