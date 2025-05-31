@@ -441,7 +441,7 @@ AlertDialog.Builder(this).run {
 
 ### 알림 다중 선택
 
-- 다중 선택을 위한 체크박스 동시 출력
+- 다중 선택 체크박스 동시 출력
 
 ```kt
 setMultiChoiceItems(items, booleanArrayOf(true, false, true, false),
@@ -456,7 +456,7 @@ object : DialogInterface.OnMultiChoiceClickListener {
 
 ### 알림 단일 선택
 
-- 단일 선택을 위한 라디오 버튼 출력
+- 단일 선택 라디오 버튼 출력
 
 ```kt
 setSingleChoiceItems(items, 1, object : DialogInterface.OnClickListener{
@@ -470,12 +470,10 @@ setSingleChoiceItems(items, 1, object : DialogInterface.OnClickListener{
 
 ### 다른 화면 탈출 허용 or 거부
 
-- 상황 별 함수
-
-|          함수 종류          | 상황                                        |
-| :-------------------------: | :------------------------------------------ |
-|       setCancelable()       | 사용자가 기기의 뒤로가기 버튼을 눌렀을 경우 |
-| setCanceledOnTouchOutside() | 알림 바깥 영역을 터치했을 경우              |
+|          함수 종류          | 상황                             |
+| :-------------------------: | :------------------------------- |
+|       setCancelable()       | 기기의 뒤로가기 버튼을 누른 경우 |
+| setCanceledOnTouchOutside() | 알림 바깥 영역을 터치한 경우     |
 
 - 함수의 boolean값 별 행동
 
@@ -499,16 +497,22 @@ AlertDialog.Builder(this).run {
   setPositiveButton("OK", eventHandler)
   setNegativeButton("Cancel", eventHandler)
   setNeutralButton("More", null)
-  show()
-}.setCanceledOnTouchOutside(false)
+}.show().apply{
+  setCanceledOnTouchOutside(false)
+}
 ```
 
 ## 4절. 소리와 진동 알림
 
 ### 소리 알림
 
-- 알림(Notification), 알람(Alarm), 벨소리(Ringtone) 등
 - RingtonManager 사용
+
+|        종류        |
+| :----------------: |
+| 알림(Notification) |
+|    알람(Alarm)     |
+|  벨소리(Ringtone)  |
 
 ```kt
 // 소리 얻기
@@ -532,9 +536,8 @@ player.start()
 
 ### 진동 알림 : VibratorManager
 
-- AndroidManifest.xml 파일에 <uses-permission> 퍼미션 선언
-- VibratorManager 사용
-- Vibrator 클래스 사용
+- AndroidManifest.xml 파일에 \<uses-permission\> 선언
+- Vibrator 클래스의 VibratorManager 사용
 - 31 버전 이후부터 VIBRATOR_MANAGER_SERVICE로 식별되는 VibratorManager 시스템 서비스 획득 후 Vibrator 이용
 
 ```kt
@@ -543,7 +546,7 @@ player.start()
 val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
   val vibratorManager = this.getSystemService(Context.VIBRATOR_MANAGER_SERVICE)
                         as VibratorManager
-  vibratorManager.defaultVibrator;
+  vibratorManager.defaultVibrator
 } else {
   getSystemService(VIBRATOR_SERVICE) as Vibrator
 }
@@ -566,7 +569,9 @@ open fun vibrate(pattern: LongArray!, repeat: Int): Unit
 - API 레벨 26부터 제공
 
 ```kt
-open fun vibrate(vibe: VibrationEffect!): Unit                              // VibrationEffect 객체 : 진동이 울리는 시간 외 진동 세기까지 제어
+// VibrationEffect 객체 : 진동이 울리는 시간 외 진동 세기까지 제어
+open fun vibrate(vibe: VibrationEffect!): Unit
+
 
 // 진동 세기 설정
 open static fun createOneShot(milliseconds: Long, amplitude: Int): VibrationEffect!
@@ -602,9 +607,9 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-16-Noti.PNG" height="auto" />
 
 - 알림(notification) : 상태 바에 앱 정보 출력
-- API 레벨 33버전부터는 앱에서 알림을 띄우기 위해 사용자에게 퍼미션(허가) 요청 필요
+- 앱에 알림을 위해 사용자 퍼미션(허가) 요청 필요(API 33 ~)
 
-```kt
+```XML
 // Manifest 파일
 
 <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
@@ -613,31 +618,29 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-17-NotiLogic.PNG" height="auto" />
 
 - Notification 생성 조건 : NotificationCompatBuilder
-- 26버전 이후 빌더 생성 시 NotificationChannel 생성 후 채널의 식별값을 빌더의 생성자 매개변수에 지정 필요
+- 빌더 생성 시 NotificationChannel 생성 후 채널의 식별값을 빌더의 생성자 매개 변수로 지정 필요
 - 앱의 알림을 채널로 구분
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-18-NotiChannel.PNG" height="auto" />
 
 - 알림 중요도 상수
 
-|              중요도 상수               | 설명                                                    |
-| :------------------------------------: | :------------------------------------------------------ |
-|  NotificationManager.IMPORTANCE_HIGH   | 긴급 상황으로 알림음이 울리며 헤드업으로 표시           |
-| NotificationManager.IMPORTANCE_DEFAULT | 높은 중요도이며 알림음이 울림                           |
-|   NotificationManager.IMPORTANCE_LOW   | 중간 중요도이며 알림음이 울리지 않음                    |
-|   NotificationManager.IMPORTANCE_MIN   | 낮은 중요도이며 알림음도 없고 상태 바에도 표시되지 않음 |
+|              중요도 상수               | 설명                                         |
+| :------------------------------------: | :------------------------------------------- |
+|  NotificationManager.IMPORTANCE_HIGH   | 긴급 상황 / 알림음이 울리며 헤드업 표시      |
+| NotificationManager.IMPORTANCE_DEFAULT | 높은 중요도 / 알림음이 울림                  |
+|   NotificationManager.IMPORTANCE_LOW   | 중간 중요도 / 알림음이 울리지 않음           |
+|   NotificationManager.IMPORTANCE_MIN   | 낮은 중요도 / 알림음이 없고 상태 바에 표시 X |
 
-- 알림 채널 사용 함수
-
-|                                종류                                | 설명                                   |
-| :----------------------------------------------------------------: | :------------------------------------- |
-|           fun setDescription(description: String!): Unit           | 채널 설명 문자열                       |
-|             fun setShowBadge(showBadge: Boolean): Unit             | 홈 화면 아이콘에 배지 아이콘 출력 여부 |
-| fun setSound(sound: Uri!, audioAttributes: AudioAttributes!): Unit | 알림음 재생                            |
-|              fun enableLights(lights: Boolean): Unit               | 불빛 표시 여부                         |
-|                 fun setLightColor(argb: Int): Unit                 | 불빛이 표시된다면 불빛의 색상          |
-|           fun enableVibration(vibration: Boolean): Unit            | 진동 여부                              |
-|    fun setVibrationPattern(vibrationPattern: LongArray!): Unit     | 진동을 울린다면 진동의 패턴 설정       |
+| 알림 채널 사용 함수 종류(fun)                                  | 설명                                   |
+| :------------------------------------------------------------- | :------------------------------------- |
+| setDescription(description: String!): Unit                     | 채널 설명 문자열                       |
+| setShowBadge(showBadge: Boolean): Unit                         | 홈 화면 아이콘에 배지 아이콘 출력 여부 |
+| setSound(sound: Uri!, audioAttributes: AudioAttributes!): Unit | 알림음 재생                            |
+| enableLights(lights: Boolean): Unit                            | 불빛 표시 여부                         |
+| setLightColor(argb: Int): Unit                                 | 불빛이 표시된다면 불빛의 색상          |
+| enableVibration(vibration: Boolean): Unit                      | 진동 여부                              |
+| setVibrationPattern(vibrationPattern: LongArray!): Unit        | 진동을 울린다면 진동의 패턴 설정       |
 
 ```kt
 // 알림 빌더
@@ -683,7 +686,7 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 ```kt
 // 알림 객체 설정
 
-builder.setSmallIcon(android.R.drawble.ic_notification_overlay)
+builder.setSmallIcon(android.R.drawable.ic_notification_overlay)
 builder.setWhen(System.currentTimeMillis())
 builder.setContentTitle("Content Title")
 builder.setContentText("Content Message")
@@ -710,7 +713,8 @@ builder.setOngoing(true)
 
 ### 알림 구성
 
-- 알림 터치 이벤트 : 인텐트 준비 후 Notification 객체에 담아 이벤트 발생 시 시스템에 요청
+- 알림 터치 이벤트
+  - 인텐트 준비 후 Notification 객체에 담아 이벤트 발생 시 시스템에 요청
   - 인텐트(Intent) : 액티비티가 있을 경우
 
 ```kt
@@ -731,15 +735,15 @@ static fun getService(context: Context!, requestCode: Int, intent: Intent, flags
 
 // DetailActivity 클래스 파일 MainActivity가 있는 폴더에 생성
 val intent = Intent(this, DetailActivity::class.java)
-val pendingIntent = Pending.getActivity(this, 10, intent, PendingIntent.FLAG_IMMUTABLE)
+val pendingIntent = PendingIntent.getActivity(this, 10, intent, PendingIntent.FLAG_IMMUTABLE)
 
 // 터치 이벤트 등록
-builder.setContentIntent(PendingIntent)
+builder.setContentIntent(pendingIntent)
 ```
 
 ### 액션
 
-- 최대 3개 추가 가능
+- 최대 3개 추가
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-21-Action.PNG" height="auto" />
 
@@ -836,9 +840,7 @@ thread{
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-26-ProgressEX.PNG" height="auto" />
 
-### 알림 스타일
-
-#### 큰 이미지 스타일
+### 큰 이미지 스타일
 
 ```kt
 // 큰 이미지 스타일
@@ -851,7 +853,7 @@ builder.setStyle(bigStyle)
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-27-BigImage.PNG" height="auto" />
 
-#### 긴 텍스트 스타일
+### 긴 텍스트 스타일
 
 ```kt
 // 긴 텍스트 스타일
@@ -878,7 +880,7 @@ builder.setStyle(style)
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-29-Box.PNG" height="auto" />
 
-#### 메세지 스타일
+### 메세지 스타일
 
 - Person : 알림에 출력될 한 사람의 정보를 담는 클래스
 
@@ -917,7 +919,7 @@ val message2 = NotificationCompat.MessagingStyle.Message(
 
 val messageStyle = NotificationCompat.MessagingStyle(sender1)
   .addMessage(message1)
-  .addMessage(mesage2)
+  .addMessage(message2)
 builder.setStyle(messageStyle)
 ```
 
@@ -930,9 +932,14 @@ builder.setStyle(messageStyle)
 - Ch10_Notification 새 모듈 생성
 - 뷰 바인딩 기법 추가
 
+```kts
+viewBinding.isEnabled = true
+```
+
 ### 2) 파일 복사
 
-- drawable 디렉터리의 big.jpg, small.png, send.png 파일을 res/drawable 디렉터리에 복사 - layout/activity_main.xml 파일을 res/layout 디렉터리에 복사해 이전 파일을 대체
+- drawable 디렉토리 : big.jpg, small.png, send.png 파일
+- res/layout 디렉토리 : layout/activity_main.xml 파일 작성
 
 ```xml
 <!-- activity_main.xml 파일 -->
