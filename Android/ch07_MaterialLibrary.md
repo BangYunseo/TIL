@@ -15,10 +15,10 @@
 
 ## 1절. 앱바
 
-### 머터리얼(Material)
+### 머터리얼(Material) 라이브러리
 
 - 구글의 "머터리얼 디자인"
-- 모바일, 데스크톱, 그 밖의 당야한 장치를 아우르는 일관된 애플리케이션 디자인 지침
+- 모바일, 데스크톱, 다양한 장치 등을 아우르는 일관된 애플리케이션 디자인 지침
 
 ```kt
 // 머터리얼 라이브러리 선언
@@ -26,315 +26,437 @@
 implementation(libs.material)
 ```
 
-(여기부터 수정)
+### 앱바 레이아웃
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-01-JavaAPI.PNG" height="auto" />
+- 앱바 : 화면 위쪽의 꾸밀 수 있는 영역
+- 화면 위쪽 영역 꾸미기
 
-## 1절. 제트팩
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-01-AppBar.PNG" height="auto" />
 
-### 제트팩(JetPack)
-
-- 구글에서 안드로이드 앱 개발용으로 제공하는 다양한 라이브러리
-- androidx로 시작하는 패키지명
-  - 앱을 개발 시 필요 권장 아키텍처 제공
-  - API 레벨 호환성 문제 해결
-  - 플랫폼 API에서 제공하지 않는 다양한 기능 제공
-
-## 2절. androidx
-
-### androidx 라이브러리
-
-- 화면 구성과 관련된 라이브러리
-
-|    라이브러리 종류    | 설명                             |
-| :-------------------: | :------------------------------- |
-|  androidx.appcompat   | 앱 API 레벨 호환성 해결          |
-| androidx.recyclerview | 목록 화면 구성                   |
-|  androidx.viewpager2  | 스와이프로 넘기는 화면 구성      |
-|   androidx.fragment   | 액티비티처럼 동작하는 뷰 제공    |
-| androidx.drawerlayout | 옆에서 서랍처럼 열리는 화면 구성 |
-
-## 3절. appcompat 라이브러리
-
-### appcompat 라이브러리
-
-- 안드로이드 앱 화면 구성 액티비티 생성
-- API 레벨 호환성 문제 해결
-
-```kt
-// appcompat 라이브러리 선언
-
-implementation(lib.androidx.appcompat)
-```
-
-```kt
-// appcompat 라이브러리 사용
-
-import androidx.appcompat.app.AppCompatActivity
-
-class MainActivity : AppCompatActivity() {
-
-}
-```
-
-### 문자열 출력 구성
-
-| 타이틀 문자열 출력 부분 구성 방법 |
-| :-------------------------------: |
-|            액션바 이용            |
-|             툴바 이용             |
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-02-ToolBar.PNG" height="auto" />
-
-- 구성 방법은 액티비티에 적용되는 테마 설정에 의해 결정
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-03-Theme.PNG" height="auto" />
+#### 툴바 포함
 
 ```xml
-<!-- themes.xml 테마 스타일 선언 -->
-
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- 기본 테마 -->
-    <style name="Base.Theme.AndroidLab" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- light 테마 지정 -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
-
-    <style name="Theme.AndroidLab" parent="Base.Theme.AndroidLab" />
-</resources>
-```
-
-```xml
-<!-- AndroidManifest.xml 적용 내용 확인 -->
-
-<application
-    android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/Theme.AndroidLab" >
-    <!-- 생략 -->
-
-</application>
-```
-
-### 툴바
-
-- 레이아웃 XML에 androidx.appcompat.widtet.Toolbar 클래스 선언
-- 코드에서 액션바의 내용이 툴바에 적용되도록 지정 필요
-
-```xml
-<!-- 레이아웃 XML에 툴바 적용 -->
-
-<androidx.appcompat.widget.Toolbar
-    android:id="@+id/toolbar"
+<com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/appbar"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="?attr/colorPrimary"
-    android:elevation="4dp"
-    android:theme="@style/ThemmeOverlay.AppCompat.ActionBar"
-    app:titleTextColor="#FFFFFF" />
+    android:layout_height="wrap_content"
+    android:theme="@style.ThemeOverlay.AppCompat.ActionBar">
+    <androidx.appcompat.widget.Toolbar
+        (...생략...)
+    />
+</com.google.android.material.appbar.AppBarLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-04-MatchToolBar.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-02-ToolBar.PNG" height="auto" />
 
-```kt
-// 액션바 내용 툴바 적용
-
-setSupportActionBar(binding.toolbar)
-```
-
-|     구성 요소     |
-| :---------------: |
-|   타이틀 문자열   |
-| 내비게이션 아이콘 |
-|    액션 아이템    |
-|   오버플로 메뉴   |
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-05-ActionBar.PNG" height="auto" />
-
-#### 툴바 색상 설정
-
-- 앱 적용 테마에 의한 결정
-
-|      속성      |                   설명                    |
-| :------------: | :---------------------------------------: |
-|  colorPrimary  |            툴바 · 버튼 배경색             |
-|  colorAccent   | 스위치 켬(on) 상황처럼 활성모드 상태 표현 |
-| statusBarColor |               상태바 배경색               |
+#### 크기 확장
 
 ```xml
-<!-- 테마 색상 지정 -->
-<style name="Base.Theme.AndroidLab" parent="Theme.Material3.DayNight.NoActionBar">
-    <item name="colorPrimary">#FF0000</item>
-    <item name="android:statusBarColor">#CC0000</item>
-    <item name="colorAccent">#00FF00</item>
-</style>
+<com.google.android.material.appbar.AppBarLayout
+    (...생략...)
+    android:layout_height="242dp">
+</com.google.android.material.appbar.AppBarLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-06-ToolBarColor.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-03-Height.PNG" height="auto" />
 
-#### 업 버튼 설정
-
-- 액션바 왼쪽에 이전 화면으로 되돌아가는 화살표 모양(←) 업 버튼
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-07-UpButton.PNG" height="auto" />
-
-|                  등록 방법                   |
-| :------------------------------------------: |
-| 액티비티가 등록된 AndroidManifest.xml에 등록 |
-|             액티비티 코드로 등록             |
+#### 이미지 삽입
 
 ```xml
-<!-- AndroidManifest.xml에서 업버튼 설정 -->
+<com.google.android.material.appbar.AppBarLayout ...생략... >
+    <androidx.appcompat.widget.Toolbar ...생략.../>
+    <ImageView ...생략... />
+</com.google.android.material.appbar.AppBarLayout>
+```
 
-<activity
-    android:name=".test1.TwoActivity"
-    android:exported="false"
-    android:parentActivityName=".MainActivity"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-04-Image.PNG" height="auto" />
+
+### 코디네이터 레이아웃
+
+- 뷰끼리 상호 작용
+
+#### 스크롤 연동
+
+- 레이아웃 : 뷰끼리 상호작용 시 사용
+- 뷰에서 발생한 스크롤 정보를 코디네이터 레이아웃이 전달받아 다른 뷰에 전달
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-05-Scroll.PNG" height="auto" />
+
+#### 중첩 스크롤 뷰
+
+- 코디네이터 레이아웃에 중첩 스크롤 뷰(NestedScrollView) 포함
+  - 추가로 텍스트 뷰 OR 이미지 뷰를 삽입한 경우
+- 뷰에서 발생하는 스크롤 정보를 코디네이터 레아이웃에 전달
+
+```XML
+<!-- 중첩 스크롤 뷰 -->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout ...생략 ... >
+
+    <com.google.android.material.appbar.AppBarLayout ...생략 ... >
+        <androidx.appcompat.widget.Toolbar
+            app:layout_scrollFlags="scroll|enterAlways" />
+        <ImageView
+            app:layout_scrollFlags="scroll|enterAlways" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView ...생략 ... >
+        <TextView
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-06-NScroll.PNG" height="auto" />
+
+### 컬랩싱 툴바 레이아웃(CollapsingToolbarLayout)
+
+- 앱바 접히는 형태를 설정한 뷰
+- 앱바 레이아웃 하위에 선언
+
+|           속성            | 설명                                         |
+| :-----------------------: | :------------------------------------------- |
+|           title           | 앱바 제목 설정                               |
+| expandedTitleMarginStart  | 앱바가 접히지 않은 경우 제목 위치 설정(위)   |
+| expandedTitleMarginBottom | 앱바가 접히지 않은 경우 제목 위치 설정(아래) |
+|       contentScrin        | 지정 색상 앱바 출력                          |
+
+```XML
+<!-- 컬랩싱 툴바 레이아웃 등록 -->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout ...생략 ... >
+
+    <com.google.android.material.appbar.AppBarLayout ...생략 ... >
+        <com.google.android.material.appbar.CollapsingToolbarLayout ...생략 ...
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginBottom="50dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="AppBar Title">
+            <ImageView ...생략 ...
+                app:layout_collapseMode="parallax" />
+            <androidx.appcompat.widget.Toolbar ...생략 ...
+                app:layout_collapseMode="pin" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView ...생략 ...
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-07-CTL.PNG" height="auto" />
+
+### 스크롤 설정
+
+- layout_scrollFlags
+- 앱바의 스크롤 여부 설정
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-08-scrollFlags.PNG" height="auto" />
+
+|   layout_scrollFlags 속성값    | 설명                                                                                                               |
+| :----------------------------: | :----------------------------------------------------------------------------------------------------------------- |
+|     scroll \| enterAlways      | 스크롤 시 완전히 사라졌다가 거꾸로 스크롤 시 처음부터 다시 나타남                                                  |
+| scroll \| enterAlwaysCollapsed | 스크롤 시 완전히 사라졌다가 거꾸로 스크롤 시 처음부터 나타나지 않고 메인 콘텐츠 부분이 끝까지 스크롤된 후에 나타남 |
+|  scroll \| exitUntilCollapsed  | 스크롤 시 모두 사라지지 않고 툴바를 출력할 정도의 한 줄만 남을 때까지 스크롤                                       |
+
+```XML
+<!-- scroll | enterAlways 속성값 -->
+
+app:layout_scrollFlags="scroll|enterAlways"
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-08-eA.PNG" height="auto" />
+
+```XML
+<!-- scroll | enterAlwaysCollapsed 속성값 -->
+
+app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-09-eAC.PNG" height="auto" />
+
+```XML
+<!-- scroll | exitUntilCollapsed 속성값 -->
+
+app:layout_scrollFlags="scroll|exitUntilCollapsed"
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-10-eUC.PNG" height="auto" />
+
+### 개별 뷰 스크롤 설정
+
+- layout_collapseMode
+- 하위 뷰마다 스크롤 설정
+
+|   속성   | 설명             |
+| :------: | :--------------- |
+|   pin    | 고정 후 스크롤 X |
+| parallax | 함께 스크롤      |
+
+```XML
+<!-- 개별 뷰 스크롤 설정 -->
+
+<com.google.android.material.appbar.CollapsingToolbarLayout ...생략 ... >
+    <ImageView ...생략 ...
+        app:layout_collapseMode="parallax" />
+    <androidx.appcompat.widget.Toolbar ...생략 ...
+        app:layout_collapseMode="pin" />
+</com.google.android.material.appbar.CollapsingToolbarLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-11-lcM.PNG" height="auto" />
+
+## 2절. 탭 레이아웃
+
+### 탭 레이아웃
+
+- 탭(tab)으로 구분하는 화면에서 탭 버튼을 배치하는 레이아웃
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-12-TL.PNG" height="auto" />
+
+```XML
+<!-- 탭 레이아웃 등록 -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <FrameLayout
+        android:id="@+id/tabContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
 ```
 
 ```kt
-// 툴바에 업버튼 설정
+// 탭 버튼 정의
 
-supportActionBar?.setDisplayHomeAsUpEnabled(true)
-```
+binding.tabs.run {
+    val tab1: TabLayout.Tab = newTab()
+    tab1.text = "Tab1"
+    addTab(tab1)
 
-- onSupportNavigateUp() 함수 재정의
-  - 업버튼 실행 시 특별한 로직 실행
-  - AndroidManifest.xml 설정 없이 코드에서 업버튼 설정 희망
+    val tab2: TabLayout.Tab = newTab()
+    tab2.text = "Tab2"
+    addTab(tab2)
 
-```kt
-// 사용자가 업버튼 실행 시 함수 자동 호출되는 onSupportNavigateUp() 함수 재정의
-override fun onSupportNavigateUp(): Boolean{
-    Log.d("Yunseo", "onSupportNavigateUp")
-    return super.onSupportNavigateUp()
+    val tab3: TabLayout.Tab = newTab()
+    tab3.text = "Tab3"
+    addTab(tab3)
 }
 ```
 
-### 메뉴 구성
+- 탭 버튼 정의 없이 activity.xml 파일의 TabItem으로 정의
 
-- 메뉴
-  - 툴바의 중요한 구성 요소
-  - 액티비티 화면에서 사용자 이벤트 사용 허용
+```XML
+<!-- XMl 파일에서 탭 버튼 정의 -->
 
-| 액티비티 메뉴 추가 함수 | 설명                                                                     |
-| :---------------------: | :----------------------------------------------------------------------- |
-|  onCreateOptionsMenu()  | 액티비티 첫 1회만 호출                                                   |
-| onPrepareOptionsMenu()  | 액티비티 첫 실행 한 번 호출된 후 오버플로 메뉴가 나타날 때마다 반복 호출 |
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-08-Menu.PNG" height="auto" />
-
-```kt
-override fun onCreateOptionsMenu(menu: Menu?): Boolean{
-    val menuItem1: MenuItem? = menu?,add(0, 0, 0, "menu1")
-    val menuItem2: MenuItem? = menu?,add(0, 1, 0, "menu2")
-    return super.onCreateOptionsMenu(menu)
-}
+<com.google.android.material.tabs.TabLayout
+    android:id="@+id/tabs"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.google.android.material.tabs.TabItem
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tab1" />
+    <com.google.android.material.tabs.TabItem
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tab2" />
+    <com.google.android.material.tabs.TabItem
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tab3" />
+</com.google.android.material.tabs.TabLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-09-Menu2.PNG" height="auto" />
+### 탭 버튼 이벤트 핸들러
 
-### 이벤트 처리
-
-- onOptionsItemSelected() : 사용자가 메뉴 선택 시 이벤트 처리
-- 함수 매개 변수 : 이벤트가 발생한 메뉴 객체(MenuItem)
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-13-TEH.PNG" height="auto" />
 
 ```kt
-// 메뉴 선택 시 이벤트 처리
+// 탭 버튼 이벤트 처리
 
-override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId){
-    0 -> {
-        Log.d("Yunseo", "menu1 click")
-        true
+binding.tabs.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
+    // 탭 버튼을 선택할 때 이벤트
+    override fun onTabSelected(tab: TabLayout.Tab?) {
+        val transaction = supportFragmentManager.beginTransaction()
+        when (tab?.text) {
+            "Tab1"-> transaction.replace(R.id.tabContent, OneFragment())
+            "Tab2"-> transaction.replace(R.id.tabContent, TwoFragment())
+            "Tab3"-> transaction.replace(R.id.tabContent, ThreeFragment())
+        }
+        transaction.commit()
     }
-    1 -> {
-        Log.d("Yunseo", "menu2 click")
-        true
+
+    // 선택된 탭 버튼을 다시 선택할 때 이벤트
+    override fun onTabReselected(tab: TabLayout.Tab?) {
     }
-    else -> super.onOptionsItemSelected(item)
-}
+
+    // 다른 탭 버튼을 눌러 선택된 탭 버튼이 해제될 때 이벤트
+    override fun onTabUnselected(tab: TabLayout.Tab?) {
+    }
+})
 ```
 
-### 리소스 메뉴 구현
+### 탭 버튼 정렬
 
-- 메뉴 구성 XML 파일은 res/menu 디렉터리에 생성
+- tabGravity : 탭 버튼 정렬 속성
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-10-Menu3.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-14-tG.PNG" height="auto" />
 
-```xml
-<!-- menu_main.xml -->
+### 스크롤 설정
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-15-sA.PNG" height="auto" />
 
-    <item
-        android:id="@+id/menu1"
-        android:title="menu1" />
+|    속성    | 설명                                                                 |
+| :--------: | :------------------------------------------------------------------- |
+|  tabMode   | 탭 버튼 스크롤 여부 설정                                             |
+|   fixed    | 스크롤을 지원 X 설정                                                 |
+| scrollable | 탭 버튼이 왼쪽부터 나열<br>모두 출력 불가능 한 경우 자동 가로 스크롤 |
 
-    <item
-        android:id="@+id/menu2"
-        android:icon="@android:drawable/ic_menu_add"
-        android:title="menu2"
-        app:showAsAction="always" />
+### 뷰 페이저 연동
 
-    <item
-        android:id="@+id/menu3"
-        android:icon="@android:drawable/ic_menu_search"
-        android:title="menu3"
-        app:showAsAction="iffRoom" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-16-vp.PNG" height="auto" />
 
-</menu>
+- TabLayout과 ViewPager2 등록 후 코드에서 TabLayoutMediator로 연동
+
+```XML
+<!-- 탭 레이아웃과 뷰 페이저 등록 -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable" >
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
 ```
-
-#### showAsActions 속성
-
-- 액션바 아이콘 출력
-
-| 속성값 종류 | 설명 |
-| :---------: | :--- |
-
-|never(기본): 항상 오버플로 메뉴로 출력합니다.
- ifRoom: 만약 액션바에 공간이 있다면 액션 아이템으로, 없다면 오버플로 메뉴로 출력합니다.  always: 항상 액션 아이템으로 출력합니다.|
 
 ```kt
-// 액티비티 코드 메뉴 XML 적용
+// 탭 레이아웃과 뷰 페이저 연동
 
-override fun onCreateOptionsMenu(menu: Menu?): Boolean{
-    menuInflate.inflate(R.menu.menu_main, menu)
-    return super.onCreateOptionsMenu(menu)
+TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+    tab.text = "Tab$((position + 1))"
+}.attach()
+```
+
+## 3절. 내비게이션 뷰
+
+### 네비게이션 뷰
+
+- 드로어 화면 구성
+  - 위쪽 : 아이콘, 문자열 등
+  - 아래쪽 : 메뉴 항목
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-17-Ds.PNG" height="auto" />
+
+```XML
+<!-- 네비게이션 뷰 등록 -->
+
+<androidx.drawerlayout.widget.DrawerLayout ...생략 ... >
+    <LinearLayout ...생략 ... >
+        (... 생략 ...)
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/main_drawer_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/menu_navigation" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-18-DsEx.PNG" height="auto" />
+
+- 메뉴 구성 XML 파일을 menu 속성에 지정
+  - 위의 결과처럼 항목 자동 출력
+- setNavigationItemSelectedListener()
+  - 항목 선택 이벤트 핸들러 지정
+  - DrawerLayout 클래스
+
+```kt
+// 항목 선택 이벤트 핸들러
+
+binding.mainDrawerView.setNavigationItemSelectedListener {
+    Log.d("kkang", "navigation item click... ${it.title}")
+    true
 }
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-11-Menu4.PNG" height="auto" />
+## 4절. 확장 플로팅 액션 버튼
 
-### 액션 뷰 이용
+### 플로팅 액션 버튼
 
-(여기부터 작성 : 11장 18p)
+- 화면에 떠있는 버튼
 
-## 4절. 프래그먼트
+```XML
+<!-- 확장 플로팅 액션 버튼 -->
 
-## 5절. 리사이클러 뷰
-
-## 6절. 뷰 페이저2
-
-## 7절. 드로어 레이아웃
-
-## 8장. 제트팩 화면 구성
-
-### 1) 새 모듈 생성
-
-- Ch11_JetPack 이름의 새 모듈 생성
-
-### 2) 빌드 그래들 작성
-
-- 뷰 바인딩 설정
-
-### 3) 문자열 리소스 생성
-
-- res/values/strings.xml 파일에 ActionBarDrawerToggle 생성 시 지정할 문자열 리소스 추가
-
-```xml
-
+<com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    (... 생략 ...)
+    android:text="extended FAB"
+    app:icon="@android:drawable/ic_input_add" />
 ```
+
+```kt
+// 확장 플로팅 액션 버튼 조절
+
+binding.extendedFab.setOnClickListener {
+    when (binding.extendedFab.isExtended) {
+        true -> binding.extendedFab.shrink() // 아이콘만 표시
+        false -> binding.extendedFab.extend() // 아이콘과 문자열 함께 표시
+    }
+}
+```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-19-FBEx.PNG" height="auto" />
+
+## 5절. 머터리얼 화면 구성
+
+### 1) 새 모듈 생성 & 그래들 설정
+
+- Ch12_Material 새 모듈 생성
+- 뷰 바인딩 기법 추가
+
+```kts
+viewBinding.isEnabled = true
+```
+
+### 2) 파일 복사
+
+- drawable, layout, menu, values 디렉터리를 현재 모듈의 res 디렉터리에 복사
+- 소스가 존재하는 디렉토리 kt 파일을 소스 영역에 복사
+
+### 3) 레이아웃 XML 파일 작성
+
+- activity_main.xml 파일 작성
+
+### 4) 메인 액티비티 파일 작성
+
+- MainActivity.kt 파일 onCreate() 함수 코드 추가
+
+### 5) 앱 실행
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch07/ch07-20-App.PNG" height="auto" />
+
+[프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch08)
