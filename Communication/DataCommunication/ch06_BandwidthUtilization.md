@@ -177,6 +177,137 @@
 
 ### 프레임 동기화(Frame Synchronization)
 
-- 다중기와 다중화 복구 장치 사이 동기를 맞추는 것
+- 다중기와 다중화 복구 장치 사이 동기화
 
-(여기부터 재작성!)
+#### 프레임 구성 비트(Framing Bits)
+
+- 1개 이상의 비트를 각 프레임 앞에 끼워 넣기
+- Mux와 Demux 간 Synchronization 중요
+- 모든 프레임에서 Time Slot Order 일치
+  - 적은 양의 추가 정보만 필요
+- 각 프레임의 시작점에서 필요한 Synchronization Bits
+- 1 bit/frame(0과 1 반복 : 01010101...)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-16-FB.PNG" height="auto"/>
+
+### 디지털 신호 서비스
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-17-DSS.PNG" height="auto"/>
+
+| 서비스 | 회선 | 전송률(Mbps) | 음성 채널 |
+| :----: | :--: | :----------: | :-------: |
+|  DS-1  | T-1  |    1.544     |    24     |
+|  DS-2  | T-2  |    6.312     |    96     |
+|  DS-3  | T-3  |    44.376    |    672    |
+|  DS-4  | T-4  |   274.176    |   4032    |
+
+- 디지털 신호 제공을 위해 전화회사에서 T line(T-1 ~ T-4) 사용
+  - T line
+    - 디지털 라인이지만 아날로그 신호 사용 가능
+    - Analog Signal => Sampling => Time Division Multiplexed
+
+### 아날로그 전송용 T 회선
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-18-Tline.PNG" height="auto"/>
+
+- 디지털 데이터, 음성, 비디오 신호 등의 전송을 위해 설계
+- 아날로그 신호 표본 채집 후 시분할 다중화된다면 아날로그 전송(일반 전화통화)을 위해 사용
+
+#### T-1 프레임 구조
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-19-T1.PNG" height="auto"/>
+
+### E 회선 전송 속도
+
+- 유럽에서 사용 : E 라인
+
+| 회선 | 전송률(Mbps) | 음성 채널 |
+| :--: | :----------: | :-------: |
+| E-1  |    2.048     |    30     |
+| E-2  |    8.448     |    120    |
+| E-3  |    34.368    |    480    |
+| E-4  |   139.264    |   1920    |
+
+### 동기식 시분할 다중화(Synchronous TDM)
+
+- 2nd Generation Cellular Phone 회사들이 Synchronous TDM을 사용
+- 각 밴드에 6명의 사용자 수용 가능
+- 30 KHz \* 6명 time slot
+- 빈 슬롯 존재 가능성 => 효율 낮음
+
+### 통계식 시분할 다중화(Statistical TDM)
+
+- 슬롯 수가 input보다 적음
+- mux에서 input의 데이터 존재 여부 조사 후 없을 경우 다음 input에 데이터 삽입
+
+|          특징          | 설명                                                                   |
+| :--------------------: | :--------------------------------------------------------------------- |
+|       Addressing       | N개의 입력라인에 대해서 최소 n bit의 address 필요($n = log_2N$ )       |
+|       Slot Size        | 데이터 크기와 어드레스 크기 비율의 합리성(데이터 크기 > 어드레스 크기) |
+| No Synchronization Bit | 동기화 비트 없음                                                       |
+|       BandWidth        | 통계 값에 의해 link 용량 결정(link 용량 < 각 채널 용량 합)             |
+
+- 입력 회선이 전송할 데이터가 존재하는 경우에만 출력 프레임 틈새 할당
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-20-STDM.PNG" height="auto"/>
+
+### 대역 확산 방식(SS : Spread Spectrum)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-21-SS.PNG" height="auto"/>
+
+- 서로 다른 발신지에서 오는 신호를 합해 더 큰 대역으로 변환
+- 무선 응용(LAN & WAN)을 위한 설계
+- 주 목적 : 도청 방지
+- 확산 대역 기술에 여분의 정보 추가
+- 확산 처리(Spreading Process) : 원래 신호와 독립적 진행
+
+|         종류          | 영문 약어 |               영문                |
+| :-------------------: | :-------: | :-------------------------------: |
+| 주파수 도약 대역 확산 |   FHSS    | Frequency Hopping Spread Spectrum |
+|  직접 순열 대역 확산  |   DSSS    |  Direct Sequence Spread Spectrum  |
+
+### 주파수 도약 대역 확산(FHSS : Frequency Hopping Spread Spectrum)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-22-FHSS1.PNG" height="auto"/>
+
+- 발신지 신호로 변조된 M 개의 서로 다른 반송파(원 신호 변조) 사용
+- 어느 순간에는 신호가 하나의 carrier 주파수로 변조되고 다른 순간에는 신호가 다른 carrier 주파수로 변조됨
+  - 긴 시간상에서 M 개 주파수로 변조
+  - $B_{FHSS} >> B$
+- Pseudorandom noise (PN) 또는 pseudorandom code generator
+  - 매 도약 구간 $T_h$에서 k-bit 패턴 생성
+    - $M = 2^k$
+- M 개 패턴 순서 랜덤 결정
+- 패턴에 따라 주파수 결정
+- M 개의 패턴이 전부 순환하면 처음부터 반복
+- Bandwidth Sharing
+  - 도약 주파수가 M 개이면 M 개의 채널을 하나의 BSS bandwidth로 사용
+  - 각 도약 구간에 하나의 주파수를 사용 시 M-1 개의 주파수가 남고 이를 M-1 개의 다른 station이 사용 가능
+
+#### FHSS 예시
+
+1. 주파수 선택
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-23-FHSS2.PNG" height="auto"/>
+
+2. FHSS 사이클
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-24-FHSS3.PNG" height="auto"/>
+
+3. 대역폭 공유
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-25-FHSS4.PNG" height="auto"/>
+
+### 직접 순열 대역 확산(DSSS : Direct Sequence Spread Spectrum)
+
+- 각 데이터 비트를 확산 코드로 n 비트 대체
+- 비트에 칩(Chip)인 n 비트 코드 지정
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-26-DSSS.PNG" height="auto"/>
+
+#### DSSS 예시
+
+- 무선 LAN에 사용되는 유명한 바커 순열
+  - ex) n == 11
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-27-DSSS2.PNG" height="auto"/>
