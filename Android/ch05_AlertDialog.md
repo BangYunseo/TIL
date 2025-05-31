@@ -356,7 +356,7 @@ open fun setNeutralButton(text: CharSequence!, listener: DialogInterface.OnClick
  AlertDialog.Builder!
 ```
 
-- 알림 창 띄우기 예시
+- 알림 창 예시
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch05/ch05-11-AlertWindowingEX.PNG" height="auto" />
 
@@ -367,8 +367,8 @@ AlertDialog.Builder(this).run {
   setTitle("Test Dialog")
   setIcon(android.R.drawable.ic_dialog_info)
   setMessage("정말 종료하시겠습니까?")
-  setPositiveButton("Okay", null)
-  setNegativeButton("Cancel", null)
+  // setPositiveButton("Okay", null)
+  // setNegativeButton("Cancel", null)
   setNeutralButton("MORE", null)
   setPositiveButton("YES", null)
   setNegativeButton("NO", null)
@@ -391,7 +391,7 @@ val eventHandler = object : DialogInterface.OnClickListener {
 
 // 사용 예시
 setPositiveButton("OK", eventHandler)
-setNegativeButton("Cancle", eventHandler)
+setNegativeButton("Cancel", eventHandler)
 ```
 
 ### 알림 선택하기
@@ -406,15 +406,18 @@ setNegativeButton("Cancle", eventHandler)
 
 ```kt
 // 알림 단일 선택 함수
-open fun setItems(items: Array<CharSequence!>!, listener: DialogInterface.On ClickListener!): AlertDialog.Builder!
+open fun setItems(items: Array<CharSequence!>!, listener: DialogInterface.OnClickListener!)
+: AlertDialog.Builder!
 
 // 알림 다중 선택 함수
 open fun setMultiChoiceItems(items: Array<CharSequence!>!, checkedItems: BooleanArray!, listener:
-DialogInterface.OnMultiChoiceClickListener!): AlertDialog.Builder!
+DialogInterface.OnMultiChoiceClickListener!)
+: AlertDialog.Builder!
 
 // 알림 단일 선택 함수
-open fun setSingleChoiceItems(items: Array<CharSequence!>!, checkedItem: Int, listener: DialogInterface.OnClickListener!):
-AlertDialog.Builder!
+open fun setSingleChoiceItems(items: Array<CharSequence!>!, checkedItem: Int,
+listener: DialogInterface.OnClickListener!)
+: AlertDialog.Builder!
 ```
 
 ```kt
