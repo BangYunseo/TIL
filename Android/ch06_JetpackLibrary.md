@@ -8,7 +8,7 @@
 >
 > 2절. androidx
 >
-> 3절. appcompat 라이브러리
+> 3절. appcompat
 >
 > 4절. 프래그먼트
 >
@@ -25,7 +25,7 @@
 
 ### 플랫폼 API
 
-- ART에서 제공하는 안드로이드 라이브러리
+- ART의 안드로이드 라이브러리
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-01-JavaAPI.PNG" height="auto" />
 
@@ -33,17 +33,17 @@
 
 ### 제트팩(JetPack)
 
-- 구글에서 안드로이드 앱 개발용으로 제공하는 다양한 라이브러리
+- 구글 안드로이드 앱 개발용 라이브러리
 - androidx로 시작하는 패키지명
   - 앱을 개발 시 필요 권장 아키텍처 제공
   - API 레벨 호환성 문제 해결
-  - 플랫폼 API에서 제공하지 않는 다양한 기능 제공
+  - 플랫폼 API에서 제공하지 않는 기능 제공
 
 ## 2절. androidx
 
 ### androidx 라이브러리
 
-- 화면 구성과 관련된 라이브러리
+- 화면 구성 라이브러리
 
 |    라이브러리 종류    | 설명                             |
 | :-------------------: | :------------------------------- |
@@ -53,7 +53,7 @@
 |   androidx.fragment   | 액티비티처럼 동작하는 뷰 제공    |
 | androidx.drawerlayout | 옆에서 서랍처럼 열리는 화면 구성 |
 
-## 3절. appcompat 라이브러리
+## 3절. appcompat
 
 ### appcompat 라이브러리
 
@@ -78,14 +78,14 @@ class MainActivity : AppCompatActivity() {
 
 ### 문자열 출력 구성
 
-| 타이틀 문자열 출력 부분 구성 방법 |
-| :-------------------------------: |
-|            액션바 이용            |
-|             툴바 이용             |
+| 타이틀 문자열 출력 구성 방법 |
+| :--------------------------: |
+|         액션바 이용          |
+|          툴바 이용           |
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-02-ToolBar.PNG" height="auto" />
 
-- 구성 방법은 액티비티에 적용되는 테마 설정에 의해 결정
+- 액티비티 적용 테마 설정에 의해 결정
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-03-Theme.PNG" height="auto" />
 
@@ -120,8 +120,8 @@ class MainActivity : AppCompatActivity() {
 
 ### 툴바
 
-- 레이아웃 XML에 androidx.appcompat.widtet.Toolbar 클래스 선언
-- 코드에서 액션바의 내용이 툴바에 적용되도록 지정 필요
+- activity.xml에 androidx.appcompat.widtet.Toolbar 선언
+- 액션바의 내용이 툴바에 적용되도록 지정
 
 ```xml
 <!-- 레이아웃 XML에 툴바 적용 -->
@@ -132,7 +132,7 @@ class MainActivity : AppCompatActivity() {
     android:layout_height="?attr/actionBarSize"
     android:background="?attr/colorPrimary"
     android:elevation="4dp"
-    android:theme="@style/ThemmeOverlay.AppCompat.ActionBar"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
     app:titleTextColor="#FFFFFF" />
 ```
 
@@ -157,11 +157,11 @@ setSupportActionBar(binding.toolbar)
 
 - 앱 적용 테마에 의한 결정
 
-|      속성      |                   설명                    |
-| :------------: | :---------------------------------------: |
-|  colorPrimary  |            툴바 · 버튼 배경색             |
-|  colorAccent   | 스위치 켬(on) 상황처럼 활성모드 상태 표현 |
-| statusBarColor |               상태바 배경색               |
+|      속성      |        설명        |
+| :------------: | :----------------: |
+|  colorPrimary  | 툴바 · 버튼 배경색 |
+|  colorAccent   | 활성모드 상태 표현 |
+| statusBarColor |   상태바 배경색    |
 
 ```xml
 <!-- 테마 색상 지정 -->
@@ -180,10 +180,10 @@ setSupportActionBar(binding.toolbar)
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-07-UpButton.PNG" height="auto" />
 
-|                  등록 방법                   |
-| :------------------------------------------: |
-| 액티비티가 등록된 AndroidManifest.xml에 등록 |
-|             액티비티 코드로 등록             |
+|        등록 방법         |
+| :----------------------: |
+| AndroidManifest.xml 등록 |
+|    액티비티 코드 등록    |
 
 ```xml
 <!-- AndroidManifest.xml에서 업버튼 설정 -->
@@ -218,17 +218,19 @@ override fun onSupportNavigateUp(): Boolean{
   - 툴바의 중요한 구성 요소
   - 액티비티 화면에서 사용자 이벤트 사용 허용
 
-| 액티비티 메뉴 추가 함수 | 설명                                                                     |
-| :---------------------: | :----------------------------------------------------------------------- |
-|  onCreateOptionsMenu()  | 액티비티 첫 1회만 호출                                                   |
-| onPrepareOptionsMenu()  | 액티비티 첫 실행 한 번 호출된 후 오버플로 메뉴가 나타날 때마다 반복 호출 |
+| 액티비티 메뉴 추가 함수 | 설명                                                                   |
+| :---------------------: | :--------------------------------------------------------------------- |
+|  onCreateOptionsMenu()  | 액티비티 첫 1회만 호출                                                 |
+| onPrepareOptionsMenu()  | 액티비티 첫 실행 한 번 호출 후 오버플로 메뉴가 나타날 때마다 반복 호출 |
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-08-Menu.PNG" height="auto" />
 
 ```kt
+// 메뉴 구성 함수
+
 override fun onCreateOptionsMenu(menu: Menu?): Boolean{
-    val menuItem1: MenuItem? = menu?,add(0, 0, 0, "menu1")
-    val menuItem2: MenuItem? = menu?,add(0, 1, 0, "menu2")
+    val menuItem1: MenuItem? = menu?.add(0, 0, 0, "menu1")
+    val menuItem2: MenuItem? = menu?.add(0, 1, 0, "menu2")
     return super.onCreateOptionsMenu(menu)
 }
 ```
@@ -258,7 +260,7 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId){
 
 ### 리소스 메뉴 구현
 
-- 메뉴 구성 XML 파일은 res/menu 디렉터리에 생성
+- res/menu 디렉토리에 메뉴 구성 XML 파일 생성
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-10-Menu3.PNG" height="auto" />
 
@@ -289,19 +291,19 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId){
 
 #### showAsActions 속성
 
-- 액션바 아이콘 출력
+- 액션바에 아이콘 형태로 출력
 
-| 속성값 종류 | 설명                                                                 |
-| :---------: | :------------------------------------------------------------------- |
-| never(기본) | 항상 오버플로 메뉴로 출력                                            |
-|   ifRoom    | 만약 액션바에 공간이 있다면 액션 아이템, 없다면 오버플로 메뉴로 출력 |
-|   always    | 항상 액션 아이템으로 출력                                            |
+| 속성값 종류 | 설명                                                      |
+| :---------: | :-------------------------------------------------------- |
+| never(기본) | 항상 오버플로 메뉴로 출력                                 |
+|   ifRoom    | 액션바 공간 있으면 액션 아이템, 없으면 오버플로 메뉴 출력 |
+|   always    | 항상 액션 아이템으로 출력                                 |
 
 ```kt
 // 액티비티 코드 메뉴 XML 적용
 
 override fun onCreateOptionsMenu(menu: Menu?): Boolean{
-    menuInflate.inflate(R.menu.menu_main, menu)
+    menuInflater.inflate(R.menu.menu_main, menu)
     return super.onCreateOptionsMenu(menu)
 }
 ```
@@ -310,8 +312,7 @@ override fun onCreateOptionsMenu(menu: Menu?): Boolean{
 
 ### 액션 뷰 이용
 
-- 액션바에서 특별한 기능 제공
-- androidx.appcompat.widget.SearchView
+- 특별한 기능 제공 : androidx.appcompat.widget.SearchView
 
 ```xml
 <!-- 서치 뷰 사용 -->
@@ -326,7 +327,7 @@ override fun onCreateOptionsMenu(menu: Menu?): Boolean{
 
 ### 서치 뷰 이용
 
-- SearchView를 등록한 MenuItem 객체를 얻은 후 SeaarchView 객체 획득
+- MenuItem 객체를 얻은 후 객체에 등록된 SearchView 객체 획득
 
 ```kt
 // 서치 뷰 검색 기능 구현
@@ -339,7 +340,7 @@ override fun onCreateOptionsMenu(menu: Menu): Boolean{
     val searchView = menuItem?.actionView as SearchView
 
     searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
-        override fun onQueryTextChanger(newText: String?): Boolean{
+        override fun onQueryTextChange(newText: String?): Boolean{
             // 검색어 변경 이벤트
             return true
         }
@@ -357,14 +358,14 @@ override fun onCreateOptionsMenu(menu: Menu): Boolean{
 ### 프래그먼트
 
 - 액티비티처럼 동작하는 뷰
-- 액티비티에 구현되는 모든 내용을 프래그먼트 클래스에 작성 가능
+  - 액티비티에 구현되는 모든 내용을 프래그먼트 클래스에 작성
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-13-Fragment.PNG" height="auto" />
 
 ### 프래그먼트 구현
 
-- Fragment를 상속받아 작성하는 클래스
-- onCreateView() : 최소한 작성 함수가 자동 호출되며 반환한 View 객체가 화면에 출력
+- Fragment 상속 후 작성하는 클래스
+- onCreateView() : 작성 함수가 자동 호출되며 반환한 View 객체가 화면에 출력
 
 ```kt
 // 프래그먼트 구현
@@ -375,10 +376,10 @@ import androidx.fragment.app.Fragment
 class OneFragment : Fragment() {
     lateinit var binding: FragmentOneBinding
     override fun onCreateView(
-        inflater: LayoutInflater, containtere: ViewGroup?,
+        inflater: LayoutInflater, containter: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentOneBinding.inflatee(inflater, container, flase)
+        binding = FragmentOneBinding.inflate(inflater, container, false)
         return binding.root
     }
 }
@@ -396,11 +397,10 @@ class OneFragment : Fragment() {
     android:layout_height="match_parent" />
 ```
 
-- <fragment> 태그
-  - 액티비티 레이아웃 XML에 등록
-  - 액티비티 화면에 프래그먼트 출력
-  - name 속성에 프래그먼트 클래스 지정
-  - 액티비티 레이아웃 XML(activity_main.xml)에 등록
+- \<fragment\> 태그
+  - activity.xml 에 등록
+  - name 속성 : 프래그먼트 클래스 지정
+  - 화면에 프래그먼트 출력
     - 프래그먼트 동적 제어(추가, 제거 등) 시 FragmentManager의 FragmentTransaction 클래스 함수 이용
 
 |      FragmentTransaction 클래스 함수 종류       | 설명                          |
@@ -413,7 +413,7 @@ class OneFragment : Fragment() {
 ```kt
 // 프래그먼트 동적 제어
 
-val fragmentManager: FraagmentManager = supportFragmentManager
+val fragmentManager: FragmentManager = supportFragmentManager
 val transaction: FragmentTransaction = fragmentManager.beginTransaction()
 val fragment = OneFragment()
 
@@ -447,8 +447,11 @@ transaction.commit()
 ### 백 스택
 
 - 프래그먼트가 화면에 보이지 않는 순간 제거하지 않고 저장 후 다시 이용하는 기능
-- 백 스택 미사용 : 프래그먼트 교체 시 기존의 프래그먼트는 onDestroy까지 호출 후 제거
-- 백 스택 사용 : 프래그먼트가 제거되지 않고 onDestoryView 함수까지만 호출
+
+| 사용 여부 | 설명                                                            |
+| :-------: | :-------------------------------------------------------------- |
+|  미사용   | 프래그먼트 교체 시 기존 프래그먼트는 onDestroy까지 호출 후 제거 |
+|   사용    | 프래그먼트 제거없이 onDestoryView 함수까지 호출                 |
 
 ```kt
 // 백 스택 사용 설정
@@ -460,7 +463,7 @@ transaction.addToBackStack(null)
 
 ### 리사이클러 뷰
 
-- 목록 화면 구성 뷰
+- 목록 화면 구성
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-15-RecyclerView.PNG" height="auto" />
 
@@ -473,7 +476,8 @@ transaction.addToBackStack(null)
 
 ### 뷰 홀더 준비
 
-- 각 항목에 해당하는 뷰 객체를 가지며 RecyclerView.ViewHolder를 상속받아 작성
+- 각 항목에 해당하는 뷰 객체 소유
+- RecyclerView.ViewHolder 상속
 
 ```kt
 // 뷰 홀더 준비
@@ -483,7 +487,7 @@ class MyViewHolder(val binding: ItemMainBinding): RecyclerView.ViewHolder(bindin
 
 ### 어댑터
 
-- 각 항목 생성의 역할
+- 각 항목 생성 역할
 
 |   어댑터 함수 종류   | 설명                                           |
 | :------------------: | :--------------------------------------------- |
@@ -543,7 +547,7 @@ override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int){
 ### 리사이클러 뷰 출력
 
 ```kt
-// 리사이클러 뷰 액티비티(RecyclerViewActivity)
+// 리사이클러 뷰 액티비티
 
 class RecyclerViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?){
@@ -559,14 +563,14 @@ class RecyclerViewActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = MyAdapter(datas)
         binding.recyclerView.addItemDecoration(DividerItemDecoration(this,
-        LinearLayout Manager.VERTICAL))
+        LinearLayoutManager.VERTICAL))
     }
 }
 ```
 
-### 항목 동적 추가·제거
+### notifyDataSetChanged()
 
-- notifyDataSetChanged() : 항목 구성 데이터에 새로운 데이터를 추가·제거 후 호출
+- 항목 구성 데이터에 새로운 항목을 동적으로 추가·제거 후 호출
 
 ```kt
 // 항목 추가
@@ -585,7 +589,9 @@ adapter.notifyDataSetChanged()
 |     GridLayoutManager      | 항목 그리드 배치                   |
 | StaggeredGridLayoutManager | 항목을 높이가 불규칙한 그리드 배치 |
 
-- LinearLayoutManager : 항목을 가로·세로 방향으로 배치
+### LinearLayoutManager
+
+- 항목 가로·세로 배치
   - 가로 배치 : LinearLayoutManager.HORIZONTAL
   - 세로 배치 : LinearLayoutManager.VERTICAL or 생략
 
@@ -607,11 +613,11 @@ layoutManager.orientation = LinearLayoutManager.HORIZONTAL
 binding.recyclerView.layoutManager = layoutManager
 ```
 
-### 그리드 배치
+### GridLayoutManager
 
-- GridLayoutManager 이용
-- 생성자 숫자 : 그리드 열의 개수
-- 방향 설정 가능
+- 그리드 배치
+  - 생성자 숫자 : 그리드 열의 개수
+  - 방향 설정 가능
 
 ```kt
 // 그리드 항목 배치
@@ -634,7 +640,7 @@ binding.recyclerView.layoutManager = layoutManager
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-19-GridH.PNG" height="auto" />
 
-- GridLayoutManager 생성자 네 번째 매개변수 Boolean 값 : 왼쪽, 오른쪽 정렬
+- 네 번째 매개변수 Boolean 값 : 왼쪽, 오른쪽 정렬
 
 ```kt
 // 그리드 항목 오른쪽부터 배치
@@ -646,7 +652,9 @@ binding.recyclerView.layoutManager = layoutManager
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-20-GridB.PNG" height="auto" />
 
-- StaggeredGridLayoutManager : 뷰의 크기가 다를 경우 지그재그 형태 배치
+### StaggeredGridLayoutManager
+
+- 뷰의 크기가 다를 경우 지그재그 형태 배치
 
 ```kt
 // 지그재그 그리드 형태 배치
@@ -658,7 +666,7 @@ binding.recyclerView.layoutManager = layoutManager
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-21-GridS.PNG" height="auto" />
 
-### 아이템 데커레이션
+### 아이템 데코레이션
 
 - 리사이클러 뷰를 다양하게 꾸밀 때 사용
 - DividerItem Decoration : 항목의 구분선 출력
@@ -671,7 +679,7 @@ binding.recyclerView.layoutManager = layoutManager
 | getItemOffsets() | 개별 항목 꾸밀 때 호출 |
 
 ```kt
-// 아이템 데커레이션 구현
+// 아이템 데코레이션 구현
 
 class MyDecoration(val context: Context): RecyclerView.ItemDecoration(){
     override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State){
@@ -698,8 +706,8 @@ class MyDecoration(val context: Context): RecyclerView.ItemDecoration(){
 
 override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State){
     super.onDraw(c, parent, state)
-    c.drawBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.stadium),
-        0f, 0f, null)
+    c.drawBitmap(BitmapFactory.decodeResource(context.resources,
+    R.drawable.stadium), 0f, 0f, null)
 }
 ```
 
@@ -714,7 +722,7 @@ override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.Sta
     val height = parent.height
 
     // 이미지 크기 계산
-    val dr: Drawable? = ResourcesCompat.getDrawble(context.getResources(),
+    val dr: Drawable? = ResourcesCompat.getDrawable(context.resources,
         R.drawable.kbo, null)
     val drWidth = dr?.intrinsicWidth
     val drHeight = dr?.intrinsicHeight
@@ -723,7 +731,7 @@ override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.Sta
     val left = width / 2 - drWidth?.div(2) as Int
     val top = height / 2 - drHeight?.div(2) as Int
     c.drawBitmap(
-        BitmapFactory.decodeResource(context, getResources(), R.drawable.kbo),
+        BitmapFactory.decodeResource(context.resources, R.drawable.kbo),
         left.toFloat(),
         top.toFloat(),
         null
@@ -751,12 +759,14 @@ override fun getItemOffsets(
 }
 ```
 
-- addItemDecoration() : 아이템 데커레이션 객체를 리사이클러 뷰에 적용하는 함수
+### addItemDecoration()
+
+- 아이템 데코레이션 객체를 리사이클러 뷰에 적용하는 함수
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-22-ID.PNG" height="auto" />
 
 ```kt
-// 리사이클러 뷰에 적용한 아이템 데커레이션
+// 리사이클러 뷰에 적용한 아이템 데코레이션
 
 binding.recyclerView.addItemDecoration(MyDecoration(this))
 ```
@@ -768,13 +778,14 @@ binding.recyclerView.addItemDecoration(MyDecoration(this))
 <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-23-ViewPager.PNG" height="auto" />
 
 - 스와이프로 넘기는 화면 구성
-- 기존의 viewpager 대신 2019년에 viewpager2를 제공
-- 항목이 순서대로 나열되며 한 화면에 항목 하나 표현
+- 2019년, viewpager 대신 viewpager2 제공
+- 항목이 순서대로 나열
+- 한 화면에 항목 하나 표현
 
-|     어댑터 종류      |
-| :------------------: |
-| RecyclerView.Adapter |
-| FragmentStateAdapter |
+|        어댑터 종류         |
+| :------------------------: |
+| RecyclerView.Adapter(기존) |
+| FragmentStateAdapter(New!) |
 
 ```kt
 // 뷰 페이저2 구현 : 리사이클러 뷰 어댑터 이용
@@ -792,7 +803,7 @@ class MyPagerAdapter(val datas: MutableList<String>) :
                 MyPagerViewHolder(ItemPagerBinding.inflate(LayoutInflater.from(
                     parent.context), parent, false))
 
-        override fun onBindingViewHolder(holder: RecyclerView.ViewHolder, position: Int){
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int){
             val binding = (holder as MyPagerViewHolder).binding
 
             // 뷰에 데이터 출력
@@ -808,71 +819,138 @@ class MyPagerAdapter(val datas: MutableList<String>) :
 
 - FragmentStateAdapter로 뷰 페이저2 구현
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-24-ViewPager2.PNG" height="auto" />
+
 ```kt
-(여기부터 작성 : 49p)
+// 뷰 페이저 2 구현 - 프래그먼트 어댑터 이용
+
+class MyFragmentPagerAdapter(activity: FragmentActivity): FragmentStateAdapter(activity){
+    val fragments: List<Fragment>
+    init{
+        fragments = listOf(OneFragment(), TwoFragment(), ThreeFragment())
+        Log.d("Yunseo", "Fragments Size : ${fragments.size}")
+    }
+    override fun getItemCount(): Int = fragments.size
+    override fun createFragment(position: Int): Fragment = fragments[position]
+}
+```
+
+```kt
+// 뷰 페이저 2 어댑터 적용
+
+binding.viewpager.adapter = MyPagerAdapter(datas)
 ```
 
 ## 7절. 드로어 레이아웃
 
-- 레이아웃 XML 파일에서 드로어 메뉴가 출력될 부분의 태그를 DrawerLayout으로 선언[cite: 38, 39].
-- DrawerLayout 아래에 2개의 뷰 선언[cite: 39, 40].
-  - 첫 번째 하위 태그: 액티비티 화면에 출력[cite: 39, 40].
-  - 두 번째 하위 태그: 평소에는 안 보이다가 끌려 나옴[cite: 40].
-- 툴바 영역에 토글(toggle) 버튼을 함께 제공[cite: 41].
-- 토글 버튼은 ActionBarDrawerToggle 클래스에서 제공[cite: 41].
+### DrawerLayout
+
+- activity.xml에서 드로어 메뉴 출력 부분의 태그를 DrawerLayout으로 선언
+- DrawerLayout 아래에 2개의 뷰 선언
+  - 첫 번째 하위 태그: 액티비티 화면에 출력
+  - 두 번째 하위 태그: 평소에 안 보이고 끌려 나옴
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-25-DrawerLayout.PNG" height="auto" />
+
+```XML
+<!-- 드로어 레이아웃 구성 -->
+
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout ...>
+        ...
+    </LinearLayout>
+    <TextView
+        android:layout_gravity="start"/>
+</android.drawerlayout.widget.DrawerLayout>
+```
+
+- 툴바 영역에 토글(toggle) 버튼 함께 제공
+- 토글 버튼 : ActionBarDrawerToggle 클래스에서 제공
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-26-Toggle.PNG" height="auto" />
+
+```kt
+// 드로어 메뉴 토글 버튼 적용
+
+class DrawerActivity : AppCompatActivity() {
+    lateinit var toggle: ActionBarDrawerToggle
+    override fun onCreate(savedInstanceState: Bundle?){
+        // (...생략...)
+        toggle = ActionBarDrawerToggle(this, binding.drawer, R.string.drawer_opened, R.string.drawer_closed)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toggle.syncState()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean{
+        // 이벤트가 토글 버튼에서 발생할 경우
+        if(toggle.onOptionsItemSelected(item)){
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+}
+```
 
 ## 8장. 제트팩 화면 구성
 
-### 1) 새 모듈 생성
+### 1) 새 모듈 생성 & 그래들 설정
 
-- Ch11_JetPack 이름으로 새 모듈 생성[cite: 42].
+- Ch11_JetPack 새 모듈 생성
+- 뷰 바인딩 기법 추가
 
-### 2) 빌드 그래들 작성
+```kts
+viewBinding.isEnabled = true
+```
 
-- 뷰 바인딩 설정[cite: 42].
+### 2) 문자열 리소스 생성
 
-### 3) 문자열 리소스 생성
+- res/values/strings.xml 파일에 ActionBarDrawerToggle 생성 시 지정할 문자열 리소스 추가
 
-- res/values/strings.xml 파일에 ActionBarDrawerToggle 생성 시 지정할 문자열 리소스 추가[cite: 43].
+### 3) 테마 추가
 
-### 4) 테마 추가
+- res/values/themes.xml 파일에 액티비티 윈도우를 출력할 때 액션바 출력이 없도록 설정
 
-- res/values/themes.xml 파일을 열어 액티비티 윈도우를 출력할 때 액션바를 출력하지 않도록 설정[cite: 44].
+### 4) 프래그먼트 생성
 
-### 5) 프래그먼트 생성
+- New -> Fragment -> Fragment(Blank) 선택
+- OneFragment, TwoFragment, ThreeFragment 이름의 프래그먼트 3개 추가
 
-- New -> Fragment -> Fragment (Blank) 선택[cite: 45].
-- OneFragment, TwoFragment, ThreeFragment 이름으로 빈 프래그먼트 3개 추가[cite: 45].
+### 5) 파일 복사
 
-### 6) 파일 복사
+- res/drawable : kbo.png 파일 복사
+- res/layout : fragment_one.xml, fragment_two.xml, fragment_three.xml 파일 복사
+- OneFragment.kt, TwoFragment.kt, ThreeFragment.kt : 해당 소스 영역에 복사
 
-- res/drawable/kbo.png 파일을 res/drawable에 복사[cite: 46].
-- res/layout 디렉터리의 fragment_one.xml, fragment_two.xml, fragment_three.xml, item_recyclerview.xml 파일을 res/layout 디렉터리에 복사[cite: 46].
-- OneFragment.kt, TwoFragment.kt, ThreeFragment.kt 파일을 소스 영역에 복사[cite: 46].
+### 6) fragment_one.xml 파일 작성
 
-### 7) fragment_one.xml 파일 작성
+- 리사이클러 뷰 구성을 위해 fragment_one.xml 파일 작성
+- OneFragment.kt 파일 작성
 
-- 리사이클러 뷰로 구성하기 위해 fragment_one.xml 파일 작성[cite: 47].
-- OneFragment.kt 파일 작성[cite: 48].
+### 7) 메뉴 리소스 생성
 
-### 8) 메뉴 리소스 생성
-
-- New -> Android Resource Directory 선택[cite: 48].
-- Resource type 에서 menu 선택 후 OK 클릭하여 menu 디렉터리 생성[cite: 49].
+- New -> Android Resource Directory 선택
+- Resource type 에서 menu 디렉토리 생성
 - New -> Menu Resource File 선택[cite: 49].
-- File name 에 menu_main 입력 후 OK 클릭하여 메뉴 파일 생성[cite: 50].
-- menu_main.xml 파일 열고 작성[cite: 50].
+- File name 에 menu_main 입력 후 파일 생성
+- menu_main.xml 파일 열고 작성
 
-### 9) 메인 레이아웃 XML 작성
+### 8) 메인 레이아웃 XML 작성
 
-- activity_main.xml 파일 열고 드로어 레이아웃, 툴바, 뷰 페이저2 등 등록[cite: 51].
+- activity_main.xml 파일에 등록
+  - 드로어 레이아웃
+  - 툴바
+  - 뷰 페이저2
 
-### 10) 메인 액티비티 작성
+### 9) 메인 액티비티 작성
 
-- MainActivity.kt 파일 열고 작성[cite: 52].
+- MainActivity.kt 파일 작성
 
-### 11) 앱 실행
+### 10) 앱 실행
 
-```
-
-```
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-27-App.PNG" height="auto" />
+    
+[프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch07)
