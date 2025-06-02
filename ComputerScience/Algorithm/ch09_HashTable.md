@@ -17,8 +17,8 @@
 ### Hash Table
 
 - Unordered Collection of Key-Value pairs
-- 원소의 저장자리가 원소 값에 무관하게 결정되는 자료구조
-- 평균 상수 시간$(O(1))$에 삽입 · 삭제 · 검색 가능
+- 원소의 저장자리가 원소 값에 무관하게 결정
+- 평균 상수 시간 $(O(1))$ 에 삽입 가능
 - 매우 빠른 응답이 필요한 응용
 - 최솟값(최댓값) 검색 미지원
 
@@ -28,11 +28,9 @@
 
 <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-01-HT.PNG" height="auto" />
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-02-HT2.PNG" height="auto" />
-
 ### 해시 테이블 예시
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-03-HTex.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-02-HTex.PNG" height="auto" />
 
 - 크기가 13인 해시 테이블에 5개 원소가 들어간 예시
 - 입력 : 25, 13, 16, 15, 7
@@ -45,7 +43,9 @@
   - h(7) = 7 mod 13 = 7
 
 - 적재율(Load Factor) = 저장된 원소 / 해시 테이블 크기 = 5 / 13
-- 데이터 입력이 증가하면 적재율도 증가, 충돌(Collision) 발생 확률 증가
+- 데이터 입력이 증가할 경우
+  - 적재율 증가
+  - 충돌(Collision) 발생 확률 증가
 
 ### 해시 함수(Hash Function)
 
@@ -59,17 +59,21 @@
 
 1. h(x) = x mod m
 2. m : 해시 테이블 크기, 대개 소수(prime)
-3. 해시 테이블 크기는 $2^k$에 가깝지 않은 소수 선택
-4. 해시 값은 입력 원소의 모든 비트를 이용 => 함수 값이 고루 퍼지도록 설정
+3. 해시 테이블 크기 : $2^k$ 에 가깝지 않은 소수
+4. 해시 값 : 입력 원소의 모든 비트를 이용
+   - 함수 값이 퍼지도록 설정
 
 ### 해시 함수 : 곱하기(Multiplication) 방법
 
 1. h(x) = m(xA mod 1) : 올림
 2. A : 0 < A < 1 인 상수
    - Knuth는 $(\sqrt{5} - 1)/2$ 제안
-3. m이 소수일 필요가 없고 보통 $2^p$(p는 정수)
+3. m이 소수일 필요 X
+   - 보통 $2^p$ ($p$ == 정수)
 
-- ex : m = 65,536, A = 0.6180339887인 경우
+#### 해시 함수 : 곱하기(Multiplication) 방법 예시
+
+- m = 65,536, A = 0.6180339887 인 경우
   - x = 1,025,390의 해시값은 xA = 633,725.871673093
   - (xA mod 1) = 0.871673093
   - m을 곱하면 57,125.967
@@ -77,13 +81,13 @@
 
 ### 곱하기(Multiplication) 방법 작동
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-04-MM.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-03-MM.PNG" height="auto" />
 
 ## 2절. 충돌
 
 ### 충돌(Collision)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-05-Collision.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-04-Collision.PNG" height="auto" />
 
 - 해시 테이블의 한 주소를 두 개 이상의 원소가 경쟁하는 경우
 
@@ -97,15 +101,15 @@
 2. 개방 주소 방법(Open Addressing)
 
    - 충돌이 일어나도 주어진 테이블에서 해결
-   - 추가적 공간 미사용
+   - 추가적 공간 불필요
 
 ## 3절. 체이닝
 
 ### 체이닝
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-06-Chaining.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-05-Chaining.PNG" height="auto" />
 
-- 적재율이 1을 넘어도 사용 가능
+- 적재율 1 이상 가능
 
 ## 4절. 개방 주소
 
@@ -233,21 +237,21 @@
   - 빈자리 검색 전 이미 점유된 주소를 "적어도" i번 조사할 확률
   - $q_{1} = \frac{n}{m}, q_{2} = \frac{n(n - 1)}{m(m - 1), ···}$
 
-- 조사횟수의 기대값 
-  - $1 + \Sigma_{i ≥ 0}i$ $p_{i}$ 
+- 조사횟수의 기대값
+  - $1 + \Sigma_{i ≥ 0}i$ $p_{i}$
   - ($= 1 + 1 * p_1 + 2 * p_2 + 3 * p_3 + ...$)
 - 다만 $p_i = q_i - q_{i + 1}$ 이면서 $q_i ≤ 𝛼^i(p_{4} = q_{4} - q_{5})$ 이다.
 
   - $1 + \Sigma_{i ≥ 0}i × p_{i}$
   - $= 1 + \Sigma_{i ≥ 1}i × (q_{i} - q_{i + 1})$
-  - $= (1 + \Sigma_{i ≥ 1}q_i) ≤ (1 + \Sigma_{i ≥ 1} 𝛼^{i}) $
+  - $= (1 + \Sigma*{i ≥ 1}q_i) ≤ (1 + \Sigma*{i ≥ 1} 𝛼^{i}) $
   - $= \frac{1}{(1-α)}$
 
 #### 정리 4 : 성공하는 검색 조사 횟수 최대 기대치
 
 - 적재율 (i번째 원소 삽입) = $\frac{i}{m}$
 - x가 i + 1번째 삽입 원소인 경우 이때까지 실패한 검색 횟수의 최댓값 : $\frac{1}{1 - \frac{i}{m}}$ = $\frac{m}{m - i}$
-- 위 값의 평균 
+- 위 값의 평균
   - $\frac{1}{n} \Sigma^{n - 1}_{i = 0} \frac{m}{m - i}$
   - $= \frac{m}{n} \Sigma^{n - 1}_{i = 0} \frac{1}{m-i}$
   - $≤ \frac{1}{𝛼} \int_0^n \frac{1}{m-x}dx$
@@ -258,6 +262,7 @@
 > 모든 경우의 수는 n개의 item과 k개의 저장소(slot)를 전제로 진행
 
 ### 적어도 한 번 이상 충돌이 발생할 확률
+
 - 적어도 한 번 이상의 충돌이 발생할 확률 = 1 - 충돌이 발생하지 않을 확률
   - 충돌이 발생하지 않을 확률
     - $\frac{k}{k} × \frac{k-1}{k} × \frac{k-2}{k} × ... ×\frac{k-n+1}{k}$
@@ -269,11 +274,13 @@
   - 나머지 n - 1개의 item이 첫 번째 item이 있는 위치로 놓이는 확률 = $\frac{1}{k}$
   - 첫 번째 item과 충돌하는 횟수 = $\frac{(n - 1)}{k}$
 - 두 번째 item이 임의의 slot에 삽입
+
   - 나머지 n - 2개의 item이 첫 번째 item이 있는 위치로 놓이는 확률 = $\frac{2}{k}$
   - 두 번째 item과 충돌하는 횟수 = $\frac{(n - 2)}{k}$
 
 - 위의 과정을 계속 반복
-- 총 충돌 횟수 평균값 
+- 총 충돌 횟수 평균값
+
   - $\Sigma_{i=1}^{n-1} \frac{i}{k} = \frac{n(n-1)}{2k}$
 
 - 따라서 $k=\frac{n^2}{2}$ 인 경우 1회 정도 충돌 발생
@@ -332,12 +339,11 @@ $$
   - item n개가 k - X개 저장소에 존재
   - 충돌 횟수 = n - k + X 번 발생
 - 충돌 횟수 평균값
-  - $E[Z]$ 
+  - $E[Z]$
     - $= n-k+E[X]$
     - $=n-k+k(1-\frac{1}{k})^n$
 
 ### 저장소를 모두 채울 때 필요한 item 수
-
 
 - $X_j$ = $j$번 slot을 채우는 데 필요한 item 수
 - ($j-1$)까지 채워졌을 때 빈 slot
@@ -349,6 +355,7 @@ $$
 - $E(X_j)=\frac{k}{(k-j+1)}$
 - $X = X_1 + X_2 + ... + X_n$
 - $E[X]$
+
   - $=\Sigma_{j=1}^kE(X_j)$
   - $=\Sigma_{j=1}^k\frac{k}{k-j+1}$
   - = $k\Sigma_{j=1}^k\frac{1}{j}$
