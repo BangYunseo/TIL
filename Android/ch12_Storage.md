@@ -662,54 +662,42 @@ class MySettingFragment : PreferenceFragmentCompat(), SharedPreferences.
 - 뷰 바인딩 기법 추가
 
 ```kts
+// 뷰 바인딩 기법
 viewBinding.isEnabled = true
+
+// AndroidX Preference 라이브러리
+implementation(libs.androidx.preference.ktx)
 ```
 
-### 2) 문자열 리소스 생성
+### 2) 액티비티 생성 후 파일 복사
 
-- res/values/strings.xml 파일에 ActionBarDrawerToggle 생성 시 지정할 문자열 리소스 추가
+- AddActivity, SettingActivity라는 빈 액티비티 추가
+- res 디렉토리의 drawable, layout, menu, values, xml 파일 복사
+- AddActivity.kt, MainActivity.kt, MyAdapter.kt, SettingActivity.kt 파일 복사
 
-### 3) 테마 추가
+### 3) 설정 XML 파일 작성
 
-- res/values/themes.xml 파일에 액티비티 윈도우를 출력할 때 액션바 출력이 없도록 설정
+- settings.xml 파일 작성
 
-### 4) 프래그먼트 생성
+### 4) 설정 프래그먼트 작성
 
-- New -> Fragment -> Fragment(Blank) 선택
-- OneFragment, TwoFragment, ThreeFragment 이름의 프래그먼트 3개 추가
+- MySettingFragment 프래그먼트 생성 후 작성
 
-### 5) 파일 복사
+### 5) 설정 화면 XML 작성
 
-- res/drawable : kbo.png 파일 복사
-- res/layout : fragment_one.xml, fragment_two.xml, fragment_three.xml 파일 복사
-- OneFragment.kt, TwoFragment.kt, ThreeFragment.kt : 해당 소스 영역에 복사
+- activity_setting.xml 작성
+  - 화면에 출력할 프래그먼트 클래스 작성
 
-### 6) fragment_one.xml 파일 작성
+### 6) 데이터베이스 헬퍼 작성
 
-- 리사이클러 뷰 구성을 위해 fragment_one.xml 파일 작성
-- OneFragment.kt 파일 작성
+- DBHelper라는 코틀린 클래스 파일 생성 후 작성
 
-### 7) 메뉴 리소스 생성
+### 7) 할 일 저장 액티비티 & 메인 액티비티 작성
 
-- New -> Android Resource Directory 선택
-- Resource type 에서 menu 디렉토리 생성
-- New -> Menu Resource File 선택[cite: 49].
-- File name 에 menu_main 입력 후 파일 생성
-- menu_main.xml 파일 열고 작성
+- AddActivity.kt 파일, MainActivity.kt 파일 작성
 
-### 8) 메인 레이아웃 XML 작성
+### 8) 앱 실행
 
-- activity_main.xml 파일에 등록
-  - 드로어 레이아웃
-  - 툴바
-  - 뷰 페이저2
-
-### 9) 메인 액티비티 작성
-
-- MainActivity.kt 파일 작성
-
-### 10) 앱 실행
-
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch06/ch06-27-App.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch12/ch12-06-App.PNG" height="auto" />
     
 [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch13)
