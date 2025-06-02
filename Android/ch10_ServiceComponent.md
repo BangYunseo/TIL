@@ -11,7 +11,7 @@
 > 4절. 잡 스케줄러
 >
 > 5절. MP3 앱 구현  
-> [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch10)
+> [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch11)
 
 ## 1절. 서비스
 
