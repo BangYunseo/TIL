@@ -109,14 +109,14 @@
 
 <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-05-Chaining.PNG" height="auto" />
 
-- 적재율 1 이상 가능
+- 적재율이 1 이상일 수 있음
 
 ## 4절. 개방 주소
 
 ### 개방 주소
 
 - 빈자리가 생길 때까지 해시값 생성
-  - $h_{0}(x), h_{1}(x), h_{2}(x), h_{3}(x), ···$
+- $h_{0}(x), h_{1}(x), h_{2}(x), h_{3}(x), ···$
 
 ### 개방 주소 3가지 방법
 
@@ -130,18 +130,19 @@
 
 #### 선형 조사 예시
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-07-LP.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-06-LP.PNG" height="auto" />
 
-- 입력 순서 : 25, 13, 16, 15, 7, 28, 31, 20, 1, 38
-- 해시 함수 : $h_i(x)$ = $(h(x) + i)$ $mod$ $13$
+- 입력 순서
+  - 25, 13, 16, 15, 7, 28, 31, 20, 1, 38
+- 해시 함수
+  - $h_i(x)$ = $(h(x) + i)$ $mod$ $13$
 
 #### 선형 조사 문제점 : 1차 군집
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-08-PC.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-07-PC.PNG" height="auto" />
 
 - Primary Clulstering(1차 군집)
   - 특정 영역에 원소가 몰리는 현상
-  - 성능 저하 요인
 
 ### 이차원 조사(Quadratic Probing)
 
@@ -149,18 +150,19 @@
 
 #### 이차원 조사 예시
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-09-QP.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-08-QP.PNG" height="auto" />
 
-- 입력 순서 : 15, 18, 43, 37, 45, 30
-- 해시 함수 : $h_i(x)$ = $(h(x) + i^{2})$ $mod$ $13$
+- 입력 순서
+  - 15, 18, 43, 37, 45, 30
+- 해시 함수
+  - $h_i(x)$ = $(h(x) + i^{2})$ $mod$ $13$
 
 #### 이차원 조사 문제점 : 2차 군집
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-10-SC.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-09-SC.PNG" height="auto" />
 
 - Secondary Clulstering(2차 군집)
   - 여러 원소가 동일한 초기 해시 함수값을 갖는 현상
-  - 성능 저하 요인
 
 ### 더블 해싱(Double Hashing)
 
@@ -169,18 +171,21 @@
 
 #### 더블 해싱 예시
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-11-DH.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-10-DH.PNG" height="auto" />
 
-- 입력 순서 : 15, 19, 28, 41, 67
-- 첫 번째 해시 함수 : $h_i(x)$ = $(h(x) + if(x))$ $mod$ $13$
-- 두 번째 해시 함수 : $f(x)$ = $x$ $mod$ $11$
+- 입력 순서
+  - 15, 19, 28, 41, 67
+- 첫 번째 해시 함수
+  - $h_i(x)$ = $(h(x) + if(x))$ $mod$ $13$
+- 두 번째 해시 함수
+  - $f(x)$ = $x$ $mod$ $11$
 - n과 m, 11과 13이 서로소
-- 적재율이 높아질 경우 효율 급속 저하
-- 임계점을 지정하고 넘을 경우 테이블 크기를 두 배로 설정
+- 적재율 상승 시 효율 저하
+- 임계점 지정 후 넘을 경우 테이블 크기를 두 배로 설정
 
 #### 더블 해싱 문제점 : 삭제 진행
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-12-DHP.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-11-DHP.PNG" height="auto" />
 
 ## 5절. 검색
 
@@ -293,7 +298,7 @@
 - $P(A)$
   - $1-P(A')$
   - $=\frac{365 * 364 * 363 * ... * (365-n+1)}{365}$
-  - <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-13-BP.PNG" height="auto" />
+  - <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch09/ch09-12-BP.PNG" height="auto" />
 - n = 30인 경우 $P(A) = 70.6$%
   - 30명 중 적어도 2명의 생일이 같을 확률 70.6%
 - n = 10인 경우 $P(A) = 11.7$%
