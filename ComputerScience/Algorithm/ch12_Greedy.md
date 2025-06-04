@@ -12,44 +12,41 @@
 
 ### 그리디(Greedy)
 
-- 현상이나 사물을 정점과 간선으로 표현
-- $Graph$ $G$ = $(V,E)$
-  - $V$ : vertex set
-  - $E$ : edge set
-- 정점(Vertex) : 대상 or 개체
-- 간선(Edge) : 정점 간 관계
-- 인접(Adjacent) : 두 정점이 간선으로 연결된 경우
+- 눈 앞의 이익만 취하는 알고리즘
+- 현재 시점에서 가장 이득인 것 같은 해를 선택하는 행위의 반복
+- 대부분 최적해 탐색이 불가하고 괜찮은 해를 찾는 것이 목적
+  - 다만, 드물게 최적해가 보장되는 경우가 존재
 
-### 예시
+### 그리디 알고리즘 == 탐욕 알고리즘의 최적해 보장 조건
 
-- 친분 관계 그래프
+- 매 단계에서 가장 좋아보이는, 즉 현재 상황에서 최적이라고 판단한 선택을 하는 방식
+- 항상 최적해를 보장하기 위한 2가지 조건
+  - Greedy choice property(탐욕 선택 속성)
+    - 지역적인 최선의 선택이 전체적인 최선의 해
+  - Optimal substructure(최적 부분 구조)
+    - 문제의 최적 해가 부분 문제의 최적 해로 구성
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch11-01-BG.PNG" width="100%" height="auto" />
+### 그리디 알고리즘과 DP
 
-- 친분 관계 그래프 + 가중치
+|그리디|DP|
+|:---:|:---:|
+|매 순간 최선의 선택을 하며 최적해 선택|모든 가능한 경우를 저장 후 비교하며 최적해 선택|
+|간단한 구현과 빠른 실행|간단(?)하지 않은 구현과 그리디보다 느린 실행|
+|항상 최적해 보장 X|항상 최적해 보장|
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch11-02-BGW.PNG" width="100%" height="auto" />
+### 그리디 알고리즘 구조
 
-- 친분 관계 그래프 + 방향
-  - 유향 그래프(Directed Graph)
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-01-GreedyS.PNG" width="100%" height="auto" />
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch11-03-BGD.PNG" width="100%" height="auto" />
+### 그리디의 최적해 보장
 
-- 친분 관계 그래프 + 가중치 + 방향
-  - 유향 그래프(Directed Graph)
+#### 최적해 보장 불가한 예시
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch03/ch11-04-BGWD.PNG" width="100%" height="auto" />
+- 이진 트리 최적합 경로 탐색 : 경로의 합 최대화
 
-### 인접 행렬(Adjacent Matrix)
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-02-BST.PNG" width="100%" height="auto" />
 
 (여기부터 작성!)
 
-- 정점
-
-## 1절. 너비 우선 탐색
-
-### 너비 우선 탐색(BFS : Breadth First Search)
-
-## 2절. 깊이 우선 탐색
-
-### 깊이 우선 탐색(DFS : Depth First Search)
+- 배낭 문제
+#### 최적해 보장 가능한 예시
