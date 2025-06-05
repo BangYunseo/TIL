@@ -89,16 +89,39 @@
 
 > (3, 5), (1, 6), (6, 7), (5, 9), (8, 13), (7, 14), (12, 18), (16, 20)
 >
-> (3,5): 첫 번째 선택  
-> (1,6): (3,5)와 겹치므로 선택 X  
-> (6,7): (3,5)와 겹치지 않으므로 선택합니다.  
-> (5,9): (6,7)과 겹치므로 선택하지 않습니다.  
-> (8,13): (6,7)과 겹치지 않으므로 선택합니다.  
-> (7,14): (8,13)과 겹치므로 선택하지 않습니다.  
-> (12,18): (8,13)과 겹치므로 선택하지 않습니다.  
-> (16,20): (8,13)과 겹치지 않으므로 선택  
-> => 최적해 :
+> (3, 5) : 첫 번째 선택  
+> (1, 6) : 미선택 : (3, 5)와 겹침
+> (6, 7) : 두 번째 선택
+> (5, 9) : 미선택 : (6, 7)과 겹침
+> (8, 13) : 세 번째 선택
+> (7, 14) : 미선택 : (8, 13)과 겹침
+> (12, 18) : 미선택 : (8, 13)과 겹침
+> (16, 20) : 네 번째 선택
+>
+> => 최적해 : (3, 5), (6, 7), (8, 13), (16, 20)
 
 #### 호프만 코딩(Huffman Coding)
 
--
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-06-HC.PNG" width="100%" height="auto" />
+
+- Lossless Data Compression Algorithm
+  - 무손실 데이터 압축 알고리즘
+  - 데이터 압축 후 원래의 정보를 완벽하게 복원 가능
+- Optimal Prefix Code
+  - 최적 접두어 코드
+  - 주어진 데이터에 가장 효율적인(최소 길이) 접두어 코드 생성성
+- Variable-Length Code table for Encoding a source symbol
+  - 인코딩을 위한 가변 길이 코드 테이블
+  - ex) 파일 내 문자
+
+#### 호프만 코딩 예시 (1)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-07-HC2.PNG" width="100%" height="auto" />
+
+- 어떤 Code도 다른 코드의 접두어가 되지 않음
+
+#### 호프만 코딩 예시 (2)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-08-HC3.PNG" width="100%" height="auto" />
+
+- 예시문 : this is an example of a huffman tree
