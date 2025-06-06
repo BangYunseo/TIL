@@ -28,7 +28,7 @@
 
 ### 그리디 알고리즘 구조
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-01-GreedyS.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-01-GreedyS.PNG" width="60%" height="auto" />
 
 ### 그리디의 최적해 보장 불가능 예시
 
@@ -36,7 +36,7 @@
 
 - 경로의 합 최대화
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-02-BST.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-02-BST.PNG" height="auto" />
 
 #### 배낭 문제
 
@@ -61,7 +61,7 @@
 - 동전 액면이 모두 바로 아래 액면의 배수가 아닌 경우 최적해 보장 불가
 - ex) 1300원을 동전으로 바꾼 최적해 비교
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-03-BadCoin.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-03-BadCoin.PNG" height="auto" />
 
 ### 매트로이드(Matroid) : 그리디의 최적해 보장 가능한 예시
 
@@ -72,11 +72,11 @@
 - 동전 액면이 모두 바로 아래 액면의 배수인 경우 최적해 보장 가능
 - ex) 3,261원을 동전으로 바꾼 최적해
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-04-GoodCoin.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-04-GoodCoin.PNG" height="auto" />
 
 #### 최소 신장 트리를 위한 Prim 알고리즘과 Kruskal 알고리즘 구조
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-05-PK.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-05-PK.PNG" height="auto" />
 
 #### 회의실 배정 문제(Room Scheduling Problem, Activity Selection Problem)
 
@@ -103,7 +103,7 @@
 
 #### 호프만 코딩(Huffman Coding)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-06-HC.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-06-HC.PNG" height="auto" />
 
 - Lossless Data Compression Algorithm
   - 무손실 데이터 압축 알고리즘
@@ -117,12 +117,12 @@
 
 #### 호프만 코딩 예시 (1)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-07-HC2.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-07-HC2.PNG" height="auto" />
 
 - 어떤 Code도 다른 코드의 접두어가 되지 않음
 
 #### 호프만 코딩 예시 (2)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-08-HC3.PNG" width="100%" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-08-HC3.PNG" height="auto" />
 
 - 예시문 : this is an example of a huffman tree
