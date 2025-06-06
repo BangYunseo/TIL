@@ -36,7 +36,7 @@
 
 - 경로의 합 최대화
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-02-BST.PNG" height="auto" />
+<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch12/ch12-02-BST.PNG" width="40%" height="auto" />
 
 #### 배낭 문제
 
