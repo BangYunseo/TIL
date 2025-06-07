@@ -345,3 +345,99 @@
   - $n = (\frac{N}{2})^{\frac{1}{2}}$
   - $k > 2n - 1$
   - 교차점(CrossPoints) $>= 4N |(2N)^{\frac{1}{2}} - 1|$
+
+### 시 분할(Time Division) 교환
+
+- TDM과 TSI를 통해 확립
+
+  - TDM(Time-Division Multiplexing)
+  - TSI(Time-Slot Interchange) : 요구되는 연결 기반 틈새 번호 변경
+
+### 시간-분할 다중화
+
+- 시간 간격 교환 유무에 따른 시분할 다중화
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-24-TPM.PNG" height="auto"/>
+
+### 시간 틈새 상호 교환(TSI : Time-Slot Interchange)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-25-TSI.PNG" height="auto"/>
+
+- 각 location RAM 크기는 Single Time Slot Size와 동일
+- Location 수는 Input 수와 동일
+  - 일반적으로 I/O 수는 동일
+- Time-Slot은 받아들인 순서로 memory를 채우고 control unit의 결정 순서대로 전송
+
+### 공간 분할 + 시분할 교환 결헙
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-26-STS.PNG" height="auto"/>
+
+- 12 × 12 I/O를 3개의 그룹으로 나눠 사용
+  - Time-Division : 지연을 1/3으로 줄임
+  - Space-Division : 연결성 증가
+
+### 패킷 교환기 구성 요소
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-27-PSconsist.PNG" height="auto"/>
+
+#### 입력 포트(Input Port)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-28-IP.PNG" height="auto"/>
+
+- 패킷 교환 물리 및 데이터 링크 기능
+- 수신된 신호로부터 비트 형성
+- 프레임으로부터 디캡슐화
+  - 헤더 및 트레일러 정보 제거
+- 오류 감지 및 수정
+- 스위칭 패브랙(Switching Fabric)으로 데이터를 전달하기 전 일시적으로 데이터를 저장하는 버퍼(큐 : Queue) 존재
+
+#### 출력 포트(Output Port)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-29-OP.PNG" height="auto"/>
+
+- 순서만 반대일 뿐 입력 포트와 같은 기능
+- 출력 패킷들이 큐에 저장
+- 프레임에서 패킷 캡슐화
+- 물리 계층 기능
+  - 프레임의 데이터를 신호로 변환 후 전송
+
+#### 경로 지정 처리기(Routing Processor)
+
+- 네트워크(3계층 : Network Layer) 층 기능 수행
+- 다음 hop으로 갈 주소를 목적지 주소를 통해 탐색
+  - 표 보기(table lookup)
+
+#### 교환 회로(Switching Fabric)
+
+- 입력 큐의 패킷을 출력 큐에 옮기는 작업
+- Switch에서 가장 어려운 작업
+- 스위치 예시
+  - 크로스바 교환기
+  - 반얀 교환기(Banyan switch)
+  - 뱃처-반얀 교환기(Batcher-Banyan Switch)
+
+### 반얀 교환기(Banyan Switch)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-30-BS.PNG" height="auto"/>
+
+- n input, n output인 경우
+  - $log_2n$ stage와 각 stage에서 n/2개의 microswitch 존재
+  - 첫 번째 stage에서 최상위 bit로 라우팅
+  - 다음 stage에서 다음 상위 bit로 라우팅
+
+#### 반얀 교환기 경로 탐색 예시
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-31-BSex.PNG" height="auto"/>
+
+### 뱃처-반얀 교환기(Batcher-Banyan Switch)
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-32-BBS.PNG" height="auto"/>
+
+- Banyan switch의 단점
+  - 두 개의 packet이 충돌하는 경우 존재
+- Batcher switch에서 미리 목적지 port에 따라 정렬 진행
+
+  - 충돌 방지
+
+- 트랩 모듈
+  - 동일한 destination을 가진 packet이 동시에 banyan switch로 못가도록 방지
