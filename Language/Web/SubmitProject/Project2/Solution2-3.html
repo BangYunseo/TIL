@@ -55,9 +55,12 @@
 
         var people = [];
 
-        people.push(makeInfo("John Doe", 30, ["Reading", "Cycling", "Hiking"], ["Alice", "Bob", "Charlie"]));
-        people.push(makeInfo("Jane Smith", 28, ["Painting", "Running", "Cooking"], ["Daniel", "Emma", "Sophia"]));
-        people.push(makeInfo("Mike Johnson", 35, ["Gaming", "Swimming", "Traveling"], ["Liam", "Noah", "Oliver"]));
+        people.push(makeInfo("John Doe", 30, ["Reading", "Cycling", "Hiking"], 
+                             ["Alice", "Bob", "Charlie"]));
+        people.push(makeInfo("Jane Smith", 28, ["Painting", "Running", "Cooking"], 
+                             ["Daniel", "Emma", "Sophia"]));
+        people.push(makeInfo("Mike Johnson", 35, ["Gaming", "Swimming", "Traveling"], 
+                             ["Liam", "Noah", "Oliver"]));
 
         var output = "";
         for (var i in people) {
