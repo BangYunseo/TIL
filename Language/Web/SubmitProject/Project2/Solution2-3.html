@@ -1,0 +1,73 @@
+<html lang="ko">
+
+<head>
+    <script>
+        function makeInfo(name, age, hobbies, friends) {
+            var willReturn = {
+                Name: name,
+                Age: age,
+                Hobbies: hobbies,
+                Friends: friends,
+
+                getHobbies: function () {
+                    var hobbiesList = "";
+                    for (var i = 0; i < this.Hobbies.length; i++) {
+                        hobbiesList += "- " + this.Hobbies[i] + "\n";
+                    }
+                    return hobbiesList;
+                },
+                getFriends: function () {
+                    var friendsList = "";
+                    for (var i = 0; i < this.Friends.length; i++) {
+                        friendsList += "- " + this.Friends[i] + "\n";
+                    }
+                    return friendsList;
+                },
+
+                // join 함수를 사용하고자 하는 경우
+                // getHobbies: function () {
+                //     return '- ' + this.Hobbies.join('\n- ');
+                // },
+                // getFriends: function () {
+                //     return '- ' + this.Friends.join('\n- ');
+                // },
+
+                showInfo: function () {
+                    return (
+                        "Name: " + this.Name + "\n" +
+                        "Age: " + this.Age + "\n" +
+                        "Hobbies:\n" + this.getHobbies() +
+                        "Friends:\n" + this.getFriends() +
+                        "----------------------------------"
+                    );
+
+                    // return 문자열을 직관적으로 사용할 경우
+                    //                     return `Name: ${this.Name}
+                    // Age: ${this.Age}
+                    // Hobbies:
+                    // ${this.getHobbies()}Friends:
+                    // ${this.getFriends()}----------------------------------`;
+                    // 위 형태 그대로 유지하지 않을 시 모양이 망가짐
+                },
+            };
+            return willReturn;
+        }
+
+        var people = [];
+
+        people.push(makeInfo("John Doe", 30, ["Reading", "Cycling", "Hiking"], ["Alice", "Bob", "Charlie"]));
+        people.push(makeInfo("Jane Smith", 28, ["Painting", "Running", "Cooking"], ["Daniel", "Emma", "Sophia"]));
+        people.push(makeInfo("Mike Johnson", 35, ["Gaming", "Swimming", "Traveling"], ["Liam", "Noah", "Oliver"]));
+
+        var output = "";
+        for (var i in people) {
+            output += people[i].showInfo() + "\n";
+        }
+        alert(output);
+
+        // 세로로 alert 시 아래가 짤려서 document로 재작성
+        document.write(output.replace(/\n/g, "<br>"));
+    </script>
+</head>
+
+</html>

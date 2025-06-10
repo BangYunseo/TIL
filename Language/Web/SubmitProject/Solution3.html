@@ -1,0 +1,66 @@
+<script>
+    // 생성자 함수를 선언
+    class Animal{
+        #name;
+        #age;
+
+        constructor(name, age){
+            this.#name = name;
+            this.#age = age;
+        }
+
+        get name(){ return this.#name; }
+        get age(){ return this.#age; }
+
+        set name(name) {this.#name = name; }
+        set age(age) {this.#age = age; }
+
+        speak(){
+            console.log(`${this.name}이(가) 소리를 냅니다.`);
+        }
+    }
+
+    class Mammal extends Animal{
+        #hasFur;
+
+        constructor(name, age, hasFur){
+            super(name, age);
+            this.#hasFur = hasFur;
+        }
+
+        get hasFur() { return this.#hasFur; }
+
+        speak(){
+            console.log(`포유류 ${this.name}(가) 울음소리를 냅니다.`);
+        }
+    }
+
+    class Bird extends Animal{
+        #canFly;
+
+        constructor(name, age, canFly){
+            super(name, age);
+            this.#canFly = canFly;
+        }
+
+        get canFly() { return this.#canFly; }
+
+        speak(){
+            console.log(`조류 ${this.name}이(가) 지저귑니다.`);
+        }
+    }
+
+    // 실행 예시(console)
+    const objAnimal = new Animal("동물", 5);
+    const objmammal = new Mammal("사자", 10, true);
+    const objbird = new Bird("앵무새", 3, true);
+
+    objAnimal.speak();
+
+    console.log(objmammal.name);
+    console.log(objmammal.age);
+    objmammal.speak();
+
+    objbird.speak();
+    console.log(objbird.canFly);
+</script>
