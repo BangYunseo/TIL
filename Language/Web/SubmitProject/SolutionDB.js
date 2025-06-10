@@ -79,7 +79,8 @@ app.get('/data.json', (req, res) => {
 
   let html = '<table border="1"><tr><th>Num</th><th>Product</th><th>Customer</th></tr>';
   results.forEach(row => {
-    html += `<tr><td>${row.Order_Num}</td><td>${row.Order_Product}</td><td>${row.Order_Customer}</td></tr>`;
+    html += `<tr><td>${row.Order_Num}</td><td>${row.Order_Product}
+    </td><td>${row.Order_Customer}</td></tr>`;
   });
   html += '</table>';
 
