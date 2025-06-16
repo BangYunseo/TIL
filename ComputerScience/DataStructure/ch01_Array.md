@@ -2,7 +2,7 @@
 
 #### 배열
 
-![array](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch01/array.PNG)
+![array](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/Image/ch01/array.PNG)
 
 * 연속된 메모리 공간에 순차적으로 저장된 데이터의 집합
 * 데이터가 동일한 유형을 가지고 순서대로 접근 
