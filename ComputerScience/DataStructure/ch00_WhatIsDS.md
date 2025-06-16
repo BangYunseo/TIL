@@ -10,8 +10,8 @@
 
 #### 기본 데이터 구조
 
-- [배열(Array)]()
-- [연결리스트(Linked List)]()
+- [배열(Array)](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataStructure/ch01_Array.md)
+- [리스트(List)]()
 - [행렬(Matrix)]()
 - [스택(Stack)]()
 - [큐(Queue)]()
@@ -27,3 +27,8 @@
 - [우선순위 큐(Priority Queue)]()
 - [세그먼트 트리(Indexed Tree - Segment Tree)]()
 - [트라이 트리(Trie Tree)]()
+
+### 데이터 구조 분류
+
+| 선형 | 비선형 |
+| :--: | :----: |

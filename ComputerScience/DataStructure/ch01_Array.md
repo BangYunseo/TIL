@@ -1,15 +1,25 @@
 # chapter 1. 배열(Array)
 
-### 배열
+> 1절. 배열
+>
+> 2절. 배열 구현
+
+## 1절. 배열
+
+### 배열(Array)
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataStructure/Image/ch01/array.PNG" height="auto" />
 
 - 연속된 메모리 공간에 순차적으로 저장된 데이터 집합
 - 데이터가 동일한 유형을 가지고 순서대로 접근
-- 요소(element)
-  - 배열을 구성하는 각각의 값
-- 인덱스(index)
-  - 배열에서의 위치를 가리키는 숫자
+
+#### 요소(element)
+
+- 배열을 구성하는 각각의 값
+
+#### 인덱스(index)
+
+- 배열에서의 위치를 가리키는 숫자
 
 #### 예시
 
