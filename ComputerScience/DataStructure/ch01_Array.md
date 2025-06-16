@@ -1,10 +1,10 @@
 # chapter 1. 배열(Array)
 
-#### 배열
+### 배열
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataStructure/Image/ch01/array.PNG" height="auto" />
 
-- 연속된 메모리 공간에 순차적으로 저장된 데이터의 집합
+- 연속된 메모리 공간에 순차적으로 저장된 데이터 집합
 - 데이터가 동일한 유형을 가지고 순서대로 접근
 - 요소(element)
   - 배열을 구성하는 각각의 값
@@ -22,7 +22,7 @@
 
 #### 배열 표현의 요소와 인덱스
 
-![array3](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch01/array3.PNG)
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataStructure/Image/ch01/array3.PNG" height="auto" />
 
 - 연속된 메모리 공간에 데이터들은 순차적으로 저장
 - 인덱스는 0부터 시작
