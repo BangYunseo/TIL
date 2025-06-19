@@ -2,6 +2,13 @@
 
 ### 리스트
 
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataStructure/Image/ch02/ch02-01-LIST.PNG" height="auto" />
+
+- 줄 세워진 데이터
+- 늘어선 데이터
+
+(여기서부터 다시 작성)
+
 ![linkedlist](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch02/linkedlist.PNG)
 
 - 데이터와 포인트로 구성된 노드 간의 연결을 이용해서 리스트를 구현한 자료구조
