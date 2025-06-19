@@ -34,7 +34,7 @@
 
 ### 배열 표현
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataStructure/Image/ch01/array3.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataStructure/Image/ch01/ch01-01-array2.PNG" height="auto" />
 
 - 연속된 메모리 공간에 순차적인 데이터 저장
 - 인덱스는 <strong>0</strong>부터 시작
