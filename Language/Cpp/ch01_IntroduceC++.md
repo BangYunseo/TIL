@@ -1,4 +1,4 @@
-# Chapter 1. C++소개
+# Chapter 1. C++ 개요
 
 > '명품 C++Programming - 황기태' 1장 학습 내용
 >
