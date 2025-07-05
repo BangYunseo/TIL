@@ -7,6 +7,8 @@
 > 2절. C# 특징
 >
 > 3절. C# 구조
+>
+> 4절. 요약
 
 ## 1절. C# 개요
 
@@ -26,7 +28,7 @@
   - Pascal
   - C
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/ch01-01-Schematic.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-1-Schematic.PNG" height="auto" />
 
 ### 개발 환경
 
@@ -69,7 +71,7 @@ class HelloWorld
 
 ### 실행 과정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/ch01-02-Process.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-2-Process.PNG" height="auto" />
 
 #### 1. 컴파일 과정
 
@@ -227,28 +229,528 @@ class User
 }
 ```
 
-(여기부터 작성)
-
 ### 델리게이트(Delegate)
 
 - 메소드 참조 기법
-- 객체지향적 특징 반영 메소드 포인터
+- 객체지향적 특징이 반영된 메소드 포인터
 - 클래스 만을 위한 연산자
 - 자료 추상화 가능
 - 문법적 규칙 변경 불가
   - 연산 순위
   - 결합 법칙
+- 이벤트 및 스레드 처리를 위한 방법론
+
+#### C# 구현
+
+```C#
+// Program.cs : Program의 델리게이트 구현 프로그램
+
+using System;
+using System.Text;
+// 한국어 인코딩 라이브러리
+
+class Program
+{
+    delegate void OnClicked();
+    // 델리게이트 OnClicked 선언
+
+    static void ButtonPressed(OnClicked clickFunction)
+    {
+        Console.WriteLine("버튼을 눌렀습니다.");
+        clickFunction();
+    }
+
+    static void test1()
+    {
+        Console.WriteLine("TEST DELEGATE 1");
+    }
+
+    static void test2()
+    {
+        Console.WriteLine("TEST DELEGATE 2");
+    }
+
+    static void Main()
+    {
+        Console.OutputEncoding = Encoding.UTF8;
+        // 한국어 출력 설정
+
+        OnClicked click = new OnClicked(test1);
+        click += test2;
+        // 델리게이트 체이닝 형태
+
+        ButtonPressed(test1);
+        // 델리게이트 1 사용
+
+        ButtonPressed(test2);
+        // 델리게이트 2 사용
+
+        click();
+        // 델리게이트 3 사용
+    }
+}
+```
 
 ### 이벤트(Event)
 
+- 사용자 행동에 의해 발생한 사건
+- 사건의 발생을 알리기 위해 보내는 메시지
+- 델리게이트를 통해 이벤트 처리
+
+#### 이벤트 주도 프로그래밍
+
+- 이벤트와 이벤트 처리기를 통한 객체에 발생한 사건
+  - 다른 객체에 통지하고 그에 대한 행위를 처리하도록 시키는 구조
+- 각 이벤트에 따른 작업을 독립적으로 기술
+- 프로그램 구조가 체계적 & 구조적
+- 복잡도 감소
+
 ### 스레드(Thread)
 
+- 순차 프로글램과 유사하게 시작, 실행, 종료 순서
+- 실행되는 동안 한 시점에서 단일 실행점 보유
+- 프로그램 내에서만 실행 가능
+
+#### 멀티스레드 시스템
+
+- 스레드가 하나의 프로그램 내에 여러 개 존재
+- 응용 프로그램의 병행 처리를 위해 스레드 개념 지원
+- 스레드 생성 후 실행 및 제어 방법 제공
+- 델리게이트를 통한 처리
+
 ### 제네릭(Generic)
+
+- 자료형을 매개 변수로 취급
+- C++ 템플릿과 유사
+
+#### 단위
+
+- 클래스
+- 구조체
+- 인터페이스
+- 메소드
+
+#### C# 구현
+
+```C#
+// BoxProgram.cs : BoxProgram의 제네릭 구현 프로그램
+
+using System;
+using System.Text;
+// 한국어 인코딩 라이브러리
+
+class Box<T>
+{
+    private T content;
+
+    public Box(T _content)
+    {
+        content = _content;
+    }
+
+    public T GetContent()
+    {
+        return content;
+    }
+
+    public void PrintContent()
+    {
+        Console.WriteLine($"상자 내용 : {content}");
+        Console.WriteLine($"상자 내용 타입 : {content.GetType().Name}");
+    }
+}
+
+class BoxProgram
+{
+    static void Main()
+    {
+        Console.OutputEncoding = Encoding.UTF8;
+        // 한국어 출력 설정
+
+        Box<int> intBox = new Box<int>(7);
+        // int 타입을 T로 사용하는 7을 담은 정수 Box 인스턴스 생성
+
+        intBox.PrintContent();
+        // intBox 내용 출력
+
+        int boxValue = intBox.GetContent();
+        Console.WriteLine($"꺼낸 정수 : {boxValue}\n");
+        // intBox 안의 정수 값 꺼내기
+
+
+
+        Box<string> strBox = new Box<string>("Hello, World!");
+        // string 타입을 T로 사용하는 "Hello, World!"를 담은 문자열 Box 인스턴스 생성
+
+        strBox.PrintContent();
+        // strBox 내용 출력
+
+        string boxString = strBox.GetContent();
+        Console.WriteLine($"꺼낸 문자열 : {boxString}");
+    }
+}
+```
 
 ## 3절. C# 구조
 
 ### 어휘
 
 - 프로그램 구성 기본 소자
-- 토큰(Tokennn)
+- 토큰(Token)
 - 문법적으로 의미있는 최소 단위
+
+#### 토근 종류
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-3-TokenType.PNG" height="auto" />
+
+#### 지정어
+
+- 프로그래밍 언어 설계 시 기능과 용도가 이미 정의된 단어
+- 사용자가 임의로 결정하는 변수 명 혹은 메소드 명 등으로 사용 불가
+
+#### C# 지정어
+
+- 77개
+- C# Language Specification(ECMA TC39 / TG2)
+
+### 명칭
+
+- 자료 항목 식별을 위해 붙이는 이름
+  - 변수
+  - 상수
+  - 배열
+  - 클래스
+  - 메소드
+  - 레이블
+
+#### 명칭의 형태
+
+- 문자 시작
+- 길이 제한 없음
+- 대소문자 구분
+- @기호 사용 시 명칭 사용 가능
+
+| 옳은 명칭 예시 | 틀린 명칭 예시 |
+| :------------: | :------------: |
+|      sum       |      1sum      |
+|      sum1      |      sum!      |
+|   money_sum    |      $sum      |
+|    moneySum    |      #sum      |
+|      @int      |   Money Sum    |
+|      변수      |    virtual     |
+
+### 리터럴
+
+- 자신의 표기법이 곧 자신의 값이 되는 상수
+- ex) "12" : 값이 12인 정수를 나타내는 경우
+
+#### 리터럴 종류
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-4-LiteralType.PNG" height="auto" />
+
+#### 객체참조 리터럴(Object Reference)
+
+- 널(NULL)
+  - 아무 객체도 가리키지 않는 상태
+  - 부적합하거나 객체 생성 불가한 경우 초기화ㅏ에 사용
+
+### 주석
+
+- 프로그램 설명을 위한 문장
+- 프로그램 실행과 무관
+- 프로그램 유지보수(리팩토링) 시 중요
+
+#### 주석 종류
+
+1. // comment
+
+   - // 부터 새로운 줄 전까지 주석으로 간주
+   - 사용 예시
+
+   ```C#
+       int size = 100;
+       // size를 100으로 초기화
+   ```
+
+2. /\* comment \*/
+
+   - /\* 와 다음 \*/ 사이의 모든 문자들을 주석으로 간주
+   - 주석문 안의 또 다른 주석 포함 불가
+   - C# 언어에서 여러 줄의 주석을 위해 현재 주석 형태 지원
+
+3. /// comment
+
+   - /// 문자들 부터 주석으로 간주
+   - C# 프로그램에 대한 웹 보고서 작성 시 사용하는 방법
+   - XML 태그를 통해 기술
+   - 사용 예시
+
+### 자료형
+
+- 자료 객체가 갖는 형태
+- 구조 및 개념, 값의 범위, 연산 등 정의
+
+#### 자료형 종류
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-5-ValueableType.PNG" height="auto" />
+
+#### 값형
+
+1. 숫자형
+
+   - 값 표현 방법과 연산 방식에 따라 상이
+     - 정수형
+     - 실수형
+
+2. 문자형
+
+   - 16비트 유니코드 사용
+
+3. 부울형
+
+   - 다른 자료형으로 변환 불가
+     - true
+     - false
+     - 숫자값 불가능
+
+4. 열거형
+
+   - 서로 관련 있는 상수들의 모음을 상징있는 명칭의 집합으로 정의
+     - 기호 상수 : 집합의 원소로 기술된 명칭
+     - 순서값 : 집합에 명시된 순서에 따라 0부터 부여된 값
+
+5. 구조체형
+
+   - 클래스처럼 고유 필드, 메서드, 생성자 존재
+   - 참조 형식이 아닌 형식
+   - 기본 생성자 선언 불가능
+
+#### 참조형
+
+1. 배열형
+
+   - 같은 형의 여러 값 저장 시 사용
+   - 순서가 있는 원소들의 모임
+   - 배열을 하나의 객체로 취급
+   - 사용 예시
+
+   ```C#
+    // 배열 선언 예시
+
+    int[] vector;
+    // 1차원 배열
+
+    short[, ] matrix;
+    // 2차원 배열
+
+    object[] myArray;
+
+    int[] initArray = {0, 1, 2,3 , 4, 5};
+    // 선언과 동시에 초깃값 부여
+   ```
+
+   ```C#
+   // 배열 구현 예시
+
+   vector = new int[100];
+   matrix = new short[10, 100];
+   myArray = new Point[3];
+   ```
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-6-Array.PNG" height="auto" />
+
+2. 참조형(스트링형)
+
+   - 문자열 표현을 위한 자료형
+   - System.String 클래스형과 동일
+
+3. StringBuilder 클래스
+
+   - 효율적인 스트링 취급을 위한 클래스
+   - 객체에 저장된 내용을 임의로 변경 가능
+   - 스트링 중간에 삽입, 추가 등의 다양한 메서드 존재
+   - 같은 형의 여러 값 저장 시 사용
+   - 순서 있는 원소들의 모임
+   - 배열을 하나의 객체로 취급
+
+### 연산자
+
+- 식
+
+  - 문장에서 값 계산 시 사용
+
+- 연산자
+  - 식의 의미 결정
+  - 피연산자가 어떻게 계산될 지 표현하는 기호
+
+#### 연산자 종류
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-7-OperatorType.PNG" height="auto" />
+
+### 형변환
+
+- 피연산자의 자료형이 상이할 경우 일정 규칙에 따라 피연산자의 자료형을 일치시키는 것
+- 연산 시 모든 피연산자는 자료형이 일치해야 함
+
+#### 묵시적 형 변환
+
+- 컴파일러에 의하 자동으로 수행되는 형 변환
+- 작은 크기 자료형 => 큰 크기 자료형
+
+#### 명시적 형 변환
+
+- 프로그래머가 캐스트 연산자를 사용하여 수행하는 형 변환
+- 형태 : (자료형) 식
+- 큰 크기 자료형 => 작은 크기 자료형
+  - 정밀도 상실
+
+#### C# 구현
+
+```C#
+// PrecisionApp.cs : PrecisionApp의 형변환 구현 프로그램
+
+using System;
+using System.Text;
+// 한국어 인코딩 라이브러리
+
+class PrecisionApp
+{
+    public static void Main()
+    {
+        Console.OutputEncoding = Encoding.UTF8;
+        // 한국어 출력 설정
+
+        int big = 1234567890;
+        float approx;
+        approx = (float)big;
+        Console.WriteLine("차이 : " + (big - (int)approx));
+    }
+}
+
+// 실행 결과
+// 차이 : -46
+```
+
+### 박싱
+
+- 값형의 데이터를 참조형으로 변환
+- 컴파일러에 의해 묵시적으로 실행
+
+#### 박싱 과정
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-8-Boxing.PNG" height="auto" />
+
+### 언박싱
+
+- 참조형의 데이터를 값형으로 변환
+- 반드시 캐스팅으로 명시적 수행
+- 박싱될 경우 형으로 언박싱 필수
+
+#### C# 구현
+
+```C#
+// BoxingUnboxingApp.cs : BoxingUnboxingApp의 박싱 및 언박싱 구현 프로그램
+
+using System;
+using System.Text;
+// 한국어 인코딩 라이브러리
+
+class BoxingUnboxingApp
+{
+    public static void Main()
+    {
+        Console.OutputEncoding = Encoding.UTF8;
+        // 한국어 출력 설정
+
+        int foo = 526;
+        object bar = foo;
+        // foo를 bar로 박싱
+        // 내부적 int
+
+        Console.WriteLine(bar);
+        // 박싱 bar 출력
+
+        try
+        {
+            int unboxedInt = (int)bar;
+
+            Console.WriteLine(unboxedInt);
+            // int 자료형으로 직접 언박싱 시도
+            // 정상적인 언박싱 - 원래 타입과 일치
+
+            double d = (short)bar;
+
+            Console.WriteLine(d);
+            // short 자료형으로 직접 언박싱 시도
+            // 에러 발생
+        }
+        catch(InvalidCastException e)
+        {
+            Console.WriteLine(e + "Error");
+        }
+    }
+}
+```
+
+## 4절. 요약
+
+### C#
+
+- 마이크로소프트사, 랜더스 헬스버그에 의해 고안된 언어
+- C 언어 계열에 속하는 범용 프로그래밍 언어
+
+### C# 개발 환경
+
+- Visual Studio와 같은 통합 개발 환경 사용
+- .Net 프레임워크에서 지원하는 개발도구(SDK)를 직접 사용
+
+### C# 특징
+
+- 클래스(Class)
+- 속성(Property)
+- 연산자 중복(Operator Overloading)
+- 델리게이트(Delegate)
+- 이벤트(Event)
+- 제네릭(Generic)
+- 스레드(Thread)
+
+### 토큰
+
+- 프로그램을 구성하는 문법적으로 의미 있는 최소의 단위
+- == 어휘
+
+### 지정어
+
+- 프로그래밍 언어 설계 시 기능과 용도가 이미 정의된 다ㅏㄴ어
+
+### 명칭
+
+- 자료의 항목 식별을 위해 붙이는 이름
+- 항목 종류
+  - 변수
+  - 상수
+  - 배열
+  - 클래스
+  - 메소드
+  - 레이블
+
+### 주석
+
+- 프로그램이 무엇을 하는가 설명하기 위해 소스 프로그램 내에 기술하는 문장
+
+### 자료형
+
+- 자료 객체가 갖는 형
+- 자료형 정의 항목
+  - 구조
+  - 개념
+  - 값의 범위
+  - 연산
+
+### 연산자
+
+- 식의 의미
+
+### 형 변환
+
+- 피연산자의 자료형이 상이할 경우 일정 규칙에 맞게 피연산자의 자료형을 일치시키는 행위
