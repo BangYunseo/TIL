@@ -28,7 +28,7 @@
   - Pascal
   - C
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-1-Schematic.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-1-Schematic.PNG" height="auto" />
 
 ### 개발 환경
 
@@ -71,7 +71,7 @@ class HelloWorld
 
 ### 실행 과정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-2-Process.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-2-Process.PNG" height="auto" />
 
 #### 1. 컴파일 과정
 
@@ -401,7 +401,7 @@ class BoxProgram
 
 #### 토근 종류
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-3-TokenType.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-3-TokenType.PNG" height="auto" />
 
 #### 지정어
 
@@ -446,7 +446,7 @@ class BoxProgram
 
 #### 리터럴 종류
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-4-LiteralType.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-4-LiteralType.PNG" height="auto" />
 
 #### 객체참조 리터럴(Object Reference)
 
@@ -492,7 +492,7 @@ class BoxProgram
 
 #### 자료형 종류
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-5-ValueableType.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-5-ValueableType.PNG" height="auto" />
 
 #### 값형
 
@@ -557,7 +557,7 @@ class BoxProgram
    myArray = new Point[3];
    ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-6-Array.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-6-Array.PNG" height="auto" />
 
 2. 참조형(스트링형)
 
@@ -585,7 +585,7 @@ class BoxProgram
 
 #### 연산자 종류
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-7-OperatorType.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-7-OperatorType.PNG" height="auto" />
 
 ### 형변환
 
@@ -638,7 +638,7 @@ class PrecisionApp
 
 #### 박싱 과정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C#/Image/ch01/1-8-Boxing.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-8-Boxing.PNG" height="auto" />
 
 ### 언박싱
 
