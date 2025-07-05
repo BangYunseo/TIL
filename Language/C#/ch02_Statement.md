@@ -50,7 +50,49 @@ var op = exp;
 3. 초깃값 할당
    - 변수 초깃값 할당 시 유용
 
+### 형 변환
+
+```C#
+// Program.cs : Program의 형 변환 구현 프로그램
+
+using System;
+
+namespace App {
+    class Program {
+        static void Main(string[] args) {
+            short s;
+            int i;
+            float f;
+            double d;
+
+            s = 526;
+            d = f = i = s;
+
+            Console.WriteLine("s = " + s + " i = " + i);
+            Console.WriteLine("f = " + f + " d = " + d);
+        }
+    }
+}
+
+```
+
+1. 묵시적 형 변환
+
+   - 컴파일러에 의해 자동 변환
+
+2. 명시적 형 변환
+   - 프로그래머가 캐스트(Cast) 연산자 사용 후 변형
+
 ## 3절. 혼합문
+
+### 정의
+
+- 여러 문장을 묶어 하나의 문장으로 표현할 경우 사용
+- 문장의 범위 표현
+
+### 형태
+
+(여기부터 작성)
 
 ## 4절. 제어문
 
