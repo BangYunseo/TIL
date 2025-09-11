@@ -2,6 +2,8 @@
 
 > 'C# 프로그래밍' 1장 학습 내용
 >
+> 0절. 과거의 C#
+>
 > 1절. C# 개요
 >
 > 2절. C# 특징
@@ -10,7 +12,112 @@
 >
 > 4절. 요약
 
+## 0절. 과거의 C#
+
+### Visual Basic
+
+- 쉽고 빠른 프로그래밍 가능
+- 문제점
+  - 완벽한 객체 지향 지원 X
+  - 다른 언어와의 호환성 지원에 미흡
+
+### .NET(닷넷)
+
+- 모든 것을 포괄하는 이상적인 개발 환경
+- 개발에 필요한 개발 언어, 툴, 라이브러리, 기술 등 제공
+- 해당 환경 별 통일 사항
+
+|   환경    | 특성                                                                                    |
+| :-------: | :-------------------------------------------------------------------------------------- |
+| 개발 환경 | 다양한 언어로 개발                                                                      |
+| 실행 환경 | 다양한 언어로 개발된 프로그램을 하나의 방식으로 번역한 후 닷넷에서 하나의 방식으로 동작 |
+
+### .NET Framework(닷넷 프레임워크)
+
+- CLS(Common Language Specification : 공통 언어 스펙) 규칙을 따르는 언어로 작성된 애플리케이션은 닷넷 프레임워크에서 동작 가능
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-01-.NETFramework.PNG" height="auto" />
+
+### .NET 특징
+
+#### 1. 플랫폼 독립성(Platform Independent)
+
+- 닷넷 프레임워크만 설치되어 있다면 어떤 운영체제에서도 닷넷 애플리케이션 동작 가능
+
+#### 2. 다양한 언어 지원
+
+- 개발자는 다양한 언어로 개발 가능
+- 닷넷에서 하나의 방식으로 동작 가능
+- CLS(Common Language Specification)
+  - 닷넷 프레임워크에서의 동작을 위해 언어들이 지켜야 하는 표준 스펙
+
+#### 3. 상호 운용성(Interoperability)
+
+- 서로 다른 언어끼리의 호환성
+  - C#에서 COM 사용
+  - C#에서 Win32 API 사용
+
+### 중간 언어(Intermediate Language)
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-02-MidLanguage.PNG" height="auto" />
+
+- 기계어로 변환하기 쉬운 상태인 중간 단계 언어
+- 닷넷에서 번역되고 실행하기 위해서는 중간 언어 형태로 컴파일 필수
+
+#### 중간 언어 장점
+
+- 중간 언어를 기계어로 번역하는 번역기만 제공된다면 어떤 플랫폼에서도 실행 가능
+
+#### 중간 언어 단점
+
+- 완전한 기계어가 아니므로 언젠가는 완전한 기계어로의 번역 필요
+- 느린 속도
+
+### CLR
+
+- 아래의 단계가 동적으로 실행
+  - 중간 언어로 컴파일된 파일 로딩
+  - CLR 내의 JIT 컴파일러가 기계어로 컴파일
+
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-03-CLR.PNG" height="auto" />
+
+|            개념            | 정의                                             |
+| :------------------------: | :----------------------------------------------- |
+|         중간 언어          | C# 최종 결과물(컴파일한 결과 파일)               |
+|          재컴파일          | 중간 언어는 완벽한 기계어로 컴파일해야 실행 가능 |
+| JIT(Just In Time Compiler) | 중간 언어를 동적으로 컴파일하는 컴파일러         |
+
+### .NET 컴파일
+
+- 중간 언어(IL) 형태로 변환
+
+### .NET 실행
+
+- .NET 환경의 CLR은 IL 형태의 언어를 JIT가 재컴파일한 후 실행
+
+### C# 어셈블리
+
+- 중간 언어 형태의 .exe or .dll 파일들을 C#에서는 어셈블리(Assembly)라고 명칭
+
+#### 어셈블리(Assembly) 종류
+
+|     종류      | 특성                                                                                                                                                                           |
+| :-----------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 사설 어셈블리 | - Copy & Paste 개념의 프로그램<br>- 복사 후 붙여넣기로 사용                                                                                                                    |
+| 공용 어셈블리 | - 레지스터 개념에서 발전된 형태<br>- 공용 어셈블리로 등록하는 것은 레지스터와 동일<br>- 버전 별 독립적으로 관리하며 복사된 버전 보관<br>- CLSID 대신 디지털 서명 방식으로 관리 |
+
 ## 1절. C# 개요
+
+### C#
+
+- .NET(닷넷)의 대표 언어
+
+### C# 라이브러리
+
+- XML.NET
+- ADO.NET
+- ASP.NET
+- XML Web Services
 
 ### C 계열
 
@@ -28,7 +135,7 @@
   - Pascal
   - C
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-1-Schematic.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-04-Schematic.PNG" height="auto" />
 
 ### 개발 환경
 
@@ -71,7 +178,7 @@ class HelloWorld
 
 ### 실행 과정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-2-Process.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-05-Process.PNG" height="auto" />
 
 #### 1. 컴파일 과정
 
@@ -401,7 +508,7 @@ class BoxProgram
 
 #### 토근 종류
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-3-TokenType.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-06-TokenType.PNG" height="auto" />
 
 #### 지정어
 
@@ -446,7 +553,7 @@ class BoxProgram
 
 #### 리터럴 종류
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-4-LiteralType.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-07-LiteralType.PNG" height="auto" />
 
 #### 객체참조 리터럴(Object Reference)
 
@@ -492,7 +599,7 @@ class BoxProgram
 
 #### 자료형 종류
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-5-ValueableType.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-08-ValueableType.PNG" height="auto" />
 
 #### 값형
 
@@ -557,7 +664,7 @@ class BoxProgram
    myArray = new Point[3];
    ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-6-Array.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-09-Array.PNG" height="auto" />
 
 2. 참조형(스트링형)
 
@@ -585,7 +692,7 @@ class BoxProgram
 
 #### 연산자 종류
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-7-OperatorType.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-10-OperatorType.PNG" height="auto" />
 
 ### 형변환
 
@@ -638,7 +745,7 @@ class PrecisionApp
 
 #### 박싱 과정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/1-8-Boxing.PNG" height="auto" />
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-11-Boxing.PNG" height="auto" />
 
 ### 언박싱
 
