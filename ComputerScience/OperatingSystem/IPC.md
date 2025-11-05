@@ -161,7 +161,7 @@ void producer()
         // 1. 뮤텍스로 공유 자원 접근 보호
         unique_lock<mutex> lock(buffer_mutex);
 
-        // 2. 조건 변수 대기(버퍼가 가득 찬 경우)
+        // 2. 조건 변수 대기
         buffer_full.wait(lock, []{return((in + 1) % SIZE) != out; });
 
         // 3. 아이템 추가 및 포인터 이동
@@ -187,7 +187,7 @@ void consumer()
         // 1. 뮤텍스로 공유 자원 접근 보호
         unique_lock<mutex> lock(buffer_mutex);
 
-        // 2. 조건 변수 대기(버퍼가 빈 경우)
+        // 2. 조건 변수 대기
         buffer_empty.wait(lock, []{return in != out; });
 
         // 3. 아이템 소비 및 포인터 이동
