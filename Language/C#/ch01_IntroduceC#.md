@@ -738,16 +738,16 @@ class PrecisionApp
 // 차이 : -46
 ```
 
-### 박싱
+### 박싱(Boxing)
 
-- 값형의 데이터를 참조형으로 변환
+- 값(Value) 형식의 데이터를 참조 형식으로 변환
 - 컴파일러에 의해 묵시적으로 실행
 
-#### 박싱 과정
+#### 박싱(Boxing) 과정
 
 <img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-11-Boxing.PNG" height="auto" />
 
-### 언박싱
+### 언박싱(UnBoxing)
 
 - 참조형의 데이터를 값형으로 변환
 - 반드시 캐스팅으로 명시적 수행

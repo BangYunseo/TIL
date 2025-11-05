@@ -1,12 +1,14 @@
-# Communication
+# Operating System
 
 ## What?
-* 통신 공부 및 정리
+
+- 운영체제 공부 및 정리
 
 ## When?
-* 마지막 수정일 : 2024.09.08
 
-## Communication
-* NetworkProtocol
-* [DigitalSignalProcessing](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/Data%20Structure)
-* [SignalWithSystem](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase)
+- 마지막 수정일 : 2025.11.05
+
+## Operating System
+
+- [IPC](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/Data%20Structure)
+- Linux
