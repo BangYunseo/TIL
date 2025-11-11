@@ -2,6 +2,8 @@
 
 ## 컨벤션 예시
 
+### Git Commit Type
+
 - feat: 새로운 기능 추가
 - fix: 버그 수정
 - docs: 문서 수정
@@ -15,6 +17,8 @@
 - chore: 자잘한 수정이나 빌드 업데이트
 - rename: 파일 혹은 폴더명을 수정만 한 경우
 - remove: 파일을 삭제만 한 경우
+
+### Footer Type
 
 ## PDF 저장
 
