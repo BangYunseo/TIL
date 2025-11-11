@@ -1,44 +1,28 @@
 # Programming Language
 
-### [컴파일러와 인터프리터](https://github.com/BangYunseo/TIL/blob/main/Language/CompilerInterpreter.md)
+- 개발 언어의 기본적인 사용법
 
-<details>
-    <summary>
-        C
-    </summary>
- 
-* [C#](https://github.com/BangYunseo/TIL/tree/main/Language/C#)
-* [C++](https://github.com/BangYunseo/TIL/tree/main/Language/Cpp)
-* [C](https://github.com/BangYunseo/TIL/tree/main/Language/C)
+## Programming
 
-</details>
+- [컴파일러와 인터프리터](https://github.com/BangYunseo/TIL/blob/main/Language/CompilerInterpreter.md)
 
-<details>
-    <summary>
-        Java
-    </summary>
- 
-* [Java](https://github.com/BangYunseo/TIL/tree/main/Language/Java)
+## C
 
-</details>
+- [C#](https://github.com/BangYunseo/TIL/tree/main/Language/C#)
+- [C++](https://github.com/BangYunseo/TIL/tree/main/Language/Cpp)
+- [C](https://github.com/BangYunseo/TIL/tree/main/Language/C)
 
-<details>
-    <summary>
-        Web
-    </summary>
+## Java
 
-* html
-* css
-* JavaScript
-* [Spring](https://github.com/BangYunseo/TIL/tree/main/Language/Spring)
+- [Java](https://github.com/BangYunseo/TIL/tree/main/Language/Java)
 
-</details>
+## Web
 
-<details>
-    <summary>
-        Python
-    </summary>
- 
-* [Python](https://github.com/BangYunseo/TIL/tree/main/Language/Python)
+- html
+- css
+- JavaScript
+- [Spring](https://github.com/BangYunseo/TIL/tree/main/Language/Spring)
 
-</details>
+## Python
+
+- [Python](https://github.com/BangYunseo/TIL/tree/main/Language/Python)
