@@ -55,7 +55,7 @@
 
 - 마이크로초(µs) 단위의 정밀한 동기화 가능
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/MachineVision/Image/Trigger/Trigger_Distribution.png"  width="70%"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/MachineVision/Image/Trigger/Trigger_Distribution.png"  width="40%"/>
 
 #### 채널
 
