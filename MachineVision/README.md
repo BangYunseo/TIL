@@ -9,5 +9,5 @@
 ## Learning List
 
 - [트리거](https://github.com/BangYunseo/TIL/blob/main/MachineVision/Trigger.md)
-- [](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/ch01_DataBaseBasic.md)
+- [스트로브](https://github.com/BangYunseo/TIL/blob/main/MachineVision/Strobe.md)
 - [](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/ch02_DBMS.md)
