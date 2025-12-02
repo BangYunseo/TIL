@@ -2,9 +2,11 @@
 
 > 1절. API
 >
-> 2절. API 작동
+> 2절. API 동작
 >
-> 3절. API
+> 3절. API 기능
+>
+> 4절. API 활용
 
 ## 1절. API
 
@@ -31,28 +33,163 @@
 |  기능 제공  | 특정 기능(ex : 결제, 로그인, 지도 서비스 등)을 타 프로그램에서 활용 |
 | 코드 재사용 | 같은 기능을 여러 시스템에서 공통으로 사용                           |
 
-## 2절. API 작동
+## 2절. API 동작
 
-- 소프트웨어의 개발, 운용, 유지보수 등의 생명 주기 전반을 체계적이고 서술적이며 정량적으로 다루는 학문
+### API 동작 방식
 
-[출처](https://ko.wikipedia.org/wiki/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4_%EA%B3%B5%ED%95%99#cite_note-BoDu04-1)
+- 클라이언트와 서버 간의 요청 및 응답
 
-#### 소프트웨어 공학의 목표
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/SoftwareEngineering/Image/API/APIOperation.png"  width="100%"/>
 
-- 품질(Quality)
-- 비용(Cost)
-- 납기(Delivery)
+1. 클라이언트(Client)가 API에 요청
+2. 서버(Server)가 요청 처리 후 응답 반환
+3. 클라이언트가 응답 받아 작업 수행
 
-![SEpurpose](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/SoftwareEngineering/Image/ch00/SEpurpose.PNG)
+### API 동작 예시 : 사용자 정보 조회
 
-#### 소프트웨어 공학의 특징
+```json
+// 클라이언트 → (요청) → 서버
+GET /users/123
 
-- 현장 중심
-  - 소프트웨어 공학의 역사가 실무 현장에서 시작
-  - 소프트웨어 엔지니어들은 개발 실무에서 접하는 새로운 도전들을 직면 / 다양한 문제점 해결
-    - 이 과정에서 나오는 모범 사례들(Best Practice)과 이로 인한 교훈(Lesson Learned) 생성
-- 즉, 좋은 원리를 발견 및 적용하여 효과를 보는 것
+// 서버 → (응답) → 클라이언트
+{
+  "id": 215,
+  "name": "ysbang",
+  "email": "ysbang@example.com"
+}
+```
 
-## 2절. 소프트웨어의 위기
+### 실제 API 동작 예시
 
-#### 소프트웨어의 위기 등장
+#### 1. API 키 발급
+
+- 대부분의 API는 인증용 키(API Key) 필요
+
+#### 2. HTTP 요청
+
+- GET : 데이터 조회 요청
+- POST : 새로운 데이터 생성 요청
+
+#### 3. 응답 확인
+
+- JSON or XML 형식으로 반환된 데이터 확인
+
+### 실제 API 동작 예시 : 서울시 공공 데이터 지하철 통계
+
+```python
+import requests
+
+url = 'http://openapi.seoul.go.kr:8088/sample/json/CardSubwayStatsNew/1/5/20220301'
+response = requests.get(url)
+print(response.json())
+```
+
+## 3절. API 기능
+
+### 종류
+
+|         종류          | 설명                                                   | 예시                                                    |
+| :-------------------: | :----------------------------------------------------- | :------------------------------------------------------ |
+|   Open(Public) API    | 누구나 사용하도록 공개된 API                           | - Google Maps API<br>- Twitter API<br>- OpenWeather API |
+| Private(Internal) API | 특정 조직 또는 내부 시스템에서만 사용하는 API          | - 기업 내부 사용자 관리 API                             |
+|      Partner API      | 특정 파트너사와 협업을 위해 제공하는 API               | - 결제 게이트웨이 API(PayPal, Stripe 등)                |
+|     Composite API     | 여러 개의 API를 한 번의 요청으로 호출하도록 구성된 API |                                                         |
+
+### 유형
+
+|       유형        | 특징                                                                                                                                                           |
+| :---------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| REST(RESTful) API | - 가장 널리 사용되는 방식<br>- HTTP 프로토콜 기반 API<br>- 데이터는 주로 JSON 형식으로 교환<br>- REST의 원칙을 따르며 URL로 리소스를 식별하고 HTTP 메서드 사용 |
+|     SOAP API      | - XML 기반 API<br>- XML 기반으로 높은 보안성과 안정성이 필요한 경우(ex: 금융 시스템) 사용<br>- 비교적 무거운 편                                                |
+|    GraphQL API    | - 필요한 데이터만 선택적으로 요청할 수 있는 API<br>- REST보다 유연한 데이터 요청 가능                                                                          |
+|     gRPC API      | - 바이너리 형식(Protocol Buffers)을 사용하는 API<br>- 빠른 성능과 효율성 제공(ex: 마이크로서비스 통신)                                                         |
+
+### 호출 방식(HTTP 메서드)
+
+| HTTP 메서드 | 설명             | 예시             |
+| :---------: | :--------------- | :--------------- |
+|     GET     | 리소스 조회      | GET/users/123    |
+|    POST     | 리소스 생성      | POST/users       |
+|     PUT     | 리소스 전체 수정 | PUT/users/123    |
+|    PATCH    | 리소스 일부 수정 | PATCH/users/123  |
+|   DELETE    | 리소스 삭제      | DELETE/users/123 |
+
+### 보안(Security)
+
+- API는 외부에서 접근 가능
+
+  - 보안이 매우 중요
+
+- 보안 기법
+
+|                    종류                    | 설명                                                                                                                               |
+| :----------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------- |
+| 인증(Authentication) & 인가(Authorization) | - API Key: 고유한 키를 사용한 API 접근 제어<br>- OAuth 2.0: 토큰 기반 인증 방식<br>- JWT(JSON Web Token): 사용자 인증 및 정보 전달 |
+|                 HTTPS 사용                 | API 통신 암호화로 데이터 보호                                                                                                      |
+|    CORS(Cross-Origin Resource Sharing)     | 도메인 간 요청 제어 후 보안 강화                                                                                                   |
+|               Rate Limiting                | 한 사용자 또는 IP에서 일정 시간 내 요청 수 제한                                                                                    |
+
+## 4절. API 활용
+
+### 로그인 API
+
+- 요청
+
+```json
+POST /login
+{
+  "username": "testuser",
+  "password": "securepassword"
+}
+```
+
+- 응답
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+### 날씨 정보 API
+
+- OpenWeather API
+
+- 요청
+
+```json
+GET /weather?q=Seoul&appid=your_api_key
+```
+
+- 응답
+
+```json
+POST /login
+{
+  "temperature": 15,
+  "weather": "Clear",
+  "city": "Seoul"
+}
+```
+
+### 번역 API
+
+- Google Translate API
+
+- 요청
+
+```json
+POST /translate
+{
+  "text": "Hello",
+  "target_language": "ko"
+}
+```
+
+- 응답
+
+```json
+{
+  "translated_text": "안녕하세요"
+}
+```
