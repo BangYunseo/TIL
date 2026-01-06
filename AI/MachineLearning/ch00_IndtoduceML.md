@@ -2,9 +2,9 @@
 
 > '기계학습 - 오일석' 1장 학습 내용
 >
-> [소스코드]는 존재하지 않습니다.
+> 0절. AI
 >
-> 1절. 기계학습의 개념
+> 1절. 기계학습
 >
 > 2절. 특징 공간
 >
@@ -18,151 +18,186 @@
 >
 > 7절. 기계 학습 유형
 
-## 1절. 기계학습의 개념
+## 0절. AI
 
-#### 인공지능, 머신러닝, 딥러닝
+### 인공지능
 
-- 인공지능
-  - 사고나 학습 등 인간이 가진 지적 능력을 컴퓨터를 통해 구현하는 기술
-  - 인간 혹은 인간 이상의 지식 상태 구현 목적
-- 머신러닝
-  - 컴퓨터가 스스로 학습하여 인공지능의 성능을 향상시키는 기술 방법
-  - 여러 가지 경우를 학습하여 그와 비슷한 경우의 문제 해결
-- 딥러닝
-  - 인간의 뉴런과 비슷한 인공신경망 방식으로 정보 처리
-  - 상황에 적합한 학습 경험 이용
+- 사고나 학습 등 인간이 가진 지적 능력을 컴퓨터로 구현한 기술
+- 인간 or 인간 이상의 지식 상태 구현
 
-#### 기계 학습의 정의
+### 머신러닝
 
-- 학습이란? <표준국어대사전>
+- 컴퓨터가 스스로 학습하여 인공지능의 성능을 향상시키는 기술 방법
+- 여러 가지 경우를 학습하여 그와 비슷한 경우의 문제 해결
 
-  > " 경험의 결과로 나타나는. 비교적 지속적인 행동의 변화나 그 잠재력의 변화 또는 지식을 습득하는 과정. [국립국어원, 2017] "
+### 딥러닝
 
-- 기계학습이란?
+- 인간의 뉴런과 비슷한 인공신경망 방식으로 정보 처리
+- 상황에 적합한 학습 경험 이용
 
-  - 인공지능 초창기 사무엘의 정의
+## 1절. 기계학습
 
-    > " Programming computers to learn from experience should eventually eliminate the need for much of this detailed programming effort."  
-    > " 컴퓨터가 경험을 통해 학습할 수 있도록 프로그래밍할 수 있다면 세세하게 프로그래밍해야 하는 번거로움에서 벗어날 수 있다. [Samuel, 1959] "
+### 학습
 
-  - 현대적 정의
-    > " A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P. improves with experience E."  
-    > " 어떤 컴퓨터 프로그램이 T라는 작업을 수행한다. 이 프로그램의 성능을 P라는 척도로 평가했을 때 경험 E를 통해 성능이 개선된다면 이 프로그램은 학습을 한다고 말할 수 있다. [Mitchell, 1997(2page)] "
+- 경험의 결과로 나타나는 비교적 지속적인 행동, 잠재력의 변화
+- 지식을 습득하는 과정
 
-> " Programming computers to optimize a performance criterion using example data or past experience. "  
-> "사례 데이터. 즉 과거 경험을 이용하여 성능 기준을 최적화하도록 프로그래밍하는 작업. [Alpaydin, 2010] "
+### 기계학습
 
-> " Computational methods using experience to improve performance or to make accurate predictions."  
-> "성능을 개선하거나 정확하게 예측하기 위해 경험을 이용하는 계산학 방법들. [Mohri, 2012] "
+- <strong>사례 데이터, 과거 경험</strong>으로 성능 기준이 최적화된 프로그래밍 [Alpaydin, 2010]
+- 성능을 개선하거나 정확하게 예측하기 위해 경험을 이용하는 계산학 방법 [Mohri, 2012]
+- 데이터를 기반으로 인간처럼 응용하는 학습
 
-#### 지식 기반 방식에서 기계학습으로의 전환
+### 기계학습으로의 전환
 
-- 인공지능의 탄생
-  - 컴퓨터의 뛰어난 능력
-  - 컴퓨터에 대한 기대감
-  - -> 이를 통한 지식 기반 방식 사용
-- 인공지능의 주도권 전환
-  - 점차 지식 기반 방식에서 기계학습 방식으로 전환
-  - 기계 학습 : 데이터 중심 접근 방식
-    - 데이터를 기반으로 인간처럼 응용 가능하도록 학습
+| 기간 |          요약          | 설명                                           |
+| :--: | :--------------------: | :--------------------------------------------- |
+| 초기 |    인공지능의 탄생     | 컴퓨터의 뛰어난 능력과 기대감의 지식 기반 방식 |
+| 중기 | 인공지능의 주도권 전환 | 지식 기반 방식에서 기계학습 방식으로 전환      |
+| 후기 |    인공지능의 발전     | ??                                             |
 
-#### 기계학습 이해
+### 기계학습 이해
 
-- 간단한 기계학습 예제
-  - 가로축은 시간, 세로축은 이동체의 위치
-  - 관측된 4개의 점은 데이터
-  - 간단한 회귀 문제
+#### 회귀(Regression)
 
-![exampleML](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/exampleML.PNG)
+- 실수의 목표값
 
-- 예측(prediction) 예제
+|  요소  | 설명          |
+| :----: | :------------ |
+| 가로축 | 특징          |
+| 세로축 | 목표치        |
+| 데이터 | 관측된 4개 점 |
 
-  - 임의의 시간이 주어졌을 때 이동체의 위치 예측
-  - 회귀(regression) 문제와 분류(classification) 문제로 나눠짐
-    - 회귀(regression)
-      - 실수의 목표값을 가짐
-    - 분류(classification)
-      - 부류값으로 분류
+<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/01_Regression.PNG" height="auto"/>
 
-- 훈련집합
-  - 가로축은 특징, 세로축은 목표치
-  - 관측한 4개의 점이 훈련집합 구성
+#### 예측(prediction)
 
-![TrainingData](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/TrainingData.PNG)
+- 임의의 시간이 주어졌을 때 이동체의 위치 예측
+- 회귀와 분류로 분리
 
-#### 데이터 모델링 방법
+| 종류 | 영문           | 분류값        |
+| :--: | :------------- | :------------ |
+| 회귀 | Regression     | 실수의 목표값 |
+| 분류 | Classification | 부류값        |
 
-- 데이터가 직선을 이루므로 직선을 모델로 선택
+### 훈련집합
+
+- 관측된 4개의 점은 <strong>데이터</strong>이자 <strong>훈련집합</strong>
+
+<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/02_TrainingData.PNG" height="auto"/>
+
+| 번호  | X 값  |     |     | 번호  | Y 값  |
+| :---: | :---: | :-: | :-: | :---: | :---: |
+| $x_1$ | (2.0) |     |     | $y_1$ | (3.0) |
+| $x_2$ | (4.0) |     |     | $y_2$ | (4.0) |
+| $x_3$ | (6.0) |     |     | $y_3$ | (5.0) |
+| $x_4$ | (8.0) |     |     | $y_4$ | (6.0) |
+
+### 데이터 모델링
+
+- 데이터가 직선이므로 직선 모델 선택
 - 직선 모델의 수식
-  - 2개의 매개 변수 w와 b
-    - 1차원 : $y = wx + b$
-    - 2차원 : $y = w_1x^2 + w_2x + b$
+  - 매개 변수 : $w$, $b$
 
-#### 기계학습의 목적
+| 차원  | 수식                    |
+| :---: | :---------------------- |
+| 1차원 | $y = wx + b$            |
+| 2차원 | $y = w_1x^2 + w_2x + b$ |
 
-- 가장 정확하게 예측할 수 있는 최적의 매개 변수를 찾는 작업
-- 처음에는 최적값을 모르는 상태이므로 임의의 값에서 학습 시작한 후, 점차 성능을 개선하여 최적에 도달
-  - 그림[1 - 4] 예시 참
-    - $f_1$에서 시작하여 $f_1$ -> $f_2$ -> $f_3$ 까지 성능을 개선했으며 최적인 $f_3$은 $w=0.5$와 $b=2.0$
-- 기계학습의 궁극적 목표
-  - 훈련 집합에 없는 새로운 샘플(테스트 샘플)에 대한 오류 최소화
-  - 새로운 샘플에 대한 높은 성능 일반화(generalization) 능력 탑재
+### 기계학습 목적
 
-#### 기계학습 단순 비교
+- 가장 정확하고 예측 가능한 최적의 매개 변수 탐색
+- 최적값을 모르는 상태에서 학습 시작
+- 점차 성능 개선 후 최적에 도달
+  - $f_1$ -> $f_2$ -> $f_3$ 까지 성능 개선
+  - 최적 $f_3$
+    - $w=0.5$
+    - $b=2.0$
 
-![HumanAndMachine](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/HumanAndMachine.PNG)
+### 기계학습의 발전 방향
+
+- 훈련 집합에 없는 새로운 샘플(테스트 샘플)에 대한 오류 최소화
+- 새로운 샘플에 대한 높은 성능 일반화(Generalization)
+
+### 기계학습 비교
+
+|          기준          | 사람                            | 기계학습                               |
+| :--------------------: | :------------------------------ | :------------------------------------- |
+|       학습 과정        | 능동적                          | 수동적                                 |
+|      데이터 형식       | 자연에 존재하는 그대로          | 일정한 형식에 맞춰 사람이 준비         |
+| 동시 학습 가능 과업 수 | 여러 과업 학습                  | 하나의 과업                            |
+| 학습 원리에 대한 지식  | 매우 제한적                     | 모든 과정이 공개적                     |
+|      수학 의존도       | 매우 낮음                       | 매우 높음                              |
+|       성능 평가        | 경우에 따라 객관적이거나 주관적 | 객관적(수치로 평가, ex : 정확률 99.9%) |
+|          역사          | 수백만 년                       | 60년 가량                              |
 
 ## 2절. 특징 공간
 
-#### 차원 별 특징 공간
+### 차원 별 특징 공간
 
-- 1차원 특징 공간
+#### 1차원 특징 공간
 
-![dimension1](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/dimension1.PNG)
+<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/03_1-Dimension.PNG.PNG" height="auto"/>
 
-- 2차원 특징 공간
-  - 특징 벡터 표기
-    - $x=(x_1, y_1)^T$
-  - 예시
-    - $x = 특징$, $y = 목표값$
-      - $x=(몸무게, 키)^T$, $y=bmi$
-      - $x=(체온, 두통)^T$, $y=감기 여부$
+| 번호  | 표시값 |
+| :---: | :----: |
+| $x_1$ |  특징  |
+|  $y$  | 목푯값 |
 
-![dimension2](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/dimension2.PNG)
+#### 2차원 특징 공간
 
-#### 다차원 특징 공간 개념
+<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/04_2-Dimension.PNG" height="auto"/>
 
-- $d$-차원 데이터
-  - 특징 벡터 표기
-    - $x = (x_1, x_2, ..., x_d)^T$
-- $d$-차원 데이터를 위한 학습 모델
+|      번호      |  표시값   |
+| :------------: | :-------: |
+|     $x_1$      |  특징 1   |
+|     $x_2$      |  특징 2   |
+| $(x_1, x_2)^T$ | 특징 벡터 |
+|      $y$       |  목푯값   |
 
-  - 직선 모델을 사용하는 경우 매개 변수의 수 = $d+1$
+- 특징 벡터 예시
+  - $x=(몸무게, 키)^T$, $y=bmi$
+  - $x=(체온, 두통)^T$, $y=감기 여부$
 
-  $y = w_1x_1 + w_2x_2 + ... + w_dx_d + b$
+### 다차원 특징 공간
 
-  - 2차 곡선 모델을 사용하는 경우 매개 변수의 수 크게 증가
-    - 매개 변수 수 = $d^2 + d + 1$
-      - 예시
-        - Iris 데이터 : $d = 4$이므로 21개의 매개 변수
-        - MNIST 데이터 : $d = 784$ 이므로 615,441개의 매개 변수
+- $d$-차원 데이터 특징 벡터
+  - $x = (x_1, x_2, ..., x_d)^T$
+  - 직선 모델 매개 변수 = $d + 1$
 
-$y = w_1x^2_1 + w_2x^2_2 + ... + w_dx^2_d + w_{d+1}x_1x_2 + ... + w_{d^2}x_{d-1}x_d+w_{{d^2}+1}x_1+...+w_{{d^2}+d}x_d+b$
+> $d$-차원 데이터 모델
+>
+> $y = w_1x_1 + w_2x_2 + ... + w_dx_d + b$
+
+#### 2차 곡선 모델 예제
+
+- 다차원 특징 공간에서의 2차 곡선 모델
+- 매개 변수 = $d^2 + d + 1$
+- 데이터셋 예시
+
+| 데이터셋 | 매개 변수            |
+| :------: | :------------------- |
+|   Iris   | $d = 4$, 21개        |
+|  MNIST   | $d = 784$, 615,441개 |
+
+> 2차 $d$-차원 데이터 모델
+>
+> $y = w_1x^2_1 + w_2x^2_2 + ... + w_dx^2_d + w_{d+1}x_1x_2 + ... + w_{d^2}x_{d-1}x_d+w_{{d^2}+1}x_1+...+w_{{d^2}+d}x_d+b$
 
 #### 다차원 특징 공간 예제
 
-- 특징이 너무 많으면 목표값에 대한 정확도 감소
-- 올바른 학습 발생 불가
+- 특징 많으면 목표값 정확도 감소
+- 올바른 학습 불가
 
-![dimensionN](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/dimensionN.PNG)
+<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/05_N-Dimension.PNG" height="auto"/>
 
 ## 3절. 데이터
 
-#### 데이터에 대한 이해
+### 데이터
 
-- 과학 기술의 발전 과정
+- 과학 기술 발전 과정
 
-![process](https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/process.PNG)
+<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/06_Process.PNG" height="auto"/>
 
 - 기계 학습
   - 기계 학습이 푸는 문제는 훨씬 복잡
