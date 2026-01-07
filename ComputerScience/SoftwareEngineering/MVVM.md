@@ -69,3 +69,10 @@
   - 데이터베이스
   - 네트워크 요청
   - 파일 시스템
+
+(필요 시 작성
+// 커맨드 패턴
+https://ko.wikipedia.org/wiki/%EC%BB%A4%EB%A7%A8%EB%93%9C_%ED%8C%A8%ED%84%B4
+
+// 데이터 바인딩
+https://en.wikipedia.org/wiki/Data_binding)
