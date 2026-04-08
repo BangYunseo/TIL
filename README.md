@@ -37,6 +37,17 @@
 
 <h4><a href="https://lsh424.tistory.com/37">README.md는 뭘까?</a></h4>
 
+## 작성 및 수정
+
+```py
+# 순서대로 주제 / 날짜 / 태그 작성
+---
+title: API 개념 & 활용
+date: 2026-04-08
+tags: [Communication, Network, API]
+---
+```
+
 ## Learning List
 
 [Android](https://github.com/BangYunseo/TIL/tree/main/Android)
