@@ -1,45 +1,52 @@
+---
+title: API 개념 & 활용
+date: 2026-04-08
+tags: [Communication, Network, API]
+---
+
 # API
 
-> 1절. API
+> 1절. 정의
 >
-> 2절. API 동작
+> 2절. 동작
 >
-> 3절. API 기능
+> 3절. 기능
 >
-> 4절. API 활용
+> 4절. 활용
 
-## 1절. API
+## 1절. 정의
 
-### API(Application Programming Interface)
+### API
 
+- Application Programming Interface
 - <strong>소프트웨어 컴포넌트 간 통신을 돕는 매개체</strong>
 - 데이터를 주고 받거나 기능을 공유하는 중간 다리
 - 응용 프로그램 간 상호 작용하는 인터페이스
-- 프로그램 소통 규칙
+- 프로그램 소통 <strong>규칙</strong>
 
-### API 예시
+### 역할
+
+|      역할      | 설명                                                                    |
+| :------------: | :---------------------------------------------------------------------- |
+| 데이터<br>교환 | 서로 다른 시스템 간 데이터 교환                                         |
+|  기능<br>제공  | 특정 기능을 타 프로그램에서 활용<br>(ex : 결제, 로그인, 지도 서비스 등) |
+| 코드<br>재사용 | 같은 기능을 여러 시스템에서 공통으로 사용                               |
+
+### 예시
 
 |    예시     | 설명                                               |
 | :---------: | :------------------------------------------------- |
-|   날씨 앱   | 기상청 서버에서 날씨 정보를 가져와 사용자에게 제공 |
-| 지도 서비스 | 음식 배달 앱에서 위치 정보 제공                    |
-| 소셜 로그인 | Google, Naver, Kakao 등 계정을 통한 간편 로그인    |
+|    날씨     | 기상청 서버에서 날씨 정보를 가져와 사용자에게 제공 |
+| 지도 서비스 | 음식 배달 앱의 위치 정보 제공                      |
+| 소셜 로그인 | Google, Naver, Kakao 등 계정으로 간편 로그인       |
 
-### API 역할
-
-|    역할     | 설명                                                                |
-| :---------: | :------------------------------------------------------------------ |
-| 데이터 교환 | 서로 다른 시스템 간 데이터 교환                                     |
-|  기능 제공  | 특정 기능(ex : 결제, 로그인, 지도 서비스 등)을 타 프로그램에서 활용 |
-| 코드 재사용 | 같은 기능을 여러 시스템에서 공통으로 사용                           |
-
-## 2절. API 동작
+## 2절. 동작
 
 ### API 동작 방식
 
 - 클라이언트와 서버 간의 요청 및 응답
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/SoftwareEngineering/Image/API/APIOperation.png"  width="100%"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/SoftwareEngineering/Image/API/APIOperation.png"  width="70%"/>
 
 1. 클라이언트(Client)가 API에 요청
 2. 서버(Server)가 요청 처리 후 응답 반환
@@ -117,7 +124,6 @@ print(response.json())
 ### 보안(Security)
 
 - API는 외부에서 접근 가능
-
   - 보안이 매우 중요
 
 - 보안 기법
