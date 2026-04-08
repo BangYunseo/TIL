@@ -33,70 +33,68 @@
 
 ## Tips for Markdown Language
 
-<h4><a href="https://gist.github.com/ihoneymon/652be052a0727ad59601">Markdow 파일 작성 양식</a></h4>
+- [파일 작성 양식](https://gist.github.com/ihoneymon/652be052a0727ad59601)
 
-<h4><a href="https://lsh424.tistory.com/37">README.md는 뭘까?</a></h4>
+- [README.md](https://lsh424.tistory.com/37)
 
 ## 작성 및 수정
 
 ```py
-# 순서대로 주제 / 날짜 / 태그 작성
 ---
-title: API 개념 & 활용
-date: 2026-04-08
-tags: [Communication, Network, API]
+주제: API 개념 & 활용
+날짜: 2026.04.08
+태그: [Communication, Network, API]
 ---
+
+# 주제 : 요약 내용
+# 날짜 : 최초 작성 날짜
+# 태그 : 대분류 -> 소분류 -> 파일명
 ```
 
 ## Learning List
 
-[Android](https://github.com/BangYunseo/TIL/tree/main/Android)
+### Android
 
-<details>
-    <summary>AI</summary>
- 
-* [DeepLearning](https://github.com/BangYunseo/TIL/tree/main/AI/DeepLearning)
-* [MachineLearning](https://github.com/BangYunseo/TIL/tree/main/AI/MachineLearning)
+- [모바일](https://github.com/BangYunseo/TIL/tree/main/Android)
 
-</details>
+### AI
 
-<details>
-    <summary>Language</summary>
- 
-* [C](https://github.com/BangYunseo/TIL/tree/main/Language/C)
-* [C++](https://github.com/BangYunseo/TIL/tree/main/Language/Cpp)
-* [C#](https://github.com/BangYunseo/TIL/tree/main/Language/C%23)
-* [Java](https://github.com/BangYunseo/TIL/tree/main/Language/Java)
-* [Python](https://github.com/BangYunseo/TIL/tree/main/Language/Python)
-* [Kotlin](https://github.com/BangYunseo/TIL/tree/main/Language/Kotlin)
+- [딥러닝](https://github.com/BangYunseo/TIL/tree/main/AI/DeepLearning)
 
-</details>
+- [기계학습](https://github.com/BangYunseo/TIL/tree/main/AI/MachineLearning)
 
-<details>
-    <summary>Computer Science</summary>
- 
-* [Data Structure](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/Data%20Structure)
-* [DataBase](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase)
-* [Algorithm](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/Algorithm)
-* [OperatingSystem](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/OperatingSystem)
-* [SoftwareEngineering](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/SoftwareEngineering)
+### Language
 
-</details>
+- [C](https://github.com/BangYunseo/TIL/tree/main/Language/C)
 
-<details>
-    <summary>GameEngine</summary>
- 
-* [Unity](https://github.com/BangYunseo/TIL/tree/main/GameEngine/Unity)
-* [Unreal](https://github.com/BangYunseo/TIL/tree/main/GameEngine/Unreal)
+- [C++](https://github.com/BangYunseo/TIL/tree/main/Language/Cpp)
 
-</details>
+- [C#](https://github.com/BangYunseo/TIL/tree/main/Language/C%23)
 
-<details>
-    <summary>Security</summary>
- 
-* [InformationSecurity](https://github.com/BangYunseo/TIL/tree/main/Security/InformationSecurity)
+- [Java](https://github.com/BangYunseo/TIL/tree/main/Language/Java)
 
-</details>
+- [Python](https://github.com/BangYunseo/TIL/tree/main/Language/Python)
 
-</body>
-</html>
+- [Kotlin](https://github.com/BangYunseo/TIL/tree/main/Language/Kotlin)
+
+### Computer Science
+
+- [데이터구조](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/Data%20Structure)
+
+- [데이터베이스](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase)
+
+- [알고리즘](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/Algorithm)
+
+- [운영체제](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/OperatingSystem)
+
+- [소프트웨어공학](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/SoftwareEngineering)
+
+# Game Engine
+
+- [유니티](https://github.com/BangYunseo/TIL/tree/main/GameEngine/Unity)
+
+- [언리얼](https://github.com/BangYunseo/TIL/tree/main/GameEngine/Unreal)
+
+# Security
+
+- [정보보안](https://github.com/BangYunseo/TIL/tree/main/Security/InformationSecurity)
