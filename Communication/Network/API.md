@@ -1,7 +1,7 @@
 ---
-title: API 개념 & 활용
-date: 2026-04-08
-tags: [Communication, Network, API]
+주제: API 개념 & 활용
+날짜: 2026.04.08
+태그: [Communication, Network, API]
 ---
 
 # API
