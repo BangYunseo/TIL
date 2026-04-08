@@ -19,7 +19,7 @@
 ### API
 
 - Application Programming Interface
-- <strong>소프트웨어 컴포넌트 간 통신을 돕는 매개체</strong>
+- <strong>소프트웨어 컴포넌트 간 통신</strong>을 돕는 매개체
 - 데이터를 주고 받거나 기능을 공유하는 중간 다리
 - 응용 프로그램 간 상호 작용하는 인터페이스
 - 프로그램 소통 <strong>규칙</strong>
@@ -42,17 +42,21 @@
 
 ## 2절. 동작
 
-### API 동작 방식
+### 동작 방식
 
 - 클라이언트와 서버 간의 요청 및 응답
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/SoftwareEngineering/Image/API/APIOperation.png"  width="70%"/>
+<img src="https://github.com/BangYunseo/TIL/blob/main/Communication/Network/Image/API/APIOperation.png"  width="70%"/>
 
-1. 클라이언트(Client)가 API에 요청
-2. 서버(Server)가 요청 처리 후 응답 반환
-3. 클라이언트가 응답 받아 작업 수행
+|     단계     | 설명                                                                      |
+| :----------: | :------------------------------------------------------------------------ |
+| **Request**  | 클라이언트(Client)가 특정 주소(End Point)로 필요한 API 요청               |
+| **Process**  | 서버(Server)가 요청 해석 후 DB 조회나 로직 처리                           |
+| **Response** | 클라이언트가 처리 결과를 정해진 형식(JSON, XML 등)으로 반환된 데이터 응답 |
 
-### API 동작 예시 : 사용자 정보 조회
+### 동작 활용
+
+- 사용자 정보 조회
 
 ```json
 // 클라이언트 → (요청) → 서버
@@ -61,12 +65,12 @@ GET /users/123
 // 서버 → (응답) → 클라이언트
 {
   "id": 215,
-  "name": "ysbang",
-  "email": "ysbang@example.com"
+  "name": "BangYunseo",
+  "email": "yunseobang33@gmail.com"
 }
 ```
 
-### 실제 API 동작 예시
+### 실제 동작 활용
 
 #### 1. API 키 발급
 
@@ -95,12 +99,12 @@ print(response.json())
 
 ### 종류
 
-|         종류          | 설명                                                   | 예시                                                    |
-| :-------------------: | :----------------------------------------------------- | :------------------------------------------------------ |
-|   Open(Public) API    | 누구나 사용하도록 공개된 API                           | - Google Maps API<br>- Twitter API<br>- OpenWeather API |
-| Private(Internal) API | 특정 조직 또는 내부 시스템에서만 사용하는 API          | - 기업 내부 사용자 관리 API                             |
-|      Partner API      | 특정 파트너사와 협업을 위해 제공하는 API               | - 결제 게이트웨이 API(PayPal, Stripe 등)                |
-|     Composite API     | 여러 개의 API를 한 번의 요청으로 호출하도록 구성된 API |                                                         |
+|       종류        | 설명                                                   | 예시                                     |
+| :---------------: | :----------------------------------------------------- | :--------------------------------------- |
+|   Open(Public)    | 누구나 사용하도록 공개된 API                           | Google Maps, 공공데이터포털 등           |
+| Private(Internal) | 기업 내부 시스템 간 통신용                             | 사내 인사 관리 시스템 연동               |
+|      Partner      | 특정 파트너사와 협업을 위해 제공하는 API               | - 결제 게이트웨이 API(PayPal, Stripe 등) |
+|     Composite     | 여러 개의 API를 한 번의 요청으로 호출하도록 구성된 API |                                          |
 
 ### 유형
 

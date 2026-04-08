@@ -14,9 +14,10 @@
 
 ## 1절. 인터넷과 프로토콜
 
-#### 인터넷(Internet) : "너트와 볼트(Nuts And Bolts)"의 관점
+### 인터넷(Internet)
 
 - 장치끼리 꼭 들어맞는 연결의 통신 형태
+- <strong>"너트와 볼트(Nuts And Bolts)"</strong>의 관점
 
 ![Internet](https://github.com/BangYunseo/TIL/blob/main/Communication/NetworkProtocol/Image/ch00/Internet.PNG)
 
@@ -44,7 +45,6 @@
     - 4G
     - 이더넷
 - 인터넷 표준
-
   - RFC : 의견 요청(Request for Comments)
   - IETF : 인터넷 엔지니어링 태스크 포스(Internet Engineering Task Force)
 
