@@ -1,5 +1,13 @@
 # TIL - Today I Learned
 
+## 파일 생성 예시
+
+- [파일명].[md]
+- 파일명은 숫자 제외 요약 항목 명칭
+  - ex : API.md, MVVM.md, UI.md 등
+- md 파일 고정
+- 이미지는 폴더 내 Image에 파일명과 동일한 폴더 생성 후 저장
+
 ## 컨벤션 예시
 
 ### Git Commit Type
