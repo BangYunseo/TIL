@@ -8,8 +8,6 @@
 >
 > 3절. 객체 지향
 >
-> 추가 설명
->
 > 4절. C++의 기본 요소
 >
 > 5절. 입력
@@ -20,12 +18,12 @@
 
 ### C++ 설계 목적
 
-|      목적       |             특징             | 설명                                                                                                                                                             |
-| :-------------: | :--------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| C언어<br>호환성 |       C언어 문법 계승        | - <strong>소스 레벨 호환성</strong> : 기존 C 프로그램 그대로 사용<br>- <strong>링크 레벨 호환성</strong> : C 목적 파일과 라이브러리를 C++ 프로그램에서 링크 가능 |
-| 객체 지향 개념  |   캡슐화<br>상속<br>다형성   | - <strong>소프트웨어 재사용</strong>으로 생산성 향상<br>- 복잡하고 큰 규모의 소프트웨어 작성 / 관리 / 유지보수에 용이                                            |
-|    타입 확인    |       엄격한 타입 체크       | - 실행 시간 오류 가능성 감소<br>- 디버깅 용이                                                                                                                    |
-| 실행 시간 확인  | 실행 시간 효율성 저하 최소화 | - 작은 크기의 멤버 함수 잦은 호출 가능성 <br>=> <strong>인라인 함수</strong>로 해결                                                                              |
+|      목적       |           특징           | 설명                                                                                                                                                             |
+| :-------------: | :----------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| C언어<br>호환성 |     C언어 문법 계승      | - <strong>소스 레벨 호환성</strong> : 기존 C 프로그램 그대로 사용<br>- <strong>링크 레벨 호환성</strong> : C 목적 파일과 라이브러리를 C++ 프로그램에서 링크 가능 |
+|    객체 지향    | 캡슐화<br>상속<br>다형성 | - <strong>소프트웨어 재사용</strong>으로 생산성 향상<br>- 복잡하고 큰 규모의 소프트웨어 작성 / 관리 / 유지보수에 용이                                            |
+|    타입 확인    |     엄격한 타입 체크     | - 실행 시간 오류 가능성 감소<br>- 디버깅 용이                                                                                                                    |
+|    실행 시간    |    효율성 저하 최소화    | - 작은 크기의 멤버 함수 잦은 호출 가능성 <br>=> <strong>인라인 함수</strong>로 해결                                                                              |
 
 ### C++ 기능
 
@@ -56,148 +54,70 @@
 ### 캡슐화
 
 - 데이터를 캡슐로 싸서 외부의 접근으로부터 보호
-- C++에서 클래스(class 키워드)로 캡슐을 표현
+- 클래스로 캡슐 표현
 
-![class](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/class.PNG)
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/IntroduceCpp/Class.PNG" height="70%" />
 
-#### 클래스와 객체
+### 클래스 & 객체
 
-- 클래스 : 객체를 만드는 틀
-- 객체 : 클래스라는 틀에서 생겨난 실체
-- 객체(object), 실체(instance)는 같은 뜻
-
-![instance](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/instance.PNG)
+|  종류  | 설명                                                         |
+| :----: | :----------------------------------------------------------- |
+| 클래스 | 객체를 만드는 틀                                             |
+|  객체  | 클래스에서 생겨난 실체<br>ex) 객체(object) == 실체(instance) |
 
 ```C++
-// 원을 추상화한 클래스 Circle
-class Circle{
-private :
-      int radius;
-      // 반지름
-public :
-      Circle(int r){
-        radius = r;
-      }
-      double getArea(){
-        return 3.14 * radius * radius
-      }
+// 원 추상화
+class Circle
+{
+private:
+  int radius;   // 반지름
+
+public:
+
+  Circle(int r) : radius(r)
+  {
+  }
+
+  double getArea() const
+  {
+    return 3.14 * radius * radius;
+  }
 };
 ```
 
-#### 객체 지향 특성 2 - 상속성(Inheritance)
+### 상속성(Inheritance)
 
-- 자식이 부모의 유전자를 물려 받는 것과 유사
+- 자식이 부모의 유전자를 물려 받는 것
 
-#### C++ 상속
+### C++ 상속
 
 - 객체가 자식 클래스의 멤버와 부모 클래스에 선언된 모양 그대로 멤버들을 가지고 탄생
 
-![Inheritance](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/Inheritance.PNG)
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/IntroduceCpp/Inheritance.PNG" height="70%" />
 
-#### 객체 지향 특성 3 - 다형성(Polymorphism)
+### 다형성(Polymorphism)
 
-- 하나의 기능이 경우에 따라 다르게 보이거나 다르게 작동하는 현상
-- 연산자 중복, 함수 중복, 함수 재정의(overriding)
+- 하나의 기능이 경우에 따라 다르게 작동하는 현상
+  - 연산자 중복
+  - 함수 중복
+  - 함수 재정의(overriding)
 
 ![Polymorphism](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/Polymorphism.PNG)
 
-#### C++ 언어에서 객체 지향을 도입한 목적
+### 객체 지향 도입 목적
 
-- 소프트웨어 생산성 향상
-  - 소프트웨어의 생명 주기 단축 문제 해결 필요
-  - 기 작성된 코드의 재사용 필요
-  - C++ 클래스 상속 및 객체 재사용으로 해결
-- 실세계에 대한 쉬운 모델링
-  - 과거의 소프트웨어
-    - 수학 연산이나 통계 처리에 편리한 절차 지향 언어 적함
-  - 현대의 소프트웨어
-    - 물체 혹은 객체의 상호 작용에 대한 묘사 필요
-    - 실세계는 객체로 구성된 세계
-    - 객체를 중심으로 하는 객체 지향 언어 적합
+|           목적            | 설명                                                                                                                                                                                                   |
+| :-----------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  소프트웨어 생산성 향상   | - 소프트웨어 생명 주기 단축 문제 해결<br>- 작성된 코드의 재사용<br>- C++ 클래스 상속 및 객체 재사용                                                                                                    |
+| 실세계에 대한 쉬운 모델링 | - <strong>과거</strong> : 수학 연산이나 통계 처리에 편리한 절차 지향 언어가 적합<br>- <strong>현대</strong> : 물체, 객체의 상호 작용에 대한 묘사 필요 / 객체로 구성된 실세계에는 객체 지향 언어가 적합 |
 
 #### 절차 지향 프로그래밍과 객체 지향 프로그래밍
 
-![Programming2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/Programming2.PNG)
+<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/IntroduceCpp/OOPvsPP.PNG" height="70%" />
 
-## 3절. 추가 설명
+(여기부터 다시 작성)
 
-#### 제네릭 프로그래밍
-
-- 제네릭 함수와 제네릭 클래스
-  - 제네릭 함수(Generic Function)
-    - 동일한 프로그램 코드에 다양한 데이터 타입을 적용할 수 있게 일반화시킨 함수
-  - 제네릭 클래스(Generic Class)
-    - 동일화 프로그램 크도에 다양한 데이터 타입을 적용할 수 있게 일반화시킨 클래스
-  - template 키워드로 선언
-    - 템플릿 함수 혹은 템플릿 클래스라고 불림
-  - Java, C# 등 다른 언어에도 동일한 개념 존재
-- 제네릭 프로그래밍(Generic Programming)
-  - 제네릭 함수와 제네릭 클래스를 활용하여 프로그램을 작성하는 새로운 프로그램 패러다임
-
-#### 링킹
-
-- 목적 파일끼리 합쳐 실행 파일을 만드는 과정
-  - 목적 파일은 바로 실행할 수 없음
-- 목적 파일과 C++ 표준 라이브러리의 함수 연결
-- 실행 파일을 만드는 과정
-
-![Linking](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/Linking.PNG)
-
-#### C++ 표준 라이브러리
-
-- C++ 표준 라이브러리는 3개의 그룹으로 구분
-  - C 라이브러리
-    - 기존 C 표준 라이브러리를 수용
-    - C++에서 사용할 수 있게 한 함수들
-    - 이름이 c로 시작하는 헤더파일에 선언됨
-  - C++ 입출력 라이브러리
-    - 콘솔 및 파일 입출력을 위한 라이브러리
-  - C++ STL 라이브러리
-    - 제네릭 프로그래밍을 지원하기 위한 템플릿 라이브러리
-
-![Library](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/Library.PNG)
-
-# Chapter 2. C++ 기초
-
-> '명품 C++Programming - 황기태' 2장 학습 내용
->
-> [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch02_BasicC%2B%2B)
->
-> 1절. C++의 기본 요소
->
-> 2절. 입력
->
-> 3절. 문자열
-
-## 1절. C++의 기본 요소
-
-#### 주석문과 main 함수
-
-- 주석문
-  - 개발자가 자유롭게 붙인 특이 사항의 메모
-  - 프로그램에 대한 설명
-  - C언어의 주석문과 동일
-    - 여러 줄 주석문과 한 줄 주석문
-
-```C++
-/* 이 것은 주석문입니다.
-여러 줄 주석문 입니다. */
-
-// 이 것은 주석문입니다.
-// 한 줄 주석문 입니다.
-```
-
-- main() 함수
-  - C++ 프로그램의 실행을 시작하는 함수
-    - main() 함수가 종료하면 C++ 프로그램 종료
-  - main() 함수의 C++ 표준 모양
-
-```C++
-int main(){
-
-  // return 0;
-}
-```
+## 4절. C++의 기본 요소
 
 #### #include
 
