@@ -102,8 +102,6 @@ public:
   - 함수 중복
   - 함수 재정의(overriding)
 
-![Polymorphism](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch01/Polymorphism.PNG)
-
 ### 객체 지향 도입 목적
 
 |           목적            | 설명                                                                                                                                                                                                   |
