@@ -45,20 +45,6 @@
 
 - [README.md](https://lsh424.tistory.com/37)
 
-## 작성 및 수정
-
-```py
----
-주제: API 개념 & 활용
-날짜: 2026.04.08
-태그: [Communication, Network, API]
----
-
-# 주제 : 요약 내용
-# 날짜 : 최초 작성 날짜
-# 태그 : 대분류 -> 소분류 -> 파일명
-```
-
 ## Learning List
 
 ### Android
