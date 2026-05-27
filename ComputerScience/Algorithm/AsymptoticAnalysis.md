@@ -91,7 +91,21 @@ $\{\Theta(g(n))={f(n)|\exists c, d > 0, n_0 > 0, s.t.\forall n \geq n_0, cg(n) \
 
 ### 정렬 알고리즘 복잡도
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/AsymptoticAnalysis/ArraySorting.PNG" width="100%" height="auto" />
+|         정렬 알고리즘         | 분류<br>(제자리 여부) | 시간 복잡도                                                                                           | 공간 복잡도       |
+| :---------------------------: | :-------------------: | :---------------------------------------------------------------------------------------------------- | ----------------- |
+|    퀵 정렬<br>(Quick Sort)    |       In-place        | 최선 : $\Omega(n$ $log$ $(n))$<br>평균 : $\Theta(n$ $log$ $(n))$<br>최악 : $O(n^2)$                   | 최악 : $O(n)$     |
+|   병합 정렬<br>(Merge Sort)   |     Not In-place      | 최선 : $\Omega(n$ $log$ $(n))$<br>평균 : $\Theta(n$ $log$ $(n))$<br>최악 : $O(n$ $log$ $(n))$         | 최악 : $O(n)$     |
+|     팀 정렬<br>(Tim Sort)     |     Not In-place      | 최선 : $\Omega(n)$<br>평균 : $\Theta(n$ $log$ $(n))$<br>최악 : $O(n$ $log$ $(n))$                     | 최악 : $O(n)$     |
+|     힙 정렬<br>Heap Sort      |       In-place        | 최선 : $\Omega(n$ $log$ $(n))$<br>평균 : $\Theta(n$ $log$ $(n))$<br>최악 : $O(n$ $log$ $(n))$         | 최악 : $O(1)$     |
+|  버블 정렬<br>(Bubble Sort)   |       In-place        | 최선 : $\Omega(n)$<br>평균 : $\Theta(n^2)$<br>최악 : $O(n^2)$                                         | 최악 : $O(1)$     |
+| 삽입 정렬<br>(Insertion Sort) |       In-place        | 최선 : $\Omega(n)$<br>평균 : $\Theta(n^2)$<br>최악 : $O(n^2)$                                         | 최악 : $O(1)$     |
+| 선택 정렬<br>(Selection Sort) |       In-place        | 최선 : $\Omega(n^2)$<br>평균 : $\Theta(n^2)$<br>최악 : $O(n^2)$                                       | 최악 : $O(1)$     |
+|   트리 정렬<br>(Tree Sort)    |     Not In-place      | 최선 : $\Omega(n$ $log$ $(n))$<br>평균 : $\Theta(n$ $log$ $(n))$<br>최악 : $O(n^2)$                   | 최악 : $O(n)$     |
+|    쉘 정렬<br>(Shell Sort)    |       In-place        | 최선 : $\Omega(n$ $log$ $(n))$<br>평균 : $\Theta(n$ $(log$ $(n))^2)$<br>최악 : $O(n$ $(log$ $(n))^2)$ | 최악 : $O(1)$     |
+|  버킷 정렬<br>(Bucket Sort)   |     Not In-place      | 최선 : $\Omega(n + k)$<br>평균 : $\Theta(n + k)$<br>최악 : $O(n^2)$                                   | 최악 : $O(n)$     |
+|   기수 정렬<br>(Radix Sort)   |     Not In-place      | 최선 : $\Omega(nk)$<br>평균 : $\Theta(nk)$<br>최악 : $O(nk)$                                          | 최악 : $O(n + k)$ |
+| 계수 정렬<br>(Counting Sort)  |     Not In-place      | 최선 : $\Omega(n+k)$<br>평균 : $\Theta(n+k)$<br>최악 : $O(n+k)$                                       | 최악 : $O(k)$     |
+|   큐브 정렬<br>(Cube Sort)    |     Not In-place      | 최선 : $\Omega(n)$<br>평균 : $\Theta(n$ $log(n))$<br>최악 : $O(n$ $log(n))$                           | 최악 : $O(n)$     |
 
 ### 점근적 표기 예제
 
