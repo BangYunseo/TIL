@@ -1,4 +1,4 @@
-# Chapter 2. 점화식(Recurrence Relation)
+# 점화식(Recurrence Relation)
 
 > 1절. 점화식
 >
@@ -12,17 +12,18 @@
 
 ### 점화식(Recurrence Relation)
 
-- 점화식과 점근적 표현법은 알고리즘 수행 시간 분석에 필요한 핵심 도구
-- 점화식은 어떤 함수를 자신과 동일한 함수로 이용 후 표현
+- 알고리즘 수행 시간 분석에 필요한 핵심 도구
+- 어떤 함수를 자신과 동일한 함수로 이용 후 표현
 
-- ex 1) 동일한 함수 표현
-  - $f(n)$ = $f(n-1)$ + $f(n-2)$
-  - $T(n) = 2 T(n/2) + c $
+|        알고리즘        |            계산식            |            점화식             |
+| :--------------------: | :--------------------------: | :---------------------------: |
+|  피보나치(단순 재귀)   | $f(n)$ = $f(n-1)$ + $f(n-2)$ | $T(n) = T(n - 1) + T(n-2)+ c$ |
+| 피보나치(메모이제이션) | $f(n)$ = $f(n-1)$ + $f(n-2)$ |     $T(n) = T(n - 1) + c$     |
+|       분할 정복        |    max(f(left), f(right))    |    $T(n) = 2 T(n/2) + c $     |
 
 ### 점근적 분석 방법
 
 - 점화식으로 표현된 식의 점근적 복잡도 분석 방법
-
   - $O(g(n))$ 과 같은 복잡도 계산
 
 1. 반복 대치
@@ -36,16 +37,25 @@
 - 점화식을 반복 대치 후 경계 조건 대입
 - $T(0)$에 도달 시 값 계산 가능
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch02/ch02-01-T0.PNG" width="100%" height="auto" />
+$$
+\begin{aligned}
+T(n) &= T(n - 1) + 2 \\
+&= T(n - 2) + 2 + 2 \\
+&= T(n - 3) + 2 + 2 + 2 = T(n - 3) + 3(2) \\
+&= T(n - 4) + 2 + 2 + 2 + 2 = T(n - 4) + 4(2) \\
+&= T(0) + n(2) = T(0) + 2n
+\end{aligned}
+$$
 
-- $T(0) = 1$일 경우 $T(n) = 2n + 1 = O(n)$
+- $T(0) = 1$일 경우
+  - $T(n) = 2n + 1 = O(n)$
 
-#### 병합 정렬의 반복 대치
+### 병합 정렬의 반복 대치
 
 - 병합 정렬 함수
 
 ```Python
-# A[p ... r]을 정렬
+# A[p ... r] 정렬
 def mergeSort(A, p, r):
   if (p < r):
     q = floor((p + r)/2)
@@ -60,16 +70,21 @@ def mergeSort(A, p, r):
     merge(A, p, q, r)
     # 병합
 
-def merge(A, p, q, r) {
-  # 정렬되어 있는 두 배열 A[p ... q]와 A[q+1 ... r]을 합하여 정렬된 하나의 배열 A[p ... r] 생성
-}
+def merge(A, p, q, r):
+  # 정렬된 배열 A[p ... q]와 A[q+1 ... r] 병합
+  # 정렬된 하나의 배열 A[p ... r] 생성
+
 ```
 
-- mergeSort()의 중간 지점 계산에서 이등분 후 절반으로 줄어듦
-- 전반부 정렬, 후반부 정렬 해결 후 병합에서 후처리
+- mergeSort() 중간 지점 계산
+  - 이등분 후 절반 감소
+  - 병합 정렬 과정
+    - 전반부 정렬
+    - 후반부 정렬
+    - 병합
 - 알고리즘 수행 시간
   - $T(n) = 2T(n / 2) +$ 후처리 시간
-  - 병합 정렬은 $T(n) = 2T(n / 2) + n$, $T(1) = 1$ 로 표현
+  - $T(n) = 2T(n / 2) + n$, $T(1) = 1$ 로 표현
   - $k = log n$, $2^k = n$ 사용
 
 $$
@@ -84,11 +99,11 @@ T(n) &= 2T(n / 2) + n\\
 \end{aligned}
 $$
 
-#### Factorial(n) 함수의 반복 대치
+### 팩토리얼 반복 대치
 
 ```Python
 def factorial(n):
-  if(n == 1) return 1
+  if n == 1: return 1
   return n * factorial(n - 1)
 ```
 
@@ -119,7 +134,6 @@ $$
 - 추정 : $T(n) = O(n$ $log$ $n)$ 즉, $T(n) \leq c$ $n$ $log$ $n$
 
 - 방법
-
   1. 우리가 찾고자 하는 식 $T(n) \leq c$ $n$ $log$ $n$ 을 증명에 적용하니 맞았음
   2. 따라서 우리가 제시한 추정이 맞는 것 같다는 논리
   3. 만약 식 $T(n) \leq c$ $n$ $log$ $n$ 가 틀리면 추정과 같은 결로에 도달 불가
@@ -144,7 +158,6 @@ $$
 - $h(n) = n^{log_b a}$
 
 - $\displaystyle \lim\_{n \to \infty} \frac{f(n)}{h(n)}$ 이 0으로
-
   1. 수렴하거나
   2. 무한대로 발산하거나
   3. 어떤 상수로 수렴하는가
@@ -154,7 +167,6 @@ $$
 ### 마스터 정리 경우의 수
 
 - $T(n) = aT(\frac {n}  {b}) + f(n)$, $h(n) = n^{log_b a}$
-
   1. $\displaystyle \lim\_{n \to \infty} \frac{f(n)}{h(n)}$ 의 값이 0으로 수렴할 때 $T(n) = \Theta(h(n))$
   2. $\displaystyle \lim\_{n \to \infty} \frac{f(n)}{h(n)}$ 의 값이 무한대로 발산할 때 $af(\frac{n}{b}) \leq f(n)$ 이라면 $T(n) = \Theta (f(n))$
   3. $\displaystyle \lim\_{n \to \infty} \frac{f(n)}{h(n)}$ 의 값이 $\Theta(1)$ 일 때 $\\Theta(h(n)log n)$
