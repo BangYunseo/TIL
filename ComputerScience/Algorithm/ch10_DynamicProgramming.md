@@ -545,7 +545,8 @@ def matrixChain(p):
         cost = m[i][k] + m[k + 1][j] + p[i - 1] * p[k] * p[j]
         if cost < m[i][j]:
           m[i][j] = cost
-    return m[1][n]
+
+  return m[1][n]
 ```
 
 ### 응용 분야

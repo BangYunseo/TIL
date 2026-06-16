@@ -197,7 +197,7 @@ fun someFun() {
 ```kt
 // 문자 표현
 
-val a: Charr = 'a'
+val a: Char = 'a'
 if(a == 1) {}       // 오류 발생
 ```
 

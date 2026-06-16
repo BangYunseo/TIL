@@ -97,7 +97,7 @@ import numpy as np
 # (3, 4)는 배열의 형상
 # (행 개수, 열 개수)
 
-np.zeors((3, 4))
+np.zeros((3, 4))
 # array([[0., 0., 0., 0.],
 # [0., 0., 0., 0.],
 # [0., 0., 0., 0.]])
@@ -115,20 +115,20 @@ np.eye(3)
 
 ![NumpyFunc](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch01/NumpyFunc.PNG)
 
-#### arrange() 함수
+#### arange() 함수
 
 ```Python
 import numpy as np
 
-np.arrange(5)
+np.arange(5)
 # array([0, 1, 2, 3, 4])
 
 # 시작값을 지정하려고 할 경우
-np.arrange(1, 6)
+np.arange(1, 6)
 # array([1, 2, 3, 4, 5])
 
 # 증가되는 간격을 지정하려고 할 경우
-np.arrange(1, 10, 2)
+np.arange(1, 10, 2)
 # array([1, 3, 5, 7, 9])
 ```
 
@@ -187,7 +187,7 @@ np.vstack((x, y))
 ```Python
 import numpy as np
 
-a = np.arrange(12)
+a = np.arange(12)
 # array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
 
 # a에 대하여 reshape(3, 4)를 호출하면 2차원 배열로 변형
@@ -214,7 +214,7 @@ a.reshape(6, -1)
 ```Python
 import numpy as np
 
-array = np.arrange(30).reshape(-1, 10)
+array = np.arange(30).reshape(-1, 10)
 array
 # array([[0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
 # [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],

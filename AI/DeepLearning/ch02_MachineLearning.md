@@ -258,7 +258,7 @@ print(iris.target_names)
 # ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
 # ['setosa' 'versicolor' 'virginica']
 
-X, y = iris.data, iris,target
+X, y = iris.data, iris.target
 ```
 
 ![Res](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Res.PNG)
@@ -286,7 +286,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
 
 y_pred = knn.predict(X_train)
-scores = metrics.accuracy_score(y_testm y_pred)
+scores = metrics.accuracy_score(y_test, y_pred)
 # 0.9666666666666666667
 ```
 
@@ -528,7 +528,7 @@ data = digits.images.reshape((n_samples, -1))
 from sklearn.neighbors import KNeighborsClassifier
 knn = KNeighborsClassifier(n_neighbors = 6)
 
-X_train, X_test, y_train, y_test = train_test_split(data, digits.target, tets_size = 0.2)
+X_train, X_test, y_train, y_test = train_test_split(data, digits.target, test_size = 0.2)
 
 knn.fit(X_train, y_train)
 y_pred = knn.predict(X_test)

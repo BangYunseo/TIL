@@ -148,7 +148,7 @@
 <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch11/ch11-14-Prim.PNG" height="auto" />
 
 - 그리디 알고리즘의 일종
-  - 드물게 최적해 보장
+  - 최소 신장 트리(MST) 문제에서는 항상 최적해 보장
 - 수행 시간
   - 최소 가중치 탐색 시 힙(Heap) 사용
   - $O(|E|log|V|)$
@@ -162,7 +162,7 @@
 <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Algorithm/Image/ch11/ch11-16-Kruskal.PNG" height="auto" />
 
 - 그리디 알고리즘의 일종
-  - 드물게 최적해 보장
+  - 최소 신장 트리(MST) 문제에서는 항상 최적해 보장
 - 수행 시간
   - $O(|E|log|V|)$
 

@@ -170,7 +170,7 @@ int main(void){
 #### 기호 상수 예제 코드 - 연봉과 세금 계산          
 ```C        
 #include <stdio.h>
-#defube TAX_RATE 0.2                      // 기호 상수를 이용해서 TAX_RATE를 0.2로 선언
+#define TAX_RATE 0.2                      // 기호 상수를 이용해서 TAX_RATE를 0.2로 선언
       
 int main(void){
       const int MONTHS = 12;              // 기호 상수를 이용해서 MONTHS를 12로 선언
