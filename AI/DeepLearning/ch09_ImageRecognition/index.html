@@ -9145,29 +9145,29 @@
 <li>영상 안의 물체를 인식하거나 분류</li>
 <li>생물체의 영상 처리 구조로부터 모델 학습</li>
 </ul>
-<p><img alt="IR" src="../Image/ch09/IR.PNG" /></p>
+<p><img alt="IR" src="../Image/ch09/ConvolutionalNeuralNetworks.PNG" /></p>
 <h4 id="_1">전통적 영상 인식 시스템 구조<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p><img alt="TIR" src="../Image/ch09/TIR.PNG" /></p>
+<p><img alt="TIR" src="../Image/ch09/TraditionalImageRecognitionSystemStructure.PNG" /></p>
 <h4 id="_2">심층 신경망을 이용한 영상 인식 과정<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p><img alt="DNNIR" src="../Image/ch09/DNNIR.PNG" /></p>
+<p><img alt="DNNIR" src="../Image/ch09/DeepNeuralNetworkImageRecognitionProcess.PNG" /></p>
 <h4 id="_3">영상 인식<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>영상 인식에 가장 많이 사용되는 신경망 : 컨볼루션 신경망(Convolution Neural Network)</li>
 </ul>
-<p><img alt="IRCNN" src="../Image/ch09/IRCNN.PNG" /></p>
+<p><img alt="IRCNN" src="../Image/ch09/ConvolutionalNeuralNetworkOverview.PNG" /></p>
 <h5 id="_4">구조<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
-<p><img alt="IRS" src="../Image/ch09/IRS.PNG" /></p>
+<p><img alt="IRS" src="../Image/ch09/CNNStructure.PNG" /></p>
 <ul>
 <li>특징 추출기(컨볼루션 신경망)</li>
 <li>특징 분류기(완전 연결 신경망)</li>
 </ul>
 <h5 id="_5">예시<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
-<p><img alt="IREX" src="../Image/ch09/IREX.PNG" /></p>
+<p><img alt="IREX" src="../Image/ch09/CNNStructureExample.PNG" /></p>
 <h4 id="data-augmentation">데이터 증대(Data augmentation)<a class="headerlink" href="#data-augmentation" title="Permanent link">&para;</a></h4>
 <ul>
 <li>한정된 데이터에서 여러 가지로 변형된 데이터를 만들어내는 기법</li>
 </ul>
-<p><img alt="DA" src="../Image/ch09/DA.PNG" /></p>
+<p><img alt="DA" src="../Image/ch09/DataAugmentation.PNG" /></p>
 <h4 id="imagedatagenerator">ImageDataGenerator()<a class="headerlink" href="#imagedatagenerator" title="Permanent link">&para;</a></h4>
 <ul>
 <li>파이썬의 제네레이터 형식</li>
@@ -9207,14 +9207,14 @@
 <a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>  <span class="n">image</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
 <a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </code></pre></div>
-<p><img alt="OP" src="../Image/ch09/OP.PNG" /></p>
+<p><img alt="OP" src="../Image/ch09/OutputPreview.PNG" /></p>
 <h2 id="2">2절. 가중치 저장 및 복원<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h4 id="_6">가중치<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>이미 학습된 모델의 가중치 저장 가능</li>
 <li>필요 시 가중치를 불러와 신경망 예측 가능</li>
 </ul>
-<p><img alt="WM" src="../Image/ch09/WM.PNG" /></p>
+<p><img alt="WM" src="../Image/ch09/WeightManagement.PNG" /></p>
 <h5 id="_7">저장<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;mymodel&#39;</span><span class="p">)</span>
 </code></pre></div>
@@ -9277,15 +9277,15 @@
 <li>하나의 문제에 대해 학습한 신경망의 모델과 가중치를 새로운 문제에 적용</li>
 <li>특징과 분류를 묶어서 학습</li>
 </ul>
-<p><img alt="TL" src="../Image/ch09/TL.PNG" /></p>
+<p><img alt="TL" src="../Image/ch09/TransferLearning.PNG" /></p>
 <h4 id="_10">사전 훈련 신경망 모델<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <h5 id="_11">종류<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h5>
 <ul>
 <li>케라스 어플리케이션(Keras Applications)</li>
 </ul>
-<p><img alt="KA" src="../Image/ch09/KA.PNG" /></p>
+<p><img alt="KA" src="../Image/ch09/KerasApplications.PNG" /></p>
 <h5 id="_12">프로젝트 적용<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h5>
-<p><img alt="PU" src="../Image/ch09/PU.PNG" /></p>
+<p><img alt="PU" src="../Image/ch09/ProjectUsage.PNG" /></p>
 <h5 id="1">예제 1)<a class="headerlink" href="#1" title="Permanent link">&para;</a></h5>
 <ul>
 <li>ResNet50을 다운로드 받아 변경하지 않고 그대로 사용</li>

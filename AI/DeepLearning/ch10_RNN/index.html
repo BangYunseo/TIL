@@ -9894,7 +9894,7 @@
 <li>ex) 주식 가격, 텍스트 데이터, 오디오 데이터</li>
 </ul>
 <h5 id="_2">응용 분야<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
-<p><img alt="RNNEX" src="../Image/ch10/RNNEX.PNG" /></p>
+<p><img alt="RNNEX" src="../Image/ch10/RNNApplicationDomains.PNG" /></p>
 <h4 id="_3">표준 신경망과 순환 신경망<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <h5 id="rnn-recurrent-neural-network">순환 신경망(RNN : Recurrent Neural Network)<a class="headerlink" href="#rnn-recurrent-neural-network" title="Permanent link">&para;</a></h5>
 <ul>
@@ -9922,11 +9922,11 @@
 <ol>
 <li>일정한 길이(윈도우 크기 = 3)로 자른 후 여러 개의 훈련 샘플 생성</li>
 </ol>
-<p><img alt="window3" src="../Image/ch10/window3.PNG" /></p>
+<p><img alt="window3" src="../Image/ch10/SlidingWindowExample.PNG" /></p>
 <ol>
 <li>전체 데이터를 다음과 같이 크기가 3인 샘플과 정답으로 분리</li>
 </ol>
-<p><img alt="res" src="../Image/ch10/res.PNG" /></p>
+<p><img alt="res" src="../Image/ch10/SequenceSampleSplit.PNG" /></p>
 <h4 id="_8">예제 : 데이터 다운 후 그래프 표현<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 라이브러리 포함</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">FinanceDataReader</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fdr</span>
@@ -9947,7 +9947,7 @@
 <ul>
 <li>결과 출력</li>
 </ul>
-<p><img alt="samsung" src="../Image/ch10/samsung.PNG" /></p>
+<p><img alt="samsung" src="../Image/ch10/SamsungStockPriceChart.PNG" /></p>
 <h5 id="_9">샘플화<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 라이브러리 포함</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">FinanceDataReader</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fdr</span>
@@ -9999,21 +9999,21 @@
 </code></pre></div>
 <h2 id="2-rnn">2절. 순환 신경망(RNN)<a class="headerlink" href="#2-rnn" title="Permanent link">&para;</a></h2>
 <h4 id="_10">순환 신경망의 구조<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
-<p><img alt="RNNStructure" src="../Image/ch10/RNNStructure.PNG" /></p>
+<p><img alt="RNNStructure" src="../Image/ch10/RNNBasicArchitecture.PNG" /></p>
 <ul>
 <li>MLP와 비슷하게 입력층, 은닉층, 출력층 보유(입력 벡터, 은닉 상태, 출력 벡터)</li>
 <li>은닉 상태(은닉층)이 순환 엣지(Recurrent Edge) 보유</li>
 <li>시간성, 가변 길이, 문맥 의존성 모두 처리 가능</li>
 <li>순환 엣지는 <span class="arithmatex">\(t - 1\)</span> 순간에 발생한 정보를 <span class="arithmatex">\(t\)</span> 지점으로 전달하는 역할</li>
 </ul>
-<p><img alt="RNNS" src="../Image/ch10/RNNS.PNG" /></p>
+<p><img alt="RNNS" src="../Image/ch10/RNNUnfolding.PNG" /></p>
 <h4 id="-feed-forward-neural-network-rnn">피드-포워드 신경망(Feed-Forward Neural Network)과 RNN<a class="headerlink" href="#-feed-forward-neural-network-rnn" title="Permanent link">&para;</a></h4>
-<p><img alt="FFNNRNN" src="../Image/ch10/FFNNRNN.PNG" /></p>
+<p><img alt="FFNNRNN" src="../Image/ch10/FeedForwardVsRNN.PNG" /></p>
 <ul>
 <li>피드-포워드 신경망 : 여태까지 배웠던 신경망</li>
 </ul>
 <h4 id="rnn">단어 예측 RNN<a class="headerlink" href="#rnn" title="Permanent link">&para;</a></h4>
-<p><img alt="PredictWord" src="../Image/ch10/PredictWord.PNG" /></p>
+<p><img alt="PredictWord" src="../Image/ch10/WordPredictionRNN.PNG" /></p>
 <h4 id="_11">은닉 상태, 입력 벡터, 출력 벡터<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>은닉 상태 : 은닉층</li>
@@ -10027,22 +10027,22 @@
 <ul>
 <li>활성화 함수 : tanh 함수</li>
 </ul>
-<p><img alt="RNNA" src="../Image/ch10/RNNA.PNG" /></p>
-<p><img alt="RNNA2" src="../Image/ch10/RNNA2.PNG" /></p>
+<p><img alt="RNNA" src="../Image/ch10/RNNActivationTanh.PNG" /></p>
+<p><img alt="RNNA2" src="../Image/ch10/RNNActivationSequence.PNG" /></p>
 <h4 id="vanilla-rnnkerassimplernn">Vanilla RNN(Keras.SimpleRNN)<a class="headerlink" href="#vanilla-rnnkerassimplernn" title="Permanent link">&para;</a></h4>
 <ul>
 <li>레이어의 출력을 다시 입력으로 받아서 사용</li>
 <li>이전의 데이터가 함께 결과에 영향</li>
 </ul>
-<p><img alt="VRNN" src="../Image/ch10/VRNN.PNG" /></p>
+<p><img alt="VRNN" src="../Image/ch10/VanillaRNNStructure.PNG" /></p>
 <h5 id="return_sequences">return_sequences<a class="headerlink" href="#return_sequences" title="Permanent link">&para;</a></h5>
 <ul>
 <li>RNN 계산과정에 있는 hidden state의 출력 여부 결정 값</li>
 <li>RNN, one-to-many, many-to-many 출력을 위해 사용</li>
 </ul>
-<p><img alt="rs" src="../Image/ch10/rs.PNG" /></p>
+<p><img alt="rs" src="../Image/ch10/ReturnSequencesOutput.PNG" /></p>
 <h5 id="ideal-rnn-layer">Ideal RNN Layer<a class="headerlink" href="#ideal-rnn-layer" title="Permanent link">&para;</a></h5>
-<p><img alt="IRNN" src="../Image/ch10/IRNN.PNG" /></p>
+<p><img alt="IRNN" src="../Image/ch10/IdealRNNLayer.PNG" /></p>
 <h5 id="1_1">예제 1)<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">X</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">Y</span> <span class="o">=</span> <span class="p">[]</span>
@@ -10096,12 +10096,12 @@
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="c1"># 출력(X_test)</span>
 <a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="c1"># [[0.98860174]]</span>
 </code></pre></div>
-<p><img alt="VRNNOP1" src="../Image/ch10/VRNNOP1.PNG" /></p>
+<p><img alt="VRNNOP1" src="../Image/ch10/VanillaRNNSummary.PNG" /></p>
 <ul>
 <li>파라미터 아웃값 * (파라미터 아웃값 + 1(차원 수 1) + 1(바이어스)) + 덴스(Dense) 값</li>
 <li><span class="arithmatex">\(50 * (50 + 1 + 1) + 51 = 2651\)</span></li>
 </ul>
-<p><img alt="VRNNOP" src="../Image/ch10/VRNNOP.PNG" /></p>
+<p><img alt="VRNNOP" src="../Image/ch10/VanillaRNNParameterCount.PNG" /></p>
 <h2 id="3">3절. 순환 신경망 유형<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h4 id="rnn_1">RNN 유형<a class="headerlink" href="#rnn_1" title="Permanent link">&para;</a></h4>
 <ul>
@@ -10116,30 +10116,30 @@
 <li>다수의 머신 러닝 문제에 사용</li>
 <li>Vanilla Neural Network</li>
 </ul>
-<p><img alt="OtO" src="../Image/ch10/OtO.PNG" /></p>
+<p><img alt="OtO" src="../Image/ch10/OneToOneSequence.PNG" /></p>
 <h5 id="one-to-many">일대다(One to Many)<a class="headerlink" href="#one-to-many" title="Permanent link">&para;</a></h5>
 <ul>
 <li>단일 입력으로 다수 출력 생성의 신경망</li>
 <li>이미지 캡션을 생성하는 RNN에서 사용</li>
 <li>하나의 이미지가 입력되면 이미지를 가장 잘 설명하는 캡션들 생성</li>
 </ul>
-<p><img alt="OtM" src="../Image/ch10/OtM.PNG" /></p>
+<p><img alt="OtM" src="../Image/ch10/OneToManySequence.PNG" /></p>
 <h5 id="many-to-one">다대일(Many to One)<a class="headerlink" href="#many-to-one" title="Permanent link">&para;</a></h5>
 <ul>
 <li>다수 입력으로 단일 출력 생성의 신경망</li>
 <li>감정(Sentiment) 분석 신경망에 사용</li>
 <li>주어진 문장들이 긍정적 OR 부정적 감정인지 분류</li>
 </ul>
-<p><img alt="MtO" src="../Image/ch10/MtO.PNG" /></p>
+<p><img alt="MtO" src="../Image/ch10/ManyToOneSequence.PNG" /></p>
 <h5 id="many-to-many">다대다(Many to Many)<a class="headerlink" href="#many-to-many" title="Permanent link">&para;</a></h5>
 <ul>
 <li>다수 입력으로 다수 출력 생성의 신경망</li>
 <li>기계 번역에서 사용되며 단어들이 계속 다른 단어들로 출력</li>
 </ul>
-<p><img alt="MtM" src="../Image/ch10/MtM.PNG" /></p>
+<p><img alt="MtM" src="../Image/ch10/ManyToManySequence.PNG" /></p>
 <h2 id="4">4절. 역전파 방향과 그래디언트<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h4 id="_13">순환 신경망 순방향 패스<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
-<p><img alt="RNNPASS" src="../Image/ch10/RNNPASS.PNG" /></p>
+<p><img alt="RNNPASS" src="../Image/ch10/RNNForwardPass.PNG" /></p>
 <h4 id="ideal">순방향 패스 알고리즘(Ideal)<a class="headerlink" href="#ideal" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">hidden_state</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">sentence</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;love&quot;</span><span class="p">,</span> <span class="s2">&quot;recurrent&quot;</span><span class="p">,</span> <span class="s2">&quot;neural&quot;</span><span class="p">]</span>
@@ -10168,7 +10168,7 @@
 <li>입력 : [batch, timesteps, feature]의 형상을 갖는 3차원 텐서</li>
 </ul>
 <h4 id="rnn_2">RNN에서의 입력 형상<a class="headerlink" href="#rnn_2" title="Permanent link">&para;</a></h4>
-<p><img alt="RNNINPUT" src="../Image/ch10/RNNINPUT.PNG" /></p>
+<p><img alt="RNNINPUT" src="../Image/ch10/RNNInputShape.PNG" /></p>
 <h4 id="_14">메모리 셀의 각 시점에서 모든 은닉 상태값 반환<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">simple_rnn</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">SimpleRNN</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>                                       <span class="n">return_sequences</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -10183,15 +10183,15 @@
 <li>계층을 통해 오류를 역전파하는 대신 시간을 거슬러 올라가면서 그래디언트 역전파</li>
 <li>즉 현재의 역전파를 진행하고 싶다면 과거의 역전파 값을 알아야 하는 형태</li>
 </ul>
-<p><img alt="BPTT" src="../Image/ch10/BPTT.PNG" /></p>
+<p><img alt="BPTT" src="../Image/ch10/BackpropagationThroughTime.PNG" /></p>
 <h4 id="_15">그래디언트 문제<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li>1보다 작은 값이 여러 번 곱해지는 경우 : 그래디언트가 점점 감소(소멸)</li>
 <li>1보다 큰 값이 여러 번 곱해지는 경우 : 그래디언트가 폭발적 증가(폭증)</li>
 </ul>
-<p><img alt="PE" src="../Image/ch10/PE.PNG" /></p>
+<p><img alt="PE" src="../Image/ch10/GradientProblemExample.PNG" /></p>
 <h5 id="_16">그래디언트 소실<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h5>
-<p><img alt="GD" src="../Image/ch10/GD.PNG" /></p>
+<p><img alt="GD" src="../Image/ch10/GradientVanishing.PNG" /></p>
 <ul>
 <li>
 <p>문제</p>
@@ -10208,7 +10208,7 @@
     =&gt; 게이트들이 어떤 정보를 지나가게 할 것인지의 제어로 장기적 기억 가능</li>
 </ul>
 <h5 id="_17">그래디언트 폭증<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h5>
-<p><img alt="GI" src="../Image/ch10/GI.PNG" /></p>
+<p><img alt="GI" src="../Image/ch10/GradientExplosion.PNG" /></p>
 <ul>
 <li>
 <p>문제</p>
@@ -10266,7 +10266,7 @@
 <ul>
 <li>출력</li>
 </ul>
-<p><img alt="GOP" src="../Image/ch10/GOP.PNG" /></p>
+<p><img alt="GOP" src="../Image/ch10/SineWavePredictionLoss.PNG" /></p>
 <h4 id="-2">예제) 사인파 예측 프로그램 - 2<a class="headerlink" href="#-2" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">seq_data</span> <span class="o">=</span> <span class="p">[]</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">):</span>
@@ -10284,7 +10284,7 @@
 <ul>
 <li>출력</li>
 </ul>
-<p><img alt="GOP2" src="../Image/ch10/GOP2.PNG" /></p>
+<p><img alt="GOP2" src="../Image/ch10/SineWavePredictionOutput.PNG" /></p>
 <h2 id="5-lstmlong-short-term-memory">5절. LSTM(Long Short-Term Memory)<a class="headerlink" href="#5-lstmlong-short-term-memory" title="Permanent link">&para;</a></h2>
 <h4 id="lstm">LSTM 신경망<a class="headerlink" href="#lstm" title="Permanent link">&para;</a></h4>
 <ul>
@@ -10309,18 +10309,18 @@
 <li>셀 : 임의의 시점에 대한 값을 기억</li>
 <li>게이트(입력, 망각, 출력) : 셀로 출입하는 정보의 흐름 조절</li>
 </ul>
-<p><img alt="LSTM" src="../Image/ch10/LSTM.PNG" /></p>
+<p><img alt="LSTM" src="../Image/ch10/LSTMArchitecture.PNG" /></p>
 <h5 id="_18">게이트<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h5>
 <ul>
 <li>LSTM의 주된 빌딩 블록</li>
 <li>정보는 게이트를 통하여 추가 or 삭제</li>
 </ul>
-<p><img alt="Gate" src="../Image/ch10/Gate.PNG" /></p>
+<p><img alt="Gate" src="../Image/ch10/LSTMGateStructure.PNG" /></p>
 <h5 id="_19">저장 연산<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h5>
 <ul>
 <li>셀 상태에 관련있는 새로운 정보 저장</li>
 </ul>
-<p><img alt="SM" src="../Image/ch10/SM.PNG" /></p>
+<p><img alt="SM" src="../Image/ch10/InputGateOperation.PNG" /></p>
 <h5 id="_20">삭제 연산<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h5>
 <ul>
 <li>
@@ -10337,7 +10337,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="DM" src="../Image/ch10/DM.PNG" /></p>
+<p><img alt="DM" src="../Image/ch10/ForgetGateOperation.PNG" /></p>
 <h5 id="_21">업데이트 연산<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h5>
 <ul>
 <li>
@@ -10361,7 +10361,7 @@
 </li>
 <li>입력 게이트 : 현재 시점의 입력을 얼마나 기억할지 결정</li>
 </ul>
-<p><img alt="UM" src="../Image/ch10/UM.PNG" /></p>
+<p><img alt="UM" src="../Image/ch10/CellStateUpdateOperation.PNG" /></p>
 <h5 id="_22">출력 연산<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h5>
 <ul>
 <li>출력 게이트</li>
@@ -10370,9 +10370,9 @@
 </ul>
 </li>
 </ul>
-<p><img alt="OM" src="../Image/ch10/OM.PNG" /></p>
+<p><img alt="OM" src="../Image/ch10/OutputGateOperation.PNG" /></p>
 <h4 id="_23">그래디언트 소실 문제 해결<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
-<p><img alt="PS" src="../Image/ch10/PS.PNG" /></p>
+<p><img alt="PS" src="../Image/ch10/LSTMGradientSolutionPath.PNG" /></p>
 <h4 id="lstm_1">케라스에서의 LSTM<a class="headerlink" href="#lstm_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">inputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">([</span><span class="mi">32</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">lstm</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -10387,8 +10387,8 @@
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1"># (32, 4)</span>
 </code></pre></div>
 <h4 id="keras_1">예제 : Keras를 활용한 주가 예측<a class="headerlink" href="#keras_1" title="Permanent link">&para;</a></h4>
-<p><img alt="Keras1" src="../Image/ch10/Keras1.PNG" /></p>
-<p><img alt="Keras2" src="../Image/ch10/Keras2.PNG" /></p>
+<p><img alt="Keras1" src="../Image/ch10/StockPricePredictionModel.PNG" /></p>
+<p><img alt="Keras2" src="../Image/ch10/StockPricePredictionResults.PNG" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">FinanceDataReader</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fdr</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -10445,7 +10445,7 @@
 <ul>
 <li>출력 결과</li>
 </ul>
-<p><img alt="Output1" src="../Image/ch10/Output1.PNG" /></p>
+<p><img alt="Output1" src="../Image/ch10/StockPriceForecastComparison.PNG" /></p>
 
 
 

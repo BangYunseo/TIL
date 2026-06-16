@@ -9883,21 +9883,21 @@
 <li>은닉층을 여러 개 사용(2개 이상)</li>
 <li>MLP의 문제점을 해결한 형태</li>
 </ul>
-<p><img alt="MLPDNN" src="../Image/ch07/MLPDNN.PNG" /></p>
-<p><img alt="MLPDNN2" src="../Image/ch07/MLPDNN2.PNG" /></p>
+<p><img alt="MLPDNN" src="../Image/ch07/MLPVsDNN1.PNG" /></p>
+<p><img alt="MLPDNN2" src="../Image/ch07/MLPVsDNN2.PNG" /></p>
 <h4 id="gpu">GPU의 도움<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h4>
 <ul>
 <li>DNN의 학습 속ㄷ도는 상당히 느리고 계산 집약적</li>
 <li>학습에 시간과 자원이 많이 소모</li>
 <li>최근 GPU(Graphic Processor) 기술의 발전으로 GPU가 제공하는 데이터 처리 기능을 딥러닝이 사용</li>
 </ul>
-<p><img alt="DNN" src="../Image/ch07/DNN.PNG" /></p>
+<p><img alt="DNN" src="../Image/ch07/GPUAcceleration.PNG" /></p>
 <h4 id="_1">은닉층의 역할<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>앞단 : 경계선(edge)과 같은 저급 특징들 추출</li>
 <li>뒷단 : 코너와 같은 고급 특징들 추출</li>
 </ul>
-<p><img alt="HL" src="../Image/ch07/HL.PNG" /></p>
+<p><img alt="HL" src="../Image/ch07/HiddenLayerRoles.PNG" /></p>
 <h2 id="2">2절. 활성화 함수<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h4 id="_2">그래디언트 소실 문제<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9909,17 +9909,17 @@
 </li>
 <li>특성상, 아주 큰 양수나 음수가 입력되면 출력이 포화되어 0이 됨</li>
 </ul>
-<p><img alt="SF" src="../Image/ch07/SF.PNG" /></p>
-<p><img alt="GP" src="../Image/ch07/GP.PNG" /></p>
+<p><img alt="SF" src="../Image/ch07/SigmoidFunction.PNG" /></p>
+<p><img alt="GP" src="../Image/ch07/GradientProblem.PNG" /></p>
 <h4 id="_3">역전파 알고리즘의 복습<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p><img alt="S1" src="../Image/ch07/S1.PNG" /></p>
+<p><img alt="S1" src="../Image/ch07/BackpropagationReview.PNG" /></p>
 <h4 id="relu">활성화 함수 : ReLU 함수<a class="headerlink" href="#relu" title="Permanent link">&para;</a></h4>
-<p><img alt="RF" src="../Image/ch07/RF.PNG" /></p>
+<p><img alt="RF" src="../Image/ch07/ReLUFunction.PNG" /></p>
 <ul>
 <li>그래디언트 소실 문제 해결을 위해 심층 신경망에서 ReLU 함수 주 사용</li>
 </ul>
 <h4 id="_4">다양한 활성화 함수 변경<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p><img alt="MF" src="../Image/ch07/MF.PNG" /></p>
+<p><img alt="MF" src="../Image/ch07/ActivationFunctionComparison.PNG" /></p>
 <ul>
 <li>ReLU, tanh 함수가 원만하게 분류</li>
 <li>Linear 다른 활성화 함수보다 부족한 모습</li>
@@ -9935,46 +9935,46 @@
 <li>Max 함수의 소프트한 버전</li>
 <li>Max 함수의 출력은 최대 입력값에 의해 결정</li>
 </ul>
-<p><img alt="MAX" src="../Image/ch07/MAX.PNG" /></p>
+<p><img alt="MAX" src="../Image/ch07/MaxFunction.PNG" /></p>
 <h4 id="_6">교차 엔트로피 손실 함수<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>2개의 확률 분포 <span class="arithmatex">\(p\)</span>, <span class="arithmatex">\(q\)</span> 정의</li>
 </ul>
-<p><img alt="CEF" src="../Image/ch07/CEF.PNG" /></p>
-<p><img alt="CEF1" src="../Image/ch07/CEF1.PNG" /></p>
+<p><img alt="CEF" src="../Image/ch07/CrossEntropyFormula.PNG" /></p>
+<p><img alt="CEF1" src="../Image/ch07/CrossEntropyBinary.PNG" /></p>
 <h5 id="loss-function-0">손실 함수(Loss Function)가 0 : 완벽한 일치<a class="headerlink" href="#loss-function-0" title="Permanent link">&para;</a></h5>
-<p><img alt="CEF2" src="../Image/ch07/CEF2.PNG" /></p>
+<p><img alt="CEF2" src="../Image/ch07/CrossEntropyPerfectMatch.PNG" /></p>
 <ul>
 <li>학습이 여러번 되어질 경우, 실제 출력 S의 정확도가 상승하여 손실 함수(Loss Function)이 0에 가까워지도록 설정</li>
 </ul>
 <h5 id="_7">교차 엔트로피 계산 예제<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
-<p><img alt="CEFex" src="../Image/ch07/CEFex.PNG" /></p>
+<p><img alt="CEFex" src="../Image/ch07/CrossEntropyExample.PNG" /></p>
 <ul>
 <li>샘플 #3의 교차 엔트로피가 가장 큼 : 손실 함수(Loss Function)값이 가장 큼</li>
 </ul>
 <h4 id="vs">평균 제곱 오차 VS 교차 엔트로피<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h4>
-<p><img alt="MSECEF" src="../Image/ch07/MSECEF.PNG" /></p>
+<p><img alt="MSECEF" src="../Image/ch07/MSEVsCrossEntropy.PNG" /></p>
 <h4 id="_8">케라스에서의 손실 함수<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>BinaryCrossEntropy : 이진 교차 엔트로피(BCE)로 이진 분류 문제 해결에 사용</li>
 <li>분류해야 하는 부류(클래스)가 2개일 경우 사용</li>
 </ul>
-<p><img alt="kerasL" src="../Image/ch07/kerasL.PNG" /></p>
+<p><img alt="kerasL" src="../Image/ch07/KerasBinaryCrossEntropy.PNG" /></p>
 <h5 id="_9">계산 예제<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h5>
-<p><img alt="kerasLex" src="../Image/ch07/kerasLex.PNG" /></p>
+<p><img alt="kerasLex" src="../Image/ch07/KerasExample.PNG" /></p>
 <h4 id="_10">다중 분류 엔트로피<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <h5 id="cce">CCE<a class="headerlink" href="#cce" title="Permanent link">&para;</a></h5>
 <ul>
 <li>CategoricalCrossEntropy : 분류해야 할 부류(클래스)가 2개 이상일 경우 사용</li>
 <li>정답 레이블을 원-핫 인코딩으로 제공</li>
 </ul>
-<p><img alt="CCE" src="../Image/ch07/CCE.PNG" /></p>
+<p><img alt="CCE" src="../Image/ch07/CategoricalCrossEntropy.PNG" /></p>
 <h5 id="sce">SCE<a class="headerlink" href="#sce" title="Permanent link">&para;</a></h5>
 <ul>
 <li>SparseCategoricalCrossEntropy : 정답 레이블이 원-핫 인코딩이 아닌 정수로 주어질 경우 사용</li>
 <li>정답 레이블이 0(강아지), 1(고양이), 2(호랑이)인 경우</li>
 </ul>
-<p><img alt="SCE" src="../Image/ch07/SCE.PNG" /></p>
+<p><img alt="SCE" src="../Image/ch07/SparseCategoricalCrossEntropy.PNG" /></p>
 <h2 id="4">4절. 가중치<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h4 id="_11">가중치 초기화 문제<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9982,7 +9982,7 @@
 <li>노드 <span class="arithmatex">\(E\)</span>와 노드<span class="arithmatex">\(G\)</span>는 완벽한 일 실행</li>
 <li>이것을 방지하기 위한 "균형 깨뜨리기(Breaking The Symmetry)" 필요</li>
 </ul>
-<p><img alt="SW" src="../Image/ch07/SW.PNG" /></p>
+<p><img alt="SW" src="../Image/ch07/SymmetryBreaking.PNG" /></p>
 <h4 id="_12">난수 가중치 초기값<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>가중치의 초깃값은 난수로 결정</li>
@@ -9990,9 +9990,9 @@
 <li>학습이 수렴하지 않고 발산</li>
 </ul>
 <h5 id="xavier">Xavier 방법<a class="headerlink" href="#xavier" title="Permanent link">&para;</a></h5>
-<p><img alt="Xavier" src="../Image/ch07/Xavier.PNG" /></p>
+<p><img alt="Xavier" src="../Image/ch07/XavierInitialization.PNG" /></p>
 <h5 id="he">He 방법<a class="headerlink" href="#he" title="Permanent link">&para;</a></h5>
-<p><img alt="He" src="../Image/ch07/He.PNG" /></p>
+<p><img alt="He" src="../Image/ch07/HeInitialization.PNG" /></p>
 <h4 id="data-load">Data Load<a class="headerlink" href="#data-load" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">load_mnist</span><span class="p">()</span> <span class="p">:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="n">digits</span> <span class="o">=</span> <span class="n">load_digits</span><span class="p">()</span>
@@ -10036,7 +10036,7 @@
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">model_he</span><span class="p">,</span> <span class="n">hist_he</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="o">=</span> <span class="n">makemodel</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">,</span><span class="s1">&#39;he_normal&#39;</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="HX" src="../Image/ch07/HX.PNG" /></p>
+<p><img alt="HX" src="../Image/ch07/HeXavierRandomNormalComparison.PNG" /></p>
 <ul>
 <li>He 나 Xiver의 정확도와 손실함수가 더 좋은 모습</li>
 </ul>
@@ -10084,7 +10084,7 @@
 <li>단 하나의 값만 1, 나머지는 모두 0인 인코딩</li>
 <li>가장 많이 사용</li>
 </ul>
-<p><img alt="OHE" src="../Image/ch07/OHE.PNG" /></p>
+<p><img alt="OHE" src="../Image/ch07/OneHotEncoding.PNG" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpyas</span> <span class="n">np</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s1">&#39;Korea&#39;</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">7200</span><span class="p">],</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>              <span class="p">[</span><span class="s1">&#39;Japan&#39;</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">4800</span><span class="p">],</span>
@@ -10131,9 +10131,9 @@
 <li>입력과 관련된 매개 변수도 서로 다른 범위로 학습</li>
 <li>입력값이 -1.0에서 1.0 범위</li>
 </ul>
-<p><img alt="DN" src="../Image/ch07/DN.PNG" /></p>
+<p><img alt="DN" src="../Image/ch07/DataNormalizationRange.PNG" /></p>
 <h4 id="_19">데이터 정규화<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
-<p><img alt="SDN" src="../Image/ch07/SDN.PNG" /></p>
+<p><img alt="SDN" src="../Image/ch07/StandardizedDataNormalization.PNG" /></p>
 <h5 id="sklearn">sklearn 데이터 정규화<a class="headerlink" href="#sklearn" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinMaxScaler</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">18</span><span class="p">]]</span>
@@ -10169,7 +10169,7 @@
 <li>지나치게 훈련 데이터에 특화되어 실제 적용 시 좋지 못할 경우</li>
 </ul>
 <h5 id="_20">과잉 적합 확인 방법<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h5>
-<p><img alt="OF" src="../Image/ch07/OF.PNG" /></p>
+<p><img alt="OF" src="../Image/ch07/OverfittingDetection.PNG" /></p>
 <ul>
 <li>검증 데이터를 훈련하며 손실 함수의 값이 증가</li>
 <li>항상 많은 데이터를 학습하는 방법은 옳지 않음</li>
@@ -10237,7 +10237,7 @@
 <a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;train error&#39;</span><span class="p">,</span> <span class="s1">&#39;valerror&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
 <a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="res" src="../Image/ch07/res.PNG" /></p>
+<p><img alt="res" src="../Image/ch07/OverfittingResult.PNG" /></p>
 <ul>
 <li>과잉 적합이 존재하여 손실값이 존재</li>
 </ul>
@@ -10252,12 +10252,12 @@
 <ul>
 <li>검증 손실이 더 이상 감소하지 않는 것처럼 보일 때마다 훈련 중단</li>
 </ul>
-<p><img alt="ES" src="../Image/ch07/ES.PNG" /></p>
+<p><img alt="ES" src="../Image/ch07/EarlyStopping.PNG" /></p>
 <h5 id="_23">가중치 규제<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h5>
 <ul>
 <li>가중치의 값이 너무 크면 판단 경계선이 복잡해지고 과잉 적합이 발생하므로 규제 진행</li>
 </ul>
-<p><img alt="WS" src="../Image/ch07/WS.PNG" /></p>
+<p><img alt="WS" src="../Image/ch07/WeightRegularization.PNG" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">kernel_regularizer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">regularizers</span><span class="o">.</span><span class="n">l2</span><span class="p">(</span><span class="mf">0.001</span><span class="p">),</span>
@@ -10273,7 +10273,7 @@
 <ul>
 <li>일부 노드를 랜덤 제외</li>
 </ul>
-<p><img alt="DO" src="../Image/ch07/DO.PNG" /></p>
+<p><img alt="DO" src="../Image/ch07/Dropout.PNG" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">10000</span><span class="p">,)))</span>

@@ -9602,12 +9602,12 @@
 <li>2차원(특정 부분들의 특징들을 추출하여 탐색)</li>
 <li>하위 레이어의 노드들과 상위 레이어의 노드들이 부분적 연결</li>
 </ul>
-<p><img alt="CNN" src="../Image/ch08/CNN.PNG" /></p>
+<p><img alt="CNN" src="../Image/ch08/ConvolutionalNeuralNetworkBasic.PNG" /></p>
 <h5 id="neocognitron">네오코그니트론(Neocognitron)<a class="headerlink" href="#neocognitron" title="Permanent link">&para;</a></h5>
 <ul>
 <li>1980년 후쿠시마에 의해 소개된 신경망 구조</li>
 </ul>
-<p><img alt="Neo" src="../Image/ch08/Neo.PNG" /></p>
+<p><img alt="Neo" src="../Image/ch08/NeocognitronArchitecture.PNG" /></p>
 <h4 id="_1">컨볼루션 신경망 중요성<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>신경망 구조 중 가장 강력한 성능을 보여주는 신경망 중 하나</li>
@@ -9615,7 +9615,7 @@
 <li>신경망의 각 레이어에서 일련의 필터 이미지 적용</li>
 </ul>
 <h4 id="_2">컨볼루션 신경망 구조<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p><img alt="CNNS" src="../Image/ch08/CNNS.PNG" /></p>
+<p><img alt="CNNS" src="../Image/ch08/CNNStructureOverview.PNG" /></p>
 <ul>
 <li>여러 레이어의 연결을 통한 구조</li>
 <li>입력층</li>
@@ -9628,18 +9628,18 @@
 <ul>
 <li>주변 화소값들 중 가중치를 곱해 더한 후 새로운 화소 값으로 하는 연산</li>
 </ul>
-<p><img alt="CA" src="../Image/ch08/CA.PNG" /></p>
-<p><img alt="CA2" src="../Image/ch08/CA2.PNG" /></p>
+<p><img alt="CA" src="../Image/ch08/ConvolutionOperationBasic.PNG" /></p>
+<p><img alt="CA2" src="../Image/ch08/ConvolutionOperationExample.PNG" /></p>
 <h5 id="_4">컨볼루션의 구체적 예시<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
-<p><img alt="CAex1" src="../Image/ch08/CAex1.PNG" /></p>
-<p><img alt="CAex2" src="../Image/ch08/CAex2.PNG" /></p>
+<p><img alt="CAex1" src="../Image/ch08/ConvolutionExample1.PNG" /></p>
+<p><img alt="CAex2" src="../Image/ch08/ConvolutionExample2.PNG" /></p>
 <h5 id="feature-map">특징맵(Feature Map)<a class="headerlink" href="#feature-map" title="Permanent link">&para;</a></h5>
-<p><img alt="FM" src="../Image/ch08/FM.PNG" /></p>
+<p><img alt="FM" src="../Image/ch08/FeatureMapOutput.PNG" /></p>
 <ul>
 <li>컨볼루션을 수행한 결과</li>
 </ul>
 <h5 id="_5">컨볼루션 신경망<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
-<p><img alt="CP1" src="../Image/ch08/CP1.PNG" /></p>
+<p><img alt="CP1" src="../Image/ch08/CNNKernelApplication.PNG" /></p>
 <ul>
 <li>커널이 입력층의 각 화소를 중심으로 덮여 씌움</li>
 <li>앞 레이어의 값 X는 각 커널 W와의 연산으로 <span class="arithmatex">\(WX+b\)</span></li>
@@ -9650,38 +9650,38 @@
 <li>여러 개의 필터 이용 가능</li>
 <li>필터의 값은 계속 학습</li>
 </ul>
-<p><img alt="CL" src="../Image/ch08/CL.PNG" /></p>
+<p><img alt="CL" src="../Image/ch08/ConvolutionLayerMultipleFilters.PNG" /></p>
 <h4 id="stride">보폭(stride)<a class="headerlink" href="#stride" title="Permanent link">&para;</a></h4>
 <ul>
 <li>커널을 적용하는 거리</li>
 <li>ex) 보폭이 1인 경우 : 한 번에 1 픽셀씩 이동하며 커널 적용</li>
 <li>ex) 보폭이 2인 경우 : 하나씩 건너뛰며 픽셀에 커널 적용</li>
 </ul>
-<p><img alt="Stride" src="../Image/ch08/Stride.PNG" /></p>
+<p><img alt="Stride" src="../Image/ch08/StrideMovement.PNG" /></p>
 <h4 id="padding">패딩(padding)<a class="headerlink" href="#padding" title="Permanent link">&para;</a></h4>
 <ul>
 <li>이미지의 가장자리 처리 기법</li>
 </ul>
-<p><img alt="Padding" src="../Image/ch08/Padding.PNG" /></p>
+<p><img alt="Padding" src="../Image/ch08/PaddingTechnique.PNG" /></p>
 <h5 id="valid">Valid<a class="headerlink" href="#valid" title="Permanent link">&para;</a></h5>
 <ul>
 <li>커널을 입력 이미지 안에서만 움직임</li>
 </ul>
-<p><img alt="PV" src="../Image/ch08/PV.PNG" /></p>
+<p><img alt="PV" src="../Image/ch08/PaddingValid.PNG" /></p>
 <h5 id="same">Same<a class="headerlink" href="#same" title="Permanent link">&para;</a></h5>
 <ul>
 <li>입력 이미지의 주변을 특정값(0 OR 이웃값)으로 채움</li>
 </ul>
-<p><img alt="PS" src="../Image/ch08/PS.PNG" /></p>
+<p><img alt="PS" src="../Image/ch08/PaddingSame.PNG" /></p>
 <h4 id="_6">필터가 다수일 때의 컨볼루션 레이어<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p><img alt="CL2" src="../Image/ch08/CL2.PNG" /></p>
-<p><img alt="CL3" src="../Image/ch08/CL3.PNG" /></p>
+<p><img alt="CL2" src="../Image/ch08/MultipleFiltersConvolution1.PNG" /></p>
+<p><img alt="CL3" src="../Image/ch08/MultipleFiltersConvolution2.PNG" /></p>
 <h4 id="pooling">풀링(Pooling)<a class="headerlink" href="#pooling" title="Permanent link">&para;</a></h4>
 <ul>
 <li>서브 샘플링</li>
 <li>입력 데이터의 크기 줄임</li>
 </ul>
-<p><img alt="PL" src="../Image/ch08/PL.PNG" /></p>
+<p><img alt="PL" src="../Image/ch08/PoolingSubsampling.PNG" /></p>
 <h5 id="_7">풀링 장점<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
 <ul>
 <li>레이어 크기의 감소로 계산 속도 증가</li>
@@ -9691,27 +9691,27 @@
 <li>즉, 물체의 공간 이동에 둔감</li>
 </ul>
 <h4 id="_8">풀링 종류<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p><img alt="PT" src="../Image/ch08/PT.PNG" /></p>
+<p><img alt="PT" src="../Image/ch08/PoolingTypes.PNG" /></p>
 <h5 id="_9">최대 풀링<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h5>
 <ul>
 <li>컨볼루션처럼 윈도우를 움직여 가장 큰 값만 출력하는 연산</li>
 </ul>
-<p><img alt="MP" src="../Image/ch08/MP.PNG" /></p>
+<p><img alt="MP" src="../Image/ch08/MaxPoolingOperation.PNG" /></p>
 <h4 id="_10">컨볼루션 신경망 해석<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
-<p><img alt="CLR" src="../Image/ch08/CLR.PNG" /></p>
+<p><img alt="CLR" src="../Image/ch08/CNNInterpretation.PNG" /></p>
 <h2 id="2">2절. 컨볼루션 신경망 구조<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h4 id="convolutional-nerural-network-structure">컨볼루션 신경망 구조(Convolutional Nerural Network Structure)<a class="headerlink" href="#convolutional-nerural-network-structure" title="Permanent link">&para;</a></h4>
 <ul>
 <li>2 × 2의 커널을 씌움으로써 풀링 진행</li>
 <li>n1에서 은닉층 1, n2에서 은닉층 2로 나눠짐</li>
 </ul>
-<p><img alt="CNNS2" src="../Image/ch08/CNNS2.PNG" /></p>
+<p><img alt="CNNS2" src="../Image/ch08/CNNStructureDetailedFlow.PNG" /></p>
 <ul>
 <li>Hyper Parameter : 개수가 많아질수록 계산이 필요한 값의 증가</li>
 <li>n1 &amp; n2: 커널의 개수</li>
 </ul>
 <h5 id="1-n1-channels">1) n1 channels<a class="headerlink" href="#1-n1-channels" title="Permanent link">&para;</a></h5>
-<p><img alt="CNNS3" src="../Image/ch08/CNNS3.PNG" /></p>
+<p><img alt="CNNS3" src="../Image/ch08/CNNChannelsLayer1Convolution.PNG" /></p>
 <ul>
 <li>28 × 28 × 1의 흑백 입력 이미지에 5 × 5의 필터 합성곱</li>
 <li>패딩 0, 스트라이드 1, 필터 사이즈 5 이므로 이미지 사이즈는 <span class="arithmatex">\(28 - 5 + 1 = 24\)</span></li>
@@ -9719,12 +9719,12 @@
 <li>여러 장의 필터(<span class="arithmatex">\(5 × 5 × n1\)</span>)를 만들고 여러 장의 이미지(n1장, <span class="arithmatex">\(24 × 24 × n1\)</span>)로 획득</li>
 </ul>
 <h5 id="2-n1-channels">2) n1 channels<a class="headerlink" href="#2-n1-channels" title="Permanent link">&para;</a></h5>
-<p><img alt="CNNS4" src="../Image/ch08/CNNS4.PNG" /></p>
+<p><img alt="CNNS4" src="../Image/ch08/CNNChannelsLayer1Pooling.PNG" /></p>
 <ul>
 <li>합성곱 이후 풀링으로 이미지의 크기를 절반으로 줄임(<span class="arithmatex">\(12 × 12 × n1\)</span>)</li>
 </ul>
 <h5 id="3-n2-channels">3) n2 channels<a class="headerlink" href="#3-n2-channels" title="Permanent link">&para;</a></h5>
-<p><img alt="CNNS5" src="../Image/ch08/CNNS5.PNG" /></p>
+<p><img alt="CNNS5" src="../Image/ch08/CNNChannelsLayer2Convolution.PNG" /></p>
 <ul>
 <li>합성곱 재수행</li>
 <li><span class="arithmatex">\(12 × 12 × n1\)</span>장의 이미지에 5 × 5필터 합성곱</li>
@@ -9732,25 +9732,25 @@
 <li>n2 장의 필터로 이미지 사이즈 <span class="arithmatex">\(8 × 8 × n2\)</span> 획득</li>
 </ul>
 <h5 id="4-n2-channels">4) n2 channels<a class="headerlink" href="#4-n2-channels" title="Permanent link">&para;</a></h5>
-<p><img alt="CNNS6" src="../Image/ch08/CNNS6.PNG" /></p>
+<p><img alt="CNNS6" src="../Image/ch08/CNNChannelsLayer2Pooling.PNG" /></p>
 <ul>
 <li>합성곱 이후 이미지 크기가 여전히 큰 경우</li>
 <li>풀링 수행으로 이미지의 크기를 절반으로 줄이기(<span class="arithmatex">\(4 × 4 × n2\)</span>)</li>
 </ul>
 <h5 id="5-flattened">5) Flattened<a class="headerlink" href="#5-flattened" title="Permanent link">&para;</a></h5>
-<p><img alt="CNNS7" src="../Image/ch08/CNNS7.PNG" /></p>
+<p><img alt="CNNS7" src="../Image/ch08/CNNFlattenedTensor.PNG" /></p>
 <ul>
 <li>4 × 4 × <span class="arithmatex">\(n2\)</span>의 텐서를 reshape(1, 16n2)하면 길쭉 한 벡터(1 × 16 × n2)생성 이 과정을 flatten 과정 (텐서를 벡터로 쭉 펴는 것)</li>
 </ul>
 <h5 id="6-relu-activation">6) ReLU Activation<a class="headerlink" href="#6-relu-activation" title="Permanent link">&para;</a></h5>
-<p><img alt="ReLUA" src="../Image/ch08/ReLUA.PNG" /></p>
+<p><img alt="ReLUA" src="../Image/ch08/ReLUActivationMLP.PNG" /></p>
 <ul>
 <li>flatten 벡터를 다층 퍼셉트론(MLP)의 은닉층에 입력</li>
 <li>다층퍼셉트론(MLP)의 은닉층 가중치는 (16n2, n3)으로 초기화</li>
 <li>(1, 16n2) @ (16n2, n3)의 수행 =&gt; (1, n3)의 벡터 출력</li>
 </ul>
 <h5 id="7-output">7) OUTPUT<a class="headerlink" href="#7-output" title="Permanent link">&para;</a></h5>
-<p><img alt="OP" src="../Image/ch08/OP.PNG" /></p>
+<p><img alt="OP" src="../Image/ch08/CNNOutputLayer.PNG" /></p>
 <ul>
 <li>n3 사이즈 벡터를 다층 퍼셉트론(MLP)의 출력층에 입력</li>
 <li>다층퍼셉트론(MLP)의 출력층 가중치를 (n3, 10)으로 초기화</li>
@@ -9759,7 +9759,7 @@
 <li>정답 : 원핫벡터 <span class="arithmatex">\([0, 0, 1, 0, ..., 0]\)</span>와 확률벡터<span class="arithmatex">\([0.01, 0.05, 0.9, 0.01, ..., 0.02]\)</span> 차이의 제곱 최소화</li>
 </ul>
 <h4 id="alexnet">알렉스넷(AlexNet)<a class="headerlink" href="#alexnet" title="Permanent link">&para;</a></h4>
-<p><img alt="AN" src="../Image/ch08/AN.PNG" /></p>
+<p><img alt="AN" src="../Image/ch08/AlexNetArchitecture.PNG" /></p>
 <h5 id="1-conv1">(1) 첫 번째 레이어 : Conv1<a class="headerlink" href="#1-conv1" title="Permanent link">&para;</a></h5>
 <ul>
 <li>컨볼루션 레이어로 11 × 11 × 3 커널 96개 사용하며 보폭은 4, 패딩 미사용</li>
@@ -9779,7 +9779,7 @@
 </ul>
 <h2 id="3-cnn">3절. 케라스와 CNN<a class="headerlink" href="#3-cnn" title="Permanent link">&para;</a></h2>
 <h4 id="_11">케라스로 컨볼루션 신경망 구현<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<p><img alt="KCNN" src="../Image/ch08/KCNN.PNG" /></p>
+<p><img alt="KCNN" src="../Image/ch08/KerasConvolutionalNeuralNetworkImplementation.PNG" /></p>
 <h4 id="_12">컨볼루션 레이어<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <h5 id="conv2d">Conv2D()<a class="headerlink" href="#conv2d" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
@@ -9827,7 +9827,7 @@
 <ul>
 <li>출력</li>
 </ul>
-<p><img alt="MP2" src="../Image/ch08/MP2.PNG" /></p>
+<p><img alt="MP2" src="../Image/ch08/MaxPooling2DOutput.PNG" /></p>
 <h4 id="ex-mnist">EX : MNIST 필기체 숫자 인식<a class="headerlink" href="#ex-mnist" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span>
@@ -9871,7 +9871,7 @@
 <ul>
 <li>결과 출력 과정</li>
 </ul>
-<p><img alt="MNISTP" src="../Image/ch08/MNISTP.PNG" /></p>
+<p><img alt="MNISTP" src="../Image/ch08/MNISTOutputProcess.PNG" /></p>
 
 
 

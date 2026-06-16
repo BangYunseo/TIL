@@ -9332,7 +9332,7 @@
 <li>생성 모델이 사실적인 몬드리안 스타일의 그림을 생성할 수 있다고 가정하자.</li>
 <li>생성 모델은 몬드리안 스타일의 일반적인 규칙이 학습된 것</li>
 </ul>
-<p><img alt="GM" src="../Image/ch12/GM.PNG" /></p>
+<p><img alt="GM" src="../Image/ch12/GenerativeModelConcept.PNG" /></p>
 <h4 id="_2">확률직어니 생성 모델<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>모든 샘플 이미지에 대하여 각 픽셀 위치에서 픽셀값의 평균을 계산</li>
@@ -9349,7 +9349,7 @@
 <ul>
 <li>데이터 <span class="arithmatex">\(x\)</span> 와 레이블 <span class="arithmatex">\(y\)</span> 가 주어지면 분류 모델은 x가 어떤 부류에 속하는지 판단</li>
 </ul>
-<p><img alt="GMDM" src="../Image/ch12/GMDM.PNG" /></p>
+<p><img alt="GMDM" src="../Image/ch12/ClassificationModelDiagram.PNG" /></p>
 <h5 id="_3">분류 모델과 생성 모델의 차이<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
 <ul>
 <li>분류 모델 : 조건부 확률 <span class="arithmatex">\(p(y|x)\)</span> 탐색</li>
@@ -9360,16 +9360,16 @@
 <p>생성 모델 : 입력 데이터의 확률 분포 <span class="arithmatex">\(p(x)\)</span> 탐</p>
 </li>
 </ul>
-<p><img alt="GMDM2" src="../Image/ch12/GMDM2.PNG" /></p>
+<p><img alt="GMDM2" src="../Image/ch12/GenerativeVsClassification.PNG" /></p>
 <h4 id="keras-api">Keras의 함수형 API<a class="headerlink" href="#keras-api" title="Permanent link">&para;</a></h4>
 <ul>
 <li>함수형 API</li>
 <li>사용 시 원하는 방식의 객체들 연결 가능</li>
 <li>ex) 은닉층의 출력을 알고자 할 경우 사용</li>
 </ul>
-<p><img alt="KA" src="../Image/ch12/KA.PNG" /></p>
+<p><img alt="KA" src="../Image/ch12/KerasFunctionalAPI.PNG" /></p>
 <h4 id="_mnist">예제_MNIST 숫자 이미지 처리 신경<a class="headerlink" href="#_mnist" title="Permanent link">&para;</a></h4>
-<p><img alt="EX1" src="../Image/ch12/EX1.PNG" /></p>
+<p><img alt="EX1" src="../Image/ch12/MNISTNeuralNetworkExample.PNG" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">keras</span>
@@ -9402,7 +9402,7 @@
 <a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="n">test_scores</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 <h5 id="sequential-api">Sequential 모델과 함수형 API<a class="headerlink" href="#sequential-api" title="Permanent link">&para;</a></h5>
-<p><img alt="SA" src="../Image/ch12/SA.PNG" /></p>
+<p><img alt="SA" src="../Image/ch12/SequentialVsFunctionalAPI.PNG" /></p>
 <ul>
 <li>함수형 API의 필요 이유</li>
 <li>통합된 레이어로의 표현을 원하기 떄문</li>
@@ -9411,7 +9411,7 @@
 </ul>
 <h2 id="2-auto-encorder">2절. 오토 인코더(Auto Encorder)<a class="headerlink" href="#2-auto-encorder" title="Permanent link">&para;</a></h2>
 <h4 id="auto-encorder">기본형 오토 인코더(Auto Encorder)<a class="headerlink" href="#auto-encorder" title="Permanent link">&para;</a></h4>
-<p><img alt="AES" src="../Image/ch12/AES.PNG" /></p>
+<p><img alt="AES" src="../Image/ch12/AutoencoderStructure.PNG" /></p>
 <ul>
 <li>입력과 동일한 출력을 만드는 것을 목적으로 하는 신경망</li>
 <li>사이즈가 줄어들었다가 커지는 마름모꼴 형태의 구조</li>
@@ -9423,7 +9423,7 @@
 <li>디코더(decoder) : 잠재 표현을 풀어 입력 복원(출력)</li>
 <li>손실 함수 : 입력 이미지와 출력 이미지의 MSE 사용</li>
 </ul>
-<p><img alt="AEP" src="../Image/ch12/AEP.PNG" /></p>
+<p><img alt="AEP" src="../Image/ch12/AutoencoderComponents.PNG" /></p>
 <h4 id="_">예제_필기체 숫자 압축 오토 인코더<a class="headerlink" href="#_" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -9469,7 +9469,7 @@
 <ul>
 <li>실행 결과</li>
 </ul>
-<p><img alt="EX2res" src="../Image/ch12/EX2res.PNG" /></p>
+<p><img alt="EX2res" src="../Image/ch12/CompressedAutoencoderResult.PNG" /></p>
 <ul>
 <li>기존(위 쪽) 데이터보다 약간 흐리멍텅 + 뭉개진 느낌</li>
 </ul>
@@ -9477,8 +9477,8 @@
 <ul>
 <li>노이즈(noise)가 있는 이미지에서 노이즈 제거 용도로 사용 가능</li>
 </ul>
-<p><img alt="NAE" src="../Image/ch12/NAE.PNG" /></p>
-<p><img alt="NAE2" src="../Image/ch12/NAE2.PNG" /></p>
+<p><img alt="NAE" src="../Image/ch12/NoiseRemovalAutoencoder.PNG" /></p>
+<p><img alt="NAE2" src="../Image/ch12/NoiseRemovalAutoencoder2.PNG" /></p>
 <h4 id="__1">예제_잡음이 들어간 필기체 숫자 복원 오토 인코더<a class="headerlink" href="#__1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -9541,7 +9541,7 @@
 <ul>
 <li>실행 결과</li>
 </ul>
-<p><img alt="EX3res" src="../Image/ch12/EX3res.PNG" /></p>
+<p><img alt="EX3res" src="../Image/ch12/NoiseRemovalAutoencoderResult.PNG" /></p>
 <h2 id="3-gangenerative-adversarial-network">3절. GAN(Generative Adversarial Network)<a class="headerlink" href="#3-gangenerative-adversarial-network" title="Permanent link">&para;</a></h2>
 <h4 id="gan-generative-adversarial-network">생성적 적대 신경망(GAN : Generative Adversarial Network)<a class="headerlink" href="#gan-generative-adversarial-network" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9554,9 +9554,9 @@
 <p>GAN 결과물</p>
 </li>
 </ul>
-<p><img alt="GAN" src="../Image/ch12/GAN.PNG" /></p>
+<p><img alt="GAN" src="../Image/ch12/GANOutput.PNG" /></p>
 <h5 id="_6">구조<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
-<p><img alt="GANS" src="../Image/ch12/GANS.PNG" /></p>
+<p><img alt="GANS" src="../Image/ch12/GANArchitecture.PNG" /></p>
 <ul>
 <li>생성자(generator)</li>
 <li>가짜 데이터를 생성을 학습</li>
@@ -9570,7 +9570,7 @@
 <li>생성자가 유사하지 않은 데이터를 생성하면 불이익</li>
 </ul>
 <h5 id="_7">목표<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
-<p><img alt="GANG" src="../Image/ch12/GANG.PNG" /></p>
+<p><img alt="GANG" src="../Image/ch12/GANObjective.PNG" /></p>
 <ul>
 <li>z ~ p(z) : 확률 분포 값</li>
 <li>sigmoid 함수를 통해 1과 0으로 확실한 분류의 목적</li>
@@ -9592,14 +9592,14 @@
 <li>그러나 생성자가 훈련되면서 진짜 이미지의 일부 구조를 복제하는 방법을 점차적 학습</li>
 </ul>
 <h5 id="gan">사진 생성 GAN<a class="headerlink" href="#gan" title="Permanent link">&para;</a></h5>
-<p><img alt="GANIG" src="../Image/ch12/GANIG.PNG" /></p>
+<p><img alt="GANIG" src="../Image/ch12/PhotoGenerationGAN.PNG" /></p>
 <h4 id="_9">훈련 과정<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <h5 id="_10">판별자<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h5>
-<p><img alt="DTS" src="../Image/ch12/DTS.PNG" /></p>
+<p><img alt="DTS" src="../Image/ch12/DiscriminatorTrainingSteps.PNG" /></p>
 <h5 id="_11">생성자<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h5>
-<p><img alt="GTS" src="../Image/ch12/GTS.PNG" /></p>
+<p><img alt="GTS" src="../Image/ch12/GeneratorTrainingSteps.PNG" /></p>
 <h4 id="_gan">예제_GAN 숫자 이미지 생성<a class="headerlink" href="#_gan" title="Permanent link">&para;</a></h4>
-<p><img alt="EXI" src="../Image/ch12/EXI.PNG" /></p>
+<p><img alt="EXI" src="../Image/ch12/GANDigitGenerationExample.PNG" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -9731,9 +9731,9 @@
 <ul>
 <li>실행 결과</li>
 </ul>
-<p><img alt="EX4res" src="../Image/ch12/EX4res.PNG" /></p>
+<p><img alt="EX4res" src="../Image/ch12/GANExecutionResult.PNG" /></p>
 <h5 id="_12">판별자<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h5>
-<p><img alt="D" src="../Image/ch12/D.PNG" /></p>
+<p><img alt="D" src="../Image/ch12/DiscriminatorNetwork.PNG" /></p>
 <h5 id="_13">생성자<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h5>
 <ul>
 <li>생성자 신경망 구축</li>
@@ -9741,7 +9741,7 @@
 <li>일반적인 컨벌루션 레이어는 입력 이미지로부터 특징을 추출하여서 활성화 맵을 출력</li>
 <li>GAN 생성자는 활성화 맵으로 이미지를 구성</li>
 </ul>
-<p><img alt="G" src="../Image/ch12/G.PNG" /></p>
+<p><img alt="G" src="../Image/ch12/GeneratorNetwork.PNG" /></p>
 
 
 
