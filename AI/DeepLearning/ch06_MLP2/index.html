@@ -9685,9 +9685,9 @@
 <li>내부적인 C/C++ 구현</li>
 <li>여러 가지 언어(+ Python)에서 접근 가능한 인터페이스 제공</li>
 </ul>
-<p><img alt="Tensor" src="../Image/ch06/Tensor.PNG" /></p>
+<p><img alt="Tensor" src="../Image/ch06/TensorflowFramework.PNG" /></p>
 <h4 id="_1">텐서플로우 구조<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p><img alt="TensorStructure" src="../Image/ch06/TensorStructure.PNG" /></p>
+<p><img alt="TensorStructure" src="../Image/ch06/TensorflowInternalStructure.PNG" /></p>
 <ul>
 <li>C++ 커널을 Python 으로 한 번 래핑</li>
 </ul>
@@ -9721,32 +9721,32 @@
 <a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">x</span><span class="o">.</span><span class="n">shape</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1"># (3, 2, 5)</span>
 </code></pre></div>
-<p><img alt="img2" src="../Image/ch06/img2.png" /></p>
+<p><img alt="img2" src="../Image/ch06/Tensor3DVisualization.png" /></p>
 <h4 id="_3">텐서의 속성<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>텐서의 차원(축의 개수) : 텐서에 존재하는 축의 개수 / 3차원 텐서에는 3개의 축이 있으며 ndim 속성</li>
 <li>형상(Shape) : 텐서의 각 축으로 얼마나 데이터가 있는지를 파이썬 튜플로 표현</li>
 <li>데이터 타입(Data Type) : 텐서 요소의 자료형</li>
 </ul>
-<p><img alt="tensorA" src="../Image/ch06/tensorA.PNG" /></p>
+<p><img alt="tensorA" src="../Image/ch06/TensorAttributes.PNG" /></p>
 <h4 id="_4">훈련 데이터 형상<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <h5 id="_5">벡터 데이터<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
 <ul>
 <li>(배치 크기, 특징 수)의 형상</li>
 </ul>
-<p><img alt="TrainData1" src="../Image/ch06/TrainData1.PNG" /></p>
+<p><img alt="TrainData1" src="../Image/ch06/VectorDataShape.PNG" /></p>
 <h5 id="_6">이미지 데이터<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
 <ul>
 <li>(배치 크기, 이미지 높이, 이미지 너비, 채널 수)의 형상</li>
 <li>4차원 넘파이 텐서에 저장</li>
 </ul>
-<p><img alt="TrainData2" src="../Image/ch06/TrainData2.PNG" /></p>
+<p><img alt="TrainData2" src="../Image/ch06/ImageDataShape.PNG" /></p>
 <h5 id="_7">시계열 데이터<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
 <ul>
 <li>(배치 크기, 타입 스텝, 특징 수)의 형상</li>
 <li>3차원 넘파이 텐서에 저장</li>
 </ul>
-<p><img alt="TrainData3" src="../Image/ch06/TrainData3.PNG" /></p>
+<p><img alt="TrainData3" src="../Image/ch06/TimeSeriesDataShape.PNG" /></p>
 <h2 id="2-keras">2절. Keras<a class="headerlink" href="#2-keras" title="Permanent link">&para;</a></h2>
 <h4 id="keras">케라스(Keras)<a class="headerlink" href="#keras" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9757,7 +9757,7 @@
 <li>CPU 및 GPU에서 원활하게 실행</li>
 </ul>
 <h4 id="_8">딥러닝 프레임워크<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p><img alt="Framework" src="../Image/ch06/Framework.PNG" /></p>
+<p><img alt="Framework" src="../Image/ch06/DLFrameworkComparison.PNG" /></p>
 <h4 id="by-keras">신경망 작성(by keras)<a class="headerlink" href="#by-keras" title="Permanent link">&para;</a></h4>
 <ul>
 <li>케라스의 핵심 데이터 구조는 모델(model)</li>
@@ -9765,16 +9765,16 @@
 <li>가장 간단한 모델 유형은 Sequential 선형 스택 모델</li>
 <li>Sequential 모델은 레이어를 선형으로 쌓을 수 있는 신경망 모델</li>
 </ul>
-<p><img alt="PerceptronByKeras" src="../Image/ch06/PerceptronByKeras.PNG" /></p>
+<p><img alt="PerceptronByKeras" src="../Image/ch06/SequentialNeuralNetworkStructure.PNG" /></p>
 <h4 id="xor-mlp">실습 : XOR를 학습하는 MLP<a class="headerlink" href="#xor-mlp" title="Permanent link">&para;</a></h4>
 <ul>
 <li>구조</li>
 </ul>
-<p><img alt="XOR" src="../Image/ch06/XOR.PNG" /></p>
+<p><img alt="XOR" src="../Image/ch06/XORNetworkArchitecture.PNG" /></p>
 <ul>
 <li>훈련 데이터</li>
 </ul>
-<p><img alt="TrainData" src="../Image/ch06/TrainData.PNG" /></p>
+<p><img alt="TrainData" src="../Image/ch06/XORTrainingData.PNG" /></p>
 <ul>
 <li>모델 생성 코드</li>
 </ul>
@@ -9814,7 +9814,7 @@
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
 </code></pre></div>
-<p><img alt="Seq" src="../Image/ch06/Seq.png" /></p>
+<p><img alt="Seq" src="../Image/ch06/SequentialModelImplementation.png" /></p>
 <h5 id="2-api">2) 함수형 API 사용<a class="headerlink" href="#2-api" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">inputs</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>                         <span class="c1"># 입력층</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">x</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>         <span class="c1"># 은닉층 1</span>
@@ -9822,7 +9822,7 @@
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">prediction</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="API" src="../Image/ch06/API.png" /></p>
+<p><img alt="API" src="../Image/ch06/FunctionalAPIImplementation.png" /></p>
 <h5 id="3-model">3) Model 클래스 상속 후 클래스 정의<a class="headerlink" href="#3-model" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">SimpleMLP</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
@@ -9842,7 +9842,7 @@
 <a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="keras-mnist">Keras를 이용한 MNIST 숫자 인식<a class="headerlink" href="#keras-mnist" title="Permanent link">&para;</a></h4>
-<p><img alt="MNIST" src="../Image/ch06/MNIST.png" /></p>
+<p><img alt="MNIST" src="../Image/ch06/MnistDatasetSample.png" /></p>
 <ul>
 <li>입력 : 784(28 * 28)</li>
 <li>출력 : 10(0 ~ 9)</li>
@@ -9870,7 +9870,7 @@
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">train_images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greys&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="img" src="../Image/ch06/img.png" /></p>
+<p><img alt="img" src="../Image/ch06/MnistHandwrittenDigitExample.png" /></p>
 <h5 id="_13">신경망 모델 구축<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
@@ -9878,7 +9878,7 @@
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>                                <span class="n">input_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="p">)))</span>
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">activation</span> <span class="o">=</span> <span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
 </code></pre></div>
-<p><img alt="MNISTmodel" src="../Image/ch06/MNISTmodel.PNG" /></p>
+<p><img alt="MNISTmodel" src="../Image/ch06/MnistNeuralNetworkArchitecture.PNG" /></p>
 <h4 id="_14">컴파일 단계<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>손실 함수(Loss Function) : 신경망의 출력과 정답 간의 오차를 계산하는 함수</li>
@@ -9899,12 +9899,12 @@
 <li>데이터를 255로 나눈 후 축소(정규화)</li>
 <li>0~1 범위의 실수로 교체하는 과정</li>
 </ul>
-<p><img alt="DP" src="../Image/ch06/DP.png" /></p>
+<p><img alt="DP" src="../Image/ch06/DataNormalizationProcess.png" /></p>
 <h5 id="_17">정답 레이블 형태 변경(원핫 인코딩)<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">train_labels</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">test_labels</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">to_categorical</span><span class="p">(</span><span class="n">test_labels</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="Incoding" src="../Image/ch06/Incoding.png" /></p>
+<p><img alt="Incoding" src="../Image/ch06/OneHotEncodingProcess.png" /></p>
 <h5 id="_18">학습<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_images</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">epochs</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">128</span><span class="p">)</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
@@ -9936,7 +9936,7 @@
 <a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;loss/acc&#39;</span><span class="p">)</span>
 <a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="Graph" src="../Image/ch06/Graph.png" /></p>
+<p><img alt="Graph" src="../Image/ch06/TrainingLossAndAccuracyGraph.png" /></p>
 <h5 id="_21">실제 이미지로 테스트<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cv</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
@@ -9950,14 +9950,14 @@
 <a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">),</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys&#39;</span><span class="p">)</span>
 <a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="Testing" src="../Image/ch06/Testing.png" /></p>
+<p><img alt="Testing" src="../Image/ch06/MnistCustomImageTesting.png" /></p>
 <h5 id="_22">테스트<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">784</span><span class="p">),</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;추정된 숫자 =&quot;</span><span class="p">,</span> <span class="n">pred</span><span class="o">.</span><span class="n">argmax</span><span class="p">())</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># 추정된 숫자 = 2</span>
 </code></pre></div>
-<p><img alt="CM" src="../Image/ch06/CM.png" /></p>
+<p><img alt="CM" src="../Image/ch06/MnistPredictionOutput.png" /></p>
 <h4 id="_23">케라스 입력 데이터<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
 <ul>
 <li>넘파이 배열</li>
@@ -10043,14 +10043,14 @@
 <li>selu(Scaled Exponential Linear Unit)</li>
 <li>softplus</li>
 </ul>
-<p><img alt="AF" src="../Image/ch06/AF.PNG" /></p>
+<p><img alt="AF" src="../Image/ch06/ActivationFunctionsComparison.PNG" /></p>
 <h4 id="_30">하이퍼 매개 변수<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
 <ul>
 <li>신경망의 학습률이나 모멘텀의 가중치, 은닉층의 개수, 유닛의 개수, 미니 배치의 크기 등</li>
 <li>학습률이나 은닉층을 몇 개로 할 것인가?</li>
 <li>은닉층의 개수나 유닛의 개수는 누가 정하는가?</li>
 </ul>
-<p><img alt="HP" src="../Image/ch06/HP.PNG" /></p>
+<p><img alt="HP" src="../Image/ch06/HyperparametersVisualization.PNG" /></p>
 <h4 id="_31">하이퍼 매개 변수 탐색 방법<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h4>
 <ul>
 <li>기본값 사용 : 라이브러리 개발자가 설정한 기본값 사용</li>
@@ -10059,7 +10059,7 @@
 <li>랜덤 검색</li>
 </ul>
 <h4 id="_32">그리드 검색<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h4>
-<p><img alt="grid" src="../Image/ch06/grid.PNG" /></p>
+<p><img alt="grid" src="../Image/ch06/GridSearchHyperparameterVisualization.PNG" /></p>
 <ul>
 <li>각 하이퍼 매개변수에 대해 값을 지정하면 이 중 가장 좋은 조합을 찾는 알고리즘</li>
 </ul>

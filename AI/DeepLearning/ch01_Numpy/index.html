@@ -9381,7 +9381,7 @@
 </blockquote>
 <h2 id="1-numpy">1절. Numpy<a class="headerlink" href="#1-numpy" title="Permanent link">&para;</a></h2>
 <h4 id="numpy">넘파이(Numpy)란?<a class="headerlink" href="#numpy" title="Permanent link">&para;</a></h4>
-<p><img alt="Numpy" src="../Image/ch01/Numpy.PNG" /></p>
+<p><img alt="Numpy" src="../Image/ch01/NumpyIntroduction.PNG" /></p>
 <ul>
 <li>넘파이 라이브러리에는 다차원 배열 데이터 구조 포함</li>
 <li>다양한 수학적 행렬 연산 수행 시 사용</li>
@@ -9420,7 +9420,7 @@
 <ul>
 <li>배열의 인덱스는 일반적으로 0부터 시작</li>
 </ul>
-<p><img alt="NumpyIndex" src="../Image/ch01/NumpyIndex.PNG" /></p>
+<p><img alt="NumpyIndex" src="../Image/ch01/NumpyIndexing.PNG" /></p>
 <h2 id="2-numpy">2절. Numpy 함수<a class="headerlink" href="#2-numpy" title="Permanent link">&para;</a></h2>
 <h4 id="_2">넘파이 배열 속성<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9428,8 +9428,8 @@
 <li>배열의 형상은 각 차원의 크기를 지정하는 정수의 튜플</li>
 <li>넘파이에서 차원은 축(axes)</li>
 </ul>
-<p><img alt="NumpyShape" src="../Image/ch01/NumpyShape.PNG" /></p>
-<p><img alt="NumpyShape2" src="../Image/ch01/NumpyShape2.PNG" /></p>
+<p><img alt="NumpyShape" src="../Image/ch01/ArrayShape.PNG" /></p>
+<p><img alt="NumpyShape2" src="../Image/ch01/ArrayShape2.PNG" /></p>
 <ul>
 <li>사용 코드</li>
 </ul>
@@ -9470,7 +9470,7 @@
 <a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="c1"># [0., 1., 0.],</span>
 <a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="c1"># [0., 0., 1.]])</span>
 </code></pre></div>
-<p><img alt="NumpyFunc" src="../Image/ch01/NumpyFunc.PNG" /></p>
+<p><img alt="NumpyFunc" src="../Image/ch01/NumpyFunctionSummary.PNG" /></p>
 <h4 id="arange">arange() 함수<a class="headerlink" href="#arange" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
@@ -9644,12 +9644,12 @@
 <a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="c1"># array([[2, 3],</span>
 <a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="c1"># [5, 6]])</span>
 </code></pre></div>
-<p><img alt="Indexing2" src="../Image/ch01/Indexing2.PNG" /></p>
-<p><img alt="Indexing3" src="../Image/ch01/Indexing3.PNG" /></p>
+<p><img alt="Indexing2" src="../Image/ch01/TwoDIndexing.PNG" /></p>
+<p><img alt="Indexing3" src="../Image/ch01/TwoDIndexingAdvanced.PNG" /></p>
 <ul>
 <li>2차원 배열의 슬라이싱</li>
 </ul>
-<p><img alt="Slice" src="../Image/ch01/Slice.PNG" /></p>
+<p><img alt="Slice" src="../Image/ch01/ArraySlicing.PNG" /></p>
 <h4 id="_4">배열끼리의 연산<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
@@ -9717,12 +9717,12 @@
 <a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 <a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="c1"># array([92. , 80.5, 78.75])</span>
 </code></pre></div>
-<p><img alt="Mean" src="../Image/ch01/Mean.PNG" /></p>
+<p><img alt="Mean" src="../Image/ch01/MeanAxis.PNG" /></p>
 <h4 id="_10">난수 생성<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>균일 분포</li>
 </ul>
-<p><img alt="Rand1" src="../Image/ch01/Rand1.PNG" /></p>
+<p><img alt="Rand1" src="../Image/ch01/UniformRandom.PNG" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
@@ -9739,7 +9739,7 @@
 <ul>
 <li>정규 분포</li>
 </ul>
-<p><img alt="Rand2" src="../Image/ch01/Rand2.PNG" /></p>
+<p><img alt="Rand2" src="../Image/ch01/NormalRandom.PNG" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -9759,9 +9759,9 @@
 <a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="c1"># array([ 0.15040638,  0.06857496, -0.01460342, -0.01868375, -0.1467971 ])</span>
 </code></pre></div>
-<p><img alt="Rand3" src="../Image/ch01/Rand3.PNG" /></p>
+<p><img alt="Rand3" src="../Image/ch01/NormalDistribution.PNG" /></p>
 <h4 id="tensorflow-tensor">tensorflow에서의 tensor<a class="headerlink" href="#tensorflow-tensor" title="Permanent link">&para;</a></h4>
-<p><img alt="tensor" src="../Image/ch01/tensor.PNG" /></p>
+<p><img alt="tensor" src="../Image/ch01/TensorConcept.PNG" /></p>
 <h2 id="3-matplotlib">3절. Matplotlib<a class="headerlink" href="#3-matplotlib" title="Permanent link">&para;</a></h2>
 <h4 id="matplotlib">Matplotlib<a class="headerlink" href="#matplotlib" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9786,7 +9786,7 @@
 <a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Temperatures of Cities&quot;</span><span class="p">)</span>
 <a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="Line" src="../Image/ch01/Line.PNG" /></p>
+<p><img alt="Line" src="../Image/ch01/LineGraph.PNG" /></p>
 <h4 id="_12">점 그래프<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
@@ -9794,7 +9794,7 @@
 <a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="p">[</span><span class="mf">15.6</span><span class="p">,</span> <span class="mf">14.2</span><span class="p">,</span> <span class="mf">16.3</span><span class="p">,</span> <span class="mf">18.2</span><span class="p">,</span> <span class="mf">17.1</span><span class="p">,</span> <span class="mf">20.2</span><span class="p">,</span> <span class="mf">22.4</span><span class="p">],</span> <span class="s2">&quot;sm&quot;</span><span class="p">)</span>
 <a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="Spot" src="../Image/ch01/Spot.PNG" /></p>
+<p><img alt="Spot" src="../Image/ch01/ScatterPlot.PNG" /></p>
 <h4 id="_13">막대 그래프<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
@@ -9803,7 +9803,7 @@
 <a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
 <a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="Stick" src="../Image/ch01/Stick.PNG" /></p>
+<p><img alt="Stick" src="../Image/ch01/BarChart.PNG" /></p>
 <h4 id="_14">히스토그램<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -9815,7 +9815,7 @@
 <a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;freq&quot;</span><span class="p">)</span>
 <a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="Hist" src="../Image/ch01/Hist.PNG" /></p>
+<p><img alt="Hist" src="../Image/ch01/Histogram.PNG" /></p>
 <h4 id="numpy-matplotlib">Numpy &amp; Matplotlib<a class="headerlink" href="#numpy-matplotlib" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -9828,9 +9828,9 @@
 <a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y1</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y2</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y3</span><span class="p">)</span>
 <a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="NM" src="../Image/ch01/NM.PNG" /></p>
+<p><img alt="NM" src="../Image/ch01/NumpyMatplotlib.PNG" /></p>
 <h4 id="lab-1">Lab 1 : 시그모이드 함수 미분값 계산<a class="headerlink" href="#lab-1" title="Permanent link">&para;</a></h4>
-<p><img alt="Sig" src="../Image/ch01/Sig.PNG" /></p>
+<p><img alt="Sig" src="../Image/ch01/SigmoidFunction.PNG" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
@@ -9848,7 +9848,7 @@
 <a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Sigmoid(X), Sigmoid&#39;(X)&quot;</span><span class="p">)</span>
 <a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="Lab1" src="../Image/ch01/Lab1.PNG" /></p>
+<p><img alt="Lab1" src="../Image/ch01/SigmoidLab.PNG" /></p>
 
 
 

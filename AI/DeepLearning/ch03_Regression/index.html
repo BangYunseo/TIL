@@ -9450,14 +9450,14 @@
 </blockquote>
 <h2 id="1">1절. 회귀<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <h4 id="_1">회귀와 분류<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p><img alt="RC" src="../Image/ch03/RC.PNG" /></p>
+<p><img alt="RC" src="../Image/ch03/RegressionVsClassification.PNG" /></p>
 <h4 id="_2">선형 회귀<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>데이터들을 2차원 공간에 찍은 후 데이터들을 가장 잘 설명하는 직선 OR 곡선을 찾는 문제</li>
 <li>입력 데이터를 가장 잘 설명하는 기울기와 절편값을 찾는 문제</li>
 <li><span class="arithmatex">\(y = f(x)\)</span>에서 출력 <span class="arithmatex">\(y\)</span>와 입력 <span class="arithmatex">\(x\)</span>가 실수일 때, 함수 <span class="arithmatex">\(f(x)\)</span> 예측</li>
 </ul>
-<p><img alt="RCT" src="../Image/ch03/RCT.PNG" /></p>
+<p><img alt="RCT" src="../Image/ch03/RegressionLineEquation.PNG" /></p>
 <ul>
 <li>직선의 방정식 : <span class="arithmatex">\(f(x) = mx + b\)</span></li>
 <li>선형 회귀 기본식 : <span class="arithmatex">\(f(x) = Wx + b\)</span></li>
@@ -9480,7 +9480,7 @@
 <li>다중 선형 회귀</li>
 <li>독립 변수가 여러 개인 경우</li>
 </ul>
-<p><img alt="MLP" src="../Image/ch03/MLP.PNG" /></p>
+<p><img alt="MLP" src="../Image/ch03/MultipleLinearRegression.PNG" /></p>
 <h4 id="_5">선형 회귀 원리<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
@@ -9491,28 +9491,28 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="RES" src="../Image/ch03/RES.PNG" /></p>
+<p><img alt="RES" src="../Image/ch03/RegressionScatterPlot.PNG" /></p>
 <ul>
 <li>최선의 것은 데이터 간의 오차가 작은 경우</li>
 </ul>
-<p><img alt="RES2" src="../Image/ch03/RES2.PNG" /></p>
+<p><img alt="RES2" src="../Image/ch03/RegressionFitComparison.PNG" /></p>
 <h4 id="loss-function">손실 함수(Loss Function)<a class="headerlink" href="#loss-function" title="Permanent link">&para;</a></h4>
 <ul>
 <li>손실 함수 또는 비용 함수(Cost Function)</li>
 <li>직선과 데이터 사이의 간격을 제곱하여 합한 값</li>
 </ul>
-<p><img alt="LF" src="../Image/ch03/LF.PNG" /></p>
+<p><img alt="LF" src="../Image/ch03/LossFunctionFormula.PNG" /></p>
 <ul>
 <li>선형 회귀 선과의 차이가 큰 경우 손실이 큼</li>
 <li>선형 회귀 선과의 차이가 작은 경우 손실이 작음</li>
 </ul>
-<p><img alt="LF2" src="../Image/ch03/LF2.PNG" /></p>
+<p><img alt="LF2" src="../Image/ch03/LossFunctionVisualization.PNG" /></p>
 <h4 id="_6">선형 회귀에서 손실 함수 최소화 방법<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>분석적인 방법</li>
 <li>독립 변수와 종속 변수가 각각 하나인 선형 회귀</li>
 </ul>
-<p><img alt="MinLR" src="../Image/ch03/MinLR.PNG" /></p>
+<p><img alt="MinLR" src="../Image/ch03/LinearRegressionMinimization.PNG" /></p>
 <h2 id="2">2절. 경사 하강법<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h4 id="gradient-descent-method">경사 하강법(Gradient descent method)<a class="headerlink" href="#gradient-descent-method" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9520,7 +9520,7 @@
 <li>손실 함수가 어떤 형태이더라도, 매개 변수가 아무리 많아도 적용 가능한 일반적인 방법</li>
 <li>점진적인 학습 가능</li>
 </ul>
-<p><img alt="GDM" src="../Image/ch03/GDM.PNG" /></p>
+<p><img alt="GDM" src="../Image/ch03/GradientDescentMethod.PNG" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
@@ -9545,13 +9545,13 @@
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span>
 <a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="GDM2" src="../Image/ch03/GDM2.PNG" /></p>
+<p><img alt="GDM2" src="../Image/ch03/GradientDescentPlot.PNG" /></p>
 <h4 id="_7">학습률<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<p><img alt="LP" src="../Image/ch03/LP.PNG" /></p>
+<p><img alt="LP" src="../Image/ch03/LearningRate.PNG" /></p>
 <h4 id="_8">지역 최솟값 문제<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p><img alt="LM" src="../Image/ch03/LM.PNG" /></p>
+<p><img alt="LM" src="../Image/ch03/LocalMinimumProblem.PNG" /></p>
 <h4 id="_9">선형 회귀에서의 경사 하강법<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<p><img alt="LRGDM" src="../Image/ch03/LRGDM.PNG" /></p>
+<p><img alt="LRGDM" src="../Image/ch03/LinearRegressionGradientDescent.PNG" /></p>
 <h4 id="_10">경사 하강법 코드 구현<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -9642,13 +9642,13 @@
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <h5 id="_16">실행 결과<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h5>
-<p><img alt="RES" src="../Image/ch03/RES.PNG" /></p>
+<p><img alt="RES" src="../Image/ch03/RegressionScatterPlot.PNG" /></p>
 <h4 id="_17">선형 회귀 실습<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li>인간의 키와 몸무게는 어느 정도 비례할 것으로 예상</li>
 <li>아래의 데이터가 있을 경우 선형 회귀를 이용하여 학습시켜 키가 165cm일 때의 예측값 계산</li>
 </ul>
-<p><img alt="RES3" src="../Image/ch03/RES3.PNG" /></p>
+<p><img alt="RES3" src="../Image/ch03/HeightWeightData.PNG" /></p>
 <h5 id="_18">정답 코드<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pylab</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">linear_model</span>
@@ -9674,7 +9674,7 @@
 <a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="RES4" src="../Image/ch03/RES4.PNG" /></p>
+<p><img alt="RES4" src="../Image/ch03/HeightWeightResult.PNG" /></p>
 <h4 id="-">선형 회귀 예제 - 당뇨병<a class="headerlink" href="#-" title="Permanent link">&para;</a></h4>
 <ul>
 <li>sklearn 라이브러리에 기본적으로 포함된 당뇨병 환자들의 데이터 사용</li>
@@ -9707,7 +9707,7 @@
 <a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span>  <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="RES6" src="../Image/ch03/RES6.PNG" /></p>
+<p><img alt="RES6" src="../Image/ch03/DiabetesRegression.PNG" /></p>
 <h2 id="3">3절. 과잉 적합과 과소 적합<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h4 id="overfitting">과잉 적합(overfitting)<a class="headerlink" href="#overfitting" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9720,7 +9720,7 @@
 <li>더 나은 모델 탐색 필요</li>
 </ul>
 <h4 id="_19">과잉 적합과 과소 적합 비교<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
-<p><img alt="OU" src="../Image/ch03/OU.PNG" /></p>
+<p><img alt="OU" src="../Image/ch03/OverfittingUnderfittingComparison.PNG" /></p>
 <ul>
 <li>1차 : 과소 적합</li>
 <li>모델의 용량이 작아 오차가 클 수밖에 없는 현상</li>
@@ -9738,11 +9738,11 @@
 <li>용량이 크기 때문에 학습 과정에서 잡음까지 수용(과잉 적합 현상)</li>
 <li>적절한 용량의 모델을 선택하는 모델 선택 작업 필요</li>
 </ul>
-<p><img alt="set12" src="../Image/ch03/set12.PNG" /></p>
+<p><img alt="set12" src="../Image/ch03/PolynomialFitDegrees.PNG" /></p>
 <ul>
 <li>그래프에서 보는 과잉 적합과 과소 적합의 비교</li>
 </ul>
-<p><img alt="COU" src="../Image/ch03/COU.PNG" /></p>
+<p><img alt="COU" src="../Image/ch03/CurveOverfittingUnderfitting.PNG" /></p>
 <h2 id="4">4절. 로지스틱 회귀<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h4 id="vs-logistic-regression">선형 회귀 vs 로지스틱 회귀(Logistic Regression)<a class="headerlink" href="#vs-logistic-regression" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9773,16 +9773,16 @@
 </ul>
 </li>
 </ul>
-<p><img alt="Logistic" src="../Image/ch03/Logistic.PNG" /></p>
+<p><img alt="Logistic" src="../Image/ch03/LogisticRegressionScatterPlot.PNG" /></p>
 <ul>
 <li>직선의 중간쯤을 넘어가면 불합격</li>
 <li>직선의 중간쯤을 넘어가면 합격</li>
 </ul>
-<p><img alt="Logistic2" src="../Image/ch03/Logistic2.PNG" /></p>
+<p><img alt="Logistic2" src="../Image/ch03/LogisticRegressionSlope.PNG" /></p>
 <ul>
 <li>데이터(<span class="arithmatex">\(y\)</span>)와 직선(<span class="arithmatex">\(^y\)</span>)간의 평균을 최소화하기 위한 직선의 기울기 움직임</li>
 </ul>
-<p><img alt="Logistic3" src="../Image/ch03/Logistic3.PNG" /></p>
+<p><img alt="Logistic3" src="../Image/ch03/LogisticRegressionThreshold.PNG" /></p>
 <ul>
 <li>기울기 <span class="arithmatex">\(y = wx + b\)</span> 에서 <span class="arithmatex">\(w\)</span>의 변화에 따른 0.5 의 기준 변화</li>
 <li>함숫값이 0.5를 지나는 구간의 변경<ul>
@@ -9792,9 +9792,9 @@
 <li>원래 정답이었으나 기준 선이 오른쪽으로 움직여서 오답</li>
 </ul>
 <h4 id="_20">선형 회귀와 로지스틱 회귀의 비교<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
-<p><img alt="LL" src="../Image/ch03/LL.PNG" /></p>
+<p><img alt="LL" src="../Image/ch03/LinearVsLogisticRegression.PNG" /></p>
 <h4 id="sigmoid">시그모이드 함수(Sigmoid)<a class="headerlink" href="#sigmoid" title="Permanent link">&para;</a></h4>
-<p><img alt="Sig" src="../Image/ch03/Sig.PNG" /></p>
+<p><img alt="Sig" src="../Image/ch03/SigmoidFunction.PNG" /></p>
 <ul>
 <li>Logistic Regression에서는 Linear Regression의 결과값을 인풋값으로 사용</li>
 <li>시그모이드 함수는 곧 베이즈 정리</li>
@@ -9812,7 +9812,7 @@
 <li>Cost Function 초기화</li>
 <li>Linear Regression은 MSE로 최솟값 가능</li>
 </ul>
-<p><img alt="Sig2" src="../Image/ch03/Sig2.PNG" /></p>
+<p><img alt="Sig2" src="../Image/ch03/SigmoidCostFunction.PNG" /></p>
 <ul>
 <li>하지만 Logistics Regression은 불가</li>
 <li>Log Loss(Cross Entropy 사용)</li>
@@ -9821,8 +9821,8 @@
 <ul>
 <li>로지스틱 모델의 예측 분포는 <span class="arithmatex">\(sigmoid(wx + b)\)</span></li>
 </ul>
-<p><img alt="CE" src="../Image/ch03/CE.PNG" /></p>
-<p><img alt="CEL" src="../Image/ch03/CEL.PNG" /></p>
+<p><img alt="CE" src="../Image/ch03/CrossEntropyLoss.PNG" /></p>
+<p><img alt="CEL" src="../Image/ch03/CrossEntropyLossFormula.PNG" /></p>
 <h4 id="_21">로지스틱 회귀<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li>

@@ -9745,7 +9745,7 @@
 </blockquote>
 <h2 id="1">1절. 머신러닝<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <h4 id="_1">전통적인 프로그래밍과 머신러닝<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p><img alt="CM" src="../Image/ch02/CM.PNG" /></p>
+<p><img alt="CM" src="../Image/ch02/ConditionalProgrammingVsML.PNG" /></p>
 <table>
 <thead>
 <tr>
@@ -9768,15 +9768,15 @@
 <ul>
 <li>입력을 받아 출력하는 함수 <span class="arithmatex">\(y = f(x)\)</span>의 학습(함수 근사)</li>
 </ul>
-<p><img alt="MF" src="../Image/ch02/MF.PNG" /></p>
+<p><img alt="MF" src="../Image/ch02/MachineLearningFunction.PNG" /></p>
 <ul>
 <li>종류</li>
 </ul>
-<p><img alt="MT" src="../Image/ch02/MT.PNG" /></p>
-<p><img alt="MT3" src="../Image/ch02/MT3.PNG" /></p>
+<p><img alt="MT" src="../Image/ch02/MachineLearningTypes.PNG" /></p>
+<p><img alt="MT3" src="../Image/ch02/MachineLearningTypes3.PNG" /></p>
 <h2 id="2">2절. 지도 학습과 비지도 학습<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h4 id="_3">지도 학습의 종류<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p><img alt="SLT" src="../Image/ch02/SLT.PNG" /></p>
+<p><img alt="SLT" src="../Image/ch02/SupervisedLearningTypes.PNG" /></p>
 <h4 id="regression">회귀(Regression)<a class="headerlink" href="#regression" title="Permanent link">&para;</a></h4>
 <ul>
 <li>주어진 입력-출력 쌍을 학습</li>
@@ -9790,7 +9790,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="Regression" src="../Image/ch02/Regression.PNG" /></p>
+<p><img alt="Regression" src="../Image/ch02/RegressionExample.PNG" /></p>
 <h4 id="classification">분류(Classification)<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h4>
 <ul>
 <li>앞의 회귀에서 나왔던 공식 <span class="arithmatex">\(y = f(x)\)</span>에서 출력 <span class="arithmatex">\(y\)</span>가 이산적(discrete)인 경우 분류 문제(또는 인식 문제)</li>
@@ -9798,11 +9798,11 @@
 <li>ex)</li>
 <li>사진을 보고 "강아지"클래스나 "고양이"클래스로 분류하는 것</li>
 </ul>
-<p><img alt="Classification" src="../Image/ch02/Classification.PNG" /></p>
+<p><img alt="Classification" src="../Image/ch02/ClassificationExample.PNG" /></p>
 <ul>
 <li>크기, 색상, 모양의 정보만 가지고 과일 이름으로 분류하는 예시</li>
 </ul>
-<p><img alt="C2" src="../Image/ch02/C2.PNG" /></p>
+<p><img alt="C2" src="../Image/ch02/FruitClassificationExample.PNG" /></p>
 <ul>
 <li>분류를 수행하기 위한 일반적인 알고리즘</li>
 <li>신경망</li>
@@ -9816,10 +9816,10 @@
 <li><span class="arithmatex">\(y = f(x)\)</span>에서 레이블 <span class="arithmatex">\(y\)</span>가 주어지지 않음</li>
 <li>데이터들의 상관도를 분석하여 유사한 데이터 결집</li>
 </ul>
-<p><img alt="UL" src="../Image/ch02/UL.PNG" /></p>
+<p><img alt="UL" src="../Image/ch02/UnsupervisedLearning.PNG" /></p>
 <h2 id="3">3절. 모델 및 평가<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h4 id="_5">머신 러닝의 과정<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p><img alt="MP" src="../Image/ch02/MP.PNG" /></p>
+<p><img alt="MP" src="../Image/ch02/MachineLearningProcess.PNG" /></p>
 <h4 id="_6">모델 평가<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>머신 러닝의 모델</li>
@@ -9827,46 +9827,46 @@
 <li>시스템이 "모델(model)"</li>
 <li>모델은 "학습(train)"의 과정을 통해 생성</li>
 </ul>
-<p><img alt="ModelTest" src="../Image/ch02/ModelTest.PNG" /></p>
+<p><img alt="ModelTest" src="../Image/ch02/BeverageClassificationModel.PNG" /></p>
 <ul>
 <li>머신 러닝의 특징</li>
 <li>색상(파장)과 산성도(실수)의 두 가지를 선택해야 하는 경우</li>
 <li>두 가지 요소만으로 구별할 수 있기를 희망하는 "특징(feature)"</li>
 </ul>
-<p><img alt="Feature" src="../Image/ch02/Feature.PNG" /></p>
+<p><img alt="Feature" src="../Image/ch02/FeatureSelection.PNG" /></p>
 <ul>
 <li>데이터 수집을 통한 특징 비교</li>
 </ul>
-<p><img alt="Feature2" src="../Image/ch02/Feature2.PNG" /></p>
+<p><img alt="Feature2" src="../Image/ch02/FeatureComparison.PNG" /></p>
 <h4 id="_7">훈련 데이터, 테스트 데이터<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>머신 러닝에는 항상 훈련 데이터와 테스트 데이터 존재</li>
 </ul>
-<p><img alt="Data" src="../Image/ch02/Data.PNG" /></p>
+<p><img alt="Data" src="../Image/ch02/TrainTestDataSplit.PNG" /></p>
 <ul>
 <li>훈련 데이터 구조</li>
 </ul>
-<p><img alt="TD" src="../Image/ch02/TD.PNG" /></p>
+<p><img alt="TD" src="../Image/ch02/TrainingDataStructure.PNG" /></p>
 <ul>
 <li>훈련 단계와 테스트 단계 존재</li>
 </ul>
 <h5 id="_8">훈련 단계<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h5>
-<p><img alt="Training" src="../Image/ch02/Training.PNG" /></p>
+<p><img alt="Training" src="../Image/ch02/TrainingPhase.PNG" /></p>
 <h5 id="_9">테스트 단계<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h5>
-<p><img alt="Test" src="../Image/ch02/Test.PNG" /></p>
+<p><img alt="Test" src="../Image/ch02/TestingPhase.PNG" /></p>
 <h4 id="_10">모델 선택<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>머신러닝의 모델 선택</li>
 <li>특징(Feature)의 개수에 따라 여러 타입 모델 존재</li>
 </ul>
 <h4 id="_11">선형 모델<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<p><img alt="LinearModel" src="../Image/ch02/LinearModel.PNG" /></p>
+<p><img alt="LinearModel" src="../Image/ch02/LinearModelTypes.PNG" /></p>
 <h4 id="_12">학습<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>가중치<span class="arithmatex">\((W)\)</span>와 <span class="arithmatex">\(y\)</span>절편<span class="arithmatex">\((b)\)</span>을 임의의 값으로 초기화한 후 출력 예측</li>
 <li>출력값의 정확한 값과 비교 후 더 정확한 예측을 갖도록 <span class="arithmatex">\(W\)</span> 및 <span class="arithmatex">\(b\)</span>의 값 조정</li>
 </ul>
-<p><img alt="Learning" src="../Image/ch02/Learning.PNG" /></p>
+<p><img alt="Learning" src="../Image/ch02/WeightBiasAdjustment.PNG" /></p>
 <h4 id="_13">평가<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>학습이 완료되면 모델을 평가 후 모델의 정확도 판단</li>
@@ -9880,20 +9880,20 @@
 <ul>
 <li>교차 검증 과정</li>
 </ul>
-<p><img alt="CV" src="../Image/ch02/CV.PNG" /></p>
+<p><img alt="CV" src="../Image/ch02/CrossValidationProcess.PNG" /></p>
 <h4 id="_14">사전 데이터 셋 분류<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
-<p><img alt="Legend" src="../Image/ch02/Legend.PNG" /></p>
+<p><img alt="Legend" src="../Image/ch02/CrossValidationLegend.PNG" /></p>
 <h4 id="holdout-method">홀드아웃 방법(Holdout Method)<a class="headerlink" href="#holdout-method" title="Permanent link">&para;</a></h4>
-<p><img alt="HM" src="../Image/ch02/HM.PNG" /></p>
+<p><img alt="HM" src="../Image/ch02/HoldoutMethod.PNG" /></p>
 <h4 id="k-k-fold-cross-validation">K-겹 교차 검증(K-Fold Cross Validation)<a class="headerlink" href="#k-k-fold-cross-validation" title="Permanent link">&para;</a></h4>
-<p><img alt="KCV" src="../Image/ch02/KCV.PNG" /></p>
+<p><img alt="KCV" src="../Image/ch02/KFoldCrossValidation.PNG" /></p>
 <h4 id="-p-leave-p-out-cross-validation">리브-P-아웃 교차 검증(Leave-P-Out Cross Validation)<a class="headerlink" href="#-p-leave-p-out-cross-validation" title="Permanent link">&para;</a></h4>
 <ul>
 <li>전체 데이터(서로 다른 데이터 샘플들) 중 P개의 샘플을 선택하여 그것을 모델 검증에 사용하는 방법</li>
 </ul>
-<p><img alt="LCV" src="../Image/ch02/LCV.PNG" /></p>
+<p><img alt="LCV" src="../Image/ch02/LeaveOneOutCrossValidation.PNG" /></p>
 <h4 id="-leave-one-out-cross-validation">리브-원-아웃 교차 검증(Leave-One-Out Cross Validation)<a class="headerlink" href="#-leave-one-out-cross-validation" title="Permanent link">&para;</a></h4>
-<p><img alt="OCV" src="../Image/ch02/OCV.PNG" /></p>
+<p><img alt="OCV" src="../Image/ch02/LeaveOneOutCrossValidation2.PNG" /></p>
 <h2 id="5-iris">5절. 데이터 세트(iris)<a class="headerlink" href="#5-iris" title="Permanent link">&para;</a></h2>
 <h4 id="_15">예측<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9902,15 +9902,15 @@
 <li>색상이 600nm, 산성도가 1.5인 음료가 무엇인지 머신러닝 시스템에 질문</li>
 <li>훈련된 결과를 바탕으로 색상 및 산성도를 고려하여 음료를 예측</li>
 </ul>
-<p><img alt="Prediction" src="../Image/ch02/Prediction.PNG" /></p>
+<p><img alt="Prediction" src="../Image/ch02/BeveragePredictionExample.PNG" /></p>
 <h4 id="_16">기본적인 데이터 세트<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
-<p><img alt="DS" src="../Image/ch02/DS.PNG" /></p>
+<p><img alt="DS" src="../Image/ch02/BaselineDatasets.PNG" /></p>
 <h4 id="_17">붓꽃 데이터 세트<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
-<p><img alt="iris" src="../Image/ch02/iris.PNG" /></p>
+<p><img alt="iris" src="../Image/ch02/IrisDataset.PNG" /></p>
 <ul>
 <li>특징과 레이블의 구조</li>
 </ul>
-<p><img alt="IS" src="../Image/ch02/IS.PNG" /></p>
+<p><img alt="IS" src="../Image/ch02/IrisFeatureStructure.PNG" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -9959,13 +9959,13 @@
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 </code></pre></div>
-<p><img alt="Res" src="../Image/ch02/Res.PNG" /></p>
+<p><img alt="Res" src="../Image/ch02/IrisTrainingResult.PNG" /></p>
 <h4 id="_18">모델 선택<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li>K-Nearest Neighbor(KNN) 알고리즘은 모든 머신러닝 알고리즘 중에서도 가장 간단하고 이해하기 쉬운 분류 알고리즘</li>
 <li>KNN은 학습 시에 교사가 존재하는 "지도 학습"</li>
 </ul>
-<p><img alt="KNN" src="../Image/ch02/KNN.PNG" /></p>
+<p><img alt="KNN" src="../Image/ch02/KNearestNeighborAlgorithm.PNG" /></p>
 <ul>
 <li>학습</li>
 </ul>
@@ -10037,7 +10037,7 @@
 <a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 <a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="Model" src="../Image/ch02/Model.PNG" /></p>
+<p><img alt="Model" src="../Image/ch02/PerceptronBoundaryDecision.PNG" /></p>
 <h2 id="6-mnist">6절. 데이터 세트(MNIST)<a class="headerlink" href="#6-mnist" title="Permanent link">&para;</a></h2>
 <h4 id="_19">필기체 숫자 분류<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
 <ul>
@@ -10056,14 +10056,14 @@
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">digits</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span><span class="p">()</span>
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray_r</span><span class="p">,</span> <span class="n">interpolation</span> <span class="o">=</span> <span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="MNISTex" src="../Image/ch02/MNISTex.PNG" /></p>
+<p><img alt="MNISTex" src="../Image/ch02/MnistDigitExample.PNG" /></p>
 <ul>
 <li>이미지 평탄화</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">n_samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="p">)</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">data</span> <span class="o">=</span> <span class="n">digits</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n_samples</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 </code></pre></div>
-<p><img alt="Image2" src="../Image/ch02/Image2.PNG" /></p>
+<p><img alt="Image2" src="../Image/ch02/MnistImageFlattening.PNG" /></p>
 <ul>
 <li>훈련 데이터와 테스트 데이터</li>
 </ul>
@@ -10077,7 +10077,7 @@
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="knnfit" src="../Image/ch02/knnfit.PNG" /></p>
+<p><img alt="knnfit" src="../Image/ch02/KNNFitting.PNG" /></p>
 <ul>
 <li>예측</li>
 </ul>
@@ -10099,17 +10099,17 @@
 <a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
 <a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="c1"># [3]</span>
 </code></pre></div>
-<p><img alt="pred3" src="../Image/ch02/pred3.PNG" /></p>
+<p><img alt="pred3" src="../Image/ch02/DigitPrediction3.PNG" /></p>
 <h2 id="7">7절. 모델 평가 방법과 정확도<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <h4 id="_20">머신러닝 알고리즘의 성능 평가<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li>정확도</li>
 </ul>
-<p><img alt="AC" src="../Image/ch02/AC.PNG" /></p>
+<p><img alt="AC" src="../Image/ch02/AccuracyMetric.PNG" /></p>
 <ul>
 <li>혼동행렬</li>
 </ul>
-<p><img alt="ConfusedM" src="../Image/ch02/ConfusedM.PNG" /></p>
+<p><img alt="ConfusedM" src="../Image/ch02/ConfusionMatrixStructure.PNG" /></p>
 <h4 id="accuracy">정확도(Accuracy)<a class="headerlink" href="#accuracy" title="Permanent link">&para;</a></h4>
 <ul>
 <li>불균형(Imbalanced)한 데이터에서는 Accuracy를 사용할 경우 잘못된 성능 예측 결과가 생길 가능성 존재</li>
@@ -10152,8 +10152,8 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="SetSpe" src="../Image/ch02/SetSpe.PNG" /></p>
-<p><img alt="ConfusionMatrix" src="../Image/ch02/ConfusionMatrix.PNG" /></p>
+<p><img alt="SetSpe" src="../Image/ch02/SensitivitySpecificity.PNG" /></p>
+<p><img alt="ConfusionMatrix" src="../Image/ch02/ConfusionMatrixFormula.PNG" /></p>
 <ul>
 <li>Accuracy(정확성) = (TP + TN) / (TP + FN + FP + TN)</li>
 <li>Precision(정밀도) = TP / TP + FP</li>
@@ -10164,9 +10164,9 @@
 <ul>
 <li><span class="arithmatex">\(\frac{2 * Precision * Recall}{Precision + Recall}\)</span></li>
 </ul>
-<p><img alt="F1" src="../Image/ch02/F1.PNG" /></p>
+<p><img alt="F1" src="../Image/ch02/F1ScoreFormula.PNG" /></p>
 <h5 id="roc-curve">ROC Curve<a class="headerlink" href="#roc-curve" title="Permanent link">&para;</a></h5>
-<p><img alt="ROC" src="../Image/ch02/ROC.PNG" /></p>
+<p><img alt="ROC" src="../Image/ch02/ROCCurveAnalysis.PNG" /></p>
 <h4 id="1_1">실습(1)<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">confusion_matrix</span>
@@ -10220,7 +10220,7 @@
 <a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;figure.figsize&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">)})</span>
 <a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">cmatrix</span><span class="p">,</span> <span class="n">annot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="CMP" src="../Image/ch02/CMP.PNG" /></p>
+<p><img alt="CMP" src="../Image/ch02/ConfusionMatrixHeatmap.PNG" /></p>
 <h4 id="_21">혼동 행렬 출력<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">metrics</span>
@@ -10241,7 +10241,7 @@
 <a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="n">disp</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">knn</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 <a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p><img alt="CMPring" src="../Image/ch02/CMPring.PNG" /></p>
+<p><img alt="CMPring" src="../Image/ch02/ConfusionMatrixOutput.PNG" /></p>
 <h4 id="_22">분류 리포트<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
 <ul>
 <li>사이킷런에서 사용</li>
@@ -10251,10 +10251,10 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p><img alt="RP" src="../Image/ch02/RP.PNG" /></p>
+<p><img alt="RP" src="../Image/ch02/ClassificationReport.PNG" /></p>
 <h2 id="8">8절. 머신러닝 응용 및 실용<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <h4 id="_23">머신러닝 응용 분야<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
-<p><img alt="usingML" src="../Image/ch02/usingML.PNG" /></p>
+<p><img alt="usingML" src="../Image/ch02/MachineLearningApplications.PNG" /></p>
 <ul>
 <li>복잡한 데이터들이 존재하는 분야</li>
 <li>데이터에 기반하여 결정을 내려야 하는 분야</li>
