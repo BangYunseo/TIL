@@ -37,21 +37,21 @@
 
 - 친분 관계 그래프
 
-<img src = "./Image/ch11/ch11-01-BG.PNG" height="auto" />
+<img src = "./Image/ch11/FriendshipGraph.PNG" height="auto" />
 
 - 친분 관계 그래프 + 가중치
 
-<img src = "./Image/ch11/ch11-02-BGW.PNG" height="auto" />
+<img src = "./Image/ch11/WeightedGraph.PNG" height="auto" />
 
 - 친분 관계 그래프 + 방향
   - 유향 그래프(Directed Graph)
 
-<img src = "./Image/ch11/ch11-03-BGD.PNG" height="auto" />
+<img src = "./Image/ch11/DirectedGraph.PNG" height="auto" />
 
 - 친분 관계 그래프 + 가중치 + 방향
   - 유향 그래프(Directed Graph)
 
-<img src = "./Image/ch11/ch11-04-BGWD.PNG" height="auto" />
+<img src = "./Image/ch11/WeightedDirectedGraph.PNG" height="auto" />
 
 ### 인접 리스트(Adjacent List)
 
@@ -64,11 +64,11 @@
 
 - 친분 관계 그래프
 
-<img src = "./Image/ch11/ch11-05-BG2.PNG" height="auto" />
+<img src = "./Image/ch11/AdjacencyListGraph.PNG" height="auto" />
 
 - 친분 관계 그래프 + 가중치
 
-<img src = "./Image/ch11/ch11-06-BGW2.PNG" height="auto" />
+<img src = "./Image/ch11/AdjacencyListWeightedGraph.PNG" height="auto" />
 
 ### 너비 우선 탐색과 깊이 우선 탐색
 
@@ -85,7 +85,7 @@
 
 ### 너비 우선 탐색(BFS : Breadth First Search)
 
-<img src = "./Image/ch11/ch11-07-BFS.PNG" height="auto" />
+<img src = "./Image/ch11/BFS.PNG" height="auto" />
 
 - Breadth = broad / wide
 - 자료구조
@@ -95,20 +95,20 @@
 
 ### 너비 우선 탐색 과정
 
-<img src = "./Image/ch11/ch11-08-BFSProcess.PNG" height="auto" />
+<img src = "./Image/ch11/BFSProcess.PNG" height="auto" />
 
 - 값 출력 순서
   - 1, 2, 3, 4, 5, 6, 7, 8
 
 ### 너비 우선 탐색 알고리즘
 
-<img src = "./Image/ch11/ch11-09-BFSalgorithm.PNG" height="auto" />
+<img src = "./Image/ch11/BFSAlgorithm.PNG" height="auto" />
 
 ## 2절. 깊이 우선 탐색
 
 ### 깊이 우선 탐색(DFS : Depth First Search)
 
-<img src = "./Image/ch11/ch11-10-DFS.PNG" height="auto" />
+<img src = "./Image/ch11/DFS.PNG" height="auto" />
 
 - Depth = vertical before horizontal
 - 자료구조
@@ -118,9 +118,9 @@
 
 ### 깊이 우선 탐색 과정
 
-<img src = "./Image/ch11/ch11-11-DFSProcess.PNG" height="auto" />
+<img src = "./Image/ch11/DFSProcess.PNG" height="auto" />
 
-<img src = "./Image/ch11/ch11-12-DFSProcess2.PNG" height="auto" />
+<img src = "./Image/ch11/DFSProcess2.PNG" height="auto" />
 
 - 값 출력 순서
   - 5, 4, 3, 2, 7, 6, 8, 1
@@ -129,7 +129,7 @@
 
 ### 최소 신장 트리(MST : Minimum Spanning Tree)
 
-<img src = "./Image/ch11/ch11-13-MST.PNG" height="auto" />
+<img src = "./Image/ch11/MST.PNG" height="auto" />
 
 - 간선 가중치의 합이 가장 작은 트리
 
@@ -145,7 +145,7 @@
 
 ### Prim's Algorithm
 
-<img src = "./Image/ch11/ch11-14-Prim.PNG" height="auto" />
+<img src = "./Image/ch11/Prim.PNG" height="auto" />
 
 - 그리디 알고리즘의 일종
   - 최소 신장 트리(MST) 문제에서는 항상 최적해 보장
@@ -155,11 +155,11 @@
 
 ### Prim 알고리즘 구조
 
-<img src = "./Image/ch11/ch11-15-PrimAlgorithm.PNG" height="auto" />
+<img src = "./Image/ch11/PrimAlgorithm.PNG" height="auto" />
 
 ### Kruskal's Algorithm
 
-<img src = "./Image/ch11/ch11-16-Kruskal.PNG" height="auto" />
+<img src = "./Image/ch11/Kruskal.PNG" height="auto" />
 
 - 그리디 알고리즘의 일종
   - 최소 신장 트리(MST) 문제에서는 항상 최적해 보장
@@ -168,15 +168,15 @@
 
 ### Kruskal 알고리즘 구조
 
-<img src = "./Image/ch11/ch11-17-KruskalAlgorithm.PNG" height="auto" />
+<img src = "./Image/ch11/KruskalAlgorithm.PNG" height="auto" />
 
 ### Kruskal 알고리즘 예시
 
-<img src = "./Image/ch11/ch11-18-Kruskalex.PNG" height="auto" />
+<img src = "./Image/ch11/KruskalExample.PNG" height="auto" />
 
 - 정답
 
-<img src = "./Image/ch11/ch11-19-KruskalAnswer.PNG" height="auto" />
+<img src = "./Image/ch11/KruskalAnswer.PNG" height="auto" />
 
 ## 4절. 최단 경로
 
@@ -207,7 +207,7 @@
 
 ### 다익스트라 알고리즘(Dijkstra's Algorithm)
 
-<img src = "./Image/ch11/ch11-20-DAex.PNG" height="auto" />
+<img src = "./Image/ch11/DijkstraExample.PNG" height="auto" />
 
 - 모든 간선 가중치는 양수
 - 수행 시간
@@ -216,17 +216,17 @@
 
 ### 다익스트라 알고리즘 구조
 
-<img src = "./Image/ch11/ch11-21-DAS.PNG" height="auto" />
+<img src = "./Image/ch11/DijkstraAlgorithm.PNG" height="auto" />
 
 ### 다익스트라 알고리즘 과정
 
-<img src = "./Image/ch11/ch11-22-DAP1.PNG" height="auto" />
+<img src = "./Image/ch11/DijkstraProcess1.PNG" height="auto" />
 
-<img src = "./Image/ch11/ch11-23-DAP2.PNG" height="auto" />
+<img src = "./Image/ch11/DijkstraProcess2.PNG" height="auto" />
 
 ### 잘못된 다익스트라 알고리즘 : 음수 가중치
 
-<img src = "./Image/ch11/ch11-24-BadDA.PNG" height="auto" />
+<img src = "./Image/ch11/DijkstraNegativeWeight.PNG" height="auto" />
 
 ### 벨만포드 알고리즘(Bellman Ford's Algorithm)
 
@@ -236,21 +236,21 @@
   - $θ(|E||V|)$
 - 재귀적 관계
 
-<img src = "./Image/ch11/ch11-25-SelfBA.PNG" height="auto" />
+<img src = "./Image/ch11/BellmanFordRecurrence.PNG" height="auto" />
 
 ### 벨만포드 알고리즘 구조
 
-<img src = "./Image/ch11/ch11-26-BAS.PNG" height="auto" />
+<img src = "./Image/ch11/BellmanFordAlgorithm.PNG" height="auto" />
 
 ### 벨만포드 알고리즘 과정
 
-<img src = "./Image/ch11/ch11-27-BAP1.PNG" height="auto" />
+<img src = "./Image/ch11/BellmanFordProcess1.PNG" height="auto" />
 
-<img src = "./Image/ch11/ch11-28-BAP2.PNG" height="auto" />
+<img src = "./Image/ch11/BellmanFordProcess2.PNG" height="auto" />
 
 ### 플로이드-워샬 알고리즘(Floyd-Warshall Algorithm)
 
-<img src = "./Image/ch11/ch11-29-FWA.PNG" height="auto" />
+<img src = "./Image/ch11/FloydWarshall.PNG" height="auto" />
 
 - 모든 정점 간 상호 최단거리 계산
 - 음의 가중치 허용
@@ -260,12 +260,12 @@
 
 ### 플로이드-워샬 알고리즘 구조
 
-<img src = "./Image/ch11/ch11-30-FWAS.PNG" height="auto" />
+<img src = "./Image/ch11/FloydWarshallAlgorithm.PNG" height="auto" />
 
 ### 플로이드-워샬 알고리즘 과정
 
-<img src = "./Image/ch11/ch11-31-FWAP1.PNG" height="auto" />
+<img src = "./Image/ch11/FloydWarshallProcess1.PNG" height="auto" />
 
-<img src = "./Image/ch11/ch11-32-FWA2.PNG" height="auto" />
+<img src = "./Image/ch11/FloydWarshallProcess2.PNG" height="auto" />
 
-<img src = "./Image/ch11/ch11-33-FWA3.PNG" height="auto" />
+<img src = "./Image/ch11/FloydWarshallProcess3.PNG" height="auto" />
