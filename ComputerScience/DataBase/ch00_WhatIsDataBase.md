@@ -13,7 +13,7 @@
 - 여러 사람이 공유하여 사용하는 데이터의 집합
 - 데이터를 체계화하여 작성된 목록으로 응용 시스템들을 통합ㆍ관리ㆍ운영
 
-![ch00-01-DB](./Image/ch00/ch00-01-DB.PNG)
+![ch00-01-DB](./Image/ch00/DatabaseDefinition.PNG)
 
 ## 2절. 데이터베이스 관련 직업
 
@@ -21,7 +21,7 @@
 
 - 요구 기술
 
-![ch00-02-RS](./Image/ch00/ch00-02-RS.PNG)
+![ch00-02-RS](./Image/ch00/SkillsComparison.PNG)
 
 #### Responsibilities, Skills, Tools
 

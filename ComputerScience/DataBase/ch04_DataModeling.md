@@ -12,7 +12,7 @@
 
 ### 데이터 모델링(Data Modeling)
 
-<img src="./Image/ch04/ch04-01-DataModeling.PNG" height="auto" />
+<img src="./Image/ch04/ModelingProcess.PNG" height="auto" />
 
 - 현실 세계에 존재하는 데이터를 컴퓨터 세계 데이터베이스로의 변환 과정
 - 데이터베이스 설계 핵심 과정
@@ -24,11 +24,11 @@
 | 개념적<br>데이터 모델링<br>(Conceptual<br>Modeling) | 현실 세계 중요 데이터를 추출하여 개념 세계로 옮기는 작업      |
 |  논리적<br>데이터 모델링<br>(Logical<br>Modeling)   | 개념 세계 데이터를 데이터베이스에 저장하는 구조로의 표현 작업 |
 
-<img src="./Image/ch04/ch04-02-2DataModeling.PNG" height="auto" />
+<img src="./Image/ch04/TwoStageModeling.PNG" height="auto" />
 
 ### 데이터 모델링 개념
 
-<img src="./Image/ch04/ch04-03-DM.PNG" height="auto" />
+<img src="./Image/ch04/ModelingConcept.PNG" height="auto" />
 
 ## 2절. 데이터 모델
 
@@ -41,7 +41,7 @@
 | 개념적<br>데이터 모델 | 사람이 이해하도록 현실 세계를 개념적 모델링하여 데이터베이스 개념적 구조로 표현하는 도구 | 개체-관계 모델   |
 | 논리적<br>데이터 모델 | 개념적 구조를 논리적 모델링하여 데이터베이스의 논리적 구조로 표현하는 도구               | 관계 데이터 모델 |
 
-<img src="./Image/ch04/ch04-04-DMconsist.PNG" height="auto" />
+<img src="./Image/ch04/ModelComposition.PNG" height="auto" />
 
 ## 3절. 개체-관계 모델
 
@@ -74,11 +74,11 @@
 - E-R 다이어그램 : 사각형 표현
   - 사각형 안에 이름 표기
 
-<img src="./Image/ch04/ch04-05-Entity.PNG" height="auto" />
+<img src="./Image/ch04/EntityRepresentation.PNG" height="auto" />
 
 ### 개체 세부 사항
 
-<img src="./Image/ch04/ch04-07-DetailOfEntity.PNG" height="auto" />
+<img src="./Image/ch04/EntityDetails.PNG" height="auto" />
 
 #### 개체 타입(Entity Type)
 
@@ -97,7 +97,7 @@
 
 ### 속성(Attribute)
 
-<img src="./Image/ch04/ch04-06-Attribute.PNG" height="auto" />
+<img src="./Image/ch04/AttributeRepresentation.PNG" height="auto" />
 
 - 개체 · 관계가 가지는 고유 특성
 - 의미 있는 데이터의 가장 작은 논리적 단위
@@ -107,7 +107,7 @@
 
 ### 속성 분류
 
-<img src="./Image/ch04/ch04-08-AttributeType.PNG" height="auto" />
+<img src="./Image/ch04/AttributeClassification.PNG" height="auto" />
 
 ### 단일 값 속성(Single-Valued Attribute)
 
@@ -130,7 +130,7 @@
 
 #### 단일 값과 다중 값 속성
 
-<img src="./Image/ch04/ch04-09-SVMV.PNG" height="auto" />
+<img src="./Image/ch04/SingleValuedMultiValued.PNG" height="auto" />
 
 ### 단순 속성(simple attribute)
 
@@ -154,11 +154,11 @@
 
 #### 단순 속성과 복합 속성
 
-<img src="./Image/ch04/ch04-10-SACA.PNG" height="auto" />
+<img src="./Image/ch04/SimpleCompositeAttribute.PNG" height="auto" />
 
 ### 유도 속성(Derived Attribute)
 
-<img src="./Image/ch04/ch04-11-DA.PNG" height="auto" />
+<img src="./Image/ch04/DerivedAttribute.PNG" height="auto" />
 
 - 기존의 다른 속성 값에서 유도되어 결정된 속성
 - 값이 별도로 저장 X
@@ -186,7 +186,7 @@
 
 ### 키 속성(Key Attribute)
 
-<img src="./Image/ch04/ch04-12-KA.PNG" height="auto" />
+<img src="./Image/ch04/KeyAttribute.PNG" height="auto" />
 
 - 각 개체 인스턴스 식별 시 사용되는 속성
 - 모든 개체 인스턴스의 키 속성 값은 상이
@@ -199,7 +199,7 @@
 
 ### 관계(Relationship)
 
-<img src="./Image/ch04/ch04-13-RS.PNG" height="auto" />
+<img src="./Image/ch04/RelationshipRepresentation.PNG" height="auto" />
 
 - 개체와 개체가 맺는 의미 있는 연관성
 - 개체 집합들 사이의 대응 관계, 매핑(mapping)
@@ -211,7 +211,7 @@
 
 ### 관계 유형 : 관계 참여 개체 타입 수 기준
 
-<img src="./Image/ch04/ch04-14-RT.PNG" height="auto" />
+<img src="./Image/ch04/RelationshipTypes.PNG" height="auto" />
 
 | 관계 유형 | 설명                                   |
 | :-------: | :------------------------------------- |
@@ -234,21 +234,21 @@
 
 #### 일대일(1 : 1) 관계
 
-<img src="./Image/ch04/ch04-15-OneOne.PNG" height="auto" />
+<img src="./Image/ch04/OneToOneRelationship.PNG" height="auto" />
 
 - 개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 하나와 관계 가능
 - 개체 B의 각 개체 인스턴스가 개체 A의 개체 인스턴스 하나와 관계 가능
 
 #### 일대다(1 : N) 관계
 
-<img src="./Image/ch04/ch04-16-OneN.PNG" height="auto" />
+<img src="./Image/ch04/OneToManyRelationship.PNG" height="auto" />
 
 - 개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 다수와 관계 가능
 - 개체 B의 각 개체 인스턴스가 개체 A의 개체 인스턴스 하나와 관계 가능
 
 #### 다대다(N : M) 관계
 
-<img src="./Image/ch04/ch04-17-NM.PNG" height="auto" />
+<img src="./Image/ch04/ManyToManyRelationship.PNG" height="auto" />
 
 - 개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 다수와 관계 가능
 - 개체 B의 각 개체 인스턴스가 개체 A의 개체 인스턴스 다수와 관계 가능
@@ -264,11 +264,11 @@
 | 필수적(전체) 참여 | 모든 개체 인스턴스가 반드시 참여         | 고객 개체가 책 개체와의 구매 관계에 필수적 참여 : 모든 고객은 책을 반드시 구매 | 이중선 |
 | 선택적(부분) 참여 | 개체 인스턴스 중 일부만 관계에 참여 가능 | 책 개체가 고객 개체와의 구매 관계에 선택적 참여 : 고객에 구매하지 않은 책 존재 | 단일선 |
 
-<img src="./Image/ch04/ch04-18-PR.PNG" height="auto" />
+<img src="./Image/ch04/ParticipationRole.PNG" height="auto" />
 
 ### 관계 종속성
 
-<img src="./Image/ch04/ch04-19-SW.PNG" height="auto" />
+<img src="./Image/ch04/StrongWeakEntity.PNG" height="auto" />
 
 |   종류    |     영문      | 설명                                  |
 | :-------: | :-----------: | :------------------------------------ |
@@ -288,13 +288,13 @@
   - 직원 개체 : 강한 개체
   - 부양가족 개체 : 약한 개체
 
-<img src="./Image/ch04/ch04-20-SWex.PNG" height="auto" />
+<img src="./Image/ch04/StrongWeakEntityExample.PNG" height="auto" />
 
 ### E-R 다이어그램
 
-<img src="./Image/ch04/ch04-21-ERD.PNG" height="auto" />
+<img src="./Image/ch04/ERDiagram1.PNG" height="auto" />
 
-<img src="./Image/ch04/ch04-22-ERD2.PNG" height="auto" />
+<img src="./Image/ch04/ERDiagram2.PNG" height="auto" />
 
 |     요소     | 설명                        |
 | :----------: | :-------------------------- |
@@ -306,11 +306,11 @@
 
 ### IE 표기법
 
-<img src="./Image/ch04/ch04-23-IE.PNG" height="auto" />
+<img src="./Image/ch04/IENotation.PNG" height="auto" />
 
 ### IE 표기법 관계
 
-<img src="./Image/ch04/ch04-24-IE2.PNG" height="auto" />
+<img src="./Image/ch04/IENotationRelationship.PNG" height="auto" />
 
 ## 4절. 논리적 데이터 모델
 
@@ -328,7 +328,7 @@
 
 ### 계층 데이터 모델(Hierarchical Data Model)
 
-<img src="./Image/ch04/ch04-25-HMex.PNG" height="auto" />
+<img src="./Image/ch04/HierarchicalModelExample.PNG" height="auto" />
 
 - 데이터베이스의 논리적 구조 : 트리(tree) 형태
 - 루트 역할을 하는 개체가 존재하고 사이클은 미존재
@@ -341,7 +341,7 @@
 
 ### 네트워크 데이터 모델(Network Data Model)
 
-<img src="./Image/ch04/ch04-26-NMex.PNG" height="auto" />
+<img src="./Image/ch04/NetworkModelExample.PNG" height="auto" />
 
 - 데이터베이스의 논리적 구조 : 네트워크, 그래프 형태
 - 개체 간 관계 : 일대다(1:n) 관계만 허용

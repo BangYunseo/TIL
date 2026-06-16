@@ -8,7 +8,7 @@
 
 ### 빅데이터 주요 기술
 
-<img src="./Image/ch12/ch12-01-BigData.PNG"  height="auto" />
+<img src="./Image/ch12/BigDataKeyTechnology.PNG"  height="auto" />
 
 - 대용량 데이터 저장소 구축
 - 적합 데이터 분석 모형 적용 후 탐색 분석 및 시각화
@@ -53,7 +53,7 @@
 
 ### 아파치 하둡
 
-<img src="./Image/ch12/ch12-02-AHadoop.PNG"  height="auto" />
+<img src="./Image/ch12/ApacheHadoop.PNG"  height="auto" />
 
 - 빅데이터는 큰 규모로 처리 시간 문제점 때문에 여러 서버에 분석 작업을 분배 후 결과를 조합하는 분산 병령 컴퓨팅 기술 활용
 - 대부분의 빅데이터 처리 시스템은 대용량 데이터 수집, 관리, 유통, 분석 과정을 분산 병렬 처리
@@ -114,7 +114,7 @@
 
 ### 빅데이터 저장과 NoSQL
 
-<img src="./Image/ch12/ch12-03-SaveDB.PNG"  height="auto" />
+<img src="./Image/ch12/BigDataStorageAndNoSQL.PNG"  height="auto" />
 
 - 수집 과정을 통해 확보한 빅데이터로부터 유용한 정보를 추출할 경우 효과적인 데이터 저장 및 관리 필요
   - 정형 데이터 : SQL 데이터베이스에 저장
@@ -156,13 +156,13 @@
 
 ### SQL VS NoSQL
 
-<img src="./Image/ch12/ch12-04-NoSQL.PNG"  height="auto" />
+<img src="./Image/ch12/SQLVsNoSQL.PNG"  height="auto" />
 
 ### NoSQL 데이터베이스 유형
 
 #### 1. 키-값 데이터베이스(Key-Value Database)
 
-<img src="./Image/ch12/ch12-05-KVD.PNG"  height="auto" />
+<img src="./Image/ch12/KeyValueDatabase.PNG"  height="auto" />
 
 - 가장 단순하고 기본적인 형태
 - 모든 데이터를 '키'와 '값'의 쌍으로 매핑하여 저장
@@ -179,7 +179,7 @@
 
 #### 2. 문서 데이터베이스(Document Database)
 
-<img src="./Image/ch12/ch12-06-DD.PNG"  height="auto" />
+<img src="./Image/ch12/DocumentDatabase.PNG"  height="auto" />
 
 - 키-값 데이터베이스의 발전 형태
 - 반구조적 데이터의 저장과 검색에 사용
@@ -196,7 +196,7 @@
 
 #### 3. 컬럼 패밀리 데이터베이스(Column Family Database)
 
-<img src="./Image/ch12/ch12-07-CFD.PNG"  height="auto" />
+<img src="./Image/ch12/ColumnFamilyDatabase.PNG"  height="auto" />
 
 - 구조 측면에서 가장 복잡한 유형
 - 관계형 데이터베이스와 비슷한 유형
@@ -213,7 +213,7 @@
 
 #### 4. 그래프 데이터베이스(Graph Database)
 
-<img src="./Image/ch12/ch12-08-GD.PNG"  height="auto" />
+<img src="./Image/ch12/GraphDatabase.PNG"  height="auto" />
 
 - 데이터를 데이터 간 관계와 함께 표현하는 특수한 유형
 - 많은 객체 간 연결 표현에 적합
@@ -231,19 +231,19 @@
 
 1. 분류(Classification) 분석
 
-<img src="./Image/ch12/ch12-09-CA.PNG"  height="auto" />
+<img src="./Image/ch12/ClassificationAnalysis.PNG"  height="auto" />
 
 2. 군집(Clustering) 분석
 
-<img src="./Image/ch12/ch12-10-CA.PNG"  height="auto" />
+<img src="./Image/ch12/ClusteringAnalysis.PNG"  height="auto" />
 
 3. 연관(Association) 분석
 
-<img src="./Image/ch12/ch12-11-AA.PNG"  height="auto" />
+<img src="./Image/ch12/AssociationAnalysis.PNG"  height="auto" />
 
 4. 예측(Forecasting) 분석
 
-<img src="./Image/ch12/ch12-12-FA.PNG"  height="auto" />
+<img src="./Image/ch12/ForecastingAnalysis.PNG"  height="auto" />
 
 #### 빅데이터 탐색
 
@@ -258,4 +258,4 @@
 
 ### 빅데이터 시각화
 
-<img src="./Image/ch12/ch12-13-BV.PNG"  height="auto" />
+<img src="./Image/ch12/BigDataVisualization.PNG"  height="auto" />

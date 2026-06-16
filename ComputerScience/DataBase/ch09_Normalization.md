@@ -23,21 +23,21 @@
 
 #### 삽입 이상(Insertion Anomaly) 예시
 
-<img src="./Image/ch09/ch09-01-IA.PNG"  height="auto" />
+<img src="./Image/ch09/InsertionAnomalyExample.PNG"  height="auto" />
 
 - 아직 이벤트에 참여하지 않은 고객아이디가 "melon", 이름이 "성원용", 등급이 "gold"인 신규 고객의 데이터는 이벤트참여 릴레이션에 삽입 불가
 - 삽입할 경우 임시 이벤트번호로 삽입 필수
 
 #### 갱신 이상(Update Anomaly) 예시
 
-<img src="./Image/ch09/ch09-02-UA.PNG"  height="auto" />
+<img src="./Image/ch09/UpdateAnomalyExample.PNG"  height="auto" />
 
 - 아이디가 "apple"인 고객의 등급이 "gold"에서 "vip"로 변경 : 일부 튜플 등급만 수정
 - "apple" 고객이 서로 다른 등급을 가지는 모순 발생
 
 #### 삭제 이상(Deletion Anomaly) 예시
 
-<img src="./Image/ch09/ch09-03-DA.PNG"  height="auto" />
+<img src="./Image/ch09/DeletionAnomalyExample.PNG"  height="auto" />
 
 - 아이디가 "orange"인 고객이 이벤트참여를 취소해 관련 튜플 삭제 필요
 - 이벤트참여와 관련 없는 고객아이디, 고객이름, 등급 데이터까지 손실
@@ -57,7 +57,7 @@
 
 ### 함수 종속
 
-<img src="./Image/ch09/ch09-04-FD.PNG" height="auto" />
+<img src="./Image/ch09/FunctionalDependencyDefinition.PNG" height="auto" />
 
 > "X가 Y를 함수적으로 결정"  
 > "Y가 X에 함수적으로 종속"
@@ -70,7 +70,7 @@
 
 #### 함수 종속 관계 판단 예시(1)
 
-<img src="./Image/ch09/ch09-05-UR.PNG" height="auto" />
+<img src="./Image/ch09/UserRelationshipExample.PNG" height="auto" />
 
 - 고객아이디에 대응되는 고객이름 속성과 등급 속성이 단 하나
 
@@ -82,7 +82,7 @@
 
 - 종속 다이어그램
 
-<img src="./Image/ch09/ch09-06-diagramU.PNG" height="auto" />
+<img src="./Image/ch09/UserDependencyDiagram.PNG" height="auto" />
 
 ### 함수 종속 관계 판단 유의 사항
 
@@ -94,7 +94,7 @@
 
 #### 함수 종속 관계 판단 예시(1)
 
-<img src="./Image/ch09/ch09-07-ER.PNG" height="auto" />
+<img src="./Image/ch09/EventRelationshipExample.PNG" height="auto" />
 
 |          결정자          | ->  | 종속자   |
 | :----------------------: | :-: | :------- |
@@ -102,7 +102,7 @@
 | {고객아이디, 이벤트번호} | ->  | 당첨여부 |
 | {고객아이디, 이벤트번호} | ->  | 고객이름 |
 
-<img src="./Image/ch09/ch09-08-diagramUN.PNG" height="auto" />
+<img src="./Image/ch09/UserEventDependencyDiagram.PNG" height="auto" />
 
 - 종속 다이어그램
 
@@ -110,7 +110,7 @@
 
 - 함수 종속성을 나타내는 표기법
 
-<img src="./Image/ch09/ch09-09-FDD.PNG" height="auto" />
+<img src="./Image/ch09/FunctionalDependencyDiagramNotation.PNG" height="auto" />
 
 |        종류         |    표기법     |
 | :-----------------: | :-----------: |
@@ -159,7 +159,7 @@
 
 ### 정규형(NF : Normal Form)
 
-| <img src="./Image/ch09/ch09-10-NF1.PNG" height="auto" /> | <img src="./Image/ch09/ch09-11-NF2.PNG" height="auto" /> |
+| <img src="./Image/ch09/NormalFormHierarchy1.PNG" height="auto" /> | <img src="./Image/ch09/NormalFormHierarchy2.PNG" height="auto" /> |
 | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 
 - 릴레이션 정규화 정도
@@ -176,16 +176,16 @@
 
 #### 제 1 정규형 예시
 
-| <img src="./Image/ch09/ch09-12-1NF1.PNG" height="auto" /> | <img src="./Image/ch09/ch09-13-1NF2.PNG" height="auto" /> |
+| <img src="./Image/ch09/FirstNormalFormExample1.PNG" height="auto" /> | <img src="./Image/ch09/FirstNormalFormExample2.PNG" height="auto" /> |
 | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 
 |                                            함수 종속 관계                                            |                                                     함수 종속 다이어그램                                                     |
 | :--------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
-| 고객아이디 -> 등급<br>고객아이디 -> 할인율<br>등급 -> 할인율<br>{고객아이디, 이벤트번호} -> 당첨여부 | <img src="./Image/ch09/ch09-14-1NFD.PNG" height="auto" /> |
+| 고객아이디 -> 등급<br>고객아이디 -> 할인율<br>등급 -> 할인율<br>{고객아이디, 이벤트번호} -> 당첨여부 | <img src="./Image/ch09/FirstNormalFormDependencyDiagram.PNG" height="auto" /> |
 
 - 이상 현상 발생 형태
 
-<img src="./Image/ch09/ch09-15-1NFA.PNG" height="auto" />
+<img src="./Image/ch09/FirstNormalFormAnomalyIssue.PNG" height="auto" />
 
 #### 이상 현상 발생 이유
 
@@ -208,15 +208,15 @@
 
 #### 제 2 정규형 예시
 
-<img src="./Image/ch09/ch09-16-2NF1.PNG" height="auto" />
+<img src="./Image/ch09/SecondNormalFormExample.PNG" height="auto" />
 
 |                                                     함수 종속 다이어그램                                                     |                                                      릴레이션 분해 결과                                                      |
 | :--------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
-| <img src="./Image/ch09/ch09-17-2NFD.PNG" height="auto" /> | <img src="./Image/ch09/ch09-18-2NFR.PNG" height="auto" /> |
+| <img src="./Image/ch09/SecondNormalFormDependencyDiagram.PNG" height="auto" /> | <img src="./Image/ch09/SecondNormalFormDecompositionResult.PNG" height="auto" /> |
 
 #### 고객 릴레이션 이상 현상
 
-<img src="./Image/ch09/ch09-19-2NFA.PNG" height="auto" />
+<img src="./Image/ch09/SecondNormalFormAnomalyIssue.PNG" height="auto" />
 
 #### 이상 현상 발생 이유
 
@@ -229,7 +229,7 @@
 
 ### 이행적 함수 종속(Transitive FD)
 
-<img src="./Image/ch09/ch09-20-TFD.PNG" height="auto" />
+<img src="./Image/ch09/TransitiveFunctionalDependency.PNG" height="auto" />
 
 - 릴레이션을 구성하는 속성 집합 X, Y, Z에 대해 함수 종속 관계 X -> Y와 Y -> Z가 존재하면 논리적으로 X -> Z 성립
   - Z가 X에 이행적으로 함수 종속
@@ -244,11 +244,11 @@
 
 #### 제 3 정규형 예시
 
-<img src="./Image/ch09/ch09-21-3NF1.PNG" height="auto" />
+<img src="./Image/ch09/ThirdNormalFormExample.PNG" height="auto" />
 
 |                                                     함수 종속 다이어그램                                                     |
 | :--------------------------------------------------------------------------------------------------------------------------: |
-| <img src="./Image/ch09/ch09-22-3NFD.PNG" height="auto" /> |
+| <img src="./Image/ch09/ThirdNormalFormDependencyDiagram.PNG" height="auto" /> |
 
 ### 보이스/코드 정규형(BCNF : Boyce Codd Normal Form)
 
@@ -260,7 +260,7 @@
 
 #### 보이스/코드 정규형 예시
 
-<img src="./Image/ch09/ch09-23-BCNF.PNG" height="auto" />
+<img src="./Image/ch09/BoyceCoddNormalFormExample.PNG" height="auto" />
 
 - 강좌신청 릴레이션 후보키
   - {고객아이디, 인터넷강좌} : 기본키
@@ -268,11 +268,11 @@
 
 |                                                     함수 종속 다이어그램                                                      |                                                           이상 현상                                                           |
 | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
-| <img src="./Image/ch09/ch09-24-BCNFD.PNG" height="auto" /> | <img src="./Image/ch09/ch09-25-BCNFA.PNG" height="auto" /> |
+| <img src="./Image/ch09/BoyceCoddNormalFormDependencyDiagram.PNG" height="auto" /> | <img src="./Image/ch09/BoyceCoddNormalFormAnomalyIssue.PNG" height="auto" /> |
 
 ### 기본 정규화 과정
 
-<img src="./Image/ch09/ch09-26-ALLNF.PNG" height="auto" />
+<img src="./Image/ch09/AllNormalizationProcessFlow.PNG" height="auto" />
 
 ### 제 4 정규형
 

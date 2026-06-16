@@ -19,21 +19,21 @@
 
 ### 트랜잭션 예시 : (1)
 
-<img src="./Image/ch10/ch10-01-TSex.PNG"  height="auto" />
+<img src="./Image/ch10/TransactionExample1.PNG"  height="auto" />
 
 - 처리 순서는 중요 X
 - 두 UPDATE 문이 모두 정상적인 실행 필요
 
 ### 트랜잭션 예시 : (2)
 
-<img src="./Image/ch10/ch10-02-TSex2.PNG"  height="auto" />
+<img src="./Image/ch10/TransactionExample2.PNG"  height="auto" />
 
 - 상품 주문 트랜잭션 수행 조건
   - INSERT 문과 UPDATEE 문의 정상적 실행
 
 ### 트랜잭션 특성(ACID)
 
-<img src="./Image/ch10/ch10-03-ACID.PNG"  height="auto" />
+<img src="./Image/ch10/ACIDProperties.PNG"  height="auto" />
 
 #### 원자성(Atomicity)
 
@@ -61,7 +61,7 @@
 
 ### ACID & DBMS 기능
 
-<img src="./Image/ch10/ch10-04-ACIDDBMS.PNG"  height="auto" />
+<img src="./Image/ch10/ACIDAndDBMSFunctions.PNG"  height="auto" />
 
 ### 트랜잭션 연산
 
@@ -82,7 +82,7 @@
 
 ### 트랜잭션 상태
 
-<img src="./Image/ch10/ch10-05-TSstate.PNG"  height="auto" />
+<img src="./Image/ch10/TransactionStates.PNG"  height="auto" />
 
 #### 활동(Active) 상태
 
@@ -111,11 +111,11 @@
 
 ### 트랜잭션 SQL 예시
 
-<img src="./Image/ch10/ch10-06-TSSQLex1.PNG"  height="auto" />
+<img src="./Image/ch10/TransactionSQLExample1.PNG"  height="auto" />
 
 #### 수행 과정
 
-<img src="./Image/ch10/ch10-07-TSSQLex2.PNG"  height="auto" />
+<img src="./Image/ch10/TransactionSQLExample2ExecutionProcess.PNG"  height="auto" />
 
 1. A 계좌(박지성) 값을 데이터베이스에서 주기억장치 버퍼로 읽음
 2. B 계좌(김연아) 값을 데이터베이스에서 주기억장치 버퍼로 읽음
@@ -145,19 +145,19 @@
 
 - 시스템이 제대로 동작하지 않는 상태
 
-<img src="./Image/ch10/ch10-08-Failure.PNG"  height="auto" />
+<img src="./Image/ch10/FailureTypes.PNG"  height="auto" />
 
 ### 데이터베이스 저장 장치 종류
 
-<img src="./Image/ch10/ch10-09-Storage.PNG"  height="auto" />
+<img src="./Image/ch10/DatabaseStorageTypes.PNG"  height="auto" />
 
 ### 데이터 이동 연산
 
-<img src="./Image/ch10/ch10-10-iorw.PNG"  height="auto" />
+<img src="./Image/ch10/DataMovementOperations.PNG"  height="auto" />
 
 #### 디스크 & 메인 메모리 간 데이터 이동 연산
 
-<img src="./Image/ch10/ch10-11-io.PNG"  height="auto" />
+<img src="./Image/ch10/InputOutputOperations.PNG"  height="auto" />
 
 - input / output
 
@@ -180,7 +180,7 @@
 
 #### 메인 메모리 & 프로그램 변수 간 데이터 이동 연산
 
-<img src="./Image/ch10/ch10-12-rw.PNG"  height="auto" />
+<img src="./Image/ch10/ReadWriteOperations.PNG"  height="auto" />
 
 - read / write
 
@@ -224,17 +224,17 @@
 - 데이터 변경 이전 값과 변경 이후 값을 기록한 파일
 - 레코드 단위로 트랜잭션 수행과 함께 기록
 
-<img src="./Image/ch10/ch10-13-logfile.PNG"  height="auto" />
+<img src="./Image/ch10/LogFileStructure.PNG"  height="auto" />
 
 ### 로그 기록 예시
 
 - 계좌 잔액이 10,000원인 성호가 계좌 잔액이 0원인 은경에게 5,000원 이체
 
-<img src="./Image/ch10/ch10-14-logfileex.PNG"  height="auto" />
+<img src="./Image/ch10/LogFileExample.PNG"  height="auto" />
 
 ### 회복 기법
 
-<img src="./Image/ch10/ch10-15-RecoveryMethod.PNG"  height="auto" />
+<img src="./Image/ch10/RecoveryMethods.PNG"  height="auto" />
 
 ### 로그 회복 기법 : 즉시 갱신(Immediate Update) 회복 기법
 
@@ -245,17 +245,17 @@
 
 #### 즉시 갱신 회복 기법 예시
 
-<img src="./Image/ch10/ch10-16-IURex.PNG"  height="auto" />
+<img src="./Image/ch10/ImmediateUpdateRecoveryExample.PNG"  height="auto" />
 
 - 데이터베이스 회복 전략
 
-<img src="./Image/ch10/ch10-17-RS.PNG"  height="auto" />
+<img src="./Image/ch10/RecoveryStrategy.PNG"  height="auto" />
 
 - 장애 발생 시 반영 결과
   - 1에서 장애 발생 : undo($T_1$)
   - 2에서 장애 발생 : undo($T_2$), redo($T_1$)
 
-<img src="./Image/ch10/ch10-18-IURex2.PNG"  height="auto" />
+<img src="./Image/ch10/ImmediateUpdateRecoveryExample2.PNG"  height="auto" />
 
 ### 로그 회복 기법 – 지연 갱신(Deferred Update) 회복 기법
 
@@ -271,13 +271,13 @@
 
 - 데이터베이스 회복 전략
 
-<img src="./Image/ch10/ch10-19-RS.PNG"  height="auto" />
+<img src="./Image/ch10/RecoveryStrategy2.PNG"  height="auto" />
 
 - 장애 발생 시 반영 결과
   - 1에서 장애 발생 : 로그 기록 무시 후 별다른 회복 조치 X
   - 2에서 장애 발생 : redo($T_1$)
 
-<img src="./Image/ch10/ch10-20-DURex.PNG"  height="auto" />
+<img src="./Image/ch10/DeferredUpdateRecoveryExample.PNG"  height="auto" />
 
 ### 검사 시점 회복 기법
 
@@ -333,7 +333,7 @@
 
 #### 검사 시점 회복 기법 예시
 
-<img src="./Image/ch10/ch10-21-Rex.PNG"  height="auto" />
+<img src="./Image/ch10/CheckpointRecoveryExample.PNG"  height="auto" />
 
 - 즉시 갱신 방법
   - T2, T3 : 어떤 작업도 필요 없음
@@ -382,12 +382,12 @@
 
   - $T_1$ 의 변경 연산 결과가 데이터베이스에 반영 X
 
-<img src="./Image/ch10/ch10-22-LUex.PNG"  height="auto" />
+<img src="./Image/ch10/LostUpdateExample.PNG"  height="auto" />
 
 - 해결 과정
   - 트랜잭션을 순차적으로 수행해서 갱신 분실 문제 방지
 
-<img src="./Image/ch10/ch10-23-LUex2.PNG"  height="auto" />
+<img src="./Image/ch10/LostUpdateSolutionExample.PNG"  height="auto" />
 
 ### 모순성(Inconsistency)
 
@@ -400,12 +400,12 @@
 - 트랜잭션 $T_1$ 에 대한 모순성 발생
   - $T_1$ 이 데이터 X와 Y를 서로 다른 상태의 데이터베이스에서 가져와 실행하는 모순 발생
 
-<img src="./Image/ch10/ch10-24-Iex.PNG"  height="auto" />
+<img src="./Image/ch10/InconsistencyExample.PNG"  height="auto" />
 
 - 해결 과정
   - 트랜잭션을 순차적으로 수행해서 모순성 문제 방지
 
-<img src="./Image/ch10/ch10-25-Iex2.PNG"  height="auto" />
+<img src="./Image/ch10/InconsistencySolutionExample.PNG"  height="auto" />
 
 ### 연쇄 복귀(Cascading Rollback)
 
@@ -419,12 +419,12 @@
   - $T_1$ 이 변경한 데이터 X를 가져가 연산을 수행한 $T_2$ 도 rollback 연산이 연쇄적으로 실행되어야 함
   - 이미 완료된 상태라서 rollback 연산을 실행할 수 없는 문제
 
-<img src="./Image/ch10/ch10-26-CRex.PNG"  height="auto" />
+<img src="./Image/ch10/CascadingRollbackExample.PNG"  height="auto" />
 
 - 해결 과정
   - 트랜잭션을 순차적으로 수행해서 연쇄 복귀 문제 방지
 
-<img src="./Image/ch10/ch10-27-CRex2.PNG"  height="auto" />
+<img src="./Image/ch10/CascadingRollbackSolutionExample.PNG"  height="auto" />
 
 ### 트랜잭션 스케줄
 
@@ -432,7 +432,7 @@
 
 ### 트랜잭션 스케줄 유형
 
-<img src="./Image/ch10/ch10-28-TStype.PNG"  height="auto" />
+<img src="./Image/ch10/ScheduleTypes.PNG"  height="auto" />
 
 ### 직렬 스케줄(Serial Schedule)
 
@@ -453,11 +453,11 @@
 
 - 트랜잭션 $T_1$, $T_2$ 대상 첫 번째 직렬 스케줄
 
-<img src="./Image/ch10/ch10-29-SSex1.PNG"  height="auto" />
+<img src="./Image/ch10/SerialScheduleExample1.PNG"  height="auto" />
 
 - 트랜잭션 $T_1$, $T_2$ 대상 두 번째 직렬 스케줄
 
-<img src="./Image/ch10/ch10-30-SSex2.PNG"  height="auto" />
+<img src="./Image/ch10/SerialScheduleExample2.PNG"  height="auto" />
 
 ### 비직렬 스케줄(Non-Serial Schedule)
 
@@ -477,11 +477,11 @@
 
 - 트랜잭션 $T_1$, $T_2$ 대상 첫 번째 비직렬 스케줄 : 성공
 
-<img src="./Image/ch10/ch10-31-NSSex1.PNG"  height="auto" />
+<img src="./Image/ch10/NonSerialScheduleExample1Success.PNG"  height="auto" />
 
 - 트랜잭션 $T_1$, $T_2$ 대상 두 번째 비직렬 스케줄 : 실패
 
-<img src="./Image/ch10/ch10-32-NSSex2.PNG"  height="auto" />
+<img src="./Image/ch10/NonSerialScheduleExample2Failure.PNG"  height="auto" />
 
 ### 직렬 가능 스케줄(Serializable Schedule)
 
@@ -500,7 +500,7 @@
 
 - 트랜잭션 $T_1$, $T_2$ 대상 비직렬 스케줄이면서 정확한 수행 결과를 생성하므로 직렬 가능 스케줄
 
-<img src="./Image/ch10/ch10-33-SSex.PNG"  height="auto" />
+<img src="./Image/ch10/SerializableScheduleExample.PNG"  height="auto" />
 
 ### 병행 제어 기법
 
@@ -547,7 +547,7 @@
 
 - 한 개의 데이터에 두 개의 트랜잭션이 접근해 갱신하는 작업
 
-<img src="./Image/ch10/ch10-34-2TW.PNG"  height="auto" />
+<img src="./Image/ch10/TwoTransactionUpdate.PNG"  height="auto" />
 
 ### MySQL 실습
 
@@ -556,13 +556,13 @@
   - LAB1과 동일한 내용의 LAB2 생성
   - 워크시트를 LAB1과 LAB2로 두 번 접속 후 진행
 
-<img src="./Image/ch10/ch10-35-2TWex1.PNG"  height="auto" />
+<img src="./Image/ch10/TwoTransactionUpdateExample1.PNG"  height="auto" />
 
-<img src="./Image/ch10/ch10-36-2TWex2.PNG"  height="auto" />
+<img src="./Image/ch10/TwoTransactionUpdateExample2.PNG"  height="auto" />
 
 #### 로킹 기법 예시
 
-<img src="./Image/ch10/ch10-37-Lex1.PNG"  height="auto" />
+<img src="./Image/ch10/LockingTechniqueExample.PNG"  height="auto" />
 
 ### 기본 로킹 규약 효율성 증가 방법
 
@@ -598,7 +598,7 @@
 
 ### lock 연산 양립성
 
-<img src="./Image/ch10/ch10-38-Lock1.PNG"  height="auto" />
+<img src="./Image/ch10/LockCompatibility.PNG"  height="auto" />
 
 - 서로 다른 트랜잭션이 같은 데이터에 공용 lock 연산 동시 실행 가능
 - 다른 트랜잭션이 전용 lock 연산을 실행한 데이터에 공용 lock, 전용 lock 모두 실행 불가
@@ -608,7 +608,7 @@
 - 트랜잭션 $T_1$ 이 데이터 X에 너무 빨리 unlock 연산을 실행해 트랜잭션 $T_2$가 일관성 없는 데이터에 접근
   - 2단계 로킹 규약 필요
 
-<img src="./Image/ch10/ch10-39-Lockex1.PNG"  height="auto" />
+<img src="./Image/ch10/BasicLockingIssueExample.PNG"  height="auto" />
 
 ### 2단계 로킹 규약(2PLP : 2Phase Locking Protocol)
 
@@ -636,7 +636,7 @@
 
 - 2단계 로킹 규약을 준수하며 직렬 가능성이 보장된 스케줄
 
-<img src="./Image/ch10/ch10-40-2PLPex1.PNG"  height="auto" />
+<img src="./Image/ch10/TwoPhaseLockingProtocolExample.PNG"  height="auto" />
 
 ### 교착 상태(Deadlock)
 
@@ -648,7 +648,7 @@
 
 ### 트랜잭션 시나리오
 
-<img src="./Image/ch10/ch10-41-TSS.PNG"  height="auto" />
+<img src="./Image/ch10/TransactionIsolationScenario.PNG"  height="auto" />
 
 ### 오손 읽기(Uncommitted Dependency)
 
@@ -671,7 +671,7 @@ FROM USERS;
 COMMIT;
 ```
 
-<img src="./Image/ch10/ch10-42-Tableex1.PNG"  height="auto" />
+<img src="./Image/ch10/UserTableExample.PNG"  height="auto" />
 
 ### 오손 읽기 문제 발생 예제
 
@@ -692,7 +692,7 @@ COMMIT;
 
 - $T_2$ 가 홍길동의 나이를 30에서 21로 변경한 후 철회(ROLLBACK)해 $T_1$ 에게 오류를 발생시킨 예시
 
-<img src="./Image/ch10/ch10-43-Problemex1.PNG"  height="auto" />
+<img src="./Image/ch10/DirtyReadProblemExample.PNG"  height="auto" />
 
 ### 반복 불가능 읽기(Inconsistent Analysis)
 
@@ -717,7 +717,7 @@ COMMIT;
 
 #### 문제 발생 예시 상황
 
-<img src="./Image/ch10/ch10-44-Problemex2.PNG"  height="auto" />
+<img src="./Image/ch10/NonRepeatableReadProblemExample.PNG"  height="auto" />
 
 ### 유령 데이터 읽기(Phantom Read)
 
@@ -744,7 +744,7 @@ COMMIT;
   - REPEATABLE READ는 트랜잭션이 처음 데이터를 읽을 때 SNAPHOT을 구축하여 자료를 가지고 옴
   - 세션 자료가 변경되어도 동일 결과
 
-<img src="./Image/ch10/ch10-45-Problemex3.PNG"  height="auto" />
+<img src="./Image/ch10/PhantomReadProblemExample.PNG"  height="auto" />
 
 ### 트랜잭션 고립 수준 명령어(Transaction Isolation Level Instruction)
 
@@ -823,18 +823,18 @@ COMMIT;
 
 #### 문제 발생 : 반복 불가능 읽기 문제
 
-<img src="./Image/ch10/ch10-46-RRex1.PNG"  height="auto" />
+<img src="./Image/ch10/NonRepeatableReadExperiment1.PNG"  height="auto" />
 
 #### 문제 방지 : REPEATABLE READ 모드
 
-<img src="./Image/ch10/ch10-47-RRex2.PNG"  height="auto" />
+<img src="./Image/ch10/NonRepeatableReadExperiment2.PNG"  height="auto" />
 
 ### 유령 데이터 읽기 문제 발생 실험
 
 #### 문제 발생 : 유령 데이터 읽기 문제
 
-<img src="./Image/ch10/ch10-48-SRex1.PNG"  height="auto" />
+<img src="./Image/ch10/PhantomReadExperiment1.PNG"  height="auto" />
 
 #### 문제 방지 : SERIALIZABLE 모드
 
-<img src="./Image/ch10/ch10-49-SRex2.PNG"  height="auto" />
+<img src="./Image/ch10/PhantomReadExperiment2.PNG"  height="auto" />
