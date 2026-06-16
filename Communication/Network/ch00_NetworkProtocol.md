@@ -19,7 +19,7 @@
 - 장치끼리 꼭 들어맞는 연결의 통신 형태
 - <strong>"너트와 볼트(Nuts And Bolts)"</strong>의 관점
 
-![Internet](https://github.com/BangYunseo/TIL/blob/main/Communication/NetworkProtocol/Image/ch00/Internet.PNG)
+![Internet](./Image/ch00/Internet.PNG)
 
 - 수십억 대의 연결된 컴퓨팅 장치
   - 호스트 = end systems
@@ -79,7 +79,7 @@
 
 - 네트워크 간의 엔티티들이 주고받는 메시지의 형식, 순서, 그리고 메시지 전송 및 수신 시 취할 행동을 정의
 
-![PP](https://github.com/BangYunseo/TIL/blob/main/Communication/NetworkProtocol/Image/ch00/PP.PNG)
+![PP](./Image/ch00/PP.PNG)
 
 ## 2절. 네트워크 엣지
 
@@ -90,7 +90,7 @@
 - 서버(servers)
   - 주로 데이터 중앙에 위치
 
-![NE](https://github.com/BangYunseo/TIL/blob/main/Communication/NetworkProtocol/Image/ch00/NE.PNG)
+![NE](./Image/ch00/NE.PNG)
 
 #### 접속 네트워크 및 물리적 매체
 
@@ -118,7 +118,7 @@
 
 - 가정 전용
 
-![AN](https://github.com/BangYunseo/TIL/blob/main/Communication/NetworkProtocol/Image/ch00/AN.PNG)
+![AN](./Image/ch00/AN.PNG)
 
 - HFC(하이브리드 섬유 동축)
   - 비대칭(Asymmetric)
@@ -131,7 +131,7 @@
 
 - 기업 전용
 
-![EN](https://github.com/BangYunseo/TIL/blob/main/Communication/NetworkProtocol/Image/ch00/EN.PNG)
+![EN](./Image/ch00/EN.PNG)
 
 - 사용처
   - 기업
@@ -163,7 +163,7 @@
 
 #### 호스트(Host) : 데이터 패킷 전송
 
-![Host](https://github.com/BangYunseo/TIL/blob/main/Communication/NetworkProtocol/Image/ch00/Host.PNG)
+![Host](./Image/ch00/Host.PNG)
 
 - 응용 메시지 처리
 - 패킷 분할
@@ -177,7 +177,7 @@
 
 #### 네트워크 코어(Network Core)
 
-![NC](https://github.com/BangYunseo/TIL/blob/main/Communication/NetworkProtocol/Image/ch00/NC.PNG)
+![NC](./Image/ch00/NC.PNG)
 
 ## 4절. 성능
 

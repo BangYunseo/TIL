@@ -42,7 +42,7 @@
 
 #### 일반적인 디지털 서명 과정
 
-![DSP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/DSP.PNG)
+![DSP](./Image/ch12/DSP.PNG)
 
 ## 2절. RSA 서명
 
@@ -77,7 +77,7 @@
 
 #### RSA-PSS(Probabilistic Signature Scheme)
 
-![PSS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/PSS.PNG)
+![PSS](./Image/ch12/PSS.PNG)
 
 ## 3절. DSS / DSA
 
@@ -143,21 +143,21 @@
 
 - 루빅 큐브(Rubik Cube)
 
-![RC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/RC.PNG)
+![RC](./Image/ch12/RC.PNG)
 
 - 할로윈 사탕(Halloween Candy)
 
-![HC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/HC.PNG)
+![HC](./Image/ch12/HC.PNG)
 
 - 알리바바 동굴(AliBaba Cave)
 
-![AC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/AC.PNG)
+![AC](./Image/ch12/AC.PNG)
 
 ## 5절. Schnorr
 
 #### 슈노르 식별(Schnorr Identification)
 
-![SA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch12/SA.PNG)
+![SA](./Image/ch12/SA.PNG)
 
 - 특별 정직-검증자 제로-지식
 

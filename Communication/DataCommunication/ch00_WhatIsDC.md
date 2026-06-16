@@ -38,7 +38,7 @@
 
 ### 구성 요소
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-01-DC.PNG" width="70%" height="auto"/>
+<img src = "./Image/ch00/ch00-01-DC.PNG" width="70%" height="auto"/>
 
 #### 메시지(Message)
 
@@ -100,11 +100,11 @@
 
 - 연결된 두 장치 간 데이터를 전송할 때 신호가 전달되는 방향을 기준으로 구분
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-02-Duplex.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-02-Duplex.PNG" width="80%" height="auto"/>
 
 1. 단방향 방식(Simplex Mode)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-03-Simple.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-03-Simple.PNG" width="80%" height="auto"/>
 
 - 일방통행로처럼 한 방향으로만 통신 가능
 - 두 장치 간 한쪽은 전송만 가능, 다른 쪽은 수신만 가능
@@ -112,7 +112,7 @@
 
 2. 반이중 방식(Half-Duplex Mode)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-04-Half-Duplex.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-04-Half-Duplex.PNG" width="80%" height="auto"/>
 
 - 각 지국은 송신과 수신이 가능하지만 동시에는 불가능
 - 장치가 송신할 경우 다른 장치는 수신만 가능
@@ -121,7 +121,7 @@
 
 3. 전이중 방식(Full-Duplex Mode)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-05-Full-Duplex.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-05-Full-Duplex.PNG" width="80%" height="auto"/>
 
 - 양쪽 지국이 동시에 송신과 수신 가능
 - 양방향으로 통신이 가능한 2차선 도로와 같음
@@ -147,7 +147,7 @@
 
 ### 네트워크 평가기준(Network Criteria)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-06-Criteria.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-06-Criteria.PNG" width="80%" height="auto"/>
 
 1. 성능(Performance)
 
@@ -175,7 +175,7 @@
 
 ### 연결 유형
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-07-ConnectionType.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-07-ConnectionType.PNG" width="80%" height="auto"/>
 
 1. 점-대-점 회선 구성(Point-to-Point Line Configuration)
 
@@ -190,14 +190,14 @@
 
 ### 토폴로지(Physical Topology)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-08-Topology.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-08-Topology.PNG" width="80%" height="auto"/>
 
 - 물리적인 구조, 접속형태
 - 네트워크에서 컴퓨터의 위치나 컴퓨터의 케이블 연결 등의 물리적인 혹은 논리적인 배치 방식
 
 ### 그물형(Mesh) 접속 형태
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-09-Mesh.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-09-Mesh.PNG" width="80%" height="auto"/>
 
 - 모든 장치는 다른 장치와 점-대-점 링크
 - n개의 장치를 서로 연결하기 위해 n(n - 1) / 2개의 채널이 요구
@@ -215,7 +215,7 @@
 
 ### 성형(Star) 접속 형태
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-10-Star.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-10-Star.PNG" width="80%" height="auto"/>
 
 - 허브(Hub)라는 중앙제어장치(Central Controller)와 전용 점-대-점 링크 구성
 - 각 장치 간 직접적인 통신 불가
@@ -233,7 +233,7 @@
 
 ### 버스(Bus) 접속 형태
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-11-Bus.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-11-Bus.PNG" width="80%" height="auto"/>
 
 - 다중점 형태
 - 하나의 긴 테이블이 모든 장치를 연결하는 백본 또는 중추 네트워크 역할
@@ -250,7 +250,7 @@
 
 ### 링(Ring) 접속 형태
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-12-Bus.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-12-Ring.PNG" width="80%" height="auto"/>
 
 - 자신 양쪽 장치와 전용 점-대-점(Point to Point) 연결
 - 각 장치는 중계기(repeater) 포함
@@ -267,7 +267,7 @@
 
 ### 혼합형(Hybrid) 접속 형태
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-13-Hybrid.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-13-Hybrid.PNG" width="80%" height="auto"/>
 
 > 다수의 접속 형태인 경우 여러 개의 topology를 혼합해 사용
 > 버스(Bus)형 + 성(Star)형
@@ -276,7 +276,7 @@
 
 ### 네트워크 종류 유형
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch00/ch00-14-NetworkType.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-14-NetworkType.PNG" width="80%" height="auto"/>
 
 ### 근거리 통신망(LAN)
 

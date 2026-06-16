@@ -14,7 +14,7 @@
 
 - 각 장치 간 일대일(One-to-One) 통신이 가능하도록 연결하는 방법
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-01-Switching.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-01-Switching.PNG" height="auto"/>
 
 ### 교환 방법 종류
 
@@ -22,7 +22,7 @@
 2. 패킷 교환(Packet Switching)
 3. 메세지 교환(Message Switching)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-02-SwitchingType.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-02-SwitchingType.PNG" height="auto"/>
 
 ### TCP/IP 계층에서의 교환
 
@@ -37,7 +37,7 @@
 
 ### 회선 교환망(Circuit-Switched Networks)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-03-CSN.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-03-CSN.PNG" height="auto"/>
 
 > 각 링크를 n개 채널로 나누는 물리적 링크에 의해 연결된 교환기 집합
 
@@ -57,7 +57,7 @@
 
 #### 회선 교환망 스위치 I/O
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-04-CSNIO.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-04-CSNIO.PNG" height="auto"/>
 
 - 회로 스위치
   - 연결을 생성하는 n개의 Input
@@ -66,7 +66,7 @@
 
 #### 접이식 스위치 I/O
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-05-FCSN.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-05-FCSN.PNG" height="auto"/>
 
 - n × n 접이식(Folded) 스위치
 - 전이중(Full-Duplex) 모드
@@ -82,7 +82,7 @@
 
 #### 단계 별 예시
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-06-SP.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-06-SP.PNG" height="auto"/>
 
 - 연결 설정 단계(Setup Phase)
 
@@ -108,7 +108,7 @@
 
 #### 지연(Delay)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-07-Delay.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-07-Delay.PNG" height="auto"/>
 
 - 데이터 전송 기간 에는 적은 지연
 - 연결 설정 단계
@@ -138,7 +138,7 @@
 
 - 4개의 교환기(라우터)를 이용한 데이터그램 망 형태
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-08-PS.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-08-PS.PNG" height="auto"/>
 
 - 인터넷(Internet)에서의 교환
   - 네트워크 층에서 패킷을 교환하는 데이터그램 방식
@@ -149,7 +149,7 @@
 
 #### 경로지정 표(Routing Table)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-09-Rt.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-09-Rt.PNG" height="auto"/>
 
 - 각 교환기는 목적지(des) 주소 기반 경로지정 표 보유
 - 목적지 주소, 출력 포트 존재
@@ -163,7 +163,7 @@
 
 #### 지연(Delay)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-10-Delay2.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-10-Delay2.PNG" height="auto"/>
 
 - 가상 회선망보다 큰 지연
 - 연결 설정/해제 단계 없음
@@ -174,7 +174,7 @@
 
 ### 가상 회선 망(Virtual-Circuit Network)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-11-VCN.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-11-VCN.PNG" height="auto"/>
 
 - 회선 교환망 + 데이터그램 망
 - 양자의 특성 모두 보유
@@ -212,7 +212,7 @@
     - 프레임이 스위치를 통과하며 VCI 변환
     - 일반적으로 작은 수
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-12-VCI.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-12-VCI.PNG" height="auto"/>
 
 #### 연결 단계
 
@@ -230,21 +230,21 @@
 
 #### 가상 회선 망 경로 지정 표
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-13-VCt.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-13-VCt.PNG" height="auto"/>
 
 - 가상 회선 생성 시 모든 스위치는 4개의 열을 갖는 표 생성
 - 표에 의해 Frame 전달
 
 #### 가상 회선 망 데이터 전송
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-14-VCNT.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-14-VCNT.PNG" height="auto"/>
 
 - src의 모든 Frame이 des에 전달될 때까지 동일하게 전달
 - 가상 회로(Virtual Circuit) 생성
 
 #### 연결 설정 단계(Setup Phase)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-15-VCNSP.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-15-VCNSP.PNG" height="auto"/>
 
 - 연결 설정 요청(Setup Request)
   - src A가 스위치 1로 setup Frame 전송
@@ -255,7 +255,7 @@
   - des B는 setup Frame 수신 후 VCI 할당
     - 할당된 VCI를 통해 A에서 오는 메시지 여부 판단
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-16-VCNSPA.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-16-VCNSPA.PNG" height="auto"/>
 
 - 연결 설정 확인 응답(Setup Phase Acknowledgement)
 
@@ -269,11 +269,11 @@
 
 - 가상 회선 망의 교환기와 표 존재
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-17-VCNDTP.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-17-VCNDTP.PNG" height="auto"/>
 
 - src to des 데이터 전송
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-18-VCNDT.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-18-VCNDT.PNG" height="auto"/>
 
 #### 연결 해제 단계(Teardown Phase)
 
@@ -285,7 +285,7 @@
 
 - 전체 지연 = 3T + 3τ + setup delay + teardown delay
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-19-Delay3.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-19-Delay3.PNG" height="auto"/>
 
 - Setup 시 1회 지연 발생
 - Teardown 시 1회 지연 발생
@@ -305,7 +305,7 @@
 
 ### 회선 교환기 유형
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-20-SwitchType.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-20-SwitchType.PNG" height="auto"/>
 
 ### 공간 분할(Space Division) 교환
 
@@ -313,7 +313,7 @@
 
 #### 크로스바(Crossbar) 교환
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-21-Crossbar.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-21-Crossbar.PNG" height="auto"/>
 
 - 각 교차점 상의 전기 마이크로 스위치(Transistor : 트랜지스터) 존재
 - n 입력과 m 출력 연결을 위해 n × m 개의 교차점 요구
@@ -321,7 +321,7 @@
 
 #### 다단계(Multistage) 교환기
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-22-Multistage.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-22-Multistage.PNG" height="auto"/>
 
 - 장치는 교환기에 연결되고 이 교환기는 차례로 다른 교환기에 계층적 연결
 - 가운데 스테이지에 있는 교환기가 처음과 마지막 교환기보다 적은 수의 스위치 보유
@@ -337,7 +337,7 @@
 
 #### 3단계 교환기
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-23-3Multistage.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-23-3Multistage.PNG" height="auto"/>
 
 - 전체 교차점 개수 : $2kN + k(\frac{N}{n})^2$
 - 단일 교환기에서 필요한 ($N^2$)보다 훨씬 적은 수
@@ -357,11 +357,11 @@
 
 - 시간 간격 교환 유무에 따른 시분할 다중화
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-24-TPM.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-24-TPM.PNG" height="auto"/>
 
 ### 시간 틈새 상호 교환(TSI : Time-Slot Interchange)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-25-TSI.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-25-TSI.PNG" height="auto"/>
 
 - 각 location RAM 크기는 Single Time Slot Size와 동일
 - Location 수는 Input 수와 동일
@@ -370,7 +370,7 @@
 
 ### 공간 분할 + 시분할 교환 결헙
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-26-STS.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-26-STS.PNG" height="auto"/>
 
 - 12 × 12 I/O를 3개의 그룹으로 나눠 사용
   - Time-Division : 지연을 1/3으로 줄임
@@ -378,11 +378,11 @@
 
 ### 패킷 교환기 구성 요소
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-27-PSconsist.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-27-PSconsist.PNG" height="auto"/>
 
 #### 입력 포트(Input Port)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-28-IP.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-28-IP.PNG" height="auto"/>
 
 - 패킷 교환 물리 및 데이터 링크 기능
 - 수신된 신호로부터 비트 형성
@@ -393,7 +393,7 @@
 
 #### 출력 포트(Output Port)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-29-OP.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-29-OP.PNG" height="auto"/>
 
 - 순서만 반대일 뿐 입력 포트와 같은 기능
 - 출력 패킷들이 큐에 저장
@@ -418,7 +418,7 @@
 
 ### 반얀 교환기(Banyan Switch)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-30-BS.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-30-BS.PNG" height="auto"/>
 
 - n input, n output인 경우
   - $log_2n$ stage와 각 stage에서 n/2개의 microswitch 존재
@@ -427,11 +427,11 @@
 
 #### 반얀 교환기 경로 탐색 예시
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-31-BSex.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-31-BSex.PNG" height="auto"/>
 
 ### 뱃처-반얀 교환기(Batcher-Banyan Switch)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch08/ch08-32-BBS.PNG" height="auto"/>
+<img src = "./Image/ch08/ch08-32-BBS.PNG" height="auto"/>
 
 - Banyan switch의 단점
   - 두 개의 packet이 충돌하는 경우 존재

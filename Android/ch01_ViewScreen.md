@@ -20,7 +20,7 @@
 - 액티비티 : 화면을 출력하는 컴포넌트
 - 화면에 내용을 표시할 경우 뷰 클래스 이용
 
-| <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-01-viewScreen.PNG" width="auto" height="auto" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-02-viewScreen2.PNG" width="auto" height="auto" /> |
+| <img src="./Image/ch01/ch01-01-viewScreen.PNG" width="auto" height="auto" /> | <img src="./Image/ch01/ch01-02-viewScreen2.PNG" width="auto" height="auto" /> |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
 
 ```kt
@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
 
 - 뷰 객체의 계층 구조
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-03-viewStructure.PNG" width="70%" height="auto" />
+<img src="./Image/ch01/ch01-03-viewStructure.PNG" width="70%" height="auto" />
 
     - View : 모든 뷰 클래스의 최상위 클래스로 액티비티는 View의 서브 클래스만 화면에 출력
     - ViewGroup : 자체 UI 없이 다른 뷰 여러 개를 묶어 제어할 목적으로 사용
@@ -142,12 +142,12 @@ class MainActivity : AppCompatActivity() {
 </LinearLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-04-LinearLayout.PNG" width="20%" height="auto" />
+<img src="./Image/ch01/ch01-04-LinearLayout.PNG" width="20%" height="auto" />
 
 - 레이아웃 중첩
   - 뷰의 계층 구조 : 레이아웃 객체로 중첩해서 복잡한 구성 가능
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-05-LinearLayout2.PNG" width="60%" height="auto" />
+<img src="./Image/ch01/ch01-05-LinearLayout2.PNG" width="60%" height="auto" />
 
 ```xml
 <!--> 레이아웃 중첩<!-->
@@ -243,7 +243,7 @@ val textView1 = findViewById<TextView>(R.id.text1)
 
 ### 뷰의 간격 설정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-06-MarginPadding.PNG" width="30%" height="auto" />
+<img src="./Image/ch01/ch01-06-MarginPadding.PNG" width="30%" height="auto" />
 
 - margin, padding 속성
   - 4 방향이 모두 같은 크기로 설정 가능
@@ -281,7 +281,7 @@ val textView1 = findViewById<TextView>(R.id.text1)
   - invisible : 뷰가 화면에 보이지 않지만 자리는 차지
   - gone : 자리조차 차지하지 않음
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-07-visibility.PNG" width="70%" height="auto" />
+<img src="./Image/ch01/ch01-07-visibility.PNG" width="70%" height="auto" />
 
 ```xml
 <!-->invisible 속성 사용<!-->
@@ -337,7 +337,7 @@ invisibleBtn.setOnClickListener{
     android:textStyle="bold"/>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-08-TextView.PNG" width="40%" height="auto" />
+<img src="./Image/ch01/ch01-08-TextView.PNG" width="40%" height="auto" />
 
 - android:autoLink 속성 : 출력할 문자열 분석 후 특정 형태의 문자열에 자동 링크 추가
   - android:autoLink="web"
@@ -356,7 +356,7 @@ invisibleBtn.setOnClickListener{
     android:autoLink="web|phone|email"/>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-09-autoLink.PNG" width="50%" height="auto" />
+<img src="./Image/ch01/ch01-09-autoLink.PNG" width="50%" height="auto" />
 
 - android:maxLines 속성 : 문자열이 특정 줄까지만 출력하는 속성
   - android:maxLines="3"
@@ -384,7 +384,7 @@ invisibleBtn.setOnClickListener{
     android:ellipsize="end"/>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-10-Lines.PNG" width="70%" height="auto" />
+<img src="./Image/ch01/ch01-10-Lines.PNG" width="70%" height="auto" />
 
 ### 이미지 뷰
 
@@ -409,7 +409,7 @@ invisibleBtn.setOnClickListener{
     android:background="#0000ff"/>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-11-Lake.PNG" width="60%" height="auto" />
+<img src="./Image/ch01/ch01-11-Lake.PNG" width="60%" height="auto" />
 
 ### 체크박스, 라디오 버튼
 
@@ -448,7 +448,7 @@ invisibleBtn.setOnClickListener{
 </RadioGroup>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-12-Buttons.PNG" width="30%" height="auto" />
+<img src="./Image/ch01/ch01-12-Buttons.PNG" width="30%" height="auto" />
 
 ### 에디트 텍스트
 
@@ -468,7 +468,7 @@ invisibleBtn.setOnClickListener{
     android:inputType="phone" />
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-13-keyboards.PNG" width="60%" height="auto" />
+<img src="./Image/ch01/ch01-13-keyboards.PNG" width="60%" height="auto" />
 
 | 속성값              | 설명                                                                                   |
 | :------------------ | :------------------------------------------------------------------------------------- |
@@ -520,13 +520,13 @@ android{
 - [File → New → New Module] 메뉴
 - Application/Library name 부분 Ch6_View 입력
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-14-modules.PNG" width="70%" height="auto" />
+<img src="./Image/ch01/ch01-14-modules.PNG" width="70%" height="auto" />
 
 ### 2단계) 문자열 리소스 등록
 
 - res/values/strings.xml 파일 수정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-15-strings.PNG" width="70%" height="auto" />
+<img src="./Image/ch01/ch01-15-strings.PNG" width="70%" height="auto" />
 
 ### 3단계) 레이아웃 XML 파일 작성
 
@@ -588,4 +588,4 @@ android{
 
 ### 4단계) 실행
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch01/ch01-16-excution.PNG" width="70%" height="auto" />
+<img src="./Image/ch01/ch01-16-excution.PNG" width="70%" height="auto" />

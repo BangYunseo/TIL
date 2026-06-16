@@ -56,7 +56,7 @@
 - 데이터를 캡슐로 싸서 외부의 접근으로부터 보호
 - 클래스로 캡슐 표현
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/IntroduceCpp/Class.PNG" height="70%" />
+<img src="./Image/IntroduceCpp/Class.PNG" height="70%" />
 
 ### 클래스 & 객체
 
@@ -93,7 +93,7 @@ public:
 
 - 객체가 자식 클래스의 멤버와 부모 클래스에 선언된 모양 그대로 멤버들을 가지고 탄생
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/IntroduceCpp/Inheritance.PNG" height="70%" />
+<img src="./Image/IntroduceCpp/Inheritance.PNG" height="70%" />
 
 ### 다형성(Polymorphism)
 
@@ -111,7 +111,7 @@ public:
 
 #### 절차 지향 프로그래밍과 객체 지향 프로그래밍
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/IntroduceCpp/OOPvsPP.PNG" height="70%" />
+<img src="./Image/IntroduceCpp/OOPvsPP.PNG" height="70%" />
 
 (여기부터 다시 작성)
 
@@ -203,7 +203,7 @@ int main(){
 - 이름 공간 사용
   - 이름 공간 :: 이름
 
-![functionf](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch02/functionf.PNG)
+![functionf](./Image/ch02/functionf.PNG)
 
 #### std
 
@@ -266,7 +266,7 @@ cout << width << '\n' << height << '\n';
 
 - cin으로부터 키 입력받는 과정
 
-![inputcin](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch02/inputcin.PNG)
+![inputcin](./Image/ch02/inputcin.PNG)
 
 #### 실행문 중간에 변수 선언
 
@@ -337,7 +337,7 @@ char name2[5] = {'G', 'r', 'a', 'c', 'e'};
 // name2는 문자열이 아닌 단순 문자 배열
 ```
 
-![stringchar](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch02/stringchar.PNG)
+![stringchar](./Image/ch02/stringchar.PNG)
 
 - string 클래스 이용
   - <string> 헤더 파일에 선언
@@ -368,7 +368,7 @@ cin >> name;
 // 키 입력 : Grace
 ```
 
-![grace](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch02/grace.PNG)
+![grace](./Image/ch02/grace.PNG)
 
 - 예제 3. 문자열 입력받고 출력하는 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/InputChar.cpp)
@@ -391,7 +391,7 @@ cin.getline(address, 100, '\n');
 // 도중에 <Enter> 키를 만나면 입력 중단
 ```
 
-![cingetline](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch02/cingetline.PNG)
+![cingetline](./Image/ch02/cingetline.PNG)
 
 - 예제 5. cin.getline()을 이용한 문자열 입력 예제  
   [SourceCodeChecking](<https://github.com/BangYunseo/Basic_CPP/blob/main/ch02_BasicC%2B%2B/CinGetLine().cpp>)

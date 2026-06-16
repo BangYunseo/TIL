@@ -107,7 +107,7 @@
 
 #### 중간자 공격(Man-in-the-Middle Attack)
 
-![MiM](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch09/MiM.PNG)
+![MiM](./Image/ch09/MiM.PNG)
 
 - MITM, MitM, MIM, MiM, MITMA로 축약
 - 공격자가 두 당사자 간의 통신을 몰래 중계하고 경우에 따라 통신 내용을 변경하는 공격

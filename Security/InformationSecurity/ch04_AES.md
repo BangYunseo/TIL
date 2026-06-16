@@ -40,7 +40,7 @@
 - 4x4 바이트 행렬로 나타내는 4개의 열과 4개의 바이트로 구성된 데이터 블록
 - 키는 바이트 행렬
 
-![AES](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/AES.PNG)
+![AES](./Image/ch04/AES.PNG)
 
 #### AES의 구체적인 구조
 
@@ -59,13 +59,13 @@
 - MixColumns
 - AddRoundKey(Key를 사용하는 유일한 과정)
 
-![AESDS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/AESDS.PNG)
+![AESDS](./Image/ch04/AESDS.PNG)
 
 ## 2절. SubBytes
 
 #### SubBytes Transformation
 
-![sbt](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/sbt.PNG)
+![sbt](./Image/ch04/sbt.PNG)
 
 - 상태(State)
 
@@ -77,17 +77,17 @@
   - 값 {2A} 포함
   - 즉 {95}는 {2A} 매핑
 
-![AESsb](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/AESsb.PNG)
+![AESsb](./Image/ch04/AESsb.PNG)
 
 - SubBytes Transformation Process
 
-![sbtP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/sbtP.PNG)
+![sbtP](./Image/ch04/sbtP.PNG)
 
 ## 3절. ShiftRows
 
 #### ShiftRows Transformation
 
-![srt](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/srt.PNG)
+![srt](./Image/ch04/srt.PNG)
 
 - 상태(State)
 
@@ -106,17 +106,17 @@
 
 #### MixColumns Transformation
 
-![MCT](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/MCT.PNG)
+![MCT](./Image/ch04/MCT.PNG)
 
 #### InvMixColumns Transformation
 
-![IMCT](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/IMCT.PNG)
+![IMCT](./Image/ch04/IMCT.PNG)
 
 ## 5절. AddRoundKey
 
 #### AddRoundKey Transformation
 
-![ART](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch04/ART.PNG)
+![ART](./Image/ch04/ART.PNG)
 
 - 첫 번째 행렬 : State
 - 두 번째 행렬 : RoundKey

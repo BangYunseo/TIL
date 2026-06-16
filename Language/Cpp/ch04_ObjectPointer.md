@@ -38,7 +38,7 @@ d = p->getArea();
 // (3) 멤버 함수 호출
 ```
 
-![Pointer](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/Pointer.PNG)
+![Pointer](./Image/ch04/Pointer.PNG)
 
 - 예제 1. 객체 포인터 선언 및 활용 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ObjectPointer.cpp)
@@ -66,11 +66,11 @@ d = p->getArea();
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/CircleClassArray.cpp)
 
 - 예제 2의 설명  
-  ![ex4_2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/ex4_2.PNG)
+  ![ex4_2](./Image/ch04/ex4_2.PNG)
 
 #### 객체 배열 생성 시 기본 생성자 호출
 
-![obcon](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/obcon.PNG)
+![obcon](./Image/ch04/obcon.PNG)
 
 #### 객체 배열 초기화
 
@@ -91,13 +91,13 @@ Circle circleArray[3] = { Circle(10), Circle(20), Circle() };
 #### 2차원 배열
 
 - 2차원 배열 선언  
-  ![arr2_1](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/arr2_1.PNG)
+  ![arr2_1](./Image/ch04/arr2_1.PNG)
 
 - 2차원 배열 선언과 초기화  
-  ![arr2_2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/arr2_2.PNG)
+  ![arr2_2](./Image/ch04/arr2_2.PNG)
 
 - 2차원 배열을 초기화하는 다른 방식  
-  ![arr2_3](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/arr2_3.PNG)
+  ![arr2_3](./Image/ch04/arr2_3.PNG)
 
 - 예제 4. Circle 클래스 2차원 배열 선언 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/Circle2DimentionArray.cpp)
@@ -171,7 +171,7 @@ delete pInt;
 
 #### 기본 탕비의 메모리 동적 할당 및 반환
 
-![pointermemory](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/pointermemory.PNG)
+![pointermemory](./Image/ch04/pointermemory.PNG)
 
 - 예제 5. 정수형 공간의 동적 할당 및 반환 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/DynamicMemory.cpp)
@@ -215,7 +215,7 @@ delete [] pointervalue;
 ```
 
 - 그림으로 이해하기
-  ![arrpointermemory](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/arrpointermemory.PNG)
+  ![arrpointermemory](./Image/ch04/arrpointermemory.PNG)
 
 - 예제 6. 정수형 배열의 동적 할당 및 반환 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/ArrayDynamicMemory.cpp)
@@ -269,7 +269,7 @@ delete pointervalue;
 ```
 
 - 그림으로 이해하기
-  ![returnobject](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/returnobject.PNG)
+  ![returnobject](./Image/ch04/returnobject.PNG)
 
 - 예제 7. Circle 객체 동적 생성 및 반환 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch04_ObjectPointer/DynamicCircle.cpp)
@@ -286,7 +286,7 @@ delete [] pointervalue;
 ```
 
 - 그림으로 이해하기
-  ![returnarrayobject](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/returnarrayobject.PNG)
+  ![returnarrayobject](./Image/ch04/returnarrayobject.PNG)
 
 #### 객체 배열의 사용 및 배열의 반환과 소멸자
 
@@ -342,7 +342,7 @@ delete [] pArray;
 
 #### 메모리 할당과 메모리 누수
 
-![memory](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/memory.PNG)
+![memory](./Image/ch04/memory.PNG)
 
 ## 4절. this
 
@@ -369,17 +369,17 @@ public:
 
 #### this와 객체
 
-![this](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/this.PNG)
+![this](./Image/ch04/this.PNG)
 
 #### this가 필요한 경우
 
 - 매개 변수의 이름과 멤버 변수의 이름이 같은 경우
-  ![this2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/this2.PNG)
+  ![this2](./Image/ch04/this2.PNG)
 
 - 멤버 함수가 객체 자신의 주소를 리턴할 때
   - 연산자 중복 시에 필요
 
-![this3](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/this3.PNG)
+![this3](./Image/ch04/this3.PNG)
 
 #### this의 제약 사항
 
@@ -391,7 +391,7 @@ public:
 #### this 포인터의 실체
 
 - 컴파일러에서 처리
-  ![thiscom](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch04/thiscom.PNG)
+  ![thiscom](./Image/ch04/thiscom.PNG)
 
 ## 5절. string
 

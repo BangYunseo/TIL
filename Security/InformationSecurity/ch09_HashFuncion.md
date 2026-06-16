@@ -14,7 +14,7 @@
 
 ##### 정의
 
-![HF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch10/HF.PNG)
+![HF](./Image/ch10/HF.PNG)
 
 - $H(⋅)$는 가변 길이 데이터 세트를 고정 길이 데이터 세트로 매핑하는 알고리즘
 - 해쉬 함수 반환 값
@@ -69,7 +69,7 @@
 
 - 해쉬 코드의 길이가 n일 때, 요구되는 작업량
 
-![SL](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch10/SL.PNG)
+![SL](./Image/ch10/SL.PNG)
 
 ## 2절. 해쉬 함수의 이상적인 구조
 
@@ -87,7 +87,7 @@
 
 - 해시 함수의 입력은 블록 $Y_0, Y_1, …, Y_{L−1}$ ​로 구성된 메시지 $M$
 
-![HF2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch10/HF2.PNG)
+![HF2](./Image/ch10/HF2.PNG)
 
 ## 3절. SHA
 
@@ -127,7 +127,7 @@
 
 - SHA-1/SHA-2의 매개 변수(bits 단위)
 
-![SHA12](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch10/SHA12.PNG)
+![SHA12](./Image/ch10/SHA12.PNG)
 
 ##### SHA-3
 
@@ -136,7 +136,7 @@
 - 가변 출력 길이(224, 256, 384, 512) 지원
 - 내부 구조는 기존 SHA 계열과 상이
 
-![SHA3](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch10/SHA3.PNG)
+![SHA3](./Image/ch10/SHA3.PNG)
 
 #### 응용
 
@@ -155,4 +155,4 @@
 - 사전 공격(dictionary attacks)의 효과 감소 목적
 - 각 비밀번호는 해시 함수 $H$를 적용 전 $t$-비트의 랜덤 문자열(salt) 추가
 
-![salt](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch10/salt.PNG)
+![salt](./Image/ch10/salt.PNG)

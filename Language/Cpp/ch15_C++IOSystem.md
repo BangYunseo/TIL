@@ -32,7 +32,7 @@
 
 #### C++ 입출력 스트림
 
-![IOstream](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/IOstream.PNG)
+![IOstream](./Image/ch15/IOstream.PNG)
 
 #### C++ 입출력 스트림 버퍼
 
@@ -53,11 +53,11 @@
 
 #### 키 입력 스트림과 버퍼의 역할
 
-![Istream](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/Istream.PNG)
+![Istream](./Image/ch15/Istream.PNG)
 
 #### 스크린 출력 스트림과 버퍼의 역할
 
-![Ostream](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/Ostream.PNG)
+![Ostream](./Image/ch15/Ostream.PNG)
 
 #### C++ 표준 : 스트림 입출력만 지원
 
@@ -104,15 +104,15 @@ cin >> ch;
 
 - 다양한 크기의 다국어 문자를 수용하기 위해 입출력 라이브러리를 템플릿으로 작성
 
-![IOlib](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/IOlib.PNG)
+![IOlib](./Image/ch15/IOlib.PNG)
 
 #### typedef로 선언된 ios, istream, ostream, iostream 클래스
 
-![typedef](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/typedef.PNG)
+![typedef](./Image/ch15/typedef.PNG)
 
 #### 입출력 클래스 소개
 
-![IOclass](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/IOclass.PNG)
+![IOclass](./Image/ch15/IOclass.PNG)
 
 ## 2절. 스트림 객체
 
@@ -138,7 +138,7 @@ cin >> ch;
 
 #### iostream에 선언된 스트림 객체
 
-![iostream2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/iostream2.PNG)
+![iostream2](./Image/ch15/iostream2.PNG)
 
 #### ostream 멤버 함수
 
@@ -199,7 +199,7 @@ while(true){
 
 #### ch = cin.get()의 실행 사례
 
-![cinget](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/cinget.PNG)
+![cinget](./Image/ch15/cinget.PNG)
 
 - 예제 2. get()과 get(char&)을 이용한 한 줄의 문자를 읽는 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/FunctionGet.cpp)
@@ -246,7 +246,7 @@ istream& getline(char *s, int n, char delim = '\n');
 // get()과 동일하지만 delim에 저장된 구분 문자를 스트림에서 제거
 ```
 
-![readingline](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/readingline.PNG)
+![readingline](./Image/ch15/readingline.PNG)
 
 - 예제 4. getline()으로 한 줄 단위 문장 읽는 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/ReadingGetLine.cpp)
@@ -298,11 +298,11 @@ int n = cin.gcount();
 
 - 입출력 스트림에서 입출력 형식을 지정하기 위한 플래그
 
-![ios](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/ios.png)
+![ios](./Image/ch15/ios.png)
 
 #### ios 클래스에 정의된 포맷 플래그
 
-![iosflag](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/iosflag.png)
+![iosflag](./Image/ch15/iosflag.png)
 
 #### 포맷 플래그를 세팅하는 멤버 함수
 
@@ -448,11 +448,11 @@ cout << setw(10) << setfill('^') << "Hello" << endl;
 
 #### 매개 변수 없는 조작자
 
-![nohavemani](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/nohavemani.PNG)
+![nohavemani](./Image/ch15/nohavemani.PNG)
 
 #### 매개 변수 있는 조작자
 
-![havemani](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/havemani.PNG)
+![havemani](./Image/ch15/havemani.PNG)
 
 - 예제 7. 매개 변수 없는 조작자 사용 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/NoParameterMani.cpp)
@@ -462,7 +462,7 @@ cout << setw(10) << setfill('^') << "Hello" << endl;
 
 #### 조작자 실행 과정
 
-![usingmani](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/usingmani.PNG)
+![usingmani](./Image/ch15/usingmani.PNG)
 
 #### 사용자 정의 조작자 함수 원형
 
@@ -507,7 +507,7 @@ public:
 
 #### 삽입 연산자의 실행 과정
 
-![usingio](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/usingio.PNG)
+![usingio](./Image/ch15/usingio.PNG)
 
 #### 사용자 삽입 연산자 만들기
 
@@ -549,7 +549,7 @@ int main(){
 
 #### cout << p;를 위한 << 연산자 만들기
 
-![userio](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/userio.PNG)
+![userio](./Image/ch15/userio.PNG)
 
 - 예제 11. Book 클래스 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch15_C%2B%2BIOSystem/Book.cpp)
@@ -622,4 +622,4 @@ int main() {
 
 #### cin >> p;를 위한 >> 연산자 만들기
 
-![usereo](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch15/usereo.PNG)
+![usereo](./Image/ch15/usereo.PNG)

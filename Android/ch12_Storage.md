@@ -147,7 +147,7 @@ val db: SQLiteDatabase = DBHelper(this).writeDatabase
   - FileInputStream / FileOutputStream : 파일에서 바이트 스트림으로 데이터를 읽거나 쓰는 클래스
   - FileReader / FileWriter : 파일에서 문자열 스트림으로 데이터를 읽거나 쓰는 클래스
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch12/ch12-01-file.PNG" height="auto" />
+<img src="./Image/ch12/ch12-01-file.PNG" height="auto" />
 
 ### 내장 메모리 파일 이용
 
@@ -369,7 +369,7 @@ class MySettingFragment : PreferenceFragmentCompat() {
 
 - 실행 결과
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch12/ch12-02-Fragment.PNG" height="auto" />
+<img src="./Image/ch12/ch12-02-Fragment.PNG" height="auto" />
 
 ### 설정 화면 구성
 
@@ -401,7 +401,7 @@ class MySettingFragment : PreferenceFragmentCompat() {
 
 - 실행 결과
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch12/ch12-03-PC.PNG" height="auto" />
+<img src="./Image/ch12/ch12-03-PC.PNG" height="auto" />
 
 #### \<Preference\> 태그
 
@@ -427,7 +427,7 @@ class MySettingFragment : PreferenceFragmentCompat() {
 
 - 실행 결과
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch12/ch12-04-P.PNG" height="auto" />
+<img src="./Image/ch12/ch12-04-P.PNG" height="auto" />
 
 #### onPreferenceStartFragment()
 
@@ -580,7 +580,7 @@ idPreference?.summaryProvider =
 
 - 실행 결과
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch12/ch12-05-SettingValue.PNG" height="auto" />
+<img src="./Image/ch12/ch12-05-SettingValue.PNG" height="auto" />
 
 #### 이벤트 핸들러
 
@@ -698,6 +698,6 @@ implementation(libs.androidx.preference.ktx)
 
 ### 8) 앱 실행
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch12/ch12-06-App.PNG" height="auto" />
+<img src="./Image/ch12/ch12-06-App.PNG" height="auto" />
     
 [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch13)

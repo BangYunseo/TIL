@@ -208,7 +208,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 
 ### 플랫폼 리소스 사용
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-01-package.PNG" width="60%" height="auto" />
+<img src="./Image/ch04/ch04-01-package.PNG" width="60%" height="auto" />
 
 - 안드로이드 플랫폼이 제공하는 리소스
 - android.R이라는 플랫폼 라이브러리의 R 파일에 등록
@@ -217,7 +217,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 
 ### 리소스 조건 설정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-02-icon1.PNG" width="50%" height="auto" />
+<img src="./Image/ch04/ch04-02-icon1.PNG" width="50%" height="auto" />
 
 - 리소스를 특정 환경에서만 적용되도록 설정
 - 기기 별 실행 아이콘 크기
@@ -230,7 +230,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 |   HDPI    | 72 \* 72   |
 |   MDPI    | 48 \* 48   |
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-03-icon2.PNG" width="100%" height="auto" />
+<img src="./Image/ch04/ch04-03-icon2.PNG" width="100%" height="auto" />
 
 - 리소스 디렉터리 이름에서 붙임표(-) 뒤의 단어가 리소스의 조건
 - mipmap-mdpi 디렉터리 : mdpi 조건
@@ -267,7 +267,7 @@ binding.textView.textSize = resources.getDimension(R.dimen.text_size)
 - 리소스 문자열을 각국 언어로 제공
 - 파일을 여러 개 생성하여 각 언어에 맞는 리소스 문자열을 담고 어느 XML 파일을 적용해야 하는지 리소스 디렉토리명으로 지정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-04-languageResources.PNG" width="30%" height="auto" />
+<img src="./Image/ch04/ch04-04-languageResources.PNG" width="30%" height="auto" />
 
 ```xml
 <!-->영어 문자열 리소스 예시<!-->
@@ -414,7 +414,7 @@ class Book(var name: String, var price: Int){
 
 - round_button.xml 파일과 intro.png 파일 drawable 디렉터리에 복사
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-05-drawable.PNG" width="30%" height="auto" />
+<img src="./Image/ch04/ch04-05-drawable.PNG" width="30%" height="auto" />
 
 ### 3) 언어 별 문자열 리소스 작성
 
@@ -458,7 +458,7 @@ class Book(var name: String, var price: Int){
 </resources>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-06-values.PNG" width="30%" />
+<img src="./Image/ch04/ch04-06-values.PNG" width="30%" />
 
 ### 4) 세로 방향 화면 구성
 
@@ -529,7 +529,7 @@ class Book(var name: String, var price: Int){
 </RelativeLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-07-landout.PNG" width="30%" height="auto" />
+<img src="./Image/ch04/ch04-07-landout.PNG" width="30%" height="auto" />
 
 ### 5) 가로 방향 화면 구성
 
@@ -591,4 +591,4 @@ class Book(var name: String, var price: Int){
 </RelativeLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch04/ch04-08-land.PNG" width="30%" height="auto" />
+<img src="./Image/ch04/ch04-08-land.PNG" width="30%" height="auto" />

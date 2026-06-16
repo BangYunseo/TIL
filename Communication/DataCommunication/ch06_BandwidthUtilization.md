@@ -35,7 +35,7 @@
 
 ### 다중화 시스템 기본 형식
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-01-BasicMultiplexing.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-01-BasicMultiplexing.PNG" height="auto"/>
 
 - 단일 데이터 링크를 통해 여러 개의 신호를 동시에 전송하기 위한 기술
 
@@ -48,13 +48,13 @@
 
 ### 다중화 범주
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-02-MultiplexingType.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-02-MultiplexingType.PNG" height="auto"/>
 
 ## 1절 - 1. FDM
 
 ### 주파수 분할 다중화(FDM : Frequency Division Multiplexing)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-03-FDM.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-03-FDM.PNG" height="auto"/>
 
 - 신호들을 합성하는 아날로그 다중화 기술
 - 전송되어야 하는 신호들의 대역폭 합보다 링크의 대역폭이 클 때 적용 가능
@@ -64,7 +64,7 @@
 
 ### 다중화 과정
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-04-MP.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-04-MP.PNG" height="auto"/>
 
 1. 각 소스는 유사한 주파수 범위의 신호 생성
    - 신호들은 다중화기 내부에서 각기 서로 다른 반송 주파수로 변조(f1, f2, f3)
@@ -73,14 +73,14 @@
 
 ### 다중화 복구 과정(Demultiplexing)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-05-DM.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-05-DM.PNG" height="auto"/>
 
 - 필터를 사용해 다중화된 신호를 구성요소의 신호들로부터 분리
 - 개별적 신호를 넘겨받은 복조기는 반송파로부터 신호만 분리 후 수신 장치로 전달
 
 ### 아날로그 반송파 구조
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-06-FDM2.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-06-FDM2.PNG" height="auto"/>
 
 - 전화 회사에서 사용하는 방식
 - 낮은 대역폭 회선들을 높은 대역폭 회선들로 다중화
@@ -98,7 +98,7 @@
 
 ### 파장 분할 다중화(WDM : Wavelength Division Multiplexing)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-07-WDM.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-07-WDM.PNG" height="auto"/>
 
 - 광섬유 신호 조합을 위한 아날로그 다중화 기법
   - 광 == 빛 채널 이용 : 빛으로 된 신호 전송
@@ -108,7 +108,7 @@
 - Multiple light source 사용 => 하나의 signal light로 혼합(prism 사용)
 - 개념적으로 FDM과 동일
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-08-prism.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-08-prism.PNG" height="auto"/>
 
 - 다중 빛 소스를 단일 빛으로 결합
 - 단일 빛은 다중 빛 소스로 분리
@@ -117,7 +117,7 @@
 
 ### 동시 시분할 다중화(TDM : Time Division Multiplexing)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-09-TDM.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-09-TDM.PNG" height="auto"/>
 
 - 여러 개의 저속 채널을 하나의 고속 채널로 조합하는 디지털 다중화 기법
   - 동기식 TDM
@@ -127,7 +127,7 @@
 
 #### 동기식 TDM
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-10-ATDM.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-10-ATDM.PNG" height="auto"/>
 
 - 시간 틈새(time-slot)와 프레임(frame)
 - Time slot
@@ -137,7 +137,7 @@
 
 ### 끼워넣기(Interleaving)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-11-Interleaving.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-11-Interleaving.PNG" height="auto"/>
 
 - 하나는 다중화기 쪽에서 다른 하나는 다중화 복구 장치 쪽에서 매우 빠르게 도는 교환기
   - 일정한 속도로 회전하는 switch와 동일한 개념
@@ -147,7 +147,7 @@
 
 ### 빈 틈새(Empty Slots)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-12-Es.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-12-Es.PNG" height="auto"/>
 
 - 동기식 TDM은 효율적 X
 - 발신자가 전송할 데이터가 없으면 빈 틈새 생성
@@ -156,19 +156,19 @@
 
 #### 1. 다단계 다중화(Multilevel Multiplexing)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-13-MM.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-13-MM.PNG" height="auto"/>
 
 - 입력 데이터 전송률이 다른 값들에 비해 정수 배만큼 빠를 경우 사용하는 기술
 
 #### 2. 다중-틈새 할당(Multiple-Slot Allocation)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-14-MA.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-14-MA.PNG" height="auto"/>
 
 - 단일 입력 회선에 1개보다 많은 틈새 할당
 
 #### 3. 펄스 채워 넣기(Pulse Stuffing)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-15-PS.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-15-PS.PNG" height="auto"/>
 
 - 가장 높은 데이터율의 입력 회선을 주 데이터율로 설정
 - 낮은 데이터율의 입력 회선에 공 비트 끼워넣기
@@ -188,11 +188,11 @@
 - 각 프레임의 시작점에서 필요한 Synchronization Bits
 - 1 bit/frame(0과 1 반복 : 01010101...)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-16-FB.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-16-FB.PNG" height="auto"/>
 
 ### 디지털 신호 서비스
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-17-DSS.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-17-DSS.PNG" height="auto"/>
 
 | 서비스 | 회선 | 전송률(Mbps) | 음성 채널 |
 | :----: | :--: | :----------: | :-------: |
@@ -208,14 +208,14 @@
 
 ### 아날로그 전송용 T 회선
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-18-Tline.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-18-Tline.PNG" height="auto"/>
 
 - 디지털 데이터, 음성, 비디오 신호 등의 전송을 위해 설계
 - 아날로그 신호 표본 채집 후 시분할 다중화된다면 아날로그 전송(일반 전화통화)을 위해 사용
 
 #### T-1 프레임 구조
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-19-T1.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-19-T1.PNG" height="auto"/>
 
 ### E 회선 전송 속도
 
@@ -249,11 +249,11 @@
 
 - 입력 회선이 전송할 데이터가 존재하는 경우에만 출력 프레임 틈새 할당
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-20-STDM.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-20-STDM.PNG" height="auto"/>
 
 ### 대역 확산 방식(SS : Spread Spectrum)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-21-SS.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-21-SS.PNG" height="auto"/>
 
 - 서로 다른 발신지에서 오는 신호를 합해 더 큰 대역으로 변환
 - 무선 응용(LAN & WAN)을 위한 설계
@@ -268,7 +268,7 @@
 
 ### 주파수 도약 대역 확산(FHSS : Frequency Hopping Spread Spectrum)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-22-FHSS1.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-22-FHSS1.PNG" height="auto"/>
 
 - 발신지 신호로 변조된 M 개의 서로 다른 반송파(원 신호 변조) 사용
 - 어느 순간에는 신호가 하나의 carrier 주파수로 변조되고 다른 순간에는 신호가 다른 carrier 주파수로 변조됨
@@ -288,26 +288,26 @@
 
 1. 주파수 선택
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-23-FHSS2.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-23-FHSS2.PNG" height="auto"/>
 
 2. FHSS 사이클
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-24-FHSS3.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-24-FHSS3.PNG" height="auto"/>
 
 3. 대역폭 공유
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-25-FHSS4.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-25-FHSS4.PNG" height="auto"/>
 
 ### 직접 순열 대역 확산(DSSS : Direct Sequence Spread Spectrum)
 
 - 각 데이터 비트를 확산 코드로 n 비트 대체
 - 비트에 칩(Chip)인 n 비트 코드 지정
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-26-DSSS.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-26-DSSS.PNG" height="auto"/>
 
 #### DSSS 예시
 
 - 무선 LAN에 사용되는 유명한 바커 순열
   - ex) n == 11
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch06/ch06-27-DSSS2.PNG" height="auto"/>
+<img src = "./Image/ch06/ch06-27-DSSS2.PNG" height="auto"/>

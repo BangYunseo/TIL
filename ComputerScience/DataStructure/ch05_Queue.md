@@ -2,7 +2,7 @@
 
 #### 큐
 
-![queue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch05/queue.PNG)
+![queue](./Image/ch05/queue.PNG)
 
 * 가장 먼저 삽입한 원소를 유일하게 접근 가능한 원소로 갖는 선입선출(First-In-First-Out) 형태의 선형 자료 구조
   * 선입선출 : 먼저 들어온 값을 먼저 계산하는 방식
@@ -22,17 +22,17 @@
 |isEmpty()|큐가 비어있다면 True 반환|
 |dequeueAll()|큐를 깨끗이 청소|
 
-![queue2](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch05/queue2.PNG)
+![queue2](./Image/ch05/queue2.PNG)
 
 #### 큐의 삽입
 * 큐에 값을 삽입하면 tail(끝)부분에 값이 삽입
 
-![enqueue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch05/enqueue.PNG)
+![enqueue](./Image/ch05/enqueue.PNG)
 
 #### 큐의 삭제
 * 큐에 값을 삭제하면 front(처음)부분에 값이 삽입
 
-![dequeue](https://github.com/BangYunseo/TIL/blob/main/ComputerScience/Data%20Structure/%20Image/ch05/dequeue.PNG)
+![dequeue](./Image/ch05/dequeue.PNG)
 
 #### 리스트로 구현한 큐
 

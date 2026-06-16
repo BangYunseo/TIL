@@ -103,4 +103,4 @@
 - p는 홀수 소수이고 k ≥ 1인 경우, $Z_n^*$는 $n = 2, 4, p^k$ 또는 $2p^k$일 때 생성자가 존재
 - p가 소수일 경우 $Z_p^*$는 생성자가 존재
 
-![Modulo19](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch07/M19.PNG)
+![Modulo19](./Image/ch07/M19.PNG)

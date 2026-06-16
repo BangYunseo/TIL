@@ -10,7 +10,7 @@
 
 ### MVVM 패턴
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/SoftwareEngineering/Image/MVVM/01_MVVM.PNG" height="auto" />
+<img src="./Image/MVVM/01_MVVM.PNG" height="auto" />
 
 - Model + View + ViewModel
 - 프로그램의 비즈니스 & 프레젠테이션 로직을 UI로 분리하는 패턴

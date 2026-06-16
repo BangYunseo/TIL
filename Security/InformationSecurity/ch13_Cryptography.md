@@ -10,7 +10,7 @@
 
 #### 타원 곡선(Elliptic Curves)
 
-![EC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/EC.PNG)
+![EC](./Image/ch16/EC.PNG)
 
 #### 실수 상의 타원 곡선(Elliptic Curves over R)
 
@@ -19,31 +19,31 @@
 - 특정 조건 만족
   - ex) $4a^3 + 27b^2 != 0$
 
-![EC1](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/EC1.PNG)
+![EC1](./Image/ch16/EC1.PNG)
 
 #### 군 연산(Group Law)
 
-![GL](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/GL.PNG)
+![GL](./Image/ch16/GL.PNG)
 
-![GL1](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/GL1.PNG)
+![GL1](./Image/ch16/GL1.PNG)
 
 #### 유한 필드 상의 타원 곡선(Elliptic Curves over Finite Fields)
 
-![ECFF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/ECFF.PNG)
+![ECFF](./Image/ch16/ECFF.PNG)
 
 ##### $E_{23}(1, 1) : y^2 = x^3 + x + 1$ over $F_{23}$
 
-![E23](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/E23.PNG)
+![E23](./Image/ch16/E23.PNG)
 
-![E231](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/E231.PNG)
+![E231](./Image/ch16/E231.PNG)
 
 #### 타원 곡선 상의 점 덧셈/배수 계산(Elliptic Curve Point Addition/Doubling)
 
-![AD](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/AD.PNG)
+![AD](./Image/ch16/AD.PNG)
 
 ##### $E _{61}(1,−1) : y^2 = x^3 − x$ over $F_{61}$
 
-![E61](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/E61.PNG)
+![E61](./Image/ch16/E61.PNG)
 
 #### 디피-헬만 타원 곡선(ECDH : Elliptic-Curve Diffie-Hellman)
 
@@ -63,7 +63,7 @@
 
 #### TCP/IP 프로토콜 스택 내 보안 기능의 상대적 위치(Relative Location of Security Facilities in the TCP/IP Protocol Stack)
 
-![PS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/PS.PNG)
+![PS](./Image/ch16/PS.PNG)
 
 #### SSL 과 TLS
 
@@ -120,7 +120,7 @@
 
 #### TLS 프로토콜
 
-![TLS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/TLS.PNG)
+![TLS](./Image/ch16/TLS.PNG)
 
 - 데이터를 특정 형식으로 캡슐화하여 교환하는 레코드 주고받음
 - 레코드의 연결 상태
@@ -158,7 +158,7 @@
 
 ##### 구조(Operation)
 
-![TRPO](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/TRPO.PNG)
+![TRPO](./Image/ch16/TRPO.PNG)
 
 #### 형식(Format)
 
@@ -167,13 +167,13 @@
 - 부 버전(Minor version) : 8비트
 - 압축된 길이(Compressed length) : 16비트
 
-![TRPF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/TRPF.PNG)
+![TRPF](./Image/ch16/TRPF.PNG)
 
 ## 3절. TLS의 프로토콜 유형
 
 #### 변경 암호 사양 프로토콜(Change Cipher Spec Protocol)
 
-![CCSP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/CCSP.PNG)
+![CCSP](./Image/ch16/CCSP.PNG)
 
 - TLS 레코드 프로토콜을 사용하는 네 가지 TLS 전용 프로토콜 중 하나
 - 가장 간단한 프로토콜
@@ -187,7 +187,7 @@
 
 #### 경고 프로토콜(Alert Protocol)
 
-![AP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/AP.PNG)
+![AP](./Image/ch16/AP.PNG)
 
 - 형식(Format)
 
@@ -207,7 +207,7 @@
 
 #### 핸드셰이크 프로토콜 (Handshake Protocol)
 
-![HP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/HP.PNG)
+![HP](./Image/ch16/HP.PNG)
 
 - 기능(Overview)
 
@@ -222,9 +222,9 @@
 
 ##### TLS 핸드셰이크 프로토콜 메세지 타입
 
-![THPMT](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/THPMT.PNG)
+![THPMT](./Image/ch16/THPMT.PNG)
 
-![THPMT2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/THPMT2.PNG)
+![THPMT2](./Image/ch16/THPMT2.PNG)
 
 #### Hello Messages
 
@@ -239,7 +239,7 @@
 
 #### CipherSuiteKey : 교환 방법 알고리즘(Exchange Method Algorithms)
 
-![CSK](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/CSK.PNG)
+![CSK](./Image/ch16/CSK.PNG)
 
 #### SSL Pulse(https://www.ssllabs.com/ssl-pulse/)
 
@@ -247,9 +247,9 @@
   - TLS의 주요 용도 : 웹사이트와 HTTP 프로토콜로 인코딩된 웹 브라우저 간의 월드 와이드 웹 트래픽 보호
   - HTTPS 프로토콜 구성 == HTTP 트래픽을 보호하기 위해 TLS를 사용하는 것
 
-![SP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/SP.PNG)
+![SP](./Image/ch16/SP.PNG)
 
 - 서버 SSL Pulse 모니터가 지원하는 가장 취약한 키 교환
 - 현재 2048비트의 최소 예상 강도
 
-![KES](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch16/KES.PNG)
+![KES](./Image/ch16/KES.PNG)

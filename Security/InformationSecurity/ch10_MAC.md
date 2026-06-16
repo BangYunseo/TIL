@@ -16,7 +16,7 @@
 
 ### MAC
 
-![MAC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/MAC.PNG)
+![MAC](./Image/ch11/MAC.PNG)
 
 - 메시지를 인증하고 메시지의 무결성과 진위성(정확성)을 보장하는 데 사용되는 짧은 정보
 
@@ -57,7 +57,7 @@
 
 #### 길이 확장 공격(Length Extension Attack)
 
-![LEA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/LEA.PNG)
+![LEA](./Image/ch11/LEA.PNG)
 
 - 공격자가 $H(m_1)$과 $m_1$의 길이를 사용하여 $m_1$의 내용은 알 필요 없이 공격자가 제어하는 $m_2$에 대해 $H(m_1 ‖ m_2)$를 계산할 수 있는 공격의 일종
 - MD5, SHA-1, SHA-2와 같이 Merkle–Damgård 구조를 기반으로 한 알고리즘은 이러한 종류의 공격에 취약
@@ -94,7 +94,7 @@
 - ipad : 내부 패딩(0x363636…3636, 하나의 블록 크기 길이의 16진수 상수)
 - Example : MD5, SHA-1, SHA-224, SHA-256 해쉬 함수 = 블록 크기가 64바이트(512비트)
 
-![HSHA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/HSHA.PNG)
+![HSHA](./Image/ch11/HSHA.PNG)
 
 #### SHA-3 vs HMAC
 
@@ -107,7 +107,7 @@
 
 #### CBC-MAC(암호 블록 연결 MAC)
 
-![CBCMAC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/CBCMAC.PNG)
+![CBCMAC](./Image/ch11/CBCMAC.PNG)
 
 - 메시지 M의 CBC-MAC을 계산하려면, 제로 IV(초기 벡터)로 CBC 모드에서 M을 암호화합니다.
 - 고정 길이 메시지 : 안전
@@ -124,11 +124,11 @@
   - CBC-MAC의 보안 결함 수정
   - 고정 길이 메시지에 대해서만 안전
 
-![CMAC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/CMAC.PNG)
+![CMAC](./Image/ch11/CMAC.PNG)
 
-![CMAC2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/CMAC2.PNG)
+![CMAC2](./Image/ch11/CMAC2.PNG)
 
-![CMAC3](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch11/CMAC3.PNG)
+![CMAC3](./Image/ch11/CMAC3.PNG)
 
 ## 6절. 인증 암호(Authenticated Encryption)
 

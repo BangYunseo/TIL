@@ -12,7 +12,7 @@
 
 ### 인증 보안 목표
 
-![At](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/At.PNG)
+![At](./Image/ch14/At.PNG)
 
 |목표|설명|
 |:---:|:---|
@@ -23,7 +23,7 @@
 
 ### 인증 보안 목표
 
-![At2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/At2.PNG)
+![At2](./Image/ch14/At2.PNG)
 
 - 그리스어 αὐθεντικός("진짜의" 또는 "진본의")와 αὐθέντης("작성자")에서 유래
 - 데이터나 개체의 속성의 진위를 확인하는 행위
@@ -61,7 +61,7 @@
   - 신분증(ID 카드)
   - 보안 토큰
 
-![OF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/OF.PNG)
+![OF](./Image/ch14/OF.PNG)
 
 ##### 지식 요소(Knowledge Factors)
 
@@ -71,14 +71,14 @@
   - 암호문
   - 개인 식별 번호(PIN)
 
-![KF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/KF.PNG)
+![KF](./Image/ch14/KF.PNG)
 
 ##### 그래픽 비밀번호
 
 - 인식 기반 기술(Recognition-based Techniques)
 - 많은 선택지 중에서 여러 이미지를 선택 후 인증 시 나중에 식별하는 방식
 
-![Ps](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/Ps.PNG)
+![Ps](./Image/ch14/Ps.PNG)
 
 - N : 전체 그림의 수
 - K : 비밀번호로 선택된 그림의 수
@@ -150,7 +150,7 @@
 - 1950년대부터 매우 영향력 있으면서도 널리 비판받고 있는 개념
 - 인공지능 철학에서 중요한 개념
 
-![TT](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/TT.PNG)
+![TT](./Image/ch14/TT.PNG)
 
 ## 4절. 사람 인증(Human Authentication)
 
@@ -165,4 +165,4 @@
 - 해결하기 어려운 방식으로 설계
 - 정답이 제출되면 그것이 인간에 의해 입력되었음을 추정 가능
 
-![CAPTURE](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch14/CAPTURE.PNG)
+![CAPTURE](./Image/ch14/CAPTURE.PNG)

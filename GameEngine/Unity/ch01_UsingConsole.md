@@ -12,11 +12,11 @@
 
 - C# 스크립트 생성
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/GameEngine/Unity/Image/ch01/ch01-01-NewScript.PNG"  width="100%" height="100%"/>
+<img src="./Image/ch01/ch01-01-NewScript.PNG"  width="100%" height="100%"/>
 
 - 스크립트 코딩 화면
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/GameEngine/Unity/Image/ch01/ch01-02-ScriptScreen.PNG"  width="100%" height="100%"/>
+<img src="./Image/ch01/ch01-02-ScriptScreen.PNG"  width="100%" height="100%"/>
 
 ## 2절. 콘솔 출력
 
@@ -30,6 +30,6 @@ void start(){
 }
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/GameEngine/Unity/Image/ch01/ch01-03-HelloUnity.PNG"  width="100%" height="100%"/>
+<img src="./Image/ch01/ch01-03-HelloUnity.PNG"  width="100%" height="100%"/>
 
 [C#에 대해 더 자세히 알고 싶다면?](https://github.com/BangYunseo/TIL/blob/main/Language/C%23/ch01_BasicC%23.md)

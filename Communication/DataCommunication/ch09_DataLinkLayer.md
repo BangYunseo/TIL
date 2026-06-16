@@ -13,7 +13,7 @@
 
 ### 노드와 링크
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch09/ch09-01-NodeLink.PNG" height="auto"/>
+<img src = "./Image/ch09/ch09-01-NodeLink.PNG" height="auto"/>
 
 - 데이터 링크 층의 통신 : 노드-대-노드(Node-To-Node)
 - LAN과 WAN : 라우터를 통한 연결
@@ -22,7 +22,7 @@
 
 ### 서비스
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch09/ch09-02-DLL.PNG" height="auto"/>
+<img src = "./Image/ch09/ch09-02-DLL.PNG" height="auto"/>
 
 - 데이터 링크 층
   - 프레임 짜기, 흐름 제어, 오류 제어, 혼잡 제어
@@ -41,7 +41,7 @@
 
 ### 두 개의 부 계층
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch09/ch09-03-DLCMAC.PNG" height="auto"/>
+<img src = "./Image/ch09/ch09-03-DLCMAC.PNG" height="auto"/>
 
 1. 데이터 링크 제어(DLC : Data-Link Control)
    - 점-대-점과 브로드캐스트 링크와 연관된 모든 사항 제어
@@ -52,7 +52,7 @@
 
 ### 링크 계층 주소(Link-Layer Address)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch09/ch09-04-LLA.PNG" height="auto"/>
+<img src = "./Image/ch09/ch09-04-LLA.PNG" height="auto"/>
 
 - 링크 계층 주소(link-layer address)
 
@@ -94,7 +94,7 @@
 
 ### 주소 변환 프로토콜(ARP : Address Resolution Protocol)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch09/ch09-05-ARP.PNG" height="auto"/>
+<img src = "./Image/ch09/ch09-05-ARP.PNG" height="auto"/>
 
 - IP 주소를 지정된 링크 계층 주소에 매핑 후 데이터링크 층으로 전달
 - 네트워크 층에서 정의한 보조 프로토콜 중 하나
@@ -103,11 +103,11 @@
 
 ### 주소 변환 프로토콜 동작 과정
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch09/ch09-06-ARPP.PNG" height="auto"/>
+<img src = "./Image/ch09/ch09-06-ARPP.PNG" height="auto"/>
 
 ### ARP 패킷 형식
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch09/ch09-07-ARPF.PNG" height="auto"/>
+<img src = "./Image/ch09/ch09-07-ARPF.PNG" height="auto"/>
 
 - 하드웨어 유형(hardware type) 필드
   - 링크 계층 프로토콜 유형
@@ -132,23 +132,23 @@
 
 ### 통신 예제
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch09/ch09-08-Q1.PNG" height="auto"/>
+<img src = "./Image/ch09/ch09-08-Q1.PNG" height="auto"/>
 
 - 앨리스가 데이터그램을 인터넷에서 세 노드 건너의 밥에게 전달하려고 한다.
 - 앨리스는 밥의 네트워크 층 주소를 DNS(Domain Name System)으로 탐색해야 한다.
 
 #### 앨리스 동작
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch09/ch09-09-AW.PNG" height="auto"/>
+<img src = "./Image/ch09/ch09-09-AW.PNG" height="auto"/>
 
 #### 라우터 R1 동작
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch09/ch09-10-R1W.PNG" height="auto"/>
+<img src = "./Image/ch09/ch09-10-R1W.PNG" height="auto"/>
 
 #### 라우터 R2 동작
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch09/ch09-11-R2W.PNG" height="auto"/>
+<img src = "./Image/ch09/ch09-11-R2W.PNG" height="auto"/>
 
 #### 밥 동작
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch09/ch09-12-BW.PNG" height="auto"/>
+<img src = "./Image/ch09/ch09-12-BW.PNG" height="auto"/>

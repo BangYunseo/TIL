@@ -8,7 +8,7 @@
 
 #### ECB(Electronic Code Book)
 
-![ECB](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch05/ECB.PNG)
+![ECB](./Image/ch05/ECB.PNG)
 
 - 암호화(Encryption)
 
@@ -26,7 +26,7 @@
   - 동일한 평문 블록이 동일한 암호문 블록으로 암호화
   - ECB 모드를 사용하여 넓은 단색 영역을 포함한 비트맵 이미지를 암호화할 때, 암호문에 평문 데이터 패턴이 그대로 드러남
 
-![ECB2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch05/ECB2.PNG)
+![ECB2](./Image/ch05/ECB2.PNG)
 
 #### 초기화 벡터(IV : Initial Vector)
 
@@ -41,7 +41,7 @@
 
 #### CBC(Cipher Block Chaining)
 
-![CBC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch05/CBC.PNG)
+![CBC](./Image/ch05/CBC.PNG)
 
 - 암호화(Encryption)
 
@@ -55,7 +55,7 @@
 
 #### CFB(Cipher Feedback)
 
-![CFB](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch05/CFB.PNG)
+![CFB](./Image/ch05/CFB.PNG)
 
 - 암호화(Encryption)
 
@@ -69,7 +69,7 @@
 
 #### OFB(Output Feedback)
 
-![OFB](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch05/OFB.PNG)
+![OFB](./Image/ch05/OFB.PNG)
 
 - 암호화(Encryption)
 
@@ -87,7 +87,7 @@
 
 #### CTR(Counter)
 
-![CTR](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch05/CTR.PNG)
+![CTR](./Image/ch05/CTR.PNG)
 
 - 암호화(Encryption)
 

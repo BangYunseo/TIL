@@ -10,7 +10,7 @@
 
 - 클라이언트 / 서버 구조
 
-![CSA](https://github.com/BangYunseo/TIL/blob/main/OperatingSystem/Linux/Image/ch00/CSA.PNG)
+![CSA](./Image/ch00/CSA.PNG)
 
 #### CPU
 
@@ -39,7 +39,7 @@
 
 - CPU
 
-![CPU](https://github.com/BangYunseo/TIL/blob/main/OperatingSystem/Linux/Image/ch00/CPU.PNG)
+![CPU](./Image/ch00/CPU.PNG)
 
     * 명령어가 입력된 순서대로 데이터를 처리하는 직렬(순차) 처리 방식
     * 내부 면적의 절반 이상이 캐시로 채워져 있기 때문에 GPU에 비해 상대적으로 ALU(Arithmetic Logic Unit)가 차지할 수 있는 공간이 작음
@@ -47,7 +47,7 @@
 
 - GPU
 
-![GPU](https://github.com/BangYunseo/TIL/blob/main/OperatingSystem/Linux/Image/ch00/GPU.PNG)
+![GPU](./Image/ch00/GPU.PNG)
 
     * 여러 명령을 동시에 처리하는 병렬 처리 방식에 특화된 구조
     * 캐시 메모리 비중이 크지 않고 연산을 할 수 있는 ALU 개수 다수
@@ -58,7 +58,7 @@
 
 - CPU vs GPU
 
-![GPU](https://github.com/BangYunseo/TIL/blob/main/OperatingSystem/Linux/Image/ch00/CG.PNG)
+![GPU](./Image/ch00/CG.PNG)
 
 - TPU
   - Tensor Processing Unit 약어 TPU

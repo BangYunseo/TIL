@@ -13,38 +13,38 @@
 - 영상 안의 물체를 인식하거나 분류
 - 생물체의 영상 처리 구조로부터 모델 학습
 
-![IR](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/IR.PNG)
+![IR](./Image/ch09/IR.PNG)
 
 #### 전통적 영상 인식 시스템 구조
 
-![TIR](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/TIR.PNG)
+![TIR](./Image/ch09/TIR.PNG)
 
 #### 심층 신경망을 이용한 영상 인식 과정
 
-![DNNIR](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/DNNIR.PNG)
+![DNNIR](./Image/ch09/DNNIR.PNG)
 
 #### 영상 인식
 
 - 영상 인식에 가장 많이 사용되는 신경망 : 컨볼루션 신경망(Convolution Neural Network)
 
-![IRCNN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/IRCNN.PNG)
+![IRCNN](./Image/ch09/IRCNN.PNG)
 
 ##### 구조
 
-![IRS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/IRS.PNG)
+![IRS](./Image/ch09/IRS.PNG)
 
 - 특징 추출기(컨볼루션 신경망)
 - 특징 분류기(완전 연결 신경망)
 
 ##### 예시
 
-![IREX](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/IREX.PNG)
+![IREX](./Image/ch09/IREX.PNG)
 
 #### 데이터 증대(Data augmentation)
 
 - 한정된 데이터에서 여러 가지로 변형된 데이터를 만들어내는 기법
 
-![DA](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/DA.PNG)
+![DA](./Image/ch09/DA.PNG)
 
 #### ImageDataGenerator()
 
@@ -87,7 +87,7 @@ for i in range(8):
   plt.imshow(image[0])
 ```
 
-![OP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/OP.PNG)
+![OP](./Image/ch09/OP.PNG)
 
 ## 2절. 가중치 저장 및 복원
 
@@ -96,7 +96,7 @@ for i in range(8):
 - 이미 학습된 모델의 가중치 저장 가능
 - 필요 시 가중치를 불러와 신경망 예측 가능
 
-![WM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/WM.PNG)
+![WM](./Image/ch09/WM.PNG)
 
 ##### 저장
 
@@ -163,7 +163,7 @@ saved_model.fit(test_input, test_target, epochs = 3)
 - 하나의 문제에 대해 학습한 신경망의 모델과 가중치를 새로운 문제에 적용
 - 특징과 분류를 묶어서 학습
 
-![TL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/TL.PNG)
+![TL](./Image/ch09/TL.PNG)
 
 #### 사전 훈련 신경망 모델
 
@@ -171,11 +171,11 @@ saved_model.fit(test_input, test_target, epochs = 3)
 
 - 케라스 어플리케이션(Keras Applications)
 
-![KA](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/KA.PNG)
+![KA](./Image/ch09/KA.PNG)
 
 ##### 프로젝트 적용
 
-![PU](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch09/PU.PNG)
+![PU](./Image/ch09/PU.PNG)
 
 ##### 예제 1)
 

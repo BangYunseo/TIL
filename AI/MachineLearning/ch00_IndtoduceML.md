@@ -68,7 +68,7 @@
 | 세로축 | 목표치        |
 | 데이터 | 관측된 4개 점 |
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/01_Regression.PNG" height="auto"/>
+<img src = "./Image/ch00/01_Regression.PNG" height="auto"/>
 
 #### 예측(prediction)
 
@@ -84,7 +84,7 @@
 
 - 관측된 4개의 점은 <strong>데이터</strong>이자 <strong>훈련 집합</strong>
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/02_TrainingData.PNG" height="auto"/>
+<img src = "./Image/ch00/02_TrainingData.PNG" height="auto"/>
 
 | 번호  | X 값  |     |     | 번호  | Y 값  |
 | :---: | :---: | :-: | :-: | :---: | :---: |
@@ -137,7 +137,7 @@
 
 #### 1차원 특징 공간
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/03_1-Dimension.PNG.PNG" height="auto"/>
+<img src = "./Image/ch00/03_1-Dimension.PNG" height="auto"/>
 
 | 번호  | 표시값 |
 | :---: | :----: |
@@ -146,7 +146,7 @@
 
 #### 2차원 특징 공간
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/04_2-Dimension.PNG" height="auto"/>
+<img src = "./Image/ch00/04_2-Dimension.PNG" height="auto"/>
 
 |      번호      |  표시값   |
 | :------------: | :-------: |
@@ -189,7 +189,7 @@
 - 특징 많으면 목표값 정확도 감소
 - 올바른 학습 불가
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/05_N-Dimension.PNG" height="auto"/>
+<img src = "./Image/ch00/05_N-Dimension.PNG" height="auto"/>
 
 ## 3절. 데이터
 
@@ -197,7 +197,7 @@
 
 - 과학 기술 발전 과정
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/06_Process.PNG" height="auto"/>
+<img src = "./Image/ch00/06_Process.PNG" height="auto"/>
 
 ### 데이터와 기계학습
 
@@ -274,14 +274,14 @@
 
 ### 데이터 가시화
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/07_2Graph.PNG" height="auto"/>
+<img src = "./Image/ch00/07_2Graph.PNG" height="auto"/>
 
 - 4차원 이상의 초공간은 한 번에 가시화 불가
 - 2개씩 조합한 그래프 활용
 
 ## 5절. 모델 선택
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/08_Model.PNG" height="auto"/>
+<img src = "./Image/ch00/08_Model.PNG" height="auto"/>
 
 ### 과소적합
 
@@ -304,7 +304,7 @@
 
 ### 다항식 모델 비교 관찰
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/08_Model.PNG" height="auto"/>
+<img src = "./Image/ch00/08_Model.PNG" height="auto"/>
 
 |   차수    | 성능                                                                                |
 | :-------: | :---------------------------------------------------------------------------------- |
@@ -323,7 +323,7 @@
 
 #### 바이어스(Bias)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/09_Bias.PNG" height="auto"/>
+<img src = "./Image/ch00/09_Bias.PNG" height="auto"/>
 
 - 항상 큰 오차
 - 큰 바이어스와 비슷한 모델
@@ -331,7 +331,7 @@
 
 #### 분산(Variance)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/10_Variance.PNG" height="auto"/>
+<img src = "./Image/ch00/10_Variance.PNG" height="auto"/>
 
 - 항상 작은 오차
 - 작은 바이어스와 다른 모델
@@ -342,7 +342,7 @@
 - 낮은 바이어스 + 낮은 분산의 예측기
 - 바이어스 희생은 최소 + 분산은 최대로 낮추는 전략
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/11_Goal.PNG" height="auto"/>
+<img src = "./Image/ch00/11_Goal.PNG" height="auto"/>
 
 ## 6절. 규제
 
@@ -354,7 +354,7 @@
 
 ### 데이터 확대
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/AI/MachineLearning/Image/ch00/12_DataAugmentation.PNG" height="auto"/>
+<img src = "./Image/ch00/12_DataAugmentation.PNG" height="auto"/>
 
 - 데이터 다수 수집 -> 일반화 능력 향상
 

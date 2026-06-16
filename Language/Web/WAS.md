@@ -6,11 +6,11 @@
 
 ### Web Server vs Web Application Server
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Web/Image/WAS/WSWAS.PNG" height="auto" />
+<img src="./Image/WAS/WSWAS.PNG" height="auto" />
 
 ### Web Server : Static Pages
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Web/Image/WAS/WS.PNG" height="auto" />
+<img src="./Image/WAS/WS.PNG" height="auto" />
 
 - 파일 경로 이름을 받아 경로와 일치하는 file contents 반환
 - 항상 동일한 페이지 반환
@@ -22,7 +22,7 @@
 
 ### Web Application Server : Dynamic Pages
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Web/Image/WAS/WAS.PNG" height="auto" />
+<img src="./Image/WAS/WAS.PNG" height="auto" />
 
 - 인자 내용에 맞는 동적인 contents 반환
 - 웹 서버에 의해 실행된 프로그램으로 만들어진 결과물
@@ -43,11 +43,11 @@
 
 ### Web Server Architecture
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Web/Image/WAS/WSA.PNG" height="auto" />
+<img src="./Image/WAS/WSA.PNG" height="auto" />
 
 ### FE & BE
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/Web/Image/WAS/FB.PNG" height="auto" />
+<img src="./Image/WAS/FB.PNG" height="auto" />
 
 ### Web Framework(WF)
 

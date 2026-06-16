@@ -19,12 +19,12 @@
         * 더 나은 분석
         * 더 넓은 적용범위
 
-![BC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/BC.PNG)
+![BC](./Image/ch02/BC.PNG)
 
 #### 스트림 암호(Stream Cipher)
 * 암호화 / 해독 시 메시지를 한 번에 비트 또는 바이트 단위로 처리
 
-![SC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/SC.PNG)
+![SC](./Image/ch02/SC.PNG)
 
 * 키를 먼저 입력받은 후에 XOR 연산을 진행하는 방식
 
@@ -33,14 +33,14 @@
 * 가역적(이상적인) 맵핑형태
     * 재사용(일대일 변환의 형태) 가능
 
-![RM](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/RM.PNG)
+![RM](./Image/ch02/RM.PNG)
 
 * 2비트 / 2열 4행의 형태
 
 * 비가역적 맵핑형태
     * 재사용 불가능
 
-![IM](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/IM.PNG)
+![IM](./Image/ch02/IM.PNG)
 
 * 2비트 / 2열 4행의 형태
 
@@ -54,7 +54,7 @@
 #### 이상적인 블럭 암호
 * 가역적 맵핑(일대일 대응)
 
-![IBC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/IBC.PNG)
+![IBC](./Image/ch02/IBC.PNG)
 
 #### 치환-순열 암호(Substitution-Permutation Ciphers)
 * 클로드 섀넌(Claude Shannon)은 1949년 논문에서 치환-순열(S-P) 네트워크 개념 소개
@@ -67,7 +67,7 @@
 
 * 3라운드(3번의 과정) 치환-순열 네트워크
 
-![SPN](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/SPN.PNG)
+![SPN](./Image/ch02/SPN.PNG)
 
 ## 3절. Feistel Cipher
 #### 파이스텔 암호 구조
@@ -81,7 +81,7 @@
     * 과정을 뒤집으면 모양이 일치하기 때문에 암호화와 복호화 알고리즘을 둘 다 짤 필요 X
 * 일반적으로 16라운드로 진행
 
-![FCS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/FCS.PNG)
+![FCS](./Image/ch02/FCS.PNG)
 
 * 파이스텔 암호 디자인 요소
     * 블럭 사이즈
@@ -93,13 +93,13 @@
 
 #### XOR의 성질
 
-![XOR](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/XOR.PNG)
+![XOR](./Image/ch02/XOR.PNG)
 
 * $((A ⊕ B) ⊕ B) = (A ⊕ (B ⊕ B)) = C ⊕ B = A ⊕ 0$이므로 $A = B ⊕ C$
 
 * 파이스텔 구조와 관련된 XOR 연산 예제
 
-![XOR2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/XOR2.PNG)
+![XOR2](./Image/ch02/XOR2.PNG)
 
 ## 4절. Data Encryption Standard
 #### DES란?
@@ -131,11 +131,11 @@
 
 #### DES의 구조
 
-![DES](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/DES.PNG)
+![DES](./Image/ch02/DES.PNG)
 
 #### $IP$와 $IP^{-1}$
 
-![IP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/IP.PNG)
+![IP](./Image/ch02/IP.PNG)
 
 
 #### $IP$와 $IP^{-1}$의 예제
@@ -143,7 +143,7 @@
 * 표에서 위 4줄은 짝수, 아래 4줄은 홀수의 형태
     * 위는 왼쪽, 아래는 오른쪽을 의미
 
-![IP2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/IP2.PNG)
+![IP2](./Image/ch02/IP2.PNG)
 
 * $Y=IP^{-1}(X)=IP^{-1}(IP(M))$
 
@@ -162,21 +162,21 @@
 
 #### DES의 단일 라운드
 
-![SDES](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/SDES.PNG)
+![SDES](./Image/ch02/SDES.PNG)
 
 #### $E$ 와 $P$
 
-![EP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/EP.PNG)
+![EP](./Image/ch02/EP.PNG)
 
 #### 라운드 함수 $F$
 
-![RF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/RF.PNG)
+![RF](./Image/ch02/RF.PNG)
 
 #### 치환 박스
 * 각 S-box는 6비트 입력을 4비트 출력으로 맵핑
 * 0 ~ 15의 16개 숫자가 64칸에 맞춰 반복
 
-![SB](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/SB.PNG)
+![SB](./Image/ch02/SB.PNG)
 
 #### DES 키의 과정
 * 64비트 키의 모든 8번째 비트는 무시(패리티 비트)
@@ -185,7 +185,7 @@
     * 키의 순환 과정에 맞춰 각 절반을 별도로 1 ~ 2곳씩 순환
     * 48비트를 선택하고 라운드 함수 $F$에 사용하기 위해 Permuted Choice two(PC-2)로 순열
 
-![DESKEY](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/DESKEY.PNG)
+![DESKEY](./Image/ch02/DESKEY.PNG)
 
 * PC-1
     * 56비트이며 $8n$ 비트들은 패리티 비트
@@ -199,11 +199,11 @@
 #### DES의 예제
 * DES의 예시
 
-![EXDES](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/EXDES.PNG)
+![EXDES](./Image/ch02/EXDES.PNG)
 
 * DES에서의 눈사태 효과
 
-![AEDES](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch02/AEDES.PNG)
+![AEDES](./Image/ch02/AEDES.PNG)
 
 * 16라운드의 과정
 * 서로 다른 두 입력을 통해 다른 비트 수가 32가 될 때까지 반복

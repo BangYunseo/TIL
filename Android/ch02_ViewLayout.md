@@ -41,12 +41,12 @@
 </LinearLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-01-Buttons.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-01-Buttons.PNG" width="30%" height="auto" />
 
 - LinearLayout 중첩
 - 레이아웃 클래스도 뷰이므로 다른 레이아웃 클래스에 포함 가능
 
-| <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-02-LinearLayouts.PNG" height="auto" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-03-LinearLayouts2.PNG" height="auto" /> |
+| <img src="./Image/ch02/ch02-02-LinearLayouts.PNG" height="auto" /> | <img src="./Image/ch02/ch02-03-LinearLayouts2.PNG" height="auto" /> |
 | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 
 ### 여백을 채우는 layout_weight 속성
@@ -72,7 +72,7 @@
 </LinearLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-04-Layoutweight.PNG" width="40%" height="auto" />
+<img src="./Image/ch02/ch02-04-Layoutweight.PNG" width="40%" height="auto" />
 
 - 뷰 여러 개로 여백 나누어 채우기
   - layout_weight 속성에 지정한 숫자 : 가중치
@@ -93,11 +93,11 @@
         android:layout_weight="3"/>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-05-Layoutweight2.PNG" width="70%" height="auto" />
+<img src="./Image/ch02/ch02-05-Layoutweight2.PNG" width="70%" height="auto" />
 
 - 중첩된 레이아웃에서 여백 채우기
 
-| <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-06-Layoutweight3.PNG" height="40%" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-07-Layoutweight4.PNG" height="20%" /> |
+| <img src="./Image/ch02/ch02-06-Layoutweight3.PNG" height="40%" /> | <img src="./Image/ch02/ch02-07-Layoutweight4.PNG" height="20%" /> |
 | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 
 ```XML
@@ -136,7 +136,7 @@
 
 - 여백 채우기로 뷰의 크기 설정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-08-Layoutweight5.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-08-Layoutweight5.PNG" width="30%" height="auto" />
 
 ```XML
 <!-->layout_weight값으로 뷰의 크기 설정<!-->
@@ -169,7 +169,7 @@
   - gravity 속성 : 정렬 대상은 콘텐츠
   - layout_gravity : 뷰 자체를 정렬하는 속성
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-09-gravity.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-09-gravity.PNG" width="30%" height="auto" />
 
 ```XML
 <!-->뷰 정렬<!-->
@@ -214,7 +214,7 @@
 </LinearLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-10-gravity2.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-10-gravity2.PNG" width="30%" height="auto" />
 
 ## 2절. RelativeLayout : 상대 위치 배치
 
@@ -245,7 +245,7 @@
 </RelativeLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-11-toRightOf.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-11-toRightOf.PNG" width="30%" height="auto" />
 
 ### align 속성
 
@@ -276,7 +276,7 @@
 </RelativeLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-12-alignbottom.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-12-alignbottom.PNG" width="30%" height="auto" />
 
 ### Parent / Center
 
@@ -309,7 +309,7 @@
 </RelativeLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-13-parentright.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-13-parentright.PNG" width="30%" height="auto" />
 
 ## 3절. FrameLayout : 겹쳐서 배치
 
@@ -335,7 +335,7 @@
 </FrameLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-14-framelayout.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-14-framelayout.PNG" width="30%" height="auto" />
 
 ```kt
 // visibility 속성값을 바꾸는 액티비티 코드
@@ -369,7 +369,7 @@ class MainActivity : AppCompatActivity() {
   - rowCount : 세로로 나열할 뷰 개수
   - columnCount : 가로로 나열할 뷰 개수
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-15-gridlayout.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-15-gridlayout.PNG" width="30%" height="auto" />
 
 ```xml
 <!-->열 개수 지정<!-->
@@ -387,7 +387,7 @@ class MainActivity : AppCompatActivity() {
 </GridLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-16-gridlayout2.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-16-gridlayout2.PNG" width="30%" height="auto" />
 
 ```xml
 <!-->행 개수 지정<!-->
@@ -429,7 +429,7 @@ class MainActivity : AppCompatActivity() {
 </GridLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-17-gridlayout3.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-17-gridlayout3.PNG" width="30%" height="auto" />
 
 - layout_gravity 속성 : 특정 뷰의 크기 확장
 
@@ -451,7 +451,7 @@ class MainActivity : AppCompatActivity() {
 </GridLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-18-gridlayout4.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-18-gridlayout4.PNG" width="30%" height="auto" />
 
 - 한 칸에 여러 뷰 표시
 
@@ -475,7 +475,7 @@ class MainActivity : AppCompatActivity() {
 </GridLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-19-gridlayout5.PNG" width="30%" height="auto" />
+<img src="./Image/ch02/ch02-19-gridlayout5.PNG" width="30%" height="auto" />
 
 - 열이나 행 병합
   - layout_columnSpan : 가로로 열 병합
@@ -501,7 +501,7 @@ class MainActivity : AppCompatActivity() {
 </GridLayout>
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-20-gridlayout6.PNG" width="40%" height="auto" />
+<img src="./Image/ch02/ch02-20-gridlayout6.PNG" width="40%" height="auto" />
 
 ## 5절. ConstraintLayout : 계층 구조 배치
 
@@ -517,7 +517,7 @@ implemetation(Libs.androidx.constraintlayout)
 
 - 상대 위치로 배치하는 RelativeLayout과 비슷하지만 더 많은 속성을 제공
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-21-constraint.PNG" width="70%" height="auto" />
+<img src="./Image/ch02/ch02-21-constraint.PNG" width="70%" height="auto" />
 
 1. 팔레트(Palette)
 2. 컴포넌트 트리(Component Tree)
@@ -528,7 +528,7 @@ implemetation(Libs.androidx.constraintlayout)
 
 - 이미지 추가
 
-| <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-22-Image.PNG" height="auto" /> | <img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-23-Image2.PNG" height="auto" /> |
+| <img src="./Image/ch02/ch02-22-Image.PNG" height="auto" /> | <img src="./Image/ch02/ch02-23-Image2.PNG" height="auto" /> |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
 
 ## 6절. 전화 앱 키배드 화면 만들기
@@ -541,7 +541,7 @@ implemetation(Libs.androidx.constraintlayout)
 
 - add.png, back.png, call.png, video.png 파일을 res/drawable 디렉터리에 복사
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-24-drawable.PNG" width="40%" height="auto" />
+<img src="./Image/ch02/ch02-24-drawable.PNG" width="40%" height="auto" />
 
 ### 3단계) 메인 액티비티 작성
 
@@ -718,4 +718,4 @@ implemetation(Libs.androidx.constraintlayout)
 
 ### 4단계) 앱 실행
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch02/ch02-25-ex.PNG" width="70%" height="auto" />
+<img src="./Image/ch02/ch02-25-ex.PNG" width="70%" height="auto" />

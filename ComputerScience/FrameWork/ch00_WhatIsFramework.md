@@ -29,7 +29,7 @@
 
 #### 예시 : 웹 프레임워크의 경우(Spring MVC 요청 처리 과정)
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/FrameWork/Image/ch00/ch00-01-FrameworkStructure.PNG" width="100%" height="auto" />
+<img src="./Image/ch00/ch00-01-FrameworkStructure.PNG" width="100%" height="auto" />
 
 1) Path, Params, Header, Body로 파싱 및 디코딩 수행
 2) 보안 / 인증 설정에 따라 보안 / 인증 처리 수행
@@ -83,7 +83,7 @@
 
 ### React : Frontend Framework
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/FrameWork/Image/ch00/ch00-02-React.PNG" width="100%" height="auto" />
+<img src="./Image/ch00/ch00-02-React.PNG" width="100%" height="auto" />
 
 - State 변경에 따라 Virtual DOM을 변경하여 HTML을 랜더링하는 프론트엔드 프레임워크
 - 동작 방식
@@ -100,7 +100,7 @@
 
 ### Redux
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/FrameWork/Image/ch00/ch00-03-Redux.PNG" width="100%" height="auto" />
+<img src="./Image/ch00/ch00-03-Redux.PNG" width="100%" height="auto" />
 
 - React의 state 관리를 위해 나온 state 관리 Framework
 - 페이스북에서 만든 아키텍쳐 패턴인 Flux Pattern의 구현체
@@ -113,7 +113,7 @@
 
 ### Spring & Spring MVC & Webflux)
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/FrameWork/Image/ch00/ch00-01-FrameworkStructure.PNG" width="100%" height="auto" />
+<img src="./Image/ch00/ch00-01-FrameworkStructure.PNG" width="100%" height="auto" />
 
 #### Spring
 
@@ -144,7 +144,7 @@
 
 #### Spring WebFlux
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/FrameWork/Image/ch00/ch00-04-SpringWebflux.PNG" width="100%" height="auto" />
+<img src="./Image/ch00/ch00-04-SpringWebflux.PNG" width="100%" height="auto" />
 
 - thread가 아닌 비동기 방식으로 요청을 처리하는 Framework
 - 동작 방식은 MVC와 유사
@@ -152,7 +152,7 @@
 
 ### Django
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/FrameWork/Image/ch00/ch00-05-Django.PNG" width="100%" height="auto" />
+<img src="./Image/ch00/ch00-05-Django.PNG" width="100%" height="auto" />
 
 - Python에서 가장 많이 사용하는 Web Framework
 - MTV(Model - Template - View)를 구현한 Framework
@@ -165,7 +165,7 @@
 
 - 폴더 구조
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/FrameWork/Image/ch00/ch00-06-DjangoFolder.PNG" width="100%" height="auto" />
+<img src="./Image/ch00/ch00-06-DjangoFolder.PNG" width="100%" height="auto" />
 
 ### AngularJS
 

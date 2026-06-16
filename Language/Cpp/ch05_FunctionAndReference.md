@@ -37,13 +37,13 @@
 
 #### 값에 의한 호출과 주소에 의한 호출
 
-![call](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch05/call.PNG)
+![call](./Image/ch05/call.PNG)
 
 #### 코드로 비교
 
 - 값에 의한 호출
 
-![callvalue](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch05/callvalue.PNG)
+![callvalue](./Image/ch05/callvalue.PNG)
 
 ```CPP
 void swap(int a, int b){
@@ -66,7 +66,7 @@ int main(){
 
 - 주소에 의한 호출
 
-![calladdress](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch05/calladdress.PNG)
+![calladdress](./Image/ch05/calladdress.PNG)
 
 ```CPP
 void swap(int *a, int *b){
@@ -105,14 +105,14 @@ int main(){
 
 #### '값에 의한 호출' 방식으로 함수가 호출되는 과정(increase(Circle c))
 
-![increasevalue](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch05/increasevalue.PNG)
+![increasevalue](./Image/ch05/increasevalue.PNG)
 
 - 예제 1. 값에 의한 호출에서 매개 변수의 생성자가 실행되지 않는 예제 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch05_FunctionAndReference/CallValue.cpp)
 
 #### 값에 의한 호출에서 생성자와 소멸자의 비대칭 실행
 
-![callvalue2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch05/callvalue2.PNG)
+![callvalue2](./Image/ch05/callvalue2.PNG)
 
 ## 3절. 주소에 의한 호출
 
@@ -124,7 +124,7 @@ int main(){
 
 #### '주소에 의한 호출' 방식으로 함수가 호출되는 과정(increase(Circle c))
 
-![increaseaddress](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch05/increaseaddress.PNG)
+![increaseaddress](./Image/ch05/increaseaddress.PNG)
 
 ## 4절. 객체
 
@@ -195,7 +195,7 @@ Circle &refc = circle;
 
 #### 참조 변수 선언 및 사용 사례
 
-![callref](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch05/callref.PNG)
+![callref](./Image/ch05/callref.PNG)
 
 - 예제 3. 기본 타입 변수에 대한 참조 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch05_FunctionAndReference/BasicTypeValueRef.cpp)
@@ -217,7 +217,7 @@ Circle &refc = circle;
 
 #### 참조에 의한 호출 사례
 
-![exref](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch05/exref.PNG)
+![exref](./Image/ch05/exref.PNG)
 
 #### 참조 매개변수가 필요한 사례
 
@@ -227,7 +227,7 @@ Circle &refc = circle;
     - 만약 average()가 리턴한 값이 0이라면?
       - 평균이 0인지 오류가 발생한 것인지 판단 불가
 
-![average](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch05/average.PNG)
+![average](./Image/ch05/average.PNG)
 
 - 예제 5. 참조 매개 변수의 평균 리턴 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch05_FunctionAndReference/Average.cpp)
@@ -252,9 +252,9 @@ Circle &refc = circle;
 
 #### 값을 리턴하는 함수 vs 참조를 리턴하는 함수
 
-![returnvalref](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch05/returnvalref.PNG)
+![returnvalref](./Image/ch05/returnvalref.PNG)
 
 - 예제 8. 간단한 참조 리턴 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch05_FunctionAndReference/ReturnRef.cpp)
 
-![returnref](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch05/returnref.PNG)
+![returnref](./Image/ch05/returnref.PNG)

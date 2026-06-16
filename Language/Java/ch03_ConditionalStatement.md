@@ -21,7 +21,7 @@
 * if문 : 조건식 결과의 true / false 여부에 따라 실행문 결정
 * switch문 : 변수 값에 따라 실행문 결정
 
-![conditional](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/conditional.PNG)
+![conditional](./Image/ch03/conditional.PNG)
 
 #### if문
 * 조건식 결과에 따라 블록 실행 여부 결정
@@ -31,7 +31,7 @@
 * 중괄호 블록은 조건식이 true일 경우에만 실행
     * 실행할 문장이 하나뿐인 경우 생략 가능
 
-![if1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/if1.PNG)
+![if1](./Image/ch03/if1.PNG)
 
 #### if - else문
 * if문을 else 블록과 함께 사용
@@ -45,7 +45,7 @@
 |false|else문 블록 실행|
 
 
-![ifelse](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/ifelse.PNG)
+![ifelse](./Image/ch03/ifelse.PNG)
 
 
 #### if - else if - else문
@@ -54,7 +54,7 @@
     * if 블록 끝에 else if문 추가ㅣ
     * else if문 개수에는 제한 X
 
-![elif](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/elif.PNG)
+![elif](./Image/ch03/elif.PNG)
 
 #### 조건문 정리
 
@@ -69,7 +69,7 @@
 * 변수가 어떤 값을 갖는지에 따라 실행문 선택
 * 같은 기능의 if문보다 코드 간결
 
-![switch](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/switch.PNG)
+![switch](./Image/ch03/switch.PNG)
 
 #### switch문 정리
 
@@ -84,7 +84,7 @@
 #### 반복문
 * 어떤 작업을 반복적으로 실행할 경우 사용
 
-![loop](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/loop.PNG)
+![loop](./Image/ch03/loop.PNG)
 
 #### for, while, do - while
 * for문
@@ -97,7 +97,7 @@
 #### for문
 * 주어진 횟수만큼 반복하고 싶을 경우 사용
 
-![for](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/for.PNG)
+![for](./Image/ch03/for.PNG)
 
 ## 4절. while
 #### while문
@@ -106,25 +106,25 @@
     * false일 경우 반복 종료
 * 조건식에서는 주로 비교 연산식, 논리 연산식
 
-![while](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/while.PNG)
+![while](./Image/ch03/while.PNG)
 
 #### do - while문
 * 조건식에 의해 반복 실행하는 점에서 while문과 동일
 * 블록 내부 실행문을 우선 실행하고 그 결과에 따라 반복 실행 여부 결정
 
-![dowhile](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/dowhile.PNG)
+![dowhile](./Image/ch03/dowhile.PNG)
 
 ## 5절. break
 #### break문
 * for, while, do - while, switch문의 실행을 종료할 경우 사용
 * 주로 if문과 함께 사용
 
-![break1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/break1.PNG)
+![break1](./Image/ch03/break1.PNG)
 
 * 반복문이 중첩된 경우
     * Label을 통해 바깥 반복문 탈출
 
-![break2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/break2.PNG)
+![break2](./Image/ch03/break2.PNG)
 
 ## 6절. continue
 #### continue문
@@ -132,7 +132,7 @@
 * for문의 증감식이나 while, do - while문의 조건식 이동
 * 주로 if문과 사용
 
-![continue](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch03/continue.PNG)
+![continue](./Image/ch03/continue.PNG)
 
 #### 반복문 정리
 |키워드|형태|설명|

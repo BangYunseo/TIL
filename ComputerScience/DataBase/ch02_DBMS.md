@@ -16,7 +16,7 @@
 
 ## 0절. DBS 구조
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-00-DBS.PNG"  width="70%" height="70%"/>
+<img src="./Image/ch02/ch02-00-DBS.PNG"  width="70%" height="70%"/>
 
 |                 종류                 | 설명                                                                    |
 | :----------------------------------: | :---------------------------------------------------------------------- |
@@ -31,7 +31,7 @@
 - 파일 생성·삭제·수정·검색 기능을 제공하는 소프트웨어
 - 응용 프로그램마다 필요한 데이터 별도 관리
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-01-FS.PNG"  width="70%" height="70%"/>
+<img src="./Image/ch02/ch02-01-FS.PNG"  width="70%" height="70%"/>
 
 ### 파일 시스템 문제점
 
@@ -41,7 +41,7 @@
   - 저장 공간 낭비, 데이터 일관성·무결성 유지에 어려움
   - ex) 여러 파일 중 한 파일의 속성만 수정할 경우 일관성 불일치
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-02-Sol1.PNG"  width="40%" height="40%"/>
+<img src="./Image/ch02/ch02-02-Sol1.PNG"  width="40%" height="40%"/>
 
 #### 데이터 종속성
 
@@ -50,7 +50,7 @@
   - 사용하는 파일의 구조 변경 시 응용 프로그램도 함께 변경
   - ex) 두 고객 파일 처리 시 다른 방식으로 처리
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-03-Sol2.PNG"  width="100%" height="100%"/>
+<img src="./Image/ch02/ch02-03-Sol2.PNG"  width="100%" height="100%"/>
 
 #### 동시 공유·보안·회복 기능
 
@@ -81,7 +81,7 @@
 
 ### DBMS에서의 데이터 관리
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-04-DBMS.PNG"  width="40%" height="40%"/>
+<img src="./Image/ch02/ch02-04-DBMS.PNG"  width="40%" height="40%"/>
 
 ### DBMS의 주요 기능
 
@@ -95,7 +95,7 @@
 
 ### 파일 시스템 vs DBMS
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-05-FIDBMS.PNG"  width="100%" height="auto"/>
+<img src="./Image/ch02/ch02-05-FIDBMS.PNG"  width="100%" height="auto"/>
 
 |       구분       | 파일 시스템                                              | DBMS                                             |
 | :--------------: | :------------------------------------------------------- | :----------------------------------------------- |
@@ -127,7 +127,7 @@
 
 ### 데이터베이스 시스템 구성
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-06-DBS.PNG"  width="70%" height="70%"/>
+<img src="./Image/ch02/ch02-06-DBS.PNG"  width="70%" height="70%"/>
 
 | 종류                                             | 특징                                                                                                                                                                                                                     |
 | :----------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -167,24 +167,24 @@
 
 #### 1. 포인터 사용
 
-| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-07-UsingPointer.PNG"  width="auto" height="auto"/> | <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-10-UsingInModel.PNG"  width="auto" height="auto"/> |
+| <img src="./Image/ch02/ch02-07-UsingPointer.PNG"  width="auto" height="auto"/> | <img src="./Image/ch02/ch02-10-UsingInModel.PNG"  width="auto" height="auto"/> |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 #### 2. 속성 값 사용
 
-| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-08-UsingAttribute.PNG"  width="auto" height="auto"/> | <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-11-UsingInRModel.PNG"  width="auto" height="auto"/> |
+| <img src="./Image/ch02/ch02-08-UsingAttribute.PNG"  width="auto" height="auto"/> | <img src="./Image/ch02/ch02-11-UsingInRModel.PNG"  width="auto" height="auto"/> |
 | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 #### 3. 객체 식별자 사용
 
-| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-09-UsingOI.PNG"  width="auto" height="auto"/> | <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-12-UsingInOModel.PNG"  width="auto" height="auto"/> |
+| <img src="./Image/ch02/ch02-09-UsingOI.PNG"  width="auto" height="auto"/> | <img src="./Image/ch02/ch02-12-UsingInOModel.PNG"  width="auto" height="auto"/> |
 | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ## 6절. 데이터베이스 관리 시스템 발전 과정
 
 ### 1세대 : 네트워크·계층 DBMS
 
-| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-13-NDBMS.PNG"  width="auto"/> | <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-14-HDBMS.PNG"  width="auto"/> |
+| <img src="./Image/ch02/ch02-13-NDBMS.PNG"  width="auto"/> | <img src="./Image/ch02/ch02-14-HDBMS.PNG"  width="auto"/> |
 | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 
 |     종류      | 설명                     | 예시                               |
@@ -194,7 +194,7 @@
 
 ### 2세대 : 관계 DBMS
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-15-RDBMS.PNG"  width="70%" height="70%"/>
+<img src="./Image/ch02/ch02-15-RDBMS.PNG"  width="70%" height="70%"/>
 
 |   종류    | 설명                     | 예시                                                                      |
 | :-------: | :----------------------- | :------------------------------------------------------------------------ |
@@ -202,7 +202,7 @@
 
 ### 3세대 : 객체지향·객체관계 DBMS
 
- <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-16-ORD.PNG"  width="60%" height="60%"/>
+ <img src="./Image/ch02/ch02-16-ORD.PNG"  width="60%" height="60%"/>
 
 |     종류      | 설명                       | 예시                                                                                  |
 | :-----------: | :------------------------- | :------------------------------------------------------------------------------------ |
@@ -211,7 +211,7 @@
 
 ### 객체 지향 Data VS 관계 Data
 
-| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-17-RvsOODM.PNG" height="auto"/> | <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-18-RvsOODM.PNG" height="auto"/> |
+| <img src="./Image/ch02/ch02-17-RvsOODM.PNG" height="auto"/> | <img src="./Image/ch02/ch02-18-RvsOODM.PNG" height="auto"/> |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
 
 ### 4세대 : NoSQL / NewSQL DBMS
@@ -226,7 +226,7 @@
 - 뛰어난 확장성
 - 여러 서버 컴퓨터에 데이터 분산·저장·처리하는 환경에서 사용
 
- <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-19-NoSQL.PNG"  width="60%" height="auto"/>  
+ <img src="./Image/ch02/ch02-19-NoSQL.PNG"  width="60%" height="auto"/>  
  
 ### NoSQL 성능
 
@@ -239,4 +239,4 @@
 
 ### 발전 과정
 
- <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch02/ch02-20-SQL.PNG" height="auto"/>
+ <img src="./Image/ch02/ch02-20-SQL.PNG" height="auto"/>

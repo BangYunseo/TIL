@@ -36,7 +36,7 @@
 - 다른 클래스 전체
   - 다른 클래스의 모든 멤버 함수
 
-![becomefriend](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch09/becomefriend.PNG)
+![becomefriend](./Image/ch09/becomefriend.PNG)
 
 #### 프렌드 선언 3 종류
 

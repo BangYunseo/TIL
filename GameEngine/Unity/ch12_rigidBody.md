@@ -21,7 +21,7 @@
 - 유니티 Transform 제어 
 - 중력(gravity)과 충돌(collision) 반응
 
-![ch12-01-interface](https://github.com/BangYunseo/TIL/blob/main/GameEngine/Unity/Image/ch12/ch12-01-interface.PNG)
+![ch12-01-interface](./Image/ch12/ch12-01-interface.PNG)
 
 - 아래에 바닥을 두고 실행시킬 경우, 물리 엔진 적용 모습 확인 가능
 

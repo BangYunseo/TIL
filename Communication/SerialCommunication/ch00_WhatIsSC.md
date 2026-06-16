@@ -38,7 +38,7 @@
   - 단순하며 I/O 라인 절약 가능
     - 비용 절감
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/SerialCommunication/Image/ch00/ch00-01-SC.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-01-SC.PNG" width="80%" height="auto"/>
 
 ### 직렬(Serial) 통신 장점
 
@@ -61,7 +61,7 @@
   - 짧은 통신 거리
   - 다수의 I/O 라인 소모
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/SerialCommunication/Image/ch00/ch00-02-PC.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-02-PC.PNG" width="80%" height="auto"/>
 
 ### 병렬 통신의 한계
 
@@ -141,7 +141,7 @@
   - RXD(수신)
   - GND(접지)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/SerialCommunication/Image/ch00/ch00-03-SCpin.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-03-SCpin.PNG" width="80%" height="auto"/>
 
 | PIN # |  방향  | 명칭 |        영문         | 설명                                                                           |
 | :---: | :----: | :--: | :-----------------: | :----------------------------------------------------------------------------- |
@@ -159,7 +159,7 @@
 
 ### RS-422
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/SerialCommunication/Image/ch00/ch00-04-SCpin2.PNG" width="80%" height="auto"/>
+<img src = "./Image/ch00/ch00-04-SCpin2.PNG" width="80%" height="auto"/>
 
 - 차동 신호 이용 통신
 - 각 신호 종류 당 <strong>2개의 신호선</strong>을 쓰는 것이 중요

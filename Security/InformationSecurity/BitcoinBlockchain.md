@@ -40,7 +40,7 @@
 
 #### 디지털 서명과 비트코인 주소(Digital Signature and Bitcoin Address)
 
-![DSBA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/DSBA.PNG)
+![DSBA](./Image/Bitcoin/DSBA.PNG)
 
 #### 비트코인 키
 
@@ -64,9 +64,9 @@
 
 #### 비트코인 주소와 Base 58
 
-![BA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/BA.PNG)
+![BA](./Image/Bitcoin/BA.PNG)
 
-![BA2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/BA2.PNG)
+![BA2](./Image/Bitcoin/BA2.PNG)
 
 #### Base 58 인코딩
 
@@ -85,25 +85,25 @@
 
 #### 비트코인 트랜잭션(Transactions)
 
-![TRAC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/TRAC.PNG)
+![TRAC](./Image/Bitcoin/TRAC.PNG)
 
 #### 트랜잭션 순환구조
 
-![TL](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/TL.PNG)
+![TL](./Image/Bitcoin/TL.PNG)
 
 #### 일반적인 트랜잭션 형태
 
-![CTF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/CTF.PNG)
+![CTF](./Image/Bitcoin/CTF.PNG)
 
 #### 트랜잭션 입-출력
 
 - Input
 
-![TIP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/TIP.PNG)
+![TIP](./Image/Bitcoin/TIP.PNG)
 
 - Output
 
-![TOP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/TOP.PNG)
+![TOP](./Image/Bitcoin/TOP.PNG)
 
 #### 스트립트 구성(Lock + Unlock)
 
@@ -111,13 +111,13 @@
   - 잠금 스크립트
   - 잠금 해제 스크립트
 
-![LUL](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/LUL.PNG)
+![LUL](./Image/Bitcoin/LUL.PNG)
 
 #### 스크립트 언어(Script Language)
 
-![SL](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/SL.PNG)
+![SL](./Image/Bitcoin/SL.PNG)
 
-![SL2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/SL2.PNG)
+![SL2](./Image/Bitcoin/SL2.PNG)
 
 #### 개인 키 저장 방법
 
@@ -141,7 +141,7 @@
     - 시작 : 1Kids11111111111111111111111111111
     - 끝 : 1Kidszzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 
-![VA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/VA.PNG)
+![VA](./Image/Bitcoin/VA.PNG)
 
 - 맞춤형 풀 (Vanity Pool)
 
@@ -164,7 +164,7 @@
 
 #### 블록체인(Blockchain)
 
-![BlockChain](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/BlockChain.PNG)
+![BlockChain](./Image/Bitcoin/BlockChain.PNG)
 
 #### 블록 보상(Block Reward)
 
@@ -199,11 +199,11 @@
 
 #### 블록체인 포크(Blockchain Forks)
 
-![BF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/BF.PNG)
+![BF](./Image/Bitcoin/BF.PNG)
 
 #### 트랜잭션 수수료(Transaction Fees)
 
-![TF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/TF.PNG)
+![TF](./Image/Bitcoin/TF.PNG)
 
 - 입력 값의 합에서 출력 값의 합을 뺀 나머지
 - 수수료 = Sum(Inputs) – Sum(Outputs)
@@ -220,13 +220,13 @@
 - 현재 블록 보상은 대부분 마이너 수익의 대부분을 차지
 - 트랜잭션 수수료가 지배적인 역할
 
-![MCTF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/MCTF.PNG)
+![MCTF](./Image/Bitcoin/MCTF.PNG)
 
 #### 채굴 하드웨어 비교
 
 - 가격당 해시와 전기 효율성을 기준 비교
 
-![MHC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/MHC.PNG)
+![MHC](./Image/Bitcoin/MHC.PNG)
 
 #### 채굴 풀(Mining Pools)
 
@@ -251,7 +251,7 @@
 
 ##### 해시레이트 분포(Hashrate Distribution)
 
-![MP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/MP.PNG)
+![MP](./Image/Bitcoin/MP.PNG)
 
 #### ASIC-저항 퍼즐 (ASIC-Resistant Puzzles)
 
@@ -276,11 +276,11 @@
 
   - 라이트코인과 다양한 다른 알트코인에서 이미 사용되고 있는 가장 인기 있는 메모리-하드 퍼즐
 
-![MHPS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/MHPS.PNG)
+![MHPS](./Image/Bitcoin/MHPS.PNG)
 
 - 현실 응용
 
-![MHPS2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/MHPS2.PNG)
+![MHPS2](./Image/Bitcoin/MHPS2.PNG)
 
 #### 유용한 작업 증명(Proof of “Useful” Work)
 
@@ -302,23 +302,23 @@ BOINC (Berkeley Open Infrastructure for Network Computing): 자원봉사자가 �
 
 - 아일랜드를 포함한 159개국보다 더 많은 전력 소비(2017/11/20)
 
-![BMC](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/BMC.PNG)
+![BMC](./Image/Bitcoin/BMC.PNG)
 
 #### 비트코인 채굴과 지속 가능성
 
-![BMS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/BMS.PNG)
+![BMS](./Image/Bitcoin/BMS.PNG)
 
 #### 암호화 히터
 
-![CH](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/CH.PNG)
+![CH](./Image/Bitcoin/CH.PNG)
 
 #### 작업 증명과 지분 증명(Proof of Work vs Proof of Stake)
 
-![PWPS](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/PWPS.PNG)
+![PWPS](./Image/Bitcoin/PWPS.PNG)
 
 #### 암호화폐(Cryptocurrencies)
 
-![Cc](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/Cc.PNG)
+![Cc](./Image/Bitcoin/Cc.PNG)
 
 #### 추가 전용 로그(Append-only Log)
 
@@ -329,7 +329,7 @@ BOINC (Berkeley Open Infrastructure for Network Computing): 자원봉사자가 �
   - ANSI ASC X9.95
   - IETF RFC 4998
 
-![AOL](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/Bitcoin/AOL.PNG)
+![AOL](./Image/Bitcoin/AOL.PNG)
 
 #### 스마트 자산(Smart Property)
 

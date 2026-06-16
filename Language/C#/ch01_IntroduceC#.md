@@ -36,7 +36,7 @@
 
 - CLS(Common Language Specification : 공통 언어 스펙) 규칙을 따르는 언어로 작성된 애플리케이션은 닷넷 프레임워크에서 동작 가능
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-01-.NETFramework.PNG" height="auto" />
+<img src="./Image/ch01/ch01-01-.NETFramework.PNG" height="auto" />
 
 ### .NET 특징
 
@@ -59,7 +59,7 @@
 
 ### 중간 언어(Intermediate Language)
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-02-MidLanguage.PNG" height="auto" />
+<img src="./Image/ch01/ch01-02-MidLanguage.PNG" height="auto" />
 
 - 기계어로 변환하기 쉬운 상태인 중간 단계 언어
 - 닷넷에서 번역되고 실행하기 위해서는 중간 언어 형태로 컴파일 필수
@@ -79,7 +79,7 @@
   - 중간 언어로 컴파일된 파일 로딩
   - CLR 내의 JIT 컴파일러가 기계어로 컴파일
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-03-CLR.PNG" height="auto" />
+<img src="./Image/ch01/ch01-03-CLR.PNG" height="auto" />
 
 |            개념            | 정의                                             |
 | :------------------------: | :----------------------------------------------- |
@@ -135,7 +135,7 @@
   - Pascal
   - C
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-04-Schematic.PNG" height="auto" />
+<img src="./Image/ch01/ch01-04-Schematic.PNG" height="auto" />
 
 ### 개발 환경
 
@@ -178,7 +178,7 @@ class HelloWorld
 
 ### 실행 과정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-05-Process.PNG" height="auto" />
+<img src="./Image/ch01/ch01-05-Process.PNG" height="auto" />
 
 #### 1. 컴파일 과정
 
@@ -508,7 +508,7 @@ class BoxProgram
 
 #### 토근 종류
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-06-TokenType.PNG" height="auto" />
+<img src="./Image/ch01/ch01-06-TokenType.PNG" height="auto" />
 
 #### 지정어
 
@@ -553,7 +553,7 @@ class BoxProgram
 
 #### 리터럴 종류
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-07-LiteralType.PNG" height="auto" />
+<img src="./Image/ch01/ch01-07-LiteralType.PNG" height="auto" />
 
 #### 객체참조 리터럴(Object Reference)
 
@@ -599,7 +599,7 @@ class BoxProgram
 
 #### 자료형 종류
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-08-ValueableType.PNG" height="auto" />
+<img src="./Image/ch01/ch01-08-ValueableType.PNG" height="auto" />
 
 #### 값형
 
@@ -664,7 +664,7 @@ class BoxProgram
    myArray = new Point[3];
    ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-09-Array.PNG" height="auto" />
+<img src="./Image/ch01/ch01-09-Array.PNG" height="auto" />
 
 2. 참조형(스트링형)
 
@@ -692,7 +692,7 @@ class BoxProgram
 
 #### 연산자 종류
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-10-OperatorType.PNG" height="auto" />
+<img src="./Image/ch01/ch01-10-OperatorType.PNG" height="auto" />
 
 ### 형변환
 
@@ -745,7 +745,7 @@ class PrecisionApp
 
 #### 박싱(Boxing) 과정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch01/ch01-11-Boxing.PNG" height="auto" />
+<img src="./Image/ch01/ch01-11-Boxing.PNG" height="auto" />
 
 ### 언박싱(UnBoxing)
 

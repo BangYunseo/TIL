@@ -79,7 +79,7 @@ val intent = Intent(this, MyReceiver::class.java)
 sendBroadcast(intent)
 ```
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-01-Intent.PNG" height="auto" />
+<img src="./Image/ch09/ch09-01-Intent.PNG" height="auto" />
 
 ## 2절. 시스템 상태 파악
 
@@ -240,6 +240,6 @@ viewBinding.isEnabled = true
 
 ### 6) 앱 실행
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch09/ch09-02-App.PNG" height="auto" />
+<img src="./Image/ch09/ch09-02-App.PNG" height="auto" />
 
 [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch10)

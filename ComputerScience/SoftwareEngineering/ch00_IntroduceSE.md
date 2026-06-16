@@ -14,7 +14,7 @@
 
 #### 소프트웨어 공학의 목표
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/SoftwareEngineering/Image/ch00/01_Purpose.PNG" height="auto" />
+<img src="./Image/ch00/01_Purpose.PNG" height="auto" />
 
 - 품질(Quality)
 - 비용(Cost)

@@ -18,7 +18,7 @@
 
 ### Quick Build 버전
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/MachineVision/Library/Image/VisionPro/VisionPro_QB.png"  width="100%"/>
+<img src="./Image/VisionPro/VisionPro_QB.png"  width="100%"/>
 
 - VisionPro의 핵심 환경
 - 프로그래밍 전문가 / 비전문가 모두 활용 가능

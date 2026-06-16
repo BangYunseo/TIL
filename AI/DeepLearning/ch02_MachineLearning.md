@@ -22,7 +22,7 @@
 
 #### 전통적인 프로그래밍과 머신러닝
 
-![CM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/CM.PNG)
+![CM](./Image/ch02/CM.PNG)
 
 | 종류                | 입력값         |
 | :------------------ | :------------- |
@@ -33,19 +33,19 @@
 
 - 입력을 받아 출력하는 함수 $y = f(x)$의 학습(함수 근사)
 
-![MF](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/MF.PNG)
+![MF](./Image/ch02/MF.PNG)
 
 - 종류
 
-![MT](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/MT.PNG)
+![MT](./Image/ch02/MT.PNG)
 
-![MT3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/MT3.PNG)
+![MT3](./Image/ch02/MT3.PNG)
 
 ## 2절. 지도 학습과 비지도 학습
 
 #### 지도 학습의 종류
 
-![SLT](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/SLT.PNG)
+![SLT](./Image/ch02/SLT.PNG)
 
 #### 회귀(Regression)
 
@@ -58,7 +58,7 @@
     - "사용자가 이 광고를 클릭할 확률은?"
     - "면적에 따른 각 아파트의 가격은?"
 
-![Regression](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Regression.PNG)
+![Regression](./Image/ch02/Regression.PNG)
 
 #### 분류(Classification)
 
@@ -67,11 +67,11 @@
 - ex)
   - 사진을 보고 "강아지"클래스나 "고양이"클래스로 분류하는 것
 
-![Classification](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Classification.PNG)
+![Classification](./Image/ch02/Classification.PNG)
 
 - 크기, 색상, 모양의 정보만 가지고 과일 이름으로 분류하는 예시
 
-![C2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/C2.PNG)
+![C2](./Image/ch02/C2.PNG)
 
 - 분류를 수행하기 위한 일반적인 알고리즘
   - 신경망
@@ -85,13 +85,13 @@
 - $y = f(x)$에서 레이블 $y$가 주어지지 않음
 - 데이터들의 상관도를 분석하여 유사한 데이터 결집
 
-![UL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/UL.PNG)
+![UL](./Image/ch02/UL.PNG)
 
 ## 3절. 모델 및 평가
 
 #### 머신 러닝의 과정
 
-![MP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/MP.PNG)
+![MP](./Image/ch02/MP.PNG)
 
 #### 모델 평가
 
@@ -100,37 +100,37 @@
   - 시스템이 "모델(model)"
   - 모델은 "학습(train)"의 과정을 통해 생성
 
-![ModelTest](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/ModelTest.PNG)
+![ModelTest](./Image/ch02/ModelTest.PNG)
 
 - 머신 러닝의 특징
   - 색상(파장)과 산성도(실수)의 두 가지를 선택해야 하는 경우
   - 두 가지 요소만으로 구별할 수 있기를 희망하는 "특징(feature)"
 
-![Feature](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Feature.PNG)
+![Feature](./Image/ch02/Feature.PNG)
 
 - 데이터 수집을 통한 특징 비교
 
-![Feature2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Feature2.PNG)
+![Feature2](./Image/ch02/Feature2.PNG)
 
 #### 훈련 데이터, 테스트 데이터
 
 - 머신 러닝에는 항상 훈련 데이터와 테스트 데이터 존재
 
-![Data](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Data.PNG)
+![Data](./Image/ch02/Data.PNG)
 
 - 훈련 데이터 구조
 
-![TD](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/TD.PNG)
+![TD](./Image/ch02/TD.PNG)
 
 - 훈련 단계와 테스트 단계 존재
 
 ##### 훈련 단계
 
-![Training](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Training.PNG)
+![Training](./Image/ch02/Training.PNG)
 
 ##### 테스트 단계
 
-![Test](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Test.PNG)
+![Test](./Image/ch02/Test.PNG)
 
 #### 모델 선택
 
@@ -139,14 +139,14 @@
 
 #### 선형 모델
 
-![LinearModel](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/LinearModel.PNG)
+![LinearModel](./Image/ch02/LinearModel.PNG)
 
 #### 학습
 
 - 가중치$(W)$와 $y$절편$(b)$을 임의의 값으로 초기화한 후 출력 예측
 - 출력값의 정확한 값과 비교 후 더 정확한 예측을 갖도록 $W$ 및 $b$의 값 조정
 
-![Learning](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Learning.PNG)
+![Learning](./Image/ch02/Learning.PNG)
 
 #### 평가
 
@@ -162,29 +162,29 @@
 
 - 교차 검증 과정
 
-![CV](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/CV.PNG)
+![CV](./Image/ch02/CV.PNG)
 
 #### 사전 데이터 셋 분류
 
-![Legend](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Legend.PNG)
+![Legend](./Image/ch02/Legend.PNG)
 
 #### 홀드아웃 방법(Holdout Method)
 
-![HM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/HM.PNG)
+![HM](./Image/ch02/HM.PNG)
 
 #### K-겹 교차 검증(K-Fold Cross Validation)
 
-![KCV](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/KCV.PNG)
+![KCV](./Image/ch02/KCV.PNG)
 
 #### 리브-P-아웃 교차 검증(Leave-P-Out Cross Validation)
 
 - 전체 데이터(서로 다른 데이터 샘플들) 중 P개의 샘플을 선택하여 그것을 모델 검증에 사용하는 방법
 
-![LCV](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/LCV.PNG)
+![LCV](./Image/ch02/LCV.PNG)
 
 #### 리브-원-아웃 교차 검증(Leave-One-Out Cross Validation)
 
-![OCV](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/OCV.PNG)
+![OCV](./Image/ch02/OCV.PNG)
 
 ## 5절. 데이터 세트(iris)
 
@@ -195,19 +195,19 @@
   - 색상이 600nm, 산성도가 1.5인 음료가 무엇인지 머신러닝 시스템에 질문
   - 훈련된 결과를 바탕으로 색상 및 산성도를 고려하여 음료를 예측
 
-![Prediction](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Prediction.PNG)
+![Prediction](./Image/ch02/Prediction.PNG)
 
 #### 기본적인 데이터 세트
 
-![DS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/DS.PNG)
+![DS](./Image/ch02/DS.PNG)
 
 #### 붓꽃 데이터 세트
 
-![iris](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/iris.PNG)
+![iris](./Image/ch02/iris.PNG)
 
 - 특징과 레이블의 구조
 
-![IS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/IS.PNG)
+![IS](./Image/ch02/IS.PNG)
 
 ```Python
 from sklearn import datasets
@@ -261,14 +261,14 @@ print(iris.target_names)
 X, y = iris.data, iris.target
 ```
 
-![Res](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Res.PNG)
+![Res](./Image/ch02/Res.PNG)
 
 #### 모델 선택
 
 - K-Nearest Neighbor(KNN) 알고리즘은 모든 머신러닝 알고리즘 중에서도 가장 간단하고 이해하기 쉬운 분류 알고리즘
 - KNN은 학습 시에 교사가 존재하는 "지도 학습"
 
-![KNN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/KNN.PNG)
+![KNN](./Image/ch02/KNN.PNG)
 
 - 학습
 
@@ -345,7 +345,7 @@ plt.grid(False)
 plt.show()
 ```
 
-![Model](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Model.PNG)
+![Model](./Image/ch02/Model.PNG)
 
 ## 6절. 데이터 세트(MNIST)
 
@@ -365,7 +365,7 @@ digits = datasets.load_digits()
 plt.imshow(digits.images[0], cmap = plt.cm.gray_r, interpolation = 'nearest')
 ```
 
-![MNISTex](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/MNISTex.PNG)
+![MNISTex](./Image/ch02/MNISTex.PNG)
 
 - 이미지 평탄화
 
@@ -374,7 +374,7 @@ n_samples = len(digits.images)
 data = digits.images.reshape((n_samples, -1))
 ```
 
-![Image2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/Image2.PNG)
+![Image2](./Image/ch02/Image2.PNG)
 
 - 훈련 데이터와 테스트 데이터
 
@@ -391,7 +391,7 @@ knn = KNeighborsClassifier(n_neighbors = 6)
 knn.fit(X_train, y_train)
 ```
 
-![knnfit](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/knnfit.PNG)
+![knnfit](./Image/ch02/knnfit.PNG)
 
 - 예측
 
@@ -415,7 +415,7 @@ print(y_pred)
 # [3]
 ```
 
-![pred3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/pred3.PNG)
+![pred3](./Image/ch02/pred3.PNG)
 
 ## 7절. 모델 평가 방법과 정확도
 
@@ -423,11 +423,11 @@ print(y_pred)
 
 - 정확도
 
-![AC](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/AC.PNG)
+![AC](./Image/ch02/AC.PNG)
 
 - 혼동행렬
 
-![ConfusedM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/ConfusedM.PNG)
+![ConfusedM](./Image/ch02/ConfusedM.PNG)
 
 #### 정확도(Accuracy)
 
@@ -447,9 +447,9 @@ print(y_pred)
 | 부정         | FP(False Positive) | 부정을 긍정으로 잘못 예측한 경우     |
 | 부정         | TN(True Nagative)  | 부정을 부정으로 올바르게 예측한 경우 |
 
-![SetSpe](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/SetSpe.PNG)
+![SetSpe](./Image/ch02/SetSpe.PNG)
 
-![ConfusionMatrix](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/ConfusionMatrix.PNG)
+![ConfusionMatrix](./Image/ch02/ConfusionMatrix.PNG)
 
 - Accuracy(정확성) = (TP + TN) / (TP + FN + FP + TN)
 - Precision(정밀도) = TP / TP + FP
@@ -460,11 +460,11 @@ print(y_pred)
 
 - $\frac{2 * Precision * Recall}{Precision + Recall}$
 
-![F1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/F1.PNG)
+![F1](./Image/ch02/F1.PNG)
 
 ##### ROC Curve
 
-![ROC](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/ROC.PNG)
+![ROC](./Image/ch02/ROC.PNG)
 
 #### 실습(1)
 
@@ -512,7 +512,7 @@ sns.set(rc = {'figure.figsize' : (6, 5)})
 sns.heatmap(data = cmatrix, annot = True)
 ```
 
-![CMP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/CMP.PNG)
+![CMP](./Image/ch02/CMP.PNG)
 
 #### 혼동 행렬 출력
 
@@ -537,7 +537,7 @@ disp = metrics.plot_confusion_matrix(knn, X_test, y_test)
 plt.show()
 ```
 
-![CMPring](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/CMPring.PNG)
+![CMPring](./Image/ch02/CMPring.PNG)
 
 #### 분류 리포트
 
@@ -550,13 +550,13 @@ plt.show()
 print(f"{metrics.classification_report(y_test, y_pred)}\n")
 ```
 
-![RP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/RP.PNG)
+![RP](./Image/ch02/RP.PNG)
 
 ## 8절. 머신러닝 응용 및 실용
 
 #### 머신러닝 응용 분야
 
-![usingML](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch02/usingML.PNG)
+![usingML](./Image/ch02/usingML.PNG)
 
 - 복잡한 데이터들이 존재하는 분야
 - 데이터에 기반하여 결정을 내려야 하는 분야

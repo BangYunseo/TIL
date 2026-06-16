@@ -10,7 +10,7 @@
 
 ### 데이터와 정보
 
-| <img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-01-DI.PNG"  width="auto" height="auto"/> | - 데이터(Data) : 현실 세계에서 단순히 관찰·측정하여 수집한 사실·값<br>- 정보(Information) : 의사 결정에 유용하게 활용하는 데이터를 처리한 결과물 |
+| <img src="./Image/ch01/ch01-01-DI.PNG"  width="auto" height="auto"/> | - 데이터(Data) : 현실 세계에서 단순히 관찰·측정하여 수집한 사실·값<br>- 정보(Information) : 의사 결정에 유용하게 활용하는 데이터를 처리한 결과물 |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
 ### 정보 처리(Information Processing)
@@ -27,7 +27,7 @@
 - 정보 시스템 안에서 데이터를 저장
 - 필요 시 데이터 제공
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-03-IS.PNG"  width="50%" height="50%"/>
+<img src="./Image/ch01/ch01-03-IS.PNG"  width="50%" height="50%"/>
 
 ## 2절. 데이터베이스의 정의 및 특성
 
@@ -56,7 +56,7 @@
 
 ### 데이터 분류 형태
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-04-DataType.PNG"  width="50%" height="50%"/>
+<img src="./Image/ch01/ch01-04-DataType.PNG"  width="50%" height="50%"/>
 
 #### 정형 데이터(Structured Data)
 
@@ -65,7 +65,7 @@
   - 데이터 구조에 대한 설명 및 데이터 내용 별도 유지
 - ex) 엑셀의 스프레드시트, 관계 데이터베이스의 테이블
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-05-SD.PNG"  width="50%" height="50%"/>
+<img src="./Image/ch01/ch01-05-SD.PNG"  width="50%" height="50%"/>
 
 #### 반정형 데이터(Semi-Structured Data)
 
@@ -75,20 +75,20 @@
 - 파일 형태 저장
 - ex) 웹에서 데이터를 교환하기 위해 작성하는 HTML/XML/JSON 문서 및 웹 로그, 센서 데이터
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-06-SSD.PNG"  width="50%" height="50%"/>
+<img src="./Image/ch01/ch01-06-SSD.PNG"  width="50%" height="50%"/>
 
 #### 비정형 데이터(Unstructured Data)
 
 - 정해진 구조 없이 저장된 데이터
 - ex) 소셜 데이터의 텍스트, 영상, 이미지, 워드 및 PDF 문서와 같은 멀티미디어 데이터
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-07-UD.PNG"  width="auto"/>
+<img src="./Image/ch01/ch01-07-UD.PNG"  width="auto"/>
 
 ### 데이터 분류 특성
 
 - 통계적 관점 & 데이터 분석 분야에서 사용
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch01/ch01-08-SD.PNG"  width="auto"/>
+<img src="./Image/ch01/ch01-08-SD.PNG"  width="auto"/>
 
 #### 범주형 데이터(Categorical Data)
 

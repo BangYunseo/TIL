@@ -122,7 +122,7 @@ unbindService(connection)
 
 #### startService()
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch10/ch10-01-SS.PNG" height="auto" />
+<img src="./Image/ch10/ch10-01-SS.PNG" height="auto" />
   
 - 서비스 객체 생성 시 onCreate() → onStartCommand() 호출
     - onCreate() : 서비스 객체가 생성 시 처음 한 번만 호출
@@ -131,7 +131,7 @@ unbindService(connection)
 
 #### bindService()
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch10/ch10-02-BS.PNG" height="auto" />
+<img src="./Image/ch10/ch10-02-BS.PNG" height="auto" />
 
 - 서비스 객체 생성 시 onCreate → onBind() 호출
   - 다시 bindService() 실행 시 onBind() 함수만 재호출
@@ -144,11 +144,11 @@ unbindService(connection)
 
 1. startService()로 서비스 실행 가정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch10/ch10-03-SE.PNG" height="auto" />
+<img src="./Image/ch10/ch10-03-SE.PNG" height="auto" />
 
 2. 서비스와 액티비티 상호작용 시 bindService()
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch10/ch10-04-SA.PNG" height="auto" />
+<img src="./Image/ch10/ch10-04-SA.PNG" height="auto" />
 
 ### 서비스 코드
 
@@ -214,7 +214,7 @@ android{
 
 - AIDL 이용을 위해 확장자가 aidl인 파일 필요
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch10/ch10-05-aidl1.PNG" height="auto" />
+<img src="./Image/ch10/ch10-05-aidl1.PNG" height="auto" />
 
 ```aidl
 // AIDL 파일 내용
@@ -255,7 +255,7 @@ class MyAIDLService : Service(){
 - 인텐트에 패키지 정보 포함
 - AIDL 서비스 이용 앱도 AIDL 서비스 제공 앱의 AIDL 파일 보유 필수
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Android/Image/ch10/ch10-06-aidl2.PNG" height="auto" />
+<img src="./Image/ch10/ch10-06-aidl2.PNG" height="auto" />
 
 ```kt
 // 외부 앱 서비스 실행

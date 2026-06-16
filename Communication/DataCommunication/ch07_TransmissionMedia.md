@@ -12,11 +12,11 @@
 
 - 발신지에서 목적지로 정보를 전달할 수 있는 모든 매체
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-01-TM.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-01-TM.PNG" height="auto"/>
 
 ### 종류
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-02-TMType.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-02-TMType.PNG" height="auto"/>
 
 ## 1절. 유도 매체
 
@@ -32,18 +32,18 @@
 
 ### 꼬임 쌍선(Twisted-Pair)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-04-TpC.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-04-TpC.PNG" height="auto"/>
 
 - 2개의 도선(일반적인 구리)
 - 각 도선 별 색깔 상이
 - 차폐선 케이블
 - 주파수 범위
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-03-TpBW.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-03-TpBW.PNG" height="auto"/>
 
 ### 비차폐 꼬임쌍선(UTP : Unshielded Twisted-Pair)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-05-UTP.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-05-UTP.PNG" height="auto"/>
 
 - 오늘날 통신 매체에서 사용하는 가장 일반적인 형태
 
@@ -52,7 +52,7 @@
 - RJ45 커넥터
   - 전화 잭같은 snap-in 플러그 형태
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-07-RJ45.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-07-RJ45.PNG" height="auto"/>
 
 #### 비차폐 꼬임쌍선 범주
 
@@ -69,17 +69,17 @@
 
 #### 비차폐 꼬임쌍선 성능
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-08-Performance.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-08-Performance.PNG" height="auto"/>
 
 ### 차폐 꼬임쌍선(STP : Shielded Twisted-Pair)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-06-STP.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-06-STP.PNG" height="auto"/>
 
 ### 동축 케이블(Coaxial Cable)
 
 - 높은 주파수 영역 신호 전달
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-09-CC.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-09-CC.PNG" height="auto"/>
 
 #### 표준(Standard)
 
@@ -95,11 +95,11 @@
 
 - BNC 연결구
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-10-BNC.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-10-BNC.PNG" height="auto"/>
 
 #### 성능
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-11-Performance.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-11-Performance.PNG" height="auto"/>
 
 ### 광섬유 케이블(Optical Fiber Cable)
 
@@ -113,7 +113,7 @@
 
 #### 광선 굴절
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-12-Refraction.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-12-Refraction.PNG" height="auto"/>
 
 |  용어  |        영어        | 설명                                          |
 | :----: | :----------------: | :-------------------------------------------- |
@@ -124,7 +124,7 @@
 
 #### 광섬유 케이블 구성
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-13-OF.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-13-OF.PNG" height="auto"/>
 
 - 채널로 빛을 유도하고자 반사 사용
 - 유리 OR 플라스틱 재료
@@ -137,24 +137,24 @@
   - 섬유질 플라스틱
   - 금속성 망
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-18-OFConsist.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-18-OFConsist.PNG" height="auto"/>
 
 #### 광섬유 케이블 전파 방식(Propagation Mode)
 
 - 광채널을 따라 빛의 전달을 위해 2개 모드 지원
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-14-PM.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-14-PM.PNG" height="auto"/>
 
 #### 다중 모드(Multimode) : 단계 지수(Step Index)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-15-MSI.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-15-MSI.PNG" height="auto"/>
 
 - 일정한 밀도 보유
 - 여러 개의 광원이 서로 다른 경로로 코어를 통해 다중 빔 전달
 
 #### 다중 모드(Multimode) : 등급 지수(Graded Index)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-16-MGI.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-16-MGI.PNG" height="auto"/>
 
 - 다양한 밀도 보유
 - 가운데에 가장 높은 밀도 보유
@@ -162,7 +162,7 @@
 
 #### 단일 모드(Singlemode)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-17-S.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-17-S.PNG" height="auto"/>
 
 #### 광섬유 유형
 
@@ -179,18 +179,18 @@
 
   - 케이블 TV
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-19-SC.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-19-SC.PNG" height="auto"/>
 
 - 직립 단자 연결구
 
   - 케이블 네트워킹 장비
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-20-ST.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-20-ST.PNG" height="auto"/>
 
 - MT-RJ
   - RJ45와 동일한 크기
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-21-MTRJ.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-21-MTRJ.PNG" height="auto"/>
 
 #### 광섬유 케이블 장점
 
@@ -211,14 +211,14 @@
 
 ### 비유도 매체(Unguided Media) : 무선
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-22-UM.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-22-UM.PNG" height="auto"/>
 
 - 물리적 도체 없이 전자기 신호 전송
 - == 무선통신
 
 ### 전파
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-23-UMtrans.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-23-UMtrans.PNG" height="auto"/>
 
 |          전파 종류          | 설명                                                     |
 | :-------------------------: | :------------------------------------------------------- |
@@ -241,11 +241,11 @@
 
 ### 유형
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-24-UMType.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-24-UMType.PNG" height="auto"/>
 
 ### 라디오파
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-25-RW.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-25-RW.PNG" height="auto"/>
 
 - 3KHz ~ 1GHz
 - 전방향 전파
@@ -261,7 +261,7 @@
 
 ### 마이크로파
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch07/ch07-26-MW.PNG" height="auto"/>
+<img src = "./Image/ch07/ch07-26-MW.PNG" height="auto"/>
 
 - 1 GHz ~ 300 GHz의 전자기파
 - 단방향 전파, 가시선 전파

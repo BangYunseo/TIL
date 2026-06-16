@@ -14,13 +14,13 @@
 - 2차원(특정 부분들의 특징들을 추출하여 탐색)
 - 하위 레이어의 노드들과 상위 레이어의 노드들이 부분적 연결
 
-![CNN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CNN.PNG)
+![CNN](./Image/ch08/CNN.PNG)
 
 ##### 네오코그니트론(Neocognitron)
 
 - 1980년 후쿠시마에 의해 소개된 신경망 구조
 
-![Neo](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/Neo.PNG)
+![Neo](./Image/ch08/Neo.PNG)
 
 #### 컨볼루션 신경망 중요성
 
@@ -30,7 +30,7 @@
 
 #### 컨볼루션 신경망 구조
 
-![CNNS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CNNS.PNG)
+![CNNS](./Image/ch08/CNNS.PNG)
 
 - 여러 레이어의 연결을 통한 구조
 - 입력층
@@ -43,25 +43,25 @@
 
 - 주변 화소값들 중 가중치를 곱해 더한 후 새로운 화소 값으로 하는 연산
 
-![CA](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CA.PNG)
+![CA](./Image/ch08/CA.PNG)
 
-![CA2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CA2.PNG)
+![CA2](./Image/ch08/CA2.PNG)
 
 ##### 컨볼루션의 구체적 예시
 
-![CAex1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CAex1.PNG)
+![CAex1](./Image/ch08/CAex1.PNG)
 
-![CAex2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CAex2.PNG)
+![CAex2](./Image/ch08/CAex2.PNG)
 
 ##### 특징맵(Feature Map)
 
-![FM](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/FM.PNG)
+![FM](./Image/ch08/FM.PNG)
 
 - 컨볼루션을 수행한 결과
 
 ##### 컨볼루션 신경망
 
-![CP1](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CP1.PNG)
+![CP1](./Image/ch08/CP1.PNG)
 
 - 커널이 입력층의 각 화소를 중심으로 덮여 씌움
 - 앞 레이어의 값 X는 각 커널 W와의 연산으로 $WX+b$
@@ -72,7 +72,7 @@
 - 여러 개의 필터 이용 가능
 - 필터의 값은 계속 학습
 
-![CL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CL.PNG)
+![CL](./Image/ch08/CL.PNG)
 
 #### 보폭(stride)
 
@@ -80,38 +80,38 @@
 - ex) 보폭이 1인 경우 : 한 번에 1 픽셀씩 이동하며 커널 적용
 - ex) 보폭이 2인 경우 : 하나씩 건너뛰며 픽셀에 커널 적용
 
-![Stride](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/Stride.PNG)
+![Stride](./Image/ch08/Stride.PNG)
 
 #### 패딩(padding)
 
 - 이미지의 가장자리 처리 기법
 
-![Padding](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/Padding.PNG)
+![Padding](./Image/ch08/Padding.PNG)
 
 ##### Valid
 
 - 커널을 입력 이미지 안에서만 움직임
 
-![PV](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/PV.PNG)
+![PV](./Image/ch08/PV.PNG)
 
 ##### Same
 
 - 입력 이미지의 주변을 특정값(0 OR 이웃값)으로 채움
 
-![PS](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/PS.PNG)
+![PS](./Image/ch08/PS.PNG)
 
 #### 필터가 다수일 때의 컨볼루션 레이어
 
-![CL2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CL2.PNG)
+![CL2](./Image/ch08/CL2.PNG)
 
-![CL3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CL3.PNG)
+![CL3](./Image/ch08/CL3.PNG)
 
 #### 풀링(Pooling)
 
 - 서브 샘플링
 - 입력 데이터의 크기 줄임
 
-![PL](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/PL.PNG)
+![PL](./Image/ch08/PL.PNG)
 
 ##### 풀링 장점
 
@@ -123,17 +123,17 @@
 
 #### 풀링 종류
 
-![PT](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/PT.PNG)
+![PT](./Image/ch08/PT.PNG)
 
 ##### 최대 풀링
 
 - 컨볼루션처럼 윈도우를 움직여 가장 큰 값만 출력하는 연산
 
-![MP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/MP.PNG)
+![MP](./Image/ch08/MP.PNG)
 
 #### 컨볼루션 신경망 해석
 
-![CLR](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CLR.PNG)
+![CLR](./Image/ch08/CLR.PNG)
 
 ## 2절. 컨볼루션 신경망 구조
 
@@ -142,14 +142,14 @@
 - 2 × 2의 커널을 씌움으로써 풀링 진행
 - n1에서 은닉층 1, n2에서 은닉층 2로 나눠짐
 
-![CNNS2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CNNS2.PNG)
+![CNNS2](./Image/ch08/CNNS2.PNG)
 
 - Hyper Parameter : 개수가 많아질수록 계산이 필요한 값의 증가
   - n1 & n2: 커널의 개수
 
 ##### 1) n1 channels
 
-![CNNS3](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CNNS3.PNG)
+![CNNS3](./Image/ch08/CNNS3.PNG)
 
 - 28 × 28 × 1의 흑백 입력 이미지에 5 × 5의 필터 합성곱
 - 패딩 0, 스트라이드 1, 필터 사이즈 5 이므로 이미지 사이즈는 $28 - 5 + 1 = 24$
@@ -158,13 +158,13 @@
 
 ##### 2) n1 channels
 
-![CNNS4](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CNNS4.PNG)
+![CNNS4](./Image/ch08/CNNS4.PNG)
 
 - 합성곱 이후 풀링으로 이미지의 크기를 절반으로 줄임($12 × 12 × n1$)
 
 ##### 3) n2 channels
 
-![CNNS5](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CNNS5.PNG)
+![CNNS5](./Image/ch08/CNNS5.PNG)
 
 - 합성곱 재수행
 - $12 × 12 × n1$장의 이미지에 5 × 5필터 합성곱
@@ -173,20 +173,20 @@
 
 ##### 4) n2 channels
 
-![CNNS6](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CNNS6.PNG)
+![CNNS6](./Image/ch08/CNNS6.PNG)
 
 - 합성곱 이후 이미지 크기가 여전히 큰 경우
 - 풀링 수행으로 이미지의 크기를 절반으로 줄이기($4 × 4 × n2$)
 
 ##### 5) Flattened
 
-![CNNS7](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/CNNS7.PNG)
+![CNNS7](./Image/ch08/CNNS7.PNG)
 
 - 4 × 4 × $n2$의 텐서를 reshape(1, 16n2)하면 길쭉 한 벡터(1 × 16 × n2)생성 이 과정을 flatten 과정 (텐서를 벡터로 쭉 펴는 것)
 
 ##### 6) ReLU Activation
 
-![ReLUA](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/ReLUA.PNG)
+![ReLUA](./Image/ch08/ReLUA.PNG)
 
 - flatten 벡터를 다층 퍼셉트론(MLP)의 은닉층에 입력
 - 다층퍼셉트론(MLP)의 은닉층 가중치는 (16n2, n3)으로 초기화
@@ -194,7 +194,7 @@
 
 ##### 7) OUTPUT
 
-![OP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/OP.PNG)
+![OP](./Image/ch08/OP.PNG)
 
 - n3 사이즈 벡터를 다층 퍼셉트론(MLP)의 출력층에 입력
 - 다층퍼셉트론(MLP)의 출력층 가중치를 (n3, 10)으로 초기화
@@ -204,7 +204,7 @@
 
 #### 알렉스넷(AlexNet)
 
-![AN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/AN.PNG)
+![AN](./Image/ch08/AN.PNG)
 
 ##### (1) 첫 번째 레이어 : Conv1
 
@@ -227,7 +227,7 @@
 
 #### 케라스로 컨볼루션 신경망 구현
 
-![KCNN](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/KCNN.PNG)
+![KCNN](./Image/ch08/KCNN.PNG)
 
 #### 컨볼루션 레이어
 
@@ -284,7 +284,7 @@ print(max_pool_2d(x))
 
 - 출력
 
-![MP2](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/MP2.PNG)
+![MP2](./Image/ch08/MP2.PNG)
 
 #### EX : MNIST 필기체 숫자 인식
 
@@ -331,4 +331,4 @@ model.fit(train_images, train_labels, epochs = 5)
 
 - 결과 출력 과정
 
-![MNISTP](https://github.com/BangYunseo/TIL/blob/main/AI/DeepLearning/Image/ch08/MNISTP.PNG)
+![MNISTP](./Image/ch08/MNISTP.PNG)

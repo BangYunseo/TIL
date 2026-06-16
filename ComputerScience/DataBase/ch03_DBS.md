@@ -16,7 +16,7 @@
 
 - 데이터베이스에 데이터를 저장·관리하여 조직에 필요한 정보를 생성하는 시스템
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-01-DBS.PNG" style="height: 30%; width: 30%;"/>
+<img src = "./Image/ch03/ch03-01-DBS.PNG" style="height: 30%; width: 30%;"/>
 
 ## 2절. 데이터베이스 구조
 
@@ -24,7 +24,7 @@
 
 - 데이터베이스에 저장된 데이터 구조·제약조건 정의
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-02-Schema.PNG" height="40%" />
+<img src = "./Image/ch03/ch03-02-Schema.PNG" height="40%" />
 
 ### 인스턴스(Instance)
 
@@ -32,7 +32,7 @@
 
 ### 3단계 데이터베이스 구조
 
-| <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-03-DataBaseStructual.PNG" height="auto" /> | <img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-04-Structual3.PNG" height="auto" /> |
+| <img src = "./Image/ch03/ch03-03-DataBaseStructual.PNG" height="auto" /> | <img src = "./Image/ch03/ch03-04-Structual3.PNG" height="auto" /> |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 
 - 미국 표준화 기관 ANSI/SPARC에서 제안
@@ -48,7 +48,7 @@
 
 ### 3단계 데이터베이스 구조의 사상 또는 매핑
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-05-Structual3.PNG" width="60%" height="auto" />
+<img src = "./Image/ch03/ch03-05-Structual3.PNG" width="60%" height="auto" />
 
 - 데이터베이스 3단계 구조로 분할
 - 단계별 스키마 유지
@@ -65,19 +65,19 @@
 
 #### 외부 스키마
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-06-EL.PNG" width="60%" height="auto" />
+<img src = "./Image/ch03/ch03-06-EL.PNG" width="60%" height="auto" />
 
 #### 개념 스키마
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-07-CL.PNG" width="60%" height="auto" />
+<img src = "./Image/ch03/ch03-07-CL.PNG" width="60%" height="auto" />
 
 #### 내부 스키마
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-08-IL.PNG" width="60%" height="auto" />
+<img src = "./Image/ch03/ch03-08-IL.PNG" width="60%" height="auto" />
 
 #### 전체적인 관점
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-09-WL.PNG" width="60%" height="auto" />
+<img src = "./Image/ch03/ch03-09-WL.PNG" width="60%" height="auto" />
 
 ### 데이터 독립성(Data Independency)
 
@@ -123,7 +123,7 @@
 - 데이터베이스 이용을 위해 접근하는 사람
 - 데이터베이스 관리자·최종 사용자·응용 프로그래머로 구분
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-10-DBuser.PNG" height="auto" />
+<img src = "./Image/ch03/ch03-10-DBuser.PNG" height="auto" />
 
 ### 데이터베이스 관리자(DB Administrator)
 
@@ -160,7 +160,7 @@
 - 사용자·데이터베이스 관리 시스템 간 통신 수단
 - 데이터 정의어(DDL)·데이터 조작어(DML)·데이터 제어어(DCL) 구분
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-11-DataLanguage.PNG" width="70%" height="auto" />
+<img src = "./Image/ch03/ch03-11-DataLanguage.PNG" width="70%" height="auto" />
 
 #### 데이터 정의어(DDL : Data Definition Language)
 
@@ -193,7 +193,7 @@
 
 - 데이터베이스 관리·사용자 데이터 처리 요구 수행
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch03/ch03-12-DBMS.PNG" width="80%" height="auto" />
+<img src = "./Image/ch03/ch03-12-DBMS.PNG" width="80%" height="auto" />
 
 |               주요 구성 요소                | 설명                                                                                                                                   |
 | :-----------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------- |

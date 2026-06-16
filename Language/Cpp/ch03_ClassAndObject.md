@@ -32,7 +32,7 @@
     - 객체 내 데이터에 대한 보안, 보호, 외부 접근 제한
   - 캡슐화의 사례(TV 객체)
 
-![TVclass](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/TVclass.PNG)
+![TVclass](./Image/ch03/TVclass.PNG)
 
 #### C++에서의 클래스와 객체
 
@@ -50,7 +50,7 @@
   - 객체들은 상호 별도의 공간에 생성
 - 클래스와 객체의 관계
 
-![ClassObject](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/ClassObject.PNG)
+![ClassObject](./Image/ch03/ClassObject.PNG)
 
 ## 2절. 클래스
 
@@ -71,9 +71,9 @@
 - 클래스 구현부(Class Implementation)
   - 클래스에 정의된 모든 멤버 함수 구현
 - 그림으로 클래스 작성 확인하기  
-  ![MakeClass](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/MakeClass.PNG)
+  ![MakeClass](./Image/ch03/MakeClass.PNG)
 
-![ObjectMaker](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/ObjectMaker.PNG)
+![ObjectMaker](./Image/ch03/ObjectMaker.PNG)
 
 - 예제 2. Rectangle 클래스 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/RectangleClass.cpp)
@@ -84,7 +84,7 @@
 
 - 객체가 생성되는 시점에서 자동으로 호출되는 멤버 함수
 - 클래스 이름과 동일한 멤버 함수
-  ![constructor](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/constructor.PNG)
+  ![constructor](./Image/ch03/constructor.PNG)
 
 #### 생성자 함수의 특징
 
@@ -111,7 +111,7 @@
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/CircleClass2con.cpp)
 
 - 그림으로 이해하기
-  ![make2con](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/make2con.PNG)
+  ![make2con](./Image/ch03/make2con.PNG)
 
 #### 생성자가 다른 생성자 호출(위임 생성자)
 
@@ -120,7 +120,7 @@
     - 타겟 생성자 : 객체 초기화를 전담하는 생성자
     - 위임 생성자 : 타겟 생성자를 호출하는 생성자로 객체 초기화를 타겟 생성자에 위임
 
-![con22](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/con22.PNG)
+![con22](./Image/ch03/con22.PNG)
 
 - 예제 4. 위임 생성자 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/CircleClass3con.cpp)
@@ -190,14 +190,14 @@ class Circle{
 - 생성자가 하나도 작성되어 있지 않다면 기본 생성자가 자동으로 생성
   - 컴파일러가 기본 생성자를 자동 생성함
 
-![con3](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/con3.PNG)
+![con3](./Image/ch03/con3.PNG)
 
 #### 기본 생성자가 자동으로 생성되지 않는 경우
 
 - 생성자가 하나라도 선언된 클래스의 경우
   - 컴파일러는 기본 생성자를 자동 생성하지 않음
 
-![con4](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/con4.PNG)
+![con4](./Image/ch03/con4.PNG)
 
 - 예제 6. Rectangle Class의 정사각형 판단 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/IsRectangleClass.cpp)
@@ -211,7 +211,7 @@ class Circle{
   - 임의로 호출 불가능
   - 객체 메모리 소멸 직전 호출
 
-![des](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/des.PNG)
+![des](./Image/ch03/des.PNG)
 
 #### 소멸자 특징
 
@@ -262,7 +262,7 @@ class Circle{
 
 #### 예제 7 설명
 
-![ex7](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/ex7.PNG)
+![ex7](./Image/ch03/ex7.PNG)
 
 ## 5절. 접근 지정자
 
@@ -296,18 +296,18 @@ public
 #### 중복 접근 지정과 디폴트 접근 지정
 
 - 접근 지정의 중복
-- ![AM](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/AM.PNG)
+- ![AM](./Image/ch03/AM.PNG)
 
 - 디폴트 접근 지정 private
-- ![AM2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/AM2.PNG)
+- ![AM2](./Image/ch03/AM2.PNG)
 
 - 멤버 변수의 private 지정
-- ![AM3](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/AM3.PNG)
+- ![AM3](./Image/ch03/AM3.PNG)
 
 - 컴파일 오류 판정해보기
-- ![QuestionAM1](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/QAM1.PNG)
+- ![QuestionAM1](./Image/ch03/QAM1.PNG)
 
-![QuestionAM2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/QAM2.PNG)
+![QuestionAM2](./Image/ch03/QAM2.PNG)
 
 - 정답
   - (9) 생성자 PrivateAccessError()는 private의 접근 지정자로 선언되어 있으므로 main()에서 호출이 불가능
@@ -319,7 +319,7 @@ public
 
 #### 함수 호출에 따른 시간 오버헤드
 
-![function1](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/function1.PNG)
+![function1](./Image/ch03/function1.PNG)
 
 - 작은 크기의 함수를 호출하면 함수 실행 시간에 비해 호출을 위해 소요되는 부가적인 시간 오버헤드가 상대적으로 큼
 
@@ -367,7 +367,7 @@ int main(){
 
 #### 인라인 함수의 사례
 
-![inline1](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/inline1.PNG)
+![inline1](./Image/ch03/inline1.PNG)
 
 - 인라인 제약 사항
   - inline은 컴파일러에게 주는 요구 메시지
@@ -387,7 +387,7 @@ int main(){
 
 #### 자동 인라인 함수
 
-![inline2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/inline2.PNG)
+![inline2](./Image/ch03/inline2.PNG)
 
 - 클래스 선언부에 구현된 멤버 함수
   - inline으로 선언할 필요 없음
@@ -431,7 +431,7 @@ struct stObj;
 #### 구조체와 클래스의 디폴트 접근 지정 비교
 
 - 구조체는 public, 클래스는 private
-  ![pubpri](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/pubpri.PNG)
+  ![pubpri](./Image/ch03/pubpri.PNG)
 
 - 예제 8. 구조체 Circle Class 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/blob/main/ch03_ClassAndObject/StructCircleClass.cpp)
@@ -453,19 +453,19 @@ struct stObj;
   - 클래스 재사용
 - 헤더 파일 분리 사례
 
-![seph](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/seph.PNG)
+![seph](./Image/ch03/seph.PNG)
 
 #### 헤더 파일의 중복 include 문제
 
 - 중복 include를 할 때 생기는 문제
 
-![errorseph](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/errorseph.PNG)
+![errorseph](./Image/ch03/errorseph.PNG)
 
 - 헤더 파일의 중복 include로 인해 생기는 문제를 조건 컴파일로 해결
 
-![errorseph1](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/errorseph1.PNG)
+![errorseph1](./Image/ch03/errorseph1.PNG)
 
-![errorseph2](https://github.com/BangYunseo/TIL/blob/main/Language/Cpp/Image/ch03/errorseph2.PNG)
+![errorseph2](./Image/ch03/errorseph2.PNG)
 
 - 예제 9. 헤더 파일 분리 예제  
   [SourceCodeChecking](https://github.com/BangYunseo/Basic_CPP/tree/main/ch03_ClassAndObject/ExCalculator)

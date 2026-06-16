@@ -16,7 +16,7 @@
 
 ### 설계 패턴
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/SoftwareEngineering/Image/MVVM/01_MVVM.PNG" height="auto" />
+<img src="./Image/MVVM/01_MVVM.PNG" height="auto" />
 
 ## 2절. UI Design Pattern
 

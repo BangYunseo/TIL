@@ -12,7 +12,7 @@
 
 ### 오류 유형
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-01-ErrorType.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-01-ErrorType.PNG" height="auto"/>
 
 - 단일 비트 오류(Single-Bit Error)
 
@@ -56,14 +56,14 @@
 
 ### 부호화(Coding)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-02-Coding.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-02-Coding.PNG" height="auto"/>
 
 1. 블록 부호화(Block Coding)
 2. 컨볼루션 부호화(Convolution Coding)
 
 ### 모듈러 연산(Modular Arithmetic)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-03-Mod.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-03-Mod.PNG" height="auto"/>
 
 - 모듈러(modulus) N 이라는 제한된 정수 사용
 - 0 ~ N - 1 정수 사용
@@ -74,7 +74,7 @@
 
 ### 블록 부호화(Block Coding)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-04-BC.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-04-BC.PNG" height="auto"/>
 
 - 메시지를 데이터워드(DataWord)라는 k 비트 블록으로 나눔
 - 각 블록에 r 개의 중복 비트들을 더해 길이 n = k + r로 만듦
@@ -82,14 +82,14 @@
 
 ### 오류 검출 조건
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-05-ED.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-05-ED.PNG" height="auto"/>
 
 - 수신자는 유효 코드워드를 찾을 수 있거나 목록을 가지고 있어야 한다.
 - 원래의 코드워드가 무효 코드워드로 바뀌었다.
 
 ### 오류 정정
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-06-EC.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-06-EC.PNG" height="auto"/>
 
 - 오류 검출보다 어려운 단계
 - 많은 중복 비트 필요
@@ -128,7 +128,7 @@
 
 ### 패리티(Parity) 검사 코드
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-07-PB.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-07-PB.PNG" height="auto"/>
 
 - 변환을 위해 추가된 비트
 - k 비트 데이터워드를 n = k + 1이 되도록 n비트 코드워드로 변환
@@ -138,19 +138,19 @@
 
 ### 패리티 검사 코드 부호기와 복호기
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-08-PBEnDe.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-08-PBEnDe.PNG" height="auto"/>
 
 #### 오류가 있는 코드워드는?
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-09-Q1.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-09-Q1.PNG" height="auto"/>
 
 - 홀수 개가 아닌 2, 4, 6에 오류가 있음
 
 ### 2차원 패리티 검사(2-Dimensional Parity Check)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-10-2DPC.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-10-2DPC.PNG" height="auto"/>
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-11-2DPCP.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-11-2DPCP.PNG" height="auto"/>
 
 ## 2절. 순환 코드
 
@@ -161,29 +161,29 @@
 
 #### 순환 코드 예시
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-12-CCex.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-12-CCex.PNG" height="auto"/>
 
 - 1011000이 코드워드인 경우
 - 1 개의 비트를 왼쪽으로 이동시켜 얻는 0110001도 코드워드인 형태
 
 ### 순환 중복 검사(CRC : Cyclic Redundancy Check)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-13-CRC.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-13-CRC.PNG" height="auto"/>
 
 - 오류 정정을 위한 순환 코드 생성
 - LAN, WAN에서 주로 사용
 
 ### 순환 중복 검사 부호기와 복호기
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-14-CRCEnDe.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-14-CRCEnDe.PNG" height="auto"/>
 
 #### 순환 중복 검사 부호기 : 나눗셈
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-15-CRCEnMod.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-15-CRCEnMod.PNG" height="auto"/>
 
 #### 순환 중복 검사 복호기 : 나눗셈
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-16-CRCDeMod.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-16-CRCDeMod.PNG" height="auto"/>
 
 ### 다항식(Polynomial)
 
@@ -211,32 +211,32 @@
 
 #### 곱셈과 나눗셈
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-18-2PolyMul.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-18-2PolyMul.PNG" height="auto"/>
 
 - 곱셈 : 지수의 합
 - 나눗셈 : (첫 번째 항목의 지수) - (두 번째 항목의 지수)
 
 #### 이동
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-19-2PolyShift.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-19-2PolyShift.PNG" height="auto"/>
 
 - 왼쪽 이동 : 오른쪽 비트에 0 더하기
 - 오른쪽 이동 : 오른쪽 비트 제거
 
 ### 2진 워드 다항식
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-17-2Polynomial.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-17-2Polynomial.PNG" height="auto"/>
 
 ### CRC 나눗셈
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-20-CRCDivision.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-20-CRCDivision.PNG" height="auto"/>
 
 - 제수
   - 생성 다항식 or 생성식
 
 ### 표준 다항식
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-21-StandardPolynomial.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-21-StandardPolynomial.PNG" height="auto"/>
 
 ### 순환 코드 장점
 
@@ -248,7 +248,7 @@
 
 ### 검사합(CheckSum)
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-22-CheckSum.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-22-CheckSum.PNG" height="auto"/>
 
 - 모든 길이 메시지에 적용 가능한 오류 검출 기법
 - 네트워크 계층, 전송 계층에서 사용
@@ -275,12 +275,12 @@
 
 ### 검사합 절차
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-23-CheckSumP.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-23-CheckSumP.PNG" height="auto"/>
 
 ### 검사합 알고리즘
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-24-CheckSumA.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-24-CheckSumA.PNG" height="auto"/>
 
 ### 검사합 예제 : Forouzan
 
-<img src = "https://github.com/BangYunseo/TIL/blob/main/Communication/DataCommunication/Image/ch10/ch10-25-CheckSumec.PNG" height="auto"/>
+<img src = "./Image/ch10/ch10-25-CheckSumec.PNG" height="auto"/>

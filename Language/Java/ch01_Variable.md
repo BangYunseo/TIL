@@ -18,7 +18,7 @@
 * 메모리의 어디에, 어떤 방식으로 저장할 지 결정해야 프로그램 개발이 쉬움
   * 프로그래밍 언어가 변수라는 개념을 사용하는 이유
 
-![variable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable.PNG)
+![variable](./Image/ch01/variable.PNG)
 
 #### 변수(Variable)
 * 값을 저장할 수 있는 메모리의 특정 번지에 붙여진 이름
@@ -30,60 +30,60 @@
   * 어떤 타입의 데이터를 저장하는가?
   * 변수 이름은 무엇인가?
          
-![variable1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable1.PNG)
+![variable1](./Image/ch01/variable1.PNG)
 
 * 같은 타입의 변수는 콤마를 이용해 한꺼번에 선언
 
-![variable2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variable2.PNG)
+![variable2](./Image/ch01/variable2.PNG)
 
 #### 변수 이름
 * Java에서 정한 작성 규칙
 
-![variablename](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablename.PNG)
+![variablename](./Image/ch01/variablename.PNG)
 
 #### 예약어
 * Java에서 의미를 가지고 사용되는 단어
 * 변수 이름으로 사용할 경우 컴파일 에러 발생
 
-![variablename1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablename1.PNG)
+![variablename1](./Image/ch01/variablename1.PNG)
 
 #### 변수 저장
 * 값을 저장할 경우 대입 연산자 (=) 사용
   * 변수 선언 후 대입 연산자를 통해 오른쪽의 값을 왼쪽 변수에 저장
 
-![variablesave](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablesave.PNG)
+![variablesave](./Image/ch01/variablesave.PNG)
 
 #### 변수 초기화     
 * 변수에 최초로 값이 저장될 때 메모리에 변수가 생성
   * 생성되는 변수 : 초기화
   * 생성되는 변수의 값 : 초기값
 
-![variablereset](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variablereset.PNG)
+![variablereset](./Image/ch01/variablereset.PNG)
 
 * 초기화를 하지 않은 변수는 메모리에서 값을 읽을 수 없음
 
-![variableresetno](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/variableresetno.PNG)
+![variableresetno](./Image/ch01/variableresetno.PNG)
 
 #### 변수 사용 
 * 변수의 값을 이용해서 출력문이나 연산식을 수행
 
-![usevariable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/usevariable.PNG)
+![usevariable](./Image/ch01/usevariable.PNG)
 
 #### 변수 값 복사
 * 변수의 값을 다른 변수에 저장
 
-![copyvariable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/copyvariable.PNG)
+![copyvariable](./Image/ch01/copyvariable.PNG)
 
 #### 변수 사용 범위
 * 지역 변수(Local Variable)
   * 메소드 블록 내에서 선언된 변수
   * 메소드 블록 내에서만 사용되고 실행이 끝나면 자동으로 삭제
   
-![localvariable](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/localvariable.PNG)
+![localvariable](./Image/ch01/localvariable.PNG)
 
 * 지역 변수는 해당 중괄호 블록 내에서만 사용 가능
 
-![localvariable1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/localvariable1.PNG)
+![localvariable1](./Image/ch01/localvariable1.PNG)
 
 #### 지역 변수 사용 범위 주의할 점
 * 변수가 어떤 범위에서 사용될 것인지 고려하여 선언 위치를 결정
@@ -110,22 +110,22 @@
 * 기본 타입(Primitive Type)
   * 자바는 정수, 실수, 논리값을 저장하는 총 8개의 기본 타입 보유
 
-![PrimitiveType](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/PrimitiveType.PNG)
+![PrimitiveType](./Image/ch01/PrimitiveType.PNG)
 
 * 정수 타입
   * 메모리 사용 크기와 저장되는 값의 허용 범위에 차이 존재
       
-![IntType](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/IntType.PNG)
+![IntType](./Image/ch01/IntType.PNG)
 
 * 메모리
 
-![Memory](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/Memory.PNG)
+![Memory](./Image/ch01/Memory.PNG)
 
 #### 리터럴(literal)
 * 소스 코드에서 프로그래머에 의해 직접 입력된 값
 * 아래의 경우 자바에서 정수로 인식
 
-![Exchange](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/Exchange.PNG)
+![Exchange](./Image/ch01/Exchange.PNG)
 
 #### char 타입
 * 하나의 문자를 저장하는 타입
@@ -133,18 +133,18 @@
 * 작은 따옴표로 감싼 문자 리터럴은 유니코드로 변환되어 저장
   * char 타입은 정수 타입
  
-![char](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/char.PNG)
+![char](./Image/ch01/char.PNG)
 
 * char는 정수 타입
   * 10진수 또는 16진수 형태의 유니코드 저장 가능
 
-![char2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/char2.PNG)
+![char2](./Image/ch01/char2.PNG)
 
 #### 문자열
 * 큰따옴표로 감싼 문자들
 * 문자열은 char 타입이 아닌 String 타입에 저장
 
-![string](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/string.PNG)
+![string](./Image/ch01/string.PNG)
 
 #### 이스케이프 문자(escape)
 * 문자열 내부의 '\'
@@ -152,11 +152,11 @@
 
 * 예시 1) 문자열 내부에 " 문자 포함   
 
-![escape](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/escape.PNG)
+![escape](./Image/ch01/escape.PNG)
 
 * 예시 2) 문자열 출력 제어
 
-![escape2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/escape2.PNG)
+![escape2](./Image/ch01/escape2.PNG)
 
 #### 이스케이프 문자 종류
 
@@ -172,7 +172,7 @@
 
 #### 실수 타입
 
-![fd](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/fd.PNG)
+![fd](./Image/ch01/fd.PNG)
 
 #### 실수 리터럴
 * 소스 코드에서 소수점 있는 리터럴은 10진수 실수로 인식
@@ -180,19 +180,19 @@
 
 * 알파벳 e 또는 E가 포함된 숫자 리터럴은 지수 및 가수로 표현된 소수점 있는 10진수 실수로 인식
 
-![fd2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/fd2.PNG)
+![fd2](./Image/ch01/fd2.PNG)
 
 #### double 타입
 * double 타입 변수에 저장
   * Java는 실수 리터럴을 기본적으로 double 타입으로 해석
 
-![double](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/double.PNG)
+![double](./Image/ch01/double.PNG)
 
 #### float 타입
 * float 타입 변수에 저장
   * 리터럴 뒤 f 혹은 F를 붙여 float 타입 표시
 
-![float](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/float.PNG)
+![float](./Image/ch01/float.PNG)
 
 #### 실수 타입의 범위
 * double 타입이 float 타입보다 2배 가량 정밀도 높아 정확한 데이터 저장 가능
@@ -238,7 +238,7 @@ int b = a;
 #### 자동 타입 변환(promotion)
 * 값의 허용 범위가 작은 타입이 큰 타입으로 저장될 경우
 
-![promotion](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/promotion.PNG)
+![promotion](./Image/ch01/promotion.PNG)
 
 * 기본 타입의 허용 범위 순서
   * byte < short < int < long < float < double
@@ -270,7 +270,7 @@ char charVal = byteVal;
 #### 강제 타입 변환(casting)
 * 큰 허용 범위 타입을 작은 허용 범위 타입으로 강제로 나누어 한 조각만 저장
 
-![casting](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/casting.PNG)
+![casting](./Image/ch01/casting.PNG)
 
 * 캐스팅 연산자 괄호 () 사용
   * 괄호 안이 나누는 단위
@@ -304,11 +304,11 @@ int intVal = (int) doubleVal;
   * byte, char, short 타입 변수는 int 타입으로 자동 변환
   * 특별한 경우가 아니라면 정수 연산에 사용하는 변수는 int 타입으로 선언
 
-![inttype2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/inttype2.PNG)
+![inttype2](./Image/ch01/inttype2.PNG)
 
 * 피연산자 중 하나가 long 타입이면 다른 피연산자는 long 타입으로 자동 변환   
 
-![longtype](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/longtype.PNG)
+![longtype](./Image/ch01/longtype.PNG)
 
 #### 실수 타입 변수
 * 피연산자 중 하나가 double 타입일 경우 다른 피연산자는 double 타입으로 자동 변환   
@@ -352,24 +352,24 @@ System.out.println(res);
 * 실수 결과를 얻으려면 실수 연산으로의 변환 필요
   * 하나의 정수 혹은 둘 모두를 (double)을 이용해서 강제 타입 변환 진행
 
-![doubletype](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/doubletype.PNG)
+![doubletype](./Image/ch01/doubletype.PNG)
 
 #### + 연산
 * 피연산자가 모두 숫자일 경우 덧셈 연산
 * 피연산자 중 하나가 문자열일 경우 나머지 피연산자도 문자열로 자동 변환
 * 그 후 문자열 결합 연산
 
-![type+](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/type+.PNG)
+![type+](./Image/ch01/type+.PNG)
 
 * '+ 연산'은 앞에서부터 순차적으로 수행
   * 먼저 수행된 연산이 결합 연산인 경우 이후 모든 연산은 결합 연산
 
-![type+2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/type+2.PNG)
+![type+2](./Image/ch01/type+2.PNG)
 
 #### 기본 타입
 * 문자열을 기본 타입으로 강제 변환
 
-![Casting2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/Casting2.PNG)
+![Casting2](./Image/ch01/Casting2.PNG)
 
 * 숫자 형식 예외 발생
   * 숫자 타입 변환 시도할 경우
@@ -420,17 +420,17 @@ System.in.read();
 #### println()
 * 괄호 안의 문자열이나 변수를 출력하는 메소드
 
-![println](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/println.PNG)
+![println](./Image/ch01/println.PNG)
 
 #### 여러가지 출력 메소드
           
-![print](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/print.PNG)
+![print](./Image/ch01/print.PNG)
 
 #### printf()
 * 형식화된 문자열(formal string) 출력
 * 전체 출력 자릿수 및 소수 자릿수 제한
 
-![printf](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/printf.PNG)
+![printf](./Image/ch01/printf.PNG)
 
 * 형식 문자열에서 %와 conversion 외에는 모두 생략 가능
 * conversion에는 제공되는 값의 타입에 따라 d(정수), f(실수), s(문자열) 입력   
@@ -453,14 +453,14 @@ System.out.printf("이름 : %1$s, 나이 : %2$d", "방윤서", 22);
 
 * 다양한 형식 문자열
 
-![print2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/print2.PNG)
+![print2](./Image/ch01/print2.PNG)
 
 #### 키 코드(Key Code) 
 * 키보드에서 키를 입력할 때 프로그램에서 숫자로 된 키 코드를 읽음
 * System.in의 read() 사용
 * 얻은 키코드는 대입 연산자 사용하여 int 변수에 저장
 
-![keycode](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/keycode.PNG)
+![keycode](./Image/ch01/keycode.PNG)
 
 #### System.in.read()의 단점
 * 2개 이상 키가 조합된 한글 읽기 불가능
@@ -469,7 +469,7 @@ System.out.printf("이름 : %1$s, 나이 : %2$d", "방윤서", 22);
 #### Scanner로 해결
 * Java가 제공하는 Scanner 클래스를 통해 입력된 통문자열 읽기 가능
 
-![scan](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/scan.PNG)
+![scan](./Image/ch01/scan.PNG)
 
 #### 기본 타입의 값과 문자열 비교
 * 기본 타입의 값 비교
@@ -485,7 +485,7 @@ System.out.printf("이름 : %1$s, 나이 : %2$d", "방윤서", 22);
     * boolean res1 = str.equals("java");    --> FALSE
     * boolean res2 = str.equals("Java");    --> TRUE
 
-![scan](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch01/strequal.PNG)
+![scan](./Image/ch01/strequal.PNG)
 
 
 #### 변수와 시스템 입출력 정리

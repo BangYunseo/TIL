@@ -54,7 +54,7 @@
 
 #### Cryptographic Primitives(암호학적 기본 요소)
 
-![CP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch08/CP.PNG)
+![CP](./Image/ch08/CP.PNG)
 
 ## 2절. Public-Key Encryption
 
@@ -120,11 +120,11 @@
 
 ##### 예시
 
-![EX](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch08/EX.PNG)
+![EX](./Image/ch08/EX.PNG)
 
 #### RSA-OAEP(Optimal Asymmetric Encryption Padding)
 
-![OAEP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch08/OAEP.PNG)
+![OAEP](./Image/ch08/OAEP.PNG)
 
 - 이론 : $G$와 $H$는 랜덤 오라클
 - 실제 : $G$와 $H$는 암호학의 해쉬 함수들

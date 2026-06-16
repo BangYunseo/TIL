@@ -20,7 +20,7 @@
 
 ### C# 문장(Statement)
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch02/2-1-StatementType.PNG" height="auto" />
+<img src="./Image/ch02/2-1-StatementType.PNG" height="auto" />
 
 ## 2절. 배정문
 
@@ -213,7 +213,7 @@ switch(식)
 - 정해진 횟수만큼 일련의 문장을 반복 실행
   - 가장 대중적인 사용
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch02/2-2-ForProcess.PNG" height="auto" />
+<img src="./Image/ch02/2-2-ForProcess.PNG" height="auto" />
 
 ```C#
 for(식 1; 식 2; 식 3)
@@ -259,7 +259,7 @@ for(int i = 0; i < N; i++)
 
 - 주어진 조건식이 참인 경우에만 프로그램의 일정 부분 반복 실행
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/Language/C%23/Image/ch02/2-3-WhileProcess.PNG" height="auto" />
+<img src="./Image/ch02/2-3-WhileProcess.PNG" height="auto" />
 
 ```C#
 while(조건식)

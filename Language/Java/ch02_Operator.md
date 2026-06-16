@@ -18,12 +18,12 @@
 * 연산식(expression)
     * 연산자와 피연산자를 사용한 연산 과정 기술
 
-![expression](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/expression.PNG)
+![expression](./Image/ch02/expression.PNG)
 
 #### JAVA 연산자
 * 산출되는 값의 타입이 연산자별로 다름을 주의
 
-![JavaExpression](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/JavaExpression.PNG)
+![JavaExpression](./Image/ch02/JavaExpression.PNG)
 
 * 연산식은 반드시 하나의 값 산출
 * 하나의 값이 오는 모든 자리에 연산식 사용 가능
@@ -64,12 +64,12 @@ a = b = c = 10;
 
 #### 연산 방향
 
-![ExpressionDirection](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionDirection.PNG)
+![ExpressionDirection](./Image/ch02/ExpressionDirection.PNG)
 
 #### 괄호 사용
 * 먼저 처리할 연산식을 괄호로 묶기
 
-![ExpressionDirectionEX1](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionDirectionEX1.PNG)
+![ExpressionDirectionEX1](./Image/ch02/ExpressionDirectionEX1.PNG)
 
 #### 연산자 정리
 
@@ -92,7 +92,7 @@ a = b = c = 10;
 #### 부호 연산자
 * boolean 타입과 char 타입을 제외한 기본 타입에 사용
 
-![expression2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/expression2.PNG)
+![expression2](./Image/ch02/expression2.PNG)
 
 * 정수 및 실수 타입 변수 앞에 붙는 경우   
 
@@ -112,7 +112,7 @@ byte res = -b;
 #### 증감 연산자
 * booleaan 타입 외 모든 기본 타입 피연산자에 사용 가능
 
-![ExpressionPlus](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionPlus.PNG)
+![ExpressionPlus](./Image/ch02/ExpressionPlus.PNG)
 
 * 증가 연산자(++)
     * 피연산자 값에 1을 더한 결과를 다시 피연산자에 저장
@@ -151,7 +151,7 @@ int res1 = ++x + 10;
 int res2 = y++ + 10;
 ```
 
-![ExpressionPlus2](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionPlus2.PNG)
+![ExpressionPlus2](./Image/ch02/ExpressionPlus2.PNG)
 
 #### 논리 부정 연산자(!)
 * true -> false로, false -> true로 변경
@@ -161,7 +161,7 @@ int res2 = y++ + 10;
 
 ### 3 - 2 ) 이항 연산자
 #### 산술 연산자
-![ExpressionMath](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionMath.PNG)   
+![ExpressionMath](./Image/ch02/ExpressionMath.PNG)   
 
 * 피연산자 타입이 동일하지 않을 경우 아래 규칙에 따라 일치시킨 후 연산 수행
     * 피연산자가 byte, short, char 타입인 경우 모두 int 타입으로 변환
@@ -182,24 +182,24 @@ String str2 = str1 + " 특징";
 * 동등 비교 연산자는 모든 타입에 사용 가능
 * 크기 비교 연산자는 boolean 외 모든 기본 타입에 사용 가능
 
-![ExpressionIs](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionIs.PNG)  
+![ExpressionIs](./Image/ch02/ExpressionIs.PNG)  
 
 #### 논리 연산자
 * boolean 타입만 사용 가능
 
-![ExpressionBool](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionBool.PNG)  
+![ExpressionBool](./Image/ch02/ExpressionBool.PNG)  
 
 #### 대입 연산자
 * 오른쪽 피연산자의 값을 왼쪽 피연산자인 변수에 저장
 
-![ExpressionEqual](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/ExpressionEqual.PNG)  
+![ExpressionEqual](./Image/ch02/ExpressionEqual.PNG)  
 
 ### 3 - 3 ) 삼항 연산자
 #### 삼항 연산자
 * 3개의 피연산자를 필요로 하는 연산자
 * ? 앞의 조건식에 따라 콜론 앞뒤의 피연산자 선택
 
-![Expression3](https://github.com/BangYunseo/TIL/blob/main/Language/Java/Image/ch02/Expression3.PNG)  
+![Expression3](./Image/ch02/Expression3.PNG)  
 
 #### 연산자 종류 정리
 |키워드|설명|

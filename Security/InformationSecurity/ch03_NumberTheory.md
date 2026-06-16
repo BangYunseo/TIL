@@ -52,7 +52,7 @@
 
 ##### 예시
 
-![DA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/DA.PNG)
+![DA](./Image/ch03/DA.PNG)
 
 ## 2절. 최대공약수(GCD)
 
@@ -107,18 +107,18 @@
 
 ##### 유클리디언 알고리즘 과정
 
-![EAP](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EAP.PNG)
+![EAP](./Image/ch03/EAP.PNG)
 
 - $b = r_0$ 가정
   - 각 단계에서 $d = gcd(r_i, r_{i+1})$, $d = gcd(r_n,0) = r_n$이 될 때까지 반복
 
 ##### $gcd(1970, 1066)$의 경우
 
-![EAPex1](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EAPex1.PNG)
+![EAPex1](./Image/ch03/EAPex1.PNG)
 
 ##### $gcd(1160718174, 316258250)$의 경우
 
-![EAPex2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EAPex2.PNG)
+![EAPex2](./Image/ch03/EAPex2.PNG)
 
 ## 4절. 모듈(나눗셈기)
 
@@ -128,13 +128,13 @@
   - $a$가 정수이고 $n$이 양의 정수일 경우 $a$를 $n$으로 나누었을 때의 나머지
   - 정수 $n$은 모듈러스(Modulus)
 
-![Modulus](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/Modulus.PNG)
+![Modulus](./Image/ch03/Modulus.PNG)
 
 - ($a$ mod $n$) = ($b$ mod $n$)
 - $a ≡ b$ (mod $n$)
 - 둘은 서로 동일
 
-![Modulus2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/Modulus2.PNG)
+![Modulus2](./Image/ch03/Modulus2.PNG)
 
 #### 모듈러 산술
 
@@ -156,61 +156,61 @@
 
 #### 모듈러 산술 예시
 
-![ModulusEx](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/ModulusEx.PNG)
+![ModulusEx](./Image/ch03/ModulusEx.PNG)
 
 #### 모듈러 8
 
-![Modulus8](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/Modulus8.PNG)
+![Modulus8](./Image/ch03/Modulus8.PNG)
 
 ## 5절. $Z_n$
 
 #### $Z_n$ 모듈러 산술 특징
 
-![zn](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/zn.PNG)
+![zn](./Image/ch03/zn.PNG)
 
-![zn2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/zn2.PNG)
+![zn2](./Image/ch03/zn2.PNG)
 
-![zn3](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/zn3.PNG)
+![zn3](./Image/ch03/zn3.PNG)
 
 ## 6절. 확장 유클리디언 알고리즘
 
 #### $ax$ + $by$ = $d$
 
-![EUA](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EUA.PNG)
+![EUA](./Image/ch03/EUA.PNG)
 
 #### 확장 유클리디언 알고리즘 예시
 
 - gcd(259, 70)
 
-![EU](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EU.PNG)
+![EU](./Image/ch03/EU.PNG)
 
 - $a = 1759$, $b = 550$
 
-![EU2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EU2.PNG)
+![EU2](./Image/ch03/EU2.PNG)
 
 ## 7절. 정수론
 
 #### Group, Ring, Field
 
-![GRF](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/GRF.PNG)
+![GRF](./Image/ch03/GRF.PNG)
 
 #### GF(7)
 
-![GF7](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/GF7.PNG)
+![GF7](./Image/ch03/GF7.PNG)
 
 #### 다항식 나눗셈(Polynomial Division)
 
 - $f(x)=q(x)g(x)+r(x)$ 의 차수(Degree)
 
-![Degree](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/Degree.PNG)
+![Degree](./Image/ch03/Degree.PNG)
 
 ##### GF(2)에서의 다항식 예시
 
-![GF2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/GF2.PNG)
+![GF2](./Image/ch03/GF2.PNG)
 
 ##### 유클리디안 알고리즘
 
-![EAP2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EAP2.PNG)
+![EAP2](./Image/ch03/EAP2.PNG)
 
 - Irreducible Polynomial(Prime Polynomial) : 소수 다항식
   - 소수로 나눠진 다항식일 경우 효율 상승
@@ -228,21 +228,21 @@
 
 - 다항식 덧셈과 곱셈
 
-![Pam](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/Pam.PNG)
+![Pam](./Image/ch03/Pam.PNG)
 
 - 10진수 덧셈과 곱셈
 
-![10am](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/10am.PNG)
+![10am](./Image/ch03/10am.PNG)
 
 ##### 덧셈 예시(Addition)
 
-![MGF2n](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/MGF2n.PNG)
+![MGF2n](./Image/ch03/MGF2n.PNG)
 
 ##### 곱셈 예시(Multiplication)
 
-![MGF2n1](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/MGF2n1.PNG)
+![MGF2n1](./Image/ch03/MGF2n1.PNG)
 
-![MGF2n2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/MGF2n2.PNG)
+![MGF2n2](./Image/ch03/MGF2n2.PNG)
 
 #### GF($p^n$)에서의 역원 : 확장 유클리디안 알고리즘 공식
 
@@ -251,6 +251,6 @@
 
   ∴ $ x^7$
 
-![EEU](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EEU.PNG)
+![EEU](./Image/ch03/EEU.PNG)
 
-![EEU2](https://github.com/BangYunseo/TIL/blob/main/Security/InformationSecurity/Image/ch03/EEU2.PNG)
+![EEU2](./Image/ch03/EEU2.PNG)

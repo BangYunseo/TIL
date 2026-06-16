@@ -23,7 +23,7 @@
 
 ### E-R 모델 & 릴레이션 변환 규칙을 통한 설계 과정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-01-DD.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-01-DD.PNG"  height="auto" />
 
 - 설계 과정 중 오류 발견
   - 변경 필요
@@ -87,7 +87,7 @@
 
 ### 작업 과정
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-02-CDMstep.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-02-CDMstep.PNG"  height="auto" />
 
 1. 개체 추출, 각 개체의 주요 속성과 키 속성 선별
 2. 개체 간 관계 결정
@@ -115,13 +115,13 @@
 
 #### 한빛 마트 데이터베이스에서의 개체 · 속성 추출
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-03-Entity.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-03-Entity.PNG"  height="auto" />
 
 - 개체와 속성 추출을 위한 정보
 
 #### 개체 : 회원
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-04-entityM.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-04-entityM.PNG"  height="auto" />
 
 - 개체 : 회원
 - 속성 : 회원아이디, 비밀번호, 이름, 나이, 직업, 등급, 적립금
@@ -129,7 +129,7 @@
 
 #### 개체 : 회원, 상품
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-05-entityO.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-05-entityO.PNG"  height="auto" />
 
 - 개체 : 회원, 상품
 - 속성 : 주문번호, 주문수량, 배송지, 주문일자
@@ -139,23 +139,23 @@
 
 #### 개체와 속성 추출 결과
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-06-EA.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-06-EA.PNG"  height="auto" />
 
 #### 회원 개체 다이어그램
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-07-entityM.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-07-entityM.PNG"  height="auto" />
 
 #### 상품 개체 다이어그램
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-08-entityP.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-08-entityP.PNG"  height="auto" />
 
 #### 제조업체 개체 다이어그램
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-09-entityMani.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-09-entityMani.PNG"  height="auto" />
 
 #### 게시글 개체 다이어그램
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-10-entityN.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-10-entityN.PNG"  height="auto" />
 
 ### 2. 관계 추출
 
@@ -178,7 +178,7 @@
 
 #### 관계 : 주문
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-11-relationshipO.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-11-relationshipO.PNG"  height="auto" />
 
 - 관계 : 주문
   - "회원" 개체와 "상품" 개체가 맺는 관계
@@ -189,7 +189,7 @@
 
 #### 관계 : 공급
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-12-relationshipP.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-12-relationshipP.PNG"  height="auto" />
 
 - 관계 : 공급
   - "상품" 개체와 "제조업체" 개체가 맺는 관계
@@ -200,7 +200,7 @@
 
 #### 관계 : 공급
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-13-relationshipW.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-13-relationshipW.PNG"  height="auto" />
 
 - 관계 : 작성
   - "회원" 개체와 "게시글" 개체가 맺는 관계
@@ -210,23 +210,23 @@
 
 #### 관계 추출 결과
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-14-R.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-14-R.PNG"  height="auto" />
 
 #### 주문 관계 다이어그램
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-15-rdO.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-15-rdO.PNG"  height="auto" />
 
 #### 공급 관계 다이어그램
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-16-rdP.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-16-rdP.PNG"  height="auto" />
 
 #### 작성 관계 다이어그램
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-17-rdW.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-17-rdW.PNG"  height="auto" />
 
 #### 전체적인 다이어그램
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-18-relationDiagram.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-18-relationDiagram.PNG"  height="auto" />
 
 ## 4절. 논리적 설계
 
@@ -271,11 +271,11 @@
 
 #### 개체 : 상품 릴레이션 예시
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-19-ERex1.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-19-ERex1.PNG"  height="auto" />
 
 #### 개체 : 고객 릴레이션 예시
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-20-ERex2.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-20-ERex2.PNG"  height="auto" />
 
 ### 2. 다대다(n:m) 관계는 릴레이션으로 변환
 
@@ -288,7 +288,7 @@
 
 #### 관계 : 주문 릴레이션 예시
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-21-RRex3.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-21-RRex3.PNG"  height="auto" />
 
 ### 3. 일대다(1:n) 관계는 외래키로 표현
 
@@ -303,7 +303,7 @@
 
 #### 관계 : 공급 릴레이션 예시
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-22-RRex4.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-22-RRex4.PNG"  height="auto" />
 
 #### 3-2. 약한 개체가 참여하는 일대다 관계는 외래키를 포함해서 기본키로 지정
 
@@ -315,7 +315,7 @@
 
 #### 관계 : 존재 릴레이션 예시
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-23-RRex5.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-23-RRex5.PNG"  height="auto" />
 
 ### 4. 일대일(1:1) 관계는 외래키로 표현
 
@@ -332,7 +332,7 @@
 
 #### 혼인 관계 예시 : 일대일(1:1)
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-24-RRex6.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-24-RRex6.PNG"  height="auto" />
 
 #### 4-2. 필수적으로 참여하는 개체 릴레이션만 외래키를 받음
 
@@ -341,7 +341,7 @@
 
 #### 혼인 관계 예시 : 일대일(1:1) - 필수 / 선택
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-25-RRex7.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-25-RRex7.PNG"  height="auto" />
 
 #### 4-3. 모든 개체가 필수적 참여 시 릴레이션 하나로 합침
 
@@ -352,7 +352,7 @@
 
 #### 혼인 관계 예시 : 일대일(1:1) - 필수 / 필수
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-26-RRex8.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-26-RRex8.PNG"  height="auto" />
 
 ### 5. 다중 값 속성은 릴레이션으로 변환
 
@@ -362,57 +362,57 @@
 
 #### 사원 개체 릴레이션
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-27-ERex9.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-27-ERex9.PNG"  height="auto" />
 
 #### 부하직원 속성
 
 (여기부터 재작성 필요)
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-28-ERex9-1.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-28-ERex9-1.PNG"  height="auto" />
 
 - 사원 릴레이션은 "속성에 다중값을 저장할 수 없다"는 릴레이션 특성을 위반
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-29-ERex9-2.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-29-ERex9-2.PNG"  height="auto" />
 
 - 사원 릴레이션은 릴레이션의 특성을 위반하지 않음
 - 하지만 사원번호, 사원명, 직위 속성의 값이 불필요하게 중복 저장되는 문제 발생
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-30-rt.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-30-rt.PNG"  height="auto" />
 
 - 규칙 5에 따라 다중값 속성을 독립적인 릴레이션으로 변환 시 불필요한 중복을 제거하며 릴레이션 특성 만족 가능
 
 ### 기타 고려 사항
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-31-dr.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-31-dr.PNG"  height="auto" />
 
 - 모든 관계를 독립적인 릴레이션으로 변환 가능
   - 속성이 많은 관계 : 유형에 상관 없이 릴레이션으로의 변환 가능
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-32-dr2.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-32-dr2.PNG"  height="auto" />
 
 - 개체가 자기 자신과 관계를 맺는 순환 관계도 기본 규칙을 그대로 적용
 
 ### 규칙 1 : 다이어그램 & 스키마
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-33-rule1-1.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-33-rule1-1.PNG"  height="auto" />
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-34-rule1-2.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-34-rule1-2.PNG"  height="auto" />
 
 ### 규칙 2 : 다이어그램 & 스키마
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-35-rule2-1.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-35-rule2-1.PNG"  height="auto" />
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-36-rule2-2.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-36-rule2-2.PNG"  height="auto" />
 
 ### 규칙 3 : 다이어그램 & 스키마
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-37-rule3-1.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-37-rule3-1.PNG"  height="auto" />
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-38-rule3-2.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-38-rule3-2.PNG"  height="auto" />
 
 ### 테이블 명세서
 
-<img src="https://github.com/BangYunseo/TIL/blob/main/ComputerScience/DataBase/Image/ch08/ch08-39-table.PNG"  height="auto" />
+<img src="./Image/ch08/ch08-39-table.PNG"  height="auto" />
 
 - 릴레이션 스키마에 대한 설계 정보를 기술한 문서
 - 릴레이션 스키마 변환 후 속성 데이터 타입, 길이, NULL 값 허용 여부, 기본값, 제약조건 등을 세부적으로 결정하고 문서화
