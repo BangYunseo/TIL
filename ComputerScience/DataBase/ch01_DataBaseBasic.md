@@ -27,7 +27,7 @@
 - 정보 시스템 안에서 데이터를 저장
 - 필요 시 데이터 제공
 
-<img src="./Image/ch01/ch01-03-IS.PNG"  width="50%" height="50%"/>
+<img src="./Image/ch01/ch01-03-IS.PNG"  width="50%" height="auto"/>
 
 ## 2절. 데이터베이스의 정의 및 특성
 
@@ -56,7 +56,7 @@
 
 ### 데이터 분류 형태
 
-<img src="./Image/ch01/ch01-04-DataType.PNG"  width="50%" height="50%"/>
+<img src="./Image/ch01/ch01-04-DataType.PNG"  width="50%" height="auto"/>
 
 #### 정형 데이터(Structured Data)
 
@@ -65,7 +65,7 @@
   - 데이터 구조에 대한 설명 및 데이터 내용 별도 유지
 - ex) 엑셀의 스프레드시트, 관계 데이터베이스의 테이블
 
-<img src="./Image/ch01/ch01-05-SD.PNG"  width="50%" height="50%"/>
+<img src="./Image/ch01/ch01-05-SD.PNG"  width="50%" height="auto"/>
 
 #### 반정형 데이터(Semi-Structured Data)
 
@@ -75,7 +75,7 @@
 - 파일 형태 저장
 - ex) 웹에서 데이터를 교환하기 위해 작성하는 HTML/XML/JSON 문서 및 웹 로그, 센서 데이터
 
-<img src="./Image/ch01/ch01-06-SSD.PNG"  width="50%" height="50%"/>
+<img src="./Image/ch01/ch01-06-SSD.PNG"  width="50%" height="auto"/>
 
 #### 비정형 데이터(Unstructured Data)
 

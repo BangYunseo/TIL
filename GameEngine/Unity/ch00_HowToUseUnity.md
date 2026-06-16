@@ -16,17 +16,17 @@
 
 - 유니티 허브 설치 후
 
-<img src="./Image/ch00/ch00-01-UnityHub.PNG"  width="100%" height="100%"/>
+<img src="./Image/ch00/ch00-01-UnityHub.PNG"  width="100%" height="auto"/>
 
 - 프로젝트 템플릿 선택 후 생성
 
-<img src="./Image/ch00/ch00-02-myProject.PNG"  width="100%" height="100%"/>
+<img src="./Image/ch00/ch00-02-myProject.PNG"  width="100%" height="auto"/>
 
 ## 2절. 인터페이스
 
 #### 기본 인터페이스
 
-<img src="./Image/ch00/ch00-03-projectInterface.PNG"  width="100%" height="100%"/>
+<img src="./Image/ch00/ch00-03-projectInterface.PNG"  width="100%" height="auto"/>
 
 - 4개의 창으로 구성
   - 프로젝트(Project)
@@ -34,7 +34,7 @@
   - 장면(Scene)
   - 인스펙터(Inspector)
 
-<img src="./Image/ch00/ch00-04-projectObject.PNG"  width="100%" height="100%"/>
+<img src="./Image/ch00/ch00-04-projectObject.PNG"  width="100%" height="auto"/>
 
 - 계층구조에서 오른쪽 마우스 클릭으로 오브젝트 생성 가능
 

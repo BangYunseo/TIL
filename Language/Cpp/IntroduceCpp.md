@@ -56,7 +56,7 @@
 - 데이터를 캡슐로 싸서 외부의 접근으로부터 보호
 - 클래스로 캡슐 표현
 
-<img src="./Image/IntroduceCpp/Class.PNG" height="70%" />
+<img src="./Image/IntroduceCpp/Class.PNG" height="auto" />
 
 ### 클래스 & 객체
 
@@ -93,7 +93,7 @@ public:
 
 - 객체가 자식 클래스의 멤버와 부모 클래스에 선언된 모양 그대로 멤버들을 가지고 탄생
 
-<img src="./Image/IntroduceCpp/Inheritance.PNG" height="70%" />
+<img src="./Image/IntroduceCpp/Inheritance.PNG" height="auto" />
 
 ### 다형성(Polymorphism)
 
@@ -111,7 +111,7 @@ public:
 
 #### 절차 지향 프로그래밍과 객체 지향 프로그래밍
 
-<img src="./Image/IntroduceCpp/OOPvsPP.PNG" height="70%" />
+<img src="./Image/IntroduceCpp/OOPvsPP.PNG" height="auto" />
 
 (여기부터 다시 작성)
 
