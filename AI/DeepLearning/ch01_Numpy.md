@@ -10,7 +10,7 @@
 
 #### 넘파이(Numpy)란?
 
-![Numpy](./Image/ch01/Numpy.PNG)
+![Numpy](./Image/ch01/NumpyIntroduction.PNG)
 
 - 넘파이 라이브러리에는 다차원 배열 데이터 구조 포함
 - 다양한 수학적 행렬 연산 수행 시 사용
@@ -55,7 +55,7 @@ b[0][2]
 
 - 배열의 인덱스는 일반적으로 0부터 시작
 
-![NumpyIndex](./Image/ch01/NumpyIndex.PNG)
+![NumpyIndex](./Image/ch01/NumpyIndexing.PNG)
 
 ## 2절. Numpy 함수
 
@@ -65,9 +65,9 @@ b[0][2]
 - 배열의 형상은 각 차원의 크기를 지정하는 정수의 튜플
 - 넘파이에서 차원은 축(axes)
 
-![NumpyShape](./Image/ch01/NumpyShape.PNG)
+![NumpyShape](./Image/ch01/ArrayShape.PNG)
 
-![NumpyShape2](./Image/ch01/NumpyShape2.PNG)
+![NumpyShape2](./Image/ch01/ArrayShape2.PNG)
 
 - 사용 코드
 
@@ -113,7 +113,7 @@ np.eye(3)
 # [0., 0., 1.]])
 ```
 
-![NumpyFunc](./Image/ch01/NumpyFunc.PNG)
+![NumpyFunc](./Image/ch01/NumpyFunctionSummary.PNG)
 
 #### arange() 함수
 
@@ -308,13 +308,13 @@ a[0:2, 1:3]
 # [5, 6]])
 ```
 
-![Indexing2](./Image/ch01/Indexing2.PNG)
+![Indexing2](./Image/ch01/TwoDIndexing.PNG)
 
-![Indexing3](./Image/ch01/Indexing3.PNG)
+![Indexing3](./Image/ch01/TwoDIndexingAdvanced.PNG)
 
 - 2차원 배열의 슬라이싱
 
-![Slice](./Image/ch01/Slice.PNG)
+![Slice](./Image/ch01/ArraySlicing.PNG)
 
 #### 배열끼리의 연산
 
@@ -401,13 +401,13 @@ scores.mean(axis = 0)
 # array([92. , 80.5, 78.75])
 ```
 
-![Mean](./Image/ch01/Mean.PNG)
+![Mean](./Image/ch01/MeanAxis.PNG)
 
 #### 난수 생성
 
 - 균일 분포
 
-![Rand1](./Image/ch01/Rand1.PNG)
+![Rand1](./Image/ch01/UniformRandom.PNG)
 
 ```Python
 import numpy as np
@@ -426,7 +426,7 @@ np.random.rand(5, 3)
 
 - 정규 분포
 
-![Rand2](./Image/ch01/Rand2.PNG)
+![Rand2](./Image/ch01/NormalRandom.PNG)
 
 ```Python
 import numpy as np
@@ -449,11 +449,11 @@ np.random.normal(mu, sigma, 5)
 # array([ 0.15040638,  0.06857496, -0.01460342, -0.01868375, -0.1467971 ])
 ```
 
-![Rand3](./Image/ch01/Rand3.PNG)
+![Rand3](./Image/ch01/NormalDistribution.PNG)
 
 #### tensorflow에서의 tensor
 
-![tensor](./Image/ch01/tensor.PNG)
+![tensor](./Image/ch01/TensorConcept.PNG)
 
 ## 3절. Matplotlib
 
@@ -483,7 +483,7 @@ plt.title("Temperatures of Cities")
 plt.show()
 ```
 
-![Line](./Image/ch01/Line.PNG)
+![Line](./Image/ch01/LineGraph.PNG)
 
 #### 점 그래프
 
@@ -495,7 +495,7 @@ plt.plot(X, [15.6, 14.2, 16.3, 18.2, 17.1, 20.2, 22.4], "sm")
 plt.show()
 ```
 
-![Spot](./Image/ch01/Spot.PNG)
+![Spot](./Image/ch01/ScatterPlot.PNG)
 
 #### 막대 그래프
 
@@ -508,7 +508,7 @@ plt.bar(X, Y)
 plt.show()
 ```
 
-![Stick](./Image/ch01/Stick.PNG)
+![Stick](./Image/ch01/BarChart.PNG)
 
 #### 히스토그램
 
@@ -524,7 +524,7 @@ plt.ylabel("freq")
 plt.show()
 ```
 
-![Hist](./Image/ch01/Hist.PNG)
+![Hist](./Image/ch01/Histogram.PNG)
 
 #### Numpy & Matplotlib
 
@@ -541,11 +541,11 @@ plt.plot(X, Y1, X, Y2, X, Y3)
 plt.show()
 ```
 
-![NM](./Image/ch01/NM.PNG)
+![NM](./Image/ch01/NumpyMatplotlib.PNG)
 
 #### Lab 1 : 시그모이드 함수 미분값 계산
 
-![Sig](./Image/ch01/Sig.PNG)
+![Sig](./Image/ch01/SigmoidFunction.PNG)
 
 ```Python
 import matplotlib.pyplot as plt
@@ -566,4 +566,4 @@ plt.ylabel("Sigmoid(X), Sigmoid'(X)")
 plt.show()
 ```
 
-![Lab1](./Image/ch01/Lab1.PNG)
+![Lab1](./Image/ch01/SigmoidLab.PNG)

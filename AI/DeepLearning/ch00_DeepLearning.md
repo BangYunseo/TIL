@@ -12,13 +12,13 @@
 
 - 딥러닝 vs 기계학습 vs 인공지능
 
-![CompareAI](./Image/ch00/CompareAI.PNG)
+![CompareAI](./Image/ch00/AIComparison.PNG)
 
-![AI2](./Image/ch00/AI2.PNG)
+![AI2](./Image/ch00/ArtificialIntelligence2.PNG)
 
 #### 기계학습의 종류
 
-![ML](./Image/ch00/ML.PNG)
+![ML](./Image/ch00/MachineLearningTypes.PNG)
 
 #### 지도 학습(Supervised Learning)
 
@@ -28,7 +28,7 @@
 
 - 이산값(Discrete value)일 경우 해당
 
-![Classification](./Image/ch00/Classification.PNG)
+![Classification](./Image/ch00/SupervisedClassification.PNG)
 
 - ex) 이미지에 해당하는 숫자가 1인지 2인지?
 
@@ -46,9 +46,9 @@
 
 - 클러스터링(Clustering)
 
-![UL_Cluster](./Image/ch00/UL_Cluster.PNG)
+![UL_Cluster](./Image/ch00/UnsupervisedClustering1.PNG)
 
-![UL_Cluster2](./Image/ch00/UL_Cluster2.PNG)
+![UL_Cluster2](./Image/ch00/UnsupervisedClustering2.PNG)
 
 #### 강화 학습(Reinforcement Learning)
 
@@ -57,13 +57,13 @@
 - 어떤 임의의 존재(Agent)가 주어진 환경 내에서 어떻게 행동해야 하는지에 대해 학습
   - 학습 과정은 다양한 상황에서 Agent가 한 행동에 대해 양 또는 음의 보상을 피드백으로 보상
 
-![AILL](./Image/ch00/AILL.PNG)
+![AILL](./Image/ch00/AIReinforcementLearning.PNG)
 
 #### 기계 학습 운영(MLOps)
 
 - 기계 학습(ML) 워크플로 및 배포를 자동화하고 단순화하는 일련의 관행
 
-![MLOps](./Image/ch00/MLOps.PNG)
+![MLOps](./Image/ch00/MachineLearningOps.PNG)
 
 ## 2절. 딥러닝의 예시
 
@@ -88,11 +88,11 @@
 
 #### 강화 학습 과정
 
-![RL](./Image/ch00/RL.PNG)
+![RL](./Image/ch00/ReinforcementLearningProcess.PNG)
 
 #### 기계학습 분류
 
-![MLLM](./Image/ch00/MLLM.PNG)
+![MLLM](./Image/ch00/MachineLearningLanguageModel.PNG)
 
 ## 3절. 생성형 AI
 
@@ -100,7 +100,7 @@
 
 - 규칙을 가진 현상을 기계에 학습시킴으로써 현상 속에 내재된 패턴을 파악하고 미래 예측
 
-![AILanguage](./Image/ch00/AILanguage.PNG)
+![AILanguage](./Image/ch00/LanguageModel.PNG)
 
 - Transformer 기반 언어 모델
 

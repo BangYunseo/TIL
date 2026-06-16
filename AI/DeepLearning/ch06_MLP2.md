@@ -12,11 +12,11 @@
 - 내부적인 C/C++ 구현
 - 여러 가지 언어(+ Python)에서 접근 가능한 인터페이스 제공
 
-![Tensor](./Image/ch06/Tensor.PNG)
+![Tensor](./Image/ch06/TensorflowFramework.PNG)
 
 #### 텐서플로우 구조
 
-![TensorStructure](./Image/ch06/TensorStructure.PNG)
+![TensorStructure](./Image/ch06/TensorflowInternalStructure.PNG)
 
 - C++ 커널을 Python 으로 한 번 래핑
 
@@ -55,7 +55,7 @@ x.shape
 # (3, 2, 5)
 ```
 
-![img2](./Image/ch06/img2.png)
+![img2](./Image/ch06/Tensor3DVisualization.png)
 
 #### 텐서의 속성
 
@@ -63,7 +63,7 @@ x.shape
 - 형상(Shape) : 텐서의 각 축으로 얼마나 데이터가 있는지를 파이썬 튜플로 표현
 - 데이터 타입(Data Type) : 텐서 요소의 자료형
 
-![tensorA](./Image/ch06/tensorA.PNG)
+![tensorA](./Image/ch06/TensorAttributes.PNG)
 
 #### 훈련 데이터 형상
 
@@ -71,21 +71,21 @@ x.shape
 
 - (배치 크기, 특징 수)의 형상
 
-![TrainData1](./Image/ch06/TrainData1.PNG)
+![TrainData1](./Image/ch06/VectorDataShape.PNG)
 
 ##### 이미지 데이터
 
 - (배치 크기, 이미지 높이, 이미지 너비, 채널 수)의 형상
 - 4차원 넘파이 텐서에 저장
 
-![TrainData2](./Image/ch06/TrainData2.PNG)
+![TrainData2](./Image/ch06/ImageDataShape.PNG)
 
 ##### 시계열 데이터
 
 - (배치 크기, 타입 스텝, 특징 수)의 형상
 - 3차원 넘파이 텐서에 저장
 
-![TrainData3](./Image/ch06/TrainData3.PNG)
+![TrainData3](./Image/ch06/TimeSeriesDataShape.PNG)
 
 ## 2절. Keras
 
@@ -99,7 +99,7 @@ x.shape
 
 #### 딥러닝 프레임워크
 
-![Framework](./Image/ch06/Framework.PNG)
+![Framework](./Image/ch06/DLFrameworkComparison.PNG)
 
 #### 신경망 작성(by keras)
 
@@ -108,17 +108,17 @@ x.shape
 - 가장 간단한 모델 유형은 Sequential 선형 스택 모델
 - Sequential 모델은 레이어를 선형으로 쌓을 수 있는 신경망 모델
 
-![PerceptronByKeras](./Image/ch06/PerceptronByKeras.PNG)
+![PerceptronByKeras](./Image/ch06/SequentialNeuralNetworkStructure.PNG)
 
 #### 실습 : XOR를 학습하는 MLP
 
 - 구조
 
-![XOR](./Image/ch06/XOR.PNG)
+![XOR](./Image/ch06/XORNetworkArchitecture.PNG)
 
 - 훈련 데이터
 
-![TrainData](./Image/ch06/TrainData.PNG)
+![TrainData](./Image/ch06/XORTrainingData.PNG)
 
 - 모델 생성 코드
 
@@ -165,7 +165,7 @@ model.add(Dense(units=2, input_shape=(2,), activation='sigmoid'))
 model.add(Dense(units=1, activation='sigmoid'))
 ```
 
-![Seq](./Image/ch06/Seq.png)
+![Seq](./Image/ch06/SequentialModelImplementation.png)
 
 ##### 2) 함수형 API 사용
 
@@ -177,7 +177,7 @@ prediction = Dense(1, activation="sigmoid")(x)     # 출력층
 model = Model(inputs=inputs, outputs=prediction)
 ```
 
-![API](./Image/ch06/API.png)
+![API](./Image/ch06/FunctionalAPIImplementation.png)
 
 ##### 3) Model 클래스 상속 후 클래스 정의
 
@@ -202,7 +202,7 @@ model.fit(...)
 
 #### Keras를 이용한 MNIST 숫자 인식
 
-![MNIST](./Image/ch06/MNIST.png)
+![MNIST](./Image/ch06/MnistDatasetSample.png)
 
 - 입력 : 784(28 \* 28)
 - 출력 : 10(0 ~ 9)
@@ -236,7 +236,7 @@ test_images.shape
 plt.imshow(train_images[0], cmap="Greys")
 ```
 
-![img](./Image/ch06/img.png)
+![img](./Image/ch06/MnistHandwrittenDigitExample.png)
 
 ##### 신경망 모델 구축
 
@@ -248,7 +248,7 @@ model.add(tf.keras.layers.Dense(512, activation = 'relu',
 model.add(tf.keras.layers.Dense(10, activation = 'sigmoid'))
 ```
 
-![MNISTmodel](./Image/ch06/MNISTmodel.PNG)
+![MNISTmodel](./Image/ch06/MnistNeuralNetworkArchitecture.PNG)
 
 #### 컴파일 단계
 
@@ -275,7 +275,7 @@ test_images = test_images.astype('float32') / 255.0
 - 데이터를 255로 나눈 후 축소(정규화)
 - 0~1 범위의 실수로 교체하는 과정
 
-![DP](./Image/ch06/DP.png)
+![DP](./Image/ch06/DataNormalizationProcess.png)
 
 ##### 정답 레이블 형태 변경(원핫 인코딩)
 
@@ -284,7 +284,7 @@ train_labels = tf.keras.utils.to_categorical(train_labels)
 test_labels = tf.keras.utils.to_categorical(test_labels)
 ```
 
-![Incoding](./Image/ch06/Incoding.png)
+![Incoding](./Image/ch06/OneHotEncodingProcess.png)
 
 ##### 학습
 
@@ -325,7 +325,7 @@ plt.ylabel('loss/acc')
 plt.show()
 ```
 
-![Graph](./Image/ch06/Graph.png)
+![Graph](./Image/ch06/TrainingLossAndAccuracyGraph.png)
 
 ##### 실제 이미지로 테스트
 
@@ -343,7 +343,7 @@ plt.imshow(image.reshape(28, 28),cmap='Greys')
 plt.show()
 ```
 
-![Testing](./Image/ch06/Testing.png)
+![Testing](./Image/ch06/MnistCustomImageTesting.png)
 
 ##### 테스트
 
@@ -354,7 +354,7 @@ print("추정된 숫자 =", pred.argmax())
 # 추정된 숫자 = 2
 ```
 
-![CM](./Image/ch06/CM.png)
+![CM](./Image/ch06/MnistPredictionOutput.png)
 
 #### 케라스 입력 데이터
 
@@ -428,7 +428,7 @@ print("추정된 숫자 =", pred.argmax())
 - selu(Scaled Exponential Linear Unit)
 - softplus
 
-![AF](./Image/ch06/AF.PNG)
+![AF](./Image/ch06/ActivationFunctionsComparison.PNG)
 
 #### 하이퍼 매개 변수
 
@@ -436,7 +436,7 @@ print("추정된 숫자 =", pred.argmax())
   - 학습률이나 은닉층을 몇 개로 할 것인가?
   - 은닉층의 개수나 유닛의 개수는 누가 정하는가?
 
-![HP](./Image/ch06/HP.PNG)
+![HP](./Image/ch06/HyperparametersVisualization.PNG)
 
 #### 하이퍼 매개 변수 탐색 방법
 
@@ -447,6 +447,6 @@ print("추정된 숫자 =", pred.argmax())
 
 #### 그리드 검색
 
-![grid](./Image/ch06/grid.PNG)
+![grid](./Image/ch06/GridSearchHyperparameterVisualization.PNG)
 
 - 각 하이퍼 매개변수에 대해 값을 지정하면 이 중 가장 좋은 조합을 찾는 알고리즘

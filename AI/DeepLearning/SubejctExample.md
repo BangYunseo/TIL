@@ -83,7 +83,7 @@ res
 
 #### Q6) Q3의 원소 중 다음 색을 칠해진 부분만 배열 슬라이싱하여 4 \* 4 행렬로 만들어라.
 
-![Q6](./Image/ch01/Q6.PNG)
+![Q6](./Image/ch01/Exercise6.PNG)
 
 ```Python
 temp1 = res_mod2[0, :8:2]

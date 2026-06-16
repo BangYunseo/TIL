@@ -17,7 +17,7 @@
 
 #### 컴퓨터 vs 인공신경망
 
-![CAI](./Image/ch04/CAI.PNG)
+![CAI](./Image/ch04/ComputerVsArtificialIntelligence.PNG)
 
 #### 신경망 장점
 
@@ -33,7 +33,7 @@
 
 #### 뉴런을 사용한 논리 연산
 
-![1234](./Image/ch04/1234.PNG)
+![1234](./Image/ch04/LogicOperationsWithNeurons.PNG)
 
 - ① 항등함수를 의미
   - 뉴런 A가 활성화될 경우 뉴런 C도 활성화
@@ -46,7 +46,7 @@
 
 #### 퍼셉트론(Perceptron)
 
-![PCT2](./Image/ch04/PCT2.PNG)
+![PCT2](./Image/ch04/PerceptronStructure.PNG)
 
 - 1957년에 로젠블라트(Frank Rosenblatt)가 고안한 인공 신경망
 - 신호
@@ -69,33 +69,33 @@
   - 뉴런에서 보내온 신호의 총합이 정해진 한계를 넘어설 경우에만 1 출력
   - 한계를 넘어서지 못할 경우 0 출력
 
-![PCT3](./Image/ch04/PCT3.PNG)
+![PCT3](./Image/ch04/PerceptronActivation.PNG)
 
 - 임계값
   - 정해진 한계
   - 세타 기호로 표현
 
-![theta](./Image/ch04/theta.PNG)
+![theta](./Image/ch04/ThresholdValue.PNG)
 
 #### 퍼셉트론의 논리 연산
 
-![PCTL](./Image/ch04/PCTL.PNG)
+![PCTL](./Image/ch04/PerceptronLogicOperation.PNG)
 
-![PCTL2](./Image/ch04/PCTL2.PNG)
+![PCTL2](./Image/ch04/PerceptronLogicOperation2.PNG)
 
 ## 2절. 활성화 함수
 
 #### 계단 함수
 
-![USF](./Image/ch04/USF.PNG)
+![USF](./Image/ch04/UnitStepFunction.PNG)
 
 #### 퍼셉트론 학습 알고리즘
 
 - 학습 : 신경망이 스스로 가중치를 자동 설정하는 알고리즘이 필요하며 퍼셉트론에서도 존재
 
-![PCTLA](./Image/ch04/PCTLA.PNG)
+![PCTLA](./Image/ch04/PerceptronLearningAlgorithm.PNG)
 
-![PCTLA2](./Image/ch04/PCTLA2.PNG)
+![PCTLA2](./Image/ch04/PerceptronLearningAlgorithm2.PNG)
 
 #### 논리 연산자 학습 과정
 
@@ -188,7 +188,7 @@ def OR(x1, x2):
       return 1
 ```
 
-![OR](./Image/ch04/OR.PNG)
+![OR](./Image/ch04/ORGate.PNG)
 
 #### NAND 게이트
 
@@ -215,14 +215,14 @@ def NAND(x1, x2):
       return 1
 ```
 
-![NAND](./Image/ch04/NAND.PNG)
+![NAND](./Image/ch04/NANDGate.PNG)
 
 #### 퍼셉트론의 한계 - XOR
 
 - 선형과 비선형 출력의 한계
   - 직선의 영역은 선형 영역, 곡선의 영역을 비선형 영역이라고 함
 
-![NLinear2](./Image/ch04/NLinear2.PNG)
+![NLinear2](./Image/ch04/NonlinearVsLinearRegion.PNG)
 
 - 다층 퍼셉트론의 필요성
   - 단층 퍼셉트론(Single-Layer Perceptron : SLP)으로는 XOR 게이트 표혀 불가
@@ -233,7 +233,7 @@ def NAND(x1, x2):
 
 ##### 기존 게이트 조합
 
-![BL](./Image/ch04/BL.PNG)
+![BL](./Image/ch04/BasicLogicGateCombination.PNG)
 
 #### XOR 게이트의 표현
 
@@ -276,7 +276,7 @@ print(XOR(1, 1))
     - AND 회로
     - OR 회로
 
-![MLP2](./Image/ch04/MLP2.PNG)
+![MLP2](./Image/ch04/SingleAndMultiLayerPerceptron.PNG)
 
 - 다층 퍼셉트론
   - 2층 퍼셉트론
@@ -292,14 +292,14 @@ print(XOR(1, 1))
 - XOR 문제보다 복잡한 문제를 해결하기 위해 중간에 수많은 은닉층 추가
 - 은닉층이 2개 이상이 신경망 : 심층 신경망(Deep Neural Network, DNN)
 
-![DNN](./Image/ch04/DNN.PNG)
+![DNN](./Image/ch04/DeepNeuralNetwork.PNG)
 
 #### 선형 분류 가능 문제
 
 - 패턴 인식 측면에서 보면 퍼셉트론은 직선을 이용하여 입력 패턴을 분류하는 선형 분류자(Linear Classifier)의 일종
 
-![LC](./Image/ch04/LC.PNG)
+![LC](./Image/ch04/LinearClassification.PNG)
 
 - 1개의 레이어로 구성된 퍼셉트론은 XOR 문제를 학습할 수 없음
 
-![MLPXOR](./Image/ch04/MLPXOR.PNG)
+![MLPXOR](./Image/ch04/MultiLayerPerceptronXORProblem.PNG)

@@ -12,7 +12,7 @@
 
 #### 회귀와 분류
 
-![RC](./Image/ch03/RC.PNG)
+![RC](./Image/ch03/RegressionVsClassification.PNG)
 
 #### 선형 회귀
 
@@ -20,7 +20,7 @@
 - 입력 데이터를 가장 잘 설명하는 기울기와 절편값을 찾는 문제
 - $y = f(x)$에서 출력 $y$와 입력 $x$가 실수일 때, 함수 $f(x)$ 예측
 
-![RCT](./Image/ch03/RCT.PNG)
+![RCT](./Image/ch03/RegressionLineEquation.PNG)
 
 - 직선의 방정식 : $f(x) = mx + b$
 - 선형 회귀 기본식 : $f(x) = Wx + b$
@@ -43,7 +43,7 @@
 - 다중 선형 회귀
   - 독립 변수가 여러 개인 경우
 
-![MLP](./Image/ch03/MLP.PNG)
+![MLP](./Image/ch03/MultipleLinearRegression.PNG)
 
 #### 선형 회귀 원리
 
@@ -58,30 +58,30 @@ plt.plot(X, y, 'o')
 plt.show()
 ```
 
-![RES](./Image/ch03/RES.PNG)
+![RES](./Image/ch03/RegressionScatterPlot.PNG)
 
 - 최선의 것은 데이터 간의 오차가 작은 경우
 
-![RES2](./Image/ch03/RES2.PNG)
+![RES2](./Image/ch03/RegressionFitComparison.PNG)
 
 #### 손실 함수(Loss Function)
 
 - 손실 함수 또는 비용 함수(Cost Function)
   - 직선과 데이터 사이의 간격을 제곱하여 합한 값
 
-![LF](./Image/ch03/LF.PNG)
+![LF](./Image/ch03/LossFunctionFormula.PNG)
 
 - 선형 회귀 선과의 차이가 큰 경우 손실이 큼
 - 선형 회귀 선과의 차이가 작은 경우 손실이 작음
 
-![LF2](./Image/ch03/LF2.PNG)
+![LF2](./Image/ch03/LossFunctionVisualization.PNG)
 
 #### 선형 회귀에서 손실 함수 최소화 방법
 
 - 분석적인 방법
   - 독립 변수와 종속 변수가 각각 하나인 선형 회귀
 
-![MinLR](./Image/ch03/MinLR.PNG)
+![MinLR](./Image/ch03/LinearRegressionMinimization.PNG)
 
 ## 2절. 경사 하강법
 
@@ -91,7 +91,7 @@ plt.show()
 - 손실 함수가 어떤 형태이더라도, 매개 변수가 아무리 많아도 적용 가능한 일반적인 방법
 - 점진적인 학습 가능
 
-![GDM](./Image/ch03/GDM.PNG)
+![GDM](./Image/ch03/GradientDescentMethod.PNG)
 
 ```Python
 import numpy as np
@@ -119,19 +119,19 @@ plt.xlabel('W')
 plt.show()
 ```
 
-![GDM2](./Image/ch03/GDM2.PNG)
+![GDM2](./Image/ch03/GradientDescentPlot.PNG)
 
 #### 학습률
 
-![LP](./Image/ch03/LP.PNG)
+![LP](./Image/ch03/LearningRate.PNG)
 
 #### 지역 최솟값 문제
 
-![LM](./Image/ch03/LM.PNG)
+![LM](./Image/ch03/LocalMinimumProblem.PNG)
 
 #### 선형 회귀에서의 경사 하강법
 
-![LRGDM](./Image/ch03/LRGDM.PNG)
+![LRGDM](./Image/ch03/LinearRegressionGradientDescent.PNG)
 
 #### 경사 하강법 코드 구현
 
@@ -236,14 +236,14 @@ plt.show()
 
 ##### 실행 결과
 
-![RES](./Image/ch03/RES.PNG)
+![RES](./Image/ch03/RegressionScatterPlot.PNG)
 
 #### 선형 회귀 실습
 
 - 인간의 키와 몸무게는 어느 정도 비례할 것으로 예상
 - 아래의 데이터가 있을 경우 선형 회귀를 이용하여 학습시켜 키가 165cm일 때의 예측값 계산
 
-![RES3](./Image/ch03/RES3.PNG)
+![RES3](./Image/ch03/HeightWeightData.PNG)
 
 ##### 정답 코드
 
@@ -273,7 +273,7 @@ plt.plot(X, y_pred, color='blue', linewidth=3)
 plt.show()
 ```
 
-![RES4](./Image/ch03/RES4.PNG)
+![RES4](./Image/ch03/HeightWeightResult.PNG)
 
 #### 선형 회귀 예제 - 당뇨병
 
@@ -309,7 +309,7 @@ plt.scatter(X_test, y_test,  color ='black')
 plt.plot(X_test, y_pred, color ='blue', linewidth = 3)
 ```
 
-![RES6](./Image/ch03/RES6.PNG)
+![RES6](./Image/ch03/DiabetesRegression.PNG)
 
 ## 3절. 과잉 적합과 과소 적합
 
@@ -325,7 +325,7 @@ plt.plot(X_test, y_pred, color ='blue', linewidth = 3)
 
 #### 과잉 적합과 과소 적합 비교
 
-![OU](./Image/ch03/OU.PNG)
+![OU](./Image/ch03/OverfittingUnderfittingComparison.PNG)
 
 - 1차 : 과소 적합
   - 모델의 용량이 작아 오차가 클 수밖에 없는 현상
@@ -338,11 +338,11 @@ plt.plot(X_test, y_pred, color ='blue', linewidth = 3)
   - 용량이 크기 때문에 학습 과정에서 잡음까지 수용(과잉 적합 현상)
   - 적절한 용량의 모델을 선택하는 모델 선택 작업 필요
 
-![set12](./Image/ch03/set12.PNG)
+![set12](./Image/ch03/PolynomialFitDegrees.PNG)
 
 - 그래프에서 보는 과잉 적합과 과소 적합의 비교
 
-![COU](./Image/ch03/COU.PNG)
+![COU](./Image/ch03/CurveOverfittingUnderfitting.PNG)
 
 ## 4절. 로지스틱 회귀
 
@@ -365,16 +365,16 @@ plt.plot(X_test, y_pred, color ='blue', linewidth = 3)
       - 전체의 절반을 넘었으면 반올림 후 출력을 1로 설정
       - 전체의 절반을 넘기지 못했으면 출력을 0으로 설정
 
-![Logistic](./Image/ch03/Logistic.PNG)
+![Logistic](./Image/ch03/LogisticRegressionScatterPlot.PNG)
 
 - 직선의 중간쯤을 넘어가면 불합격
 - 직선의 중간쯤을 넘어가면 합격
 
-![Logistic2](./Image/ch03/Logistic2.PNG)
+![Logistic2](./Image/ch03/LogisticRegressionSlope.PNG)
 
 - 데이터($y$)와 직선($^y$)간의 평균을 최소화하기 위한 직선의 기울기 움직임
 
-![Logistic3](./Image/ch03/Logistic3.PNG)
+![Logistic3](./Image/ch03/LogisticRegressionThreshold.PNG)
 
 - 기울기 $y = wx + b$ 에서 $w$의 변화에 따른 0.5 의 기준 변화
   - 함숫값이 0.5를 지나는 구간의 변경
@@ -383,11 +383,11 @@ plt.plot(X_test, y_pred, color ='blue', linewidth = 3)
 
 #### 선형 회귀와 로지스틱 회귀의 비교
 
-![LL](./Image/ch03/LL.PNG)
+![LL](./Image/ch03/LinearVsLogisticRegression.PNG)
 
 #### 시그모이드 함수(Sigmoid)
 
-![Sig](./Image/ch03/Sig.PNG)
+![Sig](./Image/ch03/SigmoidFunction.PNG)
 
 - Logistic Regression에서는 Linear Regression의 결과값을 인풋값으로 사용
   - 시그모이드 함수는 곧 베이즈 정리
@@ -403,7 +403,7 @@ plt.plot(X_test, y_pred, color ='blue', linewidth = 3)
 - Cost Function 초기화
 - Linear Regression은 MSE로 최솟값 가능
 
-![Sig2](./Image/ch03/Sig2.PNG)
+![Sig2](./Image/ch03/SigmoidCostFunction.PNG)
 
 - 하지만 Logistics Regression은 불가
   - Log Loss(Cross Entropy 사용)
@@ -412,9 +412,9 @@ plt.plot(X_test, y_pred, color ='blue', linewidth = 3)
 
 - 로지스틱 모델의 예측 분포는 $sigmoid(wx + b)$
 
-![CE](./Image/ch03/CE.PNG)
+![CE](./Image/ch03/CrossEntropyLoss.PNG)
 
-![CEL](./Image/ch03/CEL.PNG)
+![CEL](./Image/ch03/CrossEntropyLossFormula.PNG)
 
 #### 로지스틱 회귀
 

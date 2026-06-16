@@ -12,38 +12,38 @@
 
 - 입력층과 출력층 사이에 은닉층(hidden layer)을 가진 퍼셉트론
 
-![MLP](./Image/ch05/MLP.PNG)
+![MLP](./Image/ch05/MultilayerPerceptron.PNG)
 
 #### 활성화 함수(Activation Function)
 
 - 입력의 총합을 받아 출력값을 계산하는 함수
 - 여러 가지 활성화 함수 존재
 
-![AC](./Image/ch05/AC.PNG)
+![AC](./Image/ch05/ActivationFunction.PNG)
 
 #### 일반적으로 많이 사용되는 활성화 함수
 
-![AF](./Image/ch05/AF.PNG)
+![AF](./Image/ch05/ActivationFunctionTypes.PNG)
 
 #### 계단 함수
 
 - 입력 신호의 총합이 0을 넘으면 1을, 그렇지 않으면 0을 출력하는 함수
 
-![USF](./Image/ch05/USF.PNG)
+![USF](./Image/ch05/UnitStepFunction.PNG)
 
 #### 시그모이드 함수
 
 - 1980년대부터 사용된 전통적인 활성화 함수
 - S자 형태의 함수
 
-![SF](./Image/ch05/SF.PNG)
+![SF](./Image/ch05/SigmoidFunction.PNG)
 
 #### ReLU 함수(Rectifed Linear Unit Function)
 
 - 최근에 가장 인기있는 활성화 함수
 - 입력이 0을 넘으면 그대로 출력하고, 그렇지 않으면 0 출력
 
-![RF](./Image/ch05/RF.PNG)
+![RF](./Image/ch05/ReLUFunction.PNG)
 
 #### tanh 함수
 
@@ -51,7 +51,7 @@
 - 별도의 함수 작성은 필요 X
 - 시그모이드 함수와 매우 비슷하지만 출력값이 -1 ~ 1까지
 
-![tF](./Image/ch05/tF.PNG)
+![tF](./Image/ch05/TanhFunction.PNG)
 
 #### 실습 - 활성화 함수 구현
 
@@ -89,7 +89,7 @@ plt.plot(x, y)
 plt.show()
 ```
 
-![BG](./Image/ch05/BG.PNG)
+![BG](./Image/ch05/BasicStepFunctionGraph.PNG)
 
 ##### 시그모이드 함수
 
@@ -106,7 +106,7 @@ plt.plot(x, y)
 plt.show()
 ```
 
-![SFG](./Image/ch05/SFG.PNG)
+![SFG](./Image/ch05/SigmoidFunctionGraph.PNG)
 
 ##### tanh 함수
 
@@ -120,7 +120,7 @@ plt.plot(x, y)
 plt.show()
 ```
 
-![tFG](./Image/ch05/tFG.PNG)
+![tFG](./Image/ch05/TanhFunctionGraph.PNG)
 
 ##### ReLU 함수
 
@@ -137,19 +137,19 @@ plt.plot(x, y)
 plt.show()
 ```
 
-![ReLUG](./Image/ch05/ReLUG.PNG)
+![ReLUG](./Image/ch05/ReLUFunctionGraph.PNG)
 
 #### MLP의 순방향 패스
 
 - 입력 신호가 입력층 유닛에 가해지고, 이들 입력 신호가 은닉층을 통해 출력층으로 전파되는 과정
 
-![MLPP](./Image/ch05/MLPP.PNG)
+![MLPP](./Image/ch05/MLPForwardPass.PNG)
 
 #### 순방향 패스 계산 단계
 
-![MLPex](./Image/ch05/MLPex.PNG)
+![MLPex](./Image/ch05/MLPForwardPassExample.PNG)
 
-![MLPPro](./Image/ch05/MLPPro.PNG)
+![MLPPro](./Image/ch05/MLPForwardPassProcess.PNG)
 
 #### 순방향 패스 코드
 
@@ -209,17 +209,17 @@ test()
   - 신경망에서 학습의 성과를 나타내는 지표
   - 신경망에서 학습할 때 실제 출력과 원하는 출력 사이의 오차 이용
 
-![LF](./Image/ch05/LF.PNG)
+![LF](./Image/ch05/LossFunction.PNG)
 
 #### 평균 제곱 오차(MSE)
 
 - 예측값과 정답 간의 평균 제곱 오차
 
-![MSE](./Image/ch05/MSE.PNG)
+![MSE](./Image/ch05/MeanSquaredError.PNG)
 
 - 예측값과 정답의 차이가 큰 경우
 
-![MSE2](./Image/ch05/MSE2.PNG)
+![MSE2](./Image/ch05/MeanSquaredErrorExample.PNG)
 
 ## 2절. 경사하강법
 
@@ -229,7 +229,7 @@ test()
   - 신경망 학습 문제를 최적화 문제(optimization)로 접근
   - 손실함수 값(오차값)을 최소화하는 가중치 탐색
 
-![GD2](./Image/ch05/GD2.PNG)
+![GD2](./Image/ch05/GradientDescent.PNG)
 
 - 기울기 : 손실함수를 가중치로 미분한 값
 
@@ -239,7 +239,7 @@ test()
 - $y = {(x-3)}^2 + 10$
 - 그래디언트 : $y' = 2x - 6$
 
-![GDex](./Image/ch05/GDex.PNG)
+![GDex](./Image/ch05/GradientDescentExample.PNG)
 
 ```Python
 x = 10
@@ -296,7 +296,7 @@ ax.plot_surface(X, Y, Z)
 plt.show()
 ```
 
-![GDres](./Image/ch05/GDres.PNG)
+![GDres](./Image/ch05/GradientDescentResult3D.PNG)
 
 #### 2차원 그래디언트 시각화(격자)
 
@@ -317,16 +317,16 @@ Q = plt.quiver(X, Y, U, V, units = 'width')
 plt.show()
 ```
 
-![GDres2](./Image/ch05/GDres2.PNG)
+![GDres2](./Image/ch05/GradientDescentResultQuiver.PNG)
 
 #### 역전파(backpropogation) 학습 알고리즘
 
 - 입력이 주어지면 순방향으로 계산하여 출력 계산 후 실제 출력과 우리가 원하는 출력 간의 오차 계산
 - 오차를 역방향으로 전파하여 줄이는 방향으로 가중치 변경
 
-![BP](./Image/ch05/BP.PNG)
+![BP](./Image/ch05/Backpropagation.PNG)
 
-![BP2](./Image/ch05/BP2.PNG)
+![BP2](./Image/ch05/BackpropagationDetail.PNG)
 
 - 손실함수 E의 그래디언트 값
   - 양수
@@ -339,25 +339,25 @@ plt.show()
 
 #### 역전파 - 체인룰
 
-![CR](./Image/ch05/CR.PNG)
+![CR](./Image/ch05/ChainRule.PNG)
 
 #### 역전파 알고리즘의 유도
 
 - 미분의 체인룰을 통해 유도 가능
 
-![BPin](./Image/ch05/BPin.PNG)
+![BPin](./Image/ch05/BackpropagationInduction.PNG)
 
 - 출력층 유닛
 
-![PL](./Image/ch05/PL.PNG)
+![PL](./Image/ch05/OutputLayerUnit.PNG)
 
 - 은닉층 유닛
 
-![HL](./Image/ch05/HL.PNG)
+![HL](./Image/ch05/HiddenLayerUnit.PNG)
 
 #### 델타
 
-![theta](./Image/ch05/theta.PNG)
+![theta](./Image/ch05/Delta.PNG)
 
 - 여러 문헌에서 델타라는 이름으로 불리는 값
 - 가중치가 보는 유닛 k에서의 "오차"
@@ -368,31 +368,31 @@ plt.show()
 - 그래디언트는 델타의 유닛 출력값을 곱하면 계산 가능
 - 델타는 신경망의 레이어에 따라 아래와 같이 구분해서 계산 가능
 
-![theta2](./Image/ch05/theta2.PNG)
+![theta2](./Image/ch05/DeltaCalculation.PNG)
 
 #### 역전파 알고리즘 계산
 
-![APRO](./Image/ch05/APRO.PNG)
+![APRO](./Image/ch05/AlgorithmPropagationCalculation.PNG)
 
-![APRO2](./Image/ch05/APRO2.PNG)
+![APRO2](./Image/ch05/AlgorithmPropagationCalculationDetail.PNG)
 
 #### 경사 하강법의 적용
 
-![aaa](./Image/ch05/aaa.PNG)
+![aaa](./Image/ch05/GradientDescentApplication.PNG)
 
 #### 은닉층 -> 출력층의 가중치와 바이어스
 
-![HPWB](./Image/ch05/HPWB.PNG)
+![HPWB](./Image/ch05/HiddenToOutputWeightsBiases.PNG)
 
 #### 입력층 -> 은닉층의 가중치와 바이어스
 
-![IHWB](./Image/ch05/IHWB.PNG)
+![IHWB](./Image/ch05/InputToHiddenWeightsBiases.PNG)
 
 #### 손실함수 평가
 
 - 오차가 크게 줄어듦
 
-![review](./Image/ch05/review.PNG)
+![review](./Image/ch05/LossEvaluation.PNG)
 
 #### MLP 구현
 
@@ -485,25 +485,25 @@ test()
 - 온라인 학습(Online Learning)
 - 확률적 경사 하강법(Stochastic Gradient)
 
-![Learning](./Image/ch05/Learning.PNG)
+![Learning](./Image/ch05/LearningMethodOverview.PNG)
 
 ##### 풀 배치 학습(Full Batch Learning)
 
-![FBL](./Image/ch05/FBL.PNG)
+![FBL](./Image/ch05/FullBatchLearning.PNG)
 
 ##### 온라인 학습(확률적 경사 하강법)
 
-![SGL](./Image/ch05/SGL.PNG)
+![SGL](./Image/ch05/StochasticGradientLearning.PNG)
 
 #### 미니 배치 학습
 
 - 온라인 학습과 풀 배치 학습의 중간 방법
 
-![MBL](./Image/ch05/MBL.PNG)
+![MBL](./Image/ch05/MiniBatchLearning.PNG)
 
 #### 방법들의 비교
 
-![MP](./Image/ch05/MP.PNG)
+![MP](./Image/ch05/MethodComparison.PNG)
 
 #### 실습 - 미니 배치 학습
 
@@ -527,11 +527,11 @@ y_batch = y_train[selected]
 
 #### 행렬로 미니 배치 구현
 
-![IMB](./Image/ch05/IMB.PNG)
+![IMB](./Image/ch05/ImplementationMatrixBatch.PNG)
 
 #### 각 샘플 별 출력 계산
 
-![Sample](./Image/ch05/Sample.PNG)
+![Sample](./Image/ch05/SampleOutputCalculation.PNG)
 
 #### 미니 배치 구현
 
@@ -605,9 +605,9 @@ test()
 - 한 번에 가중치를 얼마나 변경할 것인가 표현
 - 모델의 성능에 심대한 영향을 끼치지만 설정하기 매우 어려움
 
-![LR](./Image/ch05/LR.PNG)
+![LR](./Image/ch05/LearningRate.PNG)
 
-![LR2](./Image/ch05/LR2.PNG)
+![LR2](./Image/ch05/LearningRateComparison.PNG)
 
 #### 학습률을 설정 방법
 
@@ -615,7 +615,7 @@ test()
 
 - 운동량으로 학습 속도를 가속시킬 목적으로 사용
 
-![MM](./Image/ch05/MM.PNG)
+![MM](./Image/ch05/Momentum.PNG)
 
 ##### Adagrad
 
@@ -624,18 +624,18 @@ test()
 - 주된 방법은 학습률 감쇠(Learning Rate Decay)
 - 학습률을 이전 단계의 기울기들을 누적한 값에 반비례하여 설정
 
-![Adagrad](./Image/ch05/Adagrad.PNG)
+![Adagrad](./Image/ch05/AdagradOptimizer.PNG)
 
 ##### RMSprop
 
 - Adagrad에 대한 수정판
 - 그래디언트 누적 대신 지수 가중 이동 평균 사용
 
-![RMSprop](./Image/ch05/RMSprop.PNG)
+![RMSprop](./Image/ch05/RMSpropOptimizer.PNG)
 
 ##### Adam
 
 - Adaptive Moment Estimation의 약자
 - (RMSprop + Mometum)
 
-![Adam](./Image/ch05/Adam.PNG)
+![Adam](./Image/ch05/AdamOptimizer.PNG)
