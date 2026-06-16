@@ -1,1 +1,8 @@
 *.pdf
+
+# MkDocs
+/site/
+.venv/
+venv/
+build.log
+__pycache__/
