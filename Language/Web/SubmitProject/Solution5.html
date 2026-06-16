@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        window.onload = function () {
+            var firstT = "FIRST TEXT";
+            var secondT = "SECOND TEXT";
+            var thirdT = "THIRD TEXT";
+            var fourthT = "FOURTH TEXT";
+
+            var colors = ["black", "orange", "green", "yellow", "brown"];
+            var timerID = 0;
+
+            function createElement(text, id) {
+                var h1 = document.createElement("h1");
+                document.body.appendChild(h1);
+
+                h1.id = id;
+                h1.innerText = text;
+                h1.style.cursor = "pointer";
+                return h1;
+            }
+
+            var firstID = createElement(firstT, "firstT");
+            var secondID = createElement(secondT, "secondT");
+            var thirdID = createElement(thirdT, "thirdT");
+            var fourthID = createElement(fourthT, "fourthT");
+            var fifthID = createElement("0", "fifthT");
+
+            firstID.onclick = function () {
+                var randomColor = colors[Math.floor(Math.random() * colors.length)];
+                firstID.style.color = randomColor;
+            };
+
+            secondID.onclick = function () {
+                secondID.innerText = "JavaScript";
+            };
+
+            thirdID.addEventListener("click", function () {
+                if (timerID) return;
+                // 재클릭 무시
+
+                thirdID.innerText = thirdID.innerText === "THIRD" ? "TEXT" : "THIRD";
+                timerID = setInterval(function () {
+                    thirdID.innerText =
+                        thirdID.innerText === "THIRD" ? "TEXT" : "THIRD";
+                }, 1000);
+            });
+
+            fourthID.onclick = function () {
+                var clickCount = Number(fifthID.innerText);
+                fifthID.innerText = clickCount + 1;
+            };
+        };
+    </script>
+</head>
+
+<body></body>
+
+</html>

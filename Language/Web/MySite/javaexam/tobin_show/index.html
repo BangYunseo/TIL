@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+      $(document).ready(function(){
+        $("#t1").click(function(){
+          $("#tshow1").show(1000);
+          $("#tshow2").show(1000);
+        });
+        $("#t2").click(function(){
+          $("#tshow1").hide(1000);
+          $("#tshow2").hide(1000);
+        });
+        $("#tshow1").click(function(){
+          $("#tshow2").toggle();
+        });
+        $("#tshow2").click(function(){
+          $("#tshow1").toggle();
+        });
+      });
+  </script>
+</head>
+<body>
+  <button id ="t1">tobin show</button>
+  <button id ="t2">tobin hide</button><p>
+
+  <img id="tshow2" src="tshow.png" alt="" width=200 height=500>
+  <img id="tshow1" src="t.jpg" alt="" width=300 height=300><p>
+
+</body>
+</html>

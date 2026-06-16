@@ -1,0 +1,79 @@
+/*전체 스타일*/
+body { 
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* h2*/
+h2 {
+    color: rgb(0, 225, 255);
+}
+
+/*img*/
+img {
+    width: 250px;
+    height: auto;
+    border-radius: 12px;
+}
+
+/*button*/
+button {
+    background-color: white;
+    border-radius: 6px;
+}
+
+/*li*/
+.card:hover{
+    background : yellowgreen;
+
+    margin-top: -40px;
+    -webkit-transition: 1s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+h2.box{
+    background : white;
+    border-style: solid;
+    border-color: rgb(20, 7, 96);
+
+    border-radius: 20px;
+}
+
+/*p*/
+p {
+    color: white;
+}
+
+/*ul*/
+li{
+   list-style: none;
+   padding-left: 0px; 
+}
+
+/* 카드 컨테이너*/
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+/* 카드 스타일*/
+.card {
+    background: rgb(20, 7, 96);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    height : 400px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

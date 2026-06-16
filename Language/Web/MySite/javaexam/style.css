@@ -1,0 +1,57 @@
+   
+	BODY {
+		background-color: white;
+		font-size: 10pt;		
+		font-family: »ﬁ∏’∏≈¡˜√º;
+	}
+	H1 {
+		font-style: bold;
+		font-size: 20pt;
+		color:black;
+		font-family: ∞ÌµÒ√º;
+		text-align: center;
+	}
+	H2 {
+		font-style: bold;
+		font-size: 18pt;
+		color:green;
+		font-family: ∞ÌµÒ√º;
+	}
+	H3 {
+		font-style: bold;
+		font-size: 16pt;
+		color:darkblue;
+		font-family: ∞ÌµÒ√º;
+	}
+	H4 {
+		font-style: bold;
+		font-size: 14pt;
+		color:blue;
+		font-family: ∞ÌµÒ√º;
+	}
+
+	table {		
+		width:80%; 
+		border-collapse:collapse; 	
+		margin: auto;
+	}
+
+	th {	
+		background-color:#ccffff; 
+		text-align:center; 
+		font-family:∏º¿Ω∞ÌµÒ; 
+		font-size: 11pt;
+	}
+	
+	table,td,tr,th { 
+		font-style: bold;
+		font-family:∞ÌµÒ√º; 
+		font-size: 10pt;
+		border: 1px solid black; 	
+	}
+
+	A { color:violet; text-decoration:none;}
+	A:visited { color:red; text-decoration:underline;}
+	A:hover { color:blue; text-decoration:underline;}
+
+	

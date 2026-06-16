@@ -1,0 +1,53 @@
+   
+	BODY {
+		background-color:silver;
+		background-image:url(image/BG2.gif);
+		font-size: 14pt;
+		font-family: ±º∏≤√º;
+	}
+
+	H1 {
+		font-style: bold;
+		font-size: 30pt;
+		color:darkblue;
+		font-family: ±√º≠√º;
+		text-align: center;
+	}
+	H2 {
+		font-style: bold;
+		font-size: 18pt;
+		color:green;
+		font-family: ∞ÌµÒ√º;
+	}
+	H3 {
+		font-style: bold;
+		font-size: 16pt;
+		color:red;
+		font-family: ∞ÌµÒ√º;
+	}
+	H4 {
+		font-style: bold;
+		font-size: 14pt;
+		color:blue;
+		font-family: ∞ÌµÒ√º;
+	}
+
+	table {		
+		width:80%; 
+		border-collapse:collapse; 	
+		margin: auto;
+	}
+
+	table,td,tr,th { 
+		font-style: bold;
+		font-family:∞ÌµÒ√º; 
+		font-size: 12pt;
+		border: 1px solid black; 
+		text-align:center; 
+	}
+
+	th {	background-color:lightblue; 	}
+
+	A { color:violet; text-decoration:none;}
+	A:visited { color:red; text-decoration:underline;}
+	A:hover { color:blue; text-decoration:underline;}
