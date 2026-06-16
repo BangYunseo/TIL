@@ -21,7 +21,7 @@
 
 ##### 응용 분야
 
-![RNNEX](./Image/ch10/RNNEX.PNG)
+![RNNEX](./Image/ch10/RNNApplicationDomains.PNG)
 
 #### 표준 신경망과 순환 신경망
 
@@ -52,11 +52,11 @@
 
 1. 일정한 길이(윈도우 크기 = 3)로 자른 후 여러 개의 훈련 샘플 생성
 
-![window3](./Image/ch10/window3.PNG)
+![window3](./Image/ch10/SlidingWindowExample.PNG)
 
 2. 전체 데이터를 다음과 같이 크기가 3인 샘플과 정답으로 분리
 
-![res](./Image/ch10/res.PNG)
+![res](./Image/ch10/SequenceSampleSplit.PNG)
 
 #### 예제 : 데이터 다운 후 그래프 표현
 
@@ -80,7 +80,7 @@ plt.show()
 
 - 결과 출력
 
-![samsung](./Image/ch10/samsung.PNG)
+![samsung](./Image/ch10/SamsungStockPriceChart.PNG)
 
 ##### 샘플화
 
@@ -138,24 +138,24 @@ print(X[0], y[0])
 
 #### 순환 신경망의 구조
 
-![RNNStructure](./Image/ch10/RNNStructure.PNG)
+![RNNStructure](./Image/ch10/RNNBasicArchitecture.PNG)
 
 - MLP와 비슷하게 입력층, 은닉층, 출력층 보유(입력 벡터, 은닉 상태, 출력 벡터)
 - 은닉 상태(은닉층)이 순환 엣지(Recurrent Edge) 보유
   - 시간성, 가변 길이, 문맥 의존성 모두 처리 가능
   - 순환 엣지는 $t - 1$ 순간에 발생한 정보를 $t$ 지점으로 전달하는 역할
 
-![RNNS](./Image/ch10/RNNS.PNG)
+![RNNS](./Image/ch10/RNNUnfolding.PNG)
 
 #### 피드-포워드 신경망(Feed-Forward Neural Network)과 RNN
 
-![FFNNRNN](./Image/ch10/FFNNRNN.PNG)
+![FFNNRNN](./Image/ch10/FeedForwardVsRNN.PNG)
 
 - 피드-포워드 신경망 : 여태까지 배웠던 신경망
 
 #### 단어 예측 RNN
 
-![PredictWord](./Image/ch10/PredictWord.PNG)
+![PredictWord](./Image/ch10/WordPredictionRNN.PNG)
 
 #### 은닉 상태, 입력 벡터, 출력 벡터
 
@@ -169,27 +169,27 @@ print(X[0], y[0])
 
 - 활성화 함수 : tanh 함수
 
-![RNNA](./Image/ch10/RNNA.PNG)
+![RNNA](./Image/ch10/RNNActivationTanh.PNG)
 
-![RNNA2](./Image/ch10/RNNA2.PNG)
+![RNNA2](./Image/ch10/RNNActivationSequence.PNG)
 
 #### Vanilla RNN(Keras.SimpleRNN)
 
 - 레이어의 출력을 다시 입력으로 받아서 사용
 - 이전의 데이터가 함께 결과에 영향
 
-![VRNN](./Image/ch10/VRNN.PNG)
+![VRNN](./Image/ch10/VanillaRNNStructure.PNG)
 
 ##### return_sequences
 
 - RNN 계산과정에 있는 hidden state의 출력 여부 결정 값
 - RNN, one-to-many, many-to-many 출력을 위해 사용
 
-![rs](./Image/ch10/rs.PNG)
+![rs](./Image/ch10/ReturnSequencesOutput.PNG)
 
 ##### Ideal RNN Layer
 
-![IRNN](./Image/ch10/IRNN.PNG)
+![IRNN](./Image/ch10/IdealRNNLayer.PNG)
 
 ##### 예제 1)
 
@@ -250,12 +250,12 @@ print(model.predict(X_test))
 # [[0.98860174]]
 ```
 
-![VRNNOP1](./Image/ch10/VRNNOP1.PNG)
+![VRNNOP1](./Image/ch10/VanillaRNNSummary.PNG)
 
 - 파라미터 아웃값 \* (파라미터 아웃값 + 1(차원 수 1) + 1(바이어스)) + 덴스(Dense) 값
 - $50 * (50 + 1 + 1) + 51 = 2651$
 
-![VRNNOP](./Image/ch10/VRNNOP.PNG)
+![VRNNOP](./Image/ch10/VanillaRNNParameterCount.PNG)
 
 ## 3절. 순환 신경망 유형
 
@@ -272,7 +272,7 @@ print(model.predict(X_test))
 - 다수의 머신 러닝 문제에 사용
 - Vanilla Neural Network
 
-![OtO](./Image/ch10/OtO.PNG)
+![OtO](./Image/ch10/OneToOneSequence.PNG)
 
 ##### 일대다(One to Many)
 
@@ -280,7 +280,7 @@ print(model.predict(X_test))
 - 이미지 캡션을 생성하는 RNN에서 사용
 - 하나의 이미지가 입력되면 이미지를 가장 잘 설명하는 캡션들 생성
 
-![OtM](./Image/ch10/OtM.PNG)
+![OtM](./Image/ch10/OneToManySequence.PNG)
 
 ##### 다대일(Many to One)
 
@@ -288,20 +288,20 @@ print(model.predict(X_test))
 - 감정(Sentiment) 분석 신경망에 사용
   - 주어진 문장들이 긍정적 OR 부정적 감정인지 분류
 
-![MtO](./Image/ch10/MtO.PNG)
+![MtO](./Image/ch10/ManyToOneSequence.PNG)
 
 ##### 다대다(Many to Many)
 
 - 다수 입력으로 다수 출력 생성의 신경망
 - 기계 번역에서 사용되며 단어들이 계속 다른 단어들로 출력
 
-![MtM](./Image/ch10/MtM.PNG)
+![MtM](./Image/ch10/ManyToManySequence.PNG)
 
 ## 4절. 역전파 방향과 그래디언트
 
 #### 순환 신경망 순방향 패스
 
-![RNNPASS](./Image/ch10/RNNPASS.PNG)
+![RNNPASS](./Image/ch10/RNNForwardPass.PNG)
 
 #### 순방향 패스 알고리즘(Ideal)
 
@@ -338,7 +338,7 @@ output = simple_rnn(inputs)
 
 #### RNN에서의 입력 형상
 
-![RNNINPUT](./Image/ch10/RNNINPUT.PNG)
+![RNNINPUT](./Image/ch10/RNNInputShape.PNG)
 
 #### 메모리 셀의 각 시점에서 모든 은닉 상태값 반환
 
@@ -357,18 +357,18 @@ whole_sequence_output, final_state = simple_rnn(inputs)
 - 계층을 통해 오류를 역전파하는 대신 시간을 거슬러 올라가면서 그래디언트 역전파
 - 즉 현재의 역전파를 진행하고 싶다면 과거의 역전파 값을 알아야 하는 형태
 
-![BPTT](./Image/ch10/BPTT.PNG)
+![BPTT](./Image/ch10/BackpropagationThroughTime.PNG)
 
 #### 그래디언트 문제
 
 - 1보다 작은 값이 여러 번 곱해지는 경우 : 그래디언트가 점점 감소(소멸)
 - 1보다 큰 값이 여러 번 곱해지는 경우 : 그래디언트가 폭발적 증가(폭증)
 
-![PE](./Image/ch10/PE.PNG)
+![PE](./Image/ch10/GradientProblemExample.PNG)
 
 ##### 그래디언트 소실
 
-![GD](./Image/ch10/GD.PNG)
+![GD](./Image/ch10/GradientVanishing.PNG)
 
 - 문제
 
@@ -382,7 +382,7 @@ whole_sequence_output, final_state = simple_rnn(inputs)
 
 ##### 그래디언트 폭증
 
-![GI](./Image/ch10/GI.PNG)
+![GI](./Image/ch10/GradientExplosion.PNG)
 
 - 문제
 
@@ -438,7 +438,7 @@ plt.show()
 
 - 출력
 
-![GOP](./Image/ch10/GOP.PNG)
+![GOP](./Image/ch10/SineWavePredictionLoss.PNG)
 
 #### 예제) 사인파 예측 프로그램 - 2
 
@@ -459,7 +459,7 @@ plt.show()
 
 - 출력
 
-![GOP2](./Image/ch10/GOP2.PNG)
+![GOP2](./Image/ch10/SineWavePredictionOutput.PNG)
 
 ## 5절. LSTM(Long Short-Term Memory)
 
@@ -480,20 +480,20 @@ plt.show()
   - 셀 : 임의의 시점에 대한 값을 기억
   - 게이트(입력, 망각, 출력) : 셀로 출입하는 정보의 흐름 조절
 
-![LSTM](./Image/ch10/LSTM.PNG)
+![LSTM](./Image/ch10/LSTMArchitecture.PNG)
 
 ##### 게이트
 
 - LSTM의 주된 빌딩 블록
 - 정보는 게이트를 통하여 추가 or 삭제
 
-![Gate](./Image/ch10/Gate.PNG)
+![Gate](./Image/ch10/LSTMGateStructure.PNG)
 
 ##### 저장 연산
 
 - 셀 상태에 관련있는 새로운 정보 저장
 
-![SM](./Image/ch10/SM.PNG)
+![SM](./Image/ch10/InputGateOperation.PNG)
 
 ##### 삭제 연산
 
@@ -506,7 +506,7 @@ plt.show()
     - 0에 가까울 경우 : 저장된 정보 다수 삭제
     - 1에 가까울 경우 : 저장된 정보 다수 생존
 
-![DM](./Image/ch10/DM.PNG)
+![DM](./Image/ch10/ForgetGateOperation.PNG)
 
 ##### 업데이트 연산
 
@@ -521,7 +521,7 @@ plt.show()
 - 삭제 게이트 : 이전 시점의 입력을 얼마나 기억할지 결정
 - 입력 게이트 : 현재 시점의 입력을 얼마나 기억할지 결정
 
-![UM](./Image/ch10/UM.PNG)
+![UM](./Image/ch10/CellStateUpdateOperation.PNG)
 
 ##### 출력 연산
 
@@ -529,11 +529,11 @@ plt.show()
   - 현재 시점의 입력값과 이전 시점의 은닉 상태에 시그모이드 함수 적용
     - 위의 결과값은 다음 시점의 은닉 상태 결정
 
-![OM](./Image/ch10/OM.PNG)
+![OM](./Image/ch10/OutputGateOperation.PNG)
 
 #### 그래디언트 소실 문제 해결
 
-![PS](./Image/ch10/PS.PNG)
+![PS](./Image/ch10/LSTMGradientSolutionPath.PNG)
 
 #### 케라스에서의 LSTM
 
@@ -553,9 +553,9 @@ print(output)
 
 #### 예제 : Keras를 활용한 주가 예측
 
-![Keras1](./Image/ch10/Keras1.PNG)
+![Keras1](./Image/ch10/StockPricePredictionModel.PNG)
 
-![Keras2](./Image/ch10/Keras2.PNG)
+![Keras2](./Image/ch10/StockPricePredictionResults.PNG)
 
 ```Python
 import FinanceDataReader as fdr
@@ -614,4 +614,4 @@ plt.show()
 
 - 출력 결과
 
-![Output1](./Image/ch10/Output1.PNG)
+![Output1](./Image/ch10/StockPriceForecastComparison.PNG)

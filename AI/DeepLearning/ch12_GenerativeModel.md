@@ -20,7 +20,7 @@
 - 생성 모델이 사실적인 몬드리안 스타일의 그림을 생성할 수 있다고 가정하자.
   - 생성 모델은 몬드리안 스타일의 일반적인 규칙이 학습된 것
  
-![GM](./Image/ch12/GM.PNG)
+![GM](./Image/ch12/GenerativeModelConcept.PNG)
 
 #### 확률직어니 생성 모델
 
@@ -35,7 +35,7 @@
 
 - 데이터 $x$ 와 레이블 $y$ 가 주어지면 분류 모델은 x가 어떤 부류에 속하는지 판단
 
-![GMDM](./Image/ch12/GMDM.PNG)
+![GMDM](./Image/ch12/ClassificationModelDiagram.PNG)
 
 ##### 분류 모델과 생성 모델의 차이
 
@@ -44,7 +44,7 @@
  
 - 생성 모델 : 입력 데이터의 확률 분포 $p(x)$ 탐
 
-![GMDM2](./Image/ch12/GMDM2.PNG)
+![GMDM2](./Image/ch12/GenerativeVsClassification.PNG)
 
 #### Keras의 함수형 API
 
@@ -52,11 +52,11 @@
   - 사용 시 원하는 방식의 객체들 연결 가능
   - ex) 은닉층의 출력을 알고자 할 경우 사용
 
-![KA](./Image/ch12/KA.PNG)
+![KA](./Image/ch12/KerasFunctionalAPI.PNG)
 
 #### 예제_MNIST 숫자 이미지 처리 신경
 
-![EX1](./Image/ch12/EX1.PNG)
+![EX1](./Image/ch12/MNISTNeuralNetworkExample.PNG)
 
 ```Python
 import numpy as np
@@ -94,7 +94,7 @@ test_scores = model.evaluate(x_test, y_test, verbose=2)
 
 ##### Sequential 모델과 함수형 API
 
-![SA](./Image/ch12/SA.PNG)
+![SA](./Image/ch12/SequentialVsFunctionalAPI.PNG)
 
 - 함수형 API의 필요 이유
   - 통합된 레이어로의 표현을 원하기 떄문
@@ -105,7 +105,7 @@ test_scores = model.evaluate(x_test, y_test, verbose=2)
 
 #### 기본형 오토 인코더(Auto Encorder)
 
-![AES](./Image/ch12/AES.PNG)
+![AES](./Image/ch12/AutoencoderStructure.PNG)
 
 - 입력과 동일한 출력을 만드는 것을 목적으로 하는 신경망
 - 사이즈가 줄어들었다가 커지는 마름모꼴 형태의 구조
@@ -117,7 +117,7 @@ test_scores = model.evaluate(x_test, y_test, verbose=2)
 - 디코더(decoder) : 잠재 표현을 풀어 입력 복원(출력)
 - 손실 함수 : 입력 이미지와 출력 이미지의 MSE 사용
 
-![AEP](./Image/ch12/AEP.PNG)
+![AEP](./Image/ch12/AutoencoderComponents.PNG)
 
 #### 예제_필기체 숫자 압축 오토 인코더
 
@@ -166,7 +166,7 @@ plt.show()
 
 - 실행 결과
 
-![EX2res](./Image/ch12/EX2res.PNG)
+![EX2res](./Image/ch12/CompressedAutoencoderResult.PNG)
 
 - 기존(위 쪽) 데이터보다 약간 흐리멍텅 + 뭉개진 느낌
 
@@ -174,9 +174,9 @@ plt.show()
 
 - 노이즈(noise)가 있는 이미지에서 노이즈 제거 용도로 사용 가능
 
-![NAE](./Image/ch12/NAE.PNG)
+![NAE](./Image/ch12/NoiseRemovalAutoencoder.PNG)
 
-![NAE2](./Image/ch12/NAE2.PNG)
+![NAE2](./Image/ch12/NoiseRemovalAutoencoder2.PNG)
 
 #### 예제_잡음이 들어간 필기체 숫자 복원 오토 인코더
 
@@ -243,7 +243,7 @@ plt.show()
 
 - 실행 결과
 
-![EX3res](./Image/ch12/EX3res.PNG)
+![EX3res](./Image/ch12/NoiseRemovalAutoencoderResult.PNG)
 
 ## 3절. GAN(Generative Adversarial Network)
 
@@ -255,11 +255,11 @@ plt.show()
 
 - GAN 결과물
 
-![GAN](./Image/ch12/GAN.PNG)
+![GAN](./Image/ch12/GANOutput.PNG)
 
 ##### 구조
 
-![GANS](./Image/ch12/GANS.PNG)
+![GANS](./Image/ch12/GANArchitecture.PNG)
 
 - 생성자(generator)
   - 가짜 데이터를 생성을 학습
@@ -271,7 +271,7 @@ plt.show()
 
 ##### 목표
 
-![GANG](./Image/ch12/GANG.PNG)
+![GANG](./Image/ch12/GANObjective.PNG)
 
 - z ~ p(z) : 확률 분포 값
 - sigmoid 함수를 통해 1과 0으로 확실한 분류의 목적
@@ -291,21 +291,21 @@ plt.show()
 
 ##### 사진 생성 GAN
 
-![GANIG](./Image/ch12/GANIG.PNG)
+![GANIG](./Image/ch12/PhotoGenerationGAN.PNG)
 
 #### 훈련 과정
 
 ##### 판별자
 
-![DTS](./Image/ch12/DTS.PNG)
+![DTS](./Image/ch12/DiscriminatorTrainingSteps.PNG)
 
 ##### 생성자
 
-![GTS](./Image/ch12/GTS.PNG)
+![GTS](./Image/ch12/GeneratorTrainingSteps.PNG)
 
 #### 예제_GAN 숫자 이미지 생성
 
-![EXI](./Image/ch12/EXI.PNG)
+![EXI](./Image/ch12/GANDigitGenerationExample.PNG)
 
 ```Python
 import numpy as np
@@ -439,11 +439,11 @@ train_gan()
 
 - 실행 결과
 
-![EX4res](./Image/ch12/EX4res.PNG)
+![EX4res](./Image/ch12/GANExecutionResult.PNG)
 
 ##### 판별자
 
-![D](./Image/ch12/D.PNG)
+![D](./Image/ch12/DiscriminatorNetwork.PNG)
 
 ##### 생성자
 
@@ -453,5 +453,5 @@ train_gan()
   - GAN 생성자는 활성화 맵으로 이미지를 구성
  
 
-![G](./Image/ch12/G.PNG)
+![G](./Image/ch12/GeneratorNetwork.PNG)
 

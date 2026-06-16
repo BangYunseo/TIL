@@ -31,7 +31,7 @@
   - 음성의 입력
   - 컴퓨터를 통해 음성을 텍스트로 변환하는 방법론과 기술 개발 분야
 
-![SRP](./Image/ch11/SRP.PNG)
+![SRP](./Image/ch11/SpeechRecognitionPipeline.PNG)
 
 ##### NLTK
 
@@ -50,14 +50,14 @@ nltk.download()
 - 텍스트를 받아 토큰으로 분리하는 작업
 - 각종 구두점을 삭제하는 작업
 
-![TP](./Image/ch11/TP.PNG)
+![TP](./Image/ch11/TextPreprocessing.PNG)
 
 ##### 토큰화(tokenization)
 
 - 말뭉치에 포함된 텍스트를 꺼내 토큰(token)이라 불리는 단위로 나누는 직업
 - 한국어는 파생어가 많이 존재하기에(ex : 했고, 해서, 했으니, 했으므로 등) 토큰화에 어려움
 
-![Token](./Image/ch11/Token.PNG)
+![Token](./Image/ch11/Tokenization.PNG)
 
 ##### 소문자 변환
 
@@ -157,13 +157,13 @@ print(text_to_word_sequence("This is a dog."))
   - 말뭉치에 단어 1000개가 있을 경우
   - 각 단어에 1번 ~ 1000번까지의 번호(정수) 매핑
 
-![NE](./Image/ch11/NE.PNG)
+![NE](./Image/ch11/NumericEncoding.PNG)
 
 ##### 원-핫 인코딩(One-Hot Encoding)
 
 - 원-핫(One-Hot) : 이진 벡터 중 하나만 1이고 나머지는 모두 0인 것
 
-![OHE](./Image/ch11/OHE.PNG)
+![OHE](./Image/ch11/OneHotEncoding.PNG)
 
 - 케라스 원-핫 인코딩
 
@@ -222,32 +222,32 @@ print("text=", one_hot_encode)
   - 벡터들은 효율적이며 조밀함
 - 임베딩 벡터들은 학습을 통해 훈련 데이터에서 자동으로 생성(신경망 주 사용)
 
-![WE](./Image/ch11/WE.PNG)
+![WE](./Image/ch11/WordEmbedding.PNG)
 
 ##### Word2vec
 
 - 단어 임베딩의 일종
 - 아래 다이어그램처럼 텍스트 말뭉치를 입력으로 받아들인 후 각 단어에 대한 벡터 표현 출력 알고리즘
 
-![WV](./Image/ch11/WV.PNG)
+![WV](./Image/ch11/Word2VecAlgorithm.PNG)
 
 ##### CBOW(Continuous Bag of Words) 모델
 
 - 주변의 단어들을 통해 중간 단어 예측
 
-![CBOW1](./Image/ch11/CBOW1.PNG)
+![CBOW1](./Image/ch11/CBOWContextPrediction1.PNG)
 
-![CBOW2](./Image/ch11/CBOW2.PNG)
+![CBOW2](./Image/ch11/CBOWContextPrediction2.PNG)
 
-![CBOW3](./Image/ch11/CBOW3.PNG)
+![CBOW3](./Image/ch11/CBOWContextPrediction3.PNG)
 
 ##### skipgram
 
 - 중간의 단어로 주변 단어 예측
 
-![sp1](./Image/ch11/sp1.PNG)
+![sp1](./Image/ch11/SkipgramModel1.PNG)
 
-![sp2](./Image/ch11/sp2.PNG)
+![sp2](./Image/ch11/SkipgramModel2.PNG)
 
 #### 전처리와 토큰화
 
@@ -366,13 +366,13 @@ print(output_array.shape)
 
 - 출력 결과
 
-![EXOP](./Image/ch11/EXOP.PNG)
+![EXOP](./Image/ch11/EmbeddingExampleOutput.PNG)
 
 ## 2절. 예제
 
 #### 스팸 메일 분류 예제
 
-![SPP](./Image/ch11/SPP.PNG)
+![SPP](./Image/ch11/SpamClassificationPipeline.PNG)
 
 ```Python
 import numpyas np
@@ -446,7 +446,7 @@ print(model.predict(padded_docs))
 
 #### 다음 단어 예측 예제
 
-![NW](./Image/ch11/NW.PNG)
+![NW](./Image/ch11/NextWordPredictionExample.PNG)
 
 - 구글 or 네이버 검색 시 사용
 - 노래 가사의 짧은 단어 시퀀스로부터 추출하며 학습 후 예측 확인
