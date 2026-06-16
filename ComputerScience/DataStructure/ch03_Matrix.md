@@ -2,7 +2,7 @@
 
 #### 행렬 
 
-![matrix](./Image/ch03/matrix.PNG)
+![matrix](./Image/ch03/Matrix.PNG)
  
 * 행과 열을 가진 2차원 데이터
 * 영상, 그래프, 다차원을 표현하는 자료구조

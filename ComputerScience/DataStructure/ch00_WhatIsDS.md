@@ -2,7 +2,7 @@
 
 ### 데이터 구조(Data Structure)
 
-<img src="./Image/ch00/ch00-01-APDM.PNG" height="auto" />
+<img src="./Image/ch00/DataStructureOverview.PNG" height="auto" />
 
 - 데이터의 저장, 조직, 관리 방법
 - 효율적인 데이터 형태

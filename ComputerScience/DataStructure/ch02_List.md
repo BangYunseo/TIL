@@ -2,14 +2,14 @@
 
 ### 리스트
 
-<img src="./Image/ch02/ch02-01-LIST.PNG" height="auto" />
+<img src="./Image/ch02/List.PNG" height="auto" />
 
 - 줄 세워진 데이터
 - 늘어선 데이터
 
 (여기서부터 다시 작성)
 
-![linkedlist](./Image/ch02/linkedlist.PNG)
+![linkedlist](./Image/ch02/LinkedList.PNG)
 
 - 데이터와 포인트로 구성된 노드 간의 연결을 이용해서 리스트를 구현한 자료구조
 - 저장되는 데이터의 크기가 동적으로 변하고 리스트 중간에 있는 데이터를 삽입하거나 삭제해야 할 때 사용
@@ -24,25 +24,25 @@
 
 - 단일 연결 리스트는 각 노드에 자료 공간과 한 개의 포인터 공간이 있고, 각 노드의 포인터는 다음 노드를 가리킴
 
-![Singly](./Image/ch02/Singly.PNG)
+![Singly](./Image/ch02/SinglyLinkedList.PNG)
 
 #### 이중 연결 리스트(Doubly Linked Linear List)
 
 - 이중 연결 리스트의 구조는 단일 연결 리스트와 비슷하지만, 포인터 공간이 두 개가 있고 각각의 포인터는 앞의 노드와 뒤의 노드를 가리킴
 
-![Doubly](./Image/ch02/Doubly.PNG)
+![Doubly](./Image/ch02/DoublyLinkedList.PNG)
 
 #### 원형 연결 리스트(Circularly Linked Linear List)
 
 - 원형 연결 리스트는 일반적인 연결 리스트에 마지막 노드와 처음 노드를 연결시켜 원형으로 만든 구조
 
-![Circularly](./Image/ch02/Circularly.PNG)
+![Circularly](./Image/ch02/CircularLinkedList.PNG)
 
 #### 연결리스트의 표현
 
 - 연결 리스트는 그림과 같이 포인터를 사용해서 각 노드를 연결함
 
-![linkedlist2](./Image/ch02/linkedlist2.PNG)
+![linkedlist2](./Image/ch02/LinkedList2.PNG)
 
 - Head는 리스트의 처음을 나타냄
 - 노드는 데이터와 다음 노드를 가리키는 Next 포인터로 구성됨

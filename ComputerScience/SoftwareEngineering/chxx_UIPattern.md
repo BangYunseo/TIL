@@ -16,7 +16,7 @@
 
 ### 설계 패턴
 
-<img src="./Image/MVVM/01_MVVM.PNG" height="auto" />
+<img src="./Image/MVVM/MVVM.PNG" height="auto" />
 
 ## 2절. UI Design Pattern
 

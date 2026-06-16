@@ -10,7 +10,7 @@
 
 ### 3-Tier
 
-<img src = "./Image/MW_3-Tier.png" height="auto"/>
+<img src = "./Image/Middleware3Tier.png" height="auto"/>
 
 - 3개의 논리 계층으로 분할된 아키텍처 패턴
 - 관리 포인트가 3개
