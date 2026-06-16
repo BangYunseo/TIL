@@ -68,53 +68,69 @@
 |isEmpty()|힙이 빈 힙인지 반환|
 |clear()|힙 청소|
 
-#### 힙의 삽입(여기부터 작성)
+#### 힙의 삽입(insert)
+
+- 새 원소를 힙의 마지막 자리(완전 이진 트리의 마지막 위치)에 추가
+- 부모와 비교하며 힙 성질(부모 ≥ 자식)을 만족할 때까지 위로 이동(percolate-up)
 
 ```py
-class ListQueue:
+class Heap:
   def __init__(self):
-    self.__queue = []
+    self.__heap = [None]                            # index 0은 사용하지 않음(1-based)
 
-  def enqueue(self, x):
-    self.__queue.append(x)
+  def __percolateUp(self, i):                        # 부모와 비교하며 위로 이동
+    parent = i // 2
+    if i > 1 and self.__heap[i] > self.__heap[parent]:
+      self.__heap[i], self.__heap[parent] = self.__heap[parent], self.__heap[i]
+      self.__percolateUp(parent)
 
-  def dequeue(self):
-    return self.__stack.pop(0)
-    # pop(0) : 리스트의 첫 원소 삭제 후 반환
-
-  def front(self):
-    if self.isEmpty():
-      return None
-    else:
-      return self.__queue[0]
-
-  def isEmpty(self) -> bool:
-    return (len(self.__queue) == 0)
-
-  def dequeueAll(self):
-    self.__queue.clear()
-
-  def printQueue(self):
-    print("Queue from top : ")
-    for i in range(len(self.__queue)):
-      print(self.__queue[i], end=' ')
-    print()
+  def insert(self, x):
+    self.__heap.append(x)                            # 마지막 자리에 추가
+    self.__percolateUp(len(self.__heap) - 1)         # 제자리를 찾을 때까지 위로
 ```
 
-#### 큐의 시간 복잡도(여기부터 다시 작성)
-* 삽입(Insertion) : O(1)
-* 삭제(Deletion)
-  * dequeue : O(1)
-  * remove : O(N)
-* 검색(Search) : O(N)
-* 큐의 삽입은 front에서만 일어나고 삭제는 항상 rear에서만 일어나므로 삽입과 삭제에 소요되는 시간복잡도는 O(1)로 고정
+#### 힙의 삭제(deleteMax)
 
-#### 장점 
-* 데이터의 순서가 중요한 작업에 사용 가능
-* 버퍼로 사용 가능
-    
-#### 단점
-* 고정된 큐의 크기
-  * 데이터가 가득 차면 삽입이 더이상 불가능
+- 루트(최대 원소)를 꺼내고, 마지막 원소를 루트 자리로 옮긴 뒤
+- 더 큰 자식과 비교하며 아래로 이동(percolate-down)
+
+```py
+  def __percolateDown(self, i):                      # 더 큰 자식과 비교하며 아래로 이동
+    last = len(self.__heap) - 1
+    child = 2 * i                                    # 왼쪽 자식
+    right = 2 * i + 1                                # 오른쪽 자식
+    if child <= last:
+      if right <= last and self.__heap[child] < self.__heap[right]:
+        child = right                                # 더 큰 자식 선택
+      if self.__heap[i] < self.__heap[child]:
+        self.__heap[i], self.__heap[child] = self.__heap[child], self.__heap[i]
+        self.__percolateDown(child)
+
+  def deleteMax(self):
+    if len(self.__heap) == 1:                        # 빈 힙
+      return None
+    self.__heap[1], self.__heap[-1] = self.__heap[-1], self.__heap[1]
+    maximum = self.__heap.pop()                      # 원래 루트(최댓값) 제거 후 반환
+    self.__percolateDown(1)
+    return maximum
+```
+
+#### 힙의 시간 복잡도
+
+|연산|시간 복잡도|
+|:--:|:--:|
+|insert(x)|O(log N)|
+|deleteMax()|O(log N)|
+|max()|O(1)|
+|buildHeap()|O(N)|
+
+* 삽입·삭제는 트리의 높이(O(log N))만큼만 이동하므로 O(log N)
+* 최대 원소는 항상 루트에 있으므로 max()는 상수 시간
+* buildHeap()은 임의 배열을 힙으로 만드는 연산으로 O(N)
+
+#### 힙의 활용
+* 우선순위 큐(Priority Queue) 구현
+* 힙 정렬(Heap Sort)
+* 최댓값(또는 최솟값)을 반복적으로 빠르게 구해야 하는 문제
 
 [본문 참고 자료](https://bigsong.tistory.com/32)

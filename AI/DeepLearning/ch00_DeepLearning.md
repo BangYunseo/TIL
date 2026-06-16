@@ -123,12 +123,7 @@
   - OpenAI가 대량의 데이터로 다양한 작업을 수행할 수 있도록 사전 학습한 Transformer 모델
   - 특정 작업을 잘 수행할 수 있도록 사전 학습된 모델을 Fine-Tuning
   - 일방향으로 나아가며 학습 및 예측을 하므로 문장 생성에 강점
-  - OpenAI에서 개발한 GPT는 현재 총 5개
-    - GPT-1
-    - GPT-2
-    - GPT-3
-    - GPT-3.5
-    - GPT-4
+  - OpenAI가 버전을 거듭하며 발전시켜 온 모델(GPT-1, GPT-2, GPT-3, GPT-3.5, GPT-4 등)
   - 기본적으로 모두 같은 구조를 가지나 버전이 올라갈수록 파라미터(Parameter, 매개 변수)의 개수 증가
   - GPT-3.5에서 인간 피드백 기반 강화 학습(Reinforcement Learning with Human Feedback, 이하 RLHF) 적용
 
