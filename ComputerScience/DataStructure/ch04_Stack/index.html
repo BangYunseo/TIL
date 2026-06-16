@@ -8381,7 +8381,7 @@
 
 <h1 id="chapter-4-stack">chapter 4. 스택(Stack)<a class="headerlink" href="#chapter-4-stack" title="Permanent link">&para;</a></h1>
 <h4 id="_1">스택<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<p><img alt="stack" src="../Image/ch04/stack.PNG" /></p>
+<p><img alt="stack" src="../Image/ch04/Stack.PNG" /></p>
 <ul>
 <li>한쪽 끝에서만 데이터를 넣고 뺄 수 있는 제한적으로 접근할 수 있는 후입선출(Last-In-First-Out) 형태의 선형 자료구조</li>
 <li>후입선출 : 나중에 들어온 값을 먼저 연산하는 방식</li>
@@ -8422,7 +8422,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="stack2" src="../Image/ch04/stack2.PNG" /></p>
+<p><img alt="stack2" src="../Image/ch04/Stack2.PNG" /></p>
 <h4 id="_3">스택의 예시<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>웹 브라우저 방문 기록(뒤로 가기)에서 가장 나중에 열린 페이지부터 확인 가능</li>
@@ -8430,29 +8430,29 @@
 <li>한글, 워드, 파워포인트, 엑셀 등 모든 편집기는 최근에 한 작업순으로 취소하는 기능 존재(ctrl + z)</li>
 <li>함수 호출 체인의 경로</li>
 </ul>
-<p><img alt="stackfunction" src="../Image/ch04/stackfunction.PNG" /></p>
+<p><img alt="stackfunction" src="../Image/ch04/StackFunction.PNG" /></p>
 <h4 id="_4">스택의 활용<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>일반적인 가상 메모리 구조</li>
 </ul>
-<p><img alt="stackstructure" src="../Image/ch04/stackstructure.PNG" /></p>
+<p><img alt="stackstructure" src="../Image/ch04/StackStructure.PNG" /></p>
 <h4 id="_5">스택의 삽입과 삭제<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>값을 삽입할 때는 위에서 놓음</li>
 <li>값을 삭제할 때는 위에서 뺌</li>
 <li>즉, 맨 윗 항목의 값만 파악 가능</li>
 </ul>
-<p><img alt="stackir" src="../Image/ch04/stackir.PNG" /></p>
+<p><img alt="stackir" src="../Image/ch04/StackInsertRemove.PNG" /></p>
 <h4 id="pushitem">스택의 삽입 : push(item)<a class="headerlink" href="#pushitem" title="Permanent link">&para;</a></h4>
 <ul>
 <li>스택에 데이터를 삽입하면 맨 윗부분에 항목이 추가</li>
 </ul>
-<p><img alt="push" src="../Image/ch04/push.PNG" /></p>
+<p><img alt="push" src="../Image/ch04/Push.PNG" /></p>
 <h4 id="pop">스택의 삭제 : pop()<a class="headerlink" href="#pop" title="Permanent link">&para;</a></h4>
 <ul>
 <li>스택에 데이터를 삭제하면 맷 윗부분의 항목이 삭제</li>
 </ul>
-<p><img alt="pop" src="../Image/ch04/pop.PNG" /></p>
+<p><img alt="pop" src="../Image/ch04/Pop.PNG" /></p>
 <h4 id="_6">리스트로 구현한 스택<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ListStack</span><span class="p">:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
