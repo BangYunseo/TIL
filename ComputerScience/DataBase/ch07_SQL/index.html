@@ -10488,7 +10488,7 @@
 </tbody>
 </table>
 <h3 id="_1">분류<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch07/ch07-01-SQL.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SQLClassification.PNG"  height="auto" /></p>
 <table>
 <thead>
 <tr>
@@ -10519,21 +10519,21 @@
 <ul>
 <li>고객 테이블</li>
 </ul>
-<p><img src="./Image/ch07/ch07-02-CUSTOMER.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/CustomerTableStructure.PNG"  height="auto" /></p>
 <ul>
 <li>제품 테이블</li>
 </ul>
-<p><img src="./Image/ch07/ch07-03-PRODUCT.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/ProductTableStructure.PNG"  height="auto" /></p>
 <ul>
 <li>주문 테이블</li>
 </ul>
-<p><img src="./Image/ch07/ch07-04-ORDER.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/OrderTableStructure.PNG"  height="auto" /></p>
 <h2 id="2-sql">2절. SQL 데이터 정의<a class="headerlink" href="#2-sql" title="Permanent link">&para;</a></h2>
 <h3 id="_3">데이터 정의 기능<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>테이블 생성·변경·삭제</li>
 </ul>
-<p><img src="./Image/ch07/ch07-05-DDL.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/DDLFunctionalities.PNG"  height="auto" /></p>
 <h3 id="create-table">CREATE TABLE : 테이블 생성<a class="headerlink" href="#create-table" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="err">테이블</span><span class="n">_이름</span><span class="p">(</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="err">속성</span><span class="n">_이름</span><span class="w"> </span><span class="err">데이터</span><span class="n">_타입</span><span class="w"> </span><span class="p">[</span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="k">DEFAULT</span><span class="w"> </span><span class="err">기본</span><span class="n">_값</span><span class="p">]</span>
@@ -10718,7 +10718,7 @@
 </tbody>
 </table>
 <h4 id="_7">참조 무결성 제약조건 튜플 삭제 예시<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch07/ch07-06-DeleteOption.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/ForeignKeyDeleteOptions.PNG"  height="auto" /></p>
 <table>
 <thead>
 <tr>
@@ -10766,7 +10766,7 @@
 <ul>
 <li>ex 1 : 고객 테이블 생성</li>
 </ul>
-<p><img src="./Image/ch07/ch07-07-CreateTable.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/CreateCustomerTableExample.PNG"  height="auto" /></p>
 <table>
 <thead>
 <tr>
@@ -10791,7 +10791,7 @@
 <ul>
 <li>ex 2 : 제품 테이블 생성</li>
 </ul>
-<p><img src="./Image/ch07/ch07-08-CreateTable2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/CreateProductTableExample.PNG"  height="auto" /></p>
 <table>
 <thead>
 <tr>
@@ -10813,7 +10813,7 @@
 <ul>
 <li>ex 3 : 주문 테이블 생성</li>
 </ul>
-<p><img src="./Image/ch07/ch07-09-CreateTable3.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/CreateOrderTableExample.PNG"  height="auto" /></p>
 <table>
 <thead>
 <tr>
@@ -10838,7 +10838,7 @@
 <ul>
 <li>ex 4 : 배송업체 테이블 생성</li>
 </ul>
-<p><img src="./Image/ch07/ch07-10-CreateTable4.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/CreateShippingCompanyTableExample.PNG"  height="auto" /></p>
 <table>
 <thead>
 <tr>
@@ -10929,7 +10929,7 @@
 <ul>
 <li>데이터 검색·삽입·수정·삭제 기능</li>
 </ul>
-<p><img src="./Image/ch07/ch07-11-DML.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/DMLFunctionalities.PNG"  height="auto" /></p>
 <h3 id="insert">INSERT : 데이터 삽입<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">INSERT</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">INTO</span><span class="w"> </span><span class="err">테이블</span><span class="n">_이름</span><span class="p">[(</span><span class="err">속성</span><span class="n">_리스트</span><span class="p">)]</span>
@@ -10972,7 +10972,7 @@
 <a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="k">INTO</span><span class="w"> </span><span class="err">고객</span>
 <a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;strawberry&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;최유경&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;vip&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;공무원&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-12-InsertData.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/InsertSingleRowExample1.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 판매 데이터베이스의 고객 테이블에 고객아이디가 'tomato', 고객이름이 '정은심', 나이가 '36', 등급이 'gold', 적립금이 '4000'원인 새로운 고객의 정보 삽입</li>
 </ul>
@@ -10987,7 +10987,7 @@
 <a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;tomato&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;정은심&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;gold&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">4000</span><span class="p">);</span>
 <a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="cm">/* 속성 생략 시 NULL 지정 필수 */</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-13-InsertData2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/InsertSingleRowExample2.PNG"  height="auto" /></p>
 <ul>
 <li>직업 속성에 NULL 삽입</li>
 <li>직업 속성은 NULL을 허용하기 때문에 삽입 가능</li>
@@ -11063,7 +11063,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="err">고객아이디</span><span class="p">,</span><span class="w"> </span><span class="err">고객이름</span><span class="p">,</span><span class="w"> </span><span class="err">등급</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-14-SelectData.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectBasicResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 고객 테이블에 존재하는 모든 속성 검색</li>
 </ul>
@@ -11074,7 +11074,7 @@
 <a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-15-SelectData2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectAllAttributesResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 3 : 제품 테이블에서 제조업체 검색(중복)</li>
 </ul>
@@ -11082,21 +11082,21 @@
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span><span class="p">;</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="cm">/* ALL 생략 시에도 동일한 결과 */</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-16-SelectData3.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectManufacturerWithDuplicates.PNG"  height="auto" /></p>
 <ul>
 <li>ex 4 : 제품 테이블에서 제조업체 검색(중복 제거)</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="err">제조업체</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-17-SelectData4.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectManufacturerDistinct.PNG"  height="auto" /></p>
 <ul>
 <li>ex 5 : 제품 테이블에서 제조명과 단가를 검색하되 단가를 가격이라는 이름으로 검색</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="err">제조명</span><span class="p">,</span><span class="w"> </span><span class="err">단가</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;가격&#39;</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-18-SelectData5.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectWithAliasResult.PNG"  height="auto" /></p>
 <h4 id="select_2">SELECT : 산술식을 이용한 검색<a class="headerlink" href="#select_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>SELECT 키워드와 함께 산술식 제시</li>
@@ -11127,7 +11127,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="err">제조명</span><span class="p">,</span><span class="w"> </span><span class="err">단가</span><span class="o">+</span><span class="mi">500</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;조정 가격&#39;</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-19-SelectData6.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectArithmeticExpressionResult.PNG"  height="auto" /></p>
 <h4 id="select_3">SELECT : 조건 검색<a class="headerlink" href="#select_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>조건 만족 데이터만 검색</li>
@@ -11206,7 +11206,7 @@
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span>
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">제조업체</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;한빛제과&#39;</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-20-SelectData7.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectWhereManufacturerResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 주문 테이블에서 'apple' 고객이 15개 이상 주문한 주문제품, 수량, 주문일자 검색</li>
 </ul>
@@ -11214,7 +11214,7 @@
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">주문</span>
 <a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">주문고객</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;apple&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="err">수량</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-21-SelectData8.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectWhereAndResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 3 : 주문 테이블에서 'apple' 고객이 주문했거나 15개 이상 주문한 주문제품, 수량, 주문일자, 주문고객 검색</li>
 </ul>
@@ -11222,7 +11222,7 @@
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">주문</span>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">주문고객</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;apple&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="err">수량</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-22-SelectData9.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectWhereOrResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 4 : 제품 테이블에서 단가가 2000원 이상이면서 3000원 이하인 제품의 제품명, 단가, 제조업체 검색</li>
 </ul>
@@ -11230,7 +11230,7 @@
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span>
 <a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">단가</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="err">단가</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3000</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-23-SelectData10.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectWhereRangeResult.PNG"  height="auto" /></p>
 <h4 id="select-like">SELECT : LIKE 이용 검색<a class="headerlink" href="#select-like" title="Permanent link">&para;</a></h4>
 <ul>
 <li>LIKE 키워드를 이용해 부분적으로 일치하는 데이터 검색</li>
@@ -11291,7 +11291,7 @@
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span>
 <a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">고객이름</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;김%&#39;</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-24-SelectData11.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectLikeStartsWithResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 고객 테이블에서 고객아이디가 5글자인 고객의 고객아이디, 고객이름, 등급 검색</li>
 </ul>
@@ -11299,7 +11299,7 @@
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span>
 <a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">고객아이디</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;_ _ _ _ _&#39;</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-25-SelectData12.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectLikeFixedLengthResult.PNG"  height="auto" /></p>
 <h4 id="select-null">SELECT : NULL 이용 검색<a class="headerlink" href="#select-null" title="Permanent link">&para;</a></h4>
 <ul>
 <li>검색 조건에서 NULL은 다른 값과 크기 비교 시 모두 거짓</li>
@@ -11329,7 +11329,7 @@
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span>
 <a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">나이</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-26-SelectData13.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectIsNullResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 고객 테이블에서 나이가 이미 입력된 고객의 고객이름 검색</li>
 </ul>
@@ -11337,7 +11337,7 @@
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span>
 <a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">나이</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-27-SelectData14.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectIsNotNullResult.PNG"  height="auto" /></p>
 <h4 id="select_4">SELECT : 정렬 검색<a class="headerlink" href="#select_4" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="p">[</span><span class="k">ALL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">DISTINCT</span><span class="p">]</span><span class="w"> </span><span class="err">속성</span><span class="n">_리스트</span>
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">테이블</span><span class="n">_리스트</span>
@@ -11381,7 +11381,7 @@
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span>
 <a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="err">나이</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-28-SelectData15.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectOrderByDescResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 주문 테이블에서 수량이 10개 이상인 주문의 주문고객, 주문제품, 수량, 주문일자 검색 / 주문제품 기준 오름차순 정렬, 동일 제품은 수량 기준 내림차순 정렬</li>
 </ul>
@@ -11390,7 +11390,7 @@
 <a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">수량</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10</span>
 <a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="err">주문제품</span><span class="w"> </span><span class="k">ASC</span><span class="p">,</span><span class="w"> </span><span class="err">수량</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-29-SelectData16.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectOrderByMultipleResult.PNG"  height="auto" /></p>
 <h4 id="select_5">SELECT : 집계 함수 이용 검색<a class="headerlink" href="#select_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
@@ -11462,7 +11462,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="err">단가</span><span class="p">)</span>
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-30-SelectData17.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectAggregateAvgResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 한빛제과에서 제조한 제품의 재고량 합계 검색</li>
 </ul>
@@ -11470,7 +11470,7 @@
 <a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span>
 <a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">제조업체</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;한빛제과&#39;</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-31-SelectData18.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectAggregateSumResult.PNG"  height="auto" /></p>
 <ul>
 <li>
 <p>ex 3 : 고객 테이블의 고객 수 검색</p>
@@ -11482,7 +11482,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="err">고객아이디</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;고객수&#39;</span>
 <a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-32-SelectData19.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectAggregateCountResult.PNG"  height="auto" /></p>
 <ol>
 <li>나이 속성 이용 계산</li>
 </ol>
@@ -11490,7 +11490,7 @@
 <a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span><span class="p">;</span>
 <a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="cm">/* 나이 속성이 NULL인 오형준 튜플 제외 계산 */</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-33-SelectData20.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectAggregateCountWithNullResult.PNG"  height="auto" /></p>
 <ol>
 <li>
 <ul>
@@ -11501,7 +11501,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;고객수&#39;</span>
 <a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-32-SelectData19.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectAggregateCountResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 4 : 제품 테이블에서 제조업체 수 검색</li>
 </ul>
@@ -11509,7 +11509,7 @@
 <a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span><span class="p">;</span>
 <a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="cm">/* DISTINCT 키워드로 중복 제거 후 서로 다른 제조업체 개수만 계산 */</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-34-SelectData21.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectAggregateCountDistinctResult.PNG"  height="auto" /></p>
 <h4 id="select_6">SELECT : 그룹 검색<a class="headerlink" href="#select_6" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="p">[</span><span class="k">ALL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">DISTINCT</span><span class="p">]</span><span class="w"> </span><span class="err">속성</span><span class="n">_리스트</span>
 <a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">테이블</span><span class="n">_리스트</span>
@@ -11547,12 +11547,12 @@
 <a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">주문</span>
 <a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="err">주문제품</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-35-SelectData22.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectGroupByProductResult.PNG"  height="auto" /></p>
 <ul>
 <li>동일 제품 주문 튜플을 그룹화</li>
 <li>그룹별 수량 합계 계산</li>
 </ul>
-<p><img src="./Image/ch07/ch07-36-SelectData23.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectGroupByProductGroupingVisualization.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 제품 테이블에서 제조업체 별 제조한 제품 개수, 제품 중 가장 비싼 단가를 검색하되 제품의 개수는 '제품 수', 가장 비싼 단가는 '최고가'로 출력</li>
 </ul>
@@ -11560,7 +11560,7 @@
 <a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span>
 <a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="err">제조업체</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-37-SelectData24.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectGroupByManufacturerResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 3 : 제품 테이블에서 제품을 3개 이상 제조한 제품업체 별 제품의 개수, 제품 중 가장 비싼 단가 검색</li>
 </ul>
@@ -11569,7 +11569,7 @@
 <a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="err">제조업체</span>
 <a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-38-SelectData25.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectGroupByHavingResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 4 : 고객 테이블에서 적립금 평균이 1000원 이상인 등급에 대해 등급별 고객수, 적립금 평균 검색</li>
 </ul>
@@ -11578,7 +11578,7 @@
 <a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="err">등급</span>
 <a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="k">HAVING</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="err">적립금</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-39-SelectData26.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectGroupByGradeHavingResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 5 : 주문 테이블에서 각 주문이 주문한 제품의 총 주문 수량을 주문제품 별로 검색</li>
 </ul>
@@ -11586,7 +11586,7 @@
 <a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">주문</span>
 <a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="err">주문제품</span><span class="p">,</span><span class="w"> </span><span class="err">주문고객</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-40-SelectData27.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectGroupByMultipleAttributesResult.PNG"  height="auto" /></p>
 <ul>
 <li>집계 함수 · GROUP BY 절에 명시된 속성 외의 속성은 SELECT 절에 작성 불가</li>
 </ul>
@@ -11642,7 +11642,7 @@
 <a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">주문</span><span class="p">.</span><span class="err">주문고객</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;banana&#39;</span>
 <a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="k">AND</span><span class="w"> </span><span class="err">제품</span><span class="p">.</span><span class="err">제품번호</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">주문</span><span class="p">.</span><span class="err">주문제품</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-41-SelectData28.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectJoinBananaCustomerResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 판매 데이터베이스에서 나이가 30세 이상인 고객에 주문한 제품의 번호와 주문일자 검색</li>
 </ul>
@@ -11651,7 +11651,7 @@
 <a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">고객</span><span class="p">.</span><span class="err">나이</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">30</span>
 <a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a><span class="k">AND</span><span class="w"> </span><span class="err">고객</span><span class="p">.</span><span class="err">고객아이디</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">주문</span><span class="p">.</span><span class="err">주문고객</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-42-SelectData29.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectJoinAgeConditionResult.PNG"  height="auto" /></p>
 <ul>
 <li>여러 테이블 조인 검색 특성</li>
 </ul>
@@ -11673,7 +11673,7 @@
 <a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a><span class="k">AND</span><span class="w"> </span><span class="err">주문</span><span class="p">.</span><span class="err">주문고객</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">고객</span><span class="p">.</span><span class="err">고객아이디</span>
 <a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="k">AND</span><span class="w"> </span><span class="err">제품</span><span class="p">.</span><span class="err">제품번호</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">주문</span><span class="p">.</span><span class="err">주문제품</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-43-SelectData30.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectJoinMultipleTablesResult.PNG"  height="auto" /></p>
 <h4 id="inner-join-join">INNER JOIN : JOIN 활용<a class="headerlink" href="#inner-join-join" title="Permanent link">&para;</a></h4>
 <ul>
 <li>표준 SQL에서 사용하는 방법</li>
@@ -11743,7 +11743,7 @@
 <a id="__codelineno-54-10" name="__codelineno-54-10" href="#__codelineno-54-10"></a>
 <a id="__codelineno-54-11" name="__codelineno-54-11" href="#__codelineno-54-11"></a><span class="cm">/* 고객 테이블 기준 정렬이므로 두 외부 조인의 결과는 동일 */</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-44-SelectData31.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectLeftOuterJoinResult.PNG"  height="auto" /></p>
 <ul>
 <li>주문하지 않는 고객 포함 조회</li>
 </ul>
@@ -11811,7 +11811,7 @@
 <a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a><span class="w">                    </span><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span>
 <a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a><span class="w">                    </span><span class="k">WHERE</span><span class="w"> </span><span class="err">제품명</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;달콤비스킷&#39;</span><span class="p">);</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-45-SelectData32.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectSubqueryManufacturerResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 판매 데이터베이스에서 적립금이 가장 많은 고객의 고객 이름과 적립금 검색</li>
 </ul>
@@ -11819,7 +11819,7 @@
 <a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span>
 <a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">적립금</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="err">적립금</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span><span class="p">);</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-46-SelectData33.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectSubqueryMaxPointResult.PNG"  height="auto" /></p>
 <ul>
 <li>부속 질의문 연산자</li>
 </ul>
@@ -11866,7 +11866,7 @@
 <a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a><span class="w">                  </span><span class="k">FROM</span><span class="w"> </span><span class="err">주문</span>
 <a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a><span class="w">                  </span><span class="k">WHERE</span><span class="w"> </span><span class="err">주문고객</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;banana&#39;</span><span class="p">);</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-47-SelectData34.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectSubqueryInResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 4 : 판매 데이터베이스에서 banana 고객이 주문하지 않은 제품의 제품명과 제조업체 검색</li>
 </ul>
@@ -11876,7 +11876,7 @@
 <a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="w">                      </span><span class="k">FROM</span><span class="w"> </span><span class="err">주문</span>
 <a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a><span class="w">                      </span><span class="k">WHERE</span><span class="w"> </span><span class="err">주문고객</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;banana&#39;</span><span class="p">);</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-48-SelectData35.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectSubqueryNotInResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 5 : 판매 데이터베이스에서 대한식품이 제조한 모든 제품의 단가보다 비싼 제품의 제품명, 단가, 제조업체 검색</li>
 </ul>
@@ -11886,7 +11886,7 @@
 <a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a><span class="w">                  </span><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span>
 <a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a><span class="w">                  </span><span class="k">WHERE</span><span class="w"> </span><span class="err">제조업체</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;대한식품&#39;</span><span class="p">);</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-49-SelectData36.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectSubqueryAllResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 6 : 판매 데이터베이스에서 2022년 3월 15일에 제품을 주문한 고객의 고객이름 검색</li>
 </ul>
@@ -11897,7 +11897,7 @@
 <a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a><span class="w">              </span><span class="k">WHERE</span><span class="w"> </span><span class="err">주문일자</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2022-03-15&#39;</span>
 <a id="__codelineno-60-6" name="__codelineno-60-6" href="#__codelineno-60-6"></a><span class="w">              </span><span class="k">AND</span><span class="w"> </span><span class="err">고객</span><span class="p">.</span><span class="err">고객아이디</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">주문</span><span class="p">.</span><span class="err">주문고객</span><span class="p">);</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-50-SelectData37.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectSubqueryExistsResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 7 : 판매 데이터베이스에서 2002년 3월 15일에 제품을 주문하지 않은 고객의 고객이름 검색</li>
 </ul>
@@ -11908,7 +11908,7 @@
 <a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a><span class="w">              </span><span class="k">WHERE</span><span class="w"> </span><span class="err">주문일자</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2022-03-15&#39;</span>
 <a id="__codelineno-61-6" name="__codelineno-61-6" href="#__codelineno-61-6"></a><span class="w">              </span><span class="k">AND</span><span class="w"> </span><span class="err">고객</span><span class="p">.</span><span class="err">고객아이디</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">주문</span><span class="p">.</span><span class="err">주문고객</span><span class="p">);</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-51-SelectData38.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/SelectSubqueryNotExistsResult.PNG"  height="auto" /></p>
 <h3 id="update">UPDATE : 데이터 수정<a class="headerlink" href="#update" title="Permanent link">&para;</a></h3>
 <ul>
 <li>테이블에 저장된 튜플에서 특정 속성값 수정</li>
@@ -11942,7 +11942,7 @@
 <a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="k">SET</span><span class="w"> </span><span class="err">제품명</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;통큰파이&#39;</span>
 <a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">제품번호</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;p03&#39;</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-52-UpdateData.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/UpdateSingleColumnResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 제품 테이블의 모든 제품의 단가를 10% 인상 후 검색</li>
 </ul>
@@ -11952,7 +11952,7 @@
 <a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-53-UpdateData2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/UpdateMultipleRowsResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 3 : 판매 데이터베이스에서 정소화 고객이 주문한 제품의 주문수량을 5개로 수정 후 내용 검색</li>
 </ul>
@@ -11965,7 +11965,7 @@
 <a id="__codelineno-65-7" name="__codelineno-65-7" href="#__codelineno-65-7"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <a id="__codelineno-65-8" name="__codelineno-65-8" href="#__codelineno-65-8"></a><span class="k">FROM</span><span class="w"> </span><span class="err">주문</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-54-UpdateData3.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/UpdateSubqueryResult.PNG"  height="auto" /></p>
 <h3 id="delete">DELETE : 데이터 삭제<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
 <ul>
 <li>테이블에 저장된 데이터 삭제</li>
@@ -11992,7 +11992,7 @@
 <a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <a id="__codelineno-67-6" name="__codelineno-67-6" href="#__codelineno-67-6"></a><span class="k">FROM</span><span class="w"> </span><span class="err">주문</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-55-DeleteData.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/DeleteSingleConditionResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 판매 데이터베이스에서 정소화 고객이 주문한 내역을 주문 테이블에서 삭제 후 삭제 여부 확인</li>
 </ul>
@@ -12004,7 +12004,7 @@
 <a id="__codelineno-68-6" name="__codelineno-68-6" href="#__codelineno-68-6"></a>
 <a id="__codelineno-68-7" name="__codelineno-68-7" href="#__codelineno-68-7"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">주문</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-56-DeleteData2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/DeleteSubqueryResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 3 : 판매 데이터베이스의 주문 테이블에 존재하는 모든 튜플 삭제 후 삭제 여부 확인</li>
 </ul>
@@ -12013,7 +12013,7 @@
 <a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a>
 <a id="__codelineno-69-4" name="__codelineno-69-4" href="#__codelineno-69-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">주문</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-57-DeleteData3.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/DeleteAllRowsResult.PNG"  height="auto" /></p>
 <ul>
 <li>DROP TABLE과는 다르게 빈 테이블 형태로 스키마는 존재</li>
 </ul>
@@ -12027,7 +12027,7 @@
 <a id="__codelineno-70-3" name="__codelineno-70-3" href="#__codelineno-70-3"></a><span class="k">JOIN</span><span class="w"> </span><span class="err">주문</span>
 <a id="__codelineno-70-4" name="__codelineno-70-4" href="#__codelineno-70-4"></a><span class="k">ON</span><span class="w"> </span><span class="err">고객</span><span class="p">.</span><span class="err">고객아이디</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">주문</span><span class="p">.</span><span class="err">주문고객</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-58-JoinTable.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/JoinTableExample.PNG"  height="auto" /></p>
 <h4 id="left-join">LEFT JOIN : 왼쪽 테이블 기준 조인<a class="headerlink" href="#left-join" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ex 1 : 모든 고객들의 고객아이디, 고객이름, 배송지 검색</li>
@@ -12037,7 +12037,7 @@
 <a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a><span class="k">LEFT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="err">주문</span>
 <a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a><span class="k">ON</span><span class="w"> </span><span class="err">고객</span><span class="p">.</span><span class="err">고객아이디</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">주문</span><span class="p">.</span><span class="err">주문고객</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-59-LeftJoinTable.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/LeftJoinExample.PNG"  height="auto" /></p>
 <ul>
 <li>ex 2 : 제품번호 별 제품명, 주문고객의 수량, 나이, 등급 검색</li>
 </ul>
@@ -12048,7 +12048,7 @@
 <a id="__codelineno-72-5" name="__codelineno-72-5" href="#__codelineno-72-5"></a><span class="k">LEFT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="err">고객</span>
 <a id="__codelineno-72-6" name="__codelineno-72-6" href="#__codelineno-72-6"></a><span class="err">주문</span><span class="p">.</span><span class="err">주문고객</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">고객</span><span class="p">.</span><span class="err">고객아이디</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-61-LeftJoinTable2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/LeftJoinMultipleResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 3 : apple 고객이 주문한 제품번호, 제품명, 수량, 나이, 등급 검색</li>
 </ul>
@@ -12069,7 +12069,7 @@
 <a id="__codelineno-74-3" name="__codelineno-74-3" href="#__codelineno-74-3"></a><span class="k">RIGHT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="err">제품</span>
 <a id="__codelineno-74-4" name="__codelineno-74-4" href="#__codelineno-74-4"></a><span class="k">ON</span><span class="w"> </span><span class="err">제품</span><span class="p">.</span><span class="err">제품번호</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">주문</span><span class="p">.</span><span class="err">주문제품</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-60-RightJoinTable.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/RightJoinExample.PNG"  height="auto" /></p>
 <h2 id="5-mysql">5절. MySQL 내장 함수<a class="headerlink" href="#5-mysql" title="Permanent link">&para;</a></h2>
 <h3 id="_10">단일행 함수<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <table>
@@ -12193,7 +12193,7 @@
 <a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span>
 <a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="err">등급</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-62-round.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/RoundFunctionResult.PNG"  height="auto" /></p>
 <h4 id="_14">문자값 반환 함수<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>s : 문자열</li>
@@ -12259,7 +12259,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="err">고객아이디</span><span class="p">,</span><span class="w"> </span><span class="k">REPLACE</span><span class="p">(</span><span class="err">직업</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;학생&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;대학생&#39;</span><span class="p">)</span>
 <a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">고객</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-63-replace.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/ReplaceFunctionResult.PNG"  height="auto" /></p>
 <h4 id="_15">날짜 함수<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -12317,7 +12317,7 @@
 <a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a><span class="w">      </span><span class="n">ADDDATE</span><span class="p">(</span><span class="err">주문일자</span><span class="p">,</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">DAY</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s1">&#39;입금일자&#39;</span>
 <a id="__codelineno-77-3" name="__codelineno-77-3" href="#__codelineno-77-3"></a><span class="k">FROM</span><span class="w"> </span><span class="err">주문</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-64-adddate.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/AddDateFunctionResult.PNG"  height="auto" /></p>
 <h2 id="6">6절. 뷰<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <h3 id="_16">뷰<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <ul>
@@ -12377,7 +12377,7 @@
 <a id="__codelineno-79-14" name="__codelineno-79-14" href="#__codelineno-79-14"></a>
 <a id="__codelineno-79-15" name="__codelineno-79-15" href="#__codelineno-79-15"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">우수고객</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-65-createview.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/CreateViewPremiumCustomerResult.PNG"  height="auto" /></p>
 <ul>
 <li>
 <p>뷰 생성 후 우수고객 뷰에 아래 행동 시 실행 거부 : WITH CHECK OPTION</p>
@@ -12404,7 +12404,7 @@
 <ul>
 <li>제품수 속성은 제품 테이블의 우너래 속성이 아닌 집계 함수로 새로 계산된 속성이므로 속성명의 명확한 제시 필수</li>
 </ul>
-<p><img src="./Image/ch07/ch07-66-createview2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/CreateViewManufacturerCountResult.PNG"  height="auto" /></p>
 <h4 id="select_9">SELECT : 뷰 활용<a class="headerlink" href="#select_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>일반 테이블과 같은 방법으로 데이터 검색 가능</li>
@@ -12420,7 +12420,7 @@
 <a id="__codelineno-81-2" name="__codelineno-81-2" href="#__codelineno-81-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">우수고객</span>
 <a id="__codelineno-81-3" name="__codelineno-81-3" href="#__codelineno-81-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">나이</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-65-createview.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/CreateViewPremiumCustomerResult.PNG"  height="auto" /></p>
 <h4 id="insert-update-delete">INSERT, UPDATE, DELETE : 뷰 활용<a class="headerlink" href="#insert-update-delete" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
@@ -12475,7 +12475,7 @@
 <a id="__codelineno-82-6" name="__codelineno-82-6" href="#__codelineno-82-6"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <a id="__codelineno-82-7" name="__codelineno-82-7" href="#__codelineno-82-7"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span><span class="mi">1</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-67-product1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/ViewProduct1SelectResult.PNG"  height="auto" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="err">제품</span><span class="mi">2</span>
 <a id="__codelineno-83-2" name="__codelineno-83-2" href="#__codelineno-83-2"></a><span class="k">AS</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="err">제품명</span><span class="p">,</span><span class="w"> </span><span class="err">재고량</span><span class="p">,</span><span class="w"> </span><span class="err">제조업체</span>
 <a id="__codelineno-83-3" name="__codelineno-83-3" href="#__codelineno-83-3"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span>
@@ -12484,7 +12484,7 @@
 <a id="__codelineno-83-6" name="__codelineno-83-6" href="#__codelineno-83-6"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <a id="__codelineno-83-7" name="__codelineno-83-7" href="#__codelineno-83-7"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span><span class="mi">2</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-68-product2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/ViewProduct2SelectResult.PNG"  height="auto" /></p>
 <ul>
 <li>ex 1 - 1 : 제품번호가 p08, 재고량이 1000, 제조업체가 신선식품인 새로운 제품의 정보를 제품1 뷰에 삽입 후 모든 내용 검색</li>
 </ul>
@@ -12495,11 +12495,11 @@
 <a id="__codelineno-84-5" name="__codelineno-84-5" href="#__codelineno-84-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <a id="__codelineno-84-6" name="__codelineno-84-6" href="#__codelineno-84-6"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span><span class="mi">1</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-69-product1-1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/ViewProduct1InsertResult.PNG"  height="auto" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
 <a id="__codelineno-85-2" name="__codelineno-85-2" href="#__codelineno-85-2"></a><span class="k">FROM</span><span class="w"> </span><span class="err">제품</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch07/ch07-70-product1-2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch07/ViewProduct1InsertReflectedInBaseTable.PNG"  height="auto" /></p>
 <ul>
 <li>제품1 뷰에 대한 삽입 연산은 실제로 기본 테이블인 제품 테이블에 수행</li>
 <li>

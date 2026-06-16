@@ -9330,7 +9330,7 @@
 <li>개념적 구조를 논리적 구조로 표현하는 논리적 데이터 모델</li>
 <li>하나의 개체에 대한 데이터를 하나의 릴레이션에 저장</li>
 </ul>
-<p><img src="./Image/ch05/ch05-01-Relation.PNG" width="100%" height="auto" /></p>
+<p><img src="./Image/ch05/RelationStructure.PNG" width="100%" height="auto" /></p>
 <ul>
 <li>고객 릴레이션</li>
 <li>차수(Degree) : 6</li>
@@ -9345,7 +9345,7 @@
 <table>
 <thead>
 <tr>
-<th><img src="./Image/ch05/ch05-02-DataTable.PNG" height="auto" /></th>
+<th><img src="./Image/ch05/DataTableStructure.PNG" height="auto" /></th>
 <th>릴레이션 내 데이터들의 관계</th>
 </tr>
 </thead>
@@ -9359,7 +9359,7 @@
 <table>
 <thead>
 <tr>
-<th><img src="./Image/ch05/ch05-03-RR.PNG" width="70%" height="auto" /></th>
+<th><img src="./Image/ch05/RelationshipBetweenRelations.PNG" width="70%" height="auto" /></th>
 <th>릴레이션 간 관계</th>
 </tr>
 </thead>
@@ -9399,7 +9399,7 @@
 <li>릴레이션에서 튜플 개수</li>
 </ul>
 <h3 id="_2">릴레이션 구성<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch05/ch05-04-RelationEX.PNG" width="100%" height="auto" /></p>
+<p><img src="./Image/ch05/RelationStructureExample.PNG" width="100%" height="auto" /></p>
 <ul>
 <li>차수(Degree) : 4</li>
 <li>카디널리티(Cardinality) : 5</li>
@@ -9426,14 +9426,14 @@
 </tbody>
 </table>
 <h3 id="_3">다중 값 속성<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch05/ch05-06-ManyValues.PNG" width="80%" height="auto" /></p>
+<p><img src="./Image/ch05/MultiValueAttribute.PNG" width="80%" height="auto" /></p>
 <ul>
 <li>다중 값을 가지는 직업 속성</li>
 <li>관계 데이터 모델의 릴레이션으로 부적합</li>
 <li>제 1 정규형 위반</li>
 </ul>
 <h3 id="_4">동일한 튜플 중복<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch05/ch05-07-SameTuple.PNG" width="80%" height="auto" /></p>
+<p><img src="./Image/ch05/DuplicateTupleExample.PNG" width="80%" height="auto" /></p>
 <ul>
 <li>동일한 튜플 중복 불가</li>
 <li>속성 값은 단일값 필수</li>
@@ -9466,7 +9466,7 @@
 </tbody>
 </table>
 <h3 id="_6">데이터베이스 구성<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch05/ch05-08-DBSchemaInstance.PNG" width="100%" height="auto" /></p>
+<p><img src="./Image/ch05/DatabaseSchemaAndInstance.PNG" width="100%" height="auto" /></p>
 <table>
 <thead>
 <tr>
@@ -9542,9 +9542,9 @@
 </tr>
 </tbody>
 </table>
-<p><img src="./Image/ch05/ch05-10-Key.PNG" width="80%" height="auto" /></p>
+<p><img src="./Image/ch05/KeyTypes.PNG" width="80%" height="auto" /></p>
 <h3 id="_9">데이터베이스 릴레이션 예시<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch05/ch05-09-DBR.PNG" width="100%" height="auto" /></p>
+<p><img src="./Image/ch05/DatabaseRelationExample.PNG" width="100%" height="auto" /></p>
 <h4 id="1_1">1. 수퍼키<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
@@ -9649,7 +9649,7 @@
 <li>(고객이름, 주소)</li>
 </ul>
 <h4 id="5-foreign-key">5. 외래키(Foreign Key)<a class="headerlink" href="#5-foreign-key" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch05/ch05-11-FK.PNG" width="80%" height="auto" /></p>
+<p><img src="./Image/ch05/ForeignKeyExample.PNG" width="80%" height="auto" /></p>
 <ul>
 <li>
 <p>외래키 속성을 참조하는 기본키 속성의 이름은 상관 X</p>
@@ -9679,7 +9679,7 @@
 <table>
 <thead>
 <tr>
-<th><img src="./Image/ch05/ch05-12-FK2.PNG" height="auto" /></th>
+<th><img src="./Image/ch05/ForeignKeyMultiple.PNG" height="auto" /></th>
 <th>- 하나의 릴레이션에 여러 외래키 존재 가능<br>- 외래키를 기본키로 사용 가능</th>
 </tr>
 </thead>
@@ -9693,7 +9693,7 @@
 <table>
 <thead>
 <tr>
-<th><img src="./Image/ch05/ch05-13-FK3.PNG" height="auto" /></th>
+<th><img src="./Image/ch05/ForeignKeySelfReference.PNG" height="auto" /></th>
 <th>- 같은 릴레이션의 기본키를 참조하는 외래키 정의 가능<br>- 외래키는 NULL 값 보유 가능</th>
 </tr>
 </thead>
@@ -9705,7 +9705,7 @@
 </tbody>
 </table>
 <h3 id="_10">릴레이션 간 참조 관계<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch05/ch05-14-RR.PNG" width="80%" height="auto" /></p>
+<p><img src="./Image/ch05/RelationReferenceStructure.PNG" width="80%" height="auto" /></p>
 <h2 id="2">2절. 관계 데이터 모델의 제약<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="integrity-constraint">무결성 제약조건(Integrity Constraint)<a class="headerlink" href="#integrity-constraint" title="Permanent link">&para;</a></h3>
 <ul>
@@ -9714,7 +9714,7 @@
 <li>데이터 결함이 없는 상태</li>
 <li>정확하고 유효하게 유지</li>
 </ul>
-<p><img src="./Image/ch05/ch05-15-IntegrityConstraint.PNG" width="80%" height="auto" /></p>
+<p><img src="./Image/ch05/IntegrityConstraintTypes.PNG" width="80%" height="auto" /></p>
 <table>
 <thead>
 <tr>
@@ -9738,16 +9738,16 @@
 </tbody>
 </table>
 <h3 id="_11">개체 무결성 제약조건 삽입 / 수정 / 삭제<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch05/ch05-16-EIC.PNG" width="80%" height="auto" /></p>
+<p><img src="./Image/ch05/EntityIntegrityConstraint.PNG" width="80%" height="auto" /></p>
 <ul>
 <li>삽입 : 기본키 값이 같으면 삽입 금지</li>
 <li>수정 : 기본키 값이 같거나 NULL로 수정 불가</li>
 <li>삭제 : 특별한 확인이 불필요하며 즉시 수행</li>
 </ul>
 <h3 id="_12">참조 무결성 제약조건 예시<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch05/ch05-18-RIC2.PNG" width="80%" height="auto" /></p>
+<p><img src="./Image/ch05/ReferentialIntegrityExample.PNG" width="80%" height="auto" /></p>
 <h3 id="_13">참조 무결성 제약조건 삽입 / 수정 / 삭제<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch05/ch05-19-RIC3.PNG" width="80%" height="auto" /></p>
+<p><img src="./Image/ch05/ReferentialIntegrityOperations.PNG" width="80%" height="auto" /></p>
 <ul>
 <li>
 <p>삽입</p>
@@ -9778,7 +9778,7 @@
 <ul>
 <li>부모 릴레이션에서의 튜플 삭제</li>
 </ul>
-<p><img src="./Image/ch05/ch05-20-RIC4.PNG" width="80%" height="auto" /></p>
+<p><img src="./Image/ch05/ReferentialIntegrityOptions.PNG" width="80%" height="auto" /></p>
 <table>
 <thead>
 <tr>

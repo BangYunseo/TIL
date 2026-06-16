@@ -11594,19 +11594,19 @@
 <li>데이터베이스의 무결성과 일관성을 보장하기 위해 작업 수행에 필요한 연산들을 하나의 트랜잭션으로 제대로 정의 및 관리</li>
 </ul>
 <h3 id="1_1">트랜잭션 예시 : (1)<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch10/ch10-01-TSex.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/TransactionExample1.PNG"  height="auto" /></p>
 <ul>
 <li>처리 순서는 중요 X</li>
 <li>두 UPDATE 문이 모두 정상적인 실행 필요</li>
 </ul>
 <h3 id="2">트랜잭션 예시 : (2)<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch10/ch10-02-TSex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/TransactionExample2.PNG"  height="auto" /></p>
 <ul>
 <li>상품 주문 트랜잭션 수행 조건</li>
 <li>INSERT 문과 UPDATEE 문의 정상적 실행</li>
 </ul>
 <h3 id="acid">트랜잭션 특성(ACID)<a class="headerlink" href="#acid" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch10/ch10-03-ACID.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/ACIDProperties.PNG"  height="auto" /></p>
 <h4 id="atomicity">원자성(Atomicity)<a class="headerlink" href="#atomicity" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ALL OR NOTHING</li>
@@ -11632,7 +11632,7 @@
 <li>장애 발생 시 회복 기능 필요</li>
 </ul>
 <h3 id="acid-dbms">ACID &amp; DBMS 기능<a class="headerlink" href="#acid-dbms" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch10/ch10-04-ACIDDBMS.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/ACIDAndDBMSFunctions.PNG"  height="auto" /></p>
 <h3 id="_1">트랜잭션 연산<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -11663,7 +11663,7 @@
 <li>트랜잭션이 지금까지 실행한 연산 결과 취소 및 데이터베이스가 트랜잭션 수행 전의 일관된 상태로 돌아감</li>
 </ul>
 <h3 id="_2">트랜잭션 상태<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch10/ch10-05-TSstate.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/TransactionStates.PNG"  height="auto" /></p>
 <h4 id="active">활동(Active) 상태<a class="headerlink" href="#active" title="Permanent link">&para;</a></h4>
 <ul>
 <li>트랜잭션이 수행되기 시작해서 현재 수행중인 상태</li>
@@ -11690,9 +11690,9 @@
 <li>종료된 트랜잭션은 상황에 따라 재수행되거나 폐기</li>
 </ul>
 <h3 id="sql">트랜잭션 SQL 예시<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch10/ch10-06-TSSQLex1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/TransactionSQLExample1.PNG"  height="auto" /></p>
 <h4 id="_3">수행 과정<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch10/ch10-07-TSSQLex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/TransactionSQLExample2ExecutionProcess.PNG"  height="auto" /></p>
 <ol>
 <li>A 계좌(박지성) 값을 데이터베이스에서 주기억장치 버퍼로 읽음</li>
 <li>B 계좌(김연아) 값을 데이터베이스에서 주기억장치 버퍼로 읽음</li>
@@ -11744,13 +11744,13 @@
 <ul>
 <li>시스템이 제대로 동작하지 않는 상태</li>
 </ul>
-<p><img src="./Image/ch10/ch10-08-Failure.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/FailureTypes.PNG"  height="auto" /></p>
 <h3 id="_4">데이터베이스 저장 장치 종류<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch10/ch10-09-Storage.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/DatabaseStorageTypes.PNG"  height="auto" /></p>
 <h3 id="_5">데이터 이동 연산<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch10/ch10-10-iorw.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/DataMovementOperations.PNG"  height="auto" /></p>
 <h4 id="_6">디스크 &amp; 메인 메모리 간 데이터 이동 연산<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch10/ch10-11-io.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/InputOutputOperations.PNG"  height="auto" /></p>
 <ul>
 <li>
 <p>input / output</p>
@@ -11783,7 +11783,7 @@
 <li>데이터를 디스크에서 메인 메모리로 가져와 처리 후 결과를 디스크로 보내는 작업 필요</li>
 </ul>
 <h4 id="_7">메인 메모리 &amp; 프로그램 변수 간 데이터 이동 연산<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch10/ch10-12-rw.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/ReadWriteOperations.PNG"  height="auto" /></p>
 <ul>
 <li>
 <p>read / write</p>
@@ -11859,14 +11859,14 @@
 <li>데이터 변경 이전 값과 변경 이후 값을 기록한 파일</li>
 <li>레코드 단위로 트랜잭션 수행과 함께 기록</li>
 </ul>
-<p><img src="./Image/ch10/ch10-13-logfile.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/LogFileStructure.PNG"  height="auto" /></p>
 <h3 id="_11">로그 기록 예시<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <ul>
 <li>계좌 잔액이 10,000원인 성호가 계좌 잔액이 0원인 은경에게 5,000원 이체</li>
 </ul>
-<p><img src="./Image/ch10/ch10-14-logfileex.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/LogFileExample.PNG"  height="auto" /></p>
 <h3 id="_12">회복 기법<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch10/ch10-15-RecoveryMethod.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/RecoveryMethods.PNG"  height="auto" /></p>
 <h3 id="immediate-update">로그 회복 기법 : 즉시 갱신(Immediate Update) 회복 기법<a class="headerlink" href="#immediate-update" title="Permanent link">&para;</a></h3>
 <ul>
 <li>트랜잭션 수행 중 데이터 변경 연산 결과를 데이터베이스에 즉시 반영</li>
@@ -11875,17 +11875,17 @@
 <li>장애 발생 시점에 따라 redo, undo 연산 실행 후 데이터베이스 복구</li>
 </ul>
 <h4 id="_13">즉시 갱신 회복 기법 예시<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch10/ch10-16-IURex.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/ImmediateUpdateRecoveryExample.PNG"  height="auto" /></p>
 <ul>
 <li>데이터베이스 회복 전략</li>
 </ul>
-<p><img src="./Image/ch10/ch10-17-RS.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/RecoveryStrategy.PNG"  height="auto" /></p>
 <ul>
 <li>장애 발생 시 반영 결과</li>
 <li>1에서 장애 발생 : undo(<span class="arithmatex">\(T_1\)</span>)</li>
 <li>2에서 장애 발생 : undo(<span class="arithmatex">\(T_2\)</span>), redo(<span class="arithmatex">\(T_1\)</span>)</li>
 </ul>
-<p><img src="./Image/ch10/ch10-18-IURex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/ImmediateUpdateRecoveryExample2.PNG"  height="auto" /></p>
 <h3 id="deferred-update">로그 회복 기법 – 지연 갱신(Deferred Update) 회복 기법<a class="headerlink" href="#deferred-update" title="Permanent link">&para;</a></h3>
 <ul>
 <li>트랜잭션 수행 중 데이터 변경 연산의 결과를 로그에만 기록</li>
@@ -11902,13 +11902,13 @@
 <ul>
 <li>데이터베이스 회복 전략</li>
 </ul>
-<p><img src="./Image/ch10/ch10-19-RS.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/RecoveryStrategy2.PNG"  height="auto" /></p>
 <ul>
 <li>장애 발생 시 반영 결과</li>
 <li>1에서 장애 발생 : 로그 기록 무시 후 별다른 회복 조치 X</li>
 <li>2에서 장애 발생 : redo(<span class="arithmatex">\(T_1\)</span>)</li>
 </ul>
-<p><img src="./Image/ch10/ch10-20-DURex.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/DeferredUpdateRecoveryExample.PNG"  height="auto" /></p>
 <h3 id="_15">검사 시점 회복 기법<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <ul>
 <li>로그 기록을 이용하되, 일정 시간 간격의 검사 시점(checkpoint) 생성</li>
@@ -11983,7 +11983,7 @@
 </li>
 </ul>
 <h4 id="_19">검사 시점 회복 기법 예시<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch10/ch10-21-Rex.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/CheckpointRecoveryExample.PNG"  height="auto" /></p>
 <ul>
 <li>즉시 갱신 방법</li>
 <li>T2, T3 : 어떤 작업도 필요 없음</li>
@@ -12033,12 +12033,12 @@
 <p><span class="arithmatex">\(T_1\)</span> 의 변경 연산 결과가 데이터베이스에 반영 X</p>
 </li>
 </ul>
-<p><img src="./Image/ch10/ch10-22-LUex.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/LostUpdateExample.PNG"  height="auto" /></p>
 <ul>
 <li>해결 과정</li>
 <li>트랜잭션을 순차적으로 수행해서 갱신 분실 문제 방지</li>
 </ul>
-<p><img src="./Image/ch10/ch10-23-LUex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/LostUpdateSolutionExample.PNG"  height="auto" /></p>
 <h3 id="inconsistency">모순성(Inconsistency)<a class="headerlink" href="#inconsistency" title="Permanent link">&para;</a></h3>
 <ul>
 <li>하나의 트랜잭션이 여러 개 데이터 변경 연산을 실행 시 발생</li>
@@ -12050,12 +12050,12 @@
 <li>트랜잭션 <span class="arithmatex">\(T_1\)</span> 에 대한 모순성 발생</li>
 <li><span class="arithmatex">\(T_1\)</span> 이 데이터 X와 Y를 서로 다른 상태의 데이터베이스에서 가져와 실행하는 모순 발생</li>
 </ul>
-<p><img src="./Image/ch10/ch10-24-Iex.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/InconsistencyExample.PNG"  height="auto" /></p>
 <ul>
 <li>해결 과정</li>
 <li>트랜잭션을 순차적으로 수행해서 모순성 문제 방지</li>
 </ul>
-<p><img src="./Image/ch10/ch10-25-Iex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/InconsistencySolutionExample.PNG"  height="auto" /></p>
 <h3 id="cascading-rollback">연쇄 복귀(Cascading Rollback)<a class="headerlink" href="#cascading-rollback" title="Permanent link">&para;</a></h3>
 <ul>
 <li>트랜잭션 완료 전에 장애 발생</li>
@@ -12068,18 +12068,18 @@
 <li><span class="arithmatex">\(T_1\)</span> 이 변경한 데이터 X를 가져가 연산을 수행한 <span class="arithmatex">\(T_2\)</span> 도 rollback 연산이 연쇄적으로 실행되어야 함</li>
 <li>이미 완료된 상태라서 rollback 연산을 실행할 수 없는 문제</li>
 </ul>
-<p><img src="./Image/ch10/ch10-26-CRex.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/CascadingRollbackExample.PNG"  height="auto" /></p>
 <ul>
 <li>해결 과정</li>
 <li>트랜잭션을 순차적으로 수행해서 연쇄 복귀 문제 방지</li>
 </ul>
-<p><img src="./Image/ch10/ch10-27-CRex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/CascadingRollbackSolutionExample.PNG"  height="auto" /></p>
 <h3 id="_25">트랜잭션 스케줄<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
 <ul>
 <li>트랜잭션에 포함된 연산들을 수행하는 순서</li>
 </ul>
 <h3 id="_26">트랜잭션 스케줄 유형<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch10/ch10-28-TStype.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/ScheduleTypes.PNG"  height="auto" /></p>
 <h3 id="serial-schedule">직렬 스케줄(Serial Schedule)<a class="headerlink" href="#serial-schedule" title="Permanent link">&para;</a></h3>
 <h4 id="_27">의미<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
 <ul>
@@ -12098,11 +12098,11 @@
 <ul>
 <li>트랜잭션 <span class="arithmatex">\(T_1\)</span>, <span class="arithmatex">\(T_2\)</span> 대상 첫 번째 직렬 스케줄</li>
 </ul>
-<p><img src="./Image/ch10/ch10-29-SSex1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/SerialScheduleExample1.PNG"  height="auto" /></p>
 <ul>
 <li>트랜잭션 <span class="arithmatex">\(T_1\)</span>, <span class="arithmatex">\(T_2\)</span> 대상 두 번째 직렬 스케줄</li>
 </ul>
-<p><img src="./Image/ch10/ch10-30-SSex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/SerialScheduleExample2.PNG"  height="auto" /></p>
 <h3 id="non-serial-schedule">비직렬 스케줄(Non-Serial Schedule)<a class="headerlink" href="#non-serial-schedule" title="Permanent link">&para;</a></h3>
 <h4 id="_30">의미<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
 <ul>
@@ -12120,11 +12120,11 @@
 <ul>
 <li>트랜잭션 <span class="arithmatex">\(T_1\)</span>, <span class="arithmatex">\(T_2\)</span> 대상 첫 번째 비직렬 스케줄 : 성공</li>
 </ul>
-<p><img src="./Image/ch10/ch10-31-NSSex1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/NonSerialScheduleExample1Success.PNG"  height="auto" /></p>
 <ul>
 <li>트랜잭션 <span class="arithmatex">\(T_1\)</span>, <span class="arithmatex">\(T_2\)</span> 대상 두 번째 비직렬 스케줄 : 실패</li>
 </ul>
-<p><img src="./Image/ch10/ch10-32-NSSex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/NonSerialScheduleExample2Failure.PNG"  height="auto" /></p>
 <h3 id="serializable-schedule">직렬 가능 스케줄(Serializable Schedule)<a class="headerlink" href="#serializable-schedule" title="Permanent link">&para;</a></h3>
 <h4 id="_33">의미<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h4>
 <ul>
@@ -12141,7 +12141,7 @@
 <ul>
 <li>트랜잭션 <span class="arithmatex">\(T_1\)</span>, <span class="arithmatex">\(T_2\)</span> 대상 비직렬 스케줄이면서 정확한 수행 결과를 생성하므로 직렬 가능 스케줄</li>
 </ul>
-<p><img src="./Image/ch10/ch10-33-SSex.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/SerializableScheduleExample.PNG"  height="auto" /></p>
 <h3 id="_36">병행 제어 기법<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
 <h4 id="_37">개념<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h4>
 <ul>
@@ -12185,7 +12185,7 @@
 <ul>
 <li>한 개의 데이터에 두 개의 트랜잭션이 접근해 갱신하는 작업</li>
 </ul>
-<p><img src="./Image/ch10/ch10-34-2TW.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/TwoTransactionUpdate.PNG"  height="auto" /></p>
 <h3 id="mysql">MySQL 실습<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h3>
 <ul>
 <li>다른 두 세션(세션은 데이터베이스 접속단위)에서 진행</li>
@@ -12193,10 +12193,10 @@
 <li>LAB1과 동일한 내용의 LAB2 생성</li>
 <li>워크시트를 LAB1과 LAB2로 두 번 접속 후 진행</li>
 </ul>
-<p><img src="./Image/ch10/ch10-35-2TWex1.PNG"  height="auto" /></p>
-<p><img src="./Image/ch10/ch10-36-2TWex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/TwoTransactionUpdateExample1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/TwoTransactionUpdateExample2.PNG"  height="auto" /></p>
 <h4 id="_46">로킹 기법 예시<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch10/ch10-37-Lex1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/LockingTechniqueExample.PNG"  height="auto" /></p>
 <h3 id="_47">기본 로킹 규약 효율성 증가 방법<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h3>
 <ul>
 <li>트랜잭션들이 같은 데이터에 동시에 read 연산을 실행하도록 허용</li>
@@ -12243,7 +12243,7 @@
 <li>트랜잭션이 락을 허용받지 못하면 대기 상태</li>
 </ul>
 <h3 id="lock">lock 연산 양립성<a class="headerlink" href="#lock" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch10/ch10-38-Lock1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/LockCompatibility.PNG"  height="auto" /></p>
 <ul>
 <li>서로 다른 트랜잭션이 같은 데이터에 공용 lock 연산 동시 실행 가능</li>
 <li>다른 트랜잭션이 전용 lock 연산을 실행한 데이터에 공용 lock, 전용 lock 모두 실행 불가</li>
@@ -12253,7 +12253,7 @@
 <li>트랜잭션 <span class="arithmatex">\(T_1\)</span> 이 데이터 X에 너무 빨리 unlock 연산을 실행해 트랜잭션 <span class="arithmatex">\(T_2\)</span>가 일관성 없는 데이터에 접근</li>
 <li>2단계 로킹 규약 필요</li>
 </ul>
-<p><img src="./Image/ch10/ch10-39-Lockex1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/BasicLockingIssueExample.PNG"  height="auto" /></p>
 <h3 id="2-2plp-2phase-locking-protocol">2단계 로킹 규약(2PLP : 2Phase Locking Protocol)<a class="headerlink" href="#2-2plp-2phase-locking-protocol" title="Permanent link">&para;</a></h3>
 <h4 id="_50">의미<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h4>
 <ul>
@@ -12293,7 +12293,7 @@
 <ul>
 <li>2단계 로킹 규약을 준수하며 직렬 가능성이 보장된 스케줄</li>
 </ul>
-<p><img src="./Image/ch10/ch10-40-2PLPex1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/TwoPhaseLockingProtocolExample.PNG"  height="auto" /></p>
 <h3 id="deadlock">교착 상태(Deadlock)<a class="headerlink" href="#deadlock" title="Permanent link">&para;</a></h3>
 <ul>
 <li>트랜잭션들이 상대가 독점하는 데이터에 unlock 연산이 실행되기를 서로 기다리며 트랜잭션의 수행을 중단하는 상태</li>
@@ -12302,7 +12302,7 @@
 </ul>
 <h2 id="4">4절. 트랜잭션 고립 수준<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="_53">트랜잭션 시나리오<a class="headerlink" href="#_53" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch10/ch10-41-TSS.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/TransactionIsolationScenario.PNG"  height="auto" /></p>
 <h3 id="uncommitted-dependency">오손 읽기(Uncommitted Dependency)<a class="headerlink" href="#uncommitted-dependency" title="Permanent link">&para;</a></h3>
 <ul>
 <li>읽기 작업을 하는 트랜잭션 1이 쓰기 작업을 하는 트랜잭션 2가 작업한 중간 데이터를 읽기 때문에 생기는 문제</li>
@@ -12322,7 +12322,7 @@
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">COMMIT</span><span class="p">;</span>
 </code></pre></div>
-<p><img src="./Image/ch10/ch10-42-Tableex1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/UserTableExample.PNG"  height="auto" /></p>
 <h3 id="_54">오손 읽기 문제 발생 예제<a class="headerlink" href="#_54" title="Permanent link">&para;</a></h3>
 <h4 id="_55">작업 설명 : 두 트랜잭션 동시 실행<a class="headerlink" href="#_55" title="Permanent link">&para;</a></h4>
 <ul>
@@ -12341,7 +12341,7 @@
 <ul>
 <li><span class="arithmatex">\(T_2\)</span> 가 홍길동의 나이를 30에서 21로 변경한 후 철회(ROLLBACK)해 <span class="arithmatex">\(T_1\)</span> 에게 오류를 발생시킨 예시</li>
 </ul>
-<p><img src="./Image/ch10/ch10-43-Problemex1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/DirtyReadProblemExample.PNG"  height="auto" /></p>
 <h3 id="inconsistent-analysis">반복 불가능 읽기(Inconsistent Analysis)<a class="headerlink" href="#inconsistent-analysis" title="Permanent link">&para;</a></h3>
 <ul>
 <li>① <span class="arithmatex">\(T_1\)</span> : 데이터 읽기 =&gt; ② <span class="arithmatex">\(T_2\)</span> : 데이터 쓰기(갱신, UPDATE) =&gt; ③ <span class="arithmatex">\(T_1\)</span> : 다시 한 번 데이터를 읽을 때 생기는 문제</li>
@@ -12363,7 +12363,7 @@
 <li><span class="arithmatex">\(T_1\)</span> 입장에서 같은 SQL로 다른 결과 도출</li>
 </ul>
 <h4 id="_61">문제 발생 예시 상황<a class="headerlink" href="#_61" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch10/ch10-44-Problemex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/NonRepeatableReadProblemExample.PNG"  height="auto" /></p>
 <h3 id="phantom-read">유령 데이터 읽기(Phantom Read)<a class="headerlink" href="#phantom-read" title="Permanent link">&para;</a></h3>
 <ul>
 <li>① <span class="arithmatex">\(T_1\)</span> : 데이터 읽기 =&gt; ② <span class="arithmatex">\(T_2\)</span> : 데이터 쓰기(갱신, UPDATE) =&gt; ③ <span class="arithmatex">\(T_1\)</span> : 다시 한 번 데이터를 읽을 때 생기는 문제</li>
@@ -12389,7 +12389,7 @@
 <li>REPEATABLE READ는 트랜잭션이 처음 데이터를 읽을 때 SNAPHOT을 구축하여 자료를 가지고 옴</li>
 <li>세션 자료가 변경되어도 동일 결과</li>
 </ul>
-<p><img src="./Image/ch10/ch10-45-Problemex3.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/PhantomReadProblemExample.PNG"  height="auto" /></p>
 <h3 id="transaction-isolation-level-instruction">트랜잭션 고립 수준 명령어(Transaction Isolation Level Instruction)<a class="headerlink" href="#transaction-isolation-level-instruction" title="Permanent link">&para;</a></h3>
 <ul>
 <li>트랜잭션 동시 실행으로 락보다 완화된 방법의 문제 해결을 위한 명령어</li>
@@ -12555,14 +12555,14 @@
 </table>
 <h3 id="_65">반복 불가능 읽기 문제 발생 실험<a class="headerlink" href="#_65" title="Permanent link">&para;</a></h3>
 <h4 id="_66">문제 발생 : 반복 불가능 읽기 문제<a class="headerlink" href="#_66" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch10/ch10-46-RRex1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/NonRepeatableReadExperiment1.PNG"  height="auto" /></p>
 <h4 id="repeatable-read">문제 방지 : REPEATABLE READ 모드<a class="headerlink" href="#repeatable-read" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch10/ch10-47-RRex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/NonRepeatableReadExperiment2.PNG"  height="auto" /></p>
 <h3 id="_67">유령 데이터 읽기 문제 발생 실험<a class="headerlink" href="#_67" title="Permanent link">&para;</a></h3>
 <h4 id="_68">문제 발생 : 유령 데이터 읽기 문제<a class="headerlink" href="#_68" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch10/ch10-48-SRex1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/PhantomReadExperiment1.PNG"  height="auto" /></p>
 <h4 id="serializable">문제 방지 : SERIALIZABLE 모드<a class="headerlink" href="#serializable" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch10/ch10-49-SRex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch10/PhantomReadExperiment2.PNG"  height="auto" /></p>
 
 
 

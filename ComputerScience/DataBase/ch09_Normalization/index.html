@@ -9703,19 +9703,19 @@
 </tbody>
 </table>
 <h4 id="insertion-anomaly">삽입 이상(Insertion Anomaly) 예시<a class="headerlink" href="#insertion-anomaly" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch09/ch09-01-IA.PNG"  height="auto" /></p>
+<p><img src="./Image/ch09/InsertionAnomalyExample.PNG"  height="auto" /></p>
 <ul>
 <li>아직 이벤트에 참여하지 않은 고객아이디가 "melon", 이름이 "성원용", 등급이 "gold"인 신규 고객의 데이터는 이벤트참여 릴레이션에 삽입 불가</li>
 <li>삽입할 경우 임시 이벤트번호로 삽입 필수</li>
 </ul>
 <h4 id="update-anomaly">갱신 이상(Update Anomaly) 예시<a class="headerlink" href="#update-anomaly" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch09/ch09-02-UA.PNG"  height="auto" /></p>
+<p><img src="./Image/ch09/UpdateAnomalyExample.PNG"  height="auto" /></p>
 <ul>
 <li>아이디가 "apple"인 고객의 등급이 "gold"에서 "vip"로 변경 : 일부 튜플 등급만 수정</li>
 <li>"apple" 고객이 서로 다른 등급을 가지는 모순 발생</li>
 </ul>
 <h4 id="deletion-anomaly">삭제 이상(Deletion Anomaly) 예시<a class="headerlink" href="#deletion-anomaly" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch09/ch09-03-DA.PNG"  height="auto" /></p>
+<p><img src="./Image/ch09/DeletionAnomalyExample.PNG"  height="auto" /></p>
 <ul>
 <li>아이디가 "orange"인 고객이 이벤트참여를 취소해 관련 튜플 삭제 필요</li>
 <li>이벤트참여와 관련 없는 고객아이디, 고객이름, 등급 데이터까지 손실</li>
@@ -9733,7 +9733,7 @@
 </ul>
 <h2 id="2">2절. 함수 종속<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="_1">함수 종속<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch09/ch09-04-FD.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/FunctionalDependencyDefinition.PNG" height="auto" /></p>
 <blockquote>
 <p>"X가 Y를 함수적으로 결정"<br />
 "Y가 X에 함수적으로 종속"</p>
@@ -9746,7 +9746,7 @@
 <li>Y : 종속자</li>
 </ul>
 <h4 id="1_1">함수 종속 관계 판단 예시(1)<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch09/ch09-05-UR.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/UserRelationshipExample.PNG" height="auto" /></p>
 <ul>
 <li>고객아이디에 대응되는 고객이름 속성과 등급 속성이 단 하나</li>
 </ul>
@@ -9779,7 +9779,7 @@
 <ul>
 <li>종속 다이어그램</li>
 </ul>
-<p><img src="./Image/ch09/ch09-06-diagramU.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/UserDependencyDiagram.PNG" height="auto" /></p>
 <h3 id="_2">함수 종속 관계 판단 유의 사항<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>속성 자체의 특성과 의미 기반 함수 종속성 판단</li>
@@ -9789,7 +9789,7 @@
 <li>기본키나 후보키가 아니라도 다른 속성을 유일하게 결정하는 속성은 함수 종속 관계에서 결정자</li>
 </ul>
 <h4 id="1_2">함수 종속 관계 판단 예시(1)<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch09/ch09-07-ER.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/EventRelationshipExample.PNG" height="auto" /></p>
 <table>
 <thead>
 <tr>
@@ -9816,7 +9816,7 @@
 </tr>
 </tbody>
 </table>
-<p><img src="./Image/ch09/ch09-08-diagramUN.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/UserEventDependencyDiagram.PNG" height="auto" /></p>
 <ul>
 <li>종속 다이어그램</li>
 </ul>
@@ -9824,7 +9824,7 @@
 <ul>
 <li>함수 종속성을 나타내는 표기법</li>
 </ul>
-<p><img src="./Image/ch09/ch09-09-FDD.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/FunctionalDependencyDiagramNotation.PNG" height="auto" /></p>
 <table>
 <thead>
 <tr>
@@ -9899,8 +9899,8 @@
 <table>
 <thead>
 <tr>
-<th><img src="./Image/ch09/ch09-10-NF1.PNG" height="auto" /></th>
-<th><img src="./Image/ch09/ch09-11-NF2.PNG" height="auto" /></th>
+<th><img src="./Image/ch09/NormalFormHierarchy1.PNG" height="auto" /></th>
+<th><img src="./Image/ch09/NormalFormHierarchy2.PNG" height="auto" /></th>
 </tr>
 </thead>
 <tbody>
@@ -9926,8 +9926,8 @@
 <table>
 <thead>
 <tr>
-<th><img src="./Image/ch09/ch09-12-1NF1.PNG" height="auto" /></th>
-<th><img src="./Image/ch09/ch09-13-1NF2.PNG" height="auto" /></th>
+<th><img src="./Image/ch09/FirstNormalFormExample1.PNG" height="auto" /></th>
+<th><img src="./Image/ch09/FirstNormalFormExample2.PNG" height="auto" /></th>
 </tr>
 </thead>
 <tbody>
@@ -9947,14 +9947,14 @@
 <tbody>
 <tr>
 <td style="text-align: center;">고객아이디 -&gt; 등급<br>고객아이디 -&gt; 할인율<br>등급 -&gt; 할인율<br>{고객아이디, 이벤트번호} -&gt; 당첨여부</td>
-<td style="text-align: center;"><img src="./Image/ch09/ch09-14-1NFD.PNG" height="auto" /></td>
+<td style="text-align: center;"><img src="./Image/ch09/FirstNormalFormDependencyDiagram.PNG" height="auto" /></td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li>이상 현상 발생 형태</li>
 </ul>
-<p><img src="./Image/ch09/ch09-15-1NFA.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/FirstNormalFormAnomalyIssue.PNG" height="auto" /></p>
 <h4 id="_6">이상 현상 발생 이유<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>기본키인 {고객아이디, 이벤트번호}에 완전 함수 종속되지 못함</li>
@@ -9975,7 +9975,7 @@
 <li>모든 속성이 기본키에 완전 함수 종속되도록 분해</li>
 </ul>
 <h4 id="2_1">제 2 정규형 예시<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch09/ch09-16-2NF1.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/SecondNormalFormExample.PNG" height="auto" /></p>
 <table>
 <thead>
 <tr>
@@ -9985,13 +9985,13 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><img src="./Image/ch09/ch09-17-2NFD.PNG" height="auto" /></td>
-<td style="text-align: center;"><img src="./Image/ch09/ch09-18-2NFR.PNG" height="auto" /></td>
+<td style="text-align: center;"><img src="./Image/ch09/SecondNormalFormDependencyDiagram.PNG" height="auto" /></td>
+<td style="text-align: center;"><img src="./Image/ch09/SecondNormalFormDecompositionResult.PNG" height="auto" /></td>
 </tr>
 </tbody>
 </table>
 <h4 id="_8">고객 릴레이션 이상 현상<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch09/ch09-19-2NFA.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/SecondNormalFormAnomalyIssue.PNG" height="auto" /></p>
 <h4 id="_9">이상 현상 발생 이유<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>이행적 함수 종속의 존재</li>
@@ -10002,7 +10002,7 @@
 <li>분해된 릴레이션들은 제 3 정규형에 속함</li>
 </ul>
 <h3 id="transitive-fd">이행적 함수 종속(Transitive FD)<a class="headerlink" href="#transitive-fd" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch09/ch09-20-TFD.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/TransitiveFunctionalDependency.PNG" height="auto" /></p>
 <ul>
 <li>릴레이션을 구성하는 속성 집합 X, Y, Z에 대해 함수 종속 관계 X -&gt; Y와 Y -&gt; Z가 존재하면 논리적으로 X -&gt; Z 성립</li>
 <li>Z가 X에 이행적으로 함수 종속</li>
@@ -10016,7 +10016,7 @@
 <li>모든 속성이 기본키에 이행적 함수 종속이 되지 않도록 분해</li>
 </ul>
 <h4 id="3_1">제 3 정규형 예시<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch09/ch09-21-3NF1.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/ThirdNormalFormExample.PNG" height="auto" /></p>
 <table>
 <thead>
 <tr>
@@ -10025,7 +10025,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><img src="./Image/ch09/ch09-22-3NFD.PNG" height="auto" /></td>
+<td style="text-align: center;"><img src="./Image/ch09/ThirdNormalFormDependencyDiagram.PNG" height="auto" /></td>
 </tr>
 </tbody>
 </table>
@@ -10038,7 +10038,7 @@
 <li>릴레이션의 함수 종속 관계에서 모든 결정자가 후보키일 경우</li>
 </ul>
 <h4 id="_11">보이스/코드 정규형 예시<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch09/ch09-23-BCNF.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/BoyceCoddNormalFormExample.PNG" height="auto" /></p>
 <ul>
 <li>강좌신청 릴레이션 후보키</li>
 <li>{고객아이디, 인터넷강좌} : 기본키</li>
@@ -10053,13 +10053,13 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><img src="./Image/ch09/ch09-24-BCNFD.PNG" height="auto" /></td>
-<td style="text-align: center;"><img src="./Image/ch09/ch09-25-BCNFA.PNG" height="auto" /></td>
+<td style="text-align: center;"><img src="./Image/ch09/BoyceCoddNormalFormDependencyDiagram.PNG" height="auto" /></td>
+<td style="text-align: center;"><img src="./Image/ch09/BoyceCoddNormalFormAnomalyIssue.PNG" height="auto" /></td>
 </tr>
 </tbody>
 </table>
 <h3 id="_12">기본 정규화 과정<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch09/ch09-26-ALLNF.PNG" height="auto" /></p>
+<p><img src="./Image/ch09/AllNormalizationProcessFlow.PNG" height="auto" /></p>
 <h3 id="4_1">제 4 정규형<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>릴레이션이 보이스/코드 정규형을 만족하며 함수 종속이 아닌 다치 종속(MVD : Multi Valued Dependency) 제거</li>

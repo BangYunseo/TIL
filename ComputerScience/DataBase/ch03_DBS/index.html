@@ -9368,13 +9368,13 @@
 <ul>
 <li>데이터베이스에 데이터를 저장·관리하여 조직에 필요한 정보를 생성하는 시스템</li>
 </ul>
-<p><img src = "./Image/ch03/ch03-01-DBS.PNG" style="height: 30%; width: 30%;"/></p>
+<p><img src = "./Image/ch03/DatabaseSystemOverview.PNG" style="height: 30%; width: 30%;"/></p>
 <h2 id="2">2절. 데이터베이스 구조<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="schema">스키마(Schema)<a class="headerlink" href="#schema" title="Permanent link">&para;</a></h3>
 <ul>
 <li>데이터베이스에 저장된 데이터 구조·제약조건 정의</li>
 </ul>
-<p><img src = "./Image/ch03/ch03-02-Schema.PNG" height="auto" /></p>
+<p><img src = "./Image/ch03/SchemaDefinition.PNG" height="auto" /></p>
 <h3 id="instance">인스턴스(Instance)<a class="headerlink" href="#instance" title="Permanent link">&para;</a></h3>
 <ul>
 <li>스키마에 따라 데이터베이스에 실제 저장된 값</li>
@@ -9383,8 +9383,8 @@
 <table>
 <thead>
 <tr>
-<th><img src = "./Image/ch03/ch03-03-DataBaseStructual.PNG" height="auto" /></th>
-<th><img src = "./Image/ch03/ch03-04-Structual3.PNG" height="auto" /></th>
+<th><img src = "./Image/ch03/ThreeLevelDatabaseStructure.PNG" height="auto" /></th>
+<th><img src = "./Image/ch03/ThreeLevelStructureAlternative.PNG" height="auto" /></th>
 </tr>
 </thead>
 <tbody>
@@ -9427,7 +9427,7 @@
 </tbody>
 </table>
 <h3 id="3_1">3단계 데이터베이스 구조의 사상 또는 매핑<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
-<p><img src = "./Image/ch03/ch03-05-Structual3.PNG" width="60%" height="auto" /></p>
+<p><img src = "./Image/ch03/ThreeLevelSchemaMappingInterfaces.PNG" width="60%" height="auto" /></p>
 <ul>
 <li>데이터베이스 3단계 구조로 분할</li>
 <li>단계별 스키마 유지</li>
@@ -9458,13 +9458,13 @@
 </table>
 <h3 id="_1">데이터베이스 구조 예시 : 수강신청 데이터베이스 구조<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <h4 id="_2">외부 스키마<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p><img src = "./Image/ch03/ch03-06-EL.PNG" width="60%" height="auto" /></p>
+<p><img src = "./Image/ch03/CourseRegistrationExternalSchema.PNG" width="60%" height="auto" /></p>
 <h4 id="_3">개념 스키마<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p><img src = "./Image/ch03/ch03-07-CL.PNG" width="60%" height="auto" /></p>
+<p><img src = "./Image/ch03/CourseRegistrationConceptualSchema.PNG" width="60%" height="auto" /></p>
 <h4 id="_4">내부 스키마<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p><img src = "./Image/ch03/ch03-08-IL.PNG" width="60%" height="auto" /></p>
+<p><img src = "./Image/ch03/CourseRegistrationInternalSchema.PNG" width="60%" height="auto" /></p>
 <h4 id="_5">전체적인 관점<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p><img src = "./Image/ch03/ch03-09-WL.PNG" width="60%" height="auto" /></p>
+<p><img src = "./Image/ch03/CourseRegistrationCompletePerspective.PNG" width="60%" height="auto" /></p>
 <h3 id="data-independency">데이터 독립성(Data Independency)<a class="headerlink" href="#data-independency" title="Permanent link">&para;</a></h3>
 <ul>
 <li>하위 스키마 변경이 상위 스키마에 영향 주지 않는 특성</li>
@@ -9521,7 +9521,7 @@
 <li>데이터베이스 이용을 위해 접근하는 사람</li>
 <li>데이터베이스 관리자·최종 사용자·응용 프로그래머로 구분</li>
 </ul>
-<p><img src = "./Image/ch03/ch03-10-DBuser.PNG" height="auto" /></p>
+<p><img src = "./Image/ch03/DatabaseUserTypes.PNG" height="auto" /></p>
 <h3 id="db-administrator">데이터베이스 관리자(DB Administrator)<a class="headerlink" href="#db-administrator" title="Permanent link">&para;</a></h3>
 <ul>
 <li>데이터베이스 시스템 운영·관리자</li>
@@ -9580,7 +9580,7 @@
 <li>사용자·데이터베이스 관리 시스템 간 통신 수단</li>
 <li>데이터 정의어(DDL)·데이터 조작어(DML)·데이터 제어어(DCL) 구분</li>
 </ul>
-<p><img src = "./Image/ch03/ch03-11-DataLanguage.PNG" width="70%" height="auto" /></p>
+<p><img src = "./Image/ch03/DataLanguageClassification.PNG" width="70%" height="auto" /></p>
 <h4 id="ddl-data-definition-language">데이터 정의어(DDL : Data Definition Language)<a class="headerlink" href="#ddl-data-definition-language" title="Permanent link">&para;</a></h4>
 <ul>
 <li>스키마 정의·수정·삭제를 위해 사용</li>
@@ -9646,7 +9646,7 @@
 <ul>
 <li>데이터베이스 관리·사용자 데이터 처리 요구 수행</li>
 </ul>
-<p><img src = "./Image/ch03/ch03-12-DBMS.PNG" width="80%" height="auto" /></p>
+<p><img src = "./Image/ch03/DatabaseManagementSystemComponents.PNG" width="80%" height="auto" /></p>
 <table>
 <thead>
 <tr>

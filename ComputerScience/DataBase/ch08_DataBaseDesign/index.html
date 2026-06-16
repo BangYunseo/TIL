@@ -10348,7 +10348,7 @@
 <li>정규화 이용</li>
 </ul>
 <h3 id="e-r">E-R 모델 &amp; 릴레이션 변환 규칙을 통한 설계 과정<a class="headerlink" href="#e-r" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch08/ch08-01-DD.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/DesignProcess.PNG"  height="auto" /></p>
 <ul>
 <li>설계 과정 중 오류 발견</li>
 <li>변경 필요</li>
@@ -10412,7 +10412,7 @@
 <li>개체 간 관계를 결정하여 E-R 다이어그램으로 표현</li>
 </ul>
 <h3 id="_10">작업 과정<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch08/ch08-02-CDMstep.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/ConceptualDesignSteps.PNG"  height="auto" /></p>
 <ol>
 <li>개체 추출, 각 개체의 주요 속성과 키 속성 선별</li>
 <li>개체 간 관계 결정</li>
@@ -10438,19 +10438,19 @@
 <li>찾은 명사를 개체와 속성으로 분류</li>
 </ul>
 <h4 id="_13">한빛 마트 데이터베이스에서의 개체 · 속성 추출<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-03-Entity.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/EntityAttributeExtraction.PNG"  height="auto" /></p>
 <ul>
 <li>개체와 속성 추출을 위한 정보</li>
 </ul>
 <h4 id="_14">개체 : 회원<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-04-entityM.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/MemberEntity.PNG"  height="auto" /></p>
 <ul>
 <li>개체 : 회원</li>
 <li>속성 : 회원아이디, 비밀번호, 이름, 나이, 직업, 등급, 적립금</li>
 <li>회원 개체 키 속성 : 회원아이디</li>
 </ul>
 <h4 id="_15">개체 : 회원, 상품<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-05-entityO.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/OrderEntity.PNG"  height="auto" /></p>
 <ul>
 <li>개체 : 회원, 상품</li>
 <li>속성 : 주문번호, 주문수량, 배송지, 주문일자</li>
@@ -10459,15 +10459,15 @@
 <li>특정 관계의 속성 형태(주문)</li>
 </ul>
 <h4 id="_16">개체와 속성 추출 결과<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-06-EA.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/EntityAttributeExtractionResult.PNG"  height="auto" /></p>
 <h4 id="_17">회원 개체 다이어그램<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-07-entityM.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/MemberEntityDiagram.PNG"  height="auto" /></p>
 <h4 id="_18">상품 개체 다이어그램<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-08-entityP.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/ProductEntity.PNG"  height="auto" /></p>
 <h4 id="_19">제조업체 개체 다이어그램<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-09-entityMani.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/ManufacturerEntity.PNG"  height="auto" /></p>
 <h4 id="_20">게시글 개체 다이어그램<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-10-entityN.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/PostEntity.PNG"  height="auto" /></p>
 <h3 id="2_1">2. 관계 추출<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
 <h4 id="_21">관계<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
 <ul>
@@ -10491,7 +10491,7 @@
 </li>
 </ul>
 <h4 id="_23">관계 : 주문<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-11-relationshipO.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/OrderRelationship.PNG"  height="auto" /></p>
 <ul>
 <li>관계 : 주문</li>
 <li>"회원" 개체와 "상품" 개체가 맺는 관계<ul>
@@ -10503,7 +10503,7 @@
 <li>속성 : 주문번호, 주문수량, 배송지, 주문일자</li>
 </ul>
 <h4 id="_24">관계 : 공급<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-12-relationshipP.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/SupplyRelationship.PNG"  height="auto" /></p>
 <ul>
 <li>관계 : 공급</li>
 <li>"상품" 개체와 "제조업체" 개체가 맺는 관계<ul>
@@ -10515,7 +10515,7 @@
 <li>속성 : 공급일자, 공급량</li>
 </ul>
 <h4 id="_25">관계 : 공급<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-13-relationshipW.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/WriteRelationship.PNG"  height="auto" /></p>
 <ul>
 <li>관계 : 작성</li>
 <li>"회원" 개체와 "게시글" 개체가 맺는 관계<ul>
@@ -10526,15 +10526,15 @@
 <li>일대다(1:m) 관계</li>
 </ul>
 <h4 id="_26">관계 추출 결과<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-14-R.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/RelationshipExtractionResult.PNG"  height="auto" /></p>
 <h4 id="_27">주문 관계 다이어그램<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-15-rdO.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/OrderRelationshipDiagram.PNG"  height="auto" /></p>
 <h4 id="_28">공급 관계 다이어그램<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-16-rdP.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/SupplyRelationshipDiagram.PNG"  height="auto" /></p>
 <h4 id="_29">작성 관계 다이어그램<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-17-rdW.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/WriteRelationshipDiagram.PNG"  height="auto" /></p>
 <h4 id="_30">전체적인 다이어그램<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-18-relationDiagram.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/OverallRelationshipDiagram.PNG"  height="auto" /></p>
 <h2 id="4">4절. 논리적 설계<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <h3 id="_31">목적<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
 <ul>
@@ -10581,9 +10581,9 @@
 <li>개체 키 속성 =&gt; 릴레이션 기본키</li>
 </ul>
 <h4 id="_35">개체 : 상품 릴레이션 예시<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-19-ERex1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/EntityRelationExample1.PNG"  height="auto" /></p>
 <h4 id="_36">개체 : 고객 릴레이션 예시<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-20-ERex2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/EntityRelationExample2.PNG"  height="auto" /></p>
 <h3 id="2-nm">2. 다대다(n:m) 관계는 릴레이션으로 변환<a class="headerlink" href="#2-nm" title="Permanent link">&para;</a></h3>
 <ul>
 <li>E-R 다이어그램의 다대다 관계를 하나의 릴레이션으로 변환</li>
@@ -10594,7 +10594,7 @@
 <li>관계 속성 =&gt; 릴레이션 속성</li>
 </ul>
 <h4 id="_37">관계 : 주문 릴레이션 예시<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-21-RRex3.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/RelationExample3.PNG"  height="auto" /></p>
 <h3 id="3-1n">3. 일대다(1:n) 관계는 외래키로 표현<a class="headerlink" href="#3-1n" title="Permanent link">&para;</a></h3>
 <ul>
 <li>E-R 다이어그램의 일대다 관계는 외래키로만 표현</li>
@@ -10607,7 +10607,7 @@
 <li>관계의 속성들도 n측 개체 릴레이션에 포함</li>
 </ul>
 <h4 id="_38">관계 : 공급 릴레이션 예시<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-22-RRex4.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/RelationExample4.PNG"  height="auto" /></p>
 <h4 id="3-2">3-2. 약한 개체가 참여하는 일대다 관계는 외래키를 포함해서 기본키로 지정<a class="headerlink" href="#3-2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>일대다(1:n) 관계에서 1측 개체 릴레이션의 기본키를 n측 개체 릴레이션에 포함시켜 외래키로 지정</li>
@@ -10617,7 +10617,7 @@
 <li>강한 개체의 기본키로 식별</li>
 </ul>
 <h4 id="_39">관계 : 존재 릴레이션 예시<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-23-RRex5.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/RelationExample5.PNG"  height="auto" /></p>
 <h3 id="4-11">4. 일대일(1:1) 관계는 외래키로 표현<a class="headerlink" href="#4-11" title="Permanent link">&para;</a></h3>
 <ul>
 <li>E-R 다이어그램의 일대일 관계는 외래키로만 표현</li>
@@ -10632,14 +10632,14 @@
 <li>불필요한 데이터 중복 발생 가능성 존재</li>
 </ul>
 <h4 id="11">혼인 관계 예시 : 일대일(1:1)<a class="headerlink" href="#11" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-24-RRex6.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/RelationExample6.PNG"  height="auto" /></p>
 <h4 id="4-2">4-2. 필수적으로 참여하는 개체 릴레이션만 외래키를 받음<a class="headerlink" href="#4-2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>관계에 필수적으로 참여하는 개체 릴레이션에만 외래키 포함</li>
 <li>관계의 속성들은 관계에 필수적으로 참여하는 개체 릴레이션에 포함</li>
 </ul>
 <h4 id="11-">혼인 관계 예시 : 일대일(1:1) - 필수 / 선택<a class="headerlink" href="#11-" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-25-RRex7.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/RelationExample7.PNG"  height="auto" /></p>
 <h4 id="4-3">4-3. 모든 개체가 필수적 참여 시 릴레이션 하나로 합침<a class="headerlink" href="#4-3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>관계 참여 개체 릴레이션들을 하나의 릴레이션으로 합쳐 표현</li>
@@ -10648,7 +10648,7 @@
 <li>두 개체 릴레이션의 키 속성을 조합하여 관계 릴레이션의 기본키로 지정</li>
 </ul>
 <h4 id="11-_1">혼인 관계 예시 : 일대일(1:1) - 필수 / 필수<a class="headerlink" href="#11-_1" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-26-RRex8.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/RelationExample8.PNG"  height="auto" /></p>
 <h3 id="5">5. 다중 값 속성은 릴레이션으로 변환<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>E-R 다이어그램의 다중 값 속성은 독립적인 릴레이션으로 변환</li>
@@ -10656,43 +10656,43 @@
 <li>새로운 릴레이션의 기본키는 다중 값 속성과 외래키를 조합하여 지정</li>
 </ul>
 <h4 id="_40">사원 개체 릴레이션<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h4>
-<p><img src="./Image/ch08/ch08-27-ERex9.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/EmployeeEntity.PNG"  height="auto" /></p>
 <h4 id="_41">부하직원 속성<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h4>
 <p>(여기부터 재작성 필요)</p>
-<p><img src="./Image/ch08/ch08-28-ERex9-1.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/EmployeeRelationViolation1.PNG"  height="auto" /></p>
 <ul>
 <li>사원 릴레이션은 "속성에 다중값을 저장할 수 없다"는 릴레이션 특성을 위반</li>
 </ul>
-<p><img src="./Image/ch08/ch08-29-ERex9-2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/EmployeeRelationViolation2.PNG"  height="auto" /></p>
 <ul>
 <li>사원 릴레이션은 릴레이션의 특성을 위반하지 않음</li>
 <li>하지만 사원번호, 사원명, 직위 속성의 값이 불필요하게 중복 저장되는 문제 발생</li>
 </ul>
-<p><img src="./Image/ch08/ch08-30-rt.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/MultiValuedAttributeRelation.PNG"  height="auto" /></p>
 <ul>
 <li>규칙 5에 따라 다중값 속성을 독립적인 릴레이션으로 변환 시 불필요한 중복을 제거하며 릴레이션 특성 만족 가능</li>
 </ul>
 <h3 id="_42">기타 고려 사항<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch08/ch08-31-dr.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/DesignRecommendation1.PNG"  height="auto" /></p>
 <ul>
 <li>모든 관계를 독립적인 릴레이션으로 변환 가능</li>
 <li>속성이 많은 관계 : 유형에 상관 없이 릴레이션으로의 변환 가능</li>
 </ul>
-<p><img src="./Image/ch08/ch08-32-dr2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/DesignRecommendation2.PNG"  height="auto" /></p>
 <ul>
 <li>개체가 자기 자신과 관계를 맺는 순환 관계도 기본 규칙을 그대로 적용</li>
 </ul>
 <h3 id="1_3">규칙 1 : 다이어그램 &amp; 스키마<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch08/ch08-33-rule1-1.PNG"  height="auto" /></p>
-<p><img src="./Image/ch08/ch08-34-rule1-2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/Rule1Diagram.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/Rule1Schema.PNG"  height="auto" /></p>
 <h3 id="2_2">규칙 2 : 다이어그램 &amp; 스키마<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch08/ch08-35-rule2-1.PNG"  height="auto" /></p>
-<p><img src="./Image/ch08/ch08-36-rule2-2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/Rule2Diagram.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/Rule2Schema.PNG"  height="auto" /></p>
 <h3 id="3_1">규칙 3 : 다이어그램 &amp; 스키마<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch08/ch08-37-rule3-1.PNG"  height="auto" /></p>
-<p><img src="./Image/ch08/ch08-38-rule3-2.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/Rule3Diagram.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/Rule3Schema.PNG"  height="auto" /></p>
 <h3 id="_43">테이블 명세서<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h3>
-<p><img src="./Image/ch08/ch08-39-table.PNG"  height="auto" /></p>
+<p><img src="./Image/ch08/TableSpecification.PNG"  height="auto" /></p>
 <ul>
 <li>릴레이션 스키마에 대한 설계 정보를 기술한 문서</li>
 <li>릴레이션 스키마 변환 후 속성 데이터 타입, 길이, NULL 값 허용 여부, 기본값, 제약조건 등을 세부적으로 결정하고 문서화</li>
