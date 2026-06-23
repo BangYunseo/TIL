@@ -65,3 +65,4 @@ exclude_docs: |
   .venv/
   site/
   requirements.txt
+  /README.md

@@ -2,75 +2,26 @@
 
 > 개발과 컴퓨터공학 학습 내용을 분야별로 정리한 저장소입니다.
 
+<p align="center">
+  <a href="https://bangyunseo.github.io/TIL/">
+    <img src="https://img.shields.io/badge/웹에서_보기-개발_저장고-4051B5?style=for-the-badge&logo=materialformkdocs&logoColor=white" alt="웹에서 보기" />
+  </a>
+</p>
+
+🔗 **웹사이트** : <https://bangyunseo.github.io/TIL/>
+
 ## 학습 분야
 
-<div class="grid cards" markdown>
-
--   :material-brain:{ .lg .middle } &nbsp; **AI**
-
-    ---
-
-    딥러닝 · 기계학습
-
-    [:octicons-arrow-right-24: 바로가기](AI/README.md)
-
--   :material-android:{ .lg .middle } &nbsp; **Android**
-
-    ---
-
-    모바일 앱 개발
-
-    [:octicons-arrow-right-24: 바로가기](Android/README.md)
-
--   :material-code-tags:{ .lg .middle } &nbsp; **Language**
-
-    ---
-
-    C · C++ · C# · Java · Python · Kotlin · Web
-
-    [:octicons-arrow-right-24: 바로가기](Language/README.md)
-
--   :material-laptop:{ .lg .middle } &nbsp; **Computer Science**
-
-    ---
-
-    자료구조 · 알고리즘 · 데이터베이스 · 운영체제 · 소프트웨어공학
-
-    [:octicons-arrow-right-24: 바로가기](ComputerScience/README.md)
-
--   :material-lan:{ .lg .middle } &nbsp; **Communication**
-
-    ---
-
-    데이터 통신 · 네트워크 · 시리얼 통신
-
-    [:octicons-arrow-right-24: 바로가기](Communication/README.md)
-
--   :material-gamepad-variant:{ .lg .middle } &nbsp; **Game Engine**
-
-    ---
-
-    Unity · Unreal
-
-    [:octicons-arrow-right-24: 바로가기](GameEngine/README.md)
-
--   :material-shield-lock:{ .lg .middle } &nbsp; **Security**
-
-    ---
-
-    정보보안 · 암호학
-
-    [:octicons-arrow-right-24: 바로가기](Security/InformationSecurity/README.md)
-
--   :material-camera-iris:{ .lg .middle } &nbsp; **Machine Vision**
-
-    ---
-
-    머신비전 · 검사 시스템
-
-    [:octicons-arrow-right-24: 바로가기](MachineVision/README.md)
-
-</div>
+| 분야 | 내용 | 바로가기 |
+| :--- | :--- | :--- |
+| 🧠 **AI** | 딥러닝 · 기계학습 | [바로가기](AI/README.md) |
+| 🤖 **Android** | 모바일 앱 개발 | [바로가기](Android/README.md) |
+| 💻 **Language** | C · C++ · C# · Java · Python · Kotlin · Web | [바로가기](Language/README.md) |
+| 🖥️ **Computer Science** | 자료구조 · 알고리즘 · 데이터베이스 · 운영체제 · 소프트웨어공학 | [바로가기](ComputerScience/README.md) |
+| 🌐 **Communication** | 데이터 통신 · 네트워크 · 시리얼 통신 | [바로가기](Communication/README.md) |
+| 🎮 **Game Engine** | Unity · Unreal | [바로가기](GameEngine/README.md) |
+| 🔒 **Security** | 정보보안 · 암호학 | [바로가기](Security/InformationSecurity/README.md) |
+| 📷 **Machine Vision** | 머신비전 · 검사 시스템 | [바로가기](MachineVision/README.md) |
 
 ## 작성 규칙
 
