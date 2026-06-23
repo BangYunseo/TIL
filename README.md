@@ -12,16 +12,53 @@
 
 ## 학습 분야
 
-| 분야 | 내용 | 바로가기 |
-| :--- | :--- | :--- |
-| 🧠 **AI** | 딥러닝 · 기계학습 | [바로가기](AI/README.md) |
-| 🤖 **Android** | 모바일 앱 개발 | [바로가기](Android/README.md) |
-| 💻 **Language** | C · C++ · C# · Java · Python · Kotlin · Web | [바로가기](Language/README.md) |
-| 🖥️ **Computer Science** | 자료구조 · 알고리즘 · 데이터베이스 · 운영체제 · 소프트웨어공학 | [바로가기](ComputerScience/README.md) |
-| 🌐 **Communication** | 데이터 통신 · 네트워크 · 시리얼 통신 | [바로가기](Communication/README.md) |
-| 🎮 **Game Engine** | Unity · Unreal | [바로가기](GameEngine/README.md) |
-| 🔒 **Security** | 정보보안 · 암호학 | [바로가기](Security/InformationSecurity/README.md) |
-| 📷 **Machine Vision** | 머신비전 · 검사 시스템 | [바로가기](MachineVision/README.md) |
+### 🧠 AI &nbsp; [🔗 링크](AI/README.md)
+
+- 딥러닝
+- 기계학습
+
+### 🤖 Android &nbsp; [🔗 링크](Android/README.md)
+
+- 모바일 앱 개발
+
+### 💻 Language &nbsp; [🔗 링크](Language/README.md)
+
+- C
+- C++
+- C#
+- Java
+- Python
+- Kotlin
+- Web
+
+### 🖥️ Computer Science &nbsp; [🔗 링크](ComputerScience/README.md)
+
+- 자료구조
+- 알고리즘
+- 데이터베이스
+- 운영체제
+- 소프트웨어공학
+
+### 🌐 Communication &nbsp; [🔗 링크](Communication/README.md)
+
+- 데이터 통신
+- 네트워크
+- 시리얼 통신
+
+### 🎮 Game Engine &nbsp; [🔗 링크](GameEngine/README.md)
+
+- Unity
+- Unreal
+
+### 🔒 Security &nbsp; [🔗 링크](Security/InformationSecurity/README.md)
+
+- 정보보안
+- 암호학
+
+### 📷 Machine Vision &nbsp; [🔗 링크](MachineVision/README.md)
+
+- 머신비전
+- 검사 시스템
 
 ## 작성 규칙
 
