@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -9772,7 +9772,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>@RequiresApi(Build.VERSION_CODES.S)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>fun noti() {
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  // (... 생략 ...)
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  val builder: Notification.Builder = Notification.Builder(this, &quot;1&quot;)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  val builder: Notification.Builder = Notification.Builder(this, "1")
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    .setStyle(
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      Notification.CallStyle.forIncomingCall(caller, declineIntent, answerIntent)
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    )
@@ -9785,7 +9785,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>// API 레벨 &gt;= 30인 경우에 실행되는 addCallback() 함수
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>if(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.S){
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  val builder: Notification.Builder = Notification.Builder(this, &quot;1&quot;)
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  val builder: Notification.Builder = Notification.Builder(this, "1")
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    .setStyle(
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>      Notification.CallStyle.forIncomingCall(caller, declineIntent, answerIntent)
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    )
@@ -9860,10 +9860,10 @@
 </table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">&lt;!-- 퍼미션 설정 --&gt;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;com.example.permission.TEST_PERMISSION&quot;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="na">android:label=</span><span class="s">&quot;Permission TESTING&quot;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="na">android:description=</span><span class="s">&quot;@string/permission_desc&quot;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="na">android:protectionLevel=</span><span class="s">&quot;dangerous&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"com.example.permission.TEST_PERMISSION"</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="na">android:label=</span><span class="s">"Permission TESTING"</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="na">android:description=</span><span class="s">"@string/permission_desc"</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="na">android:protectionLevel=</span><span class="s">"dangerous"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <h4 id="permission">permission 설정 예시<a class="headerlink" href="#permission" title="Permanent link">&para;</a></h4>
 <ol>
@@ -9871,8 +9871,8 @@
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">&lt;!-- 퍼미션 사용 설정 : 안드로이드 표준 권한 --&gt;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.ACCESS_FINE_LOCATION&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.ACCESS_NETWORK_STATE"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.ACCESS_FINE_LOCATION"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <p><img src="./Image/ch05/ch05-04-Permission3.PNG" height="auto" /></p>
 <ul>
@@ -9880,10 +9880,10 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">&lt;!--컴포넌트에 퍼미션 적용--&gt;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">&lt;activity</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;OneActivity&quot;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">          </span><span class="na">android:permission=</span><span class="s">&quot;com.example.TEST_PERMISSION&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">&lt;activity</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"OneActivity"</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">          </span><span class="na">android:permission=</span><span class="s">"com.example.TEST_PERMISSION"</span><span class="nt">&gt;</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">&lt;intent-filter&gt;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.action.PICK&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.action.PICK"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">&lt;/intent-filter&gt;</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nt">&lt;/activity&gt;</span>
 </code></pre></div>
@@ -9892,7 +9892,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cm">&lt;!-- 퍼미션 사용 설정 --&gt;</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;com.example.permission.TEST_PERMISSION&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"com.example.permission.TEST_PERMISSION"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <h3 id="_4">퍼미션 사용 설정 종류<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <table>
@@ -9999,12 +9999,12 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>// 퍼미션 허용 확인 예시
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>val status = ContextCompat.checkSelfPermission(this,
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>            &quot;android.permission.ACCESS_FINE_LOCATION&quot;)
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>            "android.permission.ACCESS_FINE_LOCATION")
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>if(status == PackageManager.PERMISSION_GRANTED) {
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  log.d(&quot;Yunseo&quot;, &quot;permission granted&quot;)
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  log.d("Yunseo", "permission granted")
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>} else {
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  log.d(&quot;Yunseo&quot;, &quot;permission denied&quot;)
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  log.d("Yunseo", "permission denied")
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>}
 </code></pre></div>
 <h3 id="_6">퍼미션 거부<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
@@ -10026,16 +10026,16 @@
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>ActivityResultContracts.RequestPermission()
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>) { isGranted -&gt;
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  if(isGranted) {
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    Log.d(&quot;Yunseo&quot;, &quot;callback, granted...&quot;)
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    Log.d("Yunseo", "callback, granted...")
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>  }
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>  else {
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    Log.d(&quot;Yunseo&quot;, &quot;callback, denied...&quot;)
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    Log.d("Yunseo", "callback, denied...")
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>  }
 <a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>}
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>// 퍼미션 허용 요청 실행
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>requestPermissionLauncher.launch(&quot;android.permission.ACCESS_FINE_LOCATION&quot;)
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>requestPermissionLauncher.launch("android.permission.ACCESS_FINE_LOCATION")
 </code></pre></div>
 <h2 id="3">3절. 다양한 다이얼로그<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h3 id="_7">토스트 메시지<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
@@ -10074,7 +10074,7 @@
 </table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>// 토스트 출력 예시
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>val toast = Toast.makeText(this, &quot;종료하려면 한 번 더 누르세요&quot;, Toast.LENGTH_SHORT)
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>val toast = Toast.makeText(this, "종료하려면 한 번 더 누르세요", Toast.LENGTH_SHORT)
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>toast.show()
 </code></pre></div>
 <p><img src="./Image/ch05/ch05-07-Toast.PNG" height="auto" /></p>
@@ -10090,17 +10090,17 @@
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>// API 레벨 호환성 애너테이션
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>fun showToast(){
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  val toast = Toast.makeText(this, &quot;종료하려면 한 번 더 누르세요&quot;, Toast.LENGTH_SHORT)
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  val toast = Toast.makeText(this, "종료하려면 한 번 더 누르세요", Toast.LENGTH_SHORT)
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>  toast.addCallback(
 <a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    object : Toast.Callback(){
 <a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>      override fun onToastHidden() {
 <a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>        super.onToastHidden()
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>        Log.d(&quot;yunseo&quot;, &quot;toast hidden&quot;)
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>        Log.d("yunseo", "toast hidden")
 <a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>      }
 <a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
 <a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>      override fun onToastShown() {
 <a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>        super.onToastShown()
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>        Log.d(&quot;yunseo&quot;, &quot;toast shown&quot;)
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>        Log.d("yunseo", "toast shown")
 <a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>      }
 <a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>    })
 <a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>  toast.show()
@@ -10115,7 +10115,7 @@
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>DatePickerDialog(this, object: DatePickerDialog.OnDateSetListener{
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>  override fun onDateSet(p0: DatePicker?, p1: Int, p2: Int, p3: Int){
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    Log.d(&quot;yunseo&quot;, &quot;year : $p1, month : ${p2 + 1}, dayOfMonth : $p3&quot;)
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    Log.d("yunseo", "year : $p1, month : ${p2 + 1}, dayOfMonth : $p3")
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>  }
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>}, 2024, 4, 6).show()
 </code></pre></div>
@@ -10129,7 +10129,7 @@
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>TimePickerDialog(this, object: TimePickerDialog.OnTimeSetListener{
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  override fun onTimeSet(p0: TimePicker?, p1: Int, p2: Int){
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    Log.d(&quot;yunseo&quot;, &quot;time : $p1, minute : $p2&quot;)
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    Log.d("yunseo", "time : $p1, minute : $p2")
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>  }
 <a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>}, 15, 0, true).show()
 </code></pre></div>
@@ -10189,14 +10189,14 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>// 알림 창 띄우기
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>AlertDialog.Builder(this).run {
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>  setTitle(&quot;Test Dialog&quot;)
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>  setTitle("Test Dialog")
 <a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>  setIcon(android.R.drawable.ic_dialog_info)
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>  setMessage(&quot;정말 종료하시겠습니까?&quot;)
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>  // setPositiveButton(&quot;Okay&quot;, null)
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>  // setNegativeButton(&quot;Cancel&quot;, null)
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>  setNeutralButton(&quot;MORE&quot;, null)
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>  setPositiveButton(&quot;YES&quot;, null)
-<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>  setNegativeButton(&quot;NO&quot;, null)
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>  setMessage("정말 종료하시겠습니까?")
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>  // setPositiveButton("Okay", null)
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>  // setNegativeButton("Cancel", null)
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>  setNeutralButton("MORE", null)
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>  setPositiveButton("YES", null)
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>  setNegativeButton("NO", null)
 <a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>  show()
 <a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>}
 </code></pre></div>
@@ -10205,16 +10205,16 @@
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>val eventHandler = object : DialogInterface.OnClickListener {
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>  override fun onClick(p0: DialogInterface?, p1: Int)  {
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    if(p1 == DialogInterface.BUTTON_POSITIVE){
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>      Log.d(&quot;Yunseo&quot;, &quot;Positive button was clicked!&quot;)
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>      Log.d("Yunseo", "Positive button was clicked!")
 <a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    } else if(p1 == DialogInterface.BUTTON_NEGATIVE){
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>      Log.d(&quot;Yunseo&quot;, &quot;Negative button was clicked!&quot;)
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>      Log.d("Yunseo", "Negative button was clicked!")
 <a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>    }
 <a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>  }
 <a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>}
 <a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
 <a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>// 사용 예시
-<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>setPositiveButton(&quot;OK&quot;, eventHandler)
-<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>setNegativeButton(&quot;Cancel&quot;, eventHandler)
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>setPositiveButton("OK", eventHandler)
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>setNegativeButton("Cancel", eventHandler)
 </code></pre></div>
 <h3 id="_12">알림 선택하기<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <ul>
@@ -10258,16 +10258,16 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>// 목록 출력 알림 창
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>val items = arrayOf&lt;String&gt;(&quot;사과&quot;, &quot;복숭아&quot;, &quot;수박&quot;, &quot;딸기&quot;)
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>val items = arrayOf&lt;String&gt;("사과", "복숭아", "수박", "딸기")
 <a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>AlertDialog.Builder(this).run {
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>  setTitle(&quot;items test&quot;)
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>  setTitle("items test")
 <a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>  setIcon(android.R.drawable.ic_dialog_info)
 <a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>  setItems(items, object: DialogInterface.OnClickListener {
 <a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>    override fun onClick(p0: DialogInterface?, p1: Int){
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>      Log.d(&quot;Yunseo&quot;, &quot;선택된 과일 : ${items[p1]}&quot;)
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>      Log.d("Yunseo", "선택된 과일 : ${items[p1]}")
 <a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>    }
 <a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>  })
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>  setPositiveButton(&quot;닫기&quot;, null)
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>  setPositiveButton("닫기", null)
 <a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>  show()
 <a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>}
 </code></pre></div>
@@ -10279,7 +10279,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>setMultiChoiceItems(items, booleanArrayOf(true, false, true, false),
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>object : DialogInterface.OnMultiChoiceClickListener {
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>  override fun onClick(dialog: DialogInterface?, which: Int, isChecked: Boolean) {
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    Log.d(&quot;Yunseo&quot;, &quot;${items[which]} 이 ${if(isChecked) &quot; 선택되었습니다.&quot; else &quot;선택 해제되었습니다.&quot;}&quot;)
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    Log.d("Yunseo", "${items[which]} 이 ${if(isChecked) " 선택되었습니다." else "선택 해제되었습니다."}")
 <a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>  }
 <a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>})
 </code></pre></div>
@@ -10290,7 +10290,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>setSingleChoiceItems(items, 1, object : DialogInterface.OnClickListener{
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>  override fun onClick(dialog: DialogInterface?, which: Int) {
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    Log.d(&quot;Yunseo&quot;, &quot;${items[which]} 이 선택되었습니다.&quot;)
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    Log.d("Yunseo", "${items[which]} 이 선택되었습니다.")
 <a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>  }
 <a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>})
 </code></pre></div>
@@ -10338,17 +10338,17 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>// 알림 창을 닫는 설정(뒤로가기, 바깥 영역 터치)
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
 <a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>AlertDialog.Builder(this).run {
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>  setTitle(&quot;item test&quot;)
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>  setTitle("item test")
 <a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>  setIcon(android.R.drawable.ic_dialog_info)
 <a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>  setItems(items, object : DialogInterface.OnClickListener{
 <a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>    override fun onClick(dialog: DialogInterface?, which: Int) {
-<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>      Log.d(&quot;Yunseo&quot;, &quot;${items[which]} 이 선택되었습니다.&quot;)
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>      Log.d("Yunseo", "${items[which]} 이 선택되었습니다.")
 <a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>    }
 <a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>  })
 <a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>  setCancelable(false)
-<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>  setPositiveButton(&quot;OK&quot;, eventHandler)
-<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>  setNegativeButton(&quot;Cancel&quot;, eventHandler)
-<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>  setNeutralButton(&quot;More&quot;, null)
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>  setPositiveButton("OK", eventHandler)
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>  setNegativeButton("Cancel", eventHandler)
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>  setNeutralButton("More", null)
 <a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>}.show().apply{
 <a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>  setCanceledOnTouchOutside(false)
 <a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>}
@@ -10457,7 +10457,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>//<span class="w"> </span>Manifest<span class="w"> </span>파일
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
-<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.POST_NOTIFICATIONS&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.POST_NOTIFICATIONS"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <p><img src="./Image/ch05/ch05-17-NotiLogic.PNG" height="auto" /></p>
 <ul>
@@ -10539,13 +10539,13 @@
 <a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>val builder: NotificationCompat.Builder
 <a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>
 <a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>if(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) {
-<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>  val channelId = &quot;one-channel&quot;
-<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>  val channelName = &quot;My Channel One&quot;
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>  val channelId = "one-channel"
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>  val channelName = "My Channel One"
 <a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>  val channel = NotificationChannel(
 <a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>    channelId, channelName, NotificationManager.IMPORTANCE_HIGH
 <a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>  )
 <a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>
-<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>  channel.description = &quot;My Channel&#39;s One Descripton!&quot;
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>  channel.description = "My Channel's One Descripton!"
 <a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>  channel.setShowBadge(true)
 <a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a>  val uri: Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 <a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>  val audioAttributes = AudioAttributes.Builder()
@@ -10574,8 +10574,8 @@
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
 <a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>builder.setSmallIcon(android.R.drawable.ic_notification_overlay)
 <a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>builder.setWhen(System.currentTimeMillis())
-<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>builder.setContentTitle(&quot;Content Title&quot;)
-<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>builder.setContentText(&quot;Content Message&quot;)
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>builder.setContentTitle("Content Title")
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>builder.setContentText("Content Message")
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>// 알림 발생
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
@@ -10630,7 +10630,7 @@
 <a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a>builder.addAction(
 <a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a>  NotificationCompat.Action.Builder(
 <a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a>      android.R.drawable.stat_notify_more,
-<a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a>      &quot;Action&quot;,
+<a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a>      "Action",
 <a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a>      actionPendingIntent
 <a id="__codelineno-38-13" name="__codelineno-38-13" href="#__codelineno-38-13"></a>  ).build()
 <a id="__codelineno-38-14" name="__codelineno-38-14" href="#__codelineno-38-14"></a>)
@@ -10643,8 +10643,8 @@
 <p><img src="./Image/ch05/ch05-23-Reply.PNG" height="auto" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>// 원격 입력
 <a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>
-<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>val KEY_TEXT_REPLY = &quot;key_text_reply&quot;
-<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>var replyLabel: String = &quot;답장&quot;
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>val KEY_TEXT_REPLY = "key_text_reply"
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>var replyLabel: String = "답장"
 <a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>var remoteInput: RemoteInput = RemoteInput.Builder(KEY_TEXT_REPLY).run{
 <a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>  setLabel(replyLabel)
 <a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>  build()
@@ -10664,7 +10664,7 @@
 <a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>builder.addAction(
 <a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>  NotificationCompat.Action.Builder(
 <a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>    R.drawable.send,
-<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>    &quot;답장&quot;,
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>    "답장",
 <a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>    replyPendingIntent
 <a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a>  ).addRemoteInput(remoteInput).build()
 <a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>)
@@ -10674,7 +10674,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>// 브로드캐스트 리시버에서 사용자가 입력한 글을 받는 코드
 <a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
 <a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>val replyTxt = RemoteInput.getResultsFromIntent(intent)
-<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>  ?.getCharSequence(&quot;key_text_reply&quot;)
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>  ?.getCharSequence("key_text_reply")
 </code></pre></div>
 <h3 id="_25">프로그레스<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
 <ul>
@@ -10716,10 +10716,10 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>// 상자 스타일
 <a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>
 <a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>val style = NotificationCompat.InboxStyle()
-<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>style.addLine(&quot;1코스 - 수락.불암산코스&quot;)
-<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>style.addLine(&quot;2코스 - 용마.아차산코스&quot;)
-<a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>style.addLine(&quot;3코스 - 고덕.일자산코스&quot;)
-<a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a>style.addLine(&quot;4코스 - 대모.우면산코스&quot;)
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>style.addLine("1코스 - 수락.불암산코스")
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>style.addLine("2코스 - 용마.아차산코스")
+<a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>style.addLine("3코스 - 고덕.일자산코스")
+<a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a>style.addLine("4코스 - 대모.우면산코스")
 <a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a>builder.setStyle(style)
 </code></pre></div>
 <p><img src="./Image/ch05/ch05-29-Box.PNG" height="auto" /></p>
@@ -10730,25 +10730,25 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>// Person 객체 생성
 <a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>
 <a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>val sender1: Person = Person.Builder()
-<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>  .setName(&quot;kkang&quot;)
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>  .setName("kkang")
 <a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>  .setIcon(IconCompat.createWithResource(this, R.drawable.person1))
 <a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>  .build()
 <a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a>
 <a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a>val sender2: Person = Person.Builder()
-<a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a>  .setName(&quot;kim&quot;)
+<a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a>  .setName("kim")
 <a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a>  .setIcon(IconCompat.createWithResource(this, R.drawable.person2))
 <a id="__codelineno-47-11" name="__codelineno-47-11" href="#__codelineno-47-11"></a>  .build()
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>// 메세지 객체 생성
 <a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>
 <a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>val message1 = NotificationCompat.MessagingStyle.Message(
-<a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>  &quot;hello&quot;,
+<a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>  "hello",
 <a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>  System.currentTimeMillis(),
 <a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a>  sender1
 <a id="__codelineno-48-7" name="__codelineno-48-7" href="#__codelineno-48-7"></a>)
 <a id="__codelineno-48-8" name="__codelineno-48-8" href="#__codelineno-48-8"></a>
 <a id="__codelineno-48-9" name="__codelineno-48-9" href="#__codelineno-48-9"></a>val message2 = NotificationCompat.MessagingStyle.Message(
-<a id="__codelineno-48-10" name="__codelineno-48-10" href="#__codelineno-48-10"></a>  &quot;world&quot;,
+<a id="__codelineno-48-10" name="__codelineno-48-10" href="#__codelineno-48-10"></a>  "world",
 <a id="__codelineno-48-11" name="__codelineno-48-11" href="#__codelineno-48-11"></a>  System.currentTimeMillis(),
 <a id="__codelineno-48-12" name="__codelineno-48-12" href="#__codelineno-48-12"></a>  sender2
 <a id="__codelineno-48-13" name="__codelineno-48-13" href="#__codelineno-48-13"></a>)
@@ -10776,33 +10776,33 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="cm">&lt;!-- activity_main.xml 파일 --&gt;</span>
 <a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>
-<a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="nt">&lt;LinearLayout</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-<a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-<a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
-<a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a><span class="w">    </span><span class="na">android:orientation=</span><span class="s">&quot;vertical&quot;</span>
-<a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a><span class="w">    </span><span class="na">android:gravity=</span><span class="s">&quot;center&quot;</span>
-<a id="__codelineno-51-9" name="__codelineno-51-9" href="#__codelineno-51-9"></a><span class="w">    </span><span class="na">android:id=</span><span class="s">&quot;@+id/main&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="nt">&lt;LinearLayout</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+<a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+<a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a><span class="w">    </span><span class="na">android:orientation=</span><span class="s">"vertical"</span>
+<a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a><span class="w">    </span><span class="na">android:gravity=</span><span class="s">"center"</span>
+<a id="__codelineno-51-9" name="__codelineno-51-9" href="#__codelineno-51-9"></a><span class="w">    </span><span class="na">android:id=</span><span class="s">"@+id/main"</span><span class="nt">&gt;</span>
 <a id="__codelineno-51-10" name="__codelineno-51-10" href="#__codelineno-51-10"></a>
 <a id="__codelineno-51-11" name="__codelineno-51-11" href="#__codelineno-51-11"></a><span class="w">    </span><span class="nt">&lt;Button</span>
-<a id="__codelineno-51-12" name="__codelineno-51-12" href="#__codelineno-51-12"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/notificationButton&quot;</span>
-<a id="__codelineno-51-13" name="__codelineno-51-13" href="#__codelineno-51-13"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">&quot;wrap_content&quot;</span>
-<a id="__codelineno-51-14" name="__codelineno-51-14" href="#__codelineno-51-14"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
-<a id="__codelineno-51-15" name="__codelineno-51-15" href="#__codelineno-51-15"></a><span class="w">        </span><span class="na">android:text=</span><span class="s">&quot;알림 발생&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-51-12" name="__codelineno-51-12" href="#__codelineno-51-12"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/notificationButton"</span>
+<a id="__codelineno-51-13" name="__codelineno-51-13" href="#__codelineno-51-13"></a><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+<a id="__codelineno-51-14" name="__codelineno-51-14" href="#__codelineno-51-14"></a><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+<a id="__codelineno-51-15" name="__codelineno-51-15" href="#__codelineno-51-15"></a><span class="w">        </span><span class="na">android:text=</span><span class="s">"알림 발생"</span><span class="nt">/&gt;</span>
 <a id="__codelineno-51-16" name="__codelineno-51-16" href="#__codelineno-51-16"></a><span class="nt">&lt;/LinearLayout&gt;</span>
 </code></pre></div>
 <h3 id="3_1">3) 퍼미션 선언<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="cm">&lt;!-- AndroidManifest.xml 파일에 추가한 퍼미션 --&gt;</span>
 <a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>
-<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.POST_NOTIFICATIONS&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.POST_NOTIFICATIONS"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <h3 id="4_1">4) 브로드캐스트 리시버 작성<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>// ReplyReceiver.kt 파일
 <a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>
 <a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a>class ReplyReceiver : BroadcastReceiver() {
 <a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a>    override fun onReceive(context: Context, intent: Intent) {
-<a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a>        val replyTxt = RemoteInput.getResultsFromIntent(intent)?.getCharSequence(&quot;key_text_reply&quot;)
-<a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a>        Log.d(&quot;Yunseo&quot;, &quot;replyText : $replyTxt&quot;)
+<a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a>        val replyTxt = RemoteInput.getResultsFromIntent(intent)?.getCharSequence("key_text_reply")
+<a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a>        Log.d("Yunseo", "replyText : $replyTxt")
 <a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a>        val manager = context.getSystemService(AppCompatActivity.NOTIFICATION_SERVICE)
 <a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a>            as NotificationManager
 <a id="__codelineno-53-9" name="__codelineno-53-9" href="#__codelineno-53-9"></a>        manager.cancel(11)
@@ -10825,7 +10825,7 @@
 <a id="__codelineno-54-13" name="__codelineno-54-13" href="#__codelineno-54-13"></a>            if(it.all { permission -&gt; permission.value == true}){
 <a id="__codelineno-54-14" name="__codelineno-54-14" href="#__codelineno-54-14"></a>                noti()
 <a id="__codelineno-54-15" name="__codelineno-54-15" href="#__codelineno-54-15"></a>            } else {
-<a id="__codelineno-54-16" name="__codelineno-54-16" href="#__codelineno-54-16"></a>                Toast.makeText(this, &quot;permission 거부!&quot;, Toast.LENGTH_SHORT).show()
+<a id="__codelineno-54-16" name="__codelineno-54-16" href="#__codelineno-54-16"></a>                Toast.makeText(this, "permission 거부!", Toast.LENGTH_SHORT).show()
 <a id="__codelineno-54-17" name="__codelineno-54-17" href="#__codelineno-54-17"></a>            }
 <a id="__codelineno-54-18" name="__codelineno-54-18" href="#__codelineno-54-18"></a>        }
 <a id="__codelineno-54-19" name="__codelineno-54-19" href="#__codelineno-54-19"></a>
@@ -10833,11 +10833,11 @@
 <a id="__codelineno-54-21" name="__codelineno-54-21" href="#__codelineno-54-21"></a>            if(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.TIRAMISU){
 <a id="__codelineno-54-22" name="__codelineno-54-22" href="#__codelineno-54-22"></a>                if(ContextCompat.checkSelfPermission(
 <a id="__codelineno-54-23" name="__codelineno-54-23" href="#__codelineno-54-23"></a>                    this,
-<a id="__codelineno-54-24" name="__codelineno-54-24" href="#__codelineno-54-24"></a>                    &quot;android.permission.POST_NOTIFICATION&quot;
+<a id="__codelineno-54-24" name="__codelineno-54-24" href="#__codelineno-54-24"></a>                    "android.permission.POST_NOTIFICATION"
 <a id="__codelineno-54-25" name="__codelineno-54-25" href="#__codelineno-54-25"></a>                ) == PackageManager.PERMISSION_GRANTED){
 <a id="__codelineno-54-26" name="__codelineno-54-26" href="#__codelineno-54-26"></a>                    noti()
 <a id="__codelineno-54-27" name="__codelineno-54-27" href="#__codelineno-54-27"></a>                } else {
-<a id="__codelineno-54-28" name="__codelineno-54-28" href="#__codelineno-54-28"></a>                    permissionLauncher.launch(arrayOf(&quot;android.permission.POST_NOTIFICATIONS&quot;))
+<a id="__codelineno-54-28" name="__codelineno-54-28" href="#__codelineno-54-28"></a>                    permissionLauncher.launch(arrayOf("android.permission.POST_NOTIFICATIONS"))
 <a id="__codelineno-54-29" name="__codelineno-54-29" href="#__codelineno-54-29"></a>                }
 <a id="__codelineno-54-30" name="__codelineno-54-30" href="#__codelineno-54-30"></a>            } else {
 <a id="__codelineno-54-31" name="__codelineno-54-31" href="#__codelineno-54-31"></a>                noti()
@@ -10849,11 +10849,11 @@
 <a id="__codelineno-54-37" name="__codelineno-54-37" href="#__codelineno-54-37"></a>        val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 <a id="__codelineno-54-38" name="__codelineno-54-38" href="#__codelineno-54-38"></a>        val builder: NotificationCompat.Builder
 <a id="__codelineno-54-39" name="__codelineno-54-39" href="#__codelineno-54-39"></a>        if(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O){
-<a id="__codelineno-54-40" name="__codelineno-54-40" href="#__codelineno-54-40"></a>            val channelId = &quot;one-channel&quot;
-<a id="__codelineno-54-41" name="__codelineno-54-41" href="#__codelineno-54-41"></a>            val channelName = &quot;My Channel One&quot;
+<a id="__codelineno-54-40" name="__codelineno-54-40" href="#__codelineno-54-40"></a>            val channelId = "one-channel"
+<a id="__codelineno-54-41" name="__codelineno-54-41" href="#__codelineno-54-41"></a>            val channelName = "My Channel One"
 <a id="__codelineno-54-42" name="__codelineno-54-42" href="#__codelineno-54-42"></a>            val channel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_DEFAULT)
 <a id="__codelineno-54-43" name="__codelineno-54-43" href="#__codelineno-54-43"></a>                .apply {
-<a id="__codelineno-54-44" name="__codelineno-54-44" href="#__codelineno-54-44"></a>                    description = &quot;My Channel One Description&quot;
+<a id="__codelineno-54-44" name="__codelineno-54-44" href="#__codelineno-54-44"></a>                    description = "My Channel One Description"
 <a id="__codelineno-54-45" name="__codelineno-54-45" href="#__codelineno-54-45"></a>                    setShowBadge(true)
 <a id="__codelineno-54-46" name="__codelineno-54-46" href="#__codelineno-54-46"></a>                    val uri : Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
 <a id="__codelineno-54-47" name="__codelineno-54-47" href="#__codelineno-54-47"></a>                    val audioAttributes = AudioAttributes.Builder()
@@ -10872,13 +10872,13 @@
 <a id="__codelineno-54-60" name="__codelineno-54-60" href="#__codelineno-54-60"></a>        builder.run {
 <a id="__codelineno-54-61" name="__codelineno-54-61" href="#__codelineno-54-61"></a>            setSmallIcon(R.drawable.small)
 <a id="__codelineno-54-62" name="__codelineno-54-62" href="#__codelineno-54-62"></a>            setWhen(System.currentTimeMillis())
-<a id="__codelineno-54-63" name="__codelineno-54-63" href="#__codelineno-54-63"></a>            setContentTitle(&quot;방윤서&quot;)
-<a id="__codelineno-54-64" name="__codelineno-54-64" href="#__codelineno-54-64"></a>            setContentText(&quot;야 모하냐!&quot;)
+<a id="__codelineno-54-63" name="__codelineno-54-63" href="#__codelineno-54-63"></a>            setContentTitle("방윤서")
+<a id="__codelineno-54-64" name="__codelineno-54-64" href="#__codelineno-54-64"></a>            setContentText("야 모하냐!")
 <a id="__codelineno-54-65" name="__codelineno-54-65" href="#__codelineno-54-65"></a>            setLargeIcon(BitmapFactory.decodeResource(resources, R.drawable.big))
 <a id="__codelineno-54-66" name="__codelineno-54-66" href="#__codelineno-54-66"></a>        }
 <a id="__codelineno-54-67" name="__codelineno-54-67" href="#__codelineno-54-67"></a>
-<a id="__codelineno-54-68" name="__codelineno-54-68" href="#__codelineno-54-68"></a>        val KEY_TEXT_REPLY = &quot;key_text_reply&quot;
-<a id="__codelineno-54-69" name="__codelineno-54-69" href="#__codelineno-54-69"></a>        var replyLabel = &quot;답장&quot;
+<a id="__codelineno-54-68" name="__codelineno-54-68" href="#__codelineno-54-68"></a>        val KEY_TEXT_REPLY = "key_text_reply"
+<a id="__codelineno-54-69" name="__codelineno-54-69" href="#__codelineno-54-69"></a>        var replyLabel = "답장"
 <a id="__codelineno-54-70" name="__codelineno-54-70" href="#__codelineno-54-70"></a>        val remoteInput: RemoteInput = RemoteInput.Builder(KEY_TEXT_REPLY).run {
 <a id="__codelineno-54-71" name="__codelineno-54-71" href="#__codelineno-54-71"></a>            setLabel(replyLabel)
 <a id="__codelineno-54-72" name="__codelineno-54-72" href="#__codelineno-54-72"></a>            build()
@@ -10891,7 +10891,7 @@
 <a id="__codelineno-54-79" name="__codelineno-54-79" href="#__codelineno-54-79"></a>
 <a id="__codelineno-54-80" name="__codelineno-54-80" href="#__codelineno-54-80"></a>        builder.addAction(
 <a id="__codelineno-54-81" name="__codelineno-54-81" href="#__codelineno-54-81"></a>            NotificationCompat.Action.Builder(
-<a id="__codelineno-54-82" name="__codelineno-54-82" href="#__codelineno-54-82"></a>                R.drawable.send, &quot;답장&quot;, replyPendingIntent
+<a id="__codelineno-54-82" name="__codelineno-54-82" href="#__codelineno-54-82"></a>                R.drawable.send, "답장", replyPendingIntent
 <a id="__codelineno-54-83" name="__codelineno-54-83" href="#__codelineno-54-83"></a>            ).addRemoteInput(remoteInput).build()
 <a id="__codelineno-54-84" name="__codelineno-54-84" href="#__codelineno-54-84"></a>        )
 <a id="__codelineno-54-85" name="__codelineno-54-85" href="#__codelineno-54-85"></a>
@@ -10960,7 +10960,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

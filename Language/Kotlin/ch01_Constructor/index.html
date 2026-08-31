@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -9022,13 +9022,13 @@
 </tbody>
 </table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">User</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bang&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Bang"</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="k">constructor</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">){</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">someFun</span><span class="p">(){</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;name : </span><span class="si">$</span><span class="n">name</span><span class="s">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"name : </span><span class="si">$</span><span class="n">name</span><span class="s">"</span><span class="p">)</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">SomeClass</span><span class="w"> </span><span class="p">{}</span>
@@ -9041,7 +9041,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>// 객체 생성과 멤버 접근
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>val user = User(&quot;Yunseo&quot;)
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>val user = User("Yunseo")
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>user.someFun()
 </code></pre></div>
 <h3 id="_2">주 생성자<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -9074,12 +9074,12 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">){</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="k">init</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;i am init!!&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"i am init!!"</span><span class="p">)</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1">// 실행 결과</span>
@@ -9089,10 +9089,10 @@
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kd">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">){</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="k">init</span><span class="p">{</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;name : </span><span class="si">$</span><span class="n">name</span><span class="s">, count : </span><span class="si">$</span><span class="n">count</span><span class="s">&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"name : </span><span class="si">$</span><span class="n">name</span><span class="s">, count : </span><span class="si">$</span><span class="n">count</span><span class="s">"</span><span class="p">)</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">someFun</span><span class="p">(){</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;name : </span><span class="si">$</span><span class="n">name</span><span class="s">, count : </span><span class="si">$</span><span class="n">count</span><span class="s">&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"name : </span><span class="si">$</span><span class="n">name</span><span class="s">, count : </span><span class="si">$</span><span class="n">count</span><span class="s">"</span><span class="p">)</span>
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="c1">// 오류 발생</span>
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">}</span>
@@ -9108,12 +9108,12 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>class User(val name: String, val count: Int){
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  fun someFun(){
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    println(&quot;name : $name, count : $count&quot;)
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    println("name : $name, count : $count")
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  }
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>}
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>fun main(){
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>  val user = User(&quot;Bang&quot;, 2003)
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>  val user = User("Bang", 2003)
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>  user.someFun()
 <a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>}
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
@@ -9127,16 +9127,16 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">User</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="k">constructor</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">){</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;constructor(name: String) call...&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"constructor(name: String) call..."</span><span class="p">)</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="k">constructor</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">count</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">){</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;constructor(name: String, count: Int) call...&quot;</span><span class="p">)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"constructor(name: String, count: Int) call..."</span><span class="p">)</span>
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">}</span>
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">user1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">)</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">user2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">user1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">)</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">user2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
 <a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="_4">보조 생성자에 주 생성자 연결<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
@@ -9153,7 +9153,7 @@
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">}</span>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
@@ -9178,7 +9178,7 @@
 <a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="p">}</span>
 <a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;yunseobang33@gmail.com&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">,</span><span class="w"> </span><span class="s">"yunseobang33@gmail.com"</span><span class="p">)</span>
 <a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="2">2절. 클래스를 재사용하는 상속<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
@@ -9214,7 +9214,7 @@
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kd">open</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Super</span><span class="p">{</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nv">superData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">superFun</span><span class="p">(){</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;i am superFun : </span><span class="si">$</span><span class="n">superData</span><span class="s">&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"i am superFun : </span><span class="si">$</span><span class="n">superData</span><span class="s">"</span><span class="p">)</span>
 <a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">}</span>
 <a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="kd">class</span><span class="w"> </span><span class="nc">Sub</span><span class="p">:</span><span class="w"> </span><span class="n">Super</span><span class="p">()</span>
@@ -9228,14 +9228,14 @@
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>open class Super{
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  open var someData = 10
 <a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>  open fun someFun(){
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    println(&quot;I am super class function : $someData&quot;)
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    println("I am super class function : $someData")
 <a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>  }
 <a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>}
 <a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
 <a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>class Sub: Super(){
 <a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>  override var someData = 20
 <a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>  override fun someFun() {
-<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    println(&quot;I am sub class function : $someData&quot;)
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    println("I am sub class function : $someData")
 <a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>  }
 <a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>}
 <a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
@@ -9319,14 +9319,14 @@
 <li>객체의 데이터 비교</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">non1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NonDataClass</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;yunseobang33@gmail.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">non2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NonDataClass</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;yunseobang33@gmail.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">non1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NonDataClass</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">,</span><span class="w"> </span><span class="s">"yunseobang33@gmail.com"</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">non2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NonDataClass</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">,</span><span class="w"> </span><span class="s">"yunseobang33@gmail.com"</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">data1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataClass</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;yunseobang33@gmail.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">data2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataClass</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;yunseobang33@gmail.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">data1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataClass</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">,</span><span class="w"> </span><span class="s">"yunseobang33@gmail.com"</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">data2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataClass</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">,</span><span class="w"> </span><span class="s">"yunseobang33@gmail.com"</span><span class="p">,</span><span class="w"> </span><span class="m">22</span><span class="p">)</span>
 <a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;non data class equals : </span><span class="si">${</span><span class="n">non1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">non2</span><span class="p">)</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;data class equals : </span><span class="si">${</span><span class="n">data1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">"non data class equals : </span><span class="si">${</span><span class="n">non1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">non2</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">"data class equals : </span><span class="si">${</span><span class="n">data1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 <a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="p">}</span>
 <a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
 <a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="c1">// 실행 결과</span>
@@ -9345,9 +9345,9 @@
 <a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">}</span>
 <a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
 <a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">obj1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataClass</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;yunseo@gmail.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">23</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Incheon&quot;</span><span class="p">)</span>
-<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">obj2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataClass</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;yunseo@gmail.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">23</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Seoul&quot;</span><span class="p">)</span>
-<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;obj1.equals(obj2) : </span><span class="si">${</span><span class="n">obj1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">obj2</span><span class="p">)</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">obj1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataClass</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">,</span><span class="w"> </span><span class="s">"yunseo@gmail.com"</span><span class="p">,</span><span class="w"> </span><span class="m">23</span><span class="p">,</span><span class="w"> </span><span class="s">"Incheon"</span><span class="p">)</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">obj2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataClass</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">,</span><span class="w"> </span><span class="s">"yunseo@gmail.com"</span><span class="p">,</span><span class="w"> </span><span class="m">23</span><span class="p">,</span><span class="w"> </span><span class="s">"Seoul"</span><span class="p">)</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">"obj1.equals(obj2) : </span><span class="si">${</span><span class="n">obj1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">obj2</span><span class="p">)</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 <a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="p">}</span>
 <a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>
 <a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="c1">// 실행 결과</span>
@@ -9360,10 +9360,10 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nc">NonDataClass</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">email</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">age</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">DataClass</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">email</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">age</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">non</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NonDataClass</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;yunseobang33@gmail.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">23</span><span class="p">)</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataClass</span><span class="p">(</span><span class="s">&quot;Bang&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;yunseobang33@gmail.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">23</span><span class="p">)</span>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;non data class toString : </span><span class="si">${</span><span class="n">non</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;data class toString : </span><span class="si">${</span><span class="n">data</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="si">}</span><span class="s">&quot;</span><span class="p">)</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">non</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NonDataClass</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">,</span><span class="w"> </span><span class="s">"yunseobang33@gmail.com"</span><span class="p">,</span><span class="w"> </span><span class="m">23</span><span class="p">)</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="kd">val</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DataClass</span><span class="p">(</span><span class="s">"Bang"</span><span class="p">,</span><span class="w"> </span><span class="s">"yunseobang33@gmail.com"</span><span class="p">,</span><span class="w"> </span><span class="m">23</span><span class="p">)</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">"non data class toString : </span><span class="si">${</span><span class="n">non</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="s">"data class toString : </span><span class="si">${</span><span class="n">data</span><span class="p">.</span><span class="na">toString</span><span class="p">()</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 <a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="p">}</span>
 <a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
 <a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="c1">// 실행 결과</span>
@@ -9380,7 +9380,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object</span><span class="p">{</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="kd">fun</span><span class="w"> </span><span class="nf">some</span><span class="p">(){</span>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;data : </span><span class="si">$</span><span class="n">data</span><span class="s">&quot;</span><span class="p">)</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"data : </span><span class="si">$</span><span class="n">data</span><span class="s">"</span><span class="p">)</span>
 <a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="p">}</span>
 <a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
@@ -9395,14 +9395,14 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">open</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Super</span><span class="p">{</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="kd">open</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="kd">open</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">some</span><span class="p">(){</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;I am super some() : </span><span class="si">$</span><span class="n">data</span><span class="s">&quot;</span><span class="p">)</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"I am super some() : </span><span class="si">$</span><span class="n">data</span><span class="s">"</span><span class="p">)</span>
 <a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="p">}</span>
 <a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
 <a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="kd">val</span><span class="w"> </span><span class="nv">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object</span><span class="p">:</span><span class="w"> </span><span class="n">Super</span><span class="p">(){</span>
 <a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">  </span><span class="kd">override</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
 <a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">  </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">some</span><span class="p">(){</span>
-<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;I am object some() : </span><span class="si">$</span><span class="n">data</span><span class="s">&quot;</span><span class="p">)</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"I am object some() : </span><span class="si">$</span><span class="n">data</span><span class="s">"</span><span class="p">)</span>
 <a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="p">}</span>
 <a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>
@@ -9420,7 +9420,7 @@
 <li>companion의 키워드로 선언</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="kd">companion</span><span class="w"> </span><span class="kd">object</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="kd">companion</span><span class="w"> </span><span class="kd">object</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
 <a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">some</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">      </span><span class="n">println</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -9494,7 +9494,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

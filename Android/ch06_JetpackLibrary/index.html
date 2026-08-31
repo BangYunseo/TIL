@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -9953,25 +9953,25 @@
 <p><img src="./Image/ch06/ch06-03-Theme.PNG" height="auto" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">&lt;!-- themes.xml 테마 스타일 선언 --&gt;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;resources</span><span class="w"> </span><span class="na">xmlns:tools=</span><span class="s">&quot;http://schemas.android.com/tools&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;resources</span><span class="w"> </span><span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span><span class="nt">&gt;</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="cm">&lt;!-- 기본 테마 --&gt;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&lt;style</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Base.Theme.AndroidLab&quot;</span><span class="w"> </span><span class="na">parent=</span><span class="s">&quot;Theme.Material3.DayNight.NoActionBar&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&lt;style</span><span class="w"> </span><span class="na">name=</span><span class="s">"Base.Theme.AndroidLab"</span><span class="w"> </span><span class="na">parent=</span><span class="s">"Theme.Material3.DayNight.NoActionBar"</span><span class="nt">&gt;</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="cm">&lt;!-- light 테마 지정 --&gt;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="cm">&lt;!-- &lt;item name=&quot;colorPrimary&quot;&gt;@color/my_light_primary&lt;/item&gt; --&gt;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="cm">&lt;!-- &lt;item name="colorPrimary"&gt;@color/my_light_primary&lt;/item&gt; --&gt;</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">&lt;/style&gt;</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&lt;style</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Theme.AndroidLab&quot;</span><span class="w"> </span><span class="na">parent=</span><span class="s">&quot;Base.Theme.AndroidLab&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&lt;style</span><span class="w"> </span><span class="na">name=</span><span class="s">"Theme.AndroidLab"</span><span class="w"> </span><span class="na">parent=</span><span class="s">"Base.Theme.AndroidLab"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="nt">&lt;/resources&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cm">&lt;!-- AndroidManifest.xml 적용 내용 확인 --&gt;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;application</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="na">android:allowBackup=</span><span class="s">&quot;true&quot;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="na">android:icon=</span><span class="s">&quot;@mipmap/ic_launcher&quot;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="na">android:label=</span><span class="s">&quot;@string/app_name&quot;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="na">android:roundIcon=</span><span class="s">&quot;@mipmap/ic_launcher_round&quot;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="na">android:supportsRtl=</span><span class="s">&quot;true&quot;</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="na">android:theme=</span><span class="s">&quot;@style/Theme.AndroidLab&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="na">android:allowBackup=</span><span class="s">"true"</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="na">android:label=</span><span class="s">"@string/app_name"</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="na">android:roundIcon=</span><span class="s">"@mipmap/ic_launcher_round"</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="na">android:supportsRtl=</span><span class="s">"true"</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="na">android:theme=</span><span class="s">"@style/Theme.AndroidLab"</span><span class="w"> </span><span class="nt">&gt;</span>
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="cm">&lt;!-- 생략 --&gt;</span>
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nt">&lt;/application&gt;</span>
@@ -9984,13 +9984,13 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cm">&lt;!-- 레이아웃 XML에 툴바 적용 --&gt;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">&lt;androidx.appcompat.widget.Toolbar</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="na">android:id=</span><span class="s">&quot;@+id/toolbar&quot;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">&quot;?attr/actionBarSize&quot;</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="na">android:background=</span><span class="s">&quot;?attr/colorPrimary&quot;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="na">android:elevation=</span><span class="s">&quot;4dp&quot;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="na">android:theme=</span><span class="s">&quot;@style/ThemeOverlay.AppCompat.ActionBar&quot;</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="na">app:titleTextColor=</span><span class="s">&quot;#FFFFFF&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="na">android:id=</span><span class="s">"@+id/toolbar"</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"?attr/actionBarSize"</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="na">android:background=</span><span class="s">"?attr/colorPrimary"</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="na">android:elevation=</span><span class="s">"4dp"</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="na">android:theme=</span><span class="s">"@style/ThemeOverlay.AppCompat.ActionBar"</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="na">app:titleTextColor=</span><span class="s">"#FFFFFF"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <p><img src="./Image/ch06/ch06-04-MatchToolBar.PNG" height="auto" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>// 액션바 내용 툴바 적용
@@ -10046,10 +10046,10 @@
 </tbody>
 </table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cm">&lt;!-- 테마 색상 지정 --&gt;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">&lt;style</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Base.Theme.AndroidLab&quot;</span><span class="w"> </span><span class="na">parent=</span><span class="s">&quot;Theme.Material3.DayNight.NoActionBar&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;colorPrimary&quot;</span><span class="nt">&gt;</span>#FF0000<span class="nt">&lt;/item&gt;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;android:statusBarColor&quot;</span><span class="nt">&gt;</span>#CC0000<span class="nt">&lt;/item&gt;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;colorAccent&quot;</span><span class="nt">&gt;</span>#00FF00<span class="nt">&lt;/item&gt;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">&lt;style</span><span class="w"> </span><span class="na">name=</span><span class="s">"Base.Theme.AndroidLab"</span><span class="w"> </span><span class="na">parent=</span><span class="s">"Theme.Material3.DayNight.NoActionBar"</span><span class="nt">&gt;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">name=</span><span class="s">"colorPrimary"</span><span class="nt">&gt;</span>#FF0000<span class="nt">&lt;/item&gt;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">name=</span><span class="s">"android:statusBarColor"</span><span class="nt">&gt;</span>#CC0000<span class="nt">&lt;/item&gt;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&lt;item</span><span class="w"> </span><span class="na">name=</span><span class="s">"colorAccent"</span><span class="nt">&gt;</span>#00FF00<span class="nt">&lt;/item&gt;</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nt">&lt;/style&gt;</span>
 </code></pre></div>
 <p><img src="./Image/ch06/ch06-06-ToolBarColor.PNG" height="auto" /></p>
@@ -10076,9 +10076,9 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cm">&lt;!-- AndroidManifest.xml에서 업버튼 설정 --&gt;</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">&lt;activity</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="na">android:name=</span><span class="s">&quot;.test1.TwoActivity&quot;</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="na">android:exported=</span><span class="s">&quot;false&quot;</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="na">android:parentActivityName=</span><span class="s">&quot;.MainActivity&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="na">android:name=</span><span class="s">".test1.TwoActivity"</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="na">android:exported=</span><span class="s">"false"</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="na">android:parentActivityName=</span><span class="s">".MainActivity"</span><span class="nt">/&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>// 툴바에 업버튼 설정
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
@@ -10091,7 +10091,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>// 사용자가 업버튼 실행 시 함수 자동 호출되는 onSupportNavigateUp() 함수 재정의
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>override fun onSupportNavigateUp(): Boolean{
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    Log.d(&quot;Yunseo&quot;, &quot;onSupportNavigateUp&quot;)
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    Log.d("Yunseo", "onSupportNavigateUp")
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    return super.onSupportNavigateUp()
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>}
 </code></pre></div>
@@ -10123,8 +10123,8 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>// 메뉴 구성 함수
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>override fun onCreateOptionsMenu(menu: Menu?): Boolean{
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    val menuItem1: MenuItem? = menu?.add(0, 0, 0, &quot;menu1&quot;)
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    val menuItem2: MenuItem? = menu?.add(0, 1, 0, &quot;menu2&quot;)
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    val menuItem1: MenuItem? = menu?.add(0, 0, 0, "menu1")
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    val menuItem2: MenuItem? = menu?.add(0, 1, 0, "menu2")
 <a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    return super.onCreateOptionsMenu(menu)
 <a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>}
 </code></pre></div>
@@ -10138,11 +10138,11 @@
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId){
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    0 -&gt; {
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        Log.d(&quot;Yunseo&quot;, &quot;menu1 click&quot;)
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        Log.d("Yunseo", "menu1 click")
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        true
 <a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    }
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    1 -&gt; {
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        Log.d(&quot;Yunseo&quot;, &quot;menu2 click&quot;)
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        Log.d("Yunseo", "menu2 click")
 <a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>        true
 <a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>    }
 <a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>    else -&gt; super.onOptionsItemSelected(item)
@@ -10155,24 +10155,24 @@
 <p><img src="./Image/ch06/ch06-10-Menu3.PNG" height="auto" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cm">&lt;!-- menu_main.xml --&gt;</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nt">&lt;menu</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="na">xmlns:app=</span><span class="s">&quot;http://schemas.android.com/apk/res-auto&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nt">&lt;menu</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span><span class="nt">&gt;</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="nt">&lt;item</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/menu1&quot;</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">        </span><span class="na">android:title=</span><span class="s">&quot;menu1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/menu1"</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">        </span><span class="na">android:title=</span><span class="s">"menu1"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
 <a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="nt">&lt;item</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/menu2&quot;</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="na">android:icon=</span><span class="s">&quot;@android:drawable/ic_menu_add&quot;</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="na">android:title=</span><span class="s">&quot;menu2&quot;</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">        </span><span class="na">app:showAsAction=</span><span class="s">&quot;always&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/menu2"</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="na">android:icon=</span><span class="s">"@android:drawable/ic_menu_add"</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="na">android:title=</span><span class="s">"menu2"</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">        </span><span class="na">app:showAsAction=</span><span class="s">"always"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
 <a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">    </span><span class="nt">&lt;item</span>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/menu3&quot;</span>
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">        </span><span class="na">android:icon=</span><span class="s">&quot;@android:drawable/ic_menu_search&quot;</span>
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">        </span><span class="na">android:title=</span><span class="s">&quot;menu3&quot;</span>
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">        </span><span class="na">app:showAsAction=</span><span class="s">&quot;iffRoom&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">        </span><span class="na">android:id=</span><span class="s">"@+id/menu3"</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">        </span><span class="na">android:icon=</span><span class="s">"@android:drawable/ic_menu_search"</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">        </span><span class="na">android:title=</span><span class="s">"menu3"</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">        </span><span class="na">app:showAsAction=</span><span class="s">"iffRoom"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>
 <a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="nt">&lt;/menu&gt;</span>
 </code></pre></div>
@@ -10216,10 +10216,10 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cm">&lt;!-- 서치 뷰 사용 --&gt;</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nt">&lt;item</span><span class="w"> </span><span class="na">android:id=</span><span class="s">&quot;@+id/menu_search&quot;</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="na">android:title=</span><span class="s">&quot;search&quot;</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="na">app:showAsAction=</span><span class="s">&quot;always&quot;</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="na">app:actionViewClass=</span><span class="s">&quot;androidx.appcompat.widget.SearchView&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nt">&lt;item</span><span class="w"> </span><span class="na">android:id=</span><span class="s">"@+id/menu_search"</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="na">android:title=</span><span class="s">"search"</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="na">app:showAsAction=</span><span class="s">"always"</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="na">app:actionViewClass=</span><span class="s">"androidx.appcompat.widget.SearchView"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <p><img src="./Image/ch06/ch06-12-SearchView.PNG" height="auto" /></p>
 <h3 id="_9">서치 뷰 이용<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
@@ -10280,10 +10280,10 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cm">&lt;!-- 프래그먼트 출력 --&gt;</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nt">&lt;fragment</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="na">android:name=</span><span class="s">&quot;com.example.test11.OneFragment&quot;</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="na">android:id=</span><span class="s">&quot;@+id/fragmentView&quot;</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="na">android:name=</span><span class="s">"com.example.test11.OneFragment"</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="na">android:id=</span><span class="s">"@+id/fragmentView"</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <ul>
 <li>\&lt;fragment&gt; 태그</li>
@@ -10481,14 +10481,14 @@
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>class MyAdapter(val datas: MutableList&lt;String&gt;):
 <a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    RecyclerView.Adapter&lt;RecyclerView.ViewHolder&gt;(){
 <a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>        override fun getItemCount(): Int{
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>            TODO(&quot;Not yet implemented&quot;)
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>            TODO("Not yet implemented")
 <a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>        }
 <a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
 <a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>        RecyclerView.ViewHolder{
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>            TODO(&quot;Not yet implemented&quot;)
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>            TODO("Not yet implemented")
 <a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>        }
 <a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int){
-<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>            TODO(&quot;Not yet implemented&quot;)
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>            TODO("Not yet implemented")
 <a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>        }
 <a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>    }
 </code></pre></div>
@@ -10505,7 +10505,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>// 뷰에 데이터 출력
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int){
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>    Log.d(&quot;yunseo&quot;, &quot;onBindViewHolder : $position&quot;)
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>    Log.d("yunseo", "onBindViewHolder : $position")
 <a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>    val binding = (holder as MyViewHolder).binding
 <a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
 <a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>    // 뷰에 데이터 출력
@@ -10513,7 +10513,7 @@
 <a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>
 <a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>    // 뷰에 이벤트 추가
 <a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>    binding.itemRoot.setOnClickListener {
-<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>        Log.d(&quot;yunseo&quot;, &quot;item root click : $position&quot;)
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>        Log.d("yunseo", "item root click : $position")
 <a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>    }
 <a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>}
 </code></pre></div>
@@ -10528,7 +10528,7 @@
 <a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
 <a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>        val datas = mutableListOf&lt;String&gt;()
 <a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>        for(i in 1..10){
-<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>            datas.add(&quot;Item $i&quot;)
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>            datas.add("Item $i")
 <a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>        }
 <a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>
 <a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>        binding.recyclerView.layoutManager = LinearLayoutManager(this)
@@ -10544,7 +10544,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>// 항목 추가
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
-<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>datas.add(&quot;new data&quot;)
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>datas.add("new data")
 <a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>adapter.notifyDataSetChanged()
 </code></pre></div>
 <h3 id="_19">레이아웃 매니저<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
@@ -10806,7 +10806,7 @@
 <a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>    val fragments: List&lt;Fragment&gt;
 <a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>    init{
 <a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>        fragments = listOf(OneFragment(), TwoFragment(), ThreeFragment())
-<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>        Log.d(&quot;Yunseo&quot;, &quot;Fragments Size : ${fragments.size}&quot;)
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>        Log.d("Yunseo", "Fragments Size : ${fragments.size}")
 <a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>    }
 <a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>    override fun getItemCount(): Int = fragments.size
 <a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>    override fun createFragment(position: Int): Fragment = fragments[position]
@@ -10828,15 +10828,15 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="cm">&lt;!-- 드로어 레이아웃 구성 --&gt;</span>
 <a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
 <a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="nt">&lt;androidx.drawerlayout.widget.DrawerLayout</span>
-<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w">    </span><span class="na">android:id=</span><span class="s">&quot;@+id/drawer&quot;</span>
-<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w">    </span><span class="na">android:id=</span><span class="s">"@+id/drawer"</span>
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">&gt;</span>
 <a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="w">    </span><span class="nt">&lt;LinearLayout</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
 <a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a><span class="w">        </span>...
 <a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="w">    </span><span class="nt">&lt;/LinearLayout&gt;</span>
 <a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a><span class="w">    </span><span class="nt">&lt;TextView</span>
-<a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a><span class="w">        </span><span class="na">android:layout_gravity=</span><span class="s">&quot;start&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a><span class="w">        </span><span class="na">android:layout_gravity=</span><span class="s">"start"</span><span class="nt">/&gt;</span>
 <a id="__codelineno-41-13" name="__codelineno-41-13" href="#__codelineno-41-13"></a><span class="nt">&lt;/android.drawerlayout.widget.DrawerLayout&gt;</span>
 </code></pre></div>
 <ul>
@@ -10976,7 +10976,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

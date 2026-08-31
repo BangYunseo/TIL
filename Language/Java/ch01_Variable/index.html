@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -10034,7 +10034,7 @@
 <li>char 타입의 경우</li>
 <li>int 타입으로 자동변환되면 유니코드 값이 int 타입에 저장</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">charVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">charVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'A'</span><span class="p">;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">charVal</span><span class="p">;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// 65 저장</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
@@ -10062,7 +10062,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">65</span><span class="p">;</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">charVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="w"> </span><span class="n">intVal</span><span class="p">;</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">charVal</span><span class="p">);</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">// &#39;A&#39; 출력</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">// 'A' 출력</span>
 </code></pre></div>
 <ul>
 <li>ex 2) 실수 타입을 정수 타입으로 강제 변환</li>
@@ -10132,7 +10132,7 @@
 <a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
 <a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="o">![</span><span class="n">type</span><span class="o">+]</span><span class="p">(.</span><span class="o">/</span><span class="n">Image</span><span class="o">/</span><span class="n">ch01</span><span class="o">/</span><span class="n">type</span><span class="o">+</span><span class="p">.</span><span class="na">PNG</span><span class="p">)</span>
 <a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
-<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="o">*</span><span class="w"> </span><span class="err">&#39;</span><span class="o">+</span><span class="w"> </span><span class="n">연산</span><span class="err">&#39;</span><span class="n">은</span><span class="w"> </span><span class="n">앞에서부터</span><span class="w"> </span><span class="n">순차적으로</span><span class="w"> </span><span class="n">수행</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="o">*</span><span class="w"> </span><span class="err">'</span><span class="o">+</span><span class="w"> </span><span class="n">연산</span><span class="err">'</span><span class="n">은</span><span class="w"> </span><span class="n">앞에서부터</span><span class="w"> </span><span class="n">순차적으로</span><span class="w"> </span><span class="n">수행</span>
 <a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">  </span><span class="o">*</span><span class="w"> </span><span class="n">먼저</span><span class="w"> </span><span class="n">수행된</span><span class="w"> </span><span class="n">연산이</span><span class="w"> </span><span class="n">결합</span><span class="w"> </span><span class="n">연산인</span><span class="w"> </span><span class="n">경우</span><span class="w"> </span><span class="n">이후</span><span class="w"> </span><span class="n">모든</span><span class="w"> </span><span class="n">연산은</span><span class="w"> </span><span class="n">결합</span><span class="w"> </span><span class="n">연산</span>
 <a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>
 <a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="o">![</span><span class="n">type</span><span class="o">+</span><span class="mi">2</span><span class="o">]</span><span class="p">(.</span><span class="o">/</span><span class="n">Image</span><span class="o">/</span><span class="n">ch01</span><span class="o">/</span><span class="n">type</span><span class="o">+</span><span class="mf">2.</span><span class="n">PNG</span><span class="p">)</span>
@@ -10147,7 +10147,7 @@
 <a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a><span class="w">  </span><span class="o">*</span><span class="w"> </span><span class="n">문자열이</span><span class="w"> </span><span class="n">숫자</span><span class="w"> </span><span class="n">외</span><span class="w"> </span><span class="n">요소를</span><span class="w"> </span><span class="n">포함할</span><span class="w"> </span><span class="n">경우</span>
 <a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>
 <a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a><span class="err">```</span><span class="n">Java</span>
-<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1a&quot;</span><span class="p">;</span>
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"1a"</span><span class="p">;</span>
 <a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a><span class="kt">int</span><span class="w"> </span><span class="n">Val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 <a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a><span class="c1">// NumberFormatException 발생</span>
 </code></pre></div>
@@ -10196,7 +10196,7 @@
 <ul>
 <li>시스템의 표준 출력 장치로 출력   </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1">// 출력 예시</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1">// Hello, World!</span>
 </code></pre></div>
@@ -10223,8 +10223,8 @@
 <li>형식 문자열에서 %와 conversion 외에는 모두 생략 가능</li>
 <li>conversion에는 제공되는 값의 타입에 따라 d(정수), f(실수), s(문자열) 입력   </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;이름 : %s\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;방윤서&quot;</span><span class="p">);</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;나이 : %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"이름 : %s\n"</span><span class="p">,</span><span class="w"> </span><span class="s">"방윤서"</span><span class="p">);</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"나이 : %d"</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">);</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1">// 출력 예시</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1">// 이름 : 방윤서</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1">// 나이 : 22</span>
@@ -10232,7 +10232,7 @@
 <ul>
 <li>형식 문자열에 포함될 값이 2개 이상인 경우 순번표시   </li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;이름 : %1$s, 나이 : %2$d&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;방윤서&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">"이름 : %1$s, 나이 : %2$d"</span><span class="p">,</span><span class="w"> </span><span class="s">"방윤서"</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">);</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1">// 출력 예시</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1">// 이름 : 방윤서, 나이 : 22</span>
 </code></pre></div>
@@ -10402,7 +10402,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

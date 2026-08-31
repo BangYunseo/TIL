@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -9522,13 +9522,13 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nltk.tokenize</span><span class="w"> </span><span class="kn">import</span> <span class="n">word_tokenize</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="s2">&quot;Hello World!, This is a dog.&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="s2">"Hello World!, This is a dog."</span><span class="p">)</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># 문자나 숫자인 경우에만 단어를 리스트에 추가</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># 출력</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># [&#39;Hello&#39;, &#39;World&#39;, &#39;This&#39;, &#39;is&#39;, &#39;a&#39;, &#39;dog&#39;]</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># ['Hello', 'World', 'This', 'is', 'a', 'dog']</span>
 </code></pre></div>
 <h5 id="stopword">불용어(StopWord)<a class="headerlink" href="#stopword" title="Permanent link">&para;</a></h5>
 <ul>
@@ -9536,36 +9536,36 @@
 <li>문장에 많이 등장하지만 큰 의미 X</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">nltk</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'punkt'</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'stopwords'</span><span class="p">)</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nltk.corpus</span><span class="w"> </span><span class="kn">import</span> <span class="n">stopwords</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)[:</span><span class="mi">20</span><span class="p">])</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">'english'</span><span class="p">)[:</span><span class="mi">20</span><span class="p">])</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># 출력</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># [&#39;i&#39;, &#39;me&#39;, &#39;my&#39;, &#39;myself&#39;, &#39;we&#39;, &#39;our&#39;, &#39;ours&#39;,</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># &#39;ourselves&#39;, &#39;you&#39;, &quot;you&#39;re&quot;, &quot;you&#39;ve&quot;, &quot;you&#39;ll&quot;,</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># &quot;you&#39;d&quot;, &#39;your&#39;, &#39;yours&#39;, &#39;yourself&#39;, &#39;yourselves&#39;,</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># &#39;he&#39;, &#39;him&#39;, &#39;his&#39;]</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># ['i', 'me', 'my', 'myself', 'we', 'our', 'ours',</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># 'ourselves', 'you', "you're", "you've", "you'll",</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># "you'd", 'your', 'yours', 'yourself', 'yourselves',</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># 'he', 'him', 'his']</span>
 </code></pre></div>
 <h4 id="nltk_1">NLTK를 이용한 전처리<a class="headerlink" href="#nltk_1" title="Permanent link">&para;</a></h4>
 <h5 id="word_tokenize">함수 word_tokenize() 사용<a class="headerlink" href="#word_tokenize" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">nltk</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>                   <span class="c1"># 1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">'punkt'</span><span class="p">)</span>                   <span class="c1"># 1</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nltk.tokenize</span><span class="w"> </span><span class="kn">import</span> <span class="n">word_tokenize</span>  <span class="c1"># 2</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;This is a dog.&quot;</span>                  <span class="c1"># 3</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">"This is a dog."</span>                  <span class="c1"># 3</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># 출력</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># [&#39;This&#39;, &#39;is&#39;, &#39;a&#39;, &#39;dog&#39;, &#39;.&#39;]</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># ['This', 'is', 'a', 'dog', '.']</span>
 </code></pre></div>
 <h5 id="sent_tokenize">함수 sent_tokenize() 사용<a class="headerlink" href="#sent_tokenize" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nltk.tokenize</span><span class="w"> </span><span class="kn">import</span> <span class="n">sent_tokenize</span>    <span class="c1"># 1</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;This is a house. This is a dog.&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">"This is a house. This is a dog."</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>                 <span class="c1"># 2</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># 출력</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># [&#39;This is a house.&#39;, &#39;This is a dog.&#39;]</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># ['This is a house.', 'This is a dog.']</span>
 </code></pre></div>
 <h4 id="keras">Keras를 이용한 전처리<a class="headerlink" href="#keras" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9575,9 +9575,9 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.preprocessing.text</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">text_to_word_sequence</span><span class="p">(</span><span class="s2">&quot;This is a dog.&quot;</span><span class="p">))</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">text_to_word_sequence</span><span class="p">(</span><span class="s2">"This is a dog."</span><span class="p">))</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># 출력</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># [&#39;this&#39;, &#39;is&#39;, &#39;a&#39;, &#39;dog&#39;]</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># ['this', 'is', 'a', 'dog']</span>
 </code></pre></div>
 <h4 id="_9">단어의 표현<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9605,16 +9605,16 @@
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">keras.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">to_categorical</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># 변환하고 싶은 텍스트</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;bird&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"bird"</span><span class="p">]</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># 단어 집합</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">total_pets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;turtle&quot;</span><span class="p">,</span> <span class="s2">&quot;fish&quot;</span><span class="p">,</span> <span class="s2">&quot;bird&quot;</span><span class="p">]</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;text=&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">total_pets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"turtle"</span><span class="p">,</span> <span class="s2">"fish"</span><span class="p">,</span> <span class="s2">"bird"</span><span class="p">]</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"text="</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
 <a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1"># 변환에 사용되는 딕셔너리 생성</span>
 <a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="n">mapping</span> <span class="o">=</span> <span class="p">{}</span>
 <a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">total_pets</span><span class="p">)):</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>  <span class="n">mapping</span><span class="p">[</span><span class="n">total_pets</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span> <span class="o">=</span> <span class="n">x</span> <span class="c1">#“cat&quot;-&gt;0, &quot;dog&quot;-&gt;1, ...</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>  <span class="n">mapping</span><span class="p">[</span><span class="n">total_pets</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span> <span class="o">=</span> <span class="n">x</span> <span class="c1">#“cat"-&gt;0, "dog"-&gt;1, ...</span>
 <a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
 <a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="c1"># 매핑</span>
 <a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
@@ -9622,14 +9622,14 @@
 <a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)):</span>
 <a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>  <span class="n">text</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="n">text</span><span class="p">[</span><span class="n">x</span><span class="p">]]</span>
 <a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;text=&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"text="</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 <a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
 <a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="c1"># 순차적인 정수 인덱스를 원-핫 인코딩으로 변환</span>
 <a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="n">one_hot_encode</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;text=&quot;</span><span class="p">,</span> <span class="n">one_hot_encode</span><span class="p">)</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"text="</span><span class="p">,</span> <span class="n">one_hot_encode</span><span class="p">)</span>
 <a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="c1"># 출력</span>
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="c1"># text= [&#39;cat&#39;, &#39;dog&#39;, &#39;cat&#39;, &#39;bird&#39;]</span>
-<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="c1"># {&#39;cat&#39;: 0, &#39;dog&#39;: 1, &#39;turtle&#39;: 2, &#39;fish&#39;: 3, &#39;bird&#39;: 4}</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="c1"># text= ['cat', 'dog', 'cat', 'bird']</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="c1"># {'cat': 0, 'dog': 1, 'turtle': 2, 'fish': 3, 'bird': 4}</span>
 <a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="c1"># text= [0, 1, 0, 4]</span>
 <a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="c1"># text= [[1. 0. 0. 0. 0.]</span>
 <a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="c1">#        [0. 1. 0. 0. 0.]</span>
@@ -9684,20 +9684,20 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.preprocessing.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tokenizer</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">t</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">()</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Deep learning is part of a broader family of machine learning methods</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="s2">based on artificial neural networks with representation learning.&quot;&quot;&quot;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">"""Deep learning is part of a broader family of machine learning methods</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="s2">based on artificial neural networks with representation learning."""</span>
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">t</span><span class="o">.</span><span class="n">fit_on_texts</span><span class="p">([</span><span class="n">text</span><span class="p">])</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;단어집합 : &quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">word_index</span><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"단어집합 : "</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">word_index</span><span class="p">)</span>
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1"># 출력</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1"># 단어집합 : {&#39;learning&#39;: 1, &#39;of&#39;: 2, &#39;deep&#39;: 3, &#39;is&#39;: 4, &#39;part&#39;: 5,</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># &#39;a&#39;: 6, &#39;broader&#39;: 7, &#39;family&#39;: 8, &#39;machine&#39;: 9, &#39;methods&#39;: 10,</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1"># &#39;based&#39;: 11, &#39;on&#39;: 12, &#39;artificial&#39;: 13, &#39;neural&#39;: 14,</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1"># &#39;networks&#39;: 15, &#39;with&#39;: 16, &#39;representation&#39;: 17}</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1"># 단어집합 : {'learning': 1, 'of': 2, 'deep': 3, 'is': 4, 'part': 5,</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># 'a': 6, 'broader': 7, 'family': 8, 'machine': 9, 'methods': 10,</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1"># 'based': 11, 'on': 12, 'artificial': 13, 'neural': 14,</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1"># 'networks': 15, 'with': 16, 'representation': 17}</span>
 </code></pre></div>
 <h4 id="_12">텍스트의 정수 인코딩<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">seq</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">texts_to_sequences</span><span class="p">([</span><span class="n">text</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">seq</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="s2">"-&gt;"</span><span class="p">,</span> <span class="n">seq</span><span class="p">)</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># 출력</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Deep learning is part of a broader family of</span>
 <a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># machine learning methods based on artificial neural</span>
@@ -9714,7 +9714,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.preprocessing.sequence</span><span class="w"> </span><span class="kn">import</span> <span class="n">pad_sequences</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">X</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">([[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">]],</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>                  <span class="n">maxlen</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;pre&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>                  <span class="n">maxlen</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">'pre'</span><span class="p">)</span>
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># 출력</span>
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># [[7 8 9]</span>
@@ -9722,8 +9722,8 @@
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1"># [0 0 7]]</span>
 </code></pre></div>
 <h5 id="_14">매개 변수<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h5>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">pad_sequences</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;pre&#39;</span><span class="p">,</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>              <span class="n">truncating</span> <span class="o">=</span><span class="s1">&#39;pre&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">pad_sequences</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">'pre'</span><span class="p">,</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>              <span class="n">truncating</span> <span class="o">=</span><span class="s1">'pre'</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
 </code></pre></div>
 <ul>
 <li>sequences = 패딩이 수행되는 시퀀스 데이터</li>
@@ -9792,7 +9792,7 @@
 <a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">input_length</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
 <a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
 <a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="n">input_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;rmsprop&#39;</span><span class="p">,</span> <span class="s1">&#39;mse&#39;</span><span class="p">)</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">'rmsprop'</span><span class="p">,</span> <span class="s1">'mse'</span><span class="p">)</span>
 <a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="n">output_array</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_array</span><span class="p">)</span>
 <a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">output_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="c1"># 출력</span>
@@ -9811,16 +9811,16 @@
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.preprocessing.textimport</span> <span class="n">one_hot</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.preprocessing.sequenceimport</span> <span class="n">pad_sequences</span>
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="n">docs</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;additional income&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>         <span class="s1">&#39;best price&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>         <span class="s1">&#39;big bucks&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>         <span class="s1">&#39;cash bonus&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>         <span class="s1">&#39;earn extra cash&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>         <span class="s1">&#39;spring savings certificate&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>         <span class="s1">&#39;valerogas marketing&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>         <span class="s1">&#39;all domestic employees&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>         <span class="s1">&#39;nominations for oct&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>         <span class="s1">&#39;confirmation from spinner&#39;</span><span class="p">]</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="n">docs</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'additional income'</span><span class="p">,</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>         <span class="s1">'best price'</span><span class="p">,</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>         <span class="s1">'big bucks'</span><span class="p">,</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>         <span class="s1">'cash bonus'</span><span class="p">,</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>         <span class="s1">'earn extra cash'</span><span class="p">,</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>         <span class="s1">'spring savings certificate'</span><span class="p">,</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>         <span class="s1">'valerogas marketing'</span><span class="p">,</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>         <span class="s1">'all domestic employees'</span><span class="p">,</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>         <span class="s1">'nominations for oct'</span><span class="p">,</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>         <span class="s1">'confirmation from spinner'</span><span class="p">]</span>
 <a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="c1"># 앞의 5개 : 스팸 / 뒤의 5개 : 정상</span>
 <a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
 <a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="c1"># 원-핫 인코딩</span>
@@ -9837,7 +9837,7 @@
 <a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="c1"># 패딩 과정 : 4개 패딩(post : 마지막)</span>
 <a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="n">max_length</span> <span class="o">=</span> <span class="mi">4</span>
 <a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="n">padded_docs</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">encoded_docs</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_length</span><span class="p">,</span>
-<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>                            <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>                            <span class="n">padding</span><span class="o">=</span><span class="s1">'post'</span><span class="p">)</span>
 <a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a><span class="nb">print</span><span class="p">(</span><span class="n">padded_docs</span><span class="p">)</span>
 <a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a><span class="c1"># 출력</span>
 <a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a><span class="c1"># [[30 24 0 0]</span>
@@ -9854,21 +9854,21 @@
 <a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
 <a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">input_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">))</span>
 <a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">())</span>
-<a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
-<a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a>              <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span>
-<a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a>              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'sigmoid'</span><span class="p">))</span>
+<a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">'adam'</span><span class="p">,</span>
+<a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a>              <span class="n">loss</span><span class="o">=</span><span class="s1">'binary_crossentropy'</span><span class="p">,</span>
+<a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a>              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">'accuracy'</span><span class="p">])</span>
 <a id="__codelineno-13-54" name="__codelineno-13-54" href="#__codelineno-13-54"></a><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">padded_docs</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a><span class="n">loss</span><span class="p">,</span> <span class="n">accuracy</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">padded_docs</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;정확도=&#39;</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>
+<a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'정확도='</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>
 <a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a><span class="c1"># 출력</span>
 <a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a><span class="c1"># 정확도 = 1.0</span>
 <a id="__codelineno-13-59" name="__codelineno-13-59" href="#__codelineno-13-59"></a>
 <a id="__codelineno-13-60" name="__codelineno-13-60" href="#__codelineno-13-60"></a><span class="c1"># 테스트</span>
-<a id="__codelineno-13-61" name="__codelineno-13-61" href="#__codelineno-13-61"></a><span class="n">test_doc</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;big income&#39;</span><span class="p">]</span>
+<a id="__codelineno-13-61" name="__codelineno-13-61" href="#__codelineno-13-61"></a><span class="n">test_doc</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'big income'</span><span class="p">]</span>
 <a id="__codelineno-13-62" name="__codelineno-13-62" href="#__codelineno-13-62"></a><span class="n">encoded_docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">one_hot</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">test_doc</span><span class="p">]</span>
 <a id="__codelineno-13-63" name="__codelineno-13-63" href="#__codelineno-13-63"></a><span class="n">padded_docs</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">encoded_docs</span><span class="p">,</span>
-<a id="__codelineno-13-64" name="__codelineno-13-64" href="#__codelineno-13-64"></a>              <span class="n">maxlen</span> <span class="o">=</span> <span class="n">max_length</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="s1">&#39;post&#39;</span><span class="p">)</span>
+<a id="__codelineno-13-64" name="__codelineno-13-64" href="#__codelineno-13-64"></a>              <span class="n">maxlen</span> <span class="o">=</span> <span class="n">max_length</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="s1">'post'</span><span class="p">)</span>
 <a id="__codelineno-13-65" name="__codelineno-13-65" href="#__codelineno-13-65"></a><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">padded_docs</span><span class="p">))</span>
 <a id="__codelineno-13-66" name="__codelineno-13-66" href="#__codelineno-13-66"></a><span class="c1"># 출력</span>
 <a id="__codelineno-13-67" name="__codelineno-13-67" href="#__codelineno-13-67"></a><span class="c1">#  [[0.5746514]]</span>
@@ -9887,14 +9887,14 @@
 <a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.preprocessing.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tokenizer</span>
 <a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">to_categorical</span>
 <a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="n">text_data</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Soft as the voice of an angel</span><span class="se">\n</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="n">text_data</span> <span class="o">=</span> <span class="s2">"""Soft as the voice of an angel</span><span class="se">\n</span>
 <a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="s2">Breathing a lesson unhead</span><span class="se">\n</span>
 <a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="s2">Hope with a gentle persuasion</span><span class="se">\n</span>
 <a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="s2">Whispers her comforting word</span><span class="se">\n</span>
 <a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="s2">Wait till the darkness is over</span><span class="se">\n</span>
 <a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="s2">Wait till the tempest is done</span><span class="se">\n</span>
 <a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="s2">Hope for sunshine tomorrow</span><span class="se">\n</span>
-<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="s2">After the shower&quot;&quot;&quot;</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="s2">After the shower"""</span>
 <a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>
 <a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">()</span>
 <a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="n">tokenizer</span><span class="o">.</span><span class="n">fit_on_texts</span><span class="p">([</span><span class="n">text_data</span><span class="p">])</span>
@@ -9907,16 +9907,16 @@
 <a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>
 <a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="nb">print</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">word_index</span><span class="p">)</span>
 <a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a><span class="c1"># 츨력(딕셔너리로의 변환)</span>
-<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="c1"># {&#39;the&#39;: 1, &#39;a&#39;: 2, &#39;hope&#39;: 3, &#39;wait&#39;: 4, &#39;till&#39;: 5,</span>
-<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="c1"># &#39;is&#39;: 6, &#39;soft&#39;: 7, &#39;as&#39;: 8, &#39;voice&#39;: 9, &#39;of&#39;: 10,  &#39;an&#39;: 11,</span>
-<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a><span class="c1"># &#39;angel&#39;: 12, &#39;breathing&#39;: 13, &#39;lesson&#39;: 14, &#39;unhead&#39;: 15,</span>
-<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a><span class="c1"># &#39;with&#39;: 16, &#39;gentle&#39;: 17, &#39;persuasion&#39;: 18, &#39;whispers&#39;: 19,</span>
-<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a><span class="c1"># &#39;her&#39;: 20,&#39;comforting&#39;: 21, &#39;word&#39;: 22, &#39;darkness&#39;: 23,</span>
-<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a><span class="c1"># &#39;over&#39;: 24, &#39;tempest&#39;: 25, &#39;done&#39;: 26, &#39;for&#39;: 27,</span>
-<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a><span class="c1"># &#39;sunshine&#39;: 28, &#39;tomorrow&#39;: 29, &#39;after&#39;: 30, &#39;shower&#39;: 31}</span>
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="c1"># {'the': 1, 'a': 2, 'hope': 3, 'wait': 4, 'till': 5,</span>
+<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="c1"># 'is': 6, 'soft': 7, 'as': 8, 'voice': 9, 'of': 10,  'an': 11,</span>
+<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a><span class="c1"># 'angel': 12, 'breathing': 13, 'lesson': 14, 'unhead': 15,</span>
+<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a><span class="c1"># 'with': 16, 'gentle': 17, 'persuasion': 18, 'whispers': 19,</span>
+<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a><span class="c1"># 'her': 20,'comforting': 21, 'word': 22, 'darkness': 23,</span>
+<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a><span class="c1"># 'over': 24, 'tempest': 25, 'done': 26, 'for': 27,</span>
+<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a><span class="c1"># 'sunshine': 28, 'tomorrow': 29, 'after': 30, 'shower': 31}</span>
 <a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a>
 <a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a><span class="n">vocab_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">word_index</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;어휘 크기: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">vocab_size</span><span class="p">)</span>
+<a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'어휘 크기: </span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="n">vocab_size</span><span class="p">)</span>
 <a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a><span class="c1"># 출력</span>
 <a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a><span class="c1"># 어휘 크기 : 32</span>
 <a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a>
@@ -9925,7 +9925,7 @@
 <a id="__codelineno-14-44" name="__codelineno-14-44" href="#__codelineno-14-44"></a>  <span class="n">sequence</span> <span class="o">=</span> <span class="n">encoded</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
 <a id="__codelineno-14-45" name="__codelineno-14-45" href="#__codelineno-14-45"></a>  <span class="n">sequences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>
 <a id="__codelineno-14-46" name="__codelineno-14-46" href="#__codelineno-14-46"></a><span class="nb">print</span><span class="p">(</span><span class="n">sequences</span><span class="p">)</span>
-<a id="__codelineno-14-47" name="__codelineno-14-47" href="#__codelineno-14-47"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;총 시퀀스 개수 : </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequences</span><span class="p">))</span>
+<a id="__codelineno-14-47" name="__codelineno-14-47" href="#__codelineno-14-47"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'총 시퀀스 개수 : </span><span class="si">%d</span><span class="s1">'</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequences</span><span class="p">))</span>
 <a id="__codelineno-14-48" name="__codelineno-14-48" href="#__codelineno-14-48"></a><span class="c1"># 출력(다음부분의 시퀀스)</span>
 <a id="__codelineno-14-49" name="__codelineno-14-49" href="#__codelineno-14-49"></a><span class="c1"># [[7, 8], [8, 1], [1, 9], [9, 10], [10, 11], [11, 12],</span>
 <a id="__codelineno-14-50" name="__codelineno-14-50" href="#__codelineno-14-50"></a><span class="c1"># [12, 13], [13, 2], [2, 14], [14, 15], [15, 3], [3, 16],</span>
@@ -9937,8 +9937,8 @@
 <a id="__codelineno-14-56" name="__codelineno-14-56" href="#__codelineno-14-56"></a>
 <a id="__codelineno-14-57" name="__codelineno-14-57" href="#__codelineno-14-57"></a><span class="n">sequences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sequences</span><span class="p">)</span>
 <a id="__codelineno-14-58" name="__codelineno-14-58" href="#__codelineno-14-58"></a><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sequences</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">sequences</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
-<a id="__codelineno-14-59" name="__codelineno-14-59" href="#__codelineno-14-59"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X=&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
-<a id="__codelineno-14-60" name="__codelineno-14-60" href="#__codelineno-14-60"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y=&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-14-59" name="__codelineno-14-59" href="#__codelineno-14-59"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"X="</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<a id="__codelineno-14-60" name="__codelineno-14-60" href="#__codelineno-14-60"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"y="</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <a id="__codelineno-14-61" name="__codelineno-14-61" href="#__codelineno-14-61"></a><span class="c1"># 출력</span>
 <a id="__codelineno-14-62" name="__codelineno-14-62" href="#__codelineno-14-62"></a><span class="c1"># X= [ 7 8 1 9 10 11 12 13 2 14 15 3 16 2 17 18 19</span>
 <a id="__codelineno-14-63" name="__codelineno-14-63" href="#__codelineno-14-63"></a><span class="c1"># 20 21 22 4 5 1 23 6 24 4 5 1 25 6 26 3 27 28 29 30 1]</span>
@@ -9952,23 +9952,23 @@
 <a id="__codelineno-14-71" name="__codelineno-14-71" href="#__codelineno-14-71"></a><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
 <a id="__codelineno-14-72" name="__codelineno-14-72" href="#__codelineno-14-72"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">input_length</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 <a id="__codelineno-14-73" name="__codelineno-14-73" href="#__codelineno-14-73"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
-<a id="__codelineno-14-74" name="__codelineno-14-74" href="#__codelineno-14-74"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
-<a id="__codelineno-14-75" name="__codelineno-14-75" href="#__codelineno-14-75"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span>
-<a id="__codelineno-14-76" name="__codelineno-14-76" href="#__codelineno-14-76"></a>              <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
-<a id="__codelineno-14-77" name="__codelineno-14-77" href="#__codelineno-14-77"></a>              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<a id="__codelineno-14-74" name="__codelineno-14-74" href="#__codelineno-14-74"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'softmax'</span><span class="p">))</span>
+<a id="__codelineno-14-75" name="__codelineno-14-75" href="#__codelineno-14-75"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">'sparse_categorical_crossentropy'</span><span class="p">,</span>
+<a id="__codelineno-14-76" name="__codelineno-14-76" href="#__codelineno-14-76"></a>              <span class="n">optimizer</span><span class="o">=</span><span class="s1">'adam'</span><span class="p">,</span>
+<a id="__codelineno-14-77" name="__codelineno-14-77" href="#__codelineno-14-77"></a>              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">'accuracy'</span><span class="p">])</span>
 <a id="__codelineno-14-78" name="__codelineno-14-78" href="#__codelineno-14-78"></a><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <a id="__codelineno-14-79" name="__codelineno-14-79" href="#__codelineno-14-79"></a><span class="c1"># 출력</span>
 <a id="__codelineno-14-80" name="__codelineno-14-80" href="#__codelineno-14-80"></a><span class="c1"># ...</span>
 <a id="__codelineno-14-81" name="__codelineno-14-81" href="#__codelineno-14-81"></a><span class="c1"># Epoch 500/500 2/2 - 0s - loss: 0.3053 - accuracy: 0.8421</span>
 <a id="__codelineno-14-82" name="__codelineno-14-82" href="#__codelineno-14-82"></a>
 <a id="__codelineno-14-83" name="__codelineno-14-83" href="#__codelineno-14-83"></a><span class="c1"># 테스트 단어 정수 인코딩</span>
-<a id="__codelineno-14-84" name="__codelineno-14-84" href="#__codelineno-14-84"></a><span class="n">test_text</span> <span class="o">=</span> <span class="s1">&#39;Wait&#39;</span>
+<a id="__codelineno-14-84" name="__codelineno-14-84" href="#__codelineno-14-84"></a><span class="n">test_text</span> <span class="o">=</span> <span class="s1">'Wait'</span>
 <a id="__codelineno-14-85" name="__codelineno-14-85" href="#__codelineno-14-85"></a><span class="n">encoded</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">texts_to_sequences</span><span class="p">([</span><span class="n">test_text</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
 <a id="__codelineno-14-86" name="__codelineno-14-86" href="#__codelineno-14-86"></a><span class="n">encoded</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
 <a id="__codelineno-14-87" name="__codelineno-14-87" href="#__codelineno-14-87"></a>
 <a id="__codelineno-14-88" name="__codelineno-14-88" href="#__codelineno-14-88"></a><span class="c1"># 신경망의 예측값 출력</span>
 <a id="__codelineno-14-89" name="__codelineno-14-89" href="#__codelineno-14-89"></a><span class="n">onehot_output</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
-<a id="__codelineno-14-90" name="__codelineno-14-90" href="#__codelineno-14-90"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;onehot_output=&#39;</span><span class="p">,</span> <span class="n">onehot_output</span><span class="p">)</span>
+<a id="__codelineno-14-90" name="__codelineno-14-90" href="#__codelineno-14-90"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'onehot_output='</span><span class="p">,</span> <span class="n">onehot_output</span><span class="p">)</span>
 <a id="__codelineno-14-91" name="__codelineno-14-91" href="#__codelineno-14-91"></a><span class="c1"># 출력</span>
 <a id="__codelineno-14-92" name="__codelineno-14-92" href="#__codelineno-14-92"></a><span class="c1"># onehot_output= [[5.6587060e-06 4.0273936e-03 6.2348531e-03</span>
 <a id="__codelineno-14-93" name="__codelineno-14-93" href="#__codelineno-14-93"></a><span class="c1"># 8.6066285e-03 1.5018744e-05 9.7867030e-01 6.0064325e-05</span>
@@ -9982,12 +9982,12 @@
 <a id="__codelineno-14-101" name="__codelineno-14-101" href="#__codelineno-14-101"></a>
 <a id="__codelineno-14-102" name="__codelineno-14-102" href="#__codelineno-14-102"></a><span class="c1"># 가장 높은 출력 유닛</span>
 <a id="__codelineno-14-103" name="__codelineno-14-103" href="#__codelineno-14-103"></a><span class="n">output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">onehot_output</span><span class="p">)</span>
-<a id="__codelineno-14-104" name="__codelineno-14-104" href="#__codelineno-14-104"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output =&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+<a id="__codelineno-14-104" name="__codelineno-14-104" href="#__codelineno-14-104"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'output ='</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
 <a id="__codelineno-14-105" name="__codelineno-14-105" href="#__codelineno-14-105"></a><span class="c1"># 출력</span>
 <a id="__codelineno-14-106" name="__codelineno-14-106" href="#__codelineno-14-106"></a><span class="c1"># output = [5]</span>
 <a id="__codelineno-14-107" name="__codelineno-14-107" href="#__codelineno-14-107"></a>
 <a id="__codelineno-14-108" name="__codelineno-14-108" href="#__codelineno-14-108"></a><span class="c1"># 출력층 유닛 번호의 단어화</span>
-<a id="__codelineno-14-109" name="__codelineno-14-109" href="#__codelineno-14-109"></a><span class="nb">print</span><span class="p">(</span><span class="n">test_text</span><span class="p">,</span> <span class="s2">&quot;=&gt;&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<a id="__codelineno-14-109" name="__codelineno-14-109" href="#__codelineno-14-109"></a><span class="nb">print</span><span class="p">(</span><span class="n">test_text</span><span class="p">,</span> <span class="s2">"=&gt;"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
 <a id="__codelineno-14-110" name="__codelineno-14-110" href="#__codelineno-14-110"></a><span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">word_index</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 <a id="__codelineno-14-111" name="__codelineno-14-111" href="#__codelineno-14-111"></a>  <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="n">output</span><span class="p">:</span>
 <a id="__codelineno-14-112" name="__codelineno-14-112" href="#__codelineno-14-112"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
@@ -10019,22 +10019,22 @@
 <a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>
 <a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="c1"># 처음 몇 개의 인덱스는 특수 용도로 사용</span>
 <a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="n">word_to_index</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:(</span><span class="n">v</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">word_to_index</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
-<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="n">word_to_index</span><span class="p">[</span><span class="s2">&quot;&lt;PAD&gt;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>         <span class="c1"># 문장 채우는 기호</span>
-<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="n">word_to_index</span><span class="p">[</span><span class="s2">&quot;&lt;START&gt;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>       <span class="c1"># 시작 표시</span>
-<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="n">word_to_index</span><span class="p">[</span><span class="s2">&quot;&lt;UNK&gt;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>         <span class="c1"># 알려지지  않은  토큰</span>
-<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="n">word_to_index</span><span class="p">[</span><span class="s2">&quot;&lt;UNUSED&gt;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="n">word_to_index</span><span class="p">[</span><span class="s2">"&lt;PAD&gt;"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>         <span class="c1"># 문장 채우는 기호</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="n">word_to_index</span><span class="p">[</span><span class="s2">"&lt;START&gt;"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>       <span class="c1"># 시작 표시</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="n">word_to_index</span><span class="p">[</span><span class="s2">"&lt;UNK&gt;"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>         <span class="c1"># 알려지지  않은  토큰</span>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="n">word_to_index</span><span class="p">[</span><span class="s2">"&lt;UNUSED&gt;"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
 <a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>
 <a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="n">index_to_word</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">value</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 <a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a><span class="ow">in</span> <span class="n">word_to_index</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
 <a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>
-<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">index_to_word</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">x_train</span><span class="p">[</span><span class="mi">0</span><span class="p">]]))</span>
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="nb">print</span><span class="p">(</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">index_to_word</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">x_train</span><span class="p">[</span><span class="mi">0</span><span class="p">]]))</span>
 <a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="c1"># 출력</span>
 <a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a><span class="c1"># START this film was just brilliant casting</span>
-<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="c1"># location scenery story direction everyone&#39;s</span>
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="c1"># location scenery story direction everyone's</span>
 <a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a><span class="c1"># really suited the part they played and you could</span>
-<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="c1"># just imagine being there robert redford&#39;s is an</span>
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a><span class="c1"># just imagine being there robert redford's is an</span>
 <a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a><span class="c1"># amazing actor and ... the whole story was so lovely</span>
-<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a><span class="c1"># because it was true and was someone&#39;s life after all</span>
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a><span class="c1"># because it was true and was someone's life after all</span>
 <a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a><span class="c1"># that was shared with us all</span>
 <a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a>
 <a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a><span class="c1"># 전처리</span>
@@ -10051,9 +10051,9 @@
 <a id="__codelineno-15-51" name="__codelineno-15-51" href="#__codelineno-15-51"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">output_dim</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span>
 <a id="__codelineno-15-52" name="__codelineno-15-52" href="#__codelineno-15-52"></a>          <span class="n">input_length</span> <span class="o">=</span> <span class="mi">100</span><span class="p">))</span>
 <a id="__codelineno-15-53" name="__codelineno-15-53" href="#__codelineno-15-53"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">())</span>
-<a id="__codelineno-15-54" name="__codelineno-15-54" href="#__codelineno-15-54"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<a id="__codelineno-15-54" name="__codelineno-15-54" href="#__codelineno-15-54"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">))</span>
 <a id="__codelineno-15-55" name="__codelineno-15-55" href="#__codelineno-15-55"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
-<a id="__codelineno-15-56" name="__codelineno-15-56" href="#__codelineno-15-56"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
+<a id="__codelineno-15-56" name="__codelineno-15-56" href="#__codelineno-15-56"></a><span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">'sigmoid'</span><span class="p">))</span>
 <a id="__codelineno-15-57" name="__codelineno-15-57" href="#__codelineno-15-57"></a><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 <a id="__codelineno-15-58" name="__codelineno-15-58" href="#__codelineno-15-58"></a>
 <a id="__codelineno-15-59" name="__codelineno-15-59" href="#__codelineno-15-59"></a><span class="c1"># 출력</span>
@@ -10068,9 +10068,9 @@
 <a id="__codelineno-15-68" name="__codelineno-15-68" href="#__codelineno-15-68"></a><span class="c1"># Total params: 1,049,729(640000 + 409664 + 65)</span>
 <a id="__codelineno-15-69" name="__codelineno-15-69" href="#__codelineno-15-69"></a>
 <a id="__codelineno-15-70" name="__codelineno-15-70" href="#__codelineno-15-70"></a><span class="c1"># 모델 컴파일</span>
-<a id="__codelineno-15-71" name="__codelineno-15-71" href="#__codelineno-15-71"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span>
-<a id="__codelineno-15-72" name="__codelineno-15-72" href="#__codelineno-15-72"></a>              <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
-<a id="__codelineno-15-73" name="__codelineno-15-73" href="#__codelineno-15-73"></a>              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<a id="__codelineno-15-71" name="__codelineno-15-71" href="#__codelineno-15-71"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">'binary_crossentropy'</span><span class="p">,</span>
+<a id="__codelineno-15-72" name="__codelineno-15-72" href="#__codelineno-15-72"></a>              <span class="n">optimizer</span><span class="o">=</span><span class="s1">'adam'</span><span class="p">,</span>
+<a id="__codelineno-15-73" name="__codelineno-15-73" href="#__codelineno-15-73"></a>              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">'accuracy'</span><span class="p">])</span>
 <a id="__codelineno-15-74" name="__codelineno-15-74" href="#__codelineno-15-74"></a><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
 <a id="__codelineno-15-75" name="__codelineno-15-75" href="#__codelineno-15-75"></a><span class="n">epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
 <a id="__codelineno-15-76" name="__codelineno-15-76" href="#__codelineno-15-76"></a><span class="c1"># 출력</span>
@@ -10143,7 +10143,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

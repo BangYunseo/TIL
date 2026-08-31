@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -9676,7 +9676,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// 데이터베이스 객체 생성
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>val db = openOrCreateDatabase(&quot;testdb&quot;, Context.MODE_PRIVATE, null)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>val db = openOrCreateDatabase("testdb", Context.MODE_PRIVATE, null)
 </code></pre></div>
 <h3 id="_2">질의문<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
@@ -9686,19 +9686,19 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>// 테이블 생성(create 문)
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>db.execSQL(&quot;create table USER_TB(&quot; +
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>           &quot;_id integer primary key autoincrement,&quot; +
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>           &quot;name not null,&quot; +
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>           &quot;phone)&quot;)
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>db.execSQL("create table USER_TB(" +
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>           "_id integer primary key autoincrement," +
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>           "name not null," +
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>           "phone)")
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>// 데이터 삽입(insert 문)
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>db.execSQL(&quot;insert into USER_TB(name, phone) values (?, ?)&quot;,
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>           arrayOf&lt;String&gt;(&quot;yunseo&quot;, &quot;0101111&quot;))
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>db.execSQL("insert into USER_TB(name, phone) values (?, ?)",
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>           arrayOf&lt;String&gt;("yunseo", "0101111"))
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>// 데이터 조회(select 문)
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>val cursor = db.rawQuery(&quot;select * from USER_TB&quot;, null)
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>val cursor = db.rawQuery("select * from USER_TB", null)
 </code></pre></div>
 <h4 id="rawquery">rawQuery()<a class="headerlink" href="#rawquery" title="Permanent link">&para;</a></h4>
 <ul>
@@ -9739,9 +9739,9 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>// insert() 함수 사용
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>val values = ContentValues()
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>values.put(&quot;name&quot;, &quot;yunseo&quot;)
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>values.put(&quot;phone&quot;, &quot;0101112&quot;)
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>db.insert(&quot;USER_TB&quot;, null, values)
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>values.put("name", "yunseo")
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>values.put("phone", "0101112")
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>db.insert("USER_TB", null, values)
 </code></pre></div>
 <h4 id="query">query() 함수 매개 변수<a class="headerlink" href="#query" title="Permanent link">&para;</a></h4>
 <table>
@@ -9784,8 +9784,8 @@
 </table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>// query() 함수 사용
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>val cursor = db.query(&quot;USER_TB&quot;, arrayOf&lt;String&gt;(&quot;name&quot;, &quot;phone&quot;). &quot;phone = ?&quot;,
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>             arrayOf&lt;String&gt;(&quot;0101112&quot;), null, null, null)
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>val cursor = db.query("USER_TB", arrayOf&lt;String&gt;("name", "phone"). "phone = ?",
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>             arrayOf&lt;String&gt;("0101112"), null, null, null)
 </code></pre></div>
 <h3 id="_4">데이터베이스 관리<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
@@ -9799,7 +9799,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>// SQLiteOpenHelper 하위 클래스 작성
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>class DBHelper(context: Context): SQLiteOpenHelper(context, &quot;testdb&quot;, null, 1){
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>class DBHelper(context: Context): SQLiteOpenHelper(context, "testdb", null, 1){
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    override fun onCreate(db: SQLiteDatabase?){
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    }
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int){
@@ -9827,34 +9827,34 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>// 파일 객체 생성 후 데이터 쓰기
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>val file = File(filesDir, &quot;test.txt&quot;)
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>val file = File(filesDir, "test.txt")
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>val writeStream: OutputStreamWriter = file.writer()
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>writeStream.write(&quot;hello, World!&quot;)
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>writeStream.write("hello, World!")
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>writeStream.flush()
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>// 파일 데이터 읽기
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>val readStream: BufferedReader = file.reader().buffered()
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>readStream.forEachLine{
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    Log.d(&quot;yunseo&quot;, &quot;$it&quot;)
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    Log.d("yunseo", "$it")
 <a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>}
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>// Context 객체 함수 사용
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>openFileOutput(&quot;test.txt&quot;, Context.MODE_PRIVATE).use{
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    it.write(&quot;hello, World!&quot;.toByteArray())
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>openFileOutput("test.txt", Context.MODE_PRIVATE).use{
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    it.write("hello, World!".toByteArray())
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>}
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>openFileInput(&quot;test.txt&quot;).bufferedReader().forEachLine {
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    Log.d(&quot;yunseo&quot;, &quot;$it&quot;)
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>openFileInput("test.txt").bufferedReader().forEachLine {
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    Log.d("yunseo", "$it")
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>}
 </code></pre></div>
 <h3 id="_6">외장 메모리 파일 이용<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>// 외장 메모리 사용 가능 여부 판단
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>if(Environment.getExternalStorageState() == Environment.MEDIZ_MOUNTED){
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    Log.d(&quot;yunseo&quot;, &quot;ExternalStorageState MOUNTED&quot;)
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    Log.d("yunseo", "ExternalStorageState MOUNTED")
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>} else {
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    Log.d(&quot;yunseo&quot;, &quot;ExternalStorageState UNMOUNTED&quot;)
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    Log.d("yunseo", "ExternalStorageState UNMOUNTED")
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>}
 </code></pre></div>
 <h3 id="_7">앱 별 저장소 이용<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
@@ -9866,7 +9866,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>// 앱 별 저장소 접근
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>val file: File? = getExternalFilesDir(null)
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Log.d(&quot;yunseo&quot;, &quot;$(file?.absolutePath)&quot;)
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Log.d("yunseo", "$(file?.absolutePath)")
 </code></pre></div>
 <h3 id="getexternalfilesdir">getExternalFilesDir()<a class="headerlink" href="#getexternalfilesdir" title="Permanent link">&para;</a></h3>
 <ul>
@@ -9922,7 +9922,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>// 앱 전체 데이터 저장
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>val sharedPref = getSharedPreferences(&quot;my_prefs&quot;, Context.MODE_PRIVATE)
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>val sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
 </code></pre></div>
 <h3 id="sharedpreferenceseditor-put">SharedPreferences.Editor 클래스 put 함수<a class="headerlink" href="#sharedpreferenceseditor-put" title="Permanent link">&para;</a></h3>
 <ul>
@@ -9956,8 +9956,8 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>// 프리퍼런스 데이터 저장
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>sharedPref.edit().run{
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>  putString(&quot;data1&quot;, &quot;hello&quot;)
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>  putInt(&quot;data2&quot;, 10)
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>  putString("data1", "hello")
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>  putInt("data2", 10)
 <a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>  commit()
 <a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>}
 </code></pre></div>
@@ -9991,8 +9991,8 @@
 </table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>// 프리퍼런스 데이터 로드
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>val data1 = sharedPref.getString(&quot;data1&quot;, &quot;world&quot;)
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>val data2 = sharedPref.getInt(&quot;data2&quot;, 10)
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>val data1 = sharedPref.getString("data1", "world")
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>val data2 = sharedPref.getInt("data2", 10)
 </code></pre></div>
 <h3 id="_10">앱 설정 화면 생성<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <ul>
@@ -10000,7 +10000,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>// AndroidX 프리퍼런스 사용 선언
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>implementation(&quot;androidx.preference:preference-ktx:1.2.1&quot;)
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>implementation("androidx.preference:preference-ktx:1.2.1")
 </code></pre></div>
 <h3 id="_11">프리퍼런스 이용 방법<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <ul>
@@ -10011,14 +10011,14 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cm">&lt;!-- 설정 XML 파일--&gt;</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nt">&lt;PreferenceScreen</span><span class="w"> </span><span class="na">xmlns:app=</span><span class="s">&quot;http://schemas.android.com/apk/res-auto&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nt">&lt;PreferenceScreen</span><span class="w"> </span><span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span><span class="nt">&gt;</span>
 <a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="nt">&lt;SwitchPreferenceCompat</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">        </span><span class="na">app:key=</span><span class="s">&quot;notifications&quot;</span>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">        </span><span class="na">app:title=</span><span class="s">&quot;Enable message notifications&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">        </span><span class="na">app:key=</span><span class="s">"notifications"</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">        </span><span class="na">app:title=</span><span class="s">"Enable message notifications"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="nt">&lt;Preference</span>
-<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">        </span><span class="na">app:key=</span><span class="s">&quot;feedback&quot;</span>
-<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">        </span><span class="na">app:title=</span><span class="s">&quot;Send feedback&quot;</span>
-<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">        </span><span class="na">app:summary=</span><span class="s">&quot;Report technical issues or suggest new features&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">        </span><span class="na">app:key=</span><span class="s">"feedback"</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">        </span><span class="na">app:title=</span><span class="s">"Send feedback"</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">        </span><span class="na">app:summary=</span><span class="s">"Report technical issues or suggest new features"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="nt">&lt;/PreferenceScreen&gt;</span>
 </code></pre></div>
 <table>
@@ -10054,10 +10054,10 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cm">&lt;!-- 액티비티 프래그먼트 출력 --&gt;</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nt">&lt;fragment</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="na">class=</span><span class="s">&quot;com.example.test17.MySettingFragment&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nt">&lt;fragment</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span><span class="na">class=</span><span class="s">"com.example.test17.MySettingFragment"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <ul>
 <li>실행 결과</li>
@@ -10069,23 +10069,23 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cm">&lt;!-- 설정 항목끼리 묶기 --&gt;</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nt">&lt;PreferenceScreen</span><span class="w"> </span><span class="na">xmlns:app=</span><span class="s">&quot;http://schemas.android.com/apk/res-auto&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nt">&lt;PreferenceScreen</span><span class="w"> </span><span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span><span class="nt">&gt;</span>
 <a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="nt">&lt;PreferenceCategory</span>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">        </span><span class="na">app:key=</span><span class="s">&quot;a_category&quot;</span>
-<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">        </span><span class="na">app:title=</span><span class="s">&quot;A Setting&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">        </span><span class="na">app:key=</span><span class="s">"a_category"</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">        </span><span class="na">app:title=</span><span class="s">"A Setting"</span><span class="nt">&gt;</span>
 <a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">        </span><span class="nt">&lt;SwitchPreferenceCompat</span>
-<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">            </span><span class="na">app:key=</span><span class="s">&quot;a1&quot;</span>
-<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">            </span><span class="na">app:title=</span><span class="s">&quot;A - 1 Setting&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">            </span><span class="na">app:key=</span><span class="s">"a1"</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">            </span><span class="na">app:title=</span><span class="s">"A - 1 Setting"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">        </span><span class="nt">&lt;SwitchPreferenceCompat</span>
-<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">            </span><span class="na">app:key=</span><span class="s">&quot;a2&quot;</span>
-<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">            </span><span class="na">app:title=</span><span class="s">&quot;A - 2 Setting&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">            </span><span class="na">app:key=</span><span class="s">"a2"</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">            </span><span class="na">app:title=</span><span class="s">"A - 2 Setting"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">    </span><span class="nt">&lt;/PreferenceCategory&gt;</span>
 <a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">    </span><span class="nt">&lt;PreferenceCategory</span>
-<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">        </span><span class="na">app:key=</span><span class="s">&quot;B_category&quot;</span>
-<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">        </span><span class="na">app:title=</span><span class="s">&quot;B Setting&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">        </span><span class="na">app:key=</span><span class="s">"B_category"</span>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">        </span><span class="na">app:title=</span><span class="s">"B Setting"</span><span class="nt">&gt;</span>
 <a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">        </span><span class="nt">&lt;SwitchPreferenceCompat</span>
-<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="w">            </span><span class="na">app:key=</span><span class="s">&quot;b1&quot;</span>
-<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="w">            </span><span class="na">app:title=</span><span class="s">&quot;B - 1 Setting&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="w">            </span><span class="na">app:key=</span><span class="s">"b1"</span>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="w">            </span><span class="na">app:title=</span><span class="s">"B - 1 Setting"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="w">    </span><span class="nt">&lt;/PreferenceCategory&gt;</span>
 <a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="nt">&lt;/PreferenceScreen&gt;</span>
 </code></pre></div>
@@ -10100,17 +10100,17 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cm">&lt;!-- 두 화면 포함 설정 화면 --&gt;</span>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="nt">&lt;PreferenceScreen</span><span class="w"> </span><span class="na">xmlns:app=</span><span class="s">&quot;http://schemas.android.com/apk/res-auto&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="nt">&lt;PreferenceScreen</span><span class="w"> </span><span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span><span class="nt">&gt;</span>
 <a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="nt">&lt;Preference</span>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">        </span><span class="na">app:key=</span><span class="s">&quot;a&quot;</span>
-<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">        </span><span class="na">app:summary=</span><span class="s">&quot;A Setting summary&quot;</span>
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">        </span><span class="na">app:title=</span><span class="s">&quot;A Setting&quot;</span>
-<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">        </span><span class="na">app:fragment=</span><span class="s">&quot;com.example.test17.ASettingFragment&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">        </span><span class="na">app:key=</span><span class="s">"a"</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">        </span><span class="na">app:summary=</span><span class="s">"A Setting summary"</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">        </span><span class="na">app:title=</span><span class="s">"A Setting"</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">        </span><span class="na">app:fragment=</span><span class="s">"com.example.test17.ASettingFragment"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">    </span><span class="nt">&lt;Preference</span>
-<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">        </span><span class="na">app:key=</span><span class="s">&quot;b&quot;</span>
-<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">        </span><span class="na">app:summary=</span><span class="s">&quot;B Setting summary&quot;</span>
-<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">        </span><span class="na">app:title=</span><span class="s">&quot;B Setting&quot;</span>
-<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="w">        </span><span class="na">app:fragment=</span><span class="s">&quot;com.example.test17.BSettingFragment&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">        </span><span class="na">app:key=</span><span class="s">"b"</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">        </span><span class="na">app:summary=</span><span class="s">"B Setting summary"</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">        </span><span class="na">app:title=</span><span class="s">"B Setting"</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="w">        </span><span class="na">app:fragment=</span><span class="s">"com.example.test17.BSettingFragment"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="nt">&lt;/PreferenceScreen&gt;</span>
 </code></pre></div>
 <ul>
@@ -10152,11 +10152,11 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="cm">&lt;!-- 인텐트 설정 화면 --&gt;</span>
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nt">&lt;Preference</span>
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="na">app:key=</span><span class="s">&quot;activity&quot;</span>
-<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="na">app:title=</span><span class="s">&quot;Launch activity&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="na">app:key=</span><span class="s">"activity"</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="na">app:title=</span><span class="s">"Launch activity"</span><span class="nt">&gt;</span>
 <a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">    </span><span class="nt">&lt;intent</span>
-<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">        </span><span class="na">android:targetClass=</span><span class="s">&quot;com.example.test17.SomeActivity&quot;</span>
-<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">        </span><span class="na">android:targetPackage=</span><span class="s">&quot;com.example.test17&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">        </span><span class="na">android:targetClass=</span><span class="s">"com.example.test17.SomeActivity"</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">        </span><span class="na">android:targetPackage=</span><span class="s">"com.example.test17"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="nt">&lt;/Preference&gt;</span>
 </code></pre></div>
 <h3 id="extra">\&lt;extra&gt; 엑스트라 태그<a class="headerlink" href="#extra" title="Permanent link">&para;</a></h3>
@@ -10168,18 +10168,18 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="cm">&lt;!-- 인텐트 엑스트라 데이터 포함 --&gt;</span>
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
 <a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nt">&lt;intent</span>
-<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="na">android:targetClass=</span><span class="s">&quot;com.example.test17.SomeActivity&quot;</span>
-<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="na">android:targetPackage=</span><span class="s">&quot;com.example.test17&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="na">android:targetClass=</span><span class="s">"com.example.test17.SomeActivity"</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">    </span><span class="na">android:targetPackage=</span><span class="s">"com.example.test17"</span><span class="nt">&gt;</span>
 <a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">    </span><span class="nt">&lt;extra</span>
-<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;example_key&quot;</span>
-<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">        </span><span class="na">android:value=</span><span class="s">&quot;example_value&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">        </span><span class="na">android:name=</span><span class="s">"example_key"</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">        </span><span class="na">android:value=</span><span class="s">"example_value"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="nt">&lt;/intent&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="cm">&lt;!-- 암시적 인텐트 사용 --&gt;</span>
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
 <a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="nt">&lt;intent</span>
-<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">    </span><span class="na">android:action=</span><span class="s">&quot;android.intent.action.VIEW&quot;</span>
-<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">    </span><span class="na">android:data=</span><span class="s">&quot;http://www.google.com&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">    </span><span class="na">android:action=</span><span class="s">"android.intent.action.VIEW"</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">    </span><span class="na">android:data=</span><span class="s">"http://www.google.com"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <h3 id="_13">설정 제어<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <ul>
@@ -10189,19 +10189,19 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="cm">&lt;!-- 글 입력 설정 --&gt;</span>
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
 <a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="nt">&lt;EditTextPreference</span>
-<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="na">app:key=</span><span class="s">&quot;id&quot;</span>
-<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">    </span><span class="na">app:title=</span><span class="s">&quot;ID 설정&quot;</span>
-<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">    </span><span class="na">app:isPreferenceVisible=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="na">app:key=</span><span class="s">"id"</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">    </span><span class="na">app:title=</span><span class="s">"ID 설정"</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">    </span><span class="na">app:isPreferenceVisible=</span><span class="s">"false"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>// 설정값 코드에서 변경
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
 <a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
 <a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>    setPreferencesFromResource(R.xml.settings, rootKey)
-<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>    val idPreference: EditTextPreference? = findPreference(&quot;id&quot;)
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>    val idPreference: EditTextPreference? = findPreference("id")
 <a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>    idPreference?.isVisible = true
 <a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>
-<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>    idPreference?.summary = &quot;code summary&quot;
-<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>    idPreference?.title = &quot;code title&quot;
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>    idPreference?.summary = "code summary"
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>    idPreference?.title = "code title"
 <a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>}
 </code></pre></div>
 <ul>
@@ -10214,19 +10214,19 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="cm">&lt;!-- 설정 XML 예시 --&gt;</span>
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
 <a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="nt">&lt;EditTextPreference</span>
-<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">    </span><span class="na">app:key=</span><span class="s">&quot;id&quot;</span>
-<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">    </span><span class="na">app:title=</span><span class="s">&quot;ID 설정&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="w">    </span><span class="na">app:key=</span><span class="s">"id"</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">    </span><span class="na">app:title=</span><span class="s">"ID 설정"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
 <a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="nt">&lt;ListPreference</span>
-<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="w">    </span><span class="na">app:key=</span><span class="s">&quot;color&quot;</span>
-<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="w">    </span><span class="na">app:title=</span><span class="s">&quot;색상 선택&quot;</span>
-<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="w">    </span><span class="na">android:entries=</span><span class="s">&quot;@array/my_color&quot;</span>
-<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="w">    </span><span class="na">app:entryValues=</span><span class="s">&quot;@array/my_color_values&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="w">    </span><span class="na">app:key=</span><span class="s">"color"</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="w">    </span><span class="na">app:title=</span><span class="s">"색상 선택"</span>
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="w">    </span><span class="na">android:entries=</span><span class="s">"@array/my_color"</span>
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="w">    </span><span class="na">app:entryValues=</span><span class="s">"@array/my_color_values"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>// 설정값 자동 적용
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
-<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>val idPreference: EditTextPreference? = findPreference(&quot;id&quot;)
-<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>val colorPreference: ListPreference? = findPreference(&quot;color&quot;)
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>val idPreference: EditTextPreference? = findPreference("id")
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>val colorPreference: ListPreference? = findPreference("color")
 <a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>
 <a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>idPreference?.summaryProvider =
 <a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>    EditTextPreference.SimpleSummaryProvider.getInstance()
@@ -10243,9 +10243,9 @@
 <a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>    Preference.SummaryProvider&lt;EditTextPreference&gt; { preference -&gt;
 <a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>        val text = preference.text
 <a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>        if (TextUtils.isEmpty(text)) {
-<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>            &quot;설정이 되지 않았습니다.&quot;
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>            "설정이 되지 않았습니다."
 <a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>        } else {
-<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>            &quot;설정된 ID 값은 : $text 입니다.&quot;
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>            "설정된 ID 값은 : $text 입니다."
 <a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>        }
 <a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>    }
 </code></pre></div>
@@ -10260,7 +10260,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>// 이벤트 핸들러 지정
 <a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
 <a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>idPreference?.setOnPreferenceClickListener { preference -&gt;
-<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>    Log.d(&quot;Yunseo&quot;, &quot;preference key : ${preference.key}&quot;)
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>    Log.d("Yunseo", "preference key : ${preference.key}")
 <a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>    true
 <a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>}
 </code></pre></div>
@@ -10271,7 +10271,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>// 설정값 가져오기
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
 <a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
-<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>val id = sharedPreferences.getString(&quot;id&quot;, &quot;&quot;)
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>val id = sharedPreferences.getString("id", "")
 </code></pre></div>
 <h3 id="_16">설정 변경 순간 감지<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <h4 id="preferenceonpreferencechangelistener">Preference.OnPreferenceChangeListener<a class="headerlink" href="#preferenceonpreferencechangelistener" title="Permanent link">&para;</a></h4>
@@ -10282,7 +10282,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>// 프리퍼런스를 통한 이벤트 처리
 <a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>
 <a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>idPreference?.setOnPreferenceChangeListener { preference, newValue -&gt;
-<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>    Log.d(&quot;Yunseo&quot;, &quot;preference key : ${preference.key}, newValue : $newValue&quot;)
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>    Log.d("Yunseo", "preference key : ${preference.key}, newValue : $newValue")
 <a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>    true
 <a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>}
 </code></pre></div>
@@ -10297,8 +10297,8 @@
 <a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>    // (... 생략 ...)
 <a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>    override fun onSharedPreferenceChanged(sharedPreferences:
 <a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>                                               SharedPreferences?, key: String?) {
-<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>        if (key == &quot;id&quot;) {
-<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>            Log.i(&quot;Yunseo&quot;, &quot;newValue : &quot; + sharedPreferences?.getString(&quot;id&quot;, &quot;&quot;))
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>        if (key == "id") {
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>            Log.i("Yunseo", "newValue : " + sharedPreferences?.getString("id", ""))
 <a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>        }
 <a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>    }
 <a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>
@@ -10416,7 +10416,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

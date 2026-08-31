@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -9502,14 +9502,14 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">&lt;!-- MainActivity의 DetailActivity 등록 --&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">&lt;activity</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="na">android:name=</span><span class="s">&quot;.DetailActivity&quot;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="na">android:exported=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="na">android:name=</span><span class="s">".DetailActivity"</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="na">android:exported=</span><span class="s">"true"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">&lt;activity</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="na">android:name=</span><span class="s">&quot;MainActivity&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="na">android:exported=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="na">android:name=</span><span class="s">"MainActivity"</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="na">android:exported=</span><span class="s">"true"</span><span class="w"> </span><span class="nt">&gt;</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">&lt;intent-filter&gt;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.action.MAIN&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.category.LAUNCHER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">&lt;/intent-filter&gt;</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nt">&lt;/activity&gt;</span>
 </code></pre></div>
@@ -9545,14 +9545,14 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>// 엑스트라 데이터 추가
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>val intent: Intent = Intent(this, DetailActivity::class.java)
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>intent.putExtra(&quot;data1&quot;, &quot;hello&quot;)
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>intent.putExtra(&quot;data2&quot;, 10)
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>intent.putExtra("data1", "hello")
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>intent.putExtra("data2", 10)
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>startActivity(intent)
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>// 엑스트라 데이터 반환
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>val data1 = intent.getStringExtra(&quot;data1&quot;)
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>val data2 = intent.getIntExtra(&quot;data2&quot;, 0)
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>val data1 = intent.getStringExtra("data1")
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>val data2 = intent.getIntExtra("data2", 0)
 </code></pre></div>
 <h3 id="_3">액티비티 화면 전환<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p><img src="./Image/ch08/ch08-03-ARL.PNG" height="auto" /></p>
@@ -9629,8 +9629,8 @@
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>  // Contract
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  {
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    // Callback
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    val resultData = it.data?.getStringExtra(&quot;result&quot;)
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    binding.mainResultView.text = &quot;result : $resultData&quot;
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    val resultData = it.data?.getStringExtra("result")
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    binding.mainResultView.text = "result : $resultData"
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>  }
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>// ActivityResultLauncher 실행
@@ -9643,7 +9643,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>// 결과 · 화면 전환
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>intent.putExtra(&quot;resultData&quot;, &quot;world&quot;)
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>intent.putExtra("resultData", "world")
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>setResult(RESULT_OK, intent)
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>finish()
 </code></pre></div>
@@ -9676,52 +9676,52 @@
 </table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cm">&lt;!-- 자동 생성 메인 액티비티 --&gt;</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">&lt;activity</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;.MainActivity&quot;</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="na">android:exported=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">&lt;activity</span><span class="w"> </span><span class="na">android:name=</span><span class="s">".MainActivity"</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="na">android:exported=</span><span class="s">"true"</span><span class="w"> </span><span class="nt">&gt;</span>
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">&lt;intent-filter&gt;</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.action.MAIN&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.category.LAUNCHER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="nt">&lt;/intent-filter&gt;</span>
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nt">&lt;/activity&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cm">&lt;!-- 외부 앱과 연동하는 인텐트 필터 설정(메인 액티비티 X)--&gt;</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">&lt;activity</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="na">android:name=</span><span class="s">&quot;.TwoActivity&quot;</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="na">android:exported=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="na">android:name=</span><span class="s">".TwoActivity"</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="na">android:exported=</span><span class="s">"true"</span><span class="w"> </span><span class="nt">&gt;</span>
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="nt">&lt;intent-filter&gt;</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;ACTION_EDIT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="nt">&lt;data</span><span class="w"> </span><span class="na">android:scheme=</span><span class="s">&quot;http&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"ACTION_EDIT"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="nt">&lt;data</span><span class="w"> </span><span class="na">android:scheme=</span><span class="s">"http"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="nt">&lt;/intent-filter&gt;</span>
 <a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="nt">&lt;/activity&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>// 인텐트 프로퍼티 이용
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>val intent = Intent()
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>intent.action = &quot;ACTION_EDIT&quot;
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>intent.data = Uri.parse(&quot;http://www.google.com&quot;)
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>intent.action = "ACTION_EDIT"
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>intent.data = Uri.parse("http://www.google.com")
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>startActivity(intent)
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>// 인텐트 생성자 이용 방법
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>val intent = Intent(&quot;ACTION_EDIT&quot;, Uri.parse(&quot;http://www.google.com&quot;))
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>val intent = Intent("ACTION_EDIT", Uri.parse("http://www.google.com"))
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>startActivity(intent)
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cm">&lt;!-- mineType 설정 --&gt;</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nt">&lt;activity</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;.TwoActivity&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nt">&lt;activity</span><span class="w"> </span><span class="na">android:name=</span><span class="s">".TwoActivity"</span><span class="nt">&gt;</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nt">&lt;intent-filter&gt;</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;ACTION_EDIT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="nt">&lt;data</span><span class="w"> </span><span class="na">android:mineType=</span><span class="s">&quot;image/&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"ACTION_EDIT"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="nt">&lt;data</span><span class="w"> </span><span class="na">android:mineType=</span><span class="s">"image/"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="nt">&lt;/intent-filter&gt;</span>
 <a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nt">&lt;/activity&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>// 타입 정보 설정
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>val intent = Intent(&quot;ACTION_EDIT&quot;)
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>intent.type = &quot;image/*&quot;
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>val intent = Intent("ACTION_EDIT")
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>intent.type = "image/*"
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>startActivity(intent)
 </code></pre></div>
 <ul>
@@ -9729,13 +9729,13 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cm">&lt;!-- 암시적·명시적 인텐트 --&gt;</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nt">&lt;activity</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;.OneActivity&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nt">&lt;activity</span><span class="w"> </span><span class="na">android:name=</span><span class="s">".OneActivity"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nt">&lt;activity</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="na">android:name=</span><span class="s">&quot;.TwoActivity&quot;</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="na">android:exported=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="na">android:name=</span><span class="s">".TwoActivity"</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="na">android:exported=</span><span class="s">"true"</span><span class="w"> </span><span class="nt">&gt;</span>
 <a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="nt">&lt;intent-filter&gt;</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;ACTION_EDIT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"ACTION_EDIT"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">  </span><span class="nt">&lt;/intent-filter&gt;</span>
 <a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="nt">&lt;/activity&gt;</span>
 </code></pre></div>
@@ -9774,22 +9774,22 @@
 </tbody>
 </table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>// 해당 액티비티가 없는 경우 예외 처리
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>val intent = Intent(&quot;ACTION_HELLO&quot;)
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>val intent = Intent("ACTION_HELLO")
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>try {
 <a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>  startActivity(intent)
 <a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>} catch (e: Exception) {
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>  Toast.makeText(this, &quot;no application&quot;, Toast.LENGHT_SHORT).show()
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>  Toast.makeText(this, "no application", Toast.LENGHT_SHORT).show()
 <a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>}
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>// 액티비티가 여러 개인 경우
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>val intent = Intent(Intent.ACTION_VIEW, Uri.parse(&quot;geo:38.7749, 127.4194&quot;))
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>val intent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:38.7749, 127.4194"))
 <a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>startActivity(intent)
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>// 패키지 지정
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>val intent = Intent(Intent.ACTION_VIEW, Uri.parse(&quot;geo:37.7749, 127.4194&quot;))
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>intent.setPackage(&quot;com.google.android.apps.maps&quot;)
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>val intent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:37.7749, 127.4194"))
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>intent.setPackage("com.google.android.apps.maps")
 <a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>startActivity(intent)
 </code></pre></div>
 <h2 id="2">2절. 액티비티 생명주기<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
@@ -9847,8 +9847,8 @@
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
 <a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>override fun onSaveInstanceState(outState: Bundle) {
 <a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>  super.onSaveInstanceState(outState)
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>  outState.putSpring(&quot;data1&quot;, &quot;hello&quot;)
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>  outState.putInt(&quot;data2&quot;, 10)
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>  outState.putSpring("data1", "hello")
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>  outState.putInt("data2", 10)
 <a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>}
 </code></pre></div>
 <ul>
@@ -9858,8 +9858,8 @@
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>override fun onRestoreInstanceState(savedInstanceSttate: Bundle){
 <a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>  super.onRestoreInstanceState(savedInstanceSttate)
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>  val data1 = savedInstanceState.getString(&quot;data1&quot;)
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>  val data2 = savedInstanceState.getInt(&quot;data2&quot;)
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>  val data1 = savedInstanceState.getString("data1")
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>  val data2 = savedInstanceState.getInt("data2")
 <a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>}
 </code></pre></div>
 <h2 id="3-anr">3절. 액티비티 ANR 문제<a class="headerlink" href="#3-anr" title="Permanent link">&para;</a></h2>
@@ -9907,7 +9907,7 @@
 <h3 id="_12">안드로이드에서의 코루틴 이용<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>// 코루틴 등록
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>implementation(&quot;org.jetbrains.kotlin:kotlinx-coroutines-android:1.7.3&quot;)
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>implementation("org.jetbrains.kotlin:kotlinx-coroutines-android:1.7.3")
 </code></pre></div>
 <h3 id="anr_1">ANR 오류 발생 코드<a class="headerlink" href="#anr_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>// 오랜 시간 소모 작업 예시
@@ -9919,8 +9919,8 @@
 <a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>  }
 <a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>}
 <a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>Log.d(&quot;Yunseo&quot;, &quot;time : $time&quot;)
-<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>binding.resultView.text = &quot;sum : $sum&quot;
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>Log.d("Yunseo", "time : $time")
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>binding.resultView.text = "sum : $sum"
 </code></pre></div>
 <p><img src="./Image/ch08/ch08-13-Kolutine.PNG" height="auto" /></p>
 <ul>
@@ -9931,7 +9931,7 @@
 <a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>val handler = object:Handler() {
 <a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>  override fun handleMessage(msg: Message){
 <a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    super.handleMessage(msg)
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    binding.resultView.text = &quot;sum : ${msg.arg1}&quot;
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    binding.resultView.text = "sum : ${msg.arg1}"
 <a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>  }
 <a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>}
 <a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>
@@ -9945,7 +9945,7 @@
 <a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>    message.arg1 = sum.toInt()
 <a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>    handler.sendMessage(message)
 <a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>  }
-<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>  Log.d(&quot;Yunseo&quot;, &quot;time : $time&quot;)
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>  Log.d("Yunseo", "time : $time")
 <a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>}
 </code></pre></div>
 <h3 id="_13">코드의 코루틴화<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
@@ -9990,14 +9990,14 @@
 <a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>    }
 <a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>  }
 <a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>
-<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>  Log.d(&quot;Yunseo&quot;, &quot;time : $time&quot;)
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>  Log.d("Yunseo", "time : $time")
 <a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>  channel.send(sum.toInt())
 <a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>}
 <a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>
 <a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>// 메인 스레드에서 동작(화면에 결괏값 표시)
 <a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>val mainScope = GlobalScope.launch(Dispatchers.Main) {
 <a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>  channel.consumeEach {
-<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>    binding.resultView.text = &quot;sum : $it&quot;
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>    binding.resultView.text = "sum : $it"
 <a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>  }
 <a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>}
 </code></pre></div>
@@ -10112,7 +10112,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
