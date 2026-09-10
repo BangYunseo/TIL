@@ -8,7 +8,7 @@
 
 ## C
 
-- [C#](https://github.com/BangYunseo/TIL/tree/main/Language/C#)
+- [C#](https://github.com/BangYunseo/TIL/tree/main/Language/CSharp)
 - [C++](https://github.com/BangYunseo/TIL/tree/main/Language/Cpp)
 - [C](https://github.com/BangYunseo/TIL/tree/main/Language/C)
 

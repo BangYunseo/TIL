@@ -1,26 +1,27 @@
-# Chapter 0. 소프트웨어 공학 소개
+# Software Engineering
 
 > [참고 사이트](https://velog.io/@lmlabs/소프트웨어-공학이란)
 >
-> 1절. 소프트웨어 공학
+> 1절. SE
 >
-> 2절. 소프트웨어의 위기
+> 2절. SE 적용
 
-## 1절. 소프트웨어 공학
+## 1절. SE
 
-### 소프트웨어 공학
+### 소프트웨어 공학(Software Engineering)
 
-- 소프트웨어의 개발, 운용, 유지보수 등의 생명 주기 전반을 체계적이고 서술적이며 정량적으로 다루는 학문
+- 소프트웨어 생명 주기 전반을 다루는 학문
+- 생명 주기 :
 
-#### 소프트웨어 공학의 목표
+### 소프트웨어 공학의 목표
 
-<img src="./Image/ch00/Purpose.PNG" height="auto" />
+<img src="./Image/00_SoftwareEngineering/Purpose.PNG" height="auto" />
 
 - 품질(Quality)
 - 비용(Cost)
 - 납기(Delivery)
 
-#### 소프트웨어 공학의 특징
+### 소프트웨어 공학의 특징
 
 - 현장 중심
   - 소프트웨어 공학의 역사가 실무 현장에서 시작
@@ -28,6 +29,6 @@
     - 이 과정에서 나오는 모범 사례들(Best Practice)과 이로 인한 교훈(Lesson Learned) 생성
 - 즉, 좋은 원리를 발견 및 적용하여 효과를 보는 것
 
-## 2절. 소프트웨어의 위기
+## 2절. SE 적용
 
-#### 소프트웨어의 위기 등장
+### 소프트웨어의 위기 등장
