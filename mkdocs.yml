@@ -69,6 +69,9 @@ extra:
     #   link: mailto:주소@도메인
     #   name: Mail
 
+extra_css:
+  - stylesheets/post-list.css
+
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
