@@ -37,7 +37,7 @@
   - Pascal
   - C
 
-![ch01-04-Schematic](./Image/ch01/ch01-04-Schematic.PNG)
+![ch01-04-Schematic](../Image/ch01/ch01-04-Schematic.PNG)
 
 ### 개발 환경
 
@@ -80,7 +80,7 @@ class HelloWorld
 
 ### 실행 과정
 
-![ch01-05-Process](./Image/ch01/ch01-05-Process.PNG)
+![ch01-05-Process](../Image/ch01/ch01-05-Process.PNG)
 
 #### 1. 컴파일 과정
 
@@ -385,7 +385,7 @@ class BoxProgram
 
 #### 토근 종류
 
-![ch01-06-TokenType](./Image/ch01/ch01-06-TokenType.PNG)
+![ch01-06-TokenType](../Image/ch01/ch01-06-TokenType.PNG)
 
 #### 지정어
 
@@ -430,7 +430,7 @@ class BoxProgram
 
 #### 리터럴 종류
 
-![ch01-07-LiteralType](./Image/ch01/ch01-07-LiteralType.PNG)
+![ch01-07-LiteralType](../Image/ch01/ch01-07-LiteralType.PNG)
 
 #### 객체참조 리터럴(Object Reference)
 
@@ -473,7 +473,7 @@ class BoxProgram
 
 #### 자료형 종류
 
-![ch01-08-ValueableType](./Image/ch01/ch01-08-ValueableType.PNG)
+![ch01-08-ValueableType](../Image/ch01/ch01-08-ValueableType.PNG)
 
 #### 값형
 
@@ -532,7 +532,7 @@ class BoxProgram
    myArray = new Point[3];
    ```
 
-![ch01-09-Array](./Image/ch01/ch01-09-Array.PNG)
+![ch01-09-Array](../Image/ch01/ch01-09-Array.PNG)
 
 2. 참조형(스트링형)
    - 문자열 표현을 위한 자료형
@@ -557,7 +557,7 @@ class BoxProgram
 
 #### 연산자 종류
 
-![ch01-10-OperatorType](./Image/ch01/ch01-10-OperatorType.PNG)
+![ch01-10-OperatorType](../Image/ch01/ch01-10-OperatorType.PNG)
 
 ### 형변환
 
@@ -610,7 +610,7 @@ class PrecisionApp
 
 #### 박싱(Boxing) 과정
 
-![ch01-11-Boxing](./Image/ch01/ch01-11-Boxing.PNG)
+![ch01-11-Boxing](../Image/ch01/ch01-11-Boxing.PNG)
 
 ### 언박싱(UnBoxing)
 
