@@ -2,12 +2,6 @@
 > '쉽게 풀어쓴 C언어 Express - 천인국' 5장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Express-C/tree/main/ch2_%EC%88%98%EC%8B%9D%EA%B3%BC%EC%97%B0%EC%82%B0%EC%9E%90)
-> 
-> 1절. 수식
-> 
-> 2절. 연산자
->
-> 3절. 비트 연산자
 
 ## 1절. 수식(expression)
 #### 수식이란?

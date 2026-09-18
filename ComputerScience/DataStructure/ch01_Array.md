@@ -1,10 +1,6 @@
 # chapter 1. 배열(Array)
 
 > [본문 참고 자료](https://yoongrammer.tistory.com/43)
->
-> 1절. 배열
->
-> 2절. 배열 구현
 
 ## 1절. 배열
 

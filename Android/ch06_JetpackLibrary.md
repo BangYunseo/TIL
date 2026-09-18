@@ -2,23 +2,6 @@
 
 > '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 11장 학습 내용
 >
-> 0절. ART
->
-> 1절. 제트팩
->
-> 2절. androidx
->
-> 3절. appcompat
->
-> 4절. 프래그먼트
->
-> 5절. 리사이클러 뷰
->
-> 6절. 뷰 페이저2
->
-> 7절. 드로어 레이아웃
->
-> 8절. 제트팩 화면 구성  
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch07)
 
 ## 0절. ART

@@ -1,13 +1,5 @@
 # Chapter 0. CSS 기초
 
-> 1절. CSS 개요
->
-> 2절. 셀렉터
->
-> 3절. 색, 텍스트, 폰트
->
-> 4절. Box
-
 ## 1절. CSS 개요
 
 ### CSS(Cascading Style Sheet)

@@ -3,18 +3,6 @@
 > '명품 C++Programming - 황기태' 5장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch05_FunctionAndReference)
->
-> 0절. 함수
->
-> 1절. 호출
->
-> 2절. 값에 의한 호출
->
-> 3절. 주소에 의한 호출
->
-> 4절. 객체
->
-> 5절. 참조
 
 ## 0절. 함수
 

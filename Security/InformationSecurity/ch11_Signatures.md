@@ -1,15 +1,5 @@
 # Chapter 11. 서명(Signatures)
 
-> 1절. 디지털 서명(Digital Signatures)
->
-> 2절. RSA 서명
->
-> 3절. DSS / DSA
->
-> 4절. 0-지식 증명(Zero-Knowledge Proof)
->
-> 5절. Schnorr
-
 ## 1절. 디지털 서명(Digital Signatures)
 
 #### 디지털 서명(Digital Signatures) 정의

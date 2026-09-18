@@ -1,9 +1,5 @@
 # Chapter 11. 자연어 처리(NLP : Natural Language Processing)
 
-> 1절. 자연어 처리
->
-> 2절. 예제
-
 ## 1절. 자연어 처리
 
 #### 자연어 처리

@@ -1,13 +1,5 @@
 # Chapter 9. 해쉬 함수(Hash Function)
 
-> 1절. Hash Function
->
-> 2절. 해쉬 함수의 이상적인 구조
->
-> 3절. SHA
->
-> 4절. Salting
-
 ## 1절. Hash Function
 
 #### 해쉬 함수(Hash Function)

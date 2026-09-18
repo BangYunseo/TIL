@@ -1,11 +1,5 @@
 # Chapter 12. 생성형 모델(Generative Model)
 
-> 1절. 생성 모델
->
-> 2절. 오토 인코더(Auto Encorder)
->
-> 3절. GAN(Generative 
-
 ## 1절. 생성 모델
 
 #### 생성 모델(Generative Model)

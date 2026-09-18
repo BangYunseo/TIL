@@ -3,12 +3,6 @@
 > '명품 C++Programming - 황기태' 7장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch10_OperatorOverloadingFunction)
->
-> 1절. 연산자 중복
->
-> 2절. 이항 연산자
->
-> 3절. 단항 연산자
 
 ## 1절. 연산자 중복
 

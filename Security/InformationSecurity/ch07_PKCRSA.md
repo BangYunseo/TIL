@@ -1,15 +1,5 @@
 # Chapter 7. 공개 키 암호와 RSA(Public Key Cryptography and RSA)
 
-> 1절. 공개 키 암호
->
-> 2절. Public-Key Encryption
->
-> 3절. RSA Encryption
->
-> 4절. Hybrid Encryption
->
-> 5절. Exponentiation
-
 ## 1절. 공개 키 암호
 
 ### 공개 키 암호(Public Key Cryptography) == 비대칭형 암호(Asymmetric Cryptography)

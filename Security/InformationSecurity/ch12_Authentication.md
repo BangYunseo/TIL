@@ -1,13 +1,5 @@
 # Chapter 12. 인증(Authentication)
 
-> 1절. 인증(Authentication)
->
-> 2절. 인증 요소
->
-> 3절. Turing Test
->
-> 4절. 사람 인증(Human Authentication)
-
 ## 1절. 인증(Authentication)
 
 ### 인증 보안 목표

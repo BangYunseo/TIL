@@ -3,14 +3,6 @@
 > [참고자료](https://velog.io/@chosj1526/DB-Index-%EA%B0%9C%EB%85%90-%EC%9E%A5%EB%8B%A8%EC%A0%90-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
 >
 > [참고자료 2](https://ajroot5685.github.io/posts/B+-Tree/)
->
-> 1절. 인덱스
->
-> 2절. 해시 테이블
->
-> 3절. B+Tree
->
-> 4절. B+Tree의 SELECT, INSERT, DELETE
 
 ## 1절. 인덱스
 

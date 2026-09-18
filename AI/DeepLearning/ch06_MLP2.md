@@ -1,9 +1,5 @@
 # Chapter 6. 다층 퍼셉트론(MLP : MutiLayer Perceptron)- 2
 
-> 1절. TensorFlow
->
-> 2절. Keras
-
 ## 1절. TensorFlow
 
 #### 텐서플로우(TensorFlow)

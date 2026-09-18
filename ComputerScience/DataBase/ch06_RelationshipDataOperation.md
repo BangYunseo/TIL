@@ -1,11 +1,5 @@
 # Chapter 6. 관계 데이터 연산(Relationship Data Operation)
 
-> 1절. 관계 데이터 연산 개념
->
-> 2절. 관계 대수
->
-> 3절. 관계 해석
-
 ## 1절. 관계 데이터 연산 개념
 
 ### 데이터 모델(Data Model)

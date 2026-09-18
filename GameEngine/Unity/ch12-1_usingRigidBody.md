@@ -3,14 +3,6 @@
 > [참고영상](https://www.youtube.com/watch?v=Y3xkgpCukow)
 >
 > [프로젝트](https://github.com/BangYunseo/)
-> 
-> 1절. rigidbody
->
-> 2절. 인터페이스
->
-> 3절. 에디터
->
-> 4절. 게임 구조
 
 
 

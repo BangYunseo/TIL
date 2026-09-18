@@ -1,19 +1,5 @@
 # Chapter 7. SQL 질의어
 
-> 1절. SQL 소개
->
-> 2절. SQL 데이터 정의
->
-> 3절. SQL 데이터 조작
->
-> 4절. 조인
->
-> 5절. MySQL 내장 함수
->
-> 6절. 뷰
->
-> 7절. 삽입 SQL
-
 ## 1절. SQL 소개
 
 ### SQL(Structured Query Language)

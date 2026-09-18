@@ -3,12 +3,6 @@
 > '명품 C++Programming - 황기태' 5장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch06_CopyConstructor)
->
-> 1절. 복사
->
-> 2절. 복사 생성자
->
-> 3절. 디폴트 복사 생성자
 
 ## 1절. 복사
 

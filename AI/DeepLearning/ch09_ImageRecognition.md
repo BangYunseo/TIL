@@ -1,11 +1,5 @@
 # Chapter 9. 영상 인식(ImageRecognition)
 
-> 1절. 영상 인식(Image Recognition)
->
-> 2절. 가중치 저장 및 복원
->
-> 3절. 전이 학습
-
 ## 1절. 영상 인식(Image Recognition)
 
 #### 컨볼루션 신경망(CNN)

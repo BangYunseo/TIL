@@ -3,16 +3,6 @@
 > '명품 C++Programming - 황기태' 11장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch15_C++IOSystem)
->
-> 1절. 스트림
->
-> 2절. 스트림 객체
->
-> 3절. 포맷
->
-> 4절. 조작자
->
-> 5절. 연산자
 
 ## 1절. 스트림
 

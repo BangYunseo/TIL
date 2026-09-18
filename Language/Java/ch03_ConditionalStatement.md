@@ -2,18 +2,6 @@
 > '혼자 공부하는 자바 - 신용권' 4장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch03_ConditionalStatement)
-> 
-> 1절. if
->
-> 2절. switch
->
-> 3절. for
->
-> 4절. while
->
-> 5절. break
->
-> 6절. continue
 
 ## 1절. if
 #### 조건문

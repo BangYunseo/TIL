@@ -1,13 +1,5 @@
 # Chapter 6. 정수론 정리(Number Theory)
 
-> 1절. 페르마의 정리(Fermat's Theorem)
->
-> 2절. 오일러의 정리(Euler's Theorem)
->
-> 3절. 소수 테스트
->
-> 4절. $Z_n$과 생성자(Generators)
-
 ## 1절. 페르마의 정리(Fermat's Theorem)
 
 #### 페르마의 정리

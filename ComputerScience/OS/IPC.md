@@ -1,15 +1,5 @@
 # IPC(Inter-Process Communication)
 
-> 1절. IPC
->
-> 2절. 프로세스
->
-> 3절. 모델
->
-> 4절. IPC in SMS
->
-> 5절. 요약
-
 ## 1절. IPC
 
 ### IPC 용어

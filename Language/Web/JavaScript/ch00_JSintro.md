@@ -1,13 +1,5 @@
 # Chapter 0. 자바스크립트 소개
 
-> 1절. 개요
->
-> 2절. 활용
->
-> 3절. node.js
->
-> 4절. TypeScript
-
 ## 1절. 개요
 
 ### 자바스크립트(JavaScript)

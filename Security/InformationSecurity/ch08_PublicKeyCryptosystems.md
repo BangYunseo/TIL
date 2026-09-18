@@ -1,11 +1,5 @@
 # Chapter 8. 공개 키 암호 시스템(Public Key Cryptosystems)
 
-> 1절. Diffie-Hellman Key
->
-> 2절. ElGamal Encryption
->
-> 3절. Man-in-the-Middle Attack
-
 ## 1절. Diffie-Hellman Key
 
 #### 디피-헬먼 키 교환(Diffie-Hellman Key Exchange)

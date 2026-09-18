@@ -1,11 +1,5 @@
 # Chapter 10. 회복과 병행 제어(Recovery & Concurrency Control)
 
-> 1절. 트랜잭션
->
-> 2절. 장애와 회복
->
-> 3절. 병행 제어
-
 ## 1절. 트랜잭션
 
 ### 트랜잭션(Transaction)

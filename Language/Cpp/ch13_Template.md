@@ -3,12 +3,6 @@
 > '명품 C++Programming - 황기태' 10장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch13_Template)
->
-> 1절. 템플릿
->
-> 2절. 구체화
->
-> 3절. 제네릭 프로그래밍
 
 ## 1절. 템플릿
 

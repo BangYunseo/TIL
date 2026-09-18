@@ -1,12 +1,6 @@
 # Layered Architecture
 
 > [참고 자료](https://ksh-coding.tistory.com/92#%F0%9F%8E%AF%201.%C2%A0%20Layered%20Architecture%EB%9E%80%3F-1)
->
-> 1절. Layered Architecture
->
-> 2절. 의존성
->
-> 3절. 계층
 
 ## 1절. Layered Architecture
 

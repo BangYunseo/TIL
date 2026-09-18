@@ -1,16 +1,5 @@
 #  Chapter 2. 블록 암호
 
-> 1절. Block and Stream Ciphers
-> 
-> 2절. Ideal Block Cipher
->
-> 3절. Feistel Cipher
->
-> 4절. Data Encryption Standard
->
-> 5절. Brute-Force Attack
-
-
 ## 1절. Block and Stream Ciphers
 #### 블럭 암호(Block Cipher)
 * 메시지를 블럭 단위로 처리한 후 각 메시지를 암호화 / 해독

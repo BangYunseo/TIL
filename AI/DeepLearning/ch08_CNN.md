@@ -1,11 +1,5 @@
 # Chapter 8. 컨볼루션 신경망(CNN : Convolution Neural Networks)
 
-> 1절. 컨볼루션 신경망
->
-> 2절. 컨볼루션 신경망 구조
->
-> 3절. 케라스와 CNN
-
 ## 1절. 컨볼루션 신경망
 
 #### 컨볼루션 신경망(CNN)

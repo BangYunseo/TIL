@@ -2,12 +2,6 @@
 > '혼자 공부하는 자바 - 신용권' 3장  학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch02_Operator)
-> 
-> 1절. 연산자와 종류
->
-> 2절. 연산 방향과 우선순위
->
-> 3절. 단항 | 이항 | 삼항 연산자
 
 ## 1절. 연산자와 종류
 #### 연산자(Operator)와 관련 정의

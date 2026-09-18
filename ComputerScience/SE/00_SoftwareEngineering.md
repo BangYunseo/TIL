@@ -1,10 +1,6 @@
 # Software Engineering
 
 > [참고 사이트](https://velog.io/@lmlabs/소프트웨어-공학이란)
->
-> 1절. SE
->
-> 2절. SE 적용
 
 ## 1절. SE
 

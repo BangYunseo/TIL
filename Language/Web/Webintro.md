@@ -1,10 +1,6 @@
 # Web Introduce
 
 > '쉽게 배우는 HTML5 & CSS & JavaScript' 2장 내용
->
-> 1절. 인터넷과 웹
->
-> 2절. 인터넷 주소
 
 ## 1절. 인터넷과 웹
 

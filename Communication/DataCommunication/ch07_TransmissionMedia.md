@@ -1,11 +1,5 @@
 # Chapter 7. 전송 매체(Transmission Media)
 
-> 0절. 전송 매체
->
-> 1절. 유도 매체
->
-> 2절. 비유도 매체
-
 ## 0절. 전송 매체
 
 ### 전송 매체(Transmission Medium)

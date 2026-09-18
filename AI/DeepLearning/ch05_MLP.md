@@ -1,11 +1,5 @@
 # Chapter 5. 다층 퍼셉트론(Multilayer Perceptron)
 
-> 1절. MLP
->
-> 2절. 경사하강법
->
-> 3절. 학습률
-
 ## 1절. MLP
 
 #### MLP(Multilayer Perceptron)

@@ -1,14 +1,8 @@
 # Chapter 6. 대역폭 활용(BandWidth Utilization) : 다중화와 스펙트럼 확장(Multiplexing and Spreading)
 
-> 0절. 대역폭 활용
->
-> 1절. 다중화
->
 > 1절 - 1. FDM
 >
 > 1절 - 2. WDM
->
-> 2절. 대역 확산 방식
 
 ## 0절. 대역폭 활용
 

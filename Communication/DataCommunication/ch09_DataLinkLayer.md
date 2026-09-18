@@ -1,9 +1,5 @@
 # Chapter 9. 데이터 링크 층(Data-Link Layer)
 
-> 0절. 개요
->
-> 1절. 링크 계층 주소
-
 ## 0절. 개요
 
 ### 인터넷(Internet)

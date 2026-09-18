@@ -1,8 +1,6 @@
 # DPAPI(Data Protection API)
 
 > [참고 사이트](https://www.sygnia.co/blog/the-downfall-of-dpapis-top-secret-weapon/)
->
-> 1절. DPAPI
 
 ## 1절. DPAPI
 

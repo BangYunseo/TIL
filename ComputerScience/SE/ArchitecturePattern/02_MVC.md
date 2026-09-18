@@ -1,12 +1,6 @@
 # MVC
 
 > [참고 자료](https://velog.io/@kyeun95/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-MVC-%ED%8C%A8%ED%84%B4)
->
-> 1절. MVC
->
-> 2절. 의존성
->
-> 3절. 구성 요소
 
 ## 1절. MVC
 

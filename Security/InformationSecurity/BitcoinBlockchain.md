@@ -1,11 +1,5 @@
 # 비트코인과 블록체인(Bitcoin & Blockchain)
 
-> 1절. 비트코인
->
-> 2절. 트랜잭션(Transactions)
->
-> 3절. 블록체인과 채굴(BlockChain & Mining)
-
 ## 1절. 비트코인
 
 ### 비트코인(Bitcoin) ?

@@ -3,20 +3,6 @@
 > '명품 C++Programming - 황기태' 10장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch14_StandardTemplateLibrary)
->
-> 1절. 표준 템플릿 라이브러리(STL)
->
-> 2절. Vector
->
-> 3절. Iterator
->
-> 4절. Map
->
-> 5절. STL 알고리즘
->
-> 6절. Auto
->
-> 7절. 람다
 
 ## 1절. 표준 템플릿 라이브러리(STL)
 

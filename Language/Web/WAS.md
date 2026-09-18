@@ -1,7 +1,5 @@
 # WAS(Web Application Server)
 
-> 1절. WS vs WAS
-
 ## 1절. WS vs WAS
 
 ### Web Server vs Web Application Server

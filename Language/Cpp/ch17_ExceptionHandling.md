@@ -3,12 +3,6 @@
 > '명품 C++Programming - 황기태' 13장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch17_ExceptionHandling)
->
-> 1절. 오류 처리
->
-> 2절. 예외
->
-> 3절. 예외 클래스
 
 ## 1절. 오류 처리
 

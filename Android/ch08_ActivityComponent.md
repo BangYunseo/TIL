@@ -4,15 +4,6 @@
 
 > '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 13장 학습 내용
 >
-> 1절. 인텐트
->
-> 2절. 액티비티 생명주기
->
-> 3절. 액티비티 ANR 문제
->
-> 4절. 코루틴
->
-> 5절. ToDoList 앱 구현  
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch09)
 
 ## 1절. 인텐트

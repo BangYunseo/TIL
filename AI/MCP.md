@@ -1,10 +1,6 @@
 # MCP(Model Context Protocol)
 
 > [참고 자료](https://goddaehee.tistory.com/386)
->
-> 1절. MCP
->
-> 2절. MCP 동작
 
 ## 1절. MCP
 

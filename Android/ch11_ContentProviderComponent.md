@@ -2,11 +2,6 @@
 
 > '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 16장 학습 내용
 >
-> 1절. 콘텐츠 프로바이더
->
-> 2절. 안드로이드 앱 연동
->
-> 3절. 연동 앱 구현  
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch12)
 
 ## 1절. 콘텐츠 프로바이더

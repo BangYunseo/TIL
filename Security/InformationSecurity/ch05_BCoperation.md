@@ -1,7 +1,5 @@
 # Chapter 5. 블록 암호 운영 방식(Block Cipher Operation)
 
-> 1절. 블록 암호의 모드들(Modes of Block Cipher)
-
 ## 1절. 블록 암호의 모드들(Modes of Block Cipher)
 
 - 블록 암호 : 고정된 길이의 하나 블록만 암호화할 경우 적합

@@ -3,10 +3,6 @@
 > '명품 C++Programming - 황기태' 6장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch08_Static)
->
-> 1절. Static과 Non-Static
->
-> 2절. Static
 
 ## 1절. Static과 Non-Static
 

@@ -2,17 +2,6 @@
 
 > '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 10장 학습 내용
 >
-> 1절. API 레벨 호환성 고려
->
-> 2절. Permission 설정
->
-> 3절. 다양한 다이얼로그
->
-> 4절. 소리와 진동 알림
->
-> 5절. 알림
->
-> 6절. 카카오톡 알림  
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch06)
 
 ## 1절. API 레벨 호환성 고려

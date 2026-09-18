@@ -3,16 +3,6 @@
 > '명품 C++Programming - 황기태' 4장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch04_ObjectPointer)
->
-> 1절. 객체
->
-> 2절. 동적 할당
->
-> 3절. 배열의 동적 할당
->
-> 4절. this
->
-> 5절. string
 
 ## 1절. 객체
 

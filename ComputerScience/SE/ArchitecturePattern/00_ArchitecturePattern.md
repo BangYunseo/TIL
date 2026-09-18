@@ -1,8 +1,6 @@
 # 아키텍처 패턴
 
 > [참고 자료](https://velog.io/@jackjack/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-%EC%A0%95%EB%A6%AC)
->
-> 1절. 아키텍처 패턴
 
 ## 1절. 아키텍처 패턴(Architecture Pattern)
 

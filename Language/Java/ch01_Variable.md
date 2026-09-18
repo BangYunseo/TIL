@@ -2,14 +2,6 @@
 > '혼자 공부하는 자바 - 신용권' 2장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/SelfStudyJava/tree/main/ch01_Variable)
-> 
-> 1절. 변수
->
-> 2절. 타입
->
-> 3절. 타입 변환
->
-> 4절. 변수와 시스템 입출력
 
 
 ## 1절. 변수

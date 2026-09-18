@@ -1,12 +1,6 @@
 # chapter 1. Framework와의 차이점(API, 라이브러리).md
 
 > [참고자료](https://velog.io/@bcl0206/API-vs-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%ED%92%80%EB%A6%AC%EC%A7%80-%EC%95%8A%EB%8A%94-%EB%AF%B8%EC%8A%A4%ED%84%B0%EB%A6%AC%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC)
->
-> 1절. 개념 비교
->
-> 2절. 예시 비교
->
-> 3절. 프레임워크 종류 및 동작 방식
 
 ## 1절. 개념 비교
 

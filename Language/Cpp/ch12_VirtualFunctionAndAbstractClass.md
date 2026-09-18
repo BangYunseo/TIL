@@ -3,18 +3,6 @@
 > '명품 C++Programming - 황기태' 9장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch12_VirtualFunctionAndAbstractClass)
->
-> 1절. 가상 함수
->
-> 2절. 오버라이딩
->
-> 3절. 동적 바인딩
->
-> 4절. 가상 소멸자
->
-> 5절. 가상 함수
->
-> 6절. 추상 클래스
 
 ## 1절. 가상 함수
 

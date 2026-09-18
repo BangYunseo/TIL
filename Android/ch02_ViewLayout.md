@@ -2,17 +2,6 @@
 
 > '깡샘의 안드로이드 앱 프로그래밍 with 코틀린' 8장 학습 내용
 >
-> 1절. LinearLayout : 선형 배치
->
-> 2절. RelativeLayout : 상대 위치 배치
->
-> 3절. FrameLayout : 겹쳐서 배치
->
-> 4절. GridLayout : 표 형태 배치
->
-> 5절. ConstraintLayout : 계층 구조 배치
->
-> 6절. 전화 앱 키패드 화면 만들기  
 > [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch02)
 
 ## 1절. LinearLayout : 선형 배치

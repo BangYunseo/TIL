@@ -3,20 +3,6 @@
 > '명품 C++Programming - 황기태' 8장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch11_Inheritance)
->
-> 1절. 상속
->
-> 2절. 파생 클래스
->
-> 3절. 업 캐스팅과 다운 캐스팅
->
-> 4절. 접근 상속 지정
->
-> 5절. 생성자와 소멸자
->
-> 6절. 다중 상속
->
-> 7절. 가상 상속
 
 ## 1절. 상속
 

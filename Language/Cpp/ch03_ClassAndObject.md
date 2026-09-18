@@ -3,22 +3,6 @@
 > '명품 C++Programming - 황기태' 3장 학습 내용
 >
 > [소스코드](https://github.com/BangYunseo/Basic_CPP/tree/main/ch03_ClassAndObject)
->
-> 1절. 클래스와 객체
->
-> 2절. 클래스
->
-> 3절. 생성자
->
-> 4절. 소멸자
->
-> 5절. 접근 지정자
->
-> 6절. 인라인 함수
->
-> 7절. 구조체
->
-> 8절. 헤더
 
 ## 1절. 클래스와 객체
 

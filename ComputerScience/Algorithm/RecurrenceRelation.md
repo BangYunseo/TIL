@@ -1,13 +1,5 @@
 # 점화식(Recurrence Relation)
 
-> 1절. 점화식
->
-> 2절. 반복 대치
->
-> 3절. 추정 후 증명
->
-> 4절. 마스터 정리
-
 ## 1절. 점화식
 
 ### 점화식(Recurrence Relation)

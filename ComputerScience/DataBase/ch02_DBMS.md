@@ -1,19 +1,5 @@
 # Chapter 2. 데이터베이스 관리 시스템(DBMS)
 
-> 0절. DBS 구조
->
-> 1절. DBMS 등장 배경
->
-> 2절. DBMS 정의
->
-> 3절. 파일 시스템 vs DBMS
->
-> 4절. DBMS 기능
->
-> 5절. 데이터 모델
->
-> 6절. 데이터베이스 관리 시스템 발전 과정
-
 ## 0절. DBS 구조
 
 ![DBSStructure](./Image/ch02/DBSStructure.PNG){ width="70%" }

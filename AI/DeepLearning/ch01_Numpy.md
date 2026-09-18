@@ -1,11 +1,5 @@
 # Chapter 1. 넘파이(Numpy)
 
-> 1절. Numpy
->
-> 2절. Numpy 함수
->
-> 3절. Matplotlib
-
 ## 1절. Numpy
 
 #### 넘파이(Numpy)란?

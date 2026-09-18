@@ -1,17 +1,5 @@
 # Chapter 10. 메시지 인증 코드(MAC : Message Authentication Code)
 
-> 1절. 메시지 인증 코드
->
-> 2절. 길이 확장 공격
->
-> 3절. HMAC
->
-> 4절. CBC-MAC
->
-> 5절. CMAC
->
-> 6절. 인증 암호(Authenticated Encryption)
-
 ## 1절. 메시지 인증 코드
 
 ### MAC

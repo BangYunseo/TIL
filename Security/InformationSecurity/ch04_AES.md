@@ -1,15 +1,5 @@
 # Chapter 4. AES(Advanced Encryption Standard)
 
-> 1절. AES의 구조
->
-> 2절. SubBytes
->
-> 3절. ShiftRows
->
-> 4절. MixColumns
->
-> 5절. AddRoundKey
-
 ## 1절. AES의 구조
 
 #### 개요

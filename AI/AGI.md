@@ -1,7 +1,5 @@
 # Artificial General Intelligence(인공 일반 지능)
 
-> 1절. AGI
-
 ## 1절. AGI
 
 ### AGI
