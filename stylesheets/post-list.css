@@ -21,6 +21,11 @@
   transition: box-shadow 150ms, transform 150ms, border-color 150ms;
 }
 
+/* 페이지 나누기로 감춘 카드. .post-card 의 display 선언을 되돌린다. */
+.md-typeset .post-card[hidden] {
+  display: none;
+}
+
 .md-typeset .post-card:hover {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
   border-color: var(--md-accent-fg-color);
@@ -231,7 +236,133 @@
   }
 }
 
-/* 홈은 카드 목록만 보여준다. MkDocs가 자동으로 넣는 제목을 감춘다. */
-.md-typeset:has(> .post-list) > h1 {
+/* 홈과 분류 화면은 목록만 보여준다. MkDocs가 자동으로 넣는 제목을 감춘다. */
+.md-typeset:has(> .post-list) > h1,
+.md-typeset:has(> .category-list) > h1 {
   display: none;
+}
+
+/* ---------------------------------------------------------------
+   분류 상자
+   --------------------------------------------------------------- */
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 2rem 0 3rem;
+}
+
+.md-typeset .category-box {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.75rem;
+  background: var(--md-default-bg-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.md-typeset .category-box > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.2rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  transition: color 120ms;
+}
+
+.md-typeset .category-box > summary::-webkit-details-marker {
+  display: none;
+}
+
+.md-typeset .category-box > summary:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.category-box__count {
+  min-width: 1.6rem;
+  padding: 0.05rem 0.45rem;
+  border-radius: 1rem;
+  background: var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color--light);
+  font-size: 0.66rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.md-typeset .category-box > ul {
+  margin: 0;
+  padding: 0 1.2rem 0.9rem;
+  list-style: none;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .category-box > ul li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  font-size: 0.72rem;
+}
+
+.md-typeset .category-box > ul li + li {
+  border-top: 1px dashed var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .category-box > ul a {
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+
+.md-typeset .category-box > ul a:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset .category-box > ul span {
+  flex: none;
+  color: var(--md-default-fg-color--lighter);
+  font-size: 0.9em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .category-box {
+  background: var(--md-code-bg-color);
+  box-shadow: none;
+}
+
+/* ---------------------------------------------------------------
+   우측 사이드바: 목차와 최근 수정을 각각 박스로 감싼다
+   --------------------------------------------------------------- */
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--secondary .md-nav--secondary,
+  .md-sidebar--secondary .recent-panel {
+    margin: 0 0 1rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.75rem;
+    background: var(--md-default-bg-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  [data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav--secondary,
+  [data-md-color-scheme="slate"] .md-sidebar--secondary .recent-panel {
+    background: var(--md-code-bg-color);
+    box-shadow: none;
+  }
+
+  .md-sidebar--secondary .md-nav__title {
+    padding: 0 0 0.4rem;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  /* 홈과 분류 화면에는 목차가 필요 없다. 우측 칸 자체를 비운다. */
+  .md-main__inner:has(.post-list) .md-sidebar--secondary .md-nav--secondary,
+  .md-main__inner:has(.category-list) .md-sidebar--secondary {
+    display: none;
+  }
 }
