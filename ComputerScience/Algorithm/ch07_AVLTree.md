@@ -23,7 +23,7 @@
 
 - 이진 트리 한 노드 N에 대한 깊이(Depth)와 높이(Height) 정의
 
-<img src = "./Image/ch07/DepthHeightDefinition.PNG" height="auto" />
+![DepthHeightDefinition](./Image/ch07/DepthHeightDefinition.PNG)
 
 |     종류     | 설명                                         |
 | :----------: | :------------------------------------------- |
@@ -34,7 +34,7 @@
 
 - 이진 트리 한 노드 N에 대한 균형 인수(Balance Factor) 정의
 
-| <img src = "./Image/ch07/BalanceFactorExample1.PNG" height="auto" /> | <img src = "./Image/ch07/BalanceFactorExample2.PNG" height="auto" /> |
+| ![BalanceFactorExample1](./Image/ch07/BalanceFactorExample1.PNG) | ![BalanceFactorExample2](./Image/ch07/BalanceFactorExample2.PNG) |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
 
 > Balance Factor(N)  
@@ -48,11 +48,11 @@
 
 ### 개념도
 
-<img src = "./Image/ch07/AVLTreeConcept.PNG" height="auto" />
+![AVLTreeConcept](./Image/ch07/AVLTreeConcept.PNG)
 
 ### What is AVL Tree?
 
-| <img src = "./Image/ch07/AVLTreeProperty1.PNG" height="auto" /> | <img src = "./Image/ch07/AVLTreeProperty2.PNG" height="auto" /> |
+| ![AVLTreeProperty1](./Image/ch07/AVLTreeProperty1.PNG) | ![AVLTreeProperty2](./Image/ch07/AVLTreeProperty2.PNG) |
 | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 
 ## 2절. 수선
@@ -66,15 +66,15 @@
 
 - 균형이 깨진 서브 트리 중 가장 낮은 곳부터 수선
 
-<img src = "./Image/ch07/RebalancingExample.PNG" height="auto" />
+![RebalancingExample](./Image/ch07/RebalancingExample.PNG)
 
 #### 좌회전 수선 : 불균형 1개
 
-<img src = "./Image/ch07/LeftRotationRebalance1.PNG" height="auto" />
+![LeftRotationRebalance1](./Image/ch07/LeftRotationRebalance1.PNG)
 
 #### 좌회전 수선 : 불균형 2개
 
-<img src = "./Image/ch07/LeftRotationRebalance2.PNG" height="auto" />
+![LeftRotationRebalance2](./Image/ch07/LeftRotationRebalance2.PNG)
 
 ## 3절. 표준화 : 4가지 수선
 
@@ -94,40 +94,40 @@
 
 - 우회전(Right Rotation)
 
-<img src = "./Image/ch07/LLCaseRightRotation.PNG" height="auto" />
+![LLCaseRightRotation](./Image/ch07/LLCaseRightRotation.PNG)
 
 ### LR
 
 - 좌회전 후 우회전(Left Rotation and Right Rotation)
 - 타입 LL로의 변환
 
-<img src = "./Image/ch07/LRCaseLeftRightRotation.PNG" height="auto" />
+![LRCaseLeftRightRotation](./Image/ch07/LRCaseLeftRightRotation.PNG)
 
 ### RR
 
 - 좌회전(Left Rotation)
 
-<img src = "./Image/ch07/RRCaseLeftRotation.PNG" height="auto" />
+![RRCaseLeftRotation](./Image/ch07/RRCaseLeftRotation.PNG)
 
 ### RL
 
 - 우회전 후 좌회전(Right Rotation and Left Rotation)
 
-<img src = "./Image/ch07/RLCaseRightLeftRotation.PNG" height="auto" />
+![RLCaseRightLeftRotation](./Image/ch07/RLCaseRightLeftRotation.PNG)
 
 ### 4가지 유형 수선 요약
 
-<img src = "./Image/ch07/FourRotationTypesSummary.PNG" height="auto" />
+![FourRotationTypesSummary](./Image/ch07/FourRotationTypesSummary.PNG)
 
 ### 매우 긴 수선 예시
 
-<img src = "./Image/ch07/LongRebalancingExample1.PNG" height="auto" />
+![LongRebalancingExample1](./Image/ch07/LongRebalancingExample1.PNG)
 
-<img src = "./Image/ch07/LongRebalancingExample2.PNG" height="auto" />
+![LongRebalancingExample2](./Image/ch07/LongRebalancingExample2.PNG)
 
-<img src = "./Image/ch07/LongRebalancingExample3.PNG" height="auto" />
+![LongRebalancingExample3](./Image/ch07/LongRebalancingExample3.PNG)
 
-<img src = "./Image/ch07/LongRebalancingExample4.PNG" height="auto" />
+![LongRebalancingExample4](./Image/ch07/LongRebalancingExample4.PNG)
 
 ## 4절. 코드 구현
 

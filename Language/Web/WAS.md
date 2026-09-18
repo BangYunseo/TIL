@@ -6,11 +6,11 @@
 
 ### Web Server vs Web Application Server
 
-<img src="./Image/WAS/WSWAS.PNG" height="auto" />
+![WSWAS](./Image/WAS/WSWAS.PNG)
 
 ### Web Server : Static Pages
 
-<img src="./Image/WAS/WS.PNG" height="auto" />
+![WS](./Image/WAS/WS.PNG)
 
 - 파일 경로 이름을 받아 경로와 일치하는 file contents 반환
 - 항상 동일한 페이지 반환
@@ -22,7 +22,7 @@
 
 ### Web Application Server : Dynamic Pages
 
-<img src="./Image/WAS/WAS.PNG" height="auto" />
+![WAS](./Image/WAS/WAS.PNG)
 
 - 인자 내용에 맞는 동적인 contents 반환
 - 웹 서버에 의해 실행된 프로그램으로 만들어진 결과물
@@ -43,11 +43,11 @@
 
 ### Web Server Architecture
 
-<img src="./Image/WAS/WSA.PNG" height="auto" />
+![WSA](./Image/WAS/WSA.PNG)
 
 ### FE & BE
 
-<img src="./Image/WAS/FB.PNG" height="auto" />
+![FB](./Image/WAS/FB.PNG)
 
 ### Web Framework(WF)
 

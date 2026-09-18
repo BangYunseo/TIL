@@ -40,7 +40,7 @@
 - ViewModel은 View에 대한 정보가 없는 구조
 - ViewModel:View는 1:n 관계
 
-<img src="./Image/04_MVVM/MVVM.png" height="auto"/>
+![MVVM](./Image/04_MVVM/MVVM.png)
 
 ### 과정(Process)
 

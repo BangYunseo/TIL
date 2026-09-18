@@ -2,7 +2,7 @@
 
 ### 리스트
 
-<img src="./Image/ch02/List.PNG" height="auto" />
+![List](./Image/ch02/List.PNG)
 
 - 줄 세워진 데이터
 - 늘어선 데이터

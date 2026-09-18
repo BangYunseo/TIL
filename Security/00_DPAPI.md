@@ -19,7 +19,7 @@
 
 ### DPAPI 암호화 : CryptProtectData
 
-<img src="./Image/00_DPAPI/UseDPAPI.png" height="auto" />
+![UseDPAPI](./Image/00_DPAPI/UseDPAPI.png)
 
 |주요 매개변수|설명|
 |:---:|:---|
@@ -30,7 +30,7 @@
 
 ### DPAPI 복호화 : CryptUnprotectData
 
-<img src="./Image/00_DPAPI/UseUDPAPI.png" height="auto" />
+![UseUDPAPI](./Image/00_DPAPI/UseUDPAPI.png)
 
 |주요 매개변수|설명|
 |:---:|:---|
@@ -41,7 +41,7 @@
 
 ### DPAPI 중요한 값
 
-<img src="./Image/00_DPAPI/BlobDPAPI.png" height="auto" />
+![BlobDPAPI](./Image/00_DPAPI/BlobDPAPI.png)
 
 |값|설명|
 |:---:|:---|

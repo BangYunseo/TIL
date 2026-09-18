@@ -46,7 +46,7 @@
 
 - 클라이언트와 서버 간의 요청 및 응답
 
-<img src="./Image/API/APIOperation.png"  width="70%"/>
+![APIOperation](./Image/API/APIOperation.png){ width="70%" }
 
 |     단계     | 설명                                                                      |
 | :----------: | :------------------------------------------------------------------------ |

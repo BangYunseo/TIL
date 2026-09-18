@@ -63,7 +63,7 @@
 
 - 마이크로초(µs) 단위의 정밀한 동기화 가능
 
-<img src="./Image/Trigger/Trigger_Distribution.png"  width="40%"/>
+![Trigger_Distribution](./Image/Trigger/Trigger_Distribution.png){ width="40%" }
 
 #### 채널
 

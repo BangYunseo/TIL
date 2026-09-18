@@ -73,7 +73,7 @@ def step(x):
  result = x > 0.000001
  # True 또는 False 저장
 
- return result.astype(np.int)
+ return result.astype(int)
  # 정수로 반환
 ```
 

@@ -83,11 +83,11 @@ $\{\Theta(g(n))={f(n)|\exists c, d > 0, n_0 > 0, s.t.\forall n \geq n_0, cg(n) \
 
 ### 점근적 표기 그래프
 
-<img src = "./Image/AsymptoticAnalysis/Graph.PNG" width="100%" height="auto" />
+![Graph](./Image/AsymptoticAnalysis/Graph.PNG){ width="100%" }
 
 ### 빅오(O) 복잡도 차트
 
-<img src = "./Image/AsymptoticAnalysis/BigOh.PNG" width="100%" height="auto" />
+![BigOh](./Image/AsymptoticAnalysis/BigOh.PNG){ width="100%" }
 
 ### 정렬 알고리즘 복잡도
 

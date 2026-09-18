@@ -11,7 +11,7 @@
 - 디지털 데이터 정보를 기반으로 아날로그 신호 특성 중 하나를 바꾸는 과정
 - 디지털 데이터(Digital Data)를 아날로그 신호(Analog Signal)로 변환 후 전송
 
-<img src = "./Image/ch05/ch05-01-DigitalAnalog.PNG" height="auto"/>
+![ch05-01-DigitalAnalog](./Image/ch05/ch05-01-DigitalAnalog.PNG)
 
 ### 디지털 -> 아날로그 변환 유형
 
@@ -22,7 +22,7 @@
 |  위상 편이 변조  |    PSK    | Phase Shift Keying              |
 |  직교 진폭 변조  |    QAM    | Quadrature Amplitude Modulation |
 
-<img src = "./Image/ch05/ch05-02-DigitalAnalogType.PNG" height="auto"/>
+![ch05-02-DigitalAnalogType](./Image/ch05/ch05-02-DigitalAnalogType.PNG)
 
 ### 반송파 신호(Carrier Signal)
 
@@ -58,7 +58,7 @@
 - 잡음(Noise)에 약함
   - noise는 진폭에 많은 영향
 
-<img src = "./Image/ch05/ch05-03-ASK.PNG" height="auto"/>
+![ch05-03-ASK](./Image/ch05/ch05-03-ASK.PNG)
 
 > 수식 정리  
 > $B = (1+d) × S$  
@@ -69,7 +69,7 @@
 
 #### 2진 ASK(BASK : Binary ASK)
 
-<img src = "./Image/ch05/ch05-04-BASK.PNG" height="auto"/>
+![ch05-04-BASK](./Image/ch05/ch05-04-BASK.PNG)
 
 - 디지털 데이터(Digital Data)를 디지털 신호(digital Signal)로 만든 후 캐리어 신호(Carrier Signal)과 곱셈
 
@@ -92,11 +92,11 @@
 - $B = (1+d) × S + 2Δf$
   - $2Δf$는 최소 $(1+d) × S$ 이상의 값
 
-<img src = "./Image/ch05/ch05-05-FSK.PNG" height="auto"/>
+![ch05-05-FSK](./Image/ch05/ch05-05-FSK.PNG)
 
 #### 2진 FSK(BFSK : Binary FSK)
 
-<img src = "./Image/ch05/ch05-06-BFSK.PNG" height="auto"/>
+![ch05-06-BFSK](./Image/ch05/ch05-06-BFSK.PNG)
 
 #### 다준위 FSK(MFSK : Multilevel FSK)
 
@@ -118,18 +118,18 @@
 - Carrier signal이 한 개
   - FSK는 2개 필요
 
-<img src = "./Image/ch05/ch05-07-PSK.PNG" height="auto"/>
+![ch05-07-PSK](./Image/ch05/ch05-07-PSK.PNG)
 
 #### 2진 PSK(BPSK : Binary PSK)
 
-<img src = "./Image/ch05/ch05-08-BPSK.PNG" height="auto"/>
+![ch05-08-BPSK](./Image/ch05/ch05-08-BPSK.PNG)
 
 - BPSK의 대역폭(Bandwidth)은 BASK와 동일
 - ASK와 동일하지만 unipolar NRZ 대신 polar NRZ 사용
 
 #### 직교 위상 편이 변조(QPSK : Quadrature PSK)
 
-<img src = "./Image/ch05/ch05-09-QPSK.PNG" height="auto"/>
+![ch05-09-QPSK](./Image/ch05/ch05-09-QPSK.PNG)
 
 - 2개의 BPSK 사용 시 4개의 위상 사용 가능
 - 4가지의 다른 위상을 갖는 신호(Signal) 사용
@@ -139,7 +139,7 @@
 
 - 신호 요소마다 2비트 사용하는 QPSK 구현
 
-<img src = "./Image/ch05/ch05-10-QPSK2.PNG" height="auto"/>
+![ch05-10-QPSK2](./Image/ch05/ch05-10-QPSK2.PNG)
 
 ### 성운 그림(Constellation Diagram)
 
@@ -150,7 +150,7 @@
 | 수평선 X축 | 동위상 반송파    |
 | 수직선 Y축 | 직각 위상 반송파 |
 
-<img src = "./Image/ch05/ch05-11-CD.PNG" height="auto"/>
+![ch05-11-CD](./Image/ch05/ch05-11-CD.PNG)
 
 ### 직교 진폭 변조(QAM : Quandrature Amplitude Modulation)
 
@@ -167,7 +167,7 @@
 
 #### QAM의 변형 : 성운 그림
 
-<img src = "./Image/ch05/ch05-12-QAM.PNG" height="auto"/>
+![ch05-12-QAM](./Image/ch05/ch05-12-QAM.PNG)
 
 ## 2절. 아날로그 -> 아날로그 변환
 
@@ -177,7 +177,7 @@
 - 매체가 특정 대역 통과 특성 보유
 - 특정 대역만이 사용 가능할 경우 변조 필요
 
-<img src = "./Image/ch05/ch05-13-AnalogAnalog.PNG" height="auto"/>
+![ch05-13-AnalogAnalog](./Image/ch05/ch05-13-AnalogAnalog.PNG)
 
 ### 아날로그 -> 아날로그 변환 유형
 
@@ -187,11 +187,11 @@
 | 주파수 변조 |    FM     | Frequency Modulation |
 |  위상 변조  |    PM     | Phase Modulation     |
 
-<img src = "./Image/ch05/ch05-14-AnalogAnalogType.PNG" height="auto"/>
+![ch05-14-AnalogAnalogType](./Image/ch05/ch05-14-AnalogAnalogType.PNG)
 
 ### 진폭 변조(AM : Amplitude Modulation)
 
-<img src = "./Image/ch05/ch05-15-AM.PNG" height="auto"/>
+![ch05-15-AM](./Image/ch05/ch05-15-AM.PNG)
 
 - 변조 신호의 진폭 변화에 따라 반송파의 진폭이 같이 바뀌는 방식의 변조
 - 반송파 주파수, 위상은 유지
@@ -203,21 +203,21 @@
 
 #### 진폭 변조의 대역폭(BandWidth)
 
-<img src = "./Image/ch05/ch05-16-AMB.PNG" height="auto"/>
+![ch05-16-AMB](./Image/ch05/ch05-16-AMB.PNG)
 
 - $B_{AM} = 2 × B$
 - 대역폭(BandWidth)는 반송파 신호(Carrier Signal)를 중심으로 변조 신호(Modulation Signal) 대역폭(BandWidth)의 2배
 
 #### AM 라디오의 표준 대역 할당
 
-<img src = "./Image/ch05/ch05-17-AMradio.PNG" height="auto"/>
+![ch05-17-AMradio](./Image/ch05/ch05-17-AMradio.PNG)
 
 - 오디오 신호(음성 및 음악)의 대역폭은 5 kHz
 - AM 방송국은 10 kHz 마다 대역폭 할당
 
 ### 주파수 변조(FM : Frequency Modulation)
 
-<img src = "./Image/ch05/ch05-18-FM.PNG" height="auto"/>
+![ch05-18-FM](./Image/ch05/ch05-18-FM.PNG)
 
 - 반송파 신호(Carrier Signal)의 주파수가 변조 신호의 전압 준위 변화를 따라가도록 변조
 - 최대 진폭과 위상은 유지
@@ -225,7 +225,7 @@
 
 #### 주파수 변조의 대역폭(BandWidth)
 
-<img src = "./Image/ch05/ch05-19-FMB.PNG" height="auto"/>
+![ch05-19-FMB](./Image/ch05/ch05-19-FMB.PNG)
 
 - $B_{FM} = 2(1 + β) × B$
 - $β$ : 변조 기술에 따라 상이하지만 일반적으로 4
@@ -236,9 +236,9 @@
 - FCC(Federal Communications Commission)는 최소 200 KHz 요구
   - FCC : 미국 연방 정부 산하의 독립 규제 기관
 
-#### AM 라디오의 표준 대역 할당
+#### FM 라디오의 표준 대역 할당
 
-<img src = "./Image/ch05/ch05-20-FMradio.PNG" height="auto"/>
+![ch05-20-FMradio](./Image/ch05/ch05-20-FMradio.PNG)
 
 - 스테레오 오디오 신호 대역폭 : 15 kHz
 - 각 FM 방송국은 최소 150kHz 대역폭 필요
@@ -249,7 +249,7 @@
 
 ### 위상 변조(PM : Phase Modulation)
 
-<img src = "./Image/ch05/ch05-21-PM.PNG" height="auto"/>
+![ch05-21-PM](./Image/ch05/ch05-21-PM.PNG)
 
 - 반송파 신호(Carrier Signal)의 위상이 변조 신호의 전압 준위의 변화에 따라 변조
 - 반송파 신호(Carrier Signal)의 약한 최대 진폭(Peak amplitude)과 주파수(Frequency)는 불변

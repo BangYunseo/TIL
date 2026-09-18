@@ -67,7 +67,7 @@ def SelectionSort(A):
 
 ### 선택 정렬 예시
 
-<img src = "./Image/ch03/SelectionSortOverview.PNG" height="auto" />
+![SelectionSortOverview](./Image/ch03/SelectionSortOverview.PNG)
 
 1. 미정렬 구간에서 가장 큰 항목을 탐색해 맨 뒤(미정렬 구간 끝) 항목과 교환
 2. 다음으로 큰 항목을 찾아 그 앞 항목과 교환
@@ -75,7 +75,7 @@ def SelectionSort(A):
 
 ### 선택 정렬 과정
 
-<img src = "./Image/ch03/SelectionSortProcess.PNG" height="auto" />
+![SelectionSortProcess](./Image/ch03/SelectionSortProcess.PNG)
 
 ### 선택 정렬 문제
 
@@ -118,7 +118,7 @@ def BubbleSort(A):
 
 ### 버블 정렬 예시
 
-<img src = "./Image/ch03/BubbleSortOverview.PNG" height="auto" />
+![BubbleSortOverview](./Image/ch03/BubbleSortOverview.PNG)
 
 1. 정렬할 배열이 주어짐
 2. 왼쪽부터 시작해 이웃한 쌍 비교
@@ -127,7 +127,7 @@ def BubbleSort(A):
 
 ### 버블 정렬 과정
 
-<img src = "./Image/ch03/BubbleSortProcess.PNG" height="auto" />
+![BubbleSortProcess](./Image/ch03/BubbleSortProcess.PNG)
 
 ### 버블 정렬 문제
 
@@ -148,7 +148,7 @@ def BubbleSort(A):
 
 ### 삽입 정렬 과정
 
-<img src = "./Image/ch03/InsertionSortProcess.PNG" height="auto" />
+![InsertionSortProcess](./Image/ch03/InsertionSortProcess.PNG)
 
 ### 삽입 정렬 코드 구현(Python)
 

@@ -244,7 +244,7 @@ plt.imshow(train_images[0], cmap="Greys")
 model = tf.keras.models.Sequential()
 
 model.add(tf.keras.layers.Dense(512, activation = 'relu',
-                                input_size = (784, )))
+                                input_shape = (784, )))
 model.add(tf.keras.layers.Dense(10, activation = 'sigmoid'))
 ```
 

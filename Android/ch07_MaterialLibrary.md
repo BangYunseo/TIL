@@ -31,7 +31,7 @@ implementation(libs.material)
 - 앱바 : 화면 위쪽의 꾸밀 수 있는 영역
 - 화면 위쪽 영역 꾸미기
 
-<img src="./Image/ch07/ch07-01-AppBar.PNG" height="auto" />
+![ch07-01-AppBar](./Image/ch07/ch07-01-AppBar.PNG)
 
 #### 툴바 포함
 
@@ -47,7 +47,7 @@ implementation(libs.material)
 </com.google.android.material.appbar.AppBarLayout>
 ```
 
-<img src="./Image/ch07/ch07-02-ToolBar.PNG" height="auto" />
+![ch07-02-ToolBar](./Image/ch07/ch07-02-ToolBar.PNG)
 
 #### 크기 확장
 
@@ -58,7 +58,7 @@ implementation(libs.material)
 </com.google.android.material.appbar.AppBarLayout>
 ```
 
-<img src="./Image/ch07/ch07-03-Height.PNG" height="auto" />
+![ch07-03-Height](./Image/ch07/ch07-03-Height.PNG)
 
 #### 이미지 삽입
 
@@ -69,7 +69,7 @@ implementation(libs.material)
 </com.google.android.material.appbar.AppBarLayout>
 ```
 
-<img src="./Image/ch07/ch07-04-Image.PNG" height="auto" />
+![ch07-04-Image](./Image/ch07/ch07-04-Image.PNG)
 
 ### 코디네이터 레이아웃
 
@@ -80,7 +80,7 @@ implementation(libs.material)
 - 레이아웃 : 뷰끼리 상호작용 시 사용
 - 뷰에서 발생한 스크롤 정보를 코디네이터 레이아웃이 전달받아 다른 뷰에 전달
 
-<img src="./Image/ch07/ch07-05-Scroll.PNG" height="auto" />
+![ch07-05-Scroll](./Image/ch07/ch07-05-Scroll.PNG)
 
 #### 중첩 스크롤 뷰
 
@@ -108,7 +108,7 @@ implementation(libs.material)
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 ```
 
-<img src="./Image/ch07/ch07-06-NScroll.PNG" height="auto" />
+![ch07-06-NScroll](./Image/ch07/ch07-06-NScroll.PNG)
 
 ### 컬랩싱 툴바 레이아웃(CollapsingToolbarLayout)
 
@@ -147,7 +147,7 @@ implementation(libs.material)
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 ```
 
-<img src="./Image/ch07/ch07-07-CTL.PNG" height="auto" />
+![ch07-07-CTL](./Image/ch07/ch07-07-CTL.PNG)
 
 ### 스크롤 설정
 
@@ -168,7 +168,7 @@ implementation(libs.material)
 app:layout_scrollFlags="scroll|enterAlways"
 ```
 
-<img src="./Image/ch07/ch07-08-eA.PNG" height="auto" />
+![ch07-08-eA](./Image/ch07/ch07-08-eA.PNG)
 
 ```XML
 <!-- scroll | enterAlwaysCollapsed 속성값 -->
@@ -176,7 +176,7 @@ app:layout_scrollFlags="scroll|enterAlways"
 app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
 ```
 
-<img src="./Image/ch07/ch07-09-eAC.PNG" height="auto" />
+![ch07-09-eAC](./Image/ch07/ch07-09-eAC.PNG)
 
 ```XML
 <!-- scroll | exitUntilCollapsed 속성값 -->
@@ -184,7 +184,7 @@ app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
 app:layout_scrollFlags="scroll|exitUntilCollapsed"
 ```
 
-<img src="./Image/ch07/ch07-10-eUC.PNG" height="auto" />
+![ch07-10-eUC](./Image/ch07/ch07-10-eUC.PNG)
 
 ### 개별 뷰 스크롤 설정
 
@@ -207,7 +207,7 @@ app:layout_scrollFlags="scroll|exitUntilCollapsed"
 </com.google.android.material.appbar.CollapsingToolbarLayout>
 ```
 
-<img src="./Image/ch07/ch07-11-lcM.PNG" height="auto" />
+![ch07-11-lcM](./Image/ch07/ch07-11-lcM.PNG)
 
 ## 2절. 탭 레이아웃
 
@@ -215,7 +215,7 @@ app:layout_scrollFlags="scroll|exitUntilCollapsed"
 
 - 탭(tab)으로 구분하는 화면에서 탭 버튼을 배치하는 레이아웃
 
-<img src="./Image/ch07/ch07-12-TL.PNG" height="auto" />
+![ch07-12-TL](./Image/ch07/ch07-12-TL.PNG)
 
 ```XML
 <!-- 탭 레이아웃 등록 -->
@@ -279,7 +279,7 @@ binding.tabs.run {
 
 ### 탭 버튼 이벤트 핸들러
 
-<img src="./Image/ch07/ch07-13-TEH.PNG" height="auto" />
+![ch07-13-TEH](./Image/ch07/ch07-13-TEH.PNG)
 
 ```kt
 // 탭 버튼 이벤트 처리
@@ -310,11 +310,11 @@ binding.tabs.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
 
 - tabGravity : 탭 버튼 정렬 속성
 
-<img src="./Image/ch07/ch07-14-tG.PNG" height="auto" />
+![ch07-14-tG](./Image/ch07/ch07-14-tG.PNG)
 
 ### 스크롤 설정
 
-<img src="./Image/ch07/ch07-15-sA.PNG" height="auto" />
+![ch07-15-sA](./Image/ch07/ch07-15-sA.PNG)
 
 |    속성    | 설명                                                                 |
 | :--------: | :------------------------------------------------------------------- |
@@ -324,7 +324,7 @@ binding.tabs.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
 
 ### 뷰 페이저 연동
 
-<img src="./Image/ch07/ch07-16-vp.PNG" height="auto" />
+![ch07-16-vp](./Image/ch07/ch07-16-vp.PNG)
 
 - TabLayout과 ViewPager2 등록 후 코드에서 TabLayoutMediator로 연동
 
@@ -365,7 +365,7 @@ TabLayoutMediator(tabLayout, viewPager) { tab, position ->
   - 위쪽 : 아이콘, 문자열 등
   - 아래쪽 : 메뉴 항목
 
-<img src="./Image/ch07/ch07-17-Ds.PNG" height="auto" />
+![ch07-17-Ds](./Image/ch07/ch07-17-Ds.PNG)
 
 ```XML
 <!-- 네비게이션 뷰 등록 -->
@@ -386,13 +386,13 @@ TabLayoutMediator(tabLayout, viewPager) { tab, position ->
 </androidx.drawerlayout.widget.DrawerLayout>
 ```
 
-<img src="./Image/ch07/ch07-18-DsEx.PNG" height="auto" />
+![ch07-18-DsEx](./Image/ch07/ch07-18-DsEx.PNG)
 
 - 메뉴 구성 XML 파일을 menu 속성에 지정
   - 위의 결과처럼 항목 자동 출력
 - setNavigationItemSelectedListener()
   - 항목 선택 이벤트 핸들러 지정
-  - DrawerLayout 클래스
+  - NavigationView 클래스
 
 ```kt
 // 항목 선택 이벤트 핸들러
@@ -429,7 +429,7 @@ binding.extendedFab.setOnClickListener {
 }
 ```
 
-<img src="./Image/ch07/ch07-19-FBEx.PNG" height="auto" />
+![ch07-19-FBEx](./Image/ch07/ch07-19-FBEx.PNG)
 
 ## 5절. 머터리얼 화면 구성
 
@@ -457,6 +457,6 @@ viewBinding.isEnabled = true
 
 ### 5) 앱 실행
 
-<img src="./Image/ch07/ch07-20-App.PNG" height="auto" />
+![ch07-20-App](./Image/ch07/ch07-20-App.PNG)
 
 [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch08)

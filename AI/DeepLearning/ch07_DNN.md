@@ -192,9 +192,9 @@ def makemodel(X_train, y_train, X_valid, y_valid):
 def makemodel(X_train, y_train, X_valid, y_valid, weight_init,):
   model = keras.models.Sequential()
   model.add(keras.layers.Flatten(input_shape=[28, 28]))
-  model.add(keras.layers.Dense(300, weight_init, activation="relu"))
-  model.add(keras.layers.Dense(100, weight_init, activation="relu"))
-  model.add(keras.layers.Dense(10, weight_init, activation="softmax"))
+  model.add(keras.layers.Dense(300, kernel_initializer=weight_init, activation="relu"))
+  model.add(keras.layers.Dense(100, kernel_initializer=weight_init, activation="relu"))
+  model.add(keras.layers.Dense(10, kernel_initializer=weight_init, activation="softmax"))
 
   model.summary()
 ```

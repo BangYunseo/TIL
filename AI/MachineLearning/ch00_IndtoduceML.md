@@ -68,7 +68,7 @@
 | 세로축 | 목표치        |
 | 데이터 | 관측된 4개 점 |
 
-<img src = "./Image/ch00/01_Regression.PNG" height="auto"/>
+![01_Regression](./Image/ch00/01_Regression.PNG)
 
 #### 예측(prediction)
 
@@ -84,7 +84,7 @@
 
 - 관측된 4개의 점은 <strong>데이터</strong>이자 <strong>훈련 집합</strong>
 
-<img src = "./Image/ch00/02_TrainingData.PNG" height="auto"/>
+![02_TrainingData](./Image/ch00/02_TrainingData.PNG)
 
 | 번호  | X 값  |     |     | 번호  | Y 값  |
 | :---: | :---: | :-: | :-: | :---: | :---: |
@@ -137,7 +137,7 @@
 
 #### 1차원 특징 공간
 
-<img src = "./Image/ch00/03_1-Dimension.PNG" height="auto"/>
+![03_1-Dimension](./Image/ch00/03_1-Dimension.PNG)
 
 | 번호  | 표시값 |
 | :---: | :----: |
@@ -146,7 +146,7 @@
 
 #### 2차원 특징 공간
 
-<img src = "./Image/ch00/04_2-Dimension.PNG" height="auto"/>
+![04_2-Dimension](./Image/ch00/04_2-Dimension.PNG)
 
 |      번호      |  표시값   |
 | :------------: | :-------: |
@@ -189,7 +189,7 @@
 - 특징 많으면 목표값 정확도 감소
 - 올바른 학습 불가
 
-<img src = "./Image/ch00/05_N-Dimension.PNG" height="auto"/>
+![05_N-Dimension](./Image/ch00/05_N-Dimension.PNG)
 
 ## 3절. 데이터
 
@@ -197,7 +197,7 @@
 
 - 과학 기술 발전 과정
 
-<img src = "./Image/ch00/06_Process.PNG" height="auto"/>
+![06_Process](./Image/ch00/06_Process.PNG)
 
 ### 데이터와 기계학습
 
@@ -246,7 +246,7 @@
 
 | 데이터 구성  | 특징 벡터                                                                                                                                  | 타겟(Label)                                                       |
 | :----------: | :----------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
-| 150개 이미지 | 4가지 측정값<br>(1) 꽃받침 길이(Sepal Length)<br>(2) 꽃받침 너비(Sepal Width)<br>(3) 꽃잎 길이(Petal Length)<br>(4) 꽃잎 너비(Petal Width) | 붓꽃 품종(3종류)<br>(1) Setosa<br>(2) Versicolor<br>(3) Virginica |
+| 150개 샘플(각 4개 수치 특징의 표 형식 데이터) | 4가지 측정값<br>(1) 꽃받침 길이(Sepal Length)<br>(2) 꽃받침 너비(Sepal Width)<br>(3) 꽃잎 길이(Petal Length)<br>(4) 꽃잎 너비(Petal Width) | 붓꽃 품종(3종류)<br>(1) Setosa<br>(2) Versicolor<br>(3) Virginica |
 
 #### MNIST
 
@@ -274,14 +274,14 @@
 
 ### 데이터 가시화
 
-<img src = "./Image/ch00/07_2Graph.PNG" height="auto"/>
+![07_2Graph](./Image/ch00/07_2Graph.PNG)
 
 - 4차원 이상의 초공간은 한 번에 가시화 불가
 - 2개씩 조합한 그래프 활용
 
 ## 5절. 모델 선택
 
-<img src = "./Image/ch00/08_Model.PNG" height="auto"/>
+![08_Model](./Image/ch00/08_Model.PNG)
 
 ### 과소적합
 
@@ -304,7 +304,7 @@
 
 ### 다항식 모델 비교 관찰
 
-<img src = "./Image/ch00/08_Model.PNG" height="auto"/>
+![08_Model](./Image/ch00/08_Model.PNG)
 
 |   차수    | 성능                                                                                |
 | :-------: | :---------------------------------------------------------------------------------- |
@@ -323,7 +323,7 @@
 
 #### 바이어스(Bias)
 
-<img src = "./Image/ch00/09_Bias.PNG" height="auto"/>
+![09_Bias](./Image/ch00/09_Bias.PNG)
 
 - 항상 큰 오차
 - 큰 바이어스와 비슷한 모델
@@ -331,7 +331,7 @@
 
 #### 분산(Variance)
 
-<img src = "./Image/ch00/10_Variance.PNG" height="auto"/>
+![10_Variance](./Image/ch00/10_Variance.PNG)
 
 - 항상 작은 오차
 - 작은 바이어스와 다른 모델
@@ -342,7 +342,7 @@
 - 낮은 바이어스 + 낮은 분산의 예측기
 - 바이어스 희생은 최소 + 분산은 최대로 낮추는 전략
 
-<img src = "./Image/ch00/11_Goal.PNG" height="auto"/>
+![11_Goal](./Image/ch00/11_Goal.PNG)
 
 ## 6절. 규제
 
@@ -354,7 +354,7 @@
 
 ### 데이터 확대
 
-<img src = "./Image/ch00/12_DataAugmentation.PNG" height="auto"/>
+![12_DataAugmentation](./Image/ch00/12_DataAugmentation.PNG)
 
 - 데이터 다수 수집 -> 일반화 능력 향상
 

@@ -285,7 +285,7 @@ knn.fit(X_train, y_train)
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
 
-y_pred = knn.predict(X_train)
+y_pred = knn.predict(X_test)
 scores = metrics.accuracy_score(y_test, y_pred)
 # 0.9666666666666666667
 ```
@@ -454,7 +454,7 @@ print(y_pred)
 - Accuracy(정확성) = (TP + TN) / (TP + FN + FP + TN)
 - Precision(정밀도) = TP / TP + FP
 - Sensitivity(민감도) = Recall = TP / TP + FN
-- Specify(특이도) = TN / TN + FP
+- Specificity(특이도) = TN / TN + FP
 
 ##### F1 score
 
@@ -518,7 +518,7 @@ sns.heatmap(data = cmatrix, annot = True)
 
 ```Python
 import matplotlib.pyplot as plt
-from sklearn.metrics import datasets, metrics
+from sklearn import datasets, metrics
 from sklearn.model_selection import train_test_split
 
 digits = datasets.load_digits()

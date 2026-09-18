@@ -13,7 +13,7 @@
 
 ### 개념
 
-<img src="./Image/ch11/ch11-01-CPC.PNG" height="auto" />
+![ch11-01-CPC](./Image/ch11/ch11-01-CPC.PNG)
 
 - 앱끼리 데이터 연동하는 컴포넌트
 
@@ -102,7 +102,7 @@ contentResolver.query(
 
 ### authorities
 
-<img src="./Image/ch11/ch11-02-AT.PNG" height="auto" />
+![ch11-02-AT](./Image/ch11/ch11-02-AT.PNG)
 
 - Uri 객체의 URL 문자열 구조
   - 프로토콜 명
@@ -150,7 +150,7 @@ requestContactsLauncher = registerForActivityResult(
 
 - 주소록 앱 전달 문자열
 
-<img src="./Image/ch11/ch11-03-StringEx.PNG" height="auto" />
+![ch11-03-StringEx](./Image/ch11/ch11-03-StringEx.PNG)
 
 ### 구체적 요청
 

@@ -16,7 +16,7 @@
 
 ## 0절. DBS 구조
 
-<img src="./Image/ch02/DBSStructure.PNG"  width="70%" height="auto"/>
+![DBSStructure](./Image/ch02/DBSStructure.PNG){ width="70%" }
 
 |                 종류                 | 설명                                                                    |
 | :----------------------------------: | :---------------------------------------------------------------------- |
@@ -31,7 +31,7 @@
 - 파일 생성·삭제·수정·검색 기능을 제공하는 소프트웨어
 - 응용 프로그램마다 필요한 데이터 별도 관리
 
-<img src="./Image/ch02/FileSystemConcept.PNG"  width="70%" height="auto"/>
+![FileSystemConcept](./Image/ch02/FileSystemConcept.PNG){ width="70%" }
 
 ### 파일 시스템 문제점
 
@@ -41,7 +41,7 @@
   - 저장 공간 낭비, 데이터 일관성·무결성 유지에 어려움
   - ex) 여러 파일 중 한 파일의 속성만 수정할 경우 일관성 불일치
 
-<img src="./Image/ch02/DataRedundancyProblem.PNG"  width="40%" height="auto"/>
+![DataRedundancyProblem](./Image/ch02/DataRedundancyProblem.PNG){ width="40%" }
 
 #### 데이터 종속성
 
@@ -50,7 +50,7 @@
   - 사용하는 파일의 구조 변경 시 응용 프로그램도 함께 변경
   - ex) 두 고객 파일 처리 시 다른 방식으로 처리
 
-<img src="./Image/ch02/DataDependencyProblem.PNG"  width="100%" height="auto"/>
+![DataDependencyProblem](./Image/ch02/DataDependencyProblem.PNG){ width="100%" }
 
 #### 동시 공유·보안·회복 기능
 
@@ -81,7 +81,7 @@
 
 ### DBMS에서의 데이터 관리
 
-<img src="./Image/ch02/DBMSDataManagement.PNG"  width="40%" height="auto"/>
+![DBMSDataManagement](./Image/ch02/DBMSDataManagement.PNG){ width="40%" }
 
 ### DBMS의 주요 기능
 
@@ -95,7 +95,7 @@
 
 ### 파일 시스템 vs DBMS
 
-<img src="./Image/ch02/FileSystemVsDBMS.PNG"  width="100%" height="auto"/>
+![FileSystemVsDBMS](./Image/ch02/FileSystemVsDBMS.PNG){ width="100%" }
 
 |       구분       | 파일 시스템                                              | DBMS                                             |
 | :--------------: | :------------------------------------------------------- | :----------------------------------------------- |
@@ -127,7 +127,7 @@
 
 ### 데이터베이스 시스템 구성
 
-<img src="./Image/ch02/DBSComponentArchitecture.PNG"  width="70%" height="auto"/>
+![DBSComponentArchitecture](./Image/ch02/DBSComponentArchitecture.PNG){ width="70%" }
 
 | 종류                                             | 특징                                                                                                                                                                                                                     |
 | :----------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -167,24 +167,24 @@
 
 #### 1. 포인터 사용
 
-| <img src="./Image/ch02/PointerApproach.PNG"  width="auto" height="auto"/> | <img src="./Image/ch02/PointerApproachRelational.PNG"  width="auto" height="auto"/> |
+| ![PointerApproach](./Image/ch02/PointerApproach.PNG) | ![PointerApproachRelational](./Image/ch02/PointerApproachRelational.PNG) |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 #### 2. 속성 값 사용
 
-| <img src="./Image/ch02/AttributeValueApproach.PNG"  width="auto" height="auto"/> | <img src="./Image/ch02/AttributeValueApproachRelational.PNG"  width="auto" height="auto"/> |
+| ![AttributeValueApproach](./Image/ch02/AttributeValueApproach.PNG) | ![AttributeValueApproachRelational](./Image/ch02/AttributeValueApproachRelational.PNG) |
 | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 #### 3. 객체 식별자 사용
 
-| <img src="./Image/ch02/ObjectIdentifierApproach.PNG"  width="auto" height="auto"/> | <img src="./Image/ch02/ObjectIdentifierApproachObject.PNG"  width="auto" height="auto"/> |
+| ![ObjectIdentifierApproach](./Image/ch02/ObjectIdentifierApproach.PNG) | ![ObjectIdentifierApproachObject](./Image/ch02/ObjectIdentifierApproachObject.PNG) |
 | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ## 6절. 데이터베이스 관리 시스템 발전 과정
 
 ### 1세대 : 네트워크·계층 DBMS
 
-| <img src="./Image/ch02/NetworkDBMS.PNG"  width="auto"/> | <img src="./Image/ch02/HierarchicalDBMS.PNG"  width="auto"/> |
+| ![NetworkDBMS](./Image/ch02/NetworkDBMS.PNG) | ![HierarchicalDBMS](./Image/ch02/HierarchicalDBMS.PNG) |
 | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 
 |     종류      | 설명                     | 예시                               |
@@ -194,7 +194,7 @@
 
 ### 2세대 : 관계 DBMS
 
-<img src="./Image/ch02/RelationalDBMS.PNG"  width="70%" height="auto"/>
+![RelationalDBMS](./Image/ch02/RelationalDBMS.PNG){ width="70%" }
 
 |   종류    | 설명                     | 예시                                                                      |
 | :-------: | :----------------------- | :------------------------------------------------------------------------ |
@@ -202,7 +202,7 @@
 
 ### 3세대 : 객체지향·객체관계 DBMS
 
- <img src="./Image/ch02/ObjectOrientedDBMS.PNG"  width="60%" height="60%"/>
+ ![ObjectOrientedDBMS](./Image/ch02/ObjectOrientedDBMS.PNG){ width="60%" }
 
 |     종류      | 설명                       | 예시                                                                                  |
 | :-----------: | :------------------------- | :------------------------------------------------------------------------------------ |
@@ -211,7 +211,7 @@
 
 ### 객체 지향 Data VS 관계 Data
 
-| <img src="./Image/ch02/RelationalVsObjectOrientedComparison1.PNG" height="auto"/> | <img src="./Image/ch02/RelationalVsObjectOrientedComparison2.PNG" height="auto"/> |
+| ![RelationalVsObjectOrientedComparison1](./Image/ch02/RelationalVsObjectOrientedComparison1.PNG) | ![RelationalVsObjectOrientedComparison2](./Image/ch02/RelationalVsObjectOrientedComparison2.PNG) |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
 
 ### 4세대 : NoSQL / NewSQL DBMS
@@ -226,7 +226,7 @@
 - 뛰어난 확장성
 - 여러 서버 컴퓨터에 데이터 분산·저장·처리하는 환경에서 사용
 
- <img src="./Image/ch02/NoSQLArchitecture.PNG"  width="60%" height="auto"/>  
+ ![NoSQLArchitecture](./Image/ch02/NoSQLArchitecture.PNG){ width="60%" }  
  
 ### NoSQL 성능
 
@@ -239,4 +239,4 @@
 
 ### 발전 과정
 
- <img src="./Image/ch02/EvolutionHistory.PNG" height="auto"/>
+ ![EvolutionHistory](./Image/ch02/EvolutionHistory.PNG)

@@ -78,7 +78,7 @@ def fib(n):
 
 - ex) fib(7)을 재귀적으로 구현한 경우
 
-<img src = "./Image/ch10/FibonacciExample.PNG" height="auto" />
+![FibonacciExample](./Image/ch10/FibonacciExample.PNG)
 
 - fib() 문제 크기에 의한 fib(2) 중복 호출
 
@@ -128,7 +128,7 @@ def fib(n):
 
 ### Memoization
 
-<img src = "./Image/ch10/MemoizationConcept.PNG" height="auto" />
+![MemoizationConcept](./Image/ch10/MemoizationConcept.PNG)
 
 - Memo(메모, 쪽지) + ization(화) => 메모 기법
 - Top-Down Code
@@ -208,13 +208,13 @@ def fib_tab(n):
 - 오른쪽 or 아래쪽으로만 이동 가능
 - 왼쪽, 위쪽, 대각선 이동 비허용
 
-<img src = "./Image/ch10/MatrixPathInvalidDirections.PNG" height="auto" />
+![MatrixPathInvalidDirections](./Image/ch10/MatrixPathInvalidDirections.PNG)
 
-<img src = "./Image/ch10/MatrixPathValidDirections.PNG" height="auto" />
+![MatrixPathValidDirections](./Image/ch10/MatrixPathValidDirections.PNG)
 
 ### 목표
 
-<img src = "./Image/ch10/MatrixPathObjective.PNG" height="auto" />
+![MatrixPathObjective](./Image/ch10/MatrixPathObjective.PNG)
 
 - 행렬 좌상단 -> 우하단 까지의 이동
 - 방문한 칸의 수들을 더한 값이 최대화(or 최소화)
@@ -232,7 +232,7 @@ def moveMax(m, i, j):
 
 - 중복 호출 발생 : DP로의 구현 가능
 
-<img src = "./Image/ch10/MoveMaxRecursionTree.PNG" height="auto" />
+![MoveMaxRecursionTree](./Image/ch10/MoveMaxRecursionTree.PNG)
 
 ### 동적 프로그래밍 알고리즘
 
@@ -271,14 +271,14 @@ def moveMax(m, n):
 
 ### 문제 설명
 
-<img src = "./Image/ch10/PebbleProblemGrid.PNG" height="auto" />
+![PebbleProblemGrid](./Image/ch10/PebbleProblemGrid.PNG)
 
 - 3 × n 테이블의 각 칸에 숫자를 제한 조건에 따라 처리
 - 돌이 놓인 곳에 있는 수의 합을 최대(or 최소)로 하는 문제
 
 ### 제한 조건
 
-<img src = "./Image/ch10/PebbleProblemConstraints.PNG" height="auto" />
+![PebbleProblemConstraints](./Image/ch10/PebbleProblemConstraints.PNG)
 
 - 가로 or 세로의 인접 두 칸에 동시에 돌 놓기 불가
 - 각 열에 적어도 하나 이상의 돌 필수
@@ -287,51 +287,51 @@ def moveMax(m, n):
 
 #### 패턴 1
 
-<img src = "./Image/ch10/PatternOne.PNG" height="auto" />
+![PatternOne](./Image/ch10/PatternOne.PNG)
 
 - 양립 가능 패턴
   - 1 : 2 : 1
   - 1 : 3 : 1
 
-<img src = "./Image/ch10/PatternOneCompatible.PNG" height="auto" />
+![PatternOneCompatible](./Image/ch10/PatternOneCompatible.PNG)
 
 #### 패턴 2
 
-<img src = "./Image/ch10/PatternTwo.PNG" height="auto" />
+![PatternTwo](./Image/ch10/PatternTwo.PNG)
 
 - 양립 가능 패턴
   - 2 : 1 : 2
   - 2 : 3 : 2
   - 2 : 4 : 2
 
-<img src = "./Image/ch10/PatternTwoCompatible.PNG" height="auto" />
+![PatternTwoCompatible](./Image/ch10/PatternTwoCompatible.PNG)
 
 #### 패턴 3
 
-<img src = "./Image/ch10/PatternThree.PNG" height="auto" />
+![PatternThree](./Image/ch10/PatternThree.PNG)
 
 - 양립 가능 패턴
   - 3 : 1 : 3
   - 3 : 2 : 3
 
-<img src = "./Image/ch10/PatternThreeCompatible.PNG" height="auto" />
+![PatternThreeCompatible](./Image/ch10/PatternThreeCompatible.PNG)
 
 #### 패턴 4
 
-<img src = "./Image/ch10/PatternFour.PNG" height="auto" />
+![PatternFour](./Image/ch10/PatternFour.PNG)
 
 - 양립 가능 패턴
   - 4 : 2 : 4
 
-<img src = "./Image/ch10/PatternFourCompatible.PNG" height="auto" />
+![PatternFourCompatible](./Image/ch10/PatternFourCompatible.PNG)
 
 ### 문제 해결 예시
 
-<img src = "./Image/ch10/PebbleSolutionPatternTwo.PNG" height="auto" />
+![PebbleSolutionPatternTwo](./Image/ch10/PebbleSolutionPatternTwo.PNG)
 
 - i 열이 패턴 2로 놓여있는 경우의 최고점 계산
 
-<img src = "./Image/ch10/PebbleSolutionCases.PNG" height="auto" />
+![PebbleSolutionCases](./Image/ch10/PebbleSolutionCases.PNG)
 
 - 문제 해결 경우의 수 3가지
   - (i - 1)열이 패턴 1인 경우
@@ -385,7 +385,7 @@ def compare(q, p):
 
 - 재귀 알고리즘 구현 시 중복 호출 문제 발생
 
-<img src = "./Image/ch10/PebbleRecursionTree.PNG" height="auto" />
+![PebbleRecursionTree](./Image/ch10/PebbleRecursionTree.PNG)
 
 | 문제 크기(n) | 부분 문제 총 수 | 함수 호출 횟수 |
 | :----------: | :-------------: | :------------: |
@@ -628,7 +628,7 @@ def LCS(X, Y, m, n):
 
 - 호출 트리에서의 문제 발생 : LCS(1, 1) 중복 횟수 = 9회
 
-<img src = "./Image/ch10/LCSRecursionTree.PNG" height="auto" />
+![LCSRecursionTree](./Image/ch10/LCSRecursionTree.PNG)
 
 ### 동적 프로그래밍 알고리즘
 

@@ -11,7 +11,7 @@
 - 개념적 구조를 논리적 구조로 표현하는 논리적 데이터 모델
 - 하나의 개체에 대한 데이터를 하나의 릴레이션에 저장
 
-<img src="./Image/ch05/RelationStructure.PNG" width="100%" height="auto" />
+![RelationStructure](./Image/ch05/RelationStructure.PNG){ width="100%" }
 
 - 고객 릴레이션
   - 차수(Degree) : 6
@@ -23,10 +23,10 @@
 - 행·열 구조의 테이블
 - 파일 관리 시스템 관점에서 파일(file)에 대응
 
-| <img src="./Image/ch05/DataTableStructure.PNG" height="auto" /> | 릴레이션 내 데이터들의 관계 |
+| ![DataTableStructure](./Image/ch05/DataTableStructure.PNG) | 릴레이션 내 데이터들의 관계 |
 | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
 
-| <img src="./Image/ch05/RelationshipBetweenRelations.PNG" width="70%" height="auto" /> | 릴레이션 간 관계 |
+| ![RelationshipBetweenRelations](./Image/ch05/RelationshipBetweenRelations.PNG){ width="70%" } | 릴레이션 간 관계 |
 | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
 
 ### 속성(Attribute)
@@ -59,7 +59,7 @@
 
 ### 릴레이션 구성
 
-<img src="./Image/ch05/RelationStructureExample.PNG" width="100%" height="auto" />
+![RelationStructureExample](./Image/ch05/RelationStructureExample.PNG){ width="100%" }
 
 - 차수(Degree) : 4
 - 카디널리티(Cardinality) : 5
@@ -71,7 +71,7 @@
 
 ### 다중 값 속성
 
-<img src="./Image/ch05/MultiValueAttribute.PNG" width="80%" height="auto" />
+![MultiValueAttribute](./Image/ch05/MultiValueAttribute.PNG){ width="80%" }
 
 - 다중 값을 가지는 직업 속성
 - 관계 데이터 모델의 릴레이션으로 부적합
@@ -79,7 +79,7 @@
 
 ### 동일한 튜플 중복
 
-<img src="./Image/ch05/DuplicateTupleExample.PNG" width="80%" height="auto" />
+![DuplicateTupleExample](./Image/ch05/DuplicateTupleExample.PNG){ width="80%" }
 
 - 동일한 튜플 중복 불가
 - 속성 값은 단일값 필수
@@ -95,7 +95,7 @@
 
 ### 데이터베이스 구성
 
-<img src="./Image/ch05/DatabaseSchemaAndInstance.PNG" width="100%" height="auto" />
+![DatabaseSchemaAndInstance](./Image/ch05/DatabaseSchemaAndInstance.PNG){ width="100%" }
 
 |                  구성 요소                   | 설명                                                                   |
 | :------------------------------------------: | :--------------------------------------------------------------------- |
@@ -126,11 +126,11 @@
 |        대체키         | 기본키로 선택되지 못한 후보키                      |
 |        외래키         | 다른 릴레이션의 기본키를 참조하는 속성·속성의 집합 |
 
-<img src="./Image/ch05/KeyTypes.PNG" width="80%" height="auto" />
+![KeyTypes](./Image/ch05/KeyTypes.PNG){ width="80%" }
 
 ### 데이터베이스 릴레이션 예시
 
-<img src="./Image/ch05/DatabaseRelationExample.PNG" width="100%" height="auto" />
+![DatabaseRelationExample](./Image/ch05/DatabaseRelationExample.PNG){ width="100%" }
 
 #### 1. 수퍼키
 
@@ -184,7 +184,7 @@
 
 #### 5. 외래키(Foreign Key)
 
-<img src="./Image/ch05/ForeignKeyExample.PNG" width="80%" height="auto" />
+![ForeignKeyExample](./Image/ch05/ForeignKeyExample.PNG){ width="80%" }
 
 - 외래키 속성을 참조하는 기본키 속성의 이름은 상관 X
 
@@ -195,15 +195,15 @@
 |  참조하는 릴레이션   | 외래키를 가진 릴레이션                   |
 |  참조되는 릴레이션   | 외래키가 참조하는 기본키를 가진 릴레이션 |
 
-| <img src="./Image/ch05/ForeignKeyMultiple.PNG" height="auto" /> | - 하나의 릴레이션에 여러 외래키 존재 가능<br>- 외래키를 기본키로 사용 가능 |
+| ![ForeignKeyMultiple](./Image/ch05/ForeignKeyMultiple.PNG) | - 하나의 릴레이션에 여러 외래키 존재 가능<br>- 외래키를 기본키로 사용 가능 |
 | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 
-| <img src="./Image/ch05/ForeignKeySelfReference.PNG" height="auto" /> | - 같은 릴레이션의 기본키를 참조하는 외래키 정의 가능<br>- 외래키는 NULL 값 보유 가능 |
+| ![ForeignKeySelfReference](./Image/ch05/ForeignKeySelfReference.PNG) | - 같은 릴레이션의 기본키를 참조하는 외래키 정의 가능<br>- 외래키는 NULL 값 보유 가능 |
 | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 
 ### 릴레이션 간 참조 관계
 
-<img src="./Image/ch05/RelationReferenceStructure.PNG" width="80%" height="auto" />
+![RelationReferenceStructure](./Image/ch05/RelationReferenceStructure.PNG){ width="80%" }
 
 ## 2절. 관계 데이터 모델의 제약
 
@@ -214,7 +214,7 @@
   - 데이터 결함이 없는 상태
   - 정확하고 유효하게 유지
 
-<img src="./Image/ch05/IntegrityConstraintTypes.PNG" width="80%" height="auto" />
+![IntegrityConstraintTypes](./Image/ch05/IntegrityConstraintTypes.PNG){ width="80%" }
 
 |                       제약 조건 종류                       | 설명                                                                                                                                                                                                                                                                                              |
 | :--------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -224,7 +224,7 @@
 
 ### 개체 무결성 제약조건 삽입 / 수정 / 삭제
 
-<img src="./Image/ch05/EntityIntegrityConstraint.PNG" width="80%" height="auto" />
+![EntityIntegrityConstraint](./Image/ch05/EntityIntegrityConstraint.PNG){ width="80%" }
 
 - 삽입 : 기본키 값이 같으면 삽입 금지
 - 수정 : 기본키 값이 같거나 NULL로 수정 불가
@@ -232,11 +232,11 @@
 
 ### 참조 무결성 제약조건 예시
 
-<img src="./Image/ch05/ReferentialIntegrityExample.PNG" width="80%" height="auto" />
+![ReferentialIntegrityExample](./Image/ch05/ReferentialIntegrityExample.PNG){ width="80%" }
 
 ### 참조 무결성 제약조건 삽입 / 수정 / 삭제
 
-<img src="./Image/ch05/ReferentialIntegrityOperations.PNG" width="80%" height="auto" />
+![ReferentialIntegrityOperations](./Image/ch05/ReferentialIntegrityOperations.PNG){ width="80%" }
 
 - 삽입
 
@@ -257,7 +257,7 @@
 
 - 부모 릴레이션에서의 튜플 삭제
 
-<img src="./Image/ch05/ReferentialIntegrityOptions.PNG" width="80%" height="auto" />
+![ReferentialIntegrityOptions](./Image/ch05/ReferentialIntegrityOptions.PNG){ width="80%" }
 
 |   명령어   | 설명                                                                                | 예시                                         |
 | :--------: | :---------------------------------------------------------------------------------- | :------------------------------------------- |

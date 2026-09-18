@@ -159,7 +159,7 @@
 
 ### 그림
 
-<img src="./Image/ch00/ch00-01-CI.PNG"  width="100%" height="auto"/>
+![ch00-01-CI](./Image/ch00/ch00-01-CI.PNG){ width="100%" }
 
 ## 5절. 정리
 

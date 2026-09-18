@@ -19,7 +19,7 @@
 
 ### 데이터 모델 구성
 
-<img src="./Image/ch06/DataModelStructure.PNG"  height="auto" />
+![DataModelStructure](./Image/ch06/DataModelStructure.PNG)
 
 | 데이터 구조 종류 | 설명                                                                            |
 | :--------------: | :------------------------------------------------------------------------------ |
@@ -36,7 +36,7 @@
 | 관계 대수 |
 | 관계 해석 |
 
-<img src="./Image/ch06/RDOTypes.PNG" width="70%" height="auto" />
+![RDOTypes](./Image/ch06/RDOTypes.PNG){ width="70%" }
 
 ### 관계 대수와 관계 해석 역할
 
@@ -48,7 +48,7 @@
 
 ### 관계 대수(Relational Algebra)
 
-<img src="./Image/ch06/RelationalAlgebra.PNG" height="auto" />
+![RelationalAlgebra](./Image/ch06/RelationalAlgebra.PNG)
 
 - 절차적 언어(Procedural Language)
 - 원하는 결과를 위해 릴레이션 처리 과정을 순서대로 기술하는 언어
@@ -69,7 +69,7 @@
 | 차집합          |  -   | R - S | 릴레이션 R과 S의 차집합 반환                                                     |
 | 카티션 프로덕트 |  ✕   | R ✕ S | 릴레이션 R의 각 튜플과 릴레이션 S의 각 튜플을 모두 연결 후 만든 새로운 튜플 반환 |
 
-<img src="./Image/ch06/SetOperators.PNG" width="70%" height="auto" />
+![SetOperators](./Image/ch06/SetOperators.PNG){ width="70%" }
 
 | 특성                             | 조건                          |
 | :------------------------------- | :---------------------------- |
@@ -81,7 +81,7 @@
 | 두 릴레이션의 동등한 차수                      |
 | 두 릴레이션에서 서로 대응되는 속성 도메인 일치 |
 
-<img src="./Image/ch06/UnionCompatibleConditions.PNG" width="70%" height="auto" />
+![UnionCompatibleConditions](./Image/ch06/UnionCompatibleConditions.PNG){ width="70%" }
 
 #### 합집합(Union) : R ∪ S
 
@@ -99,7 +99,7 @@
 |       교환적 특징       | R ∪ S = S ∪ R                |
 |       결합적 특징       | (R ∪ S) ∪ T = R ∪ (S ∪ T)    |
 
-<img src="./Image/ch06/UnionExample.PNG" width="70%" height="auto" />
+![UnionExample](./Image/ch06/UnionExample.PNG){ width="70%" }
 
 #### 2. 교집합(Intersection) : R ∩ S
 
@@ -116,7 +116,7 @@
 |       교환적 특징       | R ∩ S = S ∩ R                |
 |       결합적 특징       | (R ∩ S) ∩ T = R ∩ (S ∩ T)    |
 
-<img src="./Image/ch06/IntersectionExample.PNG" height="auto" />
+![IntersectionExample](./Image/ch06/IntersectionExample.PNG)
 
 #### 3. 차집합(Difference) : R - S
 
@@ -133,7 +133,7 @@
 |       교환적 특징       | 없음                                           |
 |       결합적 특징       | 없음                                           |
 
-<img src="./Image/ch06/DifferenceExample.PNG" height="auto" />
+![DifferenceExample](./Image/ch06/DifferenceExample.PNG)
 
 #### 4. 카티션 프로덕트(Cartesian Product) : R ✕ S
 
@@ -150,7 +150,7 @@
 |       교환적 특징       | R ✕ S · S ✕ R                                   |
 |       결합적 특징       | (R ✕ S) ✕ T = R ✕ (S ✕ T)                       |
 
-<img src="./Image/ch06/CartesianProduct.PNG" height="auto" />
+![CartesianProduct](./Image/ch06/CartesianProduct.PNG)
 
 ### 순수 관계 연산자(Relational Operation)
 
@@ -163,7 +163,7 @@
 | 조인     |  ⋈   | R ⋈ S               | 공통 속성으로 릴레이션 R과 S의 튜플들을 연결하여 만든 새로운 튜플들 반환 |
 | 디비전   |  ÷   | R ÷ S               | 릴레이션 S의 모든 튜플과 관련이 있는 릴레이션 R의 튜플들 반환            |
 
-<img src="./Image/ch06/RelationalOperators.PNG" width="70%" height="auto" />
+![RelationalOperators](./Image/ch06/RelationalOperators.PNG){ width="70%" }
 
 #### 1. 셀렉트(Select) · 셀렉션(Selection)
 
@@ -185,18 +185,18 @@
   - 비교 연산자(> · ≥ · < · ≤ · = · ≠)
   - 논리 연산자(∧(and), ∨(or), ¬(not))
 
-<img src="./Image/ch06/OperationRelation.PNG" width="70%" height="auto" />
+![OperationRelation](./Image/ch06/OperationRelation.PNG){ width="70%" }
 
 #### 셀렉션 연산 예시
 
 - 고객 릴레이션
 
-<img src="./Image/ch06/CustomerRelation.PNG" width="70%" height="auto" />
+![CustomerRelation](./Image/ch06/CustomerRelation.PNG){ width="70%" }
 
-| ex 1 : 등급이 gold인 튜플 검색 | <img src="./Image/ch06/SelectionExample1.PNG"  height="auto" /> |
+| ex 1 : 등급이 gold인 튜플 검색 | ![SelectionExample1](./Image/ch06/SelectionExample1.PNG) |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 등급이 gold이고 적립금이 2000 이상인 튜플 검색 | <img src="./Image/ch06/SelectionExample2.PNG" height="auto" /> |
+| ex 2 : 등급이 gold이고 적립금이 2000 이상인 튜플 검색 | ![SelectionExample2](./Image/ch06/SelectionExample2.PNG) |
 | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 
 ### 2. 프로젝트(Project) · 프로젝션(Projection)
@@ -214,17 +214,17 @@
 
 - 수직적 부분 집합 의미
 
-<img src="./Image/ch06/ProjectionVerticalSubset.PNG" width="70%" height="auto" />
+![ProjectionVerticalSubset](./Image/ch06/ProjectionVerticalSubset.PNG){ width="70%" }
 
 #### 프로젝션 연산 예시
 
-| ex 1 : 고객 릴레이션의 이름 · 주소 · 핸드폰 프로젝션 | <img src="./Image/ch06/ProjectionExample1.PNG" height="auto" /> |
+| ex 1 : 고객 릴레이션의 이름 · 주소 · 핸드폰 프로젝션 | ![ProjectionExample1](./Image/ch06/ProjectionExample1.PNG) |
 | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 
-| ex 2 : 고객이름, 등급, 적립금 검색 | <img src="./Image/ch06/ProjectionExample2.PNG" height="auto" /> |
+| ex 2 : 고객이름, 등급, 적립금 검색 | ![ProjectionExample2](./Image/ch06/ProjectionExample2.PNG) |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 3 : 등급 검색<br>- 동일한 튜플은 중복 없이 한 번만 출력 | <img src="./Image/ch06/ProjectionExample3.PNG" height="auto" /> |
+| ex 3 : 등급 검색<br>- 동일한 튜플은 중복 없이 한 번만 출력 | ![ProjectionExample3](./Image/ch06/ProjectionExample3.PNG) |
 | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 
 ### 3. 조인(Join)
@@ -240,18 +240,18 @@
 |     다른 표현      | 동등 조인(equi-join)         |
 |     조인 속성      | 두 릴레이션의 공통 속성      |
 
-| ex 1 : 고객 릴레이션의 '고객아이디'와 주문 릴레이션의 '고객아이디' 조인 | <img src="./Image/ch06/ProjectionExample3.PNG" height="auto" /> |
+| ex 1 : 고객 릴레이션의 '고객아이디'와 주문 릴레이션의 '고객아이디' 조인 | ![ProjectionExample3](./Image/ch06/ProjectionExample3.PNG) |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 정소화 고객이 주문한 제품 검색 | <img src="./Image/ch06/JoinExample1.PNG" height="auto" /> |
+| ex 2 : 정소화 고객이 주문한 제품 검색 | ![JoinExample1](./Image/ch06/JoinExample1.PNG) |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 
-| ex 2 - 1 : 릴레이션 소속 구분을 위해 '릴레이션.속성' 형식 표기 | <img src="./Image/ch06/JoinExample2.PNG" height="auto" /> |
+| ex 2 - 1 : 릴레이션 소속 구분을 위해 '릴레이션.속성' 형식 표기 | ![JoinExample2](./Image/ch06/JoinExample2.PNG) |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 
 ### 조인 종류
 
-<img src="./Image/ch06/JoinTypes.PNG" height="auto" />
+![JoinTypes](./Image/ch06/JoinTypes.PNG)
 
 ### 세타 조인(theta-join, θ-join)
 
@@ -283,10 +283,10 @@
 
 #### 자연 조인 예시
 
-| ex 1 : 고객과 주문 릴레이션 | <img src="./Image/ch06/NaturalJoinExample1.PNG" height="auto" /> |
+| ex 1 : 고객과 주문 릴레이션 | ![NaturalJoinExample1](./Image/ch06/NaturalJoinExample1.PNG) |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 2개의 속성으로 이루어진 조인 속성 | <img src="./Image/ch06/NaturalJoinExample2.PNG" height="auto" /> |
+| ex 2 : 2개의 속성으로 이루어진 조인 속성 | ![NaturalJoinExample2](./Image/ch06/NaturalJoinExample2.PNG) |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 
 ### 4. 디비전(Division)
@@ -301,28 +301,28 @@
 | :----------------: | :---------------------- |
 |   수학적 표현법    | 릴레이션 1 ÷ 릴레이션 2 |
 
-<img src="./Image/ch06/Division.PNG" width="70%" height="auto" />
+![Division](./Image/ch06/Division.PNG){ width="70%" }
 
 #### 디비전 예시
 
-| ex 1 : 고객과 우수등급 릴레이션 | <img src="./Image/ch06/DivisionExample1.PNG" height="auto" /> |
+| ex 1 : 고객과 우수등급 릴레이션 | ![DivisionExample1](./Image/ch06/DivisionExample1.PNG) |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 주문내역, 제품1, 제품2 릴레이션 | <img src="./Image/ch06/DivisionExample2.PNG" height="auto" /> |
+| ex 2 : 주문내역, 제품1, 제품2 릴레이션 | ![DivisionExample2](./Image/ch06/DivisionExample2.PNG) |
 | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 
 ### 관계 대수 질의 표현
 
-| 사용할 고객 릴레이션과 주문 릴레이션 | <img src="./Image/ch06/QueryRelations.PNG" height="auto" /> |
+| 사용할 고객 릴레이션과 주문 릴레이션 | ![QueryRelations](./Image/ch06/QueryRelations.PNG) |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 1 : 등급이 gold인 고객의 이름과 나이 | <img src="./Image/ch06/QueryExample1.PNG" height="auto" /> |
+| ex 1 : 등급이 gold인 고객의 이름과 나이 | ![QueryExample1](./Image/ch06/QueryExample1.PNG) |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 고객이름이 원유선인 고객의 등급과 원유선 고객이 주문한 주문제품, 수량 | <img src="./Image/ch06/QueryExample2Result.PNG" height="auto" /> |
+| ex 2 : 고객이름이 원유선인 고객의 등급과 원유선 고객이 주문한 주문제품, 수량 | ![QueryExample2Result](./Image/ch06/QueryExample2Result.PNG) |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 3 : 주문 수량이 10개 미만인 주문 내역을 제외한 검색 | <img src="./Image/ch06/QueryExample3Result.PNG" height="auto" /> |
+| ex 3 : 주문 수량이 10개 미만인 주문 내역을 제외한 검색 | ![QueryExample3Result](./Image/ch06/QueryExample3Result.PNG) |
 | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
 
 ## 2.5절. 확장 관계 대수 연산자
@@ -346,10 +346,10 @@
 
 #### 세미 조인 예시
 
-| ex 1 : 고객 릴레이션과 주문 릴레이션 세미 조인 | <img src="./Image/ch06/SemiJoinExample1.PNG" height="auto" /> |
+| ex 1 : 고객 릴레이션과 주문 릴레이션 세미 조인 | ![SemiJoinExample1](./Image/ch06/SemiJoinExample1.PNG) |
 | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 왼쪽이 닫힌 세미 조인 | <img src="./Image/ch06/SemiJoinExample2.PNG" height="auto" /> |
+| ex 2 : 왼쪽이 닫힌 세미 조인 | ![SemiJoinExample2](./Image/ch06/SemiJoinExample2.PNG) |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 
 ### 외부 조인(Outer Join)
@@ -371,17 +371,17 @@
 
 - 왼쪽 릴레이션 1에 존재하는 모든 튜플을 결과 릴레이션에 포함
 
-| ex 1 : 왼쪽 외부 조인 예시 | <img src="./Image/ch06/LeftOuterJoinExample1.PNG"  height="auto" /> |
+| ex 1 : 왼쪽 외부 조인 예시 | ![LeftOuterJoinExample1](./Image/ch06/LeftOuterJoinExample1.PNG) |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 고객 릴레이션과 주문 릴레이션 왼쪽 외부 조인 연산 | <img src="./Image/ch06/LeftOuterJoinExample2.PNG" height="auto" /> |
+| ex 2 : 고객 릴레이션과 주문 릴레이션 왼쪽 외부 조인 연산 | ![LeftOuterJoinExample2](./Image/ch06/LeftOuterJoinExample2.PNG) |
 | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 
 #### 오른쪽 외부 조인(RIGHT OUTER JOIN)
 
 - 오른쪽 릴레이션 2에 존재하는 모든 튜플을 결과 릴레이션에 포함
 
-| ex 1 : 오른쪽 외부 조인 예시 | <img src="./Image/ch06/RightOuterJoinExample1.PNG" height="auto" /> |
+| ex 1 : 오른쪽 외부 조인 예시 | ![RightOuterJoinExample1](./Image/ch06/RightOuterJoinExample1.PNG) |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 
 - 주문 릴레이션(릴레이션 2)에 만약 조인 연산에 참여하지 않는 튜플이 없는 경우
@@ -391,10 +391,10 @@
 
 - 두 릴레이션에 있는 모든 튜플을 결과 릴레이션에 포함
 
-| ex 1 : 완전 외부 조인 예시 | <img src="./Image/ch06/FullOuterJoinExample1.PNG" height="auto" /> |
+| ex 1 : 완전 외부 조인 예시 | ![FullOuterJoinExample1](./Image/ch06/FullOuterJoinExample1.PNG) |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 
-| ex 2 : 완전 외부 조인 예시 | <img src="./Image/ch06/FullOuterJoinExample2.PNG" height="auto" /> |
+| ex 2 : 완전 외부 조인 예시 | ![FullOuterJoinExample2](./Image/ch06/FullOuterJoinExample2.PNG) |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 
 - 고객 릴레이션(릴레이션 1)에만 조인 연산에 참여하지 않는 튜플 존재
@@ -402,7 +402,7 @@
 
 ### 외부 조인 정리(OUTER JOIN)
 
-<img src="./Image/ch06/OuterJoinSummary.PNG" height="auto" />
+![OuterJoinSummary](./Image/ch06/OuterJoinSummary.PNG)
 
 ### 관계 대수 연산자 총정리
 

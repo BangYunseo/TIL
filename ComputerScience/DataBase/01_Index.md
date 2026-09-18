@@ -16,7 +16,7 @@
 
 ### 인덱스(Index)
 
-<img src="./Image/01_Index/Index.png" height="auto" />
+![Index](./Image/01_Index/Index.png)
 
 - DB 테이블에 대한 검색 속도를 향상시키는 **자료구조**
     - 해시 테이블
@@ -66,7 +66,7 @@
 
 ### 해시 테이블(Hash Table)
 
-<img src="./Image/01_Index/HashTable.png" height="auto" />
+![HashTable](./Image/01_Index/HashTable.png)
 
 - **(key, value)** 로 데이터를 저장하는 자료구조
     - **(key, value)** = (컬럼 값, 데이터 위치)
@@ -84,7 +84,7 @@
 
 ### B+Tree
 
-<img src="./Image/01_Index/B+Tree.png" height="auto" />
+![B+Tree](./Image/01_Index/B+Tree.png)
 
 - B-Tree를 개선한 자료구조
 
@@ -104,7 +104,7 @@
 
 - 아래 사진은 B-Tree
 
-<img src="./Image/01_Index/B-Tree.png" height="auto" />
+![B-Tree](./Image/01_Index/B-Tree.png)
 
 |구분|B+Tree|B-Tree|
 |:---:|:---|:---|
@@ -149,7 +149,7 @@
 > 차수 : 3   
 > 45 삽입 시 연쇄적인 분할 발생 예시
 
-<img src="./Image/01_Index/B+Tree_INSERT.png" height="auto" />
+![B+Tree_INSERT](./Image/01_Index/B+Tree_INSERT.png)
 
 ### DELETE
 
@@ -167,7 +167,7 @@
 > 삭제할 대상의 인덱스가 없고 재조정이 필요 없는 경우   
 > 삭제 후에도 최소 개수 조건을 만족해 재조정이 발생하지 않음 
 
-<img src="./Image/01_Index/B+Tree_DELETE_1.png" height="auto" />
+![B+Tree_DELETE_1](./Image/01_Index/B+Tree_DELETE_1.png)
 
 ### DELETE 예시 2
 
@@ -176,7 +176,7 @@
 > 최소 개수 조건을 만족하지 않아 재조정 발생    
 > 형제 노드로부터 데이터를 빌려 조건에 맞게 인덱스 업데이트
 
-<img src="./Image/01_Index/B+Tree_DELETE_2.png" height="auto" />
+![B+Tree_DELETE_2](./Image/01_Index/B+Tree_DELETE_2.png)
 
 ### DELETE 예시 3
 
@@ -185,7 +185,7 @@
 > 최소 개수가 만족되므로 재조정 필요 없음   
 > 삭제된 인덱스 대신 같은 노드 안의 key 인덱싱    
 
-<img src="./Image/01_Index/B+Tree_DELETE_3.png" height="auto" />
+![B+Tree_DELETE_3](./Image/01_Index/B+Tree_DELETE_3.png)
 
 ### DELETE 예시 4
 
@@ -194,7 +194,7 @@
 > 재조정이 발생해 형제 노드로부터 데이터를 빌림    
 > 삭제된 인덱스에는 빌린 데이터의 key 인덱싱     
 
-<img src="./Image/01_Index/B+Tree_DELETE_4.png" height="auto" />
+![B+Tree_DELETE_4](./Image/01_Index/B+Tree_DELETE_4.png)
 
 ### DELETE 예시 5
 
@@ -203,7 +203,7 @@
 > 리프 노드에서는 형제도 충분한 개수를 가지지 않아 병합 필요    
 > 삭제된 인덱스에는 중위 계승자(정렬 순서상 다음 key)로 대체     
 
-<img src="./Image/01_Index/B+Tree_DELETE_5.png" height="auto" />
+![B+Tree_DELETE_5](./Image/01_Index/B+Tree_DELETE_5.png)
 
 ### DELETE 예시 6
 
@@ -211,7 +211,7 @@
 > 트리의 높이가 줄어드는 경우   
 > 55 key와 인덱스 삭제
 
-<img src="./Image/01_Index/B+Tree_DELETE_6.png" height="auto" />
+![B+Tree_DELETE_6](./Image/01_Index/B+Tree_DELETE_6.png)
 
 - 리프 노드 재조정
     - 형제 노드로부터 데이터를 빌릴 수 있는지 확인

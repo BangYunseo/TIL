@@ -27,7 +27,7 @@
 
 - ART의 안드로이드 라이브러리
 
-<img src="./Image/ch06/ch06-01-JavaAPI.PNG" height="auto" />
+![ch06-01-JavaAPI](./Image/ch06/ch06-01-JavaAPI.PNG)
 
 ## 1절. 제트팩
 
@@ -83,11 +83,11 @@ class MainActivity : AppCompatActivity() {
 |         액션바 이용          |
 |          툴바 이용           |
 
-<img src="./Image/ch06/ch06-02-ToolBar.PNG" height="auto" />
+![ch06-02-ToolBar](./Image/ch06/ch06-02-ToolBar.PNG)
 
 - 액티비티 적용 테마 설정에 의해 결정
 
-<img src="./Image/ch06/ch06-03-Theme.PNG" height="auto" />
+![ch06-03-Theme](./Image/ch06/ch06-03-Theme.PNG)
 
 ```xml
 <!-- themes.xml 테마 스타일 선언 -->
@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
     app:titleTextColor="#FFFFFF" />
 ```
 
-<img src="./Image/ch06/ch06-04-MatchToolBar.PNG" height="auto" />
+![ch06-04-MatchToolBar](./Image/ch06/ch06-04-MatchToolBar.PNG)
 
 ```kt
 // 액션바 내용 툴바 적용
@@ -151,7 +151,7 @@ setSupportActionBar(binding.toolbar)
 |    액션 아이템    |
 |   오버플로 메뉴   |
 
-<img src="./Image/ch06/ch06-05-ActionBar.PNG" height="auto" />
+![ch06-05-ActionBar](./Image/ch06/ch06-05-ActionBar.PNG)
 
 #### 툴바 색상 설정
 
@@ -172,13 +172,13 @@ setSupportActionBar(binding.toolbar)
 </style>
 ```
 
-<img src="./Image/ch06/ch06-06-ToolBarColor.PNG" height="auto" />
+![ch06-06-ToolBarColor](./Image/ch06/ch06-06-ToolBarColor.PNG)
 
 #### 업 버튼 설정
 
 - 액션바 왼쪽에 이전 화면으로 되돌아가는 화살표 모양(←) 업 버튼
 
-<img src="./Image/ch06/ch06-07-UpButton.PNG" height="auto" />
+![ch06-07-UpButton](./Image/ch06/ch06-07-UpButton.PNG)
 
 |        등록 방법         |
 | :----------------------: |
@@ -223,7 +223,7 @@ override fun onSupportNavigateUp(): Boolean{
 |  onCreateOptionsMenu()  | 액티비티 첫 1회만 호출                                                 |
 | onPrepareOptionsMenu()  | 액티비티 첫 실행 한 번 호출 후 오버플로 메뉴가 나타날 때마다 반복 호출 |
 
-<img src="./Image/ch06/ch06-08-Menu.PNG" height="auto" />
+![ch06-08-Menu](./Image/ch06/ch06-08-Menu.PNG)
 
 ```kt
 // 메뉴 구성 함수
@@ -235,7 +235,7 @@ override fun onCreateOptionsMenu(menu: Menu?): Boolean{
 }
 ```
 
-<img src="./Image/ch06/ch06-09-Menu2.PNG" height="auto" />
+![ch06-09-Menu2](./Image/ch06/ch06-09-Menu2.PNG)
 
 ### 이벤트 처리
 
@@ -262,7 +262,7 @@ override fun onOptionsItemSelected(item: MenuItem): Boolean = when(item.itemId){
 
 - res/menu 디렉토리에 메뉴 구성 XML 파일 생성
 
-<img src="./Image/ch06/ch06-10-Menu3.PNG" height="auto" />
+![ch06-10-Menu3](./Image/ch06/ch06-10-Menu3.PNG)
 
 ```xml
 <!-- menu_main.xml -->
@@ -308,7 +308,7 @@ override fun onCreateOptionsMenu(menu: Menu?): Boolean{
 }
 ```
 
-<img src="./Image/ch06/ch06-11-Menu4.PNG" height="auto" />
+![ch06-11-Menu4](./Image/ch06/ch06-11-Menu4.PNG)
 
 ### 액션 뷰 이용
 
@@ -323,7 +323,7 @@ override fun onCreateOptionsMenu(menu: Menu?): Boolean{
     app:actionViewClass="androidx.appcompat.widget.SearchView" />
 ```
 
-<img src="./Image/ch06/ch06-12-SearchView.PNG" height="auto" />
+![ch06-12-SearchView](./Image/ch06/ch06-12-SearchView.PNG)
 
 ### 서치 뷰 이용
 
@@ -360,7 +360,7 @@ override fun onCreateOptionsMenu(menu: Menu): Boolean{
 - 액티비티처럼 동작하는 뷰
   - 액티비티에 구현되는 모든 내용을 프래그먼트 클래스에 작성
 
-<img src="./Image/ch06/ch06-13-Fragment.PNG" height="auto" />
+![ch06-13-Fragment](./Image/ch06/ch06-13-Fragment.PNG)
 
 ### 프래그먼트 구현
 
@@ -434,7 +434,7 @@ transaction.commit()
 |      onPause()      |
 |      onStop()       |
 
-<img src="./Image/ch06/ch06-14-SDLC.PNG" height="auto" />
+![ch06-14-SDLC](./Image/ch06/ch06-14-SDLC.PNG)
 
 |   생명 주기 단계    |
 | :-----------------: |
@@ -465,7 +465,7 @@ transaction.addToBackStack(null)
 
 - 목록 화면 구성
 
-<img src="./Image/ch06/ch06-15-RecyclerView.PNG" height="auto" />
+![ch06-15-RecyclerView](./Image/ch06/ch06-15-RecyclerView.PNG)
 
 |      구성 요소       | 설명                       |
 | :------------------: | :------------------------- |
@@ -595,7 +595,7 @@ adapter.notifyDataSetChanged()
   - 가로 배치 : LinearLayoutManager.HORIZONTAL
   - 세로 배치 : LinearLayoutManager.VERTICAL or 생략
 
-<img src="./Image/ch06/ch06-16-Vertical.PNG" height="auto" />
+![ch06-16-Vertical](./Image/ch06/ch06-16-Vertical.PNG)
 
 ```kt
 // 항목 세로 배치
@@ -603,7 +603,7 @@ adapter.notifyDataSetChanged()
 binding.recyclerView.layoutManager = LinearLayoutManager(this)
 ```
 
-<img src="./Image/ch06/ch06-17-Horizontal.PNG" height="auto" />
+![ch06-17-Horizontal](./Image/ch06/ch06-17-Horizontal.PNG)
 
 ```kt
 // 항목 가로 배치
@@ -626,7 +626,7 @@ val layoutManager = GridLayoutManager(this, 2)
 binding.recyclerView.layoutManager = layoutManager
 ```
 
-<img src="./Image/ch06/ch06-18-Grid.PNG" height="auto" />
+![ch06-18-Grid](./Image/ch06/ch06-18-Grid.PNG)
 
 - 가로 설정 : 생성자에 GridLayoutManager.HORIZONTAL 지정
 
@@ -638,7 +638,7 @@ GridLayoutManager.HORIZONTAL, false)
 binding.recyclerView.layoutManager = layoutManager
 ```
 
-<img src="./Image/ch06/ch06-19-GridH.PNG" height="auto" />
+![ch06-19-GridH](./Image/ch06/ch06-19-GridH.PNG)
 
 - 네 번째 매개변수 Boolean 값 : 왼쪽, 오른쪽 정렬
 
@@ -650,7 +650,7 @@ GridLayoutManager.HORIZONTAL, true)
 binding.recyclerView.layoutManager = layoutManager
 ```
 
-<img src="./Image/ch06/ch06-20-GridB.PNG" height="auto" />
+![ch06-20-GridB](./Image/ch06/ch06-20-GridB.PNG)
 
 ### StaggeredGridLayoutManager
 
@@ -664,7 +664,7 @@ StaggeredGridLayoutManager.VERTICAL)
 binding.recyclerView.layoutManager = layoutManager
 ```
 
-<img src="./Image/ch06/ch06-21-GridS.PNG" height="auto" />
+![ch06-21-GridS](./Image/ch06/ch06-21-GridS.PNG)
 
 ### 아이템 데코레이션
 
@@ -763,7 +763,7 @@ override fun getItemOffsets(
 
 - 아이템 데코레이션 객체를 리사이클러 뷰에 적용하는 함수
 
-<img src="./Image/ch06/ch06-22-ID.PNG" height="auto" />
+![ch06-22-ID](./Image/ch06/ch06-22-ID.PNG)
 
 ```kt
 // 리사이클러 뷰에 적용한 아이템 데코레이션
@@ -775,7 +775,7 @@ binding.recyclerView.addItemDecoration(MyDecoration(this))
 
 ### 뷰 페이저2
 
-<img src="./Image/ch06/ch06-23-ViewPager.PNG" height="auto" />
+![ch06-23-ViewPager](./Image/ch06/ch06-23-ViewPager.PNG)
 
 - 스와이프로 넘기는 화면 구성
 - 2019년, viewpager 대신 viewpager2 제공
@@ -819,7 +819,7 @@ class MyPagerAdapter(val datas: MutableList<String>) :
 
 - FragmentStateAdapter로 뷰 페이저2 구현
 
-<img src="./Image/ch06/ch06-24-ViewPager2.PNG" height="auto" />
+![ch06-24-ViewPager2](./Image/ch06/ch06-24-ViewPager2.PNG)
 
 ```kt
 // 뷰 페이저 2 구현 - 프래그먼트 어댑터 이용
@@ -850,7 +850,7 @@ binding.viewpager.adapter = MyPagerAdapter(datas)
   - 첫 번째 하위 태그: 액티비티 화면에 출력
   - 두 번째 하위 태그: 평소에 안 보이고 끌려 나옴
 
-<img src="./Image/ch06/ch06-25-DrawerLayout.PNG" height="auto" />
+![ch06-25-DrawerLayout](./Image/ch06/ch06-25-DrawerLayout.PNG)
 
 ```XML
 <!-- 드로어 레이아웃 구성 -->
@@ -871,7 +871,7 @@ binding.viewpager.adapter = MyPagerAdapter(datas)
 - 툴바 영역에 토글(toggle) 버튼 함께 제공
 - 토글 버튼 : ActionBarDrawerToggle 클래스에서 제공
 
-<img src="./Image/ch06/ch06-26-Toggle.PNG" height="auto" />
+![ch06-26-Toggle](./Image/ch06/ch06-26-Toggle.PNG)
 
 ```kt
 // 드로어 메뉴 토글 버튼 적용
@@ -951,6 +951,6 @@ viewBinding.isEnabled = true
 
 ### 10) 앱 실행
 
-<img src="./Image/ch06/ch06-27-App.PNG" height="auto" />
+![ch06-27-App](./Image/ch06/ch06-27-App.PNG)
     
 [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch07)

@@ -26,11 +26,11 @@
 
 ### 해시 테이블
 
-<img src = "./Image/ch09/HashTable.PNG" height="auto" />
+![HashTable](./Image/ch09/HashTable.PNG)
 
 ### 해시 테이블 예시
 
-<img src = "./Image/ch09/HashTableExample.PNG" height="auto" />
+![HashTableExample](./Image/ch09/HashTableExample.PNG)
 
 - 크기가 13인 해시 테이블에 5개 원소가 들어간 예시
 - 입력 : 25, 13, 16, 15, 7
@@ -81,13 +81,13 @@
 
 ### 곱하기(Multiplication) 방법 작동
 
-<img src = "./Image/ch09/MultiplicationMethod.PNG" height="auto" />
+![MultiplicationMethod](./Image/ch09/MultiplicationMethod.PNG)
 
 ## 2절. 충돌
 
 ### 충돌(Collision)
 
-<img src = "./Image/ch09/CollisionConcept.PNG" height="auto" />
+![CollisionConcept](./Image/ch09/CollisionConcept.PNG)
 
 - 해시 테이블의 한 주소를 두 개 이상의 원소가 경쟁하는 경우
 
@@ -107,7 +107,7 @@
 
 ### 체이닝
 
-<img src = "./Image/ch09/ChainingResolution.PNG" height="auto" />
+![ChainingResolution](./Image/ch09/ChainingResolution.PNG)
 
 - 적재율이 1 이상일 수 있음
 
@@ -130,7 +130,7 @@
 
 #### 선형 조사 예시
 
-<img src = "./Image/ch09/LinearProbingExample.PNG" height="auto" />
+![LinearProbingExample](./Image/ch09/LinearProbingExample.PNG)
 
 - 입력 순서
   - 25, 13, 16, 15, 7, 28, 31, 20, 1, 38
@@ -139,7 +139,7 @@
 
 #### 선형 조사 문제점 : 1차 군집
 
-<img src = "./Image/ch09/PrimaryClustering.PNG" height="auto" />
+![PrimaryClustering](./Image/ch09/PrimaryClustering.PNG)
 
 - Primary Clulstering(1차 군집)
   - 특정 영역에 원소가 몰리는 현상
@@ -150,7 +150,7 @@
 
 #### 이차원 조사 예시
 
-<img src = "./Image/ch09/QuadraticProbingExample.PNG" height="auto" />
+![QuadraticProbingExample](./Image/ch09/QuadraticProbingExample.PNG)
 
 - 입력 순서
   - 15, 18, 43, 37, 45, 30
@@ -159,7 +159,7 @@
 
 #### 이차원 조사 문제점 : 2차 군집
 
-<img src = "./Image/ch09/SecondaryClustering.PNG" height="auto" />
+![SecondaryClustering](./Image/ch09/SecondaryClustering.PNG)
 
 - Secondary Clulstering(2차 군집)
   - 여러 원소가 동일한 초기 해시 함수값을 갖는 현상
@@ -171,7 +171,7 @@
 
 #### 더블 해싱 예시
 
-<img src = "./Image/ch09/DoubleHashingExample.PNG" height="auto" />
+![DoubleHashingExample](./Image/ch09/DoubleHashingExample.PNG)
 
 - 입력 순서
   - 15, 19, 28, 41, 67
@@ -185,7 +185,7 @@
 
 #### 더블 해싱 문제점 : 삭제 진행
 
-<img src = "./Image/ch09/DoubleHashingDeletion.PNG" height="auto" />
+![DoubleHashingDeletion](./Image/ch09/DoubleHashingDeletion.PNG)
 
 ## 5절. 검색
 
@@ -301,7 +301,7 @@ $$
 - $P(A)$
   - $1-P(A')$
   - $=\frac{365 * 364 * 363 * ... * (365-n+1)}{365}$
-  - <img src = "./Image/ch09/BirthdayParadox.PNG" height="auto" />
+  - ![BirthdayParadox](./Image/ch09/BirthdayParadox.PNG)
 - n = 30인 경우 $P(A) = 70.6$%
   - 30명 중 적어도 2명의 생일이 같을 확률 70.6%
 - n = 10인 경우 $P(A) = 11.7$%

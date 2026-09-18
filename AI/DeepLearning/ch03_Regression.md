@@ -296,11 +296,11 @@ diabetes_X_new = diabetes_X[:, np.newaxis, 2]
 from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(diabetes_X_new, diabetes_y, test_size = 0.1, random_state = 0)
-regr = linear_model.LinearRegression()
+regr = LinearRegression()
 regr.fit(X_train, y_train)
 
 # 테스트 데이터로 예측
-y_pred = model.predict(X_test)
+y_pred = regr.predict(X_test)
 
 # 실제 데이터와 예측 데이터를 비교
 plt.plot(y_test, y_pred, '.')
@@ -390,7 +390,7 @@ plt.plot(X_test, y_pred, color ='blue', linewidth = 3)
 ![Sig](./Image/ch03/SigmoidFunction.PNG)
 
 - Logistic Regression에서는 Linear Regression의 결과값을 인풋값으로 사용
-  - 시그모이드 함수는 곧 베이즈 정리
+  - 시그모이드 함수는 실수 입력을 (0,1) 사이로 압축하는 함수이며, 두 정규분포 클래스의 사후확률을 정리하면 시그모이드 형태로 나타남
   - 기존에 사용했던 선형회귀 모델의 출력을 그대로 시그모이드 함수의 입력으로 넣으면 0 OR 1의 값을 출력
   - 위의 값으로 예측 수행
   - 기존의 출력은 $y = wx + b$
@@ -437,7 +437,7 @@ import pandas as pd
 from sklearn import datasets
 from sklearn.linear_model import LogisticRegression
 
-# 0 : 양성 / 1 : 악성
+# 0 : 악성(malignant) / 1 : 양성(benign)
 cancer_ds = datasets.load_breast_cancer()
 
 clf = LogisticRegression(multi_class = 'ovr', solver='liblinear') #one-vs-rest (OvR)

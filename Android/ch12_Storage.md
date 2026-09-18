@@ -135,7 +135,7 @@ class DBHelper(context: Context): SQLiteOpenHelper(context, "testdb", null, 1){
 ```kt
 // SQL 데이터베이스 객체 생성
 
-val db: SQLiteDatabase = DBHelper(this).writeDatabase
+val db: SQLiteDatabase = DBHelper(this).writableDatabase
 ```
 
 ## 2절. 파일 보관
@@ -147,7 +147,7 @@ val db: SQLiteDatabase = DBHelper(this).writeDatabase
   - FileInputStream / FileOutputStream : 파일에서 바이트 스트림으로 데이터를 읽거나 쓰는 클래스
   - FileReader / FileWriter : 파일에서 문자열 스트림으로 데이터를 읽거나 쓰는 클래스
 
-<img src="./Image/ch12/ch12-01-file.PNG" height="auto" />
+![ch12-01-file](./Image/ch12/ch12-01-file.PNG)
 
 ### 내장 메모리 파일 이용
 
@@ -288,7 +288,7 @@ sharedPref.edit().run{
 }
 ```
 
-### SharedPreferences.Editor 클래스 get 함수
+### SharedPreferences 클래스 get 함수
 
 - 저장된 데이터 로드 시 사용
 
@@ -369,7 +369,7 @@ class MySettingFragment : PreferenceFragmentCompat() {
 
 - 실행 결과
 
-<img src="./Image/ch12/ch12-02-Fragment.PNG" height="auto" />
+![ch12-02-Fragment](./Image/ch12/ch12-02-Fragment.PNG)
 
 ### 설정 화면 구성
 
@@ -401,7 +401,7 @@ class MySettingFragment : PreferenceFragmentCompat() {
 
 - 실행 결과
 
-<img src="./Image/ch12/ch12-03-PC.PNG" height="auto" />
+![ch12-03-PC](./Image/ch12/ch12-03-PC.PNG)
 
 #### \<Preference\> 태그
 
@@ -427,7 +427,7 @@ class MySettingFragment : PreferenceFragmentCompat() {
 
 - 실행 결과
 
-<img src="./Image/ch12/ch12-04-P.PNG" height="auto" />
+![ch12-04-P](./Image/ch12/ch12-04-P.PNG)
 
 #### onPreferenceStartFragment()
 
@@ -580,7 +580,7 @@ idPreference?.summaryProvider =
 
 - 실행 결과
 
-<img src="./Image/ch12/ch12-05-SettingValue.PNG" height="auto" />
+![ch12-05-SettingValue](./Image/ch12/ch12-05-SettingValue.PNG)
 
 #### 이벤트 핸들러
 
@@ -698,6 +698,6 @@ implementation(libs.androidx.preference.ktx)
 
 ### 8) 앱 실행
 
-<img src="./Image/ch12/ch12-06-App.PNG" height="auto" />
+![ch12-06-App](./Image/ch12/ch12-06-App.PNG)
     
 [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch13)

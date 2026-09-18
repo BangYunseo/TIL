@@ -23,7 +23,7 @@
 
 ### E-R 모델 & 릴레이션 변환 규칙을 통한 설계 과정
 
-<img src="./Image/ch08/DesignProcess.PNG"  height="auto" />
+![DesignProcess](./Image/ch08/DesignProcess.PNG)
 
 - 설계 과정 중 오류 발견
   - 변경 필요
@@ -87,7 +87,7 @@
 
 ### 작업 과정
 
-<img src="./Image/ch08/ConceptualDesignSteps.PNG"  height="auto" />
+![ConceptualDesignSteps](./Image/ch08/ConceptualDesignSteps.PNG)
 
 1. 개체 추출, 각 개체의 주요 속성과 키 속성 선별
 2. 개체 간 관계 결정
@@ -115,13 +115,13 @@
 
 #### 한빛 마트 데이터베이스에서의 개체 · 속성 추출
 
-<img src="./Image/ch08/EntityAttributeExtraction.PNG"  height="auto" />
+![EntityAttributeExtraction](./Image/ch08/EntityAttributeExtraction.PNG)
 
 - 개체와 속성 추출을 위한 정보
 
 #### 개체 : 회원
 
-<img src="./Image/ch08/MemberEntity.PNG"  height="auto" />
+![MemberEntity](./Image/ch08/MemberEntity.PNG)
 
 - 개체 : 회원
 - 속성 : 회원아이디, 비밀번호, 이름, 나이, 직업, 등급, 적립금
@@ -129,7 +129,7 @@
 
 #### 개체 : 회원, 상품
 
-<img src="./Image/ch08/OrderEntity.PNG"  height="auto" />
+![OrderEntity](./Image/ch08/OrderEntity.PNG)
 
 - 개체 : 회원, 상품
 - 속성 : 주문번호, 주문수량, 배송지, 주문일자
@@ -139,23 +139,23 @@
 
 #### 개체와 속성 추출 결과
 
-<img src="./Image/ch08/EntityAttributeExtractionResult.PNG"  height="auto" />
+![EntityAttributeExtractionResult](./Image/ch08/EntityAttributeExtractionResult.PNG)
 
 #### 회원 개체 다이어그램
 
-<img src="./Image/ch08/MemberEntityDiagram.PNG"  height="auto" />
+![MemberEntityDiagram](./Image/ch08/MemberEntityDiagram.PNG)
 
 #### 상품 개체 다이어그램
 
-<img src="./Image/ch08/ProductEntity.PNG"  height="auto" />
+![ProductEntity](./Image/ch08/ProductEntity.PNG)
 
 #### 제조업체 개체 다이어그램
 
-<img src="./Image/ch08/ManufacturerEntity.PNG"  height="auto" />
+![ManufacturerEntity](./Image/ch08/ManufacturerEntity.PNG)
 
 #### 게시글 개체 다이어그램
 
-<img src="./Image/ch08/PostEntity.PNG"  height="auto" />
+![PostEntity](./Image/ch08/PostEntity.PNG)
 
 ### 2. 관계 추출
 
@@ -178,7 +178,7 @@
 
 #### 관계 : 주문
 
-<img src="./Image/ch08/OrderRelationship.PNG"  height="auto" />
+![OrderRelationship](./Image/ch08/OrderRelationship.PNG)
 
 - 관계 : 주문
   - "회원" 개체와 "상품" 개체가 맺는 관계
@@ -189,7 +189,7 @@
 
 #### 관계 : 공급
 
-<img src="./Image/ch08/SupplyRelationship.PNG"  height="auto" />
+![SupplyRelationship](./Image/ch08/SupplyRelationship.PNG)
 
 - 관계 : 공급
   - "상품" 개체와 "제조업체" 개체가 맺는 관계
@@ -200,7 +200,7 @@
 
 #### 관계 : 공급
 
-<img src="./Image/ch08/WriteRelationship.PNG"  height="auto" />
+![WriteRelationship](./Image/ch08/WriteRelationship.PNG)
 
 - 관계 : 작성
   - "회원" 개체와 "게시글" 개체가 맺는 관계
@@ -210,23 +210,23 @@
 
 #### 관계 추출 결과
 
-<img src="./Image/ch08/RelationshipExtractionResult.PNG"  height="auto" />
+![RelationshipExtractionResult](./Image/ch08/RelationshipExtractionResult.PNG)
 
 #### 주문 관계 다이어그램
 
-<img src="./Image/ch08/OrderRelationshipDiagram.PNG"  height="auto" />
+![OrderRelationshipDiagram](./Image/ch08/OrderRelationshipDiagram.PNG)
 
 #### 공급 관계 다이어그램
 
-<img src="./Image/ch08/SupplyRelationshipDiagram.PNG"  height="auto" />
+![SupplyRelationshipDiagram](./Image/ch08/SupplyRelationshipDiagram.PNG)
 
 #### 작성 관계 다이어그램
 
-<img src="./Image/ch08/WriteRelationshipDiagram.PNG"  height="auto" />
+![WriteRelationshipDiagram](./Image/ch08/WriteRelationshipDiagram.PNG)
 
 #### 전체적인 다이어그램
 
-<img src="./Image/ch08/OverallRelationshipDiagram.PNG"  height="auto" />
+![OverallRelationshipDiagram](./Image/ch08/OverallRelationshipDiagram.PNG)
 
 ## 4절. 논리적 설계
 
@@ -271,11 +271,11 @@
 
 #### 개체 : 상품 릴레이션 예시
 
-<img src="./Image/ch08/EntityRelationExample1.PNG"  height="auto" />
+![EntityRelationExample1](./Image/ch08/EntityRelationExample1.PNG)
 
 #### 개체 : 고객 릴레이션 예시
 
-<img src="./Image/ch08/EntityRelationExample2.PNG"  height="auto" />
+![EntityRelationExample2](./Image/ch08/EntityRelationExample2.PNG)
 
 ### 2. 다대다(n:m) 관계는 릴레이션으로 변환
 
@@ -288,7 +288,7 @@
 
 #### 관계 : 주문 릴레이션 예시
 
-<img src="./Image/ch08/RelationExample3.PNG"  height="auto" />
+![RelationExample3](./Image/ch08/RelationExample3.PNG)
 
 ### 3. 일대다(1:n) 관계는 외래키로 표현
 
@@ -303,7 +303,7 @@
 
 #### 관계 : 공급 릴레이션 예시
 
-<img src="./Image/ch08/RelationExample4.PNG"  height="auto" />
+![RelationExample4](./Image/ch08/RelationExample4.PNG)
 
 #### 3-2. 약한 개체가 참여하는 일대다 관계는 외래키를 포함해서 기본키로 지정
 
@@ -315,7 +315,7 @@
 
 #### 관계 : 존재 릴레이션 예시
 
-<img src="./Image/ch08/RelationExample5.PNG"  height="auto" />
+![RelationExample5](./Image/ch08/RelationExample5.PNG)
 
 ### 4. 일대일(1:1) 관계는 외래키로 표현
 
@@ -332,7 +332,7 @@
 
 #### 혼인 관계 예시 : 일대일(1:1)
 
-<img src="./Image/ch08/RelationExample6.PNG"  height="auto" />
+![RelationExample6](./Image/ch08/RelationExample6.PNG)
 
 #### 4-2. 필수적으로 참여하는 개체 릴레이션만 외래키를 받음
 
@@ -341,7 +341,7 @@
 
 #### 혼인 관계 예시 : 일대일(1:1) - 필수 / 선택
 
-<img src="./Image/ch08/RelationExample7.PNG"  height="auto" />
+![RelationExample7](./Image/ch08/RelationExample7.PNG)
 
 #### 4-3. 모든 개체가 필수적 참여 시 릴레이션 하나로 합침
 
@@ -352,7 +352,7 @@
 
 #### 혼인 관계 예시 : 일대일(1:1) - 필수 / 필수
 
-<img src="./Image/ch08/RelationExample8.PNG"  height="auto" />
+![RelationExample8](./Image/ch08/RelationExample8.PNG)
 
 ### 5. 다중 값 속성은 릴레이션으로 변환
 
@@ -362,57 +362,57 @@
 
 #### 사원 개체 릴레이션
 
-<img src="./Image/ch08/EmployeeEntity.PNG"  height="auto" />
+![EmployeeEntity](./Image/ch08/EmployeeEntity.PNG)
 
 #### 부하직원 속성
 
 (여기부터 재작성 필요)
 
-<img src="./Image/ch08/EmployeeRelationViolation1.PNG"  height="auto" />
+![EmployeeRelationViolation1](./Image/ch08/EmployeeRelationViolation1.PNG)
 
 - 사원 릴레이션은 "속성에 다중값을 저장할 수 없다"는 릴레이션 특성을 위반
 
-<img src="./Image/ch08/EmployeeRelationViolation2.PNG"  height="auto" />
+![EmployeeRelationViolation2](./Image/ch08/EmployeeRelationViolation2.PNG)
 
 - 사원 릴레이션은 릴레이션의 특성을 위반하지 않음
 - 하지만 사원번호, 사원명, 직위 속성의 값이 불필요하게 중복 저장되는 문제 발생
 
-<img src="./Image/ch08/MultiValuedAttributeRelation.PNG"  height="auto" />
+![MultiValuedAttributeRelation](./Image/ch08/MultiValuedAttributeRelation.PNG)
 
 - 규칙 5에 따라 다중값 속성을 독립적인 릴레이션으로 변환 시 불필요한 중복을 제거하며 릴레이션 특성 만족 가능
 
 ### 기타 고려 사항
 
-<img src="./Image/ch08/DesignRecommendation1.PNG"  height="auto" />
+![DesignRecommendation1](./Image/ch08/DesignRecommendation1.PNG)
 
 - 모든 관계를 독립적인 릴레이션으로 변환 가능
   - 속성이 많은 관계 : 유형에 상관 없이 릴레이션으로의 변환 가능
 
-<img src="./Image/ch08/DesignRecommendation2.PNG"  height="auto" />
+![DesignRecommendation2](./Image/ch08/DesignRecommendation2.PNG)
 
 - 개체가 자기 자신과 관계를 맺는 순환 관계도 기본 규칙을 그대로 적용
 
 ### 규칙 1 : 다이어그램 & 스키마
 
-<img src="./Image/ch08/Rule1Diagram.PNG"  height="auto" />
+![Rule1Diagram](./Image/ch08/Rule1Diagram.PNG)
 
-<img src="./Image/ch08/Rule1Schema.PNG"  height="auto" />
+![Rule1Schema](./Image/ch08/Rule1Schema.PNG)
 
 ### 규칙 2 : 다이어그램 & 스키마
 
-<img src="./Image/ch08/Rule2Diagram.PNG"  height="auto" />
+![Rule2Diagram](./Image/ch08/Rule2Diagram.PNG)
 
-<img src="./Image/ch08/Rule2Schema.PNG"  height="auto" />
+![Rule2Schema](./Image/ch08/Rule2Schema.PNG)
 
 ### 규칙 3 : 다이어그램 & 스키마
 
-<img src="./Image/ch08/Rule3Diagram.PNG"  height="auto" />
+![Rule3Diagram](./Image/ch08/Rule3Diagram.PNG)
 
-<img src="./Image/ch08/Rule3Schema.PNG"  height="auto" />
+![Rule3Schema](./Image/ch08/Rule3Schema.PNG)
 
 ### 테이블 명세서
 
-<img src="./Image/ch08/TableSpecification.PNG"  height="auto" />
+![TableSpecification](./Image/ch08/TableSpecification.PNG)
 
 - 릴레이션 스키마에 대한 설계 정보를 기술한 문서
 - 릴레이션 스키마 변환 후 속성 데이터 타입, 길이, NULL 값 허용 여부, 기본값, 제약조건 등을 세부적으로 결정하고 문서화

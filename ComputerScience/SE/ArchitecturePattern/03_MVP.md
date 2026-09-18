@@ -41,7 +41,7 @@
 - Presenter는 Model과 View를 모두 참조하는 구조
 - Presenter:View는 1:1 관계
 
-<img src="./Image/03_MVP/MVP.png" height="auto"/>
+![MVP](./Image/03_MVP/MVP.png)
 
 ### 과정(Process)
 

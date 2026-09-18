@@ -51,9 +51,9 @@
 
 ### 알고리즘 특정 비율 별 수행 시간
 
-<img src = "./Image/Algorithm/TimeGraph.PNG" width="60%" height="auto" />
+![TimeGraph](./Image/Algorithm/TimeGraph.PNG){ width="60%" }
 
-<img src = "./Image/Algorithm/TimeTable.PNG" width="60%" height="auto" />
+![TimeTable](./Image/Algorithm/TimeTable.PNG){ width="60%" }
 
 ### 상수 시간 : $O(1)$
 

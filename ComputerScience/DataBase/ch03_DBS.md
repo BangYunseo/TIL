@@ -16,7 +16,7 @@
 
 - 데이터베이스에 데이터를 저장·관리하여 조직에 필요한 정보를 생성하는 시스템
 
-<img src = "./Image/ch03/DatabaseSystemOverview.PNG" style="height: 30%; width: 30%;"/>
+![DatabaseSystemOverview](./Image/ch03/DatabaseSystemOverview.PNG)
 
 ## 2절. 데이터베이스 구조
 
@@ -24,7 +24,7 @@
 
 - 데이터베이스에 저장된 데이터 구조·제약조건 정의
 
-<img src = "./Image/ch03/SchemaDefinition.PNG" height="auto" />
+![SchemaDefinition](./Image/ch03/SchemaDefinition.PNG)
 
 ### 인스턴스(Instance)
 
@@ -32,7 +32,7 @@
 
 ### 3단계 데이터베이스 구조
 
-| <img src = "./Image/ch03/ThreeLevelDatabaseStructure.PNG" height="auto" /> | <img src = "./Image/ch03/ThreeLevelStructureAlternative.PNG" height="auto" /> |
+| ![ThreeLevelDatabaseStructure](./Image/ch03/ThreeLevelDatabaseStructure.PNG) | ![ThreeLevelStructureAlternative](./Image/ch03/ThreeLevelStructureAlternative.PNG) |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 
 - 미국 표준화 기관 ANSI/SPARC에서 제안
@@ -48,7 +48,7 @@
 
 ### 3단계 데이터베이스 구조의 사상 또는 매핑
 
-<img src = "./Image/ch03/ThreeLevelSchemaMappingInterfaces.PNG" width="60%" height="auto" />
+![ThreeLevelSchemaMappingInterfaces](./Image/ch03/ThreeLevelSchemaMappingInterfaces.PNG){ width="60%" }
 
 - 데이터베이스 3단계 구조로 분할
 - 단계별 스키마 유지
@@ -65,19 +65,19 @@
 
 #### 외부 스키마
 
-<img src = "./Image/ch03/CourseRegistrationExternalSchema.PNG" width="60%" height="auto" />
+![CourseRegistrationExternalSchema](./Image/ch03/CourseRegistrationExternalSchema.PNG){ width="60%" }
 
 #### 개념 스키마
 
-<img src = "./Image/ch03/CourseRegistrationConceptualSchema.PNG" width="60%" height="auto" />
+![CourseRegistrationConceptualSchema](./Image/ch03/CourseRegistrationConceptualSchema.PNG){ width="60%" }
 
 #### 내부 스키마
 
-<img src = "./Image/ch03/CourseRegistrationInternalSchema.PNG" width="60%" height="auto" />
+![CourseRegistrationInternalSchema](./Image/ch03/CourseRegistrationInternalSchema.PNG){ width="60%" }
 
 #### 전체적인 관점
 
-<img src = "./Image/ch03/CourseRegistrationCompletePerspective.PNG" width="60%" height="auto" />
+![CourseRegistrationCompletePerspective](./Image/ch03/CourseRegistrationCompletePerspective.PNG){ width="60%" }
 
 ### 데이터 독립성(Data Independency)
 
@@ -123,7 +123,7 @@
 - 데이터베이스 이용을 위해 접근하는 사람
 - 데이터베이스 관리자·최종 사용자·응용 프로그래머로 구분
 
-<img src = "./Image/ch03/DatabaseUserTypes.PNG" height="auto" />
+![DatabaseUserTypes](./Image/ch03/DatabaseUserTypes.PNG)
 
 ### 데이터베이스 관리자(DB Administrator)
 
@@ -160,7 +160,7 @@
 - 사용자·데이터베이스 관리 시스템 간 통신 수단
 - 데이터 정의어(DDL)·데이터 조작어(DML)·데이터 제어어(DCL) 구분
 
-<img src = "./Image/ch03/DataLanguageClassification.PNG" width="70%" height="auto" />
+![DataLanguageClassification](./Image/ch03/DataLanguageClassification.PNG){ width="70%" }
 
 #### 데이터 정의어(DDL : Data Definition Language)
 
@@ -193,7 +193,7 @@
 
 - 데이터베이스 관리·사용자 데이터 처리 요구 수행
 
-<img src = "./Image/ch03/DatabaseManagementSystemComponents.PNG" width="80%" height="auto" />
+![DatabaseManagementSystemComponents](./Image/ch03/DatabaseManagementSystemComponents.PNG){ width="80%" }
 
 |               주요 구성 요소                | 설명                                                                                                                                   |
 | :-----------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------- |

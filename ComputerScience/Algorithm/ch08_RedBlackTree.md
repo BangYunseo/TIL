@@ -28,7 +28,7 @@
 
 - NIL 노드 처리
 
-<img src = "./Image/ch08/RedBlackTreeStructure.PNG" height="auto" />
+![RedBlackTreeStructure](./Image/ch08/RedBlackTreeStructure.PNG)
 
 ### 레드 블랙 트리 요구사항
 
@@ -60,7 +60,7 @@
 
 ### 레드 블랙 트리 간 관계
 
-<img src = "./Image/ch08/NodeRelationship.PNG" height="auto" />
+![NodeRelationship](./Image/ch08/NodeRelationship.PNG)
 
 - Z 노드 기준 관계
   - Parent
@@ -87,14 +87,14 @@
 
 ### Z = root
 
-<img src = "./Image/ch08/InsertRootCase.PNG" height="auto" />
+![InsertRootCase](./Image/ch08/InsertRootCase.PNG)
 
 1. 삽입된 Z는 레드 노드
 2. Z를 블랙 노드로 교체
 
 ### Z.uncle = red
 
-<img src = "./Image/ch08/InsertUncleRedCase.PNG" height="auto" />
+![InsertUncleRedCase](./Image/ch08/InsertUncleRedCase.PNG)
 
 1. 삽입된 Z는 레드 노드
 2. Z의 Parent, Uncle, Grandparent 모두 Recoloring
@@ -104,14 +104,14 @@
 
 ### Z.uncle = black(Triangle)
 
-<img src = "./Image/ch08/InsertUncleBlackTriangleCase.PNG" height="auto" />
+![InsertUncleBlackTriangleCase](./Image/ch08/InsertUncleBlackTriangleCase.PNG)
 
 1. 삽입된 Z는 레드 노드
 2. Z의 Parent와 Rotation
 
 ### Z.uncle black(Line)
 
-| <img src = "./Image/ch08/InsertUncleBlackLineCase1.PNG" height="auto" /> | <img src = "./Image/ch08/InsertUncleBlackLineCase2.PNG" height="auto" /> |
+| ![InsertUncleBlackLineCase1](./Image/ch08/InsertUncleBlackLineCase1.PNG) | ![InsertUncleBlackLineCase2](./Image/ch08/InsertUncleBlackLineCase2.PNG) |
 | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 
 1. 삽입된 Z는 레드 노드
@@ -133,19 +133,19 @@
 
 - 15, 5, 1 삽입
 
-<img src = "./Image/ch08/InsertBasicExample.PNG" height="auto" />
+![InsertBasicExample](./Image/ch08/InsertBasicExample.PNG)
 
 #### ex 2 : 심화 삽입 (1)
 
 - 10 삽입
 
-<img src = "./Image/ch08/InsertAdvancedExample1.PNG" height="auto" />
+![InsertAdvancedExample1](./Image/ch08/InsertAdvancedExample1.PNG)
 
 #### ex 3 : 심화 삽입 (2)
 
 - 3, 1, 5, 7, 6, 8, 9, 10 순서의 삽입
 
-<img src = "./Image/ch08/InsertAdvancedExample2.PNG" height="auto" />
+![InsertAdvancedExample2](./Image/ch08/InsertAdvancedExample2.PNG)
 
 ## 3절. 삭제
 
@@ -158,24 +158,24 @@
 
 ### 단순 삭제
 
-<img src = "./Image/ch08/DeleteRedNodeCase.PNG" height="auto" />
+![DeleteRedNodeCase](./Image/ch08/DeleteRedNodeCase.PNG)
 
 - 삭제 노드가 레드 노드인 경우
 
-<img src = "./Image/ch08/DeleteBlackNodeRedChildCase.PNG" height="auto" />
+![DeleteBlackNodeRedChildCase](./Image/ch08/DeleteBlackNodeRedChildCase.PNG)
 
 - 삭제 노드가 블랙 노드이면서 자식 노드가 레드 노드인 경우
 
 ### 심화 삭제
 
-<img src = "./Image/ch08/DeleteBlackNodeAdvancedCase.PNG" height="auto" />
+![DeleteBlackNodeAdvancedCase](./Image/ch08/DeleteBlackNodeAdvancedCase.PNG)
 
 - 블랙 노드 제거 시 x에서 리프 노드로 이르는 블랙 노드의 수가 상이
   - 레드 블랙 특성 위반 가능성 존재
 
 ### 심화 삭제 5가지
 
-| <img src = "./Image/ch08/AdvancedDeleteCase1.PNG" height="auto" /> | <img src = "./Image/ch08/AdvancedDeleteCase2.PNG" height="auto" /> |
+| ![AdvancedDeleteCase1](./Image/ch08/AdvancedDeleteCase1.PNG) | ![AdvancedDeleteCase2](./Image/ch08/AdvancedDeleteCase2.PNG) |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
 
 1. 루트 노드가 레드 노드인 경우
@@ -184,12 +184,12 @@
 
 ### 루트 노드가 레드 노드인 경우
 
-<img src = "./Image/ch08/DeleteRootRedCase.PNG" height="auto" />
+![DeleteRootRedCase](./Image/ch08/DeleteRootRedCase.PNG)
 
 ### 루트 노드가 레드 / 블랙 노드 여부가 상관 없는 경우
 
-<img src = "./Image/ch08/DeleteRootNeutralCase.PNG" height="auto" />
+![DeleteRootNeutralCase](./Image/ch08/DeleteRootNeutralCase.PNG)
 
 ### 루트 노드가 레드 / 블랙 노드 여부가 상관 없는 경우
 
-<img src = "./Image/ch08/DeleteRootBlackCase.PNG" height="auto" />
+![DeleteRootBlackCase](./Image/ch08/DeleteRootBlackCase.PNG)

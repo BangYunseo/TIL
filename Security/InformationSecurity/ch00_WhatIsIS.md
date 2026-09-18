@@ -17,7 +17,7 @@
 
 ### 보안 목적
 
-<img src="./Image/ch00/ch00-01-CIA.PNG" width="50%" height="auto"/>
+![ch00-01-CIA](./Image/ch00/ch00-01-CIA.PNG){ width="50%" }
 
 ### 보안의 3요소 + 추가 요소
 
@@ -33,7 +33,7 @@
 
 ### Passive attacks
 
-<img src="./Image/ch00/ch00-02-PassitiveAttack.PNG" width="70%" height="auto"/>
+![ch00-02-PassitiveAttack](./Image/ch00/ch00-02-PassitiveAttack.PNG){ width="70%" }
 
 - 수동적 / 소극적 공격
 - 정보를 변경하지 않는 공격으로 자신이 공격받고 있는지 확인 불가능
@@ -51,7 +51,7 @@
 
 ### Active attacks
 
-<img src="./Image/ch00/ch00-03-ActiveAttack.PNG" width="80%" height="auto"/>
+![ch00-03-ActiveAttack](./Image/ch00/ch00-03-ActiveAttack.PNG){ width="80%" }
 
 - 능동적 / 적극적 공격
 - 정보를 변경하는 공격으로 자신이 공격 당하는 상황 확인 가능

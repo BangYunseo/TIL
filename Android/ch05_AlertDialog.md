@@ -22,7 +22,7 @@
 - 최소 24 버전 기기에서 오류가 발생하지 않는 동작 필요
 - minSdk보다 상위 버전에서 제공하는 API 호환성 고려
 
-<img src="./Image/ch05/ch05-01-API.PNG" height="auto" />
+![ch05-01-API](./Image/ch05/ch05-01-API.PNG)
 
 ### 애너테이션 사용
 
@@ -63,12 +63,12 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 - A 앱 컴포넌트 => B 앱에서 사용
 - A 앱 컴포넌트에 Permission 설정 => B 앱 연동에서 문제 발생
 
-<img src="./Image/ch05/ch05-02-Permission.PNG" height="auto" />
+![ch05-02-Permission](./Image/ch05/ch05-02-Permission.PNG)
 
 - \<permission\> 태그 : 기능을 보호하려는 앱 매니페스트(AndroidManifest.xml) 파일에 설정
 - \<uses-permission\> 태그 : 퍼미션으로 보호된 기능을 사용하려는 앱 매니페스트(AndroidManifest.xml) 파일에 설정
 
-<img src="./Image/ch05/ch05-03-Permission2.PNG" height="auto" />
+![ch05-03-Permission2](./Image/ch05/ch05-03-Permission2.PNG)
 
 ### <permission> 태그 · 속성
 
@@ -109,7 +109,7 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
 
-<img src="./Image/ch05/ch05-04-Permission3.PNG" height="auto" />
+![ch05-04-Permission3](./Image/ch05/ch05-04-Permission3.PNG)
 
 - \<permission\> 설정 후 보호할 컴포넌트에 적용
 
@@ -159,7 +159,7 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
 - 앱 실행 시 사용자 퍼미션 거부 여부 확인
   - 거부한 경우 퍼미션 허용 재요청
 
-<img src="./Image/ch05/ch05-05-PermissionAcception.PNG" height="auto" />
+![ch05-05-PermissionAcception](./Image/ch05/ch05-05-PermissionAcception.PNG)
 
 ### checkSelfPermission()
 
@@ -196,7 +196,7 @@ if(status == PackageManager.PERMISSION_GRANTED) {
   - 두 번째 매개변수 : 결과를 받았을 때 호출되는 콜백
 - launch() 함수 호출 후 요청 실행
 
-<img src="./Image/ch05/ch05-06-PermissionRequest.PNG" height="auto" />
+![ch05-06-PermissionRequest](./Image/ch05/ch05-06-PermissionRequest.PNG)
 
 ```kt
 // 퍼미션 허용 요청 확인
@@ -250,7 +250,7 @@ val toast = Toast.makeText(this, "종료하려면 한 번 더 누르세요", Toa
 toast.show()
 ```
 
-<img src="./Image/ch05/ch05-07-Toast.PNG" height="auto" />
+![ch05-07-Toast](./Image/ch05/ch05-07-Toast.PNG)
 
 ### 토스트 로직
 
@@ -297,7 +297,7 @@ DatePickerDialog(this, object: DatePickerDialog.OnDateSetListener{
 }, 2024, 4, 6).show()
 ```
 
-<img src="./Image/ch05/ch05-08-DatePicker.PNG" height="auto" />
+![ch05-08-DatePicker](./Image/ch05/ch05-08-DatePicker.PNG)
 
 ### 시간 입력받기
 
@@ -314,11 +314,11 @@ TimePickerDialog(this, object: TimePickerDialog.OnTimeSetListener{
 }, 15, 0, true).show()
 ```
 
-<img src="./Image/ch05/ch05-09-TimePicker.PNG" height="auto" />
+![ch05-09-TimePicker](./Image/ch05/ch05-09-TimePicker.PNG)
 
 ### 알림 창 띄우기
 
-<img src="./Image/ch05/ch05-10-AlertWindowing.PNG" height="auto" />
+![ch05-10-AlertWindowing](./Image/ch05/ch05-10-AlertWindowing.PNG)
 
 - 다이얼로그의 기본 : AlertDialog
 - AlertDialog.Builder로 알림 창 생성
@@ -358,7 +358,7 @@ open fun setNeutralButton(text: CharSequence!, listener: DialogInterface.OnClick
 
 - 알림 창 예시
 
-<img src="./Image/ch05/ch05-11-AlertWindowingEX.PNG" height="auto" />
+![ch05-11-AlertWindowingEX](./Image/ch05/ch05-11-AlertWindowingEX.PNG)
 
 ```kt
 // 알림 창 띄우기
@@ -437,7 +437,7 @@ AlertDialog.Builder(this).run {
 }
 ```
 
-<img src="./Image/ch05/ch05-12-SetItem.PNG" height="auto" />
+![ch05-12-SetItem](./Image/ch05/ch05-12-SetItem.PNG)
 
 ### 알림 다중 선택
 
@@ -452,7 +452,7 @@ object : DialogInterface.OnMultiChoiceClickListener {
 })
 ```
 
-<img src="./Image/ch05/ch05-13-SetMultiChoiceItems.PNG" height="auto" />
+![ch05-13-SetMultiChoiceItems](./Image/ch05/ch05-13-SetMultiChoiceItems.PNG)
 
 ### 알림 단일 선택
 
@@ -466,7 +466,7 @@ setSingleChoiceItems(items, 1, object : DialogInterface.OnClickListener{
 })
 ```
 
-<img src="./Image/ch05/ch05-14-SetSingleChoiceItems.PNG" height="auto" />
+![ch05-14-SetSingleChoiceItems](./Image/ch05/ch05-14-SetSingleChoiceItems.PNG)
 
 ### 다른 화면 탈출 허용 or 거부
 
@@ -532,7 +532,7 @@ val player: MediaPlayer = MediaPlayer.create(this, R.raw.fallbackring)
 player.start()
 ```
 
-<img src="./Image/ch05/ch05-15-fallbackring.PNG" height="auto" />
+![ch05-15-fallbackring](./Image/ch05/ch05-15-fallbackring.PNG)
 
 ### 진동 알림 : VibratorManager
 
@@ -604,7 +604,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
 
 ### 알림 채널
 
-<img src="./Image/ch05/ch05-16-Noti.PNG" height="auto" />
+![ch05-16-Noti](./Image/ch05/ch05-16-Noti.PNG)
 
 - 알림(notification) : 상태 바에 앱 정보 출력
 - 앱에 알림을 위해 사용자 퍼미션(허가) 요청 필요(API 33 ~)
@@ -615,13 +615,13 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
 <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 ```
 
-<img src="./Image/ch05/ch05-17-NotiLogic.PNG" height="auto" />
+![ch05-17-NotiLogic](./Image/ch05/ch05-17-NotiLogic.PNG)
 
 - Notification 생성 조건 : NotificationCompatBuilder
 - 빌더 생성 시 NotificationChannel 생성 후 채널의 식별값을 빌더의 생성자 매개 변수로 지정 필요
 - 앱의 알림을 채널로 구분
 
-<img src="./Image/ch05/ch05-18-NotiChannel.PNG" height="auto" />
+![ch05-18-NotiChannel](./Image/ch05/ch05-18-NotiChannel.PNG)
 
 - 알림 중요도 상수
 
@@ -681,7 +681,7 @@ if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
 ### 알림 객체
 
-<img src="./Image/ch05/ch05-19-NotiObject.PNG" height="auto" />
+![ch05-19-NotiObject](./Image/ch05/ch05-19-NotiObject.PNG)
 
 ```kt
 // 알림 객체 설정
@@ -728,7 +728,7 @@ static fun getBroadcast(context: Context!, requestCode: Int, intent: Intent!, fl
 static fun getService(context: Context!, requestCode: Int, intent: Intent, flags: Int): PendingIntent!
 ```
 
-<img src="./Image/ch05/ch05-20-NotiConsist.PNG" height="auto" />
+![ch05-20-NotiConsist](./Image/ch05/ch05-20-NotiConsist.PNG)
 
 ```kt
 // 액티비티 실행 정보 등록 예제
@@ -745,7 +745,7 @@ builder.setContentIntent(pendingIntent)
 
 - 최대 3개 추가
 
-<img src="./Image/ch05/ch05-21-Action.PNG" height="auto" />
+![ch05-21-Action](./Image/ch05/ch05-21-Action.PNG)
 
 ```kt
 // 액션 등록
@@ -764,13 +764,13 @@ builder.addAction(
 )
 ```
 
-<img src="./Image/ch05/ch05-22-ActionEX.PNG" height="auto" />
+![ch05-22-ActionEX](./Image/ch05/ch05-22-ActionEX.PNG)
 
 ### 원격 입력
 
 - 알림에서 사용자 입력을 직접 받는 기법
 
-<img src="./Image/ch05/ch05-23-Reply.PNG" height="auto" />
+![ch05-23-Reply](./Image/ch05/ch05-23-Reply.PNG)
 
 ```kt
 // 원격 입력
@@ -806,7 +806,7 @@ builder.addAction(
 )
 ```
 
-<img src="./Image/ch05/ch05-24-ReplyEX.PNG" height="auto" />
+![ch05-24-ReplyEX](./Image/ch05/ch05-24-ReplyEX.PNG)
 
 ### 사용자가 입력한 글 반환 코드
 
@@ -821,7 +821,7 @@ val replyTxt = RemoteInput.getResultsFromIntent(intent)
 
 - 진행 상황 실시간 공유
 
-<img src="./Image/ch05/ch05-25-Progress.PNG" height="auto" />
+![ch05-25-Progress](./Image/ch05/ch05-25-Progress.PNG)
 
 ```kt
 // 프로그래스 바 진행값 증가 스레드
@@ -838,7 +838,7 @@ thread{
 }
 ```
 
-<img src="./Image/ch05/ch05-26-ProgressEX.PNG" height="auto" />
+![ch05-26-ProgressEX](./Image/ch05/ch05-26-ProgressEX.PNG)
 
 ### 큰 이미지 스타일
 
@@ -851,19 +851,19 @@ bigStyle.bigPicture(bigPicture)
 builder.setStyle(bigStyle)
 ```
 
-<img src="./Image/ch05/ch05-27-BigImage.PNG" height="auto" />
+![ch05-27-BigImage](./Image/ch05/ch05-27-BigImage.PNG)
 
 ### 긴 텍스트 스타일
 
 ```kt
 // 긴 텍스트 스타일
 
-val longTextStyle = NotificationCompat.LongTextStyle()
-longTextStyle.longText(resources.getString(R.string.long_text))
+val longTextStyle = NotificationCompat.BigTextStyle()
+longTextStyle.bigText(resources.getString(R.string.long_text))
 builder.setStyle(longTextStyle)
 ```
 
-<img src="./Image/ch05/ch05-28-LongText.PNG" height="auto" />
+![ch05-28-LongText](./Image/ch05/ch05-28-LongText.PNG)
 
 #### 상자 스타일
 
@@ -878,7 +878,7 @@ style.addLine("4코스 - 대모.우면산코스")
 builder.setStyle(style)
 ```
 
-<img src="./Image/ch05/ch05-29-Box.PNG" height="auto" />
+![ch05-29-Box](./Image/ch05/ch05-29-Box.PNG)
 
 ### 메세지 스타일
 
@@ -923,7 +923,7 @@ val messageStyle = NotificationCompat.MessagingStyle(sender1)
 builder.setStyle(messageStyle)
 ```
 
-<img src="./Image/ch05/ch05-30-MessageSender.PNG" height="auto" />
+![ch05-30-MessageSender](./Image/ch05/ch05-30-MessageSender.PNG)
 
 ## 6절. 카카오톡 알림
 
@@ -1010,7 +1010,7 @@ class MainActivity : AppCompatActivity() {
             if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
                 if(ContextCompat.checkSelfPermission(
                     this,
-                    "android.permission.POST_NOTIFICATION"
+                    "android.permission.POST_NOTIFICATIONS"
                 ) == PackageManager.PERMISSION_GRANTED){
                     noti()
                 } else {
@@ -1079,6 +1079,6 @@ class MainActivity : AppCompatActivity() {
 
 ### 6) 앱 실행
 
-<img src="./Image/ch05/ch05-31-ExApp.PNG" height="auto" />
+![ch05-31-ExApp](./Image/ch05/ch05-31-ExApp.PNG)
 
 [프로젝트 바로가기](https://github.com/BangYunseo/AndroidProject/tree/main/ch06)

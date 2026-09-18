@@ -26,7 +26,7 @@
 
 ### 분류
 
-<img src="./Image/ch07/SQLClassification.PNG"  height="auto" />
+![SQLClassification](./Image/ch07/SQLClassification.PNG)
 
 |        종류        | 영문                       | 설명                                                                         |
 | :----------------: | :------------------------- | :--------------------------------------------------------------------------- |
@@ -38,15 +38,15 @@
 
 - 고객 테이블
 
-<img src="./Image/ch07/CustomerTableStructure.PNG"  height="auto" />
+![CustomerTableStructure](./Image/ch07/CustomerTableStructure.PNG)
 
 - 제품 테이블
 
-<img src="./Image/ch07/ProductTableStructure.PNG"  height="auto" />
+![ProductTableStructure](./Image/ch07/ProductTableStructure.PNG)
 
 - 주문 테이블
 
-<img src="./Image/ch07/OrderTableStructure.PNG"  height="auto" />
+![OrderTableStructure](./Image/ch07/OrderTableStructure.PNG)
 
 ## 2절. SQL 데이터 정의
 
@@ -54,7 +54,7 @@
 
 - 테이블 생성·변경·삭제
 
-<img src="./Image/ch07/DDLFunctionalities.PNG"  height="auto" />
+![DDLFunctionalities](./Image/ch07/DDLFunctionalities.PNG)
 
 ### CREATE TABLE : 테이블 생성
 
@@ -129,7 +129,7 @@ CREATE TABLE 테이블_이름(
 
 #### 참조 무결성 제약조건 튜플 삭제 예시
 
-<img src="./Image/ch07/ForeignKeyDeleteOptions.PNG"  height="auto" />
+![ForeignKeyDeleteOptions](./Image/ch07/ForeignKeyDeleteOptions.PNG)
 
 |         옵션          | 예시                                                         |
 | :-------------------: | :----------------------------------------------------------- |
@@ -148,7 +148,7 @@ CREATE TABLE 테이블_이름(
 
 - ex 1 : 고객 테이블 생성
 
-<img src="./Image/ch07/CreateCustomerTableExample.PNG"  height="auto" />
+![CreateCustomerTableExample](./Image/ch07/CreateCustomerTableExample.PNG)
 
 | 고객 테이블 생성 조건                                                      |
 | :------------------------------------------------------------------------- |
@@ -159,7 +159,7 @@ CREATE TABLE 테이블_이름(
 
 - ex 2 : 제품 테이블 생성
 
-<img src="./Image/ch07/CreateProductTableExample.PNG"  height="auto" />
+![CreateProductTableExample](./Image/ch07/CreateProductTableExample.PNG)
 
 | 제품 테이블 생성 조건                                                |
 | :------------------------------------------------------------------- |
@@ -169,7 +169,7 @@ CREATE TABLE 테이블_이름(
 
 - ex 3 : 주문 테이블 생성
 
-<img src="./Image/ch07/CreateOrderTableExample.PNG"  height="auto" />
+![CreateOrderTableExample](./Image/ch07/CreateOrderTableExample.PNG)
 
 | 주문 테이블 생성 조건                                                            |
 | :------------------------------------------------------------------------------- |
@@ -180,7 +180,7 @@ CREATE TABLE 테이블_이름(
 
 - ex 4 : 배송업체 테이블 생성
 
-<img src="./Image/ch07/CreateShippingCompanyTableExample.PNG"  height="auto" />
+![CreateShippingCompanyTableExample](./Image/ch07/CreateShippingCompanyTableExample.PNG)
 
 | 주문 테이블 생성 조건                                |
 | :--------------------------------------------------- |
@@ -271,7 +271,7 @@ DROP TABLE 배송업체;
 
 - 데이터 검색·삽입·수정·삭제 기능
 
-<img src="./Image/ch07/DMLFunctionalities.PNG"  height="auto" />
+![DMLFunctionalities](./Image/ch07/DMLFunctionalities.PNG)
 
 ### INSERT : 데이터 삽입
 
@@ -306,7 +306,7 @@ INTO 고객
 VALUES ('strawberry', '최유경', 30, 'vip', '공무원', 100);
 ```
 
-<img src="./Image/ch07/InsertSingleRowExample1.PNG"  height="auto" />
+![InsertSingleRowExample1](./Image/ch07/InsertSingleRowExample1.PNG)
 
 - ex 2 : 판매 데이터베이스의 고객 테이블에 고객아이디가 'tomato', 고객이름이 '정은심', 나이가 '36', 등급이 'gold', 적립금이 '4000'원인 새로운 고객의 정보 삽입
 
@@ -323,7 +323,7 @@ VALUES ('tomato', '정은심', 36, 'gold', NULL, 4000);
 /* 속성 생략 시 NULL 지정 필수 */
 ```
 
-<img src="./Image/ch07/InsertSingleRowExample2.PNG"  height="auto" />
+![InsertSingleRowExample2](./Image/ch07/InsertSingleRowExample2.PNG)
 
 - 직업 속성에 NULL 삽입
 - 직업 속성은 NULL을 허용하기 때문에 삽입 가능
@@ -377,7 +377,7 @@ SELECT 고객아이디, 고객이름, 등급
 FROM 고객;
 ```
 
-<img src="./Image/ch07/SelectBasicResult.PNG"  height="auto" />
+![SelectBasicResult](./Image/ch07/SelectBasicResult.PNG)
 
 - ex 2 : 고객 테이블에 존재하는 모든 속성 검색
 
@@ -390,7 +390,7 @@ SELECT *
 FROM 고객;
 ```
 
-<img src="./Image/ch07/SelectAllAttributesResult.PNG"  height="auto" />
+![SelectAllAttributesResult](./Image/ch07/SelectAllAttributesResult.PNG)
 
 - ex 3 : 제품 테이블에서 제조업체 검색(중복)
 
@@ -400,7 +400,7 @@ FROM 제품;
 /* ALL 생략 시에도 동일한 결과 */
 ```
 
-<img src="./Image/ch07/SelectManufacturerWithDuplicates.PNG"  height="auto" />
+![SelectManufacturerWithDuplicates](./Image/ch07/SelectManufacturerWithDuplicates.PNG)
 
 - ex 4 : 제품 테이블에서 제조업체 검색(중복 제거)
 
@@ -409,7 +409,7 @@ SELECT DISTINCT 제조업체
 FROM 제품;
 ```
 
-<img src="./Image/ch07/SelectManufacturerDistinct.PNG"  height="auto" />
+![SelectManufacturerDistinct](./Image/ch07/SelectManufacturerDistinct.PNG)
 
 - ex 5 : 제품 테이블에서 제조명과 단가를 검색하되 단가를 가격이라는 이름으로 검색
 
@@ -418,7 +418,7 @@ SELECT 제조명, 단가 AS '가격'
 FROM 제품;
 ```
 
-<img src="./Image/ch07/SelectWithAliasResult.PNG"  height="auto" />
+![SelectWithAliasResult](./Image/ch07/SelectWithAliasResult.PNG)
 
 #### SELECT : 산술식을 이용한 검색
 
@@ -439,7 +439,7 @@ SELECT 제조명, 단가+500 AS '조정 가격'
 FROM 제품;
 ```
 
-<img src="./Image/ch07/SelectArithmeticExpressionResult.PNG"  height="auto" />
+![SelectArithmeticExpressionResult](./Image/ch07/SelectArithmeticExpressionResult.PNG)
 
 #### SELECT : 조건 검색
 
@@ -479,7 +479,7 @@ FROM 제품
 WHERE 제조업체 = '한빛제과';
 ```
 
-<img src="./Image/ch07/SelectWhereManufacturerResult.PNG"  height="auto" />
+![SelectWhereManufacturerResult](./Image/ch07/SelectWhereManufacturerResult.PNG)
 
 - ex 2 : 주문 테이블에서 'apple' 고객이 15개 이상 주문한 주문제품, 수량, 주문일자 검색
 
@@ -489,7 +489,7 @@ FROM 주문
 WHERE 주문고객 = 'apple' AND 수량 >= 15;
 ```
 
-<img src="./Image/ch07/SelectWhereAndResult.PNG"  height="auto" />
+![SelectWhereAndResult](./Image/ch07/SelectWhereAndResult.PNG)
 
 - ex 3 : 주문 테이블에서 'apple' 고객이 주문했거나 15개 이상 주문한 주문제품, 수량, 주문일자, 주문고객 검색
 
@@ -499,7 +499,7 @@ FROM 주문
 WHERE 주문고객 = 'apple' OR 수량 >= 15;
 ```
 
-<img src="./Image/ch07/SelectWhereOrResult.PNG"  height="auto" />
+![SelectWhereOrResult](./Image/ch07/SelectWhereOrResult.PNG)
 
 - ex 4 : 제품 테이블에서 단가가 2000원 이상이면서 3000원 이하인 제품의 제품명, 단가, 제조업체 검색
 
@@ -509,7 +509,7 @@ FROM 제품
 WHERE 단가 >= 2000 AND 단가 <= 3000;
 ```
 
-<img src="./Image/ch07/SelectWhereRangeResult.PNG"  height="auto" />
+![SelectWhereRangeResult](./Image/ch07/SelectWhereRangeResult.PNG)
 
 #### SELECT : LIKE 이용 검색
 
@@ -537,7 +537,7 @@ FROM 고객
 WHERE 고객이름 LIKE '김%';
 ```
 
-<img src="./Image/ch07/SelectLikeStartsWithResult.PNG"  height="auto" />
+![SelectLikeStartsWithResult](./Image/ch07/SelectLikeStartsWithResult.PNG)
 
 - ex 2 : 고객 테이블에서 고객아이디가 5글자인 고객의 고객아이디, 고객이름, 등급 검색
 
@@ -547,7 +547,7 @@ FROM 고객
 WHERE 고객아이디 LIKE '_ _ _ _ _';
 ```
 
-<img src="./Image/ch07/SelectLikeFixedLengthResult.PNG"  height="auto" />
+![SelectLikeFixedLengthResult](./Image/ch07/SelectLikeFixedLengthResult.PNG)
 
 #### SELECT : NULL 이용 검색
 
@@ -566,7 +566,7 @@ FROM 고객
 WHERE 나이 IS NULL;
 ```
 
-<img src="./Image/ch07/SelectIsNullResult.PNG"  height="auto" />
+![SelectIsNullResult](./Image/ch07/SelectIsNullResult.PNG)
 
 - ex 2 : 고객 테이블에서 나이가 이미 입력된 고객의 고객이름 검색
 
@@ -576,7 +576,7 @@ FROM 고객
 WHERE 나이 IS NOT NULL;
 ```
 
-<img src="./Image/ch07/SelectIsNotNullResult.PNG"  height="auto" />
+![SelectIsNotNullResult](./Image/ch07/SelectIsNotNullResult.PNG)
 
 #### SELECT : 정렬 검색
 
@@ -605,7 +605,7 @@ FROM 고객
 ORDER BY 나이 DESC;
 ```
 
-<img src="./Image/ch07/SelectOrderByDescResult.PNG"  height="auto" />
+![SelectOrderByDescResult](./Image/ch07/SelectOrderByDescResult.PNG)
 
 - ex 2 : 주문 테이블에서 수량이 10개 이상인 주문의 주문고객, 주문제품, 수량, 주문일자 검색 / 주문제품 기준 오름차순 정렬, 동일 제품은 수량 기준 내림차순 정렬
 
@@ -616,7 +616,7 @@ WHERE 수량 >= 10
 ORDER BY 주문제품 ASC, 수량 DESC;
 ```
 
-<img src="./Image/ch07/SelectOrderByMultipleResult.PNG"  height="auto" />
+![SelectOrderByMultipleResult](./Image/ch07/SelectOrderByMultipleResult.PNG)
 
 #### SELECT : 집계 함수 이용 검색
 
@@ -647,7 +647,7 @@ SELECT AVG(단가)
 FROM 제품;
 ```
 
-<img src="./Image/ch07/SelectAggregateAvgResult.PNG"  height="auto" />
+![SelectAggregateAvgResult](./Image/ch07/SelectAggregateAvgResult.PNG)
 
 - ex 2 : 한빛제과에서 제조한 제품의 재고량 합계 검색
 
@@ -657,7 +657,7 @@ FROM 제품
 WHERE 제조업체 = '한빛제과';
 ```
 
-<img src="./Image/ch07/SelectAggregateSumResult.PNG"  height="auto" />
+![SelectAggregateSumResult](./Image/ch07/SelectAggregateSumResult.PNG)
 
 - ex 3 : 고객 테이블의 고객 수 검색
 
@@ -668,7 +668,7 @@ SELECT COUNT(고객아이디) AS '고객수'
 FROM 고객;
 ```
 
-<img src="./Image/ch07/SelectAggregateCountResult.PNG"  height="auto" />
+![SelectAggregateCountResult](./Image/ch07/SelectAggregateCountResult.PNG)
 
 2. 나이 속성 이용 계산
 
@@ -678,7 +678,7 @@ FROM 고객;
 /* 나이 속성이 NULL인 오형준 튜플 제외 계산 */
 ```
 
-<img src="./Image/ch07/SelectAggregateCountWithNullResult.PNG"  height="auto" />
+![SelectAggregateCountWithNullResult](./Image/ch07/SelectAggregateCountWithNullResult.PNG)
 
 3. - 이용 계산
 
@@ -687,7 +687,7 @@ SELECT COUNT(*) AS '고객수'
 FROM 고객;
 ```
 
-<img src="./Image/ch07/SelectAggregateCountResult.PNG"  height="auto" />
+![SelectAggregateCountResult](./Image/ch07/SelectAggregateCountResult.PNG)
 
 - ex 4 : 제품 테이블에서 제조업체 수 검색
 
@@ -697,7 +697,7 @@ FROM 제품;
 /* DISTINCT 키워드로 중복 제거 후 서로 다른 제조업체 개수만 계산 */
 ```
 
-<img src="./Image/ch07/SelectAggregateCountDistinctResult.PNG"  height="auto" />
+![SelectAggregateCountDistinctResult](./Image/ch07/SelectAggregateCountDistinctResult.PNG)
 
 #### SELECT : 그룹 검색
 
@@ -724,12 +724,12 @@ FROM 주문
 GROUP BY 주문제품;
 ```
 
-<img src="./Image/ch07/SelectGroupByProductResult.PNG"  height="auto" />
+![SelectGroupByProductResult](./Image/ch07/SelectGroupByProductResult.PNG)
 
 - 동일 제품 주문 튜플을 그룹화
 - 그룹별 수량 합계 계산
 
-<img src="./Image/ch07/SelectGroupByProductGroupingVisualization.PNG"  height="auto" />
+![SelectGroupByProductGroupingVisualization](./Image/ch07/SelectGroupByProductGroupingVisualization.PNG)
 
 - ex 2 : 제품 테이블에서 제조업체 별 제조한 제품 개수, 제품 중 가장 비싼 단가를 검색하되 제품의 개수는 '제품 수', 가장 비싼 단가는 '최고가'로 출력
 
@@ -739,7 +739,7 @@ FROM 제품
 GROUP BY 제조업체;
 ```
 
-<img src="./Image/ch07/SelectGroupByManufacturerResult.PNG"  height="auto" />
+![SelectGroupByManufacturerResult](./Image/ch07/SelectGroupByManufacturerResult.PNG)
 
 - ex 3 : 제품 테이블에서 제품을 3개 이상 제조한 제품업체 별 제품의 개수, 제품 중 가장 비싼 단가 검색
 
@@ -750,7 +750,7 @@ GROUP BY 제조업체
 HAVING COUNT(*) >= 3;
 ```
 
-<img src="./Image/ch07/SelectGroupByHavingResult.PNG"  height="auto" />
+![SelectGroupByHavingResult](./Image/ch07/SelectGroupByHavingResult.PNG)
 
 - ex 4 : 고객 테이블에서 적립금 평균이 1000원 이상인 등급에 대해 등급별 고객수, 적립금 평균 검색
 
@@ -761,7 +761,7 @@ GROUP BY 등급
 HAVING AVG(적립금) >= 1000;
 ```
 
-<img src="./Image/ch07/SelectGroupByGradeHavingResult.PNG"  height="auto" />
+![SelectGroupByGradeHavingResult](./Image/ch07/SelectGroupByGradeHavingResult.PNG)
 
 - ex 5 : 주문 테이블에서 각 주문이 주문한 제품의 총 주문 수량을 주문제품 별로 검색
 
@@ -771,7 +771,7 @@ FROM 주문
 GROUP BY 주문제품, 주문고객;
 ```
 
-<img src="./Image/ch07/SelectGroupByMultipleAttributesResult.PNG"  height="auto" />
+![SelectGroupByMultipleAttributesResult](./Image/ch07/SelectGroupByMultipleAttributesResult.PNG)
 
 - 집계 함수 · GROUP BY 절에 명시된 속성 외의 속성은 SELECT 절에 작성 불가
 
@@ -801,7 +801,7 @@ WHERE 주문.주문고객 = 'banana'
 AND 제품.제품번호 = 주문.주문제품;
 ```
 
-<img src="./Image/ch07/SelectJoinBananaCustomerResult.PNG"  height="auto" />
+![SelectJoinBananaCustomerResult](./Image/ch07/SelectJoinBananaCustomerResult.PNG)
 
 - ex 2 : 판매 데이터베이스에서 나이가 30세 이상인 고객에 주문한 제품의 번호와 주문일자 검색
 
@@ -812,7 +812,7 @@ WHERE 고객.나이 >= 30
 AND 고객.고객아이디 = 주문.주문고객;
 ```
 
-<img src="./Image/ch07/SelectJoinAgeConditionResult.PNG"  height="auto" />
+![SelectJoinAgeConditionResult](./Image/ch07/SelectJoinAgeConditionResult.PNG)
 
 - 여러 테이블 조인 검색 특성
 
@@ -837,7 +837,7 @@ AND 주문.주문고객 = 고객.고객아이디
 AND 제품.제품번호 = 주문.주문제품;
 ```
 
-<img src="./Image/ch07/SelectJoinMultipleTablesResult.PNG"  height="auto" />
+![SelectJoinMultipleTablesResult](./Image/ch07/SelectJoinMultipleTablesResult.PNG)
 
 #### INNER JOIN : JOIN 활용
 
@@ -894,7 +894,7 @@ ON 고객.고객아이디 = 주문.주문고객;
 /* 고객 테이블 기준 정렬이므로 두 외부 조인의 결과는 동일 */
 ```
 
-<img src="./Image/ch07/SelectLeftOuterJoinResult.PNG"  height="auto" />
+![SelectLeftOuterJoinResult](./Image/ch07/SelectLeftOuterJoinResult.PNG)
 
 - 주문하지 않는 고객 포함 조회
 
@@ -930,7 +930,7 @@ WHERE 제조업체  = ( SELECT 제조업체
                     WHERE 제품명 = '달콤비스킷');
 ```
 
-<img src="./Image/ch07/SelectSubqueryManufacturerResult.PNG"  height="auto" />
+![SelectSubqueryManufacturerResult](./Image/ch07/SelectSubqueryManufacturerResult.PNG)
 
 - ex 2 : 판매 데이터베이스에서 적립금이 가장 많은 고객의 고객 이름과 적립금 검색
 
@@ -940,7 +940,7 @@ FROM 고객
 WHERE 적립금 = (SELECT MAX(적립금) FROM 고객);
 ```
 
-<img src="./Image/ch07/SelectSubqueryMaxPointResult.PNG"  height="auto" />
+![SelectSubqueryMaxPointResult](./Image/ch07/SelectSubqueryMaxPointResult.PNG)
 
 - 부속 질의문 연산자
 
@@ -963,7 +963,7 @@ WHERE 제품번호 IN (SELECT 주문제품
                   WHERE 주문고객 = 'banana');
 ```
 
-<img src="./Image/ch07/SelectSubqueryInResult.PNG"  height="auto" />
+![SelectSubqueryInResult](./Image/ch07/SelectSubqueryInResult.PNG)
 
 - ex 4 : 판매 데이터베이스에서 banana 고객이 주문하지 않은 제품의 제품명과 제조업체 검색
 
@@ -975,7 +975,7 @@ WHERE 제품번호 NOT IN (SELECT 주문제품
                       WHERE 주문고객 = 'banana');
 ```
 
-<img src="./Image/ch07/SelectSubqueryNotInResult.PNG"  height="auto" />
+![SelectSubqueryNotInResult](./Image/ch07/SelectSubqueryNotInResult.PNG)
 
 - ex 5 : 판매 데이터베이스에서 대한식품이 제조한 모든 제품의 단가보다 비싼 제품의 제품명, 단가, 제조업체 검색
 
@@ -987,7 +987,7 @@ WHERE 단가 > ALL (SELECT 단가
                   WHERE 제조업체 = '대한식품');
 ```
 
-<img src="./Image/ch07/SelectSubqueryAllResult.PNG"  height="auto" />
+![SelectSubqueryAllResult](./Image/ch07/SelectSubqueryAllResult.PNG)
 
 - ex 6 : 판매 데이터베이스에서 2022년 3월 15일에 제품을 주문한 고객의 고객이름 검색
 
@@ -1000,7 +1000,7 @@ WHERE EXISTS (SELECT *
               AND 고객.고객아이디 = 주문.주문고객);
 ```
 
-<img src="./Image/ch07/SelectSubqueryExistsResult.PNG"  height="auto" />
+![SelectSubqueryExistsResult](./Image/ch07/SelectSubqueryExistsResult.PNG)
 
 - ex 7 : 판매 데이터베이스에서 2002년 3월 15일에 제품을 주문하지 않은 고객의 고객이름 검색
 
@@ -1013,7 +1013,7 @@ WHERE NOT EXISTS (SELECT *
               AND 고객.고객아이디 = 주문.주문고객);
 ```
 
-<img src="./Image/ch07/SelectSubqueryNotExistsResult.PNG"  height="auto" />
+![SelectSubqueryNotExistsResult](./Image/ch07/SelectSubqueryNotExistsResult.PNG)
 
 ### UPDATE : 데이터 수정
 
@@ -1038,7 +1038,7 @@ SET 제품명 = '통큰파이'
 WHERE 제품번호 = 'p03';
 ```
 
-<img src="./Image/ch07/UpdateSingleColumnResult.PNG"  height="auto" />
+![UpdateSingleColumnResult](./Image/ch07/UpdateSingleColumnResult.PNG)
 
 - ex 2 : 제품 테이블의 모든 제품의 단가를 10% 인상 후 검색
 
@@ -1050,7 +1050,7 @@ SELECT *
 FROM 제품;
 ```
 
-<img src="./Image/ch07/UpdateMultipleRowsResult.PNG"  height="auto" />
+![UpdateMultipleRowsResult](./Image/ch07/UpdateMultipleRowsResult.PNG)
 
 - ex 3 : 판매 데이터베이스에서 정소화 고객이 주문한 제품의 주문수량을 5개로 수정 후 내용 검색
 
@@ -1065,7 +1065,7 @@ SELECT *
 FROM 주문;
 ```
 
-<img src="./Image/ch07/UpdateSubqueryResult.PNG"  height="auto" />
+![UpdateSubqueryResult](./Image/ch07/UpdateSubqueryResult.PNG)
 
 ### DELETE : 데이터 삭제
 
@@ -1092,7 +1092,7 @@ SELECT *
 FROM 주문;
 ```
 
-<img src="./Image/ch07/DeleteSingleConditionResult.PNG"  height="auto" />
+![DeleteSingleConditionResult](./Image/ch07/DeleteSingleConditionResult.PNG)
 
 - ex 2 : 판매 데이터베이스에서 정소화 고객이 주문한 내역을 주문 테이블에서 삭제 후 삭제 여부 확인
 
@@ -1106,7 +1106,7 @@ WHERE 주문고객 IN (SELECT 고객아이디
 SELECT * FROM 주문;
 ```
 
-<img src="./Image/ch07/DeleteSubqueryResult.PNG"  height="auto" />
+![DeleteSubqueryResult](./Image/ch07/DeleteSubqueryResult.PNG)
 
 - ex 3 : 판매 데이터베이스의 주문 테이블에 존재하는 모든 튜플 삭제 후 삭제 여부 확인
 
@@ -1117,7 +1117,7 @@ FROM 주문;
 SELECT * FROM 주문;
 ```
 
-<img src="./Image/ch07/DeleteAllRowsResult.PNG"  height="auto" />
+![DeleteAllRowsResult](./Image/ch07/DeleteAllRowsResult.PNG)
 
 - DROP TABLE과는 다르게 빈 테이블 형태로 스키마는 존재
 
@@ -1134,7 +1134,7 @@ JOIN 주문
 ON 고객.고객아이디 = 주문.주문고객;
 ```
 
-<img src="./Image/ch07/JoinTableExample.PNG"  height="auto" />
+![JoinTableExample](./Image/ch07/JoinTableExample.PNG)
 
 #### LEFT JOIN : 왼쪽 테이블 기준 조인
 
@@ -1147,7 +1147,7 @@ LEFT OUTER JOIN 주문
 ON 고객.고객아이디 = 주문.주문고객;
 ```
 
-<img src="./Image/ch07/LeftJoinExample.PNG"  height="auto" />
+![LeftJoinExample](./Image/ch07/LeftJoinExample.PNG)
 
 - ex 2 : 제품번호 별 제품명, 주문고객의 수량, 나이, 등급 검색
 
@@ -1160,7 +1160,7 @@ LEFT OUTER JOIN 고객
 주문.주문고객 = 고객.고객아이디;
 ```
 
-<img src="./Image/ch07/LeftJoinMultipleResult.PNG"  height="auto" />
+![LeftJoinMultipleResult](./Image/ch07/LeftJoinMultipleResult.PNG)
 
 - ex 3 : apple 고객이 주문한 제품번호, 제품명, 수량, 나이, 등급 검색
 
@@ -1185,7 +1185,7 @@ RIGHT OUTER JOIN 제품
 ON 제품.제품번호 = 주문.주문제품;
 ```
 
-<img src="./Image/ch07/RightJoinExample.PNG"  height="auto" />
+![RightJoinExample](./Image/ch07/RightJoinExample.PNG)
 
 ## 5절. MySQL 내장 함수
 
@@ -1247,7 +1247,7 @@ FROM 고객
 GROUP BY 등급;
 ```
 
-<img src="./Image/ch07/RoundFunctionResult.PNG"  height="auto" />
+![RoundFunctionResult](./Image/ch07/RoundFunctionResult.PNG)
 
 #### 문자값 반환 함수
 
@@ -1276,7 +1276,7 @@ SELECT 고객아이디, REPLACE(직업, '학생', '대학생')
 FROM 고객;
 ```
 
-<img src="./Image/ch07/ReplaceFunctionResult.PNG"  height="auto" />
+![ReplaceFunctionResult](./Image/ch07/ReplaceFunctionResult.PNG)
 
 #### 날짜 함수
 
@@ -1299,7 +1299,7 @@ SELECT 주문번호, 주문고객, 주문일자,
 FROM 주문;
 ```
 
-<img src="./Image/ch07/AddDateFunctionResult.PNG"  height="auto" />
+![AddDateFunctionResult](./Image/ch07/AddDateFunctionResult.PNG)
 
 ## 6절. 뷰
 
@@ -1349,7 +1349,7 @@ WITH CHECK OPTION;
 SELECT * FROM 우수고객;
 ```
 
-<img src="./Image/ch07/CreateViewPremiumCustomerResult.PNG"  height="auto" />
+![CreateViewPremiumCustomerResult](./Image/ch07/CreateViewPremiumCustomerResult.PNG)
 
 - 뷰 생성 후 우수고객 뷰에 아래 행동 시 실행 거부 : WITH CHECK OPTION
 
@@ -1371,7 +1371,7 @@ FROM 업체별제품수;
 
 - 제품수 속성은 제품 테이블의 우너래 속성이 아닌 집계 함수로 새로 계산된 속성이므로 속성명의 명확한 제시 필수
 
-<img src="./Image/ch07/CreateViewManufacturerCountResult.PNG"  height="auto" />
+![CreateViewManufacturerCountResult](./Image/ch07/CreateViewManufacturerCountResult.PNG)
 
 #### SELECT : 뷰 활용
 
@@ -1387,7 +1387,7 @@ FROM 우수고객
 WHERE 나이 >= 20;
 ```
 
-<img src="./Image/ch07/CreateViewPremiumCustomerResult.PNG"  height="auto" />
+![CreateViewPremiumCustomerResult](./Image/ch07/CreateViewPremiumCustomerResult.PNG)
 
 #### INSERT, UPDATE, DELETE : 뷰 활용
 
@@ -1420,7 +1420,7 @@ SELECT *
 FROM 제품1;
 ```
 
-<img src="./Image/ch07/ViewProduct1SelectResult.PNG"  height="auto" />
+![ViewProduct1SelectResult](./Image/ch07/ViewProduct1SelectResult.PNG)
 
 ```SQL
 CREATE VIEW 제품2
@@ -1432,7 +1432,7 @@ SELECT *
 FROM 제품2;
 ```
 
-<img src="./Image/ch07/ViewProduct2SelectResult.PNG"  height="auto" />
+![ViewProduct2SelectResult](./Image/ch07/ViewProduct2SelectResult.PNG)
 
 - ex 1 - 1 : 제품번호가 p08, 재고량이 1000, 제조업체가 신선식품인 새로운 제품의 정보를 제품1 뷰에 삽입 후 모든 내용 검색
 
@@ -1445,14 +1445,14 @@ SELECT *
 FROM 제품1;
 ```
 
-<img src="./Image/ch07/ViewProduct1InsertResult.PNG"  height="auto" />
+![ViewProduct1InsertResult](./Image/ch07/ViewProduct1InsertResult.PNG)
 
 ```SQL
 SELECT *
 FROM 제품;
 ```
 
-<img src="./Image/ch07/ViewProduct1InsertReflectedInBaseTable.PNG"  height="auto" />
+![ViewProduct1InsertReflectedInBaseTable](./Image/ch07/ViewProduct1InsertReflectedInBaseTable.PNG)
 
 - 제품1 뷰에 대한 삽입 연산은 실제로 기본 테이블인 제품 테이블에 수행
 - 새로운 제품의 데이터는 제품 테이블에 삽입

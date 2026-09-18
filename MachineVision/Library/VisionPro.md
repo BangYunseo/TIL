@@ -18,7 +18,7 @@
 
 ### Quick Build 버전
 
-<img src="./Image/VisionPro/VisionPro_QB.png"  width="100%"/>
+![VisionPro_QB](./Image/VisionPro/VisionPro_QB.png){ width="100%" }
 
 - VisionPro의 핵심 환경
 - 프로그래밍 전문가 / 비전문가 모두 활용 가능

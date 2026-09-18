@@ -41,7 +41,7 @@
 - Controller는 Model과 View를 모두 참조하는 구조
 - Controller:View는 1:n 관계
 
-<img src="./Image/02_MVC/MVC.png" height="auto"/>
+![MVC](./Image/02_MVC/MVC.png)
 
 ### 과정(Process)
 

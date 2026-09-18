@@ -82,7 +82,6 @@
 
 #### 강화 학습 예시
 
-- Random Face Generator
 - Pac-Man
 - Break-Out
 

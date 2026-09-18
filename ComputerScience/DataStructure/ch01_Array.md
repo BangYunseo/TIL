@@ -10,7 +10,7 @@
 
 ### 배열(Array)
 
-<img src="./Image/ch01/Array.PNG" height="auto" />
+![Array](./Image/ch01/Array.PNG)
 
 - 연속된 메모리 공간에 순차적으로 저장된 데이터 집합
 - 데이터가 동일한 유형을 가지고 순서대로 접근
@@ -34,7 +34,7 @@
 
 ### 배열 표현
 
-<img src="./Image/ch01/Array2.PNG" height="auto" />
+![Array2](./Image/ch01/Array2.PNG)
 
 - 연속된 메모리 공간에 순차적인 데이터 저장
 - 인덱스는 <strong>0</strong>부터 시작

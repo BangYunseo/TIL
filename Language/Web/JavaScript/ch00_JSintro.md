@@ -82,6 +82,6 @@
 - 구글에서 제공하는 크롬 웹 스토어
   - 웹 스토어, 웹 브라우저 상에서 실행되는 웹 어플리케이션 거래
 
-<img src="./Image/ch00/ch00-01-CWA.PNG"  height="auto" />
+![ch00-01-CWA](./Image/ch00/ch00-01-CWA.PNG)
 
 ### 웹 서버 어플리케이션

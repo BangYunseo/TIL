@@ -53,7 +53,7 @@
 </html>
 ```
 
-<img src="./Image/ch00/ch00-01-HtmlWeb.PNG" width="auto"/>
+![ch00-01-HtmlWeb](./Image/ch00/ch00-01-HtmlWeb.PNG)
 
 - 스타일 시트로 꾸민 웹 페이지
 
@@ -82,13 +82,13 @@
 </html>
 ```
 
-<img src="./Image/ch00/ch00-02-StyleSheetWeb.PNG" width="auto"/>
+![ch00-02-StyleSheetWeb](./Image/ch00/ch00-02-StyleSheetWeb.PNG)
 
 ### CSS3 스타일 시트 구성
 
 - ex) <span> 텍스트를 20px blue로 출력하는 CSS3 StyleSheet
 
-<img src="./Image/ch00/ch00-03-StyleSheet.PNG" width="auto"/>
+![ch00-03-StyleSheet](./Image/ch00/ch00-03-StyleSheet.PNG)
 
 |    구성 요소    | 설명                                                                                 |
 | :-------------: | :----------------------------------------------------------------------------------- |
@@ -123,7 +123,7 @@
 
 #### 1 : 사용 예시(1)
 
-<img src="./Image/ch00/ch00-04-html1.PNG" width="auto"/>
+![ch00-04-html1](./Image/ch00/ch00-04-html1.PNG)
 
 ```HTML
 <!DOCTYPE html>
@@ -161,7 +161,7 @@
 
 #### 1 : 사용 예시(2)
 
-<img src="./Image/ch00/ch00-05-html2.PNG" width="auto"/>
+![ch00-05-html2](./Image/ch00/ch00-05-html2.PNG)
 
 - 해당 태그에만 스타일 적용
 
@@ -194,7 +194,7 @@
 </html>
 ```
 
-<img src="./Image/ch00/ch00-06-html3.PNG" width="auto"/>
+![ch00-06-html3](./Image/ch00/ch00-06-html3.PNG)
 
 ### 2. 스타일 시트 별도 파일 작성 : <link> 태그 · @import
 
@@ -330,7 +330,7 @@ h3 {
 </html>
 ```
 
-<img src="./Image/ch00/ch00-07-html4.PNG" width="auto"/>
+![ch00-07-html4](./Image/ch00/ch00-07-html4.PNG)
 
 - \<p\> 태그 : \<em\> 태그의 부모
 - \<em\> 태그 출력
@@ -339,13 +339,13 @@ h3 {
 
 ### 스타일 합치기 & 오버라이딩
 
-<img src="./Image/ch00/ch00-08-OverRiding.PNG" width="auto"/>
+![ch00-08-OverRiding](./Image/ch00/ch00-08-OverRiding.PNG)
 
 ## 2절. 셀렉터
 
 ### 셀렉터(Selector)
 
-<img src="./Image/ch00/ch00-09-Selector.PNG" width="auto"/>
+![ch00-09-Selector](./Image/ch00/ch00-09-Selector.PNG)
 
 - HTML 태그의 모양을 꾸밀 스타일 시트 선택 기능
   - 여러 유형 존재
@@ -353,14 +353,14 @@ h3 {
 
 ### 태그 이름 셀렉터
 
-<img src="./Image/ch00/ch00-10-TagSelector.PNG" width="auto"/>
+![ch00-10-TagSelector](./Image/ch00/ch00-10-TagSelector.PNG)
 
 - 태그 이름이 셀렉터로 사용되는 유형
 - 셀렉터와 같은 이름의 모든 태그에 스타일 시트 적용
 
 ### 클래스 셀렉터
 
-<img src="./Image/ch00/ch00-11-ClassSelector.PNG" width="auto"/>
+![ch00-11-ClassSelector](./Image/ch00/ch00-11-ClassSelector.PNG)
 
 - 점(.)으로 시작하는 셀렉터
 - HTML의 class 속성으로 지정
@@ -377,7 +377,7 @@ body.main {
 
 ### ID 셀렉터
 
-<img src="./Image/ch00/ch00-12-IdSelector.PNG" width="auto"/>
+![ch00-12-IdSelector](./Image/ch00/ch00-12-IdSelector.PNG)
 
 - #로 시작하는 셀렉터
 - HTML의 id 속성으로 지정
@@ -439,7 +439,7 @@ ul strong {
 
 #### 자식 & 자손 셀렉터
 
-<img src="./Image/ch00/ch00-13-Childs.PNG" width="auto"/>
+![ch00-13-Childs](./Image/ch00/ch00-13-Childs.PNG)
 
 ### 전체 셀렉터(Universal Selector)
 
@@ -472,7 +472,7 @@ input[type=text]{
 - 어떤 조건이나 상황에서 적용
 - 40개 이상의 유형 존재
 
-<img src="./Image/ch00/ch00-14-PCS.PNG" width="auto"/>
+![ch00-14-PCS](./Image/ch00/ch00-14-PCS.PNG)
 
 ```CSS
 a: visited {
@@ -492,11 +492,11 @@ li: hover {
 
 #### 가상 클래스 셀렉터 활용 예시
 
-<img src="./Image/ch00/ch00-15-PCSex.PNG" width="auto"/>
+![ch00-15-PCSex](./Image/ch00/ch00-15-PCSex.PNG)
 
 ### 셀렉터 활용 예시
 
-<img src="./Image/ch00/ch00-16-PCSex2.PNG" width="auto"/>
+![ch00-16-PCSex2](./Image/ch00/ch00-16-PCSex2.PNG)
 
 ```HTML
 <!DOCTYPE html>
@@ -577,7 +577,7 @@ li: hover {
 
 #### 1. 16진수 코드 표현
 
-<img src="./Image/ch00/ch00-17-Color16.PNG" width="auto"/>
+![ch00-17-Color16](./Image/ch00/ch00-17-Color16.PNG)
 
 - 보라색(blueviolet)의 혼합된 색
   - 빨간색(r) 성분 : 0x8A(138)
@@ -592,7 +592,7 @@ div {
 
 #### 2. 10진수 코드 & RGB 표현
 
-<img src="./Image/ch00/ch00-18-Color10.PNG" width="auto"/>
+![ch00-18-Color10](./Image/ch00/ch00-18-Color10.PNG)
 
 - 보라색(blueviolet)의 혼합된 색
   - 빨간색(r) 성분 : 138
@@ -610,7 +610,7 @@ div {
 - CSS 표준
   - 140개의 색 이름 표준 존재
 
-<img src="./Image/ch00/ch00-19-ColorS.PNG" width="auto"/>
+![ch00-19-ColorS](./Image/ch00/ch00-19-ColorS.PNG)
 
 ```CSS
 div {
@@ -656,7 +656,7 @@ text-decoration : none|underline|overline|line-through;
 
 #### 텍스트 요소 사용 예시(2)
 
-<img src="./Image/ch00/ch00-20-Textex.PNG" width="auto"/>
+![ch00-20-Textex](./Image/ch00/ch00-20-Textex.PNG)
 
 ```HTML
 <!DOCTYPE html>
@@ -770,7 +770,7 @@ font : italic bold 20px consolas sans-serif;
 
 #### 폰트 요소 사용 예시
 
-<img src="./Image/ch00/ch00-21-Fontex.PNG" width="auto"/>
+![ch00-21-Fontex](./Image/ch00/ch00-21-Fontex.PNG)
 
 ```HTML
 <!DOCTYPE html>

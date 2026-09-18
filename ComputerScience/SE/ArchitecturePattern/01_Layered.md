@@ -36,7 +36,7 @@
   - 3계층 : Persistence -> Business에 흡수 / Database를 시스템 외부로 보고 제외
   - 4계층 : Presentation / Business / Persistence / Database
 
-<img src="./Image/01_Layered/Layered.png" height="auto"/>
+![Layered](./Image/01_Layered/Layered.png)
 
 ## 3절. 계층
 
