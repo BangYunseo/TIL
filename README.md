@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://bangyunseo.github.io/TIL/">
-    <img src="https://img.shields.io/badge/웹에서_보기-BangYunseo-4051B5?style=for-the-badge&logo=materialformkdocs&logoColor=white" alt="웹에서 보기" />
+    <img src="https://img.shields.io/badge/웹에서_보기-BangYunseo-4051B5?style=for-the-badge&logo=jekyll&logoColor=white" alt="웹에서 보기" />
   </a>
 </p>
 
@@ -12,16 +12,16 @@
 
 ## 학습 분야
 
-### 🧠 AI &nbsp; [🔗 링크](AI/README.md)
+### 🧠 AI &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/AI-Index/)
 
 - 딥러닝
 - 기계학습
 
-### 🤖 Android &nbsp; [🔗 링크](Android/README.md)
+### 🤖 Android &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/Android-Index/)
 
 - 모바일 앱 개발
 
-### 💻 Language &nbsp; [🔗 링크](Language/README.md)
+### 💻 Language &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/Language-Index/)
 
 - C
 - C++
@@ -31,7 +31,7 @@
 - Kotlin
 - Web
 
-### 🖥️ Computer Science &nbsp; [🔗 링크](ComputerScience/README.md)
+### 🖥️ Computer Science &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/ComputerScience-Index/)
 
 - 자료구조
 - 알고리즘
@@ -39,39 +39,63 @@
 - 운영체제
 - 소프트웨어공학
 
-### 🌐 Communication &nbsp; [🔗 링크](Communication/README.md)
+### 🌐 Communication &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/Communication-Index/)
 
 - 데이터 통신
 - 네트워크
 - 시리얼 통신
 
-### 🎮 Game Engine &nbsp; [🔗 링크](GameEngine/README.md)
+### 🎮 Game Engine &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/categories/gameengine/)
 
 - Unity
 - Unreal
 
-### 🔒 Security &nbsp; [🔗 링크](Security/InformationSecurity/README.md)
+### 🔒 Security &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/InformationSecurity-Index/)
 
 - 정보보안
 - 암호학
 
-### 📷 Machine Vision &nbsp; [🔗 링크](MachineVision/README.md)
+### 📷 Machine Vision &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/MachineVision-Index/)
 
 - 머신비전
 - 검사 시스템
 
 ## 작성 규칙
 
-### 파일 생성
+### 문서 위치
 
-- `[파일명].md` — 숫자를 제외한 요약 항목 명칭 (예: `API.md`, `MVVM.md`)
-- 이미지는 문서와 같은 폴더의 `Image/` 하위에 챕터별로 저장
-- 이미지 파일명은 의미 있는 영문 PascalCase로 작성 (예: `MergeSort.PNG`)
+- 글은 `_posts/<분야>/<세부 분야>/` 아래에 둔다
+- 파일명은 `YYYY-MM-DD-제목.md` (날짜가 없으면 Jekyll이 글로 인식하지 않는다)
+- 제목 부분이 그대로 주소가 된다 (`_posts/AI/2026-01-01-MCP.md` -> `/TIL/posts/MCP/`)
+- 아직 내용이 없는 글은 `_drafts/` 에 두면 사이트에 나오지 않는다
 
-### 이미지 삽입 양식
+### 머리말(front matter)
+
+```yaml
+---
+title: "문서 제목"
+date: 2026-01-01 09:00:00 +0900
+categories: [분야, 세부분야]   # 2단계까지만
+tags: [태그]                   # 없으면 생략
+math: true                     # 수식을 쓰면 추가
+---
+```
+
+### 이미지
+
+- 이미지는 예전처럼 `<분야>/<세부 분야>/Image/chXX/` 에 둔다 (`_posts` 밖)
+- 문서에서는 저장소 루트 기준 경로로 적는다
 
 ```markdown
-![Example](./Image/ch00/Example.PNG)
+![Example](/AI/DeepLearning/Image/ch00/Example.PNG)
+```
+
+- 이미지 파일명은 의미 있는 영문 PascalCase로 작성 (예: `MergeSort.PNG`)
+
+### 문서 사이 링크
+
+```markdown
+[다른 글]({{ site.baseurl }}/posts/ch01_Numpy/)
 ```
 
 ### Git Commit Type
