@@ -20,6 +20,8 @@ LIMIT_RECENT = 5
 EXCERPT_LEN = 50
 SKIP_NAMES = {"README.md", "index.md"}
 SKIP_TOP = {"site", ".venv", "venv", "hooks", "javascripts", "stylesheets", ".github", ".claude"}
+# Image 폴더는 그림 보관용이다. 그 안의 md는 글이 아니다.
+SKIP_DIR = {"Image", "PythonFile"}
 
 FENCE = re.compile(r"^(```|~~~)")
 # 목차용 블록인용(>)과 소제목(#)은 요약에서 제외한다. 본문만 남긴다.
@@ -114,6 +116,8 @@ def _collect(root, directory_urls):
         parts = rel.split("/")
         if len(parts) < 2 or parts[0] in SKIP_TOP or path.name in SKIP_NAMES:
             continue
+        if SKIP_DIR & set(parts[:-1]):
+            continue
         title, excerpt = _meta(path)
         docs.append({
             "url": _url(rel, directory_urls),
@@ -155,26 +159,29 @@ def _render_posts(docs):
             f'<nav class="post-pager" aria-label="페이지 이동"></nav>')
 
 
-def _render_grouped(groups, heading_level="##"):
-    """{그룹명: [문서]} 를 소제목 + 목록으로 펼친다."""
-    out = []
-    for name, items in groups:
-        out.append(f'{heading_level} {name} <small>({len(items)})</small>')
-        out.append("")
-        for doc in items:
-            date = doc["created"] or "-"
-            out.append(f'- `{date}` [{doc["title"]}]({doc["url"]})')
-        out.append("")
-    return "\n".join(out) if out else "_문서가 없습니다._"
-
 
 def _render_categories(docs):
+    """분류마다 접는 상자 하나. 상자를 눌러야 문서 목록이 펼쳐진다."""
     groups = defaultdict(list)
     for doc in docs:
         groups[" · ".join(doc["folders"])].append(doc)
-    return _render_grouped(sorted(groups.items()))
 
-
+    boxes = []
+    for name, items in sorted(groups.items()):
+        rows = "".join(
+            f'<li><a href="{html.escape(doc["url"])}">{html.escape(doc["title"])}</a>'
+            f'<span>{html.escape(doc["created"] or "-")}</span></li>'
+            for doc in sorted(items, key=lambda doc: doc["created"], reverse=True)
+        )
+        boxes.append(
+            f'<details class="category-box">'
+            f'<summary><span class="category-box__name">{html.escape(name)}</span>'
+            f'<span class="category-box__count">{len(items)}</span></summary>'
+            f'<ul>{rows}</ul></details>'
+        )
+    if not boxes:
+        return "<p>분류가 없습니다.</p>"
+    return '<div class="category-list">' + "".join(boxes) + "</div>"
 
 def _render_recent(docs):
     latest = sorted(docs, key=lambda doc: doc["modified"], reverse=True)[:LIMIT_RECENT]
