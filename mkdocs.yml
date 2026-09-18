@@ -1,5 +1,5 @@
-site_name: 개발 저장고
-site_description: 개발·컴퓨터공학 학습 정리 저장소
+site_name: BangYunseo
+site_description: 개발·컴퓨터공학 학습 기록
 docs_dir: .
 use_directory_urls: true
 
@@ -30,6 +30,9 @@ theme:
         icon: material/weather-sunny
         name: 라이트 모드로 전환
 
+hooks:
+  - hooks/recent_posts.py
+
 plugins:
   - search
   - same-dir
@@ -56,11 +59,22 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/BangYunseo
+      name: GitHub
+    # 아래 주석을 풀고 실제 메일 주소를 넣으면 메일 아이콘이 생깁니다.
+    # - icon: fontawesome/solid/envelope
+    #   link: mailto:주소@도메인
+    #   name: Mail
+
 extra_javascript:
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 exclude_docs: |
+  hooks/
   venv/
   .venv/
   site/

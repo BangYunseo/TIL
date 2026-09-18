@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://bangyunseo.github.io/TIL/">
-    <img src="https://img.shields.io/badge/웹에서_보기-개발_저장고-4051B5?style=for-the-badge&logo=materialformkdocs&logoColor=white" alt="웹에서 보기" />
+    <img src="https://img.shields.io/badge/웹에서_보기-BangYunseo-4051B5?style=for-the-badge&logo=materialformkdocs&logoColor=white" alt="웹에서 보기" />
   </a>
 </p>
 
@@ -70,8 +70,8 @@
 
 ### 이미지 삽입 양식
 
-```html
-<img src="./Image/ch00/Example.PNG" height="auto" />
+```markdown
+![Example](./Image/ch00/Example.PNG)
 ```
 
 ### Git Commit Type
