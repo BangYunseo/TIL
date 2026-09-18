@@ -1,0 +1,30 @@
+---
+title: "DeepLearning"
+date: 2023-09-24 16:00:09 +0900
+categories: [AI, DeepLearning]
+---
+
+## What?
+
+- 딥러닝 정리
+- 3학년 2학기
+
+## When?
+
+- 마지막 수정일 : 2024.12.03
+
+## Learning List
+
+- ch00 [딥러닝]({{ site.baseurl }}/posts/ch00_DeepLearning/)
+- ch01 [넘파이]({{ site.baseurl }}/posts/ch01_Numpy/)
+- ch02 [머신러닝의 기초]({{ site.baseurl }}/posts/ch02_MachineLearning/)
+- ch03 [회귀]({{ site.baseurl }}/posts/ch03_Regression/)
+- ch04 [퍼셉트론]({{ site.baseurl }}/posts/ch04_Perceptron/)
+- ch05 [MLP]({{ site.baseurl }}/posts/ch05_MLP/)
+- ch06 [MLP2]({{ site.baseurl }}/posts/ch06_MLP2/)
+- ch07 [DNN]({{ site.baseurl }}/posts/ch07_DNN/)
+- ch08 [CNN]({{ site.baseurl }}/posts/ch08_CNN/)
+- ch09 [이미지 인식]({{ site.baseurl }}/posts/ch09_ImageRecognition/)
+- ch10 [RNN]({{ site.baseurl }}/posts/ch10_RNN/)
+- ch11 [자연어 처리]({{ site.baseurl }}/posts/ch11_NaturalLanguageProcessing/)
+- ch12 [생성형 모델]({{ site.baseurl }}/posts/ch12_GenerativeModel/)
