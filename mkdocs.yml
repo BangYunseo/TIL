@@ -9,8 +9,6 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
-    - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.sections
     - navigation.top
     - navigation.indexes
@@ -73,6 +71,7 @@ extra_css:
   - stylesheets/post-list.css
 
 extra_javascript:
+  - javascripts/blog.js
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 

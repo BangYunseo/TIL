@@ -1,0 +1,5 @@
+# 좌측 사이드바에는 이 2개만 노출한다.
+# 나머지 문서는 CATEGORIES 목록과 검색으로 접근한다.
+nav:
+  - index.md
+  - categories.md
