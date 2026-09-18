@@ -1,10 +1,12 @@
-/* 홈 화면 글 목록 카드 */
+/* ---------------------------------------------------------------
+   홈 글 목록 카드
+   --------------------------------------------------------------- */
 
 .post-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 2rem 0;
+  margin: 2rem 0 1.5rem;
 }
 
 .md-typeset .post-card {
@@ -66,10 +68,170 @@
 
 [data-md-color-scheme="slate"] .md-typeset .post-card {
   background: var(--md-code-bg-color);
-  border-color: var(--md-default-fg-color--lightest);
   box-shadow: none;
 }
 
 [data-md-color-scheme="slate"] .md-typeset .post-card:hover {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------------------------------------------------------------
+   페이지 번호
+   --------------------------------------------------------------- */
+
+.post-pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+  margin: 1.5rem 0 3rem;
+}
+
+.post-pager button {
+  min-width: 2rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.4rem;
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: background 120ms, color 120ms, border-color 120ms;
+}
+
+.post-pager button:hover {
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+}
+
+.post-pager button.is-current {
+  background: var(--md-primary-fg-color);
+  border-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------
+   우측 '최근 수정' 패널
+   --------------------------------------------------------------- */
+
+.recent-panel {
+  margin-top: 1.5rem;
+  padding: 0 0.6rem;
+  font-size: 0.66rem;
+}
+
+.recent-panel h3 {
+  margin: 0 0 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--md-default-fg-color--light);
+}
+
+.recent-panel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recent-panel li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.4rem 0;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.recent-panel a {
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.recent-panel a:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.recent-panel span {
+  color: var(--md-default-fg-color--lighter);
+  font-size: 0.9em;
+}
+
+/* ---------------------------------------------------------------
+   좌측 사이드바로 옮긴 소셜 링크
+   --------------------------------------------------------------- */
+
+.md-sidebar--primary .md-social {
+  display: flex;
+  gap: 0.6rem;
+  padding: 1rem 0.8rem 1.5rem;
+  margin-top: auto;
+}
+
+.md-sidebar--primary .md-social__link {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+/* ---------------------------------------------------------------
+   화면 구성: 좌측 사이드바를 전체 높이 독립 컬럼으로 분리.
+   헤더와 푸터는 가운데 영역 위/아래에만 걸리게 한다. (데스크톱 전용)
+   --------------------------------------------------------------- */
+
+@media screen and (min-width: 76.25em) {
+  :root {
+    --blog-sidebar-width: 14rem;
+  }
+
+  .md-header,
+  .md-container,
+  .md-footer {
+    margin-left: var(--blog-sidebar-width);
+  }
+
+  .md-sidebar--primary {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--blog-sidebar-width);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: var(--md-default-bg-color);
+    border-right: 1px solid var(--md-default-fg-color--lightest);
+    transform: none;
+    z-index: 5;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    height: 100%;
+    margin: 0;
+  }
+
+  .md-sidebar--primary .md-sidebar__inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 1.2rem 0 0;
+  }
+
+  [data-md-color-scheme="slate"] .md-sidebar--primary {
+    background: var(--md-default-bg-color);
+  }
+
+  /* 헤더 검색창을 항상 펼쳐 둔다. */
+  .md-search__form {
+    background-color: var(--md-default-fg-color--lightest);
+  }
+
+  .md-search__input::placeholder {
+    opacity: 0.7;
+  }
+}
+
+/* 홈은 카드 목록만 보여준다. MkDocs가 자동으로 넣는 제목을 감춘다. */
+.md-typeset:has(> .post-list) > h1 {
+  display: none;
 }
