@@ -1,7 +1,0 @@
----
-title: HOME
----
-
-<!-- posts -->
-
-<!-- recent -->
