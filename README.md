@@ -45,11 +45,6 @@
 - 네트워크
 - 시리얼 통신
 
-### 🎮 Game Engine &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/categories/gameengine/)
-
-- Unity
-- Unreal
-
 ### 🔒 Security &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/InformationSecurity-Index/)
 
 - 정보보안
