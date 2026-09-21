@@ -14,14 +14,14 @@ categories: [Communication, Network]
 
 ## Learning List
 
-- ch00 [네트워크]()
-- ch01 []()
-- ch02 []()
-- ch03 []()
-- ch04 []()
-- ch05 []()
-- ch06 []()
-- ch07 []()
-- ch08 []()
-- ch09 []()
-- ch10 []()
+- ch00 네트워크
+- ch01
+- ch02
+- ch03
+- ch04
+- ch05
+- ch06
+- ch07
+- ch08
+- ch09
+- ch10
