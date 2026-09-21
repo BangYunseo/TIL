@@ -217,12 +217,10 @@ compress_html:
 
 exclude:
   - "*.gem"
-  - site # MkDocs 시절 빌드 산출물이 남아 있는 경우 대비
   # 아래는 글이 아니라 저장소에만 두는 자료라 사이트에서 뺀다
   - Language/Web/MySite
   - Language/Web/SubmitProject
   - Language/Web/JavaScript/test.html
-  - AI/MachineLearning/강의자료참고
   - "*.gemspec"
   - docs
   - tools
