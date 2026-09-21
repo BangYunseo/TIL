@@ -10,6 +10,12 @@
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
 
+# 포트폴리오 블로그로 이동. 같은 도메인이라 같은 탭에서 연다.
+- type: portfolio
+  icon: "fas fa-address-card"
+  url: "https://bangyunseo.github.io/"
+  noblank: true
+
 # RSS 아이콘은 사용하지 않는다. 되살리려면 아래 주석을 푼다.
 # - type: rss
 #   icon: "fas fa-rss"
