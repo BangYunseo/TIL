@@ -34,6 +34,5 @@ Thumbs.db
 # 개인 PDF 자료
 *.pdf
 
-# MkDocs 시절 빌드 산출물
-/site/
+# Python 가상환경 (저장소에 .ipynb, .py 가 있어 실수로 커밋되는 것을 막는다)
 .venv/
