@@ -1,6 +1,6 @@
-# 개발 저장고
+# TIL(Today-I-Learned)
 
-> 개발과 컴퓨터공학 학습 내용을 분야별로 정리한 저장소입니다.
+- 학습한 내용 기록용 Repository
 
 <p align="center">
   <a href="https://bangyunseo.github.io/TIL/">
@@ -10,50 +10,6 @@
 
 🔗 **웹사이트** : <https://bangyunseo.github.io/TIL/>
 
-## 학습 분야
-
-### 🧠 AI &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/AI-Index/)
-
-- 딥러닝
-- 기계학습
-
-### 🤖 Android &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/Android-Index/)
-
-- 모바일 앱 개발
-
-### 💻 Language &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/Language-Index/)
-
-- C
-- C++
-- C#
-- Java
-- Python
-- Kotlin
-- Web
-
-### 🖥️ Computer Science &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/ComputerScience-Index/)
-
-- 자료구조
-- 알고리즘
-- 데이터베이스
-- 운영체제
-- 소프트웨어공학
-
-### 🌐 Communication &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/Communication-Index/)
-
-- 데이터 통신
-- 네트워크
-- 시리얼 통신
-
-### 🔒 Security &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/InformationSecurity-Index/)
-
-- 정보보안
-- 암호학
-
-### 📷 Machine Vision &nbsp; [🔗 링크](https://bangyunseo.github.io/TIL/posts/MachineVision-Index/)
-
-- 머신비전
-- 검사 시스템
 
 ## 작성 규칙
 
