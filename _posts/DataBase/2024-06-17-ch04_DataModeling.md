@@ -1,14 +1,14 @@
 ---
 title: "Chapter 4. 데이터 모델링(Data Modeling)"
 date: 2024-06-17 22:56:32 +0900
-categories: [ComputerScience, DataBase]
+categories: [DataBase]
 ---
 
 ## 1절. 데이터 모델링
 
 ### 데이터 모델링(Data Modeling)
 
-![ModelingProcess](/ComputerScience/DataBase/Image/ch04/ModelingProcess.PNG)
+![ModelingProcess](/DataBase/Image/ch04/ModelingProcess.PNG)
 
 - 현실 세계에 존재하는 데이터를 컴퓨터 세계 데이터베이스로의 변환 과정
 - 데이터베이스 설계 핵심 과정
@@ -20,11 +20,11 @@ categories: [ComputerScience, DataBase]
 | 개념적<br>데이터 모델링<br>(Conceptual<br>Modeling) | 현실 세계 중요 데이터를 추출하여 개념 세계로 옮기는 작업      |
 |  논리적<br>데이터 모델링<br>(Logical<br>Modeling)   | 개념 세계 데이터를 데이터베이스에 저장하는 구조로의 표현 작업 |
 
-![TwoStageModeling](/ComputerScience/DataBase/Image/ch04/TwoStageModeling.PNG)
+![TwoStageModeling](/DataBase/Image/ch04/TwoStageModeling.PNG)
 
 ### 데이터 모델링 개념
 
-![ModelingConcept](/ComputerScience/DataBase/Image/ch04/ModelingConcept.PNG)
+![ModelingConcept](/DataBase/Image/ch04/ModelingConcept.PNG)
 
 ## 2절. 데이터 모델
 
@@ -37,7 +37,7 @@ categories: [ComputerScience, DataBase]
 | 개념적<br>데이터 모델 | 사람이 이해하도록 현실 세계를 개념적 모델링하여 데이터베이스 개념적 구조로 표현하는 도구 | 개체-관계 모델   |
 | 논리적<br>데이터 모델 | 개념적 구조를 논리적 모델링하여 데이터베이스의 논리적 구조로 표현하는 도구               | 관계 데이터 모델 |
 
-![ModelComposition](/ComputerScience/DataBase/Image/ch04/ModelComposition.PNG)
+![ModelComposition](/DataBase/Image/ch04/ModelComposition.PNG)
 
 ## 3절. 개체-관계 모델
 
@@ -70,11 +70,11 @@ categories: [ComputerScience, DataBase]
 - E-R 다이어그램 : 사각형 표현
   - 사각형 안에 이름 표기
 
-![EntityRepresentation](/ComputerScience/DataBase/Image/ch04/EntityRepresentation.PNG)
+![EntityRepresentation](/DataBase/Image/ch04/EntityRepresentation.PNG)
 
 ### 개체 세부 사항
 
-![EntityDetails](/ComputerScience/DataBase/Image/ch04/EntityDetails.PNG)
+![EntityDetails](/DataBase/Image/ch04/EntityDetails.PNG)
 
 #### 개체 타입(Entity Type)
 
@@ -93,7 +93,7 @@ categories: [ComputerScience, DataBase]
 
 ### 속성(Attribute)
 
-![AttributeRepresentation](/ComputerScience/DataBase/Image/ch04/AttributeRepresentation.PNG)
+![AttributeRepresentation](/DataBase/Image/ch04/AttributeRepresentation.PNG)
 
 - 개체 · 관계가 가지는 고유 특성
 - 의미 있는 데이터의 가장 작은 논리적 단위
@@ -103,7 +103,7 @@ categories: [ComputerScience, DataBase]
 
 ### 속성 분류
 
-![AttributeClassification](/ComputerScience/DataBase/Image/ch04/AttributeClassification.PNG)
+![AttributeClassification](/DataBase/Image/ch04/AttributeClassification.PNG)
 
 ### 단일 값 속성(Single-Valued Attribute)
 
@@ -126,7 +126,7 @@ categories: [ComputerScience, DataBase]
 
 #### 단일 값과 다중 값 속성
 
-![SingleValuedMultiValued](/ComputerScience/DataBase/Image/ch04/SingleValuedMultiValued.PNG)
+![SingleValuedMultiValued](/DataBase/Image/ch04/SingleValuedMultiValued.PNG)
 
 ### 단순 속성(simple attribute)
 
@@ -150,11 +150,11 @@ categories: [ComputerScience, DataBase]
 
 #### 단순 속성과 복합 속성
 
-![SimpleCompositeAttribute](/ComputerScience/DataBase/Image/ch04/SimpleCompositeAttribute.PNG)
+![SimpleCompositeAttribute](/DataBase/Image/ch04/SimpleCompositeAttribute.PNG)
 
 ### 유도 속성(Derived Attribute)
 
-![DerivedAttribute](/ComputerScience/DataBase/Image/ch04/DerivedAttribute.PNG)
+![DerivedAttribute](/DataBase/Image/ch04/DerivedAttribute.PNG)
 
 - 기존의 다른 속성 값에서 유도되어 결정된 속성
 - 값이 별도로 저장 X
@@ -182,7 +182,7 @@ categories: [ComputerScience, DataBase]
 
 ### 키 속성(Key Attribute)
 
-![KeyAttribute](/ComputerScience/DataBase/Image/ch04/KeyAttribute.PNG)
+![KeyAttribute](/DataBase/Image/ch04/KeyAttribute.PNG)
 
 - 각 개체 인스턴스 식별 시 사용되는 속성
 - 모든 개체 인스턴스의 키 속성 값은 상이
@@ -195,7 +195,7 @@ categories: [ComputerScience, DataBase]
 
 ### 관계(Relationship)
 
-![RelationshipRepresentation](/ComputerScience/DataBase/Image/ch04/RelationshipRepresentation.PNG)
+![RelationshipRepresentation](/DataBase/Image/ch04/RelationshipRepresentation.PNG)
 
 - 개체와 개체가 맺는 의미 있는 연관성
 - 개체 집합들 사이의 대응 관계, 매핑(mapping)
@@ -207,7 +207,7 @@ categories: [ComputerScience, DataBase]
 
 ### 관계 유형 : 관계 참여 개체 타입 수 기준
 
-![RelationshipTypes](/ComputerScience/DataBase/Image/ch04/RelationshipTypes.PNG)
+![RelationshipTypes](/DataBase/Image/ch04/RelationshipTypes.PNG)
 
 | 관계 유형 | 설명                                   |
 | :-------: | :------------------------------------- |
@@ -230,21 +230,21 @@ categories: [ComputerScience, DataBase]
 
 #### 일대일(1 : 1) 관계
 
-![OneToOneRelationship](/ComputerScience/DataBase/Image/ch04/OneToOneRelationship.PNG)
+![OneToOneRelationship](/DataBase/Image/ch04/OneToOneRelationship.PNG)
 
 - 개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 하나와 관계 가능
 - 개체 B의 각 개체 인스턴스가 개체 A의 개체 인스턴스 하나와 관계 가능
 
 #### 일대다(1 : N) 관계
 
-![OneToManyRelationship](/ComputerScience/DataBase/Image/ch04/OneToManyRelationship.PNG)
+![OneToManyRelationship](/DataBase/Image/ch04/OneToManyRelationship.PNG)
 
 - 개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 다수와 관계 가능
 - 개체 B의 각 개체 인스턴스가 개체 A의 개체 인스턴스 하나와 관계 가능
 
 #### 다대다(N : M) 관계
 
-![ManyToManyRelationship](/ComputerScience/DataBase/Image/ch04/ManyToManyRelationship.PNG)
+![ManyToManyRelationship](/DataBase/Image/ch04/ManyToManyRelationship.PNG)
 
 - 개체 A의 각 개체 인스턴스가 개체 B의 개체 인스턴스 다수와 관계 가능
 - 개체 B의 각 개체 인스턴스가 개체 A의 개체 인스턴스 다수와 관계 가능
@@ -260,11 +260,11 @@ categories: [ComputerScience, DataBase]
 | 필수적(전체) 참여 | 모든 개체 인스턴스가 반드시 참여         | 고객 개체가 책 개체와의 구매 관계에 필수적 참여 : 모든 고객은 책을 반드시 구매 | 이중선 |
 | 선택적(부분) 참여 | 개체 인스턴스 중 일부만 관계에 참여 가능 | 책 개체가 고객 개체와의 구매 관계에 선택적 참여 : 고객에 구매하지 않은 책 존재 | 단일선 |
 
-![ParticipationRole](/ComputerScience/DataBase/Image/ch04/ParticipationRole.PNG)
+![ParticipationRole](/DataBase/Image/ch04/ParticipationRole.PNG)
 
 ### 관계 종속성
 
-![StrongWeakEntity](/ComputerScience/DataBase/Image/ch04/StrongWeakEntity.PNG)
+![StrongWeakEntity](/DataBase/Image/ch04/StrongWeakEntity.PNG)
 
 |   종류    |     영문      | 설명                                  |
 | :-------: | :-----------: | :------------------------------------ |
@@ -284,13 +284,13 @@ categories: [ComputerScience, DataBase]
   - 직원 개체 : 강한 개체
   - 부양가족 개체 : 약한 개체
 
-![StrongWeakEntityExample](/ComputerScience/DataBase/Image/ch04/StrongWeakEntityExample.PNG)
+![StrongWeakEntityExample](/DataBase/Image/ch04/StrongWeakEntityExample.PNG)
 
 ### E-R 다이어그램
 
-![ERDiagram1](/ComputerScience/DataBase/Image/ch04/ERDiagram1.PNG)
+![ERDiagram1](/DataBase/Image/ch04/ERDiagram1.PNG)
 
-![ERDiagram2](/ComputerScience/DataBase/Image/ch04/ERDiagram2.PNG)
+![ERDiagram2](/DataBase/Image/ch04/ERDiagram2.PNG)
 
 |     요소     | 설명                        |
 | :----------: | :-------------------------- |
@@ -302,11 +302,11 @@ categories: [ComputerScience, DataBase]
 
 ### IE 표기법
 
-![IENotation](/ComputerScience/DataBase/Image/ch04/IENotation.PNG)
+![IENotation](/DataBase/Image/ch04/IENotation.PNG)
 
 ### IE 표기법 관계
 
-![IENotationRelationship](/ComputerScience/DataBase/Image/ch04/IENotationRelationship.PNG)
+![IENotationRelationship](/DataBase/Image/ch04/IENotationRelationship.PNG)
 
 ## 4절. 논리적 데이터 모델
 
@@ -324,7 +324,7 @@ categories: [ComputerScience, DataBase]
 
 ### 계층 데이터 모델(Hierarchical Data Model)
 
-![HierarchicalModelExample](/ComputerScience/DataBase/Image/ch04/HierarchicalModelExample.PNG)
+![HierarchicalModelExample](/DataBase/Image/ch04/HierarchicalModelExample.PNG)
 
 - 데이터베이스의 논리적 구조 : 트리(tree) 형태
 - 루트 역할을 하는 개체가 존재하고 사이클은 미존재
@@ -337,7 +337,7 @@ categories: [ComputerScience, DataBase]
 
 ### 네트워크 데이터 모델(Network Data Model)
 
-![NetworkModelExample](/ComputerScience/DataBase/Image/ch04/NetworkModelExample.PNG)
+![NetworkModelExample](/DataBase/Image/ch04/NetworkModelExample.PNG)
 
 - 데이터베이스의 논리적 구조 : 네트워크, 그래프 형태
 - 개체 간 관계 : 일대다(1:n) 관계만 허용

@@ -1,7 +1,7 @@
 ---
 title: "Chapter 0. 데이터베이스"
 date: 2024-03-20 22:19:03 +0900
-categories: [ComputerScience, DataBase]
+categories: [DataBase]
 ---
 
 ## 1절. 데이터베이스 정의
@@ -11,7 +11,7 @@ categories: [ComputerScience, DataBase]
 - 여러 사람이 공유하여 사용하는 데이터의 집합
 - 데이터를 체계화하여 작성된 목록으로 응용 시스템들을 통합ㆍ관리ㆍ운영
 
-![ch00-01-DB](/ComputerScience/DataBase/Image/ch00/DatabaseDefinition.PNG)
+![ch00-01-DB](/DataBase/Image/ch00/DatabaseDefinition.PNG)
 
 ## 2절. 데이터베이스 관련 직업
 
@@ -19,7 +19,7 @@ categories: [ComputerScience, DataBase]
 
 - 요구 기술
 
-![ch00-02-RS](/ComputerScience/DataBase/Image/ch00/SkillsComparison.PNG)
+![ch00-02-RS](/DataBase/Image/ch00/SkillsComparison.PNG)
 
 #### Responsibilities, Skills, Tools
 

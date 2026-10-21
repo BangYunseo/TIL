@@ -1,7 +1,7 @@
 ---
 title: "Chapter 10. 회복과 병행 제어(Recovery & Concurrency Control)"
 date: 2024-06-29 23:26:43 +0900
-categories: [ComputerScience, DataBase]
+categories: [DataBase]
 math: true
 ---
 
@@ -18,21 +18,21 @@ math: true
 
 ### 트랜잭션 예시 : (1)
 
-![TransactionExample1](/ComputerScience/DataBase/Image/ch10/TransactionExample1.PNG)
+![TransactionExample1](/DataBase/Image/ch10/TransactionExample1.PNG)
 
 - 처리 순서는 중요 X
 - 두 UPDATE 문이 모두 정상적인 실행 필요
 
 ### 트랜잭션 예시 : (2)
 
-![TransactionExample2](/ComputerScience/DataBase/Image/ch10/TransactionExample2.PNG)
+![TransactionExample2](/DataBase/Image/ch10/TransactionExample2.PNG)
 
 - 상품 주문 트랜잭션 수행 조건
   - INSERT 문과 UPDATEE 문의 정상적 실행
 
 ### 트랜잭션 특성(ACID)
 
-![ACIDProperties](/ComputerScience/DataBase/Image/ch10/ACIDProperties.PNG)
+![ACIDProperties](/DataBase/Image/ch10/ACIDProperties.PNG)
 
 #### 원자성(Atomicity)
 
@@ -60,7 +60,7 @@ math: true
 
 ### ACID & DBMS 기능
 
-![ACIDAndDBMSFunctions](/ComputerScience/DataBase/Image/ch10/ACIDAndDBMSFunctions.PNG)
+![ACIDAndDBMSFunctions](/DataBase/Image/ch10/ACIDAndDBMSFunctions.PNG)
 
 ### 트랜잭션 연산
 
@@ -81,7 +81,7 @@ math: true
 
 ### 트랜잭션 상태
 
-![TransactionStates](/ComputerScience/DataBase/Image/ch10/TransactionStates.PNG)
+![TransactionStates](/DataBase/Image/ch10/TransactionStates.PNG)
 
 #### 활동(Active) 상태
 
@@ -110,11 +110,11 @@ math: true
 
 ### 트랜잭션 SQL 예시
 
-![TransactionSQLExample1](/ComputerScience/DataBase/Image/ch10/TransactionSQLExample1.PNG)
+![TransactionSQLExample1](/DataBase/Image/ch10/TransactionSQLExample1.PNG)
 
 #### 수행 과정
 
-![TransactionSQLExample2ExecutionProcess](/ComputerScience/DataBase/Image/ch10/TransactionSQLExample2ExecutionProcess.PNG)
+![TransactionSQLExample2ExecutionProcess](/DataBase/Image/ch10/TransactionSQLExample2ExecutionProcess.PNG)
 
 1. A 계좌(박지성) 값을 데이터베이스에서 주기억장치 버퍼로 읽음
 2. B 계좌(김연아) 값을 데이터베이스에서 주기억장치 버퍼로 읽음
@@ -144,19 +144,19 @@ math: true
 
 - 시스템이 제대로 동작하지 않는 상태
 
-![FailureTypes](/ComputerScience/DataBase/Image/ch10/FailureTypes.PNG)
+![FailureTypes](/DataBase/Image/ch10/FailureTypes.PNG)
 
 ### 데이터베이스 저장 장치 종류
 
-![DatabaseStorageTypes](/ComputerScience/DataBase/Image/ch10/DatabaseStorageTypes.PNG)
+![DatabaseStorageTypes](/DataBase/Image/ch10/DatabaseStorageTypes.PNG)
 
 ### 데이터 이동 연산
 
-![DataMovementOperations](/ComputerScience/DataBase/Image/ch10/DataMovementOperations.PNG)
+![DataMovementOperations](/DataBase/Image/ch10/DataMovementOperations.PNG)
 
 #### 디스크 & 메인 메모리 간 데이터 이동 연산
 
-![InputOutputOperations](/ComputerScience/DataBase/Image/ch10/InputOutputOperations.PNG)
+![InputOutputOperations](/DataBase/Image/ch10/InputOutputOperations.PNG)
 
 - input / output
 
@@ -179,7 +179,7 @@ math: true
 
 #### 메인 메모리 & 프로그램 변수 간 데이터 이동 연산
 
-![ReadWriteOperations](/ComputerScience/DataBase/Image/ch10/ReadWriteOperations.PNG)
+![ReadWriteOperations](/DataBase/Image/ch10/ReadWriteOperations.PNG)
 
 - read / write
 
@@ -223,17 +223,17 @@ math: true
 - 데이터 변경 이전 값과 변경 이후 값을 기록한 파일
 - 레코드 단위로 트랜잭션 수행과 함께 기록
 
-![LogFileStructure](/ComputerScience/DataBase/Image/ch10/LogFileStructure.PNG)
+![LogFileStructure](/DataBase/Image/ch10/LogFileStructure.PNG)
 
 ### 로그 기록 예시
 
 - 계좌 잔액이 10,000원인 성호가 계좌 잔액이 0원인 은경에게 5,000원 이체
 
-![LogFileExample](/ComputerScience/DataBase/Image/ch10/LogFileExample.PNG)
+![LogFileExample](/DataBase/Image/ch10/LogFileExample.PNG)
 
 ### 회복 기법
 
-![RecoveryMethods](/ComputerScience/DataBase/Image/ch10/RecoveryMethods.PNG)
+![RecoveryMethods](/DataBase/Image/ch10/RecoveryMethods.PNG)
 
 ### 로그 회복 기법 : 즉시 갱신(Immediate Update) 회복 기법
 
@@ -244,17 +244,17 @@ math: true
 
 #### 즉시 갱신 회복 기법 예시
 
-![ImmediateUpdateRecoveryExample](/ComputerScience/DataBase/Image/ch10/ImmediateUpdateRecoveryExample.PNG)
+![ImmediateUpdateRecoveryExample](/DataBase/Image/ch10/ImmediateUpdateRecoveryExample.PNG)
 
 - 데이터베이스 회복 전략
 
-![RecoveryStrategy](/ComputerScience/DataBase/Image/ch10/RecoveryStrategy.PNG)
+![RecoveryStrategy](/DataBase/Image/ch10/RecoveryStrategy.PNG)
 
 - 장애 발생 시 반영 결과
   - 1에서 장애 발생 : undo($T_1$)
   - 2에서 장애 발생 : undo($T_2$), redo($T_1$)
 
-![ImmediateUpdateRecoveryExample2](/ComputerScience/DataBase/Image/ch10/ImmediateUpdateRecoveryExample2.PNG)
+![ImmediateUpdateRecoveryExample2](/DataBase/Image/ch10/ImmediateUpdateRecoveryExample2.PNG)
 
 ### 로그 회복 기법 – 지연 갱신(Deferred Update) 회복 기법
 
@@ -270,13 +270,13 @@ math: true
 
 - 데이터베이스 회복 전략
 
-![RecoveryStrategy2](/ComputerScience/DataBase/Image/ch10/RecoveryStrategy2.PNG)
+![RecoveryStrategy2](/DataBase/Image/ch10/RecoveryStrategy2.PNG)
 
 - 장애 발생 시 반영 결과
   - 1에서 장애 발생 : 로그 기록 무시 후 별다른 회복 조치 X
   - 2에서 장애 발생 : redo($T_1$)
 
-![DeferredUpdateRecoveryExample](/ComputerScience/DataBase/Image/ch10/DeferredUpdateRecoveryExample.PNG)
+![DeferredUpdateRecoveryExample](/DataBase/Image/ch10/DeferredUpdateRecoveryExample.PNG)
 
 ### 검사 시점 회복 기법
 
@@ -332,7 +332,7 @@ math: true
 
 #### 검사 시점 회복 기법 예시
 
-![CheckpointRecoveryExample](/ComputerScience/DataBase/Image/ch10/CheckpointRecoveryExample.PNG)
+![CheckpointRecoveryExample](/DataBase/Image/ch10/CheckpointRecoveryExample.PNG)
 
 - 즉시 갱신 방법
   - T2, T3 : 어떤 작업도 필요 없음
@@ -381,12 +381,12 @@ math: true
 
   - $T_1$ 의 변경 연산 결과가 데이터베이스에 반영 X
 
-![LostUpdateExample](/ComputerScience/DataBase/Image/ch10/LostUpdateExample.PNG)
+![LostUpdateExample](/DataBase/Image/ch10/LostUpdateExample.PNG)
 
 - 해결 과정
   - 트랜잭션을 순차적으로 수행해서 갱신 분실 문제 방지
 
-![LostUpdateSolutionExample](/ComputerScience/DataBase/Image/ch10/LostUpdateSolutionExample.PNG)
+![LostUpdateSolutionExample](/DataBase/Image/ch10/LostUpdateSolutionExample.PNG)
 
 ### 모순성(Inconsistency)
 
@@ -399,12 +399,12 @@ math: true
 - 트랜잭션 $T_1$ 에 대한 모순성 발생
   - $T_1$ 이 데이터 X와 Y를 서로 다른 상태의 데이터베이스에서 가져와 실행하는 모순 발생
 
-![InconsistencyExample](/ComputerScience/DataBase/Image/ch10/InconsistencyExample.PNG)
+![InconsistencyExample](/DataBase/Image/ch10/InconsistencyExample.PNG)
 
 - 해결 과정
   - 트랜잭션을 순차적으로 수행해서 모순성 문제 방지
 
-![InconsistencySolutionExample](/ComputerScience/DataBase/Image/ch10/InconsistencySolutionExample.PNG)
+![InconsistencySolutionExample](/DataBase/Image/ch10/InconsistencySolutionExample.PNG)
 
 ### 연쇄 복귀(Cascading Rollback)
 
@@ -418,12 +418,12 @@ math: true
   - $T_1$ 이 변경한 데이터 X를 가져가 연산을 수행한 $T_2$ 도 rollback 연산이 연쇄적으로 실행되어야 함
   - 이미 완료된 상태라서 rollback 연산을 실행할 수 없는 문제
 
-![CascadingRollbackExample](/ComputerScience/DataBase/Image/ch10/CascadingRollbackExample.PNG)
+![CascadingRollbackExample](/DataBase/Image/ch10/CascadingRollbackExample.PNG)
 
 - 해결 과정
   - 트랜잭션을 순차적으로 수행해서 연쇄 복귀 문제 방지
 
-![CascadingRollbackSolutionExample](/ComputerScience/DataBase/Image/ch10/CascadingRollbackSolutionExample.PNG)
+![CascadingRollbackSolutionExample](/DataBase/Image/ch10/CascadingRollbackSolutionExample.PNG)
 
 ### 트랜잭션 스케줄
 
@@ -431,7 +431,7 @@ math: true
 
 ### 트랜잭션 스케줄 유형
 
-![ScheduleTypes](/ComputerScience/DataBase/Image/ch10/ScheduleTypes.PNG)
+![ScheduleTypes](/DataBase/Image/ch10/ScheduleTypes.PNG)
 
 ### 직렬 스케줄(Serial Schedule)
 
@@ -452,11 +452,11 @@ math: true
 
 - 트랜잭션 $T_1$, $T_2$ 대상 첫 번째 직렬 스케줄
 
-![SerialScheduleExample1](/ComputerScience/DataBase/Image/ch10/SerialScheduleExample1.PNG)
+![SerialScheduleExample1](/DataBase/Image/ch10/SerialScheduleExample1.PNG)
 
 - 트랜잭션 $T_1$, $T_2$ 대상 두 번째 직렬 스케줄
 
-![SerialScheduleExample2](/ComputerScience/DataBase/Image/ch10/SerialScheduleExample2.PNG)
+![SerialScheduleExample2](/DataBase/Image/ch10/SerialScheduleExample2.PNG)
 
 ### 비직렬 스케줄(Non-Serial Schedule)
 
@@ -476,11 +476,11 @@ math: true
 
 - 트랜잭션 $T_1$, $T_2$ 대상 첫 번째 비직렬 스케줄 : 성공
 
-![NonSerialScheduleExample1Success](/ComputerScience/DataBase/Image/ch10/NonSerialScheduleExample1Success.PNG)
+![NonSerialScheduleExample1Success](/DataBase/Image/ch10/NonSerialScheduleExample1Success.PNG)
 
 - 트랜잭션 $T_1$, $T_2$ 대상 두 번째 비직렬 스케줄 : 실패
 
-![NonSerialScheduleExample2Failure](/ComputerScience/DataBase/Image/ch10/NonSerialScheduleExample2Failure.PNG)
+![NonSerialScheduleExample2Failure](/DataBase/Image/ch10/NonSerialScheduleExample2Failure.PNG)
 
 ### 직렬 가능 스케줄(Serializable Schedule)
 
@@ -499,7 +499,7 @@ math: true
 
 - 트랜잭션 $T_1$, $T_2$ 대상 비직렬 스케줄이면서 정확한 수행 결과를 생성하므로 직렬 가능 스케줄
 
-![SerializableScheduleExample](/ComputerScience/DataBase/Image/ch10/SerializableScheduleExample.PNG)
+![SerializableScheduleExample](/DataBase/Image/ch10/SerializableScheduleExample.PNG)
 
 ### 병행 제어 기법
 
@@ -546,7 +546,7 @@ math: true
 
 - 한 개의 데이터에 두 개의 트랜잭션이 접근해 갱신하는 작업
 
-![TwoTransactionUpdate](/ComputerScience/DataBase/Image/ch10/TwoTransactionUpdate.PNG)
+![TwoTransactionUpdate](/DataBase/Image/ch10/TwoTransactionUpdate.PNG)
 
 ### MySQL 실습
 
@@ -555,13 +555,13 @@ math: true
   - LAB1과 동일한 내용의 LAB2 생성
   - 워크시트를 LAB1과 LAB2로 두 번 접속 후 진행
 
-![TwoTransactionUpdateExample1](/ComputerScience/DataBase/Image/ch10/TwoTransactionUpdateExample1.PNG)
+![TwoTransactionUpdateExample1](/DataBase/Image/ch10/TwoTransactionUpdateExample1.PNG)
 
-![TwoTransactionUpdateExample2](/ComputerScience/DataBase/Image/ch10/TwoTransactionUpdateExample2.PNG)
+![TwoTransactionUpdateExample2](/DataBase/Image/ch10/TwoTransactionUpdateExample2.PNG)
 
 #### 로킹 기법 예시
 
-![LockingTechniqueExample](/ComputerScience/DataBase/Image/ch10/LockingTechniqueExample.PNG)
+![LockingTechniqueExample](/DataBase/Image/ch10/LockingTechniqueExample.PNG)
 
 ### 기본 로킹 규약 효율성 증가 방법
 
@@ -597,7 +597,7 @@ math: true
 
 ### lock 연산 양립성
 
-![LockCompatibility](/ComputerScience/DataBase/Image/ch10/LockCompatibility.PNG)
+![LockCompatibility](/DataBase/Image/ch10/LockCompatibility.PNG)
 
 - 서로 다른 트랜잭션이 같은 데이터에 공용 lock 연산 동시 실행 가능
 - 다른 트랜잭션이 전용 lock 연산을 실행한 데이터에 공용 lock, 전용 lock 모두 실행 불가
@@ -607,7 +607,7 @@ math: true
 - 트랜잭션 $T_1$ 이 데이터 X에 너무 빨리 unlock 연산을 실행해 트랜잭션 $T_2$가 일관성 없는 데이터에 접근
   - 2단계 로킹 규약 필요
 
-![BasicLockingIssueExample](/ComputerScience/DataBase/Image/ch10/BasicLockingIssueExample.PNG)
+![BasicLockingIssueExample](/DataBase/Image/ch10/BasicLockingIssueExample.PNG)
 
 ### 2단계 로킹 규약(2PLP : 2Phase Locking Protocol)
 
@@ -635,7 +635,7 @@ math: true
 
 - 2단계 로킹 규약을 준수하며 직렬 가능성이 보장된 스케줄
 
-![TwoPhaseLockingProtocolExample](/ComputerScience/DataBase/Image/ch10/TwoPhaseLockingProtocolExample.PNG)
+![TwoPhaseLockingProtocolExample](/DataBase/Image/ch10/TwoPhaseLockingProtocolExample.PNG)
 
 ### 교착 상태(Deadlock)
 
@@ -647,7 +647,7 @@ math: true
 
 ### 트랜잭션 시나리오
 
-![TransactionIsolationScenario](/ComputerScience/DataBase/Image/ch10/TransactionIsolationScenario.PNG)
+![TransactionIsolationScenario](/DataBase/Image/ch10/TransactionIsolationScenario.PNG)
 
 ### 오손 읽기(Uncommitted Dependency)
 
@@ -670,7 +670,7 @@ FROM USERS;
 COMMIT;
 ```
 
-![UserTableExample](/ComputerScience/DataBase/Image/ch10/UserTableExample.PNG)
+![UserTableExample](/DataBase/Image/ch10/UserTableExample.PNG)
 
 ### 오손 읽기 문제 발생 예제
 
@@ -691,7 +691,7 @@ COMMIT;
 
 - $T_2$ 가 홍길동의 나이를 30에서 21로 변경한 후 철회(ROLLBACK)해 $T_1$ 에게 오류를 발생시킨 예시
 
-![DirtyReadProblemExample](/ComputerScience/DataBase/Image/ch10/DirtyReadProblemExample.PNG)
+![DirtyReadProblemExample](/DataBase/Image/ch10/DirtyReadProblemExample.PNG)
 
 ### 반복 불가능 읽기(Inconsistent Analysis)
 
@@ -716,7 +716,7 @@ COMMIT;
 
 #### 문제 발생 예시 상황
 
-![NonRepeatableReadProblemExample](/ComputerScience/DataBase/Image/ch10/NonRepeatableReadProblemExample.PNG)
+![NonRepeatableReadProblemExample](/DataBase/Image/ch10/NonRepeatableReadProblemExample.PNG)
 
 ### 유령 데이터 읽기(Phantom Read)
 
@@ -743,7 +743,7 @@ COMMIT;
   - REPEATABLE READ는 트랜잭션이 처음 데이터를 읽을 때 SNAPHOT을 구축하여 자료를 가지고 옴
   - 세션 자료가 변경되어도 동일 결과
 
-![PhantomReadProblemExample](/ComputerScience/DataBase/Image/ch10/PhantomReadProblemExample.PNG)
+![PhantomReadProblemExample](/DataBase/Image/ch10/PhantomReadProblemExample.PNG)
 
 ### 트랜잭션 고립 수준 명령어(Transaction Isolation Level Instruction)
 
@@ -822,18 +822,18 @@ COMMIT;
 
 #### 문제 발생 : 반복 불가능 읽기 문제
 
-![NonRepeatableReadExperiment1](/ComputerScience/DataBase/Image/ch10/NonRepeatableReadExperiment1.PNG)
+![NonRepeatableReadExperiment1](/DataBase/Image/ch10/NonRepeatableReadExperiment1.PNG)
 
 #### 문제 방지 : REPEATABLE READ 모드
 
-![NonRepeatableReadExperiment2](/ComputerScience/DataBase/Image/ch10/NonRepeatableReadExperiment2.PNG)
+![NonRepeatableReadExperiment2](/DataBase/Image/ch10/NonRepeatableReadExperiment2.PNG)
 
 ### 유령 데이터 읽기 문제 발생 실험
 
 #### 문제 발생 : 유령 데이터 읽기 문제
 
-![PhantomReadExperiment1](/ComputerScience/DataBase/Image/ch10/PhantomReadExperiment1.PNG)
+![PhantomReadExperiment1](/DataBase/Image/ch10/PhantomReadExperiment1.PNG)
 
 #### 문제 방지 : SERIALIZABLE 모드
 
-![PhantomReadExperiment2](/ComputerScience/DataBase/Image/ch10/PhantomReadExperiment2.PNG)
+![PhantomReadExperiment2](/DataBase/Image/ch10/PhantomReadExperiment2.PNG)

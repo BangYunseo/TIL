@@ -1,7 +1,7 @@
 ---
 title: "Chapter 9. 정규화(Normalization)"
 date: 2024-06-29 23:26:43 +0900
-categories: [ComputerScience, DataBase]
+categories: [DataBase]
 ---
 
 ## 1절. 개념
@@ -19,21 +19,21 @@ categories: [ComputerScience, DataBase]
 
 #### 삽입 이상(Insertion Anomaly) 예시
 
-![InsertionAnomalyExample](/ComputerScience/DataBase/Image/ch09/InsertionAnomalyExample.PNG)
+![InsertionAnomalyExample](/DataBase/Image/ch09/InsertionAnomalyExample.PNG)
 
 - 아직 이벤트에 참여하지 않은 고객아이디가 "melon", 이름이 "성원용", 등급이 "gold"인 신규 고객의 데이터는 이벤트참여 릴레이션에 삽입 불가
 - 삽입할 경우 임시 이벤트번호로 삽입 필수
 
 #### 갱신 이상(Update Anomaly) 예시
 
-![UpdateAnomalyExample](/ComputerScience/DataBase/Image/ch09/UpdateAnomalyExample.PNG)
+![UpdateAnomalyExample](/DataBase/Image/ch09/UpdateAnomalyExample.PNG)
 
 - 아이디가 "apple"인 고객의 등급이 "gold"에서 "vip"로 변경 : 일부 튜플 등급만 수정
 - "apple" 고객이 서로 다른 등급을 가지는 모순 발생
 
 #### 삭제 이상(Deletion Anomaly) 예시
 
-![DeletionAnomalyExample](/ComputerScience/DataBase/Image/ch09/DeletionAnomalyExample.PNG)
+![DeletionAnomalyExample](/DataBase/Image/ch09/DeletionAnomalyExample.PNG)
 
 - 아이디가 "orange"인 고객이 이벤트참여를 취소해 관련 튜플 삭제 필요
 - 이벤트참여와 관련 없는 고객아이디, 고객이름, 등급 데이터까지 손실
@@ -53,7 +53,7 @@ categories: [ComputerScience, DataBase]
 
 ### 함수 종속
 
-![FunctionalDependencyDefinition](/ComputerScience/DataBase/Image/ch09/FunctionalDependencyDefinition.PNG)
+![FunctionalDependencyDefinition](/DataBase/Image/ch09/FunctionalDependencyDefinition.PNG)
 
 > "X가 Y를 함수적으로 결정"  
 > "Y가 X에 함수적으로 종속"
@@ -66,7 +66,7 @@ categories: [ComputerScience, DataBase]
 
 #### 함수 종속 관계 판단 예시(1)
 
-![UserRelationshipExample](/ComputerScience/DataBase/Image/ch09/UserRelationshipExample.PNG)
+![UserRelationshipExample](/DataBase/Image/ch09/UserRelationshipExample.PNG)
 
 - 고객아이디에 대응되는 고객이름 속성과 등급 속성이 단 하나
 
@@ -78,7 +78,7 @@ categories: [ComputerScience, DataBase]
 
 - 종속 다이어그램
 
-![UserDependencyDiagram](/ComputerScience/DataBase/Image/ch09/UserDependencyDiagram.PNG)
+![UserDependencyDiagram](/DataBase/Image/ch09/UserDependencyDiagram.PNG)
 
 ### 함수 종속 관계 판단 유의 사항
 
@@ -90,7 +90,7 @@ categories: [ComputerScience, DataBase]
 
 #### 함수 종속 관계 판단 예시(1)
 
-![EventRelationshipExample](/ComputerScience/DataBase/Image/ch09/EventRelationshipExample.PNG)
+![EventRelationshipExample](/DataBase/Image/ch09/EventRelationshipExample.PNG)
 
 |          결정자          | ->  | 종속자   |
 | :----------------------: | :-: | :------- |
@@ -98,7 +98,7 @@ categories: [ComputerScience, DataBase]
 | {고객아이디, 이벤트번호} | ->  | 당첨여부 |
 | {고객아이디, 이벤트번호} | ->  | 고객이름 |
 
-![UserEventDependencyDiagram](/ComputerScience/DataBase/Image/ch09/UserEventDependencyDiagram.PNG)
+![UserEventDependencyDiagram](/DataBase/Image/ch09/UserEventDependencyDiagram.PNG)
 
 - 종속 다이어그램
 
@@ -106,7 +106,7 @@ categories: [ComputerScience, DataBase]
 
 - 함수 종속성을 나타내는 표기법
 
-![FunctionalDependencyDiagramNotation](/ComputerScience/DataBase/Image/ch09/FunctionalDependencyDiagramNotation.PNG)
+![FunctionalDependencyDiagramNotation](/DataBase/Image/ch09/FunctionalDependencyDiagramNotation.PNG)
 
 |        종류         |    표기법     |
 | :-----------------: | :-----------: |
@@ -155,7 +155,7 @@ categories: [ComputerScience, DataBase]
 
 ### 정규형(NF : Normal Form)
 
-| ![NormalFormHierarchy1](/ComputerScience/DataBase/Image/ch09/NormalFormHierarchy1.PNG) | ![NormalFormHierarchy2](/ComputerScience/DataBase/Image/ch09/NormalFormHierarchy2.PNG) |
+| ![NormalFormHierarchy1](/DataBase/Image/ch09/NormalFormHierarchy1.PNG) | ![NormalFormHierarchy2](/DataBase/Image/ch09/NormalFormHierarchy2.PNG) |
 | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 
 - 릴레이션 정규화 정도
@@ -172,16 +172,16 @@ categories: [ComputerScience, DataBase]
 
 #### 제 1 정규형 예시
 
-| ![FirstNormalFormExample1](/ComputerScience/DataBase/Image/ch09/FirstNormalFormExample1.PNG) | ![FirstNormalFormExample2](/ComputerScience/DataBase/Image/ch09/FirstNormalFormExample2.PNG) |
+| ![FirstNormalFormExample1](/DataBase/Image/ch09/FirstNormalFormExample1.PNG) | ![FirstNormalFormExample2](/DataBase/Image/ch09/FirstNormalFormExample2.PNG) |
 | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 
 |                                            함수 종속 관계                                            |                                                     함수 종속 다이어그램                                                     |
 | :--------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
-| 고객아이디 -> 등급<br>고객아이디 -> 할인율<br>등급 -> 할인율<br>{고객아이디, 이벤트번호} -> 당첨여부 | ![FirstNormalFormDependencyDiagram](/ComputerScience/DataBase/Image/ch09/FirstNormalFormDependencyDiagram.PNG) |
+| 고객아이디 -> 등급<br>고객아이디 -> 할인율<br>등급 -> 할인율<br>{고객아이디, 이벤트번호} -> 당첨여부 | ![FirstNormalFormDependencyDiagram](/DataBase/Image/ch09/FirstNormalFormDependencyDiagram.PNG) |
 
 - 이상 현상 발생 형태
 
-![FirstNormalFormAnomalyIssue](/ComputerScience/DataBase/Image/ch09/FirstNormalFormAnomalyIssue.PNG)
+![FirstNormalFormAnomalyIssue](/DataBase/Image/ch09/FirstNormalFormAnomalyIssue.PNG)
 
 #### 이상 현상 발생 이유
 
@@ -204,15 +204,15 @@ categories: [ComputerScience, DataBase]
 
 #### 제 2 정규형 예시
 
-![SecondNormalFormExample](/ComputerScience/DataBase/Image/ch09/SecondNormalFormExample.PNG)
+![SecondNormalFormExample](/DataBase/Image/ch09/SecondNormalFormExample.PNG)
 
 |                                                     함수 종속 다이어그램                                                     |                                                      릴레이션 분해 결과                                                      |
 | :--------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
-| ![SecondNormalFormDependencyDiagram](/ComputerScience/DataBase/Image/ch09/SecondNormalFormDependencyDiagram.PNG) | ![SecondNormalFormDecompositionResult](/ComputerScience/DataBase/Image/ch09/SecondNormalFormDecompositionResult.PNG) |
+| ![SecondNormalFormDependencyDiagram](/DataBase/Image/ch09/SecondNormalFormDependencyDiagram.PNG) | ![SecondNormalFormDecompositionResult](/DataBase/Image/ch09/SecondNormalFormDecompositionResult.PNG) |
 
 #### 고객 릴레이션 이상 현상
 
-![SecondNormalFormAnomalyIssue](/ComputerScience/DataBase/Image/ch09/SecondNormalFormAnomalyIssue.PNG)
+![SecondNormalFormAnomalyIssue](/DataBase/Image/ch09/SecondNormalFormAnomalyIssue.PNG)
 
 #### 이상 현상 발생 이유
 
@@ -225,7 +225,7 @@ categories: [ComputerScience, DataBase]
 
 ### 이행적 함수 종속(Transitive FD)
 
-![TransitiveFunctionalDependency](/ComputerScience/DataBase/Image/ch09/TransitiveFunctionalDependency.PNG)
+![TransitiveFunctionalDependency](/DataBase/Image/ch09/TransitiveFunctionalDependency.PNG)
 
 - 릴레이션을 구성하는 속성 집합 X, Y, Z에 대해 함수 종속 관계 X -> Y와 Y -> Z가 존재하면 논리적으로 X -> Z 성립
   - Z가 X에 이행적으로 함수 종속
@@ -240,11 +240,11 @@ categories: [ComputerScience, DataBase]
 
 #### 제 3 정규형 예시
 
-![ThirdNormalFormExample](/ComputerScience/DataBase/Image/ch09/ThirdNormalFormExample.PNG)
+![ThirdNormalFormExample](/DataBase/Image/ch09/ThirdNormalFormExample.PNG)
 
 |                                                     함수 종속 다이어그램                                                     |
 | :--------------------------------------------------------------------------------------------------------------------------: |
-| ![ThirdNormalFormDependencyDiagram](/ComputerScience/DataBase/Image/ch09/ThirdNormalFormDependencyDiagram.PNG) |
+| ![ThirdNormalFormDependencyDiagram](/DataBase/Image/ch09/ThirdNormalFormDependencyDiagram.PNG) |
 
 ### 보이스/코드 정규형(BCNF : Boyce Codd Normal Form)
 
@@ -256,7 +256,7 @@ categories: [ComputerScience, DataBase]
 
 #### 보이스/코드 정규형 예시
 
-![BoyceCoddNormalFormExample](/ComputerScience/DataBase/Image/ch09/BoyceCoddNormalFormExample.PNG)
+![BoyceCoddNormalFormExample](/DataBase/Image/ch09/BoyceCoddNormalFormExample.PNG)
 
 - 강좌신청 릴레이션 후보키
   - {고객아이디, 인터넷강좌} : 기본키
@@ -264,11 +264,11 @@ categories: [ComputerScience, DataBase]
 
 |                                                     함수 종속 다이어그램                                                      |                                                           이상 현상                                                           |
 | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
-| ![BoyceCoddNormalFormDependencyDiagram](/ComputerScience/DataBase/Image/ch09/BoyceCoddNormalFormDependencyDiagram.PNG) | ![BoyceCoddNormalFormAnomalyIssue](/ComputerScience/DataBase/Image/ch09/BoyceCoddNormalFormAnomalyIssue.PNG) |
+| ![BoyceCoddNormalFormDependencyDiagram](/DataBase/Image/ch09/BoyceCoddNormalFormDependencyDiagram.PNG) | ![BoyceCoddNormalFormAnomalyIssue](/DataBase/Image/ch09/BoyceCoddNormalFormAnomalyIssue.PNG) |
 
 ### 기본 정규화 과정
 
-![AllNormalizationProcessFlow](/ComputerScience/DataBase/Image/ch09/AllNormalizationProcessFlow.PNG)
+![AllNormalizationProcessFlow](/DataBase/Image/ch09/AllNormalizationProcessFlow.PNG)
 
 ### 제 4 정규형
 

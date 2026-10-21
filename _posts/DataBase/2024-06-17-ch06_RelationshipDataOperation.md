@@ -1,7 +1,7 @@
 ---
 title: "Chapter 6. 관계 데이터 연산(Relationship Data Operation)"
 date: 2024-06-17 22:56:32 +0900
-categories: [ComputerScience, DataBase]
+categories: [DataBase]
 math: true
 ---
 
@@ -18,7 +18,7 @@ math: true
 
 ### 데이터 모델 구성
 
-![DataModelStructure](/ComputerScience/DataBase/Image/ch06/DataModelStructure.PNG)
+![DataModelStructure](/DataBase/Image/ch06/DataModelStructure.PNG)
 
 | 데이터 구조 종류 | 설명                                                                            |
 | :--------------: | :------------------------------------------------------------------------------ |
@@ -35,7 +35,7 @@ math: true
 | 관계 대수 |
 | 관계 해석 |
 
-![RDOTypes](/ComputerScience/DataBase/Image/ch06/RDOTypes.PNG){ width="70%" }
+![RDOTypes](/DataBase/Image/ch06/RDOTypes.PNG){ width="70%" }
 
 ### 관계 대수와 관계 해석 역할
 
@@ -47,7 +47,7 @@ math: true
 
 ### 관계 대수(Relational Algebra)
 
-![RelationalAlgebra](/ComputerScience/DataBase/Image/ch06/RelationalAlgebra.PNG)
+![RelationalAlgebra](/DataBase/Image/ch06/RelationalAlgebra.PNG)
 
 - 절차적 언어(Procedural Language)
 - 원하는 결과를 위해 릴레이션 처리 과정을 순서대로 기술하는 언어
@@ -68,7 +68,7 @@ math: true
 | 차집합          |  -   | R - S | 릴레이션 R과 S의 차집합 반환                                                     |
 | 카티션 프로덕트 |  ✕   | R ✕ S | 릴레이션 R의 각 튜플과 릴레이션 S의 각 튜플을 모두 연결 후 만든 새로운 튜플 반환 |
 
-![SetOperators](/ComputerScience/DataBase/Image/ch06/SetOperators.PNG){ width="70%" }
+![SetOperators](/DataBase/Image/ch06/SetOperators.PNG){ width="70%" }
 
 | 특성                             | 조건                          |
 | :------------------------------- | :---------------------------- |
@@ -80,7 +80,7 @@ math: true
 | 두 릴레이션의 동등한 차수                      |
 | 두 릴레이션에서 서로 대응되는 속성 도메인 일치 |
 
-![UnionCompatibleConditions](/ComputerScience/DataBase/Image/ch06/UnionCompatibleConditions.PNG){ width="70%" }
+![UnionCompatibleConditions](/DataBase/Image/ch06/UnionCompatibleConditions.PNG){ width="70%" }
 
 #### 합집합(Union) : R ∪ S
 
@@ -98,7 +98,7 @@ math: true
 |       교환적 특징       | R ∪ S = S ∪ R                |
 |       결합적 특징       | (R ∪ S) ∪ T = R ∪ (S ∪ T)    |
 
-![UnionExample](/ComputerScience/DataBase/Image/ch06/UnionExample.PNG){ width="70%" }
+![UnionExample](/DataBase/Image/ch06/UnionExample.PNG){ width="70%" }
 
 #### 2. 교집합(Intersection) : R ∩ S
 
@@ -115,7 +115,7 @@ math: true
 |       교환적 특징       | R ∩ S = S ∩ R                |
 |       결합적 특징       | (R ∩ S) ∩ T = R ∩ (S ∩ T)    |
 
-![IntersectionExample](/ComputerScience/DataBase/Image/ch06/IntersectionExample.PNG)
+![IntersectionExample](/DataBase/Image/ch06/IntersectionExample.PNG)
 
 #### 3. 차집합(Difference) : R - S
 
@@ -132,7 +132,7 @@ math: true
 |       교환적 특징       | 없음                                           |
 |       결합적 특징       | 없음                                           |
 
-![DifferenceExample](/ComputerScience/DataBase/Image/ch06/DifferenceExample.PNG)
+![DifferenceExample](/DataBase/Image/ch06/DifferenceExample.PNG)
 
 #### 4. 카티션 프로덕트(Cartesian Product) : R ✕ S
 
@@ -149,7 +149,7 @@ math: true
 |       교환적 특징       | R ✕ S · S ✕ R                                   |
 |       결합적 특징       | (R ✕ S) ✕ T = R ✕ (S ✕ T)                       |
 
-![CartesianProduct](/ComputerScience/DataBase/Image/ch06/CartesianProduct.PNG)
+![CartesianProduct](/DataBase/Image/ch06/CartesianProduct.PNG)
 
 ### 순수 관계 연산자(Relational Operation)
 
@@ -162,7 +162,7 @@ math: true
 | 조인     |  ⋈   | R ⋈ S               | 공통 속성으로 릴레이션 R과 S의 튜플들을 연결하여 만든 새로운 튜플들 반환 |
 | 디비전   |  ÷   | R ÷ S               | 릴레이션 S의 모든 튜플과 관련이 있는 릴레이션 R의 튜플들 반환            |
 
-![RelationalOperators](/ComputerScience/DataBase/Image/ch06/RelationalOperators.PNG){ width="70%" }
+![RelationalOperators](/DataBase/Image/ch06/RelationalOperators.PNG){ width="70%" }
 
 #### 1. 셀렉트(Select) · 셀렉션(Selection)
 
@@ -184,18 +184,18 @@ math: true
   - 비교 연산자(> · ≥ · < · ≤ · = · ≠)
   - 논리 연산자(∧(and), ∨(or), ¬(not))
 
-![OperationRelation](/ComputerScience/DataBase/Image/ch06/OperationRelation.PNG){ width="70%" }
+![OperationRelation](/DataBase/Image/ch06/OperationRelation.PNG){ width="70%" }
 
 #### 셀렉션 연산 예시
 
 - 고객 릴레이션
 
-![CustomerRelation](/ComputerScience/DataBase/Image/ch06/CustomerRelation.PNG){ width="70%" }
+![CustomerRelation](/DataBase/Image/ch06/CustomerRelation.PNG){ width="70%" }
 
-| ex 1 : 등급이 gold인 튜플 검색 | ![SelectionExample1](/ComputerScience/DataBase/Image/ch06/SelectionExample1.PNG) |
+| ex 1 : 등급이 gold인 튜플 검색 | ![SelectionExample1](/DataBase/Image/ch06/SelectionExample1.PNG) |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 등급이 gold이고 적립금이 2000 이상인 튜플 검색 | ![SelectionExample2](/ComputerScience/DataBase/Image/ch06/SelectionExample2.PNG) |
+| ex 2 : 등급이 gold이고 적립금이 2000 이상인 튜플 검색 | ![SelectionExample2](/DataBase/Image/ch06/SelectionExample2.PNG) |
 | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 
 ### 2. 프로젝트(Project) · 프로젝션(Projection)
@@ -213,17 +213,17 @@ math: true
 
 - 수직적 부분 집합 의미
 
-![ProjectionVerticalSubset](/ComputerScience/DataBase/Image/ch06/ProjectionVerticalSubset.PNG){ width="70%" }
+![ProjectionVerticalSubset](/DataBase/Image/ch06/ProjectionVerticalSubset.PNG){ width="70%" }
 
 #### 프로젝션 연산 예시
 
-| ex 1 : 고객 릴레이션의 이름 · 주소 · 핸드폰 프로젝션 | ![ProjectionExample1](/ComputerScience/DataBase/Image/ch06/ProjectionExample1.PNG) |
+| ex 1 : 고객 릴레이션의 이름 · 주소 · 핸드폰 프로젝션 | ![ProjectionExample1](/DataBase/Image/ch06/ProjectionExample1.PNG) |
 | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 
-| ex 2 : 고객이름, 등급, 적립금 검색 | ![ProjectionExample2](/ComputerScience/DataBase/Image/ch06/ProjectionExample2.PNG) |
+| ex 2 : 고객이름, 등급, 적립금 검색 | ![ProjectionExample2](/DataBase/Image/ch06/ProjectionExample2.PNG) |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 3 : 등급 검색<br>- 동일한 튜플은 중복 없이 한 번만 출력 | ![ProjectionExample3](/ComputerScience/DataBase/Image/ch06/ProjectionExample3.PNG) |
+| ex 3 : 등급 검색<br>- 동일한 튜플은 중복 없이 한 번만 출력 | ![ProjectionExample3](/DataBase/Image/ch06/ProjectionExample3.PNG) |
 | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 
 ### 3. 조인(Join)
@@ -239,18 +239,18 @@ math: true
 |     다른 표현      | 동등 조인(equi-join)         |
 |     조인 속성      | 두 릴레이션의 공통 속성      |
 
-| ex 1 : 고객 릴레이션의 '고객아이디'와 주문 릴레이션의 '고객아이디' 조인 | ![ProjectionExample3](/ComputerScience/DataBase/Image/ch06/ProjectionExample3.PNG) |
+| ex 1 : 고객 릴레이션의 '고객아이디'와 주문 릴레이션의 '고객아이디' 조인 | ![ProjectionExample3](/DataBase/Image/ch06/ProjectionExample3.PNG) |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 정소화 고객이 주문한 제품 검색 | ![JoinExample1](/ComputerScience/DataBase/Image/ch06/JoinExample1.PNG) |
+| ex 2 : 정소화 고객이 주문한 제품 검색 | ![JoinExample1](/DataBase/Image/ch06/JoinExample1.PNG) |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 
-| ex 2 - 1 : 릴레이션 소속 구분을 위해 '릴레이션.속성' 형식 표기 | ![JoinExample2](/ComputerScience/DataBase/Image/ch06/JoinExample2.PNG) |
+| ex 2 - 1 : 릴레이션 소속 구분을 위해 '릴레이션.속성' 형식 표기 | ![JoinExample2](/DataBase/Image/ch06/JoinExample2.PNG) |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 
 ### 조인 종류
 
-![JoinTypes](/ComputerScience/DataBase/Image/ch06/JoinTypes.PNG)
+![JoinTypes](/DataBase/Image/ch06/JoinTypes.PNG)
 
 ### 세타 조인(theta-join, θ-join)
 
@@ -282,10 +282,10 @@ math: true
 
 #### 자연 조인 예시
 
-| ex 1 : 고객과 주문 릴레이션 | ![NaturalJoinExample1](/ComputerScience/DataBase/Image/ch06/NaturalJoinExample1.PNG) |
+| ex 1 : 고객과 주문 릴레이션 | ![NaturalJoinExample1](/DataBase/Image/ch06/NaturalJoinExample1.PNG) |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 2개의 속성으로 이루어진 조인 속성 | ![NaturalJoinExample2](/ComputerScience/DataBase/Image/ch06/NaturalJoinExample2.PNG) |
+| ex 2 : 2개의 속성으로 이루어진 조인 속성 | ![NaturalJoinExample2](/DataBase/Image/ch06/NaturalJoinExample2.PNG) |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 
 ### 4. 디비전(Division)
@@ -300,28 +300,28 @@ math: true
 | :----------------: | :---------------------- |
 |   수학적 표현법    | 릴레이션 1 ÷ 릴레이션 2 |
 
-![Division](/ComputerScience/DataBase/Image/ch06/Division.PNG){ width="70%" }
+![Division](/DataBase/Image/ch06/Division.PNG){ width="70%" }
 
 #### 디비전 예시
 
-| ex 1 : 고객과 우수등급 릴레이션 | ![DivisionExample1](/ComputerScience/DataBase/Image/ch06/DivisionExample1.PNG) |
+| ex 1 : 고객과 우수등급 릴레이션 | ![DivisionExample1](/DataBase/Image/ch06/DivisionExample1.PNG) |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 주문내역, 제품1, 제품2 릴레이션 | ![DivisionExample2](/ComputerScience/DataBase/Image/ch06/DivisionExample2.PNG) |
+| ex 2 : 주문내역, 제품1, 제품2 릴레이션 | ![DivisionExample2](/DataBase/Image/ch06/DivisionExample2.PNG) |
 | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 
 ### 관계 대수 질의 표현
 
-| 사용할 고객 릴레이션과 주문 릴레이션 | ![QueryRelations](/ComputerScience/DataBase/Image/ch06/QueryRelations.PNG) |
+| 사용할 고객 릴레이션과 주문 릴레이션 | ![QueryRelations](/DataBase/Image/ch06/QueryRelations.PNG) |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 1 : 등급이 gold인 고객의 이름과 나이 | ![QueryExample1](/ComputerScience/DataBase/Image/ch06/QueryExample1.PNG) |
+| ex 1 : 등급이 gold인 고객의 이름과 나이 | ![QueryExample1](/DataBase/Image/ch06/QueryExample1.PNG) |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 고객이름이 원유선인 고객의 등급과 원유선 고객이 주문한 주문제품, 수량 | ![QueryExample2Result](/ComputerScience/DataBase/Image/ch06/QueryExample2Result.PNG) |
+| ex 2 : 고객이름이 원유선인 고객의 등급과 원유선 고객이 주문한 주문제품, 수량 | ![QueryExample2Result](/DataBase/Image/ch06/QueryExample2Result.PNG) |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 3 : 주문 수량이 10개 미만인 주문 내역을 제외한 검색 | ![QueryExample3Result](/ComputerScience/DataBase/Image/ch06/QueryExample3Result.PNG) |
+| ex 3 : 주문 수량이 10개 미만인 주문 내역을 제외한 검색 | ![QueryExample3Result](/DataBase/Image/ch06/QueryExample3Result.PNG) |
 | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
 
 ## 2.5절. 확장 관계 대수 연산자
@@ -345,10 +345,10 @@ math: true
 
 #### 세미 조인 예시
 
-| ex 1 : 고객 릴레이션과 주문 릴레이션 세미 조인 | ![SemiJoinExample1](/ComputerScience/DataBase/Image/ch06/SemiJoinExample1.PNG) |
+| ex 1 : 고객 릴레이션과 주문 릴레이션 세미 조인 | ![SemiJoinExample1](/DataBase/Image/ch06/SemiJoinExample1.PNG) |
 | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 왼쪽이 닫힌 세미 조인 | ![SemiJoinExample2](/ComputerScience/DataBase/Image/ch06/SemiJoinExample2.PNG) |
+| ex 2 : 왼쪽이 닫힌 세미 조인 | ![SemiJoinExample2](/DataBase/Image/ch06/SemiJoinExample2.PNG) |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 
 ### 외부 조인(Outer Join)
@@ -370,17 +370,17 @@ math: true
 
 - 왼쪽 릴레이션 1에 존재하는 모든 튜플을 결과 릴레이션에 포함
 
-| ex 1 : 왼쪽 외부 조인 예시 | ![LeftOuterJoinExample1](/ComputerScience/DataBase/Image/ch06/LeftOuterJoinExample1.PNG) |
+| ex 1 : 왼쪽 외부 조인 예시 | ![LeftOuterJoinExample1](/DataBase/Image/ch06/LeftOuterJoinExample1.PNG) |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 
-| ex 2 : 고객 릴레이션과 주문 릴레이션 왼쪽 외부 조인 연산 | ![LeftOuterJoinExample2](/ComputerScience/DataBase/Image/ch06/LeftOuterJoinExample2.PNG) |
+| ex 2 : 고객 릴레이션과 주문 릴레이션 왼쪽 외부 조인 연산 | ![LeftOuterJoinExample2](/DataBase/Image/ch06/LeftOuterJoinExample2.PNG) |
 | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 
 #### 오른쪽 외부 조인(RIGHT OUTER JOIN)
 
 - 오른쪽 릴레이션 2에 존재하는 모든 튜플을 결과 릴레이션에 포함
 
-| ex 1 : 오른쪽 외부 조인 예시 | ![RightOuterJoinExample1](/ComputerScience/DataBase/Image/ch06/RightOuterJoinExample1.PNG) |
+| ex 1 : 오른쪽 외부 조인 예시 | ![RightOuterJoinExample1](/DataBase/Image/ch06/RightOuterJoinExample1.PNG) |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 
 - 주문 릴레이션(릴레이션 2)에 만약 조인 연산에 참여하지 않는 튜플이 없는 경우
@@ -390,10 +390,10 @@ math: true
 
 - 두 릴레이션에 있는 모든 튜플을 결과 릴레이션에 포함
 
-| ex 1 : 완전 외부 조인 예시 | ![FullOuterJoinExample1](/ComputerScience/DataBase/Image/ch06/FullOuterJoinExample1.PNG) |
+| ex 1 : 완전 외부 조인 예시 | ![FullOuterJoinExample1](/DataBase/Image/ch06/FullOuterJoinExample1.PNG) |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 
-| ex 2 : 완전 외부 조인 예시 | ![FullOuterJoinExample2](/ComputerScience/DataBase/Image/ch06/FullOuterJoinExample2.PNG) |
+| ex 2 : 완전 외부 조인 예시 | ![FullOuterJoinExample2](/DataBase/Image/ch06/FullOuterJoinExample2.PNG) |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 
 - 고객 릴레이션(릴레이션 1)에만 조인 연산에 참여하지 않는 튜플 존재
@@ -401,7 +401,7 @@ math: true
 
 ### 외부 조인 정리(OUTER JOIN)
 
-![OuterJoinSummary](/ComputerScience/DataBase/Image/ch06/OuterJoinSummary.PNG)
+![OuterJoinSummary](/DataBase/Image/ch06/OuterJoinSummary.PNG)
 
 ### 관계 대수 연산자 총정리
 

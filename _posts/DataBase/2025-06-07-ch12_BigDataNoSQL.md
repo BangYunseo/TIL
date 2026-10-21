@@ -1,14 +1,14 @@
 ---
 title: "Chapter 12. 빅데이터와 NoSQL"
 date: 2025-06-07 19:50:21 +0900
-categories: [ComputerScience, DataBase]
+categories: [DataBase]
 ---
 
 ## 1절. 빅데이터
 
 ### 빅데이터 주요 기술
 
-![BigDataKeyTechnology](/ComputerScience/DataBase/Image/ch12/BigDataKeyTechnology.PNG)
+![BigDataKeyTechnology](/DataBase/Image/ch12/BigDataKeyTechnology.PNG)
 
 - 대용량 데이터 저장소 구축
 - 적합 데이터 분석 모형 적용 후 탐색 분석 및 시각화
@@ -53,7 +53,7 @@ categories: [ComputerScience, DataBase]
 
 ### 아파치 하둡
 
-![ApacheHadoop](/ComputerScience/DataBase/Image/ch12/ApacheHadoop.PNG)
+![ApacheHadoop](/DataBase/Image/ch12/ApacheHadoop.PNG)
 
 - 빅데이터는 큰 규모로 처리 시간 문제점 때문에 여러 서버에 분석 작업을 분배 후 결과를 조합하는 분산 병령 컴퓨팅 기술 활용
 - 대부분의 빅데이터 처리 시스템은 대용량 데이터 수집, 관리, 유통, 분석 과정을 분산 병렬 처리
@@ -114,7 +114,7 @@ categories: [ComputerScience, DataBase]
 
 ### 빅데이터 저장과 NoSQL
 
-![BigDataStorageAndNoSQL](/ComputerScience/DataBase/Image/ch12/BigDataStorageAndNoSQL.PNG)
+![BigDataStorageAndNoSQL](/DataBase/Image/ch12/BigDataStorageAndNoSQL.PNG)
 
 - 수집 과정을 통해 확보한 빅데이터로부터 유용한 정보를 추출할 경우 효과적인 데이터 저장 및 관리 필요
   - 정형 데이터 : SQL 데이터베이스에 저장
@@ -156,13 +156,13 @@ categories: [ComputerScience, DataBase]
 
 ### SQL VS NoSQL
 
-![SQLVsNoSQL](/ComputerScience/DataBase/Image/ch12/SQLVsNoSQL.PNG)
+![SQLVsNoSQL](/DataBase/Image/ch12/SQLVsNoSQL.PNG)
 
 ### NoSQL 데이터베이스 유형
 
 #### 1. 키-값 데이터베이스(Key-Value Database)
 
-![KeyValueDatabase](/ComputerScience/DataBase/Image/ch12/KeyValueDatabase.PNG)
+![KeyValueDatabase](/DataBase/Image/ch12/KeyValueDatabase.PNG)
 
 - 가장 단순하고 기본적인 형태
 - 모든 데이터를 '키'와 '값'의 쌍으로 매핑하여 저장
@@ -179,7 +179,7 @@ categories: [ComputerScience, DataBase]
 
 #### 2. 문서 데이터베이스(Document Database)
 
-![DocumentDatabase](/ComputerScience/DataBase/Image/ch12/DocumentDatabase.PNG)
+![DocumentDatabase](/DataBase/Image/ch12/DocumentDatabase.PNG)
 
 - 키-값 데이터베이스의 발전 형태
 - 반구조적 데이터의 저장과 검색에 사용
@@ -196,7 +196,7 @@ categories: [ComputerScience, DataBase]
 
 #### 3. 컬럼 패밀리 데이터베이스(Column Family Database)
 
-![ColumnFamilyDatabase](/ComputerScience/DataBase/Image/ch12/ColumnFamilyDatabase.PNG)
+![ColumnFamilyDatabase](/DataBase/Image/ch12/ColumnFamilyDatabase.PNG)
 
 - 구조 측면에서 가장 복잡한 유형
 - 관계형 데이터베이스와 비슷한 유형
@@ -213,7 +213,7 @@ categories: [ComputerScience, DataBase]
 
 #### 4. 그래프 데이터베이스(Graph Database)
 
-![GraphDatabase](/ComputerScience/DataBase/Image/ch12/GraphDatabase.PNG)
+![GraphDatabase](/DataBase/Image/ch12/GraphDatabase.PNG)
 
 - 데이터를 데이터 간 관계와 함께 표현하는 특수한 유형
 - 많은 객체 간 연결 표현에 적합
@@ -231,19 +231,19 @@ categories: [ComputerScience, DataBase]
 
 1. 분류(Classification) 분석
 
-![ClassificationAnalysis](/ComputerScience/DataBase/Image/ch12/ClassificationAnalysis.PNG)
+![ClassificationAnalysis](/DataBase/Image/ch12/ClassificationAnalysis.PNG)
 
 2. 군집(Clustering) 분석
 
-![ClusteringAnalysis](/ComputerScience/DataBase/Image/ch12/ClusteringAnalysis.PNG)
+![ClusteringAnalysis](/DataBase/Image/ch12/ClusteringAnalysis.PNG)
 
 3. 연관(Association) 분석
 
-![AssociationAnalysis](/ComputerScience/DataBase/Image/ch12/AssociationAnalysis.PNG)
+![AssociationAnalysis](/DataBase/Image/ch12/AssociationAnalysis.PNG)
 
 4. 예측(Forecasting) 분석
 
-![ForecastingAnalysis](/ComputerScience/DataBase/Image/ch12/ForecastingAnalysis.PNG)
+![ForecastingAnalysis](/DataBase/Image/ch12/ForecastingAnalysis.PNG)
 
 #### 빅데이터 탐색
 
@@ -258,4 +258,4 @@ categories: [ComputerScience, DataBase]
 
 ### 빅데이터 시각화
 
-![BigDataVisualization](/ComputerScience/DataBase/Image/ch12/BigDataVisualization.PNG)
+![BigDataVisualization](/DataBase/Image/ch12/BigDataVisualization.PNG)

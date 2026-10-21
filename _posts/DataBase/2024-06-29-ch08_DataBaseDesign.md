@@ -1,7 +1,7 @@
 ---
 title: "Chapter 8. 데이터베이스 설계"
 date: 2024-06-29 23:26:43 +0900
-categories: [ComputerScience, DataBase]
+categories: [DataBase]
 ---
 
 ## 1절. 데이터베이스 설계 단계
@@ -17,7 +17,7 @@ categories: [ComputerScience, DataBase]
 
 ### E-R 모델 & 릴레이션 변환 규칙을 통한 설계 과정
 
-![DesignProcess](/ComputerScience/DataBase/Image/ch08/DesignProcess.PNG)
+![DesignProcess](/DataBase/Image/ch08/DesignProcess.PNG)
 
 - 설계 과정 중 오류 발견
   - 변경 필요
@@ -81,7 +81,7 @@ categories: [ComputerScience, DataBase]
 
 ### 작업 과정
 
-![ConceptualDesignSteps](/ComputerScience/DataBase/Image/ch08/ConceptualDesignSteps.PNG)
+![ConceptualDesignSteps](/DataBase/Image/ch08/ConceptualDesignSteps.PNG)
 
 1. 개체 추출, 각 개체의 주요 속성과 키 속성 선별
 2. 개체 간 관계 결정
@@ -109,13 +109,13 @@ categories: [ComputerScience, DataBase]
 
 #### 한빛 마트 데이터베이스에서의 개체 · 속성 추출
 
-![EntityAttributeExtraction](/ComputerScience/DataBase/Image/ch08/EntityAttributeExtraction.PNG)
+![EntityAttributeExtraction](/DataBase/Image/ch08/EntityAttributeExtraction.PNG)
 
 - 개체와 속성 추출을 위한 정보
 
 #### 개체 : 회원
 
-![MemberEntity](/ComputerScience/DataBase/Image/ch08/MemberEntity.PNG)
+![MemberEntity](/DataBase/Image/ch08/MemberEntity.PNG)
 
 - 개체 : 회원
 - 속성 : 회원아이디, 비밀번호, 이름, 나이, 직업, 등급, 적립금
@@ -123,7 +123,7 @@ categories: [ComputerScience, DataBase]
 
 #### 개체 : 회원, 상품
 
-![OrderEntity](/ComputerScience/DataBase/Image/ch08/OrderEntity.PNG)
+![OrderEntity](/DataBase/Image/ch08/OrderEntity.PNG)
 
 - 개체 : 회원, 상품
 - 속성 : 주문번호, 주문수량, 배송지, 주문일자
@@ -133,23 +133,23 @@ categories: [ComputerScience, DataBase]
 
 #### 개체와 속성 추출 결과
 
-![EntityAttributeExtractionResult](/ComputerScience/DataBase/Image/ch08/EntityAttributeExtractionResult.PNG)
+![EntityAttributeExtractionResult](/DataBase/Image/ch08/EntityAttributeExtractionResult.PNG)
 
 #### 회원 개체 다이어그램
 
-![MemberEntityDiagram](/ComputerScience/DataBase/Image/ch08/MemberEntityDiagram.PNG)
+![MemberEntityDiagram](/DataBase/Image/ch08/MemberEntityDiagram.PNG)
 
 #### 상품 개체 다이어그램
 
-![ProductEntity](/ComputerScience/DataBase/Image/ch08/ProductEntity.PNG)
+![ProductEntity](/DataBase/Image/ch08/ProductEntity.PNG)
 
 #### 제조업체 개체 다이어그램
 
-![ManufacturerEntity](/ComputerScience/DataBase/Image/ch08/ManufacturerEntity.PNG)
+![ManufacturerEntity](/DataBase/Image/ch08/ManufacturerEntity.PNG)
 
 #### 게시글 개체 다이어그램
 
-![PostEntity](/ComputerScience/DataBase/Image/ch08/PostEntity.PNG)
+![PostEntity](/DataBase/Image/ch08/PostEntity.PNG)
 
 ### 2. 관계 추출
 
@@ -172,7 +172,7 @@ categories: [ComputerScience, DataBase]
 
 #### 관계 : 주문
 
-![OrderRelationship](/ComputerScience/DataBase/Image/ch08/OrderRelationship.PNG)
+![OrderRelationship](/DataBase/Image/ch08/OrderRelationship.PNG)
 
 - 관계 : 주문
   - "회원" 개체와 "상품" 개체가 맺는 관계
@@ -183,7 +183,7 @@ categories: [ComputerScience, DataBase]
 
 #### 관계 : 공급
 
-![SupplyRelationship](/ComputerScience/DataBase/Image/ch08/SupplyRelationship.PNG)
+![SupplyRelationship](/DataBase/Image/ch08/SupplyRelationship.PNG)
 
 - 관계 : 공급
   - "상품" 개체와 "제조업체" 개체가 맺는 관계
@@ -194,7 +194,7 @@ categories: [ComputerScience, DataBase]
 
 #### 관계 : 공급
 
-![WriteRelationship](/ComputerScience/DataBase/Image/ch08/WriteRelationship.PNG)
+![WriteRelationship](/DataBase/Image/ch08/WriteRelationship.PNG)
 
 - 관계 : 작성
   - "회원" 개체와 "게시글" 개체가 맺는 관계
@@ -204,23 +204,23 @@ categories: [ComputerScience, DataBase]
 
 #### 관계 추출 결과
 
-![RelationshipExtractionResult](/ComputerScience/DataBase/Image/ch08/RelationshipExtractionResult.PNG)
+![RelationshipExtractionResult](/DataBase/Image/ch08/RelationshipExtractionResult.PNG)
 
 #### 주문 관계 다이어그램
 
-![OrderRelationshipDiagram](/ComputerScience/DataBase/Image/ch08/OrderRelationshipDiagram.PNG)
+![OrderRelationshipDiagram](/DataBase/Image/ch08/OrderRelationshipDiagram.PNG)
 
 #### 공급 관계 다이어그램
 
-![SupplyRelationshipDiagram](/ComputerScience/DataBase/Image/ch08/SupplyRelationshipDiagram.PNG)
+![SupplyRelationshipDiagram](/DataBase/Image/ch08/SupplyRelationshipDiagram.PNG)
 
 #### 작성 관계 다이어그램
 
-![WriteRelationshipDiagram](/ComputerScience/DataBase/Image/ch08/WriteRelationshipDiagram.PNG)
+![WriteRelationshipDiagram](/DataBase/Image/ch08/WriteRelationshipDiagram.PNG)
 
 #### 전체적인 다이어그램
 
-![OverallRelationshipDiagram](/ComputerScience/DataBase/Image/ch08/OverallRelationshipDiagram.PNG)
+![OverallRelationshipDiagram](/DataBase/Image/ch08/OverallRelationshipDiagram.PNG)
 
 ## 4절. 논리적 설계
 
@@ -265,11 +265,11 @@ categories: [ComputerScience, DataBase]
 
 #### 개체 : 상품 릴레이션 예시
 
-![EntityRelationExample1](/ComputerScience/DataBase/Image/ch08/EntityRelationExample1.PNG)
+![EntityRelationExample1](/DataBase/Image/ch08/EntityRelationExample1.PNG)
 
 #### 개체 : 고객 릴레이션 예시
 
-![EntityRelationExample2](/ComputerScience/DataBase/Image/ch08/EntityRelationExample2.PNG)
+![EntityRelationExample2](/DataBase/Image/ch08/EntityRelationExample2.PNG)
 
 ### 2. 다대다(n:m) 관계는 릴레이션으로 변환
 
@@ -282,7 +282,7 @@ categories: [ComputerScience, DataBase]
 
 #### 관계 : 주문 릴레이션 예시
 
-![RelationExample3](/ComputerScience/DataBase/Image/ch08/RelationExample3.PNG)
+![RelationExample3](/DataBase/Image/ch08/RelationExample3.PNG)
 
 ### 3. 일대다(1:n) 관계는 외래키로 표현
 
@@ -297,7 +297,7 @@ categories: [ComputerScience, DataBase]
 
 #### 관계 : 공급 릴레이션 예시
 
-![RelationExample4](/ComputerScience/DataBase/Image/ch08/RelationExample4.PNG)
+![RelationExample4](/DataBase/Image/ch08/RelationExample4.PNG)
 
 #### 3-2. 약한 개체가 참여하는 일대다 관계는 외래키를 포함해서 기본키로 지정
 
@@ -309,7 +309,7 @@ categories: [ComputerScience, DataBase]
 
 #### 관계 : 존재 릴레이션 예시
 
-![RelationExample5](/ComputerScience/DataBase/Image/ch08/RelationExample5.PNG)
+![RelationExample5](/DataBase/Image/ch08/RelationExample5.PNG)
 
 ### 4. 일대일(1:1) 관계는 외래키로 표현
 
@@ -326,7 +326,7 @@ categories: [ComputerScience, DataBase]
 
 #### 혼인 관계 예시 : 일대일(1:1)
 
-![RelationExample6](/ComputerScience/DataBase/Image/ch08/RelationExample6.PNG)
+![RelationExample6](/DataBase/Image/ch08/RelationExample6.PNG)
 
 #### 4-2. 필수적으로 참여하는 개체 릴레이션만 외래키를 받음
 
@@ -335,7 +335,7 @@ categories: [ComputerScience, DataBase]
 
 #### 혼인 관계 예시 : 일대일(1:1) - 필수 / 선택
 
-![RelationExample7](/ComputerScience/DataBase/Image/ch08/RelationExample7.PNG)
+![RelationExample7](/DataBase/Image/ch08/RelationExample7.PNG)
 
 #### 4-3. 모든 개체가 필수적 참여 시 릴레이션 하나로 합침
 
@@ -346,7 +346,7 @@ categories: [ComputerScience, DataBase]
 
 #### 혼인 관계 예시 : 일대일(1:1) - 필수 / 필수
 
-![RelationExample8](/ComputerScience/DataBase/Image/ch08/RelationExample8.PNG)
+![RelationExample8](/DataBase/Image/ch08/RelationExample8.PNG)
 
 ### 5. 다중 값 속성은 릴레이션으로 변환
 
@@ -356,57 +356,57 @@ categories: [ComputerScience, DataBase]
 
 #### 사원 개체 릴레이션
 
-![EmployeeEntity](/ComputerScience/DataBase/Image/ch08/EmployeeEntity.PNG)
+![EmployeeEntity](/DataBase/Image/ch08/EmployeeEntity.PNG)
 
 #### 부하직원 속성
 
 (여기부터 재작성 필요)
 
-![EmployeeRelationViolation1](/ComputerScience/DataBase/Image/ch08/EmployeeRelationViolation1.PNG)
+![EmployeeRelationViolation1](/DataBase/Image/ch08/EmployeeRelationViolation1.PNG)
 
 - 사원 릴레이션은 "속성에 다중값을 저장할 수 없다"는 릴레이션 특성을 위반
 
-![EmployeeRelationViolation2](/ComputerScience/DataBase/Image/ch08/EmployeeRelationViolation2.PNG)
+![EmployeeRelationViolation2](/DataBase/Image/ch08/EmployeeRelationViolation2.PNG)
 
 - 사원 릴레이션은 릴레이션의 특성을 위반하지 않음
 - 하지만 사원번호, 사원명, 직위 속성의 값이 불필요하게 중복 저장되는 문제 발생
 
-![MultiValuedAttributeRelation](/ComputerScience/DataBase/Image/ch08/MultiValuedAttributeRelation.PNG)
+![MultiValuedAttributeRelation](/DataBase/Image/ch08/MultiValuedAttributeRelation.PNG)
 
 - 규칙 5에 따라 다중값 속성을 독립적인 릴레이션으로 변환 시 불필요한 중복을 제거하며 릴레이션 특성 만족 가능
 
 ### 기타 고려 사항
 
-![DesignRecommendation1](/ComputerScience/DataBase/Image/ch08/DesignRecommendation1.PNG)
+![DesignRecommendation1](/DataBase/Image/ch08/DesignRecommendation1.PNG)
 
 - 모든 관계를 독립적인 릴레이션으로 변환 가능
   - 속성이 많은 관계 : 유형에 상관 없이 릴레이션으로의 변환 가능
 
-![DesignRecommendation2](/ComputerScience/DataBase/Image/ch08/DesignRecommendation2.PNG)
+![DesignRecommendation2](/DataBase/Image/ch08/DesignRecommendation2.PNG)
 
 - 개체가 자기 자신과 관계를 맺는 순환 관계도 기본 규칙을 그대로 적용
 
 ### 규칙 1 : 다이어그램 & 스키마
 
-![Rule1Diagram](/ComputerScience/DataBase/Image/ch08/Rule1Diagram.PNG)
+![Rule1Diagram](/DataBase/Image/ch08/Rule1Diagram.PNG)
 
-![Rule1Schema](/ComputerScience/DataBase/Image/ch08/Rule1Schema.PNG)
+![Rule1Schema](/DataBase/Image/ch08/Rule1Schema.PNG)
 
 ### 규칙 2 : 다이어그램 & 스키마
 
-![Rule2Diagram](/ComputerScience/DataBase/Image/ch08/Rule2Diagram.PNG)
+![Rule2Diagram](/DataBase/Image/ch08/Rule2Diagram.PNG)
 
-![Rule2Schema](/ComputerScience/DataBase/Image/ch08/Rule2Schema.PNG)
+![Rule2Schema](/DataBase/Image/ch08/Rule2Schema.PNG)
 
 ### 규칙 3 : 다이어그램 & 스키마
 
-![Rule3Diagram](/ComputerScience/DataBase/Image/ch08/Rule3Diagram.PNG)
+![Rule3Diagram](/DataBase/Image/ch08/Rule3Diagram.PNG)
 
-![Rule3Schema](/ComputerScience/DataBase/Image/ch08/Rule3Schema.PNG)
+![Rule3Schema](/DataBase/Image/ch08/Rule3Schema.PNG)
 
 ### 테이블 명세서
 
-![TableSpecification](/ComputerScience/DataBase/Image/ch08/TableSpecification.PNG)
+![TableSpecification](/DataBase/Image/ch08/TableSpecification.PNG)
 
 - 릴레이션 스키마에 대한 설계 정보를 기술한 문서
 - 릴레이션 스키마 변환 후 속성 데이터 타입, 길이, NULL 값 허용 여부, 기본값, 제약조건 등을 세부적으로 결정하고 문서화

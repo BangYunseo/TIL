@@ -1,14 +1,14 @@
 ---
 title: "Chapter 1. 데이터베이스 기본 개념"
 date: 2024-03-20 22:19:03 +0900
-categories: [ComputerScience, DataBase]
+categories: [DataBase]
 ---
 
 ## 1절. 데이터베이스의 필요성
 
 ### 데이터와 정보
 
-| ![DataAndInformation](/ComputerScience/DataBase/Image/ch01/DataAndInformation.PNG) | - 데이터(Data) : 현실 세계에서 단순히 관찰·측정하여 수집한 사실·값<br>- 정보(Information) : 의사 결정에 유용하게 활용하는 데이터를 처리한 결과물 |
+| ![DataAndInformation](/DataBase/Image/ch01/DataAndInformation.PNG) | - 데이터(Data) : 현실 세계에서 단순히 관찰·측정하여 수집한 사실·값<br>- 정보(Information) : 의사 결정에 유용하게 활용하는 데이터를 처리한 결과물 |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
 ### 정보 처리(Information Processing)
@@ -25,7 +25,7 @@ categories: [ComputerScience, DataBase]
 - 정보 시스템 안에서 데이터를 저장
 - 필요 시 데이터 제공
 
-![InformationSystem](/ComputerScience/DataBase/Image/ch01/InformationSystem.PNG){ width="50%" }
+![InformationSystem](/DataBase/Image/ch01/InformationSystem.PNG){ width="50%" }
 
 ## 2절. 데이터베이스의 정의 및 특성
 
@@ -54,7 +54,7 @@ categories: [ComputerScience, DataBase]
 
 ### 데이터 분류 형태
 
-![DataClassificationForm](/ComputerScience/DataBase/Image/ch01/DataClassificationForm.PNG){ width="50%" }
+![DataClassificationForm](/DataBase/Image/ch01/DataClassificationForm.PNG){ width="50%" }
 
 #### 정형 데이터(Structured Data)
 
@@ -63,7 +63,7 @@ categories: [ComputerScience, DataBase]
   - 데이터 구조에 대한 설명 및 데이터 내용 별도 유지
 - ex) 엑셀의 스프레드시트, 관계 데이터베이스의 테이블
 
-![StructuredData](/ComputerScience/DataBase/Image/ch01/StructuredData.PNG){ width="50%" }
+![StructuredData](/DataBase/Image/ch01/StructuredData.PNG){ width="50%" }
 
 #### 반정형 데이터(Semi-Structured Data)
 
@@ -73,20 +73,20 @@ categories: [ComputerScience, DataBase]
 - 파일 형태 저장
 - ex) 웹에서 데이터를 교환하기 위해 작성하는 HTML/XML/JSON 문서 및 웹 로그, 센서 데이터
 
-![SemiStructuredData](/ComputerScience/DataBase/Image/ch01/SemiStructuredData.PNG){ width="50%" }
+![SemiStructuredData](/DataBase/Image/ch01/SemiStructuredData.PNG){ width="50%" }
 
 #### 비정형 데이터(Unstructured Data)
 
 - 정해진 구조 없이 저장된 데이터
 - ex) 소셜 데이터의 텍스트, 영상, 이미지, 워드 및 PDF 문서와 같은 멀티미디어 데이터
 
-![UnstructuredData](/ComputerScience/DataBase/Image/ch01/UnstructuredData.PNG)
+![UnstructuredData](/DataBase/Image/ch01/UnstructuredData.PNG)
 
 ### 데이터 분류 특성
 
 - 통계적 관점 & 데이터 분석 분야에서 사용
 
-![DataClassificationCharacteristics](/ComputerScience/DataBase/Image/ch01/DataClassificationCharacteristics.PNG)
+![DataClassificationCharacteristics](/DataBase/Image/ch01/DataClassificationCharacteristics.PNG)
 
 #### 범주형 데이터(Categorical Data)
 

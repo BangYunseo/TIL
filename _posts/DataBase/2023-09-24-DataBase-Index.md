@@ -1,7 +1,7 @@
 ---
 title: "DataBase"
 date: 2023-09-24 16:00:09 +0900
-categories: [ComputerScience, DataBase]
+categories: [DataBase]
 ---
 
 ## What?

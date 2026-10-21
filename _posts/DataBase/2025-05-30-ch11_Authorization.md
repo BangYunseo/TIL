@@ -1,14 +1,14 @@
 ---
 title: "Chapter 11. 권한 부여(Autorization)"
 date: 2025-05-30 13:09:59 +0900
-categories: [ComputerScience, DataBase]
+categories: [DataBase]
 ---
 
 ## 1절. 보안
 
 ### 데이터베이스 보안
 
-![DatabaseSecurityGoals](/ComputerScience/DataBase/Image/ch11/DatabaseSecurityGoals.PNG)
+![DatabaseSecurityGoals](/DataBase/Image/ch11/DatabaseSecurityGoals.PNG)
 
 #### 목표
 
@@ -35,7 +35,7 @@ categories: [ComputerScience, DataBase]
 
 ### 권한 관리 개념
 
-![AccessControlAndPermissions](/ComputerScience/DataBase/Image/ch11/AccessControlAndPermissions.PNG)
+![AccessControlAndPermissions](/DataBase/Image/ch11/AccessControlAndPermissions.PNG)
 
 #### 접근 제어(Access Control)
 
@@ -57,7 +57,7 @@ categories: [ComputerScience, DataBase]
 
 ### 권한 관리 보안
 
-![AuthorizationOverview](/ComputerScience/DataBase/Image/ch11/AuthorizationOverview.PNG)
+![AuthorizationOverview](/DataBase/Image/ch11/AuthorizationOverview.PNG)
 
 ### 객체 권한 부여 : GRANT
 
@@ -130,7 +130,7 @@ REVOKE 권한 ON 객체 FROM 사용자 CASCADE|RESTRICT;
 
 1. 사용자 "Kim"이 "Hong"에게 부여한 고객 테이블에 대한 검색 권한 취소 시 "Park"에게 부여된 검색 권한은 어떻게 처리되는가?
 
-![RevokeQuestionExample](/ComputerScience/DataBase/Image/ch11/RevokeQuestionExample.PNG)
+![RevokeQuestionExample](/DataBase/Image/ch11/RevokeQuestionExample.PNG)
 
 > CASCADE : Hong, Park의 사용자 권한 모두 취소  
 > RESTRICT : Hong이 다른 사용자에게 권한을 부여하지 않았을 경우에만 취소  
@@ -215,7 +215,7 @@ REVOKE CREATE TABLE FROM Hong;
 
 ### 역할 필요성 예시
 
-![RoleNecessityExample](/ComputerScience/DataBase/Image/ch11/RoleNecessityExample.PNG)
+![RoleNecessityExample](/DataBase/Image/ch11/RoleNecessityExample.PNG)
 
 - 사용자 "Kim"이 자신의 고객 테이블에 대한 검색, 삽입, 삭제 권한을 "Hong", "Park", "Lee"에게 모두 부여하려고 하는 경우
   - 번거로운 작업 발생
@@ -304,4 +304,4 @@ DROP ROLE role_1;
 
 ### 역할 사용 예시
 
-![RoleUsageExample](/ComputerScience/DataBase/Image/ch11/RoleUsageExample.PNG)
+![RoleUsageExample](/DataBase/Image/ch11/RoleUsageExample.PNG)
