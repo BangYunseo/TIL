@@ -25,7 +25,7 @@ categories: [ComputerScience]
 
 - ComputerArchitecture
 - [DataStructure](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataStructure)
-- [DataBase](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/DataBase)
+- [DataBase](https://github.com/BangYunseo/TIL/tree/main/DataBase)
 - [NetworkProtocol](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/NetworkProtocol)
 - [OperatingSystem](https://github.com/BangYunseo/TIL/tree/main/ComputerScience/OS)
 - SoftwareEngineering
