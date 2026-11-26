@@ -1,5 +1,5 @@
 ---
-title: "Chapter 12. 빅데이터와 NoSQL"
+title: "빅데이터, NoSQL"
 date: 2025-06-07 19:50:21 +0900
 categories: [DataBase]
 ---
@@ -43,8 +43,9 @@ categories: [DataBase]
 - 어떤 분석 모델을 적용할 것인가?
 - 대부분 일괄 처리 or 실시관 처리 방식 적용
 
-### 하둡(Hadoop : High-Availability Distributed Object-Oriented Platform)
-
+### 하둡
+- Hadoop
+- High-Availability Distributed Object-Oriented Platform
 - 대용량 데이터를 분산 처리할 수 있는 플랫폼
 - 아파치 재단에서 공개한 자바 기반 오픈소스 소프트웨어
 - 빅데이터 기술에서 가장 중요한 요소

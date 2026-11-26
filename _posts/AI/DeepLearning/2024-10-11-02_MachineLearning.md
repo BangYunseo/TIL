@@ -1,5 +1,5 @@
 ---
-title: "Chapter 2. 머신러닝의 기초(Basic of MachineLearning)"
+title: "머신러닝 기초(Basic of MachineLearning)"
 date: 2024-10-11 23:24:36 +0900
 categories: [AI, DeepLearning]
 math: true

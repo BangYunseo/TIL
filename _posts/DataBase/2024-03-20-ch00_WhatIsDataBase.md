@@ -6,22 +6,24 @@ categories: [DataBase]
 
 ## 1절. 데이터베이스 정의
 
-#### 데이터베이스(DB : DataBase)
+### 데이터베이스(DB : DataBase)
 
+- DB, DataBase
 - 여러 사람이 공유하여 사용하는 데이터의 집합
-- 데이터를 체계화하여 작성된 목록으로 응용 시스템들을 통합ㆍ관리ㆍ운영
+- 데이터를 체계화하여 작성된 목록
+- 응용 프로그램들을 통합ㆍ관리ㆍ운영하는 데이터
 
 ![ch00-01-DB](/DataBase/Image/ch00/DatabaseDefinition.PNG)
 
 ## 2절. 데이터베이스 관련 직업
 
-#### Data Analyst VS Data Scientist VS Data Engineer
+### Data Analyst VS Data Scientist VS Data Engineer
 
 - 요구 기술
 
 ![ch00-02-RS](/DataBase/Image/ch00/SkillsComparison.PNG)
 
-#### Responsibilities, Skills, Tools
+### Responsibilities, Skills, Tools
 
 |      직업      | 책임                                                                     | 기술                                       | 도구                                      |
 | :------------: | :----------------------------------------------------------------------- | :----------------------------------------- | :---------------------------------------- |

@@ -1,5 +1,5 @@
 ---
-title: "Chapter 9. 영상 인식(ImageRecognition)"
+title: "영상 인식(ImageRecognition)"
 date: 2023-09-24 16:00:09 +0900
 categories: [AI, DeepLearning]
 ---

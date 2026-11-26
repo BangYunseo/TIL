@@ -1,5 +1,5 @@
 ---
-title: "Chapter 12. 생성형 모델(Generative Model)"
+title: "생성형 모델(Generative Model)"
 date: 2024-11-26 15:24:42 +0900
 categories: [AI, DeepLearning]
 math: true

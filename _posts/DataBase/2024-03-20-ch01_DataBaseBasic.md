@@ -1,5 +1,5 @@
 ---
-title: "Chapter 1. 데이터베이스 기본 개념"
+title: "데이터베이스 기초"
 date: 2024-03-20 22:19:03 +0900
 categories: [DataBase]
 ---
@@ -23,9 +23,9 @@ categories: [DataBase]
 ### 데이터베이스(DataBase)
 
 - 정보 시스템 안에서 데이터를 저장
-- 필요 시 데이터 제공
+- 저장한 데이터를 제공
 
-![InformationSystem](/DataBase/Image/ch01/InformationSystem.PNG){ width="50%" }
+![InformationSystem](/DataBase/Image/ch01/InformationSystem.PNG)
 
 ## 2절. 데이터베이스의 정의 및 특성
 
@@ -54,7 +54,7 @@ categories: [DataBase]
 
 ### 데이터 분류 형태
 
-![DataClassificationForm](/DataBase/Image/ch01/DataClassificationForm.PNG){ width="50%" }
+![DataClassificationForm](/DataBase/Image/ch01/DataClassificationForm.PNG)
 
 #### 정형 데이터(Structured Data)
 
@@ -63,7 +63,7 @@ categories: [DataBase]
   - 데이터 구조에 대한 설명 및 데이터 내용 별도 유지
 - ex) 엑셀의 스프레드시트, 관계 데이터베이스의 테이블
 
-![StructuredData](/DataBase/Image/ch01/StructuredData.PNG){ width="50%" }
+![StructuredData](/DataBase/Image/ch01/StructuredData.PNG)
 
 #### 반정형 데이터(Semi-Structured Data)
 
@@ -73,7 +73,7 @@ categories: [DataBase]
 - 파일 형태 저장
 - ex) 웹에서 데이터를 교환하기 위해 작성하는 HTML/XML/JSON 문서 및 웹 로그, 센서 데이터
 
-![SemiStructuredData](/DataBase/Image/ch01/SemiStructuredData.PNG){ width="50%" }
+![SemiStructuredData](/DataBase/Image/ch01/SemiStructuredData.PNG)
 
 #### 비정형 데이터(Unstructured Data)
 

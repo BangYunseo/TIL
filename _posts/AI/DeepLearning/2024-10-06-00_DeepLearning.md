@@ -1,5 +1,5 @@
 ---
-title: "Chapter 0. 딥러닝(DeepLearning)"
+title: "딥러닝(DeepLearning)"
 date: 2024-10-06 13:43:20 +0900
 categories: [AI, DeepLearning]
 ---
